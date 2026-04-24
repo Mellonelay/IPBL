@@ -1,30 +1,31 @@
 import { buildStoredMonthMap, fetchScheduleGamesForMonth } from "./ingest-results-month.js";
 import {
-    DIVISION_LABEL_BY_TAG,
-    isApprovedResultsTag,
-    resultsKvKey,
+  DIVISION_LABEL_BY_TAG,
+  isApprovedResultsTag,
+  resultsKvKey,
 } from "./results-sync-constants.js";
 import { requireResultsRedis } from "./results-redis.js";
 
+
 /**
- * Fetch one division × one calendar month from ipbl.pro and write `ipbl:results:{year}:{MM}:{tag}`.
+ * Fetch one division Ã— one calendar month from ipbl.pro and write `ipbl:results:{year}:{MM}:{tag}`.
  */
 export async function writeResultsMonthToKv(params: {
-    year: number;
-    /** 1–12 */
-    month: number;
-    divisionTag: string;
-    timeoutMs?: number;
+  year: number;
+  /** 1â€“12 */
+  month: number;
+  divisionTag: string;
+  timeoutMs?: number;
 }): Promise<{ key: string; gamesIngested: number; divisionTag: string }> {
-    const { year, month, divisionTag } = params;
-    if (!isApprovedResultsTag(divisionTag)) {
-        throw new Error(`Unknown or disallowed division tag: ${divisionTag}`);
-    }
-    const label = DIVISION_LABEL_BY_TAG[divisionTag] ?? divisionTag;
-    const timeoutMs = params.timeoutMs ?? Number.parseInt(process.env.SYNC_MONTH_TIMEOUT_MS ?? "115000", 10);
-    const games = await fetchScheduleGamesForMonth(divisionTag, year, month - 1, { timeoutMs });
-    const map = buildStoredMonthMap(games, year, month - 1, divisionTag, label);
-    const key = resultsKvKey(year, month, divisionTag);
-    await requireResultsRedis().set(key, JSON.stringify(map));
-    return { key, gamesIngested: games.length, divisionTag };
+  const { year, month, divisionTag } = params;
+  if (!isApprovedResultsTag(divisionTag)) {
+    throw new Error(`Unknown or disallowed division tag: ${divisionTag}`);
+  }
+  const label = DIVISION_LABEL_BY_TAG[divisionTag] ?? divisionTag;
+  const timeoutMs = params.timeoutMs ?? Number.parseInt(process.env.SYNC_MONTH_TIMEOUT_MS ?? "115000", 10);
+  const games = await fetchScheduleGamesForMonth(divisionTag, year, month - 1, { timeoutMs });
+  const map = buildStoredMonthMap(games, year, month - 1, divisionTag, label);
+  const key = resultsKvKey(year, month, divisionTag);
+  await requireResultsRedis().set(key, JSON.stringify(map));
+  return { key, gamesIngested: games.length, divisionTag };
 }
