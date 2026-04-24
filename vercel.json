@@ -1,22 +1,16 @@
-﻿{
+{
   "functions": {
-    "api/cron/cron-sync-results.ts": {
-      "includeFiles": "{api/admin/**,lib,src}/**"
-    },
     "api/admin/backfill-results.ts": {
-      "includeFiles": "{api/admin/**,lib,src}/**"
+      "includeFiles": "api/admin/server-lib/**"
+    },
+    "api/cron/cron-sync-results.ts": {
+      "includeFiles": "api/admin/server-lib/**"
     }
   },
   "rewrites": [
     {
       "source": "/api/ipbl/:path*",
       "destination": "https://api.ipbl.pro/:path*"
-    }
-  ],
-  "crons": [
-    {
-      "path": "/api/cron/cron-sync-results",
-      "schedule": "0 3 * * *"
     }
   ]
 }
