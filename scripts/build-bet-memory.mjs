@@ -20,6 +20,7 @@ async function buildIndex() {
     const index = { matchups: {}, lastUpdated: new Date().toISOString() };
 
     for (const bet of rawData) {
+        // Normalize matchup key: TeamA-TeamB
         const key = `${bet.team1}-${bet.team2}`;
         if (!index.matchups[key]) index.matchups[key] = { wins: 0, losses: 0, total: 0 };
         index.matchups[key].total++;
