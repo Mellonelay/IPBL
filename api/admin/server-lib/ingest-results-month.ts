@@ -155,13 +155,10 @@ export async function fetchScheduleGamesForMonth(
 
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
-    const all: ScheduleGame[] = [];
     try {
-        for (const day of days) {
-            const batch = await fetchCalendarDay(divisionTag, day, controller.signal);
-            all.push(...batch);
-        }
-        return all;
+        const promises = days.map((day) => fetchCalendarDay(divisionTag, day, controller.signal));
+        const batches = await Promise.all(promises);
+        return batches.flat();
     } finally {
         clearTimeout(timer);
     }
