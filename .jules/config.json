@@ -1,0 +1,11 @@
+{
+  "repository": "Mellonelay/IPBL",
+  "branch": "main",
+  "identity": "Jules-Agent-Production",
+  "permissions": {
+    "read": true,
+    "write": true,
+    "deploy": false
+  },
+  "gatekeeper": "human-approval"
+}

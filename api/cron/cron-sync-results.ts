@@ -1,59 +1,59 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import * as kvAliases from "../admin/server-lib/kv-rest-env-aliases.js";
+import * as resultsRedis from "../admin/server-lib/results-redis.js";
+import * as syncConstants from "../admin/server-lib/results-sync-constants.js";
+import * as writeKv from "../admin/server-lib/write-results-month-kv.js";
 
-
-export const config = {
-  maxDuration: 120,
-};
-
+export const config = { maxDuration: 120 };
 
 function headerAuthorization(req: VercelRequest): string | undefined {
-  const h = req.headers;
-  const v = h.authorization ?? (h as { Authorization?: string | string[] }).Authorization;
-  if (Array.isArray(v)) return v[0];
-  return typeof v === "string" ? v : undefined;
+    const h = req.headers;
+    const v = h.authorization ?? (h as any).Authorization;
+    return Array.isArray(v) ? v[0] : (typeof v === "string" ? v : undefined);
 }
-
 
 function readBearerToken(req: VercelRequest): string | null {
-  const raw = headerAuthorization(req);
-  if (!raw?.trim()) return null;
-  const m = raw.match(/^\s*Bearer\s+(\S+)/i);
-  return m ? m[1].trim() : null;
+    const raw = headerAuthorization(req);
+    return raw?.match(/^\s*Bearer\s+(\S+)/i)?.[1] ?? null;
 }
-
-
-function serverCronSecret(): string {
-  return String(process.env.CRON_SECRET ?? "").trim();
-}
-
 
 function authOk(req: VercelRequest): boolean {
-  if (req.headers["x-vercel-cron"] === "1") return true;
-  const serverCron = serverCronSecret();
-  if (!serverCron) return false;
-  return readBearerToken(req) === serverCron;
+    const secret = process.env.CRON_SECRET?.trim();
+    if (!secret) return false;
+    return readBearerToken(req) === secret;
 }
-
-
-function monthSlotsUtc(tags: readonly string[]): { year: number; month: number; tag: string }[] {
-  const now = new Date();
-  const months: { year: number; month: number }[] = [];
-  for (let delta = -1; delta <= 2; delta += 1) {
-    const t = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + delta, 1));
-    months.push({ year: t.getUTCFullYear(), month: t.getUTCMonth() + 1 });
-  }
-  const slots: { year: number; month: number; tag: string }[] = [];
-  for (const { year, month } of months) {
-    for (const tag of tags) {
-      slots.push({ year, month, tag });
-    }
-  }
-  return slots;
-}
-
 
 async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
-  const [{ isKvRestConfigured }, { requireResultsRedis }, sc, { writeResultsMonthToKv }] = await Promise.all([
-    import("./admin/server-lib/kv-rest-env-aliases.js"),
-    import("./admin/server-lib/results-redis.js"),
-    import("./admin/server-lib/results-sync-constants.js"),
+    if (req.method !== "GET" && req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
+    if (!authOk(req)) return res.status(401).json({ error: "Unauthorized" });
+
+    if (!kvAliases.isKvRestConfigured()) {
+        return res.status(503).json({ ok: false, error: "KV/Redis not configured.", code: "kv_env_missing" });
+    }
+
+    try {
+        const redis = resultsRedis.requireResultsRedis();
+        const slots = syncConstants.RESULTS_SYNC_TAGS.map(tag => ({ year: 2026, month: 4, tag }));
+        const prev = await redis.get<string>(syncConstants.SYNC_CURSOR_KEY);
+        let cursor = prev ? Number.parseInt(prev, 10) : 0;
+        const slot = slots[cursor % slots.length];
+
+        const result = await writeKv.writeResultsMonthToKv({
+            year: slot.year,
+            month: slot.month,
+            divisionTag: slot.tag,
+            timeoutMs: 115000,
+        });
+
+        await redis.set(syncConstants.SYNC_CURSOR_KEY, String(cursor + 1));
+        res.status(200).json({ ok: true, ...result, nextCursor: cursor + 1 });
+    } catch (e: any) {
+        res.status(500).json({ ok: false, error: e.message });
+    }
+}
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+    await run(req, res).catch(e => {
+        if (!res.headersSent) res.status(503).json({ ok: false, error: e.message });
+    });
+}
