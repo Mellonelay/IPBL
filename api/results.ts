@@ -1,27 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Redis } from "@upstash/redis";
 
-/** Inlined from `lib/results-constants.ts` so this function bundles without `../lib/*` resolution issues on Vercel. */
-const RESULTS_SYNC_TAGS = new Set([
-  "ipbl-66-m-pro-a",
-  "ipbl-66-m-pro-b",
-  "ipbl-66-m-pro-c",
-  "ipbl-66-m-pro-d",
-  "ipbl-66-m-pro-g",
-  "ipbl-66-m-pro-j",
-  "ipbl-66-w-pro-a",
-  "ipbl-66-w-pro-b",
-  "ipbl-66-w-pro-c",
-]);
-
-function isApprovedResultsTag(tag: string): boolean {
-  return RESULTS_SYNC_TAGS.has(tag);
-}
-
-function resultsKvKey(year: number, month1to12: number, divisionTag: string): string {
-  const m = String(month1to12).padStart(2, "0");
-  return `ipbl:results:${year}:${m}:${divisionTag}`;
-}
+import { isApprovedResultsTag, resultsKvKey } from "../lib/results-constants.js";
 
 function trimEnv(value: string | undefined): string | undefined {
   const t = value?.trim();

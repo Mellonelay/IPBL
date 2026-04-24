@@ -1,10 +1,7 @@
 import { buildStoredMonthMap, fetchScheduleGamesForMonth } from "./ingest-results-month.js";
-import {
-    DIVISION_LABEL_BY_TAG,
-    isApprovedResultsTag,
-    resultsKvKey,
-} from "./results-sync-constants.js";
 import { requireResultsRedis } from "./results-redis.js";
+import { isApprovedResultsTag, resultsKvKey } from "../../../lib/results-constants.js";
+import { DIVISION_LABEL_BY_TAG } from "../../../src/config/divisions.js";
 
 /**
  * Fetch one division × one calendar month from ipbl.pro and write `ipbl:results:{year}:{MM}:{tag}`.

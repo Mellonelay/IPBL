@@ -1,6 +1,6 @@
 {
     "functions": {
-        "api/cron-sync-results.ts": {
+        "api/cron/cron-sync-results.ts": {
             "includeFiles": "{api/admin/**,lib,src}/**"
         },
         "api/admin/backfill-results.ts": {

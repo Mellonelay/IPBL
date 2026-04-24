@@ -46,10 +46,10 @@ function monthSlotsUtc(tags: readonly string[]): { year: number; month: number; 
 
 async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
     const [{ isKvRestConfigured }, { requireResultsRedis }, sc, { writeResultsMonthToKv }] = await Promise.all([
-        import("./admin/server-lib/kv-rest-env-aliases.js"),
-        import("./admin/server-lib/results-redis.js"),
-        import("./admin/server-lib/results-sync-constants.js"),
-        import("./admin/server-lib/write-results-month-kv.js"),
+        import("../admin/server-lib/kv-rest-env-aliases.js"),
+        import("../admin/server-lib/results-redis.js"),
+        import("../../lib/results-constants.js"),
+        import("../admin/server-lib/write-results-month-kv.js"),
     ]);
     const { RESULTS_SYNC_TAGS, SYNC_CURSOR_KEY } = sc;
 

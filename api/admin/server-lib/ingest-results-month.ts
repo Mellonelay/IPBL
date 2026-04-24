@@ -1,5 +1,6 @@
 import { parseCalendarItems, type ScheduleGame } from "./calendar-normalize.js";
-import { canonicalDivisionLabel, IPBL_API_BASE, RESULTS_LANG } from "./results-sync-constants.js";
+import { IPBL_API_BASE, RESULTS_LANG } from "../../../lib/results-constants.js";
+import { canonicalDivisionLabel } from "../../../src/config/divisions.js";
 
 export type StoredCalendarGridGame = {
     game: ScheduleGame;
