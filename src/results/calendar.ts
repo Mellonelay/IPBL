@@ -88,11 +88,12 @@ function createEmptyMonthMap(
 
 /** Reject truncated maps (e.g. only first N days). */
 export function isCalendarMapCompleteForMonth(
-    map: CalendarGridMap,
+    map: CalendarGridMap | null | undefined,
     year: number,
     monthIndex: number,
     divisionTags: string[]
 ): boolean {
+    if (!map) return false;
     const expectedKeys = monthDayKeys(year, monthIndex);
     const keys = Object.keys(map).sort();
     if (keys.length !== expectedKeys.length) return false;
