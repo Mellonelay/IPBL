@@ -1,0 +1,5 @@
+🧪 Add test for corrupt cached JSON in results API
+
+🎯 **What:** The results API now has robust test coverage including the gap for corrupt JSON data from the cache.
+📊 **Coverage:** Covered 405 Method Not Allowed, 400 Missing Parameters, 400 Unknown Division, 503 Missing Env Variables, 404 No Cache, 503 Corrupt JSON, and 200 Happy Path scenarios.
+✨ **Result:** Test coverage for the results API is vastly improved, allowing for confident refactoring and maintenance.
