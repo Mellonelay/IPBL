@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { timingSafeEqual } from "node:crypto";
 
 export const config = {
     maxDuration: 120,
@@ -25,7 +26,14 @@ function serverCronSecret(): string {
 function authOk(req: VercelRequest): boolean {
     const serverCron = serverCronSecret();
     if (!serverCron) return false;
-    return readBearerToken(req) === serverCron;
+
+    const providedToken = readBearerToken(req);
+    if (!providedToken) return false;
+
+    const a = Buffer.from(providedToken);
+    const b = Buffer.from(serverCron);
+    if (a.length !== b.length) return false;
+    return timingSafeEqual(a, b);
 }
 
 function monthSlotsUtc(tags: readonly string[]): { year: number; month: number; tag: string }[] {
