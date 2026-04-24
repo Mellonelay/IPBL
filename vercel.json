@@ -1,4 +1,4 @@
-{
+﻿{
   "functions": {
     "api/cron/cron-sync-results.ts": {
       "includeFiles": "{api/admin/**,lib,src}/**"
