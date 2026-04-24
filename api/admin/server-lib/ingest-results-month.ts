@@ -1,9 +1,9 @@
-import { parseCalendarItems, type ScheduleGame } from "./calendar-normalize.js";
-import { canonicalDivisionLabel, IPBL_API_BASE, RESULTS_LANG } from "./results-sync-constants.js";
+import { parseCalendarItems, type ScheduleGame } from './calendar-normalize.js';
+import { canonicalDivisionLabel, IPBL_API_BASE, RESULTS_LANG } from './results-sync-constants.js';
 
 export async function fetchScheduleGamesForMonth(tag: string, year: number, monthIndex: number, options: { timeoutMs?: number } = {}): Promise<ScheduleGame[]> {
-  const dayStr = `${year}-${String(monthIndex + 1).padStart(2, "0")}-01`;
-  const url = `${IPBL_API_BASE}/calendar?tag=${tag}&from=${dayStr}&to=${dayStr}&lang=${RESULTS_LANG}`;
+  const dayStr = \\-\-01\;
+  const url = \\/calendar?tag=\&from=\&to=\&lang=\\;
   const controller = new AbortController();
   const signal = controller.signal;
   const timeout = setTimeout(() => controller.abort(), options.timeoutMs || 60000);
@@ -11,7 +11,7 @@ export async function fetchScheduleGamesForMonth(tag: string, year: number, mont
   try {
     for (let attempt = 0; attempt < 3; attempt += 1) {
       const response = await fetch(url, {
-        headers: { Accept: "application/json" },
+        headers: { Accept: 'application/json' },
         signal,
       });
       if (response.ok) {
@@ -24,7 +24,7 @@ export async function fetchScheduleGamesForMonth(tag: string, year: number, mont
         response.status === 504 ||
         response.status === 508;
       if (!retriable || attempt === 2) {
-        throw new Error(`calendar ${response.status} for ${dayStr} tag=${tag}`);
+        throw new Error(\calendar \ for \ tag=\\);
       }
       await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
     }
