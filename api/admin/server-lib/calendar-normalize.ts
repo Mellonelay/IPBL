@@ -69,7 +69,7 @@ function numberOrNull(value: unknown): number | null {
 function isTrulyLiveRow(item: Record<string, unknown>): boolean {
     const g = item.game as RawGame | undefined;
     const st = item.status as { id?: string; displayName?: string } | undefined;
-    const candidates = [text(g?.gameStatus), text(st?.id), text(st?.displayName)].join(" ").toLowerCase();
+    const candidates = [text(g?.gameStatus), text(st?.id), text(st?.displayName)].join(" ").toLowerCase();    
 
     const deadIndicators = [
         "result",
@@ -104,7 +104,7 @@ function isTrulyLiveRow(item: Record<string, unknown>): boolean {
         return false;
     }
 
-    const liveIndicators = ["online", "live", "current", "progress", "прям", "идет", "онлайн"];
+    const liveIndicators = ["online", "live", "current", "progress", "прям", "идет", "онлайн"];  
 
     const hasLiveIndicator = liveIndicators.some((needle) => candidates.includes(needle));
     const timeToGo = text(item.timeToGo) || text(g?.timeToGo) || "";
@@ -180,7 +180,7 @@ function getScoreText(g: RawGame | undefined, live: boolean): string {
     return live ? "—" : "0 : 0";
 }
 
-export function normalizeCalendarRow(item: Record<string, unknown>, tag: string): ScheduleGame | null {
+export function normalizeCalendarRow(item: Record<string, unknown>, tag: string): ScheduleGame | null {       
     const g = item.game as RawGame | undefined;
     if (!g?.id) return null;
     const t1 = teamRef(item.team1 as RawTeam);
