@@ -23,7 +23,6 @@ function serverCronSecret(): string {
 }
 
 function authOk(req: VercelRequest): boolean {
-    if (req.headers["x-vercel-cron"] === "1") return true;
     const serverCron = serverCronSecret();
     if (!serverCron) return false;
     return readBearerToken(req) === serverCron;
