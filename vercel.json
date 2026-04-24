@@ -1,0 +1,22 @@
+{
+    "functions": {
+        "api/cron-sync-results.ts": {
+            "includeFiles": "{api/admin/**,lib,src}/**"
+        },
+        "api/admin/backfill-results.ts": {
+            "includeFiles": "{api/admin/**,lib,src}/**"
+        }
+    },
+    "rewrites": [
+        {
+            "source": "/api/ipbl/:path*",
+            "destination": "https://api.ipbl.pro/:path*"
+        }
+    ],
+    "crons": [
+        {
+            "path": "/api/cron-sync-results",
+            "schedule": "0 3 * * *"
+        }
+    ]
+}
