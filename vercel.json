@@ -1,17 +1,18 @@
 {
-    "functions":  {
-                      "api/admin/backfill-results.ts":  {
-                                                            "includeFiles":  "api/admin/server-lib/**"
-                                                        },
-                      "api/cron/cron-sync-results.ts":  {
-                                                            "includeFiles":  "api/admin/server-lib/**"
-                                                        }
-                  },
-    "rewrites":  [
-                     {
-                         "source":  "/api/ipbl/:path*",
-                         "destination":  "https://api.ipbl.pro/:path*"
-                     }
-                 ],
-    "buildId":  639126884065214265
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/admin/backfill-results.ts": {
+      "includeFiles": "api/admin/server-lib/**"
+    },
+    "api/cron/cron-sync-results.ts": {
+      "includeFiles": "api/admin/server-lib/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/ipbl/:path*",
+      "destination": "https://api.ipbl.pro/:path*"
+    }
+  ]
 }
