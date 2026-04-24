@@ -1,7 +1,12 @@
-﻿$master = "C:\All_work_project\Source\rebuild-project-master (1).sh"
+﻿$master = "C:\All work project\Source\rebuild-project-master (1).sh"
 $targetBase = "C:\All work project\IPBL"
-$content = [System.IO.File]::ReadAllText($master)
 
+if (-not (Test-Path $master)) {
+    Write-Error "Master script not found at $master"
+    return
+}
+
+$content = [System.IO.File]::ReadAllText($master)
 $pattern = 'cat << ''EOF'' > "(.*?)"\s*(.*?)\s*EOF'
 $matches = [regex]::Matches($content, $pattern, [System.Text.RegularExpressions.RegexOptions]::Singleline)
 
@@ -11,7 +16,7 @@ foreach ($m in $matches) {
     $rawPath = $m.Groups[1].Value
     $code = $m.Groups[2].Value
     
-    # Normalize paths: remove "src/" or "src/src/"
+    # Standardize paths to root
     $cleanPath = $rawPath -replace '^src/src/', ''
     $cleanPath = $cleanPath -replace '^src/', ''
     
@@ -19,10 +24,10 @@ foreach ($m in $matches) {
     $dir = Split-Path $dest -Parent
     if (-not (Test-Path $dir)) { mkdir $dir | Out-Null }
     
-    # Cleanup UI artifacts
+    # Forensic Cleanup
     $code = $code -replace '(?m)^\s*\d+\s*\|\s', ''
     
-    # Write UTF-8 No BOM for Vercel
+    # Write safe UTF-8
     [System.IO.File]::WriteAllText($dest, $code)
     Write-Output "✅ Hydrated: $cleanPath"
 }

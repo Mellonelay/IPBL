@@ -1,5 +1,5 @@
-import { parseCalendarItems, type ScheduleGame } from "./calendar-normalize";
-import { canonicalDivisionLabel, IPBL_API_BASE, RESULTS_LANG } from "./results-sync-constants";
+import { parseCalendarItems, type ScheduleGame } from './calendar-normalize';
+import { canonicalDivisionLabel, IPBL_API_BASE, RESULTS_LANG } from './results-sync-constants';
 
 export type StoredCalendarGridGame = {
   game: ScheduleGame;
@@ -23,7 +23,7 @@ export type StoredResultsMonthMap = Record<string, StoredCalendarGridDivision[]>
 async function fetchWithRetry(url: string, signal?: AbortSignal, tag?: string, dayStr?: string): Promise<ScheduleGame[]> {
   for (let attempt = 0; attempt < 3; attempt += 1) {
     const response = await fetch(url, {
-      headers: { Accept: "application/json" },
+      headers: { Accept: 'application/json' },
       signal,
     });
     if (response.ok) {
@@ -36,7 +36,7 @@ async function fetchWithRetry(url: string, signal?: AbortSignal, tag?: string, d
       response.status === 504 ||
       response.status === 508;
     if (!retriable || attempt === 2) {
-      throw new Error(`calendar ${response.status} for ${dayStr} tag=${tag}`);
+      throw new Error(\calendar \ for \ tag=\\);
     }
     await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
   }
@@ -50,12 +50,11 @@ export function buildStoredMonthMap(
   divisionTag: string,
   divisionLabel: string
 ): StoredResultsMonthMap {
-  // Logic re-materialized from master source
   const map: StoredResultsMonthMap = {};
   games.forEach(g => {
     const dateKey = g.localDate;
     if (!map[dateKey]) map[dateKey] = [];
-    // ... indexing logic ...
+    // Indexing logic...
   });
   return map;
 }
