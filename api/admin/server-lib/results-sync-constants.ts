@@ -1,7 +1,7 @@
 /**
  * Results sync constants for Vercel serverless under `api/`.
  * Duplicated from `lib/results-constants.ts` so handlers never import `../../lib/*`
- * (see `api/results.ts` — root `lib` graph breaks bundling for nested API routes).
+ * (see `api/results.ts` â€” root `lib` graph breaks bundling for nested API routes).
  */
 export const RESULTS_SYNC_TAGS = [
   "ipbl-66-m-pro-a",
@@ -12,7 +12,7 @@ export const RESULTS_SYNC_TAGS = [
   "ipbl-66-m-pro-j",
   "ipbl-66-w-pro-a",
   "ipbl-66-w-pro-b",
-  "ipbl-66-w-pro-c",
+  "ipbl-66-w-pro-c", "ipbl-66-w-pro-d", "ipbl-66-w-pro-k",
 ] as const;
 
 export const RESULTS_LANG = "ru";
@@ -30,7 +30,7 @@ export function resultsKvKey(year: number, month1to12: number, divisionTag: stri
 
 export const SYNC_CURSOR_KEY = "ipbl:sync:cursor";
 
-/** Duplicated from `src/config/divisions.ts` — keep serverless graph free of `src/`. */
+/** Duplicated from `src/config/divisions.ts` â€” keep serverless graph free of `src/`. */
 const DIVISION_ROWS: { label: string; tag: string }[] = [
   { label: "Pro Men A", tag: "ipbl-66-m-pro-a" },
   { label: "Pro Men B", tag: "ipbl-66-m-pro-b" },
