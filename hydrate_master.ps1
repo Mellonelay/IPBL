@@ -1,35 +1,28 @@
 ﻿$master = "C:\All work project\Source\rebuild-project-master (1).sh"
 $targetBase = "C:\All work project\IPBL"
-
-if (-not (Test-Path $master)) {
-    Write-Error "Master script not found at $master"
-    exit 1
-}
-
 $content = [System.IO.File]::ReadAllText($master)
 
-# Precise Regex to capture every code block
 $pattern = 'cat << ''EOF'' > "(.*?)"\s*(.*?)\s*EOF'
 $matches = [regex]::Matches($content, $pattern, [System.Text.RegularExpressions.RegexOptions]::Singleline)
 
-Write-Output "🔍 Processing $($matches.Count) logic blocks from Source..."
+Write-Output "🔍 Found $($matches.Count) logic blocks."
 
 foreach ($m in $matches) {
     $rawPath = $m.Groups[1].Value
     $code = $m.Groups[2].Value
     
-    # Standardize structure: remove "src/src/" or "src/"
+    # Normalize paths: remove "src/src/" or "src/"
     $cleanPath = $rawPath -replace '^src/src/', ''
     $cleanPath = $cleanPath -replace '^src/', ''
     
     $dest = Join-Path $targetBase $cleanPath
     $dir = Split-Path $dest -Parent
-    if (-not (Test-Path $dir)) { mkdir $dir | Out-Null }
+    if (-not (Test-Path $dir)) { mkdir $dir -Force | Out-Null }
     
-    # Forensic Cleanup: Remove line numbers and Vercel artifacts
+    # Cleanup UI artifacts
     $code = $code -replace '(?m)^\s*\d+\s*\|\s', ''
     
-    # Write as UTF-8 (No BOM)
+    # Write UTF-8 No BOM for Vercel
     [System.IO.File]::WriteAllText($dest, $code)
     Write-Output "✅ Hydrated: $cleanPath"
 }
