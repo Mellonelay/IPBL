@@ -1,3 +1,5 @@
+import { useBettingMemory } from "./hooks/useBettingMemory";
+import { BettingMemoryDrawerSection } from "./components/BettingMemoryDrawerSection";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   clearFetchCaches,
@@ -118,7 +120,7 @@ function LiveCard({
 }) {
   const { game, board, flow, decision } = insight;
   const currentQuarter = board.currentQuarter ?? (game.period ? `Q${game.period}` : "Live");
-  const currentQuarterTotal = board.currentQuarterTotal ?? "â€”";
+  const currentQuarterTotal = board.currentQuarterTotal ?? "Ã¢â‚¬â€";
 
   return (
     <div className="operator-card">
@@ -136,16 +138,16 @@ function LiveCard({
         </div>
 
         <div className="score-row">
-          <div className="score-main">{game.scoreText || "â€”"}</div>
+          <div className="score-main">{game.scoreText || "Ã¢â‚¬â€"}</div>
           <div className="score-meta">
             <div>{currentQuarter}</div>
-            <div>{game.timeToGo ?? board.quarterClock ?? "Clock â€”"}</div>
+            <div>{game.timeToGo ?? board.quarterClock ?? "Clock Ã¢â‚¬â€"}</div>
           </div>
         </div>
 
         <div className="quarter-grid">
-          <Metric label="Q1 total" value={board.quarterTotals.Q1 ?? "â€”"} />
-          <Metric label="Q2 total" value={board.quarterTotals.Q2 ?? "â€”"} />
+          <Metric label="Q1 total" value={board.quarterTotals.Q1 ?? "Ã¢â‚¬â€"} />
+          <Metric label="Q2 total" value={board.quarterTotals.Q2 ?? "Ã¢â‚¬â€"} />
           <Metric label="Current quarter" value={currentQuarter} />
           <Metric label="Current total" value={currentQuarterTotal} />
         </div>
@@ -607,7 +609,7 @@ function App() {
           </div>
 
           {liveErr && <p className="err">{liveErr}</p>}
-          {liveLoading && <p className="muted">Refreshing live operator cardsâ€¦</p>}
+          {liveLoading && <p className="muted">Refreshing live operator cardsÃ¢â‚¬Â¦</p>}
 
           <div className="live-controls">
             <label>
@@ -709,7 +711,7 @@ function App() {
                     {canonicalDivisionLabel(drawer.game.tag) ??
                       drawer.game.divisionLabel ??
                       drawer.game.tag}{" "}
-                    Â· {drawer.game.localDate} {drawer.game.localTime}
+                    Ã‚Â· {drawer.game.localDate} {drawer.game.localTime}
                   </div>
                 </div>
                 <span
@@ -725,12 +727,12 @@ function App() {
               <h3>Score block</h3>
               <div className="score-hero">{drawer.game.scoreText}</div>
               <div className="quarter-grid">
-                <Metric label="Q1" value={drawer.board.quarterTotals.Q1 ?? "â€”"} />
-                <Metric label="Q2" value={drawer.board.quarterTotals.Q2 ?? "â€”"} />
-                <Metric label="Q3" value={drawer.board.quarterTotals.Q3 ?? "â€”"} />
-                <Metric label="Q4" value={drawer.board.quarterTotals.Q4 ?? "â€”"} />
-                <Metric label="1H" value={drawer.board.firstHalfTotal ?? "â€”"} />
-                <Metric label="2H" value={drawer.board.secondHalfTotal ?? "â€”"} />
+                <Metric label="Q1" value={drawer.board.quarterTotals.Q1 ?? "Ã¢â‚¬â€"} />
+                <Metric label="Q2" value={drawer.board.quarterTotals.Q2 ?? "Ã¢â‚¬â€"} />
+                <Metric label="Q3" value={drawer.board.quarterTotals.Q3 ?? "Ã¢â‚¬â€"} />
+                <Metric label="Q4" value={drawer.board.quarterTotals.Q4 ?? "Ã¢â‚¬â€"} />
+                <Metric label="1H" value={drawer.board.firstHalfTotal ?? "Ã¢â‚¬â€"} />
+                <Metric label="2H" value={drawer.board.secondHalfTotal ?? "Ã¢â‚¬â€"} />
               </div>
             </section>
 
@@ -742,8 +744,8 @@ function App() {
               <div className="decision-meta">
                 <Metric label="Suggested bias" value={drawer.decision.suggestedBias ?? "No bias"} />
                 <Metric label="Pace trend" value={drawer.flow?.paceTrend ?? "UNKNOWN"} />
-                <Metric label="Q1 points" value={drawer.flow?.q1Points ?? "â€”"} />
-                <Metric label="Q2 points" value={drawer.flow?.q2Points ?? "â€”"} />
+                <Metric label="Q1 points" value={drawer.flow?.q1Points ?? "Ã¢â‚¬â€"} />
+                <Metric label="Q2 points" value={drawer.flow?.q2Points ?? "Ã¢â‚¬â€"} />
               </div>
               <p className="muted strong-line">
                 Flow signal: {drawer.flow?.signal ?? "No live quarter signal"}
@@ -759,7 +761,7 @@ function App() {
               <h3>Historical risk block</h3>
               <div className="quarter-grid">
                 <Metric
-                  label={`Quarter ${currentOrNextQuarter(drawer.flow, drawer.board) ?? "â€”"}`}
+                  label={`Quarter ${currentOrNextQuarter(drawer.flow, drawer.board) ?? "Ã¢â‚¬â€"}`}
                   value={
                     drawer.decision.quarterContext
                       ? `${formatPct(drawer.decision.quarterContext.win_rate)} / ${formatCurrency(
@@ -792,7 +794,7 @@ function App() {
               <h3>H2H block</h3>
               {drawer.histLoading && (
                 <p className="muted" data-testid="h2h-loading">
-                  Loading historyâ€¦
+                  Loading historyÃ¢â‚¬Â¦
                 </p>
               )}
               {!drawer.histLoading && drawer.h2h.length === 0 && (
@@ -806,11 +808,11 @@ function App() {
                   return (
                     <div key={entry.gameId} className="h2h-item" data-testid="h2h-item">
                       <div>
-                        {entry.date} {entry.time} Â· {entry.scoreText}
+                        {entry.date} {entry.time} Ã‚Â· {entry.scoreText}
                       </div>
                       <div className="muted">
                         {matrix.length > 0
-                          ? matrix.map((value, index) => `Q${index + 1} ${value}`).join(" Â· ")
+                          ? matrix.map((value, index) => `Q${index + 1} ${value}`).join(" Ã‚Â· ")
                           : entry.fullScore || "No quarter matrix"}
                       </div>
                     </div>
@@ -834,7 +836,7 @@ function App() {
                   <div key={flag.team} className={`risk-row ${tone}`}>
                     <strong>{flag.team}</strong>
                     <span>
-                      {formatPct(flag.win_rate)} win rate Â· {formatCurrency(flag.net_profit)}
+                      {formatPct(flag.win_rate)} win rate Ã‚Â· {formatCurrency(flag.net_profit)}
                     </span>
                   </div>
                 );
@@ -847,7 +849,7 @@ function App() {
                 <div className="risk-row bad">
                   <strong>{drawer.decision.matchupFlag.matchup}</strong>
                   <span>
-                    {formatPct(drawer.decision.matchupFlag.win_rate)} win rate Â·{" "}
+                    {formatPct(drawer.decision.matchupFlag.win_rate)} win rate Ã‚Â·{" "}
                     {formatCurrency(drawer.decision.matchupFlag.net_profit)}
                   </span>
                 </div>
