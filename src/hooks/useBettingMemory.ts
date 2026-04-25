@@ -1,4 +1,5 @@
-import useSWR from 'swr';
+// Force commonjs-style load to bypass ESM bundler resolution issues on Vercel
+const useSWR = require('swr');
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
