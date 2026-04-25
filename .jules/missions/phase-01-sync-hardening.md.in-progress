@@ -1,0 +1,13 @@
+# MISSION: PHASE 01 - SYNC HARDENING
+## Objective
+Make the betting history sync repeatable and secure.
+
+## Requirements
+1. Create `scripts/lib/auth-validator.mjs` to check if BETHISTORY_COOKIE is valid.
+2. Update `scripts/sync-bet-history.mjs` to exit with exit code 1 if auth fails.
+3. Add a clear error message to the console for the operator.
+4. Ensure no secrets are logged to stdout.
+
+## Success Criteria
+- Running `npm run sync:operator-data` with an expired cookie gives a "SESSION_EXPIRED" error.
+- The UI does not clear the existing data if the new sync fails.
