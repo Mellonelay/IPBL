@@ -7,10 +7,10 @@ export default defineConfig({
     outDir: "dist",
     rollupOptions: {
       input: "index.html",
+      output: {
+        manualChunks: undefined // Disable splitting to ensure all deps are in one file
+      }
     },
-  },
-  optimizeDeps: {
-    include: ["swr", "react", "react-dom"],
   },
   plugins: [react()],
   server: {

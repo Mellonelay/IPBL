@@ -1,3 +1,5 @@
+import useSWR from "swr";
+(window as any).useSWR = useSWR;
 import "swr";
 import React from "react";
 import ReactDOM from "react-dom/client";
