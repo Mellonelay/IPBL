@@ -245,8 +245,8 @@ function oddsBand(odds: number | null | undefined): keyof typeof operatorSummary
 function teamFlags(team1: string, team2: string): RiskEntry[] {
     const names = new Set([normalizeTeam(team1), normalizeTeam(team2)]);
     const flags = [
-        ...operatorSummary.team_risk.worst_teams.filter((entry) => entry.team && names.has(entry.team)),
-        ...operatorSummary.team_risk.best_teams.filter((entry) => entry.team && names.has(entry.team)),
+        ...(operatorSummary?.team_risk?.worst_teams || []).filter((entry) => entry.team && names.has(entry.team)),
+        ...(operatorSummary?.team_risk?.best_teams || []).filter((entry) => entry.team && names.has(entry.team)),
     ];
     return flags;
 }
@@ -293,7 +293,7 @@ export function evaluateOperatorDecision(input: EvaluateInput): OperatorDecision
         }
     }
 
-    const matchup = operatorSummary.matchup_risk.worst_matchups.find(
+    const matchup = (operatorSummary?.matchup_risk?.worst_matchups || []).find(
         (entry) => entry.matchup === matchupKey(input.team1, input.team2)
     ) ?? null;
     const teams = teamFlags(input.team1, input.team2);
@@ -304,7 +304,7 @@ export function evaluateOperatorDecision(input: EvaluateInput): OperatorDecision
     }
 
     for (const flag of teams) {
-        if (operatorSummary.team_risk.worst_teams.some((entry) => entry.team === flag.team)) {
+        if ((operatorSummary?.team_risk?.worst_teams || []).some((entry) => entry.team === flag.team)) {
             score -= 4;
             reasons.push(`${flag.team} is on your worst-team risk list.`);
         }
