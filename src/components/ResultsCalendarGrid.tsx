@@ -43,7 +43,7 @@ export function ResultsCalendarGrid({
     const dayRefs = useRef<Record<string, HTMLDivElement | null>>({});
     const allDays = useMemo(() => Object.keys(calendarMap).sort(), [calendarMap]);
 
-    // Always render every day in `calendarMap` for the selected month (March → 31, April → 30, etc.).
+    // Always render every day in `calendarMap` for the selected month (March â†’ 31, April â†’ 30, etc.).
     // Pagination hid most of the month and looked like only the first row/columns existed.
     const visibleDays = allDays;
 
@@ -83,11 +83,11 @@ export function ResultsCalendarGrid({
 
             {error && <p className="err">{error}</p>}
             {loading && (
-                <p className="muted">Loading results from cache (KV)…</p>
+                <p className="muted">Loading results from cache (KV)â€¦</p>
             )}
 
             <div className="results-grid">
-                {visibleDays.map((date) => {
+                {visibleDays.map((date) => { console.log("Rendering date:", date, "Data:", calendarMap[date]);
                     const divisions = (calendarMap[date] ?? []).filter(
                         (division) => division.divisionTag === selectedDivisionTag
                     );
@@ -106,7 +106,7 @@ export function ResultsCalendarGrid({
                             {visibleDivisions.length === 0 && !loading && (
                                 <div className="no-matches">No matches today</div>
                             )}
-                            {visibleDivisions.length === 0 && loading && <div className="no-matches">Loading…</div>}
+                            {visibleDivisions.length === 0 && loading && <div className="no-matches">Loadingâ€¦</div>}
 
                             {visibleDivisions.map((division) => (
                                 <section key={`${date}-${division.divisionTag}`} className="calendar-division-group">
