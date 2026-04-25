@@ -7,13 +7,10 @@ export default defineConfig({
     outDir: "dist",
     rollupOptions: {
       input: "index.html",
-      external: [], 
-      output: {
-        manualChunks: {
-          swr: ['swr']
-        }
-      }
-    }
+    },
+  },
+  optimizeDeps: {
+    include: ["swr", "react", "react-dom"],
   },
   plugins: [react()],
   server: {
@@ -26,4 +23,4 @@ export default defineConfig({
       },
     },
   },
-});// Force Cache Invalidation: 639127096090579735
+});
