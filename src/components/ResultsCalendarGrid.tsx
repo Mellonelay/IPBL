@@ -41,9 +41,9 @@ export function ResultsCalendarGrid({
     onOpenH2H,
 }: Props) {
     const dayRefs = useRef<Record<string, HTMLDivElement | null>>({});
-    const allDays = useMemo(() => Object.keys(calendarMap).sort(), [calendarMap]);
+    const allDays = useMemo(() => Object.keys(calendarMap || {}).sort(), [calendarMap]);
 
-    // Always render every day in `calendarMap` for the selected month (March Ã¢â€ â€™ 31, April Ã¢â€ â€™ 30, etc.).
+    // Always render every day in `calendarMap` for the selected month (March ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ 31, April ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ 30, etc.).
     // Pagination hid most of the month and looked like only the first row/columns existed.
     const visibleDays = allDays;
 
@@ -83,12 +83,12 @@ export function ResultsCalendarGrid({
 
             {error && <p className="err">{error}</p>}
             {loading && (
-                <p className="muted">Loading results from cache (KV)Ã¢â‚¬Â¦</p>
+                <p className="muted">Loading results from cache (KV)ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</p>
             )}
 
             <div className="results-grid">
-                {visibleDays?.map((date) => { console.log("Rendering date:", date, "Data:", calendarMap[date]);
-                    const divisions = (calendarMap[date] ?? []).filter(
+                {visibleDays?.map((date) => { console.log("Rendering date:", date, "Data:", (calendarMap ? calendarMap[date] : []));
+                    const divisions = ((calendarMap ? calendarMap[date] : []) ?? []).filter(
                         (division) => division.divisionTag === selectedDivisionTag
                     );
                     const visibleDivisions = divisions.filter((division) => division.games.length > 0);
@@ -106,7 +106,7 @@ export function ResultsCalendarGrid({
                             {visibleDivisions.length === 0 && !loading && (
                                 <div className="no-matches">No matches today</div>
                             )}
-                            {visibleDivisions.length === 0 && loading && <div className="no-matches">LoadingÃ¢â‚¬Â¦</div>}
+                            {visibleDivisions.length === 0 && loading && <div className="no-matches">LoadingÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</div>}
 
                             {visibleDivisions.map((division) => (
                                 <section key={`${date}-${division.divisionTag}`} className="calendar-division-group">
