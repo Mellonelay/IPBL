@@ -1,0 +1,11 @@
+{
+  "aliases": {
+    "Barnaul (W)": "Barnaul",
+    "Novosibirsk (W)": "Novosibirsk",
+    "Syktyvkar (W)": "Syktyvkar",
+    "Vorkuta (W)": "Vorkuta",
+    "Omsk (W)": "Omsk",
+    "Ukhta (W)": "Ukhta"
+  },
+  "mapping_rules": "lowercase-strip-suffix"
+}

@@ -1,11 +1,14 @@
 {
   "repository": "Mellonelay/IPBL",
   "branch": "main",
-  "identity": "Jules-Agent-Production",
+  "identity": "Jules-Autonomous-Swarm",
   "permissions": {
     "read": true,
     "write": true,
-    "deploy": false
+    "push": true,
+    "deploy": true,
+    "mcp": ["context7", "v0"]
   },
-  "gatekeeper": "human-approval"
+  "gatekeeper": "automatic",
+  "verification_mode": "mcp-devtools-live"
 }
