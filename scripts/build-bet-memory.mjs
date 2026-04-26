@@ -1,35 +1,21 @@
 import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const PROJECT_ROOT = path.resolve(__dirname, '..');
-
-const BET_HISTORY_PATH = path.join(PROJECT_ROOT, 'public', 'bet_history_clean.json');
-const OUTPUT_PATH = path.join(PROJECT_ROOT, 'public', 'betting_memory_index.json');
+const BET_HISTORY = 'public/bet_history_clean.json';
 
 async function buildIndex() {
-    console.log("🔍 Building Betting Memory Index...");
-    if (!fs.existsSync(BET_HISTORY_PATH)) {
-        console.error("❌ Source file not found: " + BET_HISTORY_PATH);
-        process.exit(1);
-    }
+    console.log("🛠️ [B1] Building Betting Memory Index...");
+    const bets = JSON.parse(fs.readFileSync(BET_HISTORY, 'utf-8'));
     
-    const rawData = JSON.parse(fs.readFileSync(BET_HISTORY_PATH, 'utf-8'));
-    const index = { matchups: {}, lastUpdated: new Date().toISOString() };
+    const index = {};
+    bets.forEach(b => {
+        const key = `${b.team1}-any`;
+        if (!index[key]) index[key] = { wins: 0, losses: 0, total: 0 };
+        index[key].total++;
+        if (b.result === 'Win') index[key].wins++; else index[key].losses++;
+    });
 
-    for (const bet of rawData) {
-        // Normalize matchup key: TeamA-TeamB
-        const key = `${bet.team1}-${bet.team2}`;
-        if (!index.matchups[key]) index.matchups[key] = { wins: 0, losses: 0, total: 0 };
-        index.matchups[key].total++;
-        if (bet.result === 'Win') index.matchups[key].wins++;
-        else index.matchups[key].losses++;
-    }
-
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(index, null, 2));
-    console.log("✅ Betting Memory Index created at " + OUTPUT_PATH);
+    fs.writeFileSync('public/betting_memory_index.json', JSON.stringify(index, null, 2));
+    console.log(`✅ [B1] Index Built. Processed ${bets.length} matches.`);
 }
 
 buildIndex().catch(console.error);
