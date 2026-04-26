@@ -26,6 +26,11 @@ function formatHeader(iso: string): string {
     });
 }
 
+const StreakBadge = ({ team, memory }: { team: string, memory: any }) => {
+    const stats = memory[`${team}-any`] || { wins: 0 };
+    if (stats.wins < 3) return null;
+    return <span style={{ color: "#00c076", fontSize: "0.7rem", marginLeft: "4px" }}>● {stats.wins}W</span>;
+};
 export function ResultsCalendarGrid({
     calendarMap,
     selectedDivisionTag,
@@ -43,7 +48,7 @@ export function ResultsCalendarGrid({
     const dayRefs = useRef<Record<string, HTMLDivElement | null>>({});
     const allDays = useMemo(() => Object.keys(calendarMap || {}).sort(), [calendarMap]);
 
-    // Always render every day in `calendarMap` for the selected month (March ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ 31, April ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ 30, etc.).
+    // Always render every day in `calendarMap` for the selected month (March ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ 31, April ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ 30, etc.).
     // Pagination hid most of the month and looked like only the first row/columns existed.
     const visibleDays = allDays;
 
@@ -83,7 +88,7 @@ export function ResultsCalendarGrid({
 
             {error && <p className="err">{error}</p>}
             {loading && (
-                <p className="muted">Loading results from cache (KV)ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</p>
+                <p className="muted">Loading results from cache (KV)ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦</p>
             )}
 
             <div className="results-grid">
@@ -106,7 +111,7 @@ export function ResultsCalendarGrid({
                             {visibleDivisions.length === 0 && !loading && (
                                 <div className="no-matches">No matches today</div>
                             )}
-                            {visibleDivisions.length === 0 && loading && <div className="no-matches">LoadingÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</div>}
+                            {visibleDivisions.length === 0 && loading && <div className="no-matches">LoadingÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦</div>}
 
                             {visibleDivisions.map((division) => (
                                 <section key={`${date}-${division.divisionTag}`} className="calendar-division-group">
