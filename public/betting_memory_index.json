@@ -1,10 +1,252 @@
 {
-  "matchups": {
-    "undefined-undefined": {
-      "wins": 0,
-      "losses": 300,
-      "total": 300
-    }
+  "Vladivostok (Women)-any": {
+    "wins": 3,
+    "losses": 8,
+    "total": 11
   },
-  "lastUpdated": "2026-04-24T23:42:05.496Z"
+  "Voronezh-any": {
+    "wins": 5,
+    "losses": 3,
+    "total": 8
+  },
+  "Kaliningrad-any": {
+    "wins": 8,
+    "losses": 4,
+    "total": 12
+  },
+  "Murino (Women)-any": {
+    "wins": 5,
+    "losses": 3,
+    "total": 8
+  },
+  "Tver-any": {
+    "wins": 5,
+    "losses": 2,
+    "total": 7
+  },
+  "Novokuznetsk (Women)-any": {
+    "wins": 10,
+    "losses": 8,
+    "total": 18
+  },
+  "Magnitogorsk (Women)-any": {
+    "wins": 6,
+    "losses": 2,
+    "total": 8
+  },
+  "Novosibirsk-any": {
+    "wins": 8,
+    "losses": 3,
+    "total": 11
+  },
+  "Cheboksary (Women)-any": {
+    "wins": 15,
+    "losses": 8,
+    "total": 23
+  },
+  "Krasnodar-any": {
+    "wins": 5,
+    "losses": 2,
+    "total": 7
+  },
+  "Tambov (Women)-any": {
+    "wins": 6,
+    "losses": 6,
+    "total": 12
+  },
+  "Yaroslavl (Women)-any": {
+    "wins": 4,
+    "losses": 1,
+    "total": 5
+  },
+  "Samara-any": {
+    "wins": 8,
+    "losses": 3,
+    "total": 11
+  },
+  "Moscow-any": {
+    "wins": 2,
+    "losses": 1,
+    "total": 3
+  },
+  "Kaluga (Women)-any": {
+    "wins": 5,
+    "losses": 5,
+    "total": 10
+  },
+  "Kirov-any": {
+    "wins": 3,
+    "losses": 4,
+    "total": 7
+  },
+  "Toliatti (Women)-any": {
+    "wins": 1,
+    "losses": 2,
+    "total": 3
+  },
+  "Berezniki (Women)-any": {
+    "wins": 2,
+    "losses": 1,
+    "total": 3
+  },
+  "Murmansk-any": {
+    "wins": 0,
+    "losses": 2,
+    "total": 2
+  },
+  "Ekaterinburg (Women)-any": {
+    "wins": 1,
+    "losses": 4,
+    "total": 5
+  },
+  "Ukhta-any": {
+    "wins": 3,
+    "losses": 1,
+    "total": 4
+  },
+  "Kurgan-any": {
+    "wins": 1,
+    "losses": 3,
+    "total": 4
+  },
+  "Ryazan-any": {
+    "wins": 6,
+    "losses": 0,
+    "total": 6
+  },
+  "Abakan-any": {
+    "wins": 1,
+    "losses": 0,
+    "total": 1
+  },
+  "Serov-any": {
+    "wins": 2,
+    "losses": 3,
+    "total": 5
+  },
+  "Ivanovo (Women)-any": {
+    "wins": 1,
+    "losses": 0,
+    "total": 1
+  },
+  "Salavat-any": {
+    "wins": 3,
+    "losses": 4,
+    "total": 7
+  },
+  "Bryansk (Women)-any": {
+    "wins": 5,
+    "losses": 2,
+    "total": 7
+  },
+  "Syktyvkar-any": {
+    "wins": 2,
+    "losses": 5,
+    "total": 7
+  },
+  "Omsk-any": {
+    "wins": 3,
+    "losses": 1,
+    "total": 4
+  },
+  "Magadan-any": {
+    "wins": 1,
+    "losses": 1,
+    "total": 2
+  },
+  "Adler-any": {
+    "wins": 0,
+    "losses": 1,
+    "total": 1
+  },
+  "Yakutsk-any": {
+    "wins": 2,
+    "losses": 0,
+    "total": 2
+  },
+  "Surgut-any": {
+    "wins": 3,
+    "losses": 2,
+    "total": 5
+  },
+  "Kachkanar-any": {
+    "wins": 5,
+    "losses": 4,
+    "total": 9
+  },
+  "Barnaul-any": {
+    "wins": 6,
+    "losses": 7,
+    "total": 13
+  },
+  "Nizhny Novgorod-any": {
+    "wins": 4,
+    "losses": 3,
+    "total": 7
+  },
+  "Gelendzhik-any": {
+    "wins": 6,
+    "losses": 2,
+    "total": 8
+  },
+  "St. Petersburg-any": {
+    "wins": 2,
+    "losses": 2,
+    "total": 4
+  },
+  "Volgograd-any": {
+    "wins": 7,
+    "losses": 2,
+    "total": 9
+  },
+  "Orel-any": {
+    "wins": 2,
+    "losses": 1,
+    "total": 3
+  },
+  "Revda-any": {
+    "wins": 1,
+    "losses": 0,
+    "total": 1
+  },
+  "Severodvinsk (Women)-any": {
+    "wins": 2,
+    "losses": 2,
+    "total": 4
+  },
+  "Orenburg (Women)-any": {
+    "wins": 0,
+    "losses": 1,
+    "total": 1
+  },
+  "Rostov-on-Don-any": {
+    "wins": 3,
+    "losses": 2,
+    "total": 5
+  },
+  "Kostroma (Women)-any": {
+    "wins": 0,
+    "losses": 1,
+    "total": 1
+  },
+  "Penza (Women)-any": {
+    "wins": 1,
+    "losses": 0,
+    "total": 1
+  },
+  "Krasnoyarsk-any": {
+    "wins": 1,
+    "losses": 0,
+    "total": 1
+  },
+  "Kursk (Women)-any": {
+    "wins": 1,
+    "losses": 0,
+    "total": 1
+  },
+  "Kazan-any": {
+    "wins": 2,
+    "losses": 0,
+    "total": 2
+  }
 }
