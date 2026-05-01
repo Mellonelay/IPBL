@@ -26,6 +26,7 @@ export type ScheduleGame = {
     period: number | null;
     timeToGo: string | null;
     isLive: boolean;
+    updatedAt: number | null;
     team1: TeamRef;
     team2: TeamRef;
 };
@@ -34,6 +35,19 @@ type RawTeam = {
     teamId?: number;
     shortName?: string;
     name?: string;
+};
+
+type RawGame = {
+    id?: number;
+    gameStatus?: string;
+    score1?: number;
+    score2?: number;
+    score?: string;
+    fullScore?: string | null;
+    localDate?: string;
+    localTime?: string;
+    period?: number | null;
+    timeToGo?: string | null;
 };
 
 /**
@@ -88,6 +102,21 @@ function numberOrNull(value: unknown): number | null {
     return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
+/**
+ * Checks if a clock string follows the MM:SS or M:SS pattern.
+ */
+export function isValidClock(clock: string | null | undefined): boolean {
+    if (!clock) return false;
+    return /^\d{1,2}:\d{2}$/.test(clock.trim());
+}
+
+/**
+ * Correct Live Detection based on activity, not just date.
+ * Rules:
+ * 1. Status must indicate live.
+ * 2. Must have scores.
+ * 3. Must have recent activity (clock or active period).
+ */
 function isTrulyLiveRow(item: Record<string, unknown>): boolean {
     const g = item.game as RawGame | undefined;
     const st = item.status as { id?: string; displayName?: string } | undefined;
@@ -115,79 +144,30 @@ function isTrulyLiveRow(item: Record<string, unknown>): boolean {
         "отмен",
         "не начался",
     ];
+    
+    // Rule 0: Explicitly dead status
     if (deadIndicators.some((needle) => candidates.includes(needle))) return false;
-
-    // Explicitly check for finished status even if not in deadIndicators
     if (g?.gameStatus === "Finished" || st?.id === "Finished") return false;
 
-    // Date Strictness: ONLY TODAY OR YESTERDAY
-    const parsedLocalDate = (() => {
-        const raw = String(g?.localDate ?? "").trim();
-        if (!raw) return null;
-        const datePart = raw.split("T")[0].split(" ")[0];
-
-        if (/^\d{4}-\d{2}-\d{2}$/.test(datePart)) {
-            const [y, m, d] = datePart.split("-").map((p) => Number.parseInt(p, 10));
-            if (![y, m, d].every(Number.isFinite)) return null;
-            return new Date(y, m - 1, d);
-        }
-
-        let match = datePart.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
-        if (match) {
-            const [, dd, mm, yyyy] = match;
-            const day = Number.parseInt(dd, 10);
-            const month = Number.parseInt(mm, 10);
-            const year = Number.parseInt(yyyy, 10);
-            if (![day, month, year].every(Number.isFinite)) return null;
-            return new Date(year, month - 1, day);
-        }
-
-        match = datePart.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
-        if (match) {
-            const [, dd, mm, yyyy] = match;
-            const day = Number.parseInt(dd, 10);
-            const month = Number.parseInt(mm, 10);
-            const year = Number.parseInt(yyyy, 10);
-            if (![day, month, year].every(Number.isFinite)) return null;
-            return new Date(year, month - 1, day);
-        }
-
-        const asDate = new Date(datePart);
-        if (Number.isNaN(asDate.getTime())) return null;
-        return asDate;
-    })();
-
-    if (!parsedLocalDate) return false;
-    const now = new Date();
-    const nowStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
-    const parsedStart = new Date(
-        parsedLocalDate.getFullYear(),
-        parsedLocalDate.getMonth(),
-        parsedLocalDate.getDate()
-    ).getTime();
-    const dayDiff = Math.round((nowStart - parsedStart) / 86_400_000);
-
-    // Hard block if not today or yesterday
-    if (Math.abs(dayDiff) > 1) return false;
-
-    // Hard block if not the same year or adjacent month (safety)
-    if (parsedLocalDate.getFullYear() !== now.getFullYear()) return false;
-    if (Math.abs(parsedLocalDate.getMonth() - now.getMonth()) > 1) return false;
-
+    // Rule 1: Status must indicate live
     const liveIndicators = ["online", "live", "current", "progress", "прям", "идет", "онлайн", "в игре"];  
-
     const hasLiveIndicator = liveIndicators.some((needle) => candidates.includes(needle));
-    const timeToGo = text(item.timeToGo) || text(g?.timeToGo) || "";
-    const hasTime = timeToGo !== "" && timeToGo !== "00:00" && timeToGo !== "0:00" && timeToGo !== "10:00";
-    const period = numberOrNull(item.period) ?? numberOrNull(g?.period);
+    if (!hasLiveIndicator) return false;
 
+    // Rule 2: Must have scores (even 0:0 is a score if truly live)
     const s1 = typeof g?.score1 === "number" ? g.score1 : null;
     const s2 = typeof g?.score2 === "number" ? g.score2 : null;
-    const scoreIsZeroPair = (s1 === 0 && s2 === 0) || (s1 === null && s2 === null);
+    if (s1 === null || s2 === null) return false;
 
-    if (hasTime && period !== null) return true;
-    if (hasLiveIndicator && period !== null) return true;
-    if (hasLiveIndicator && !scoreIsZeroPair) return true;
+    // Rule 3: Recent Activity (Clock or active period)
+    const timeToGo = text(item.timeToGo) || text(g?.timeToGo) || "";
+    const hasValidClock = isValidClock(timeToGo);
+    const period = numberOrNull(item.period) ?? numberOrNull(g?.period);
+    
+    // We treat matches with a valid clock OR matches in a specific period with non-zero scores as active.
+    // If it's "Online" but has no clock and is in "Period null", it's likely a stale ghost.
+    if (hasValidClock) return true;
+    if (period !== null && (s1 > 0 || s2 > 0)) return true;
     
     return false;
 }
@@ -248,6 +228,11 @@ export function normalizeCalendarRow(item: Record<string, unknown>, tag: string)
     const st = item.status as { id?: string; displayName?: string } | undefined;
     const status = String(g.gameStatus ?? st?.id ?? "Unknown");
     const live = isTrulyLiveRow(item);
+    
+    // Resolve timestamp for freshness indicator (STRICT: no Date.now() fallback)
+    const rawUpdate = item.lastUpdateTime || item.updateTime;
+    const updatedAt = typeof rawUpdate === "number" ? rawUpdate : null;
+
     return {
         gameId: Number(g.id),
         tag,
@@ -264,6 +249,7 @@ export function normalizeCalendarRow(item: Record<string, unknown>, tag: string)
         period: numberOrNull(item.period) ?? numberOrNull(g.period),
         timeToGo: text(item.timeToGo) || text(g.timeToGo) || null,
         isLive: live,
+        updatedAt,
         team1: t1,
         team2: t2,
     };

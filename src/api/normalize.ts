@@ -187,6 +187,11 @@ export function normalizeCalendarRow(
   const st = item.status as { id?: string; displayName?: string } | undefined;
   const status = String(g.gameStatus ?? st?.id ?? "Unknown");
   const live = isTrulyLiveRow(item);
+
+  // Resolve timestamp for freshness indicator (STRICT: no Date.now() fallback)
+  const rawUpdate = item.lastUpdateTime || item.updateTime;
+  const updatedAt = typeof rawUpdate === "number" ? rawUpdate : null;
+
   return {
     gameId: Number(g.id),
     tag,
@@ -203,6 +208,7 @@ export function normalizeCalendarRow(
     period: numberOrNull(item.period) ?? numberOrNull(g.period),
     timeToGo: text(item.timeToGo) || text(g.timeToGo) || null,
     isLive: live,
+    updatedAt,
     team1: t1,
     team2: t2,
   };
@@ -250,72 +256,28 @@ export function toLiveGame(sg: ScheduleGame): LiveGame {
 }
 
 export function parseTeamHistory(raw: unknown, tag: string): TeamHistoryGame[] {
-  const data = raw as {
-    data?: { items?: { game?: RawGame; team1?: RawTeam; team2?: RawTeam }[] };
-  };
-  const items = data?.data?.items;
-  if (!Array.isArray(items)) return [];
-  const out: TeamHistoryGame[] = [];
-  for (const row of items) {
-    const g = row.game;
-    if (!g?.id) continue;
-    out.push({
-      gameId: Number(g.id),
-      scheduledTime: String((g as { scheduledTime?: string }).scheduledTime ?? ""),
-      localDate: String(g.localDate ?? ""),
-      localTime: String(g.localTime ?? ""),
-      status: String(g.gameStatus ?? ""),
-      scoreText: String(g.score ?? ""),
-      fullScore: g.fullScore != null ? String(g.fullScore) : null,
-      team1: teamRef(row.team1),
-      team2: teamRef(row.team2),
-      tag,
-    });
-  }
-  return out;
+    const data = raw as {
+        data?: { items?: { game?: RawGame; team1?: RawTeam; team2?: RawTeam }[] };
+    };
+    const items = data?.data?.items;
+    if (!Array.isArray(items)) return [];
+    const out: TeamHistoryGame[] = [];
+    for (const row of items) {
+        const g = row.game;
+        if (!g?.id) continue;
+        out.push({
+            gameId: Number(g.id),
+            scheduledTime: String((g as { scheduledTime?: string }).scheduledTime ?? ""),
+            localDate: String(g.localDate ?? ""),
+            localTime: String(g.localTime ?? ""),
+            status: String(g.gameStatus ?? ""),
+            scoreText: String(g.score ?? ""),
+            fullScore: g.fullScore != null ? String(g.fullScore) : null,
+            team1: teamRef(row.team1),
+            team2: teamRef(row.team2),
+            tag,
+        });
+    }
+    return out;
 }
 
-export function computeH2H(
-  historyA: TeamHistoryGame[],
-  historyB: TeamHistoryGame[],
-  teamIdA: number,
-  teamIdB: number,
-  limit = 12
-): H2HEntry[] {
-  const byId = new Map<number, TeamHistoryGame>();
-  for (const h of historyA) byId.set(h.gameId, h);
-  for (const h of historyB) {
-    if (!byId.has(h.gameId)) byId.set(h.gameId, h);
-  }
-  const both = [...byId.values()].filter(
-    (h) =>
-      (h.team1.teamId === teamIdA && h.team2.teamId === teamIdB) ||
-      (h.team1.teamId === teamIdB && h.team2.teamId === teamIdA)
-  );
-  both.sort((a, b) => (a.scheduledTime < b.scheduledTime ? 1 : -1));
-  const entries: H2HEntry[] = [];
-  for (const h of both.slice(0, limit)) {
-    let winner: 0 | 1 | 2 = 0;
-    const parts = h.scoreText.split(":");
-    const na = h.team1.teamId === teamIdA ? parts[0] : parts[1];
-    const nb = h.team1.teamId === teamIdA ? parts[1] : parts[0];
-    const n1 = parseInt(String(na ?? "").trim(), 10);
-    const n2 = parseInt(String(nb ?? "").trim(), 10);
-    if (!Number.isNaN(n1) && !Number.isNaN(n2)) {
-      if (n1 > n2) winner = 1;
-      else if (n2 > n1) winner = 2;
-    }
-    entries.push({
-      gameId: h.gameId,
-      date: h.localDate,
-      time: h.localTime,
-      scoreText: h.scoreText,
-      fullScore: h.fullScore,
-      status: h.status,
-      winner,
-      homeTeamId: h.team1.teamId,
-      awayTeamId: h.team2.teamId,
-    });
-  }
-  return entries;
-}
