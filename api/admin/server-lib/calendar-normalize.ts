@@ -115,26 +115,34 @@ function isTrulyLiveRow(item: Record<string, unknown>): boolean {
 
 function getScoreText(g: RawGame | undefined, live: boolean): string {
     const explicit = text(g?.score).trim();
-    if (explicit && explicit !== "0:0") return explicit.replace(":", " : ");
+    // Accept explicit if it looks like a real score, but fallback if it's 0:0 and we have a fullScore
+    if (explicit && explicit !== "0:0" && explicit !== "0 : 0") return explicit.replace(":", " : ");
     
     const s1 = typeof g?.score1 === "number" ? g.score1 : null;
     const s2 = typeof g?.score2 === "number" ? g.score2 : null;
     
-    // Fallback: Try to calculate from fullScore if total scores are 0
-    if ((s1 === 0 && s2 === 0) || (s1 === null || s2 === null)) {
-        const full = text(g?.fullScore);
-        if (full && full.includes(":")) {
-            const totals = full.split(",").reduce((acc, part) => {
-                const [p1, p2] = part.split(":").map(v => parseInt(v.trim(), 10));
+    // Check if we have non-zero scores first
+    if (s1 !== null && s2 !== null && (s1 > 0 || s2 > 0)) {
+        return `${s1} : ${s2}`;
+    }
+
+    // Fallback: Try to calculate from fullScore if total scores are 0 or null
+    const full = text(g?.fullScore);
+    if (full && full.includes(":")) {
+        const totals = full.split(",").reduce((acc, part) => {
+            const sides = part.split(":");
+            if (sides.length === 2) {
+                const p1 = parseInt(sides[0].trim(), 10);
+                const p2 = parseInt(sides[1].trim(), 10);
                 if (!isNaN(p1) && !isNaN(p2)) {
                     acc[0] += p1;
                     acc[1] += p2;
                 }
-                return acc;
-            }, [0, 0]);
-            if (totals[0] > 0 || totals[1] > 0) {
-                return `${totals[0]} : ${totals[1]}`;
             }
+            return acc;
+        }, [0, 0]);
+        if (totals[0] > 0 || totals[1] > 0) {
+            return `${totals[0]} : ${totals[1]}`;
         }
     }
 

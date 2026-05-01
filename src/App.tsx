@@ -1,11 +1,11 @@
-import { useBettingMemory } from "./hooks/useBettingMemory";
-import { BettingMemoryDrawerSection } from "./components/BettingMemoryDrawerSection";
+// // import { useBettingMemory } from "./hooks/useBettingMemory";
+// // import { BettingMemoryDrawerSection } from "./components/BettingMemoryDrawerSection";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   clearFetchCaches,
   fetchBoxScore,
   fetchGame,
-  fetchOnline,
+  // fetchOnline,
   fetchTeamGames,
 } from "./api/client";
 import { computeH2H } from "./api/normalize";
@@ -73,13 +73,14 @@ function formatPct(value: number): string {
   return `${(value * 100).toFixed(1)}%`;
 }
 
-function devLog(...args: unknown[]): void {
+function devLog(..._args: unknown[]): void {
+  void _args;
   // Vite exposes DEV at build-time; keep logs out of production bundles.
-  if (import.meta.env.DEV) console.debug("[ipbl]", ...args);
+  if (((import.meta as any).env as any).DEV) console.debug("[ipbl]", ..._args);
 }
 
 function devAssert(condition: unknown, message: string, detail?: unknown): void {
-  if (!import.meta.env.DEV) return;
+  if (!((import.meta as any).env as any).DEV) return;
   if (condition) return;
   console.error(`[ipbl][contract] ${message}`, detail ?? "");
   throw new Error(message);
@@ -277,7 +278,7 @@ function App() {
 
   // Dev-only acceptance checks (data contract).
   useEffect(() => {
-    if (!import.meta.env.DEV) return;
+    if (!((import.meta as any).env as any).DEV) return;
     if (liveLoading) return;
     for (const insight of displayLiveInsights) {
       devAssert(
@@ -301,7 +302,7 @@ function App() {
   }, [displayLiveInsights, selectedLiveDivisionTag, liveLoading]);
 
   useEffect(() => {
-    if (!import.meta.env.DEV) return;
+    if (!((import.meta as any).env as any).DEV) return;
     if (resultsLoading) return;
     if (loadedResultsKey !== selectedResultsKey) return;
     for (const [day, divisions] of Object.entries(calendarMap)) {
@@ -392,8 +393,8 @@ function App() {
               {
                 game,
                 board,
-                flow: { signal: "NO_SIGNAL", q1Points: null, q2Points: null, paceTrend: "UNKNOWN" },
-                decision: { decision: "CAUTION", reasons: ["Insight fetch failed"], suggestedBias: null },
+                flow: { signal: "NO_SIGNAL", q1Points: null, q2Points: null, paceTrend: "UNKNOWN", q1Pace: null, q2Pace: null, suggestedBias: null, liveAdjustment: 0, nextQuarter: null },
+                decision: { decision: "CAUTION", reasons: ["Insight fetch failed"], suggestedBias: null, score: 0, quarterContext: null, divisionContext: null, oddsContext: null, matchupFlag: null, teamFlags: [], flow: null },
                 gameMeta: null,
                 boxState: null,
               }
@@ -619,12 +620,12 @@ function App() {
             <section className="live-section-group">
               <h3 className="live-section-title">Men</h3>
               <div className="live-card-grid">
-                {menLive.map((game) => (
+                {menLive.map((insight) => (
                   <LiveCard
-                    key={liveKey(game)}
-                    game={game} insight={liveInsights[liveKey(game)]}
-                    onOpen={(item) => void openDrawer(item.game, item)}
-                    onOpenH2H={(item) => void openDrawer(item.game, item)}
+                    key={liveKey(insight.game)}
+                    game={insight.game} insight={insight}
+                    onOpen={(g, i) => void openDrawer(g, i)}
+                    onOpenH2H={(g, i) => void openDrawer(g, i)}
                   />
                 ))}
               </div>
@@ -635,12 +636,12 @@ function App() {
             <section className="live-section-group">
               <h3 className="live-section-title">Women</h3>
               <div className="live-card-grid">
-                {womenLive.map((game) => (
+                {womenLive.map((insight) => (
                   <LiveCard
-                    key={liveKey(game)}
-                    game={game} insight={liveInsights[liveKey(game)]}
-                    onOpen={(item) => void openDrawer(item.game, item)}
-                    onOpenH2H={(item) => void openDrawer(item.game, item)}
+                    key={liveKey(insight.game)}
+                    game={insight.game} insight={insight}
+                    onOpen={(g, i) => void openDrawer(g, i)}
+                    onOpenH2H={(g, i) => void openDrawer(g, i)}
                   />
                 ))}
               </div>

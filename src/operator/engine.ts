@@ -259,7 +259,7 @@ export function evaluateOperatorDecision(input: EvaluateInput): OperatorDecision
         score -= 3;
         reasons.push("Q1 is your weakest historical quarter.");
     }
-    if (input.quarter && operatorRules.safeQuarters.includes(input.quarter)) {
+    if (input.quarter && operatorRules.safeQuarters.includes(input.quarter as any)) {
         score += 2;
         reasons.push(`${input.quarter} is one of your allowed quarters.`);
     }
@@ -283,11 +283,11 @@ export function evaluateOperatorDecision(input: EvaluateInput): OperatorDecision
     }
 
     if (typeof input.hour === "number") {
-        if (operatorRules.safeHours.includes(input.hour)) {
+        if (operatorRules.safeHours.includes(input.hour as any)) {
             score += 2;
             reasons.push(`${input.hour}:00 is a strong historical timing window.`);
         }
-        if (operatorRules.dangerousHours.includes(input.hour)) {
+        if (operatorRules.dangerousHours.includes(input.hour as any)) {
             score -= 3;
             reasons.push(`${input.hour}:00 is a dangerous historical timing window.`);
         }
