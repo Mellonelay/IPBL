@@ -1,18 +1,12 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "functions": {
-    "api/admin/backfill-results.ts": {
-      "includeFiles": "api/admin/server-lib/**"
-    },
-    "api/cron/cron-sync-results.ts": {
-      "includeFiles": "api/admin/server-lib/**"
-    }
-  },
+  "version": 2,
+  "framework": "vite",
   "rewrites": [
-    {
-      "source": "/api/ipbl/:path*",
-      "destination": "https://api.ipbl.pro/:path*"
-    }
+    { "source": "/api/results/live", "destination": "/api/results/live.ts" },
+    { "source": "/api/results", "destination": "/api/results.ts" },
+    { "source": "/api/cron/sync-results", "destination": "/api/cron/cron-sync-results.ts" },
+    { "source": "/api/cron/record-live", "destination": "/api/cron/record-live.ts" },
+    { "source": "/api/ipbl/(.*)", "destination": "https://api.ipbl.pro/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

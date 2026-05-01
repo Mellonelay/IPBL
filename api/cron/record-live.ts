@@ -1,7 +1,7 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Redis } from "@upstash/redis";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(_req: VercelRequest, res: VercelResponse) {
     const redis = new Redis({
         url: process.env.KV_REST_API_URL!,
         token: process.env.KV_REST_API_TOKEN!,

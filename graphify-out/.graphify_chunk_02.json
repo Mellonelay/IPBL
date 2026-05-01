@@ -1,0 +1,220 @@
+{
+  "nodes": [
+    {
+      "id": "backfill_results_main",
+      "label": "Backfill Results Script",
+      "file_type": "code",
+      "source_file": "scripts/backfill-results.mjs"
+    },
+    {
+      "id": "build_bet_memory_buildindex",
+      "label": "buildIndex",
+      "file_type": "code",
+      "source_file": "scripts/build-bet-memory.mjs"
+    },
+    {
+      "id": "fetch_results_calendar_fetchresultscalendar",
+      "label": "fetchResultsCalendar",
+      "file_type": "code",
+      "source_file": "scripts/fetch-results-calendar.ts"
+    },
+    {
+      "id": "load_env_local_loadenvlocal",
+      "label": "loadEnvLocal",
+      "file_type": "code",
+      "source_file": "scripts/load-env-local.mjs"
+    },
+    {
+      "id": "swarm_commander_runautonomouscycle",
+      "label": "runAutonomousCycle",
+      "file_type": "code",
+      "source_file": "scripts/swarm-commander.mjs"
+    },
+    {
+      "id": "verify_h2h_drawer_main",
+      "label": "H2H Verification Test",
+      "file_type": "code",
+      "source_file": "scripts/verify-h2h-drawer.mjs"
+    },
+    {
+      "id": "auth_validator_validatesession",
+      "label": "validateSession",
+      "file_type": "code",
+      "source_file": "scripts/lib/auth-validator.mjs"
+    },
+    {
+      "id": "app_app",
+      "label": "App Component",
+      "file_type": "code",
+      "source_file": "src/App.tsx"
+    },
+    {
+      "id": "app_livecard",
+      "label": "LiveCard Component",
+      "file_type": "code",
+      "source_file": "src/App.tsx"
+    },
+    {
+      "id": "client_fetchonline",
+      "label": "fetchOnline",
+      "file_type": "code",
+      "source_file": "src/api/client.ts"
+    },
+    {
+      "id": "client_fetchboxscore",
+      "label": "fetchBoxScore",
+      "file_type": "code",
+      "source_file": "src/api/client.ts"
+    },
+    {
+      "id": "normalize_parsecalendaritems",
+      "label": "parseCalendarItems",
+      "file_type": "code",
+      "source_file": "src/api/normalize.ts"
+    },
+    {
+      "id": "normalize_computeh2h",
+      "label": "computeH2H",
+      "file_type": "code",
+      "source_file": "src/api/normalize.ts"
+    },
+    {
+      "id": "bettingmemorydrawersection_bettingmemorydrawersection",
+      "label": "BettingMemoryDrawerSection",
+      "file_type": "code",
+      "source_file": "src/components/BettingMemoryDrawerSection.tsx"
+    },
+    {
+      "id": "bettingrecord_bettingrecord",
+      "label": "BettingRecord Component",
+      "file_type": "code",
+      "source_file": "src/components/BettingRecord.tsx"
+    },
+    {
+      "id": "resultscalendargrid_resultscalendargrid",
+      "label": "ResultsCalendarGrid",
+      "file_type": "code",
+      "source_file": "src/components/ResultsCalendarGrid.tsx"
+    },
+    {
+      "id": "divisions_live_divisions",
+      "label": "LIVE_DIVISIONS",
+      "file_type": "code",
+      "source_file": "src/config/divisions.ts"
+    },
+    {
+      "id": "usebettingmemory_usebettingmemory",
+      "label": "useBettingMemory",
+      "file_type": "code",
+      "source_file": "src/hooks/useBettingMemory.ts"
+    }
+  ],
+  "edges": [
+    {
+      "source": "backfill_results_main",
+      "target": "load_env_local_loadenvlocal",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/backfill-results.mjs"
+    },
+    {
+      "source": "fetch_results_calendar_fetchresultscalendar",
+      "target": "normalize_parsecalendaritems",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/fetch-results-calendar.ts"
+    },
+    {
+      "source": "app_app",
+      "target": "client_fetchonline",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "app_app",
+      "target": "usebettingmemory_usebettingmemory",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "app_app",
+      "target": "normalize_computeh2h",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "app_app",
+      "target": "app_livecard",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "app_app",
+      "target": "resultscalendargrid_resultscalendargrid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "client_fetchonline",
+      "target": "normalize_parsecalendaritems",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/api/client.ts"
+    },
+    {
+      "source": "build_bet_memory_buildindex",
+      "target": "public_betting_memory_index_json",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "scripts/build-bet-memory.mjs"
+    },
+    {
+      "source": "usebettingmemory_usebettingmemory",
+      "target": "public_betting_memory_index_json",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/useBettingMemory.ts"
+    },
+    {
+      "source": "verify_h2h_drawer_main",
+      "target": "app_app",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scripts/verify-h2h-drawer.mjs",
+      "rationale": "Verifies UI components rendered by App.tsx (drawer, H2H list)"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "betting_memory_system",
+      "label": "Betting Memory System",
+      "nodes": [
+        "build_bet_memory_buildindex",
+        "usebettingmemory_usebettingmemory",
+        "bettingmemorydrawersection_bettingmemorydrawersection"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/hooks/useBettingMemory.ts"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

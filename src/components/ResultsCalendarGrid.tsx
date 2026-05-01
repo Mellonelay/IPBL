@@ -93,7 +93,8 @@ export function ResultsCalendarGrid({
 
             <div className="results-grid">
                 {visibleDays?.map((date) => { console.log("Rendering date:", date, "Data:", (calendarMap ? calendarMap[date] : []));
-                    const divisions = ((calendarMap ? calendarMap[date] : []) ?? []).filter(
+                    const dayData = calendarMap ? calendarMap[date] : [];
+                    const divisions = (Array.isArray(dayData) ? dayData : []).filter(
                         (division) => division.divisionTag === selectedDivisionTag
                     );
                     const visibleDivisions = divisions.filter((division) => division.games.length > 0);
