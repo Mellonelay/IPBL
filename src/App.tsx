@@ -348,12 +348,14 @@ function App() {
   }, []);
 
   const loadLive = useCallback(async () => {
-        setLiveLoading(true);
+    setLiveLoading(true);
     setLiveErr(null);
     try {
       const res = await fetch("/api/results/live");
       if (!res.ok) throw new Error(`Live API error: ${res.status}`);
-      const games = (await res.json()) as ScheduleGame[];
+      const body = (await res.json()) as { games: ScheduleGame[]; status: any };
+      const games = body.games || [];
+      
       setLiveGames(games);
 
       const insights = await Promise.all(

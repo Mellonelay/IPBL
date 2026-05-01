@@ -1,9 +1,10 @@
 import React from 'react';
+import { matchupKey } from '../operator/engine';
 
 export const BettingMemoryDrawerSection: React.FC<{ team1: string, team2: string, memory: any }> = ({ team1, team2, memory }) => {
-    // Basic key matching (normalization)
-    const key = `${team1}-${team2}`;
-    const stats = memory[key];
+    // Use canonical matchupKey for stable lookups
+    const key = matchupKey(team1, team2);
+    const stats = (memory || {})[key];
 
     return (
         <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderRadius: '8px', border: '1px solid #2a3358', margin: '1rem 0' }}>

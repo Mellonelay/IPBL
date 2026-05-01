@@ -48,12 +48,25 @@ type EvaluateInput = {
     flow?: QuarterFlowAnalysis | null;
 };
 
+import CANONICAL_MAP from "../config/canonical_team_map.json";
+
 export function normalizeTeam(name: string): string {
-    return name.toLowerCase().replace(/\s*\(women\)\s*/gi, " ").replace(/\s+/g, " ").trim();
+    const entry = (CANONICAL_MAP as any)[name.trim()];
+    if (entry) return String(entry.teamId);
+    
+    return name
+        .toLowerCase()
+        .replace(/\s*\(women\)\s*/gi, " ")
+        .replace(/\s+/g, " ")
+        .trim();
 }
 
 export function matchupKey(team1: string, team2: string): string {
-    return [normalizeTeam(team1), normalizeTeam(team2)].sort().join(" vs ");
+    const id1 = normalizeTeam(team1);
+    const id2 = normalizeTeam(team2);
+    
+    // Sort so key is stable: "id1_vs_id2"
+    return [id1, id2].sort().join("_vs_");
 }
 
 function asRecord(value: unknown): Record<string, unknown> | null {

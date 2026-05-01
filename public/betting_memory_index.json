@@ -1,252 +1,970 @@
 {
-  "Vladivostok (Women)-any": {
-    "wins": 3,
-    "losses": 8,
-    "total": 11
+  "timestamp": "2026-05-01T14:04:05.001Z",
+  "matchups": {
+    "131_vs_160": {
+      "label": "Norilsk (Women) vs Vladivostok (Women)",
+      "wins": 0,
+      "losses": 4,
+      "total": 4,
+      "lastResult": "Loss"
+    },
+    "139_vs_164": {
+      "label": "Plavsk vs Voronezh",
+      "wins": 5,
+      "losses": 3,
+      "total": 8,
+      "lastResult": "Loss"
+    },
+    "114_vs_127": {
+      "label": "Kaliningrad vs Moscow",
+      "wins": 3,
+      "losses": 3,
+      "total": 6,
+      "lastResult": "Loss"
+    },
+    "128_vs_131": {
+      "label": "Murino (Women) vs Norilsk (Women)",
+      "wins": 5,
+      "losses": 3,
+      "total": 8,
+      "lastResult": "Win"
+    },
+    "115_vs_160": {
+      "label": "Kaluga (Women) vs Vladivostok (Women)",
+      "wins": 3,
+      "losses": 3,
+      "total": 6,
+      "lastResult": "Loss"
+    },
+    "104_vs_156": {
+      "label": "Astrakhan vs Tver",
+      "wins": 5,
+      "losses": 0,
+      "total": 5,
+      "lastResult": "Win"
+    },
+    "112_vs_132": {
+      "label": "Izhevsk (Women) vs Novokuznetsk (Women)",
+      "wins": 5,
+      "losses": 6,
+      "total": 11,
+      "lastResult": "Win"
+    },
+    "107_vs_125": {
+      "label": "Bryansk (Women) vs Magnitogorsk (Women)",
+      "wins": 3,
+      "losses": 0,
+      "total": 3,
+      "lastResult": "Win"
+    },
+    "133_vs_148": {
+      "label": "Novosibirsk vs Sochi",
+      "wins": 8,
+      "losses": 1,
+      "total": 9,
+      "lastResult": "Win"
+    },
+    "108_vs_155": {
+      "label": "Cheboksary (Women) vs Tomsk (Women)",
+      "wins": 7,
+      "losses": 4,
+      "total": 11,
+      "lastResult": "Loss"
+    },
+    "116_vs_120": {
+      "label": "Kazan vs Krasnodar",
+      "wins": 2,
+      "losses": 1,
+      "total": 3,
+      "lastResult": "Win"
+    },
+    "153_vs_166": {
+      "label": "Tambov (Women) vs Yaroslavl (Women)",
+      "wins": 4,
+      "losses": 4,
+      "total": 8,
+      "lastResult": "Loss"
+    },
+    "155_vs_166": {
+      "label": "Tomsk (Women) vs Yaroslavl (Women)",
+      "wins": 4,
+      "losses": 1,
+      "total": 5,
+      "lastResult": "Loss"
+    },
+    "144_vs_157": {
+      "label": "Samara vs Tyumen",
+      "wins": 3,
+      "losses": 1,
+      "total": 4,
+      "lastResult": "Win"
+    },
+    "108_vs_153": {
+      "label": "Cheboksary (Women) vs Tambov (Women)",
+      "wins": 7,
+      "losses": 4,
+      "total": 11,
+      "lastResult": "Win"
+    },
+    "127_vs_139": {
+      "label": "Moscow vs Plavsk",
+      "wins": 2,
+      "losses": 0,
+      "total": 2,
+      "lastResult": "Win"
+    },
+    "114_vs_164": {
+      "label": "Kaliningrad vs Voronezh",
+      "wins": 2,
+      "losses": 1,
+      "total": 3,
+      "lastResult": "Loss"
+    },
+    "115_vs_128": {
+      "label": "Kaluga (Women) vs Murino (Women)",
+      "wins": 2,
+      "losses": 4,
+      "total": 6,
+      "lastResult": "Win"
+    },
+    "118_vs_138": {
+      "label": "Kirov vs Perm",
+      "wins": 2,
+      "losses": 2,
+      "total": 4,
+      "lastResult": "Loss"
+    },
+    "117_vs_154": {
+      "label": "Khimki (Women) vs Toliatti (Women)",
+      "wins": 1,
+      "losses": 1,
+      "total": 2,
+      "lastResult": "Loss"
+    },
+    "106_vs_109": {
+      "label": "Berezniki (Women) vs Ekaterinburg (Women)",
+      "wins": 1,
+      "losses": 1,
+      "total": 2,
+      "lastResult": "Win"
+    },
+    "129_vs_138": {
+      "label": "Murmansk vs Perm",
+      "wins": 0,
+      "losses": 2,
+      "total": 2,
+      "lastResult": "Loss"
+    },
+    "109_vs_117": {
+      "label": "Ekaterinburg (Women) vs Khimki (Women)",
+      "wins": 1,
+      "losses": 4,
+      "total": 5,
+      "lastResult": "Loss"
+    },
+    "118_vs_135": {
+      "label": "Kirov vs Orel",
+      "wins": 1,
+      "losses": 2,
+      "total": 3,
+      "lastResult": "Loss"
+    },
+    "152_vs_159": {
+      "label": "Syktyvkar vs Ukhta",
+      "wins": 2,
+      "losses": 1,
+      "total": 3,
+      "lastResult": "Win"
+    },
+    "122_vs_165": {
+      "label": "Kurgan vs Yakutsk",
+      "wins": 0,
+      "losses": 1,
+      "total": 1,
+      "lastResult": "Loss"
+    },
+    "142_vs_143": {
+      "label": "Ryazan vs Salavat",
+      "wins": 5,
+      "losses": 0,
+      "total": 5,
+      "lastResult": "Win"
+    },
+    "101_vs_126": {
+      "label": "Abakan vs Makhachkala",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "145_vs_147": {
+      "label": "Serov vs Smolensk",
+      "wins": 2,
+      "losses": 3,
+      "total": 5,
+      "lastResult": "Win"
+    },
+    "111_vs_150": {
+      "label": "Ivanovo (Women) vs Stary Oskol (Women)",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "143_vs_147": {
+      "label": "Salavat vs Smolensk",
+      "wins": 3,
+      "losses": 4,
+      "total": 7,
+      "lastResult": "Win"
+    },
+    "142_vs_145": {
+      "label": "Ryazan vs Serov",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "107_vs_112": {
+      "label": "Bryansk (Women) vs Izhevsk (Women)",
+      "wins": 5,
+      "losses": 2,
+      "total": 7,
+      "lastResult": "Loss"
+    },
+    "125_vs_132": {
+      "label": "Magnitogorsk (Women) vs Novokuznetsk (Women)",
+      "wins": 3,
+      "losses": 1,
+      "total": 4,
+      "lastResult": "Loss"
+    },
+    "112_vs_125": {
+      "label": "Izhevsk (Women) vs Magnitogorsk (Women)",
+      "wins": 3,
+      "losses": 2,
+      "total": 5,
+      "lastResult": "Win"
+    },
+    "152_vs_163": {
+      "label": "Syktyvkar vs Vorkuta",
+      "wins": 2,
+      "losses": 5,
+      "total": 7,
+      "lastResult": "Loss"
+    },
+    "134_vs_159": {
+      "label": "Omsk vs Ukhta",
+      "wins": 2,
+      "losses": 1,
+      "total": 3,
+      "lastResult": "Win"
+    },
+    "103_vs_124": {
+      "label": "Anapa vs Magadan",
+      "wins": 1,
+      "losses": 1,
+      "total": 2,
+      "lastResult": "Win"
+    },
+    "153_vs_155": {
+      "label": "Tambov (Women) vs Tomsk (Women)",
+      "wins": 2,
+      "losses": 2,
+      "total": 4,
+      "lastResult": "Win"
+    },
+    "108_vs_166": {
+      "label": "Cheboksary (Women) vs Yaroslavl (Women)",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "102_vs_165": {
+      "label": "Adler vs Yakutsk",
+      "wins": 2,
+      "losses": 1,
+      "total": 3,
+      "lastResult": "Win"
+    },
+    "102_vs_122": {
+      "label": "Adler vs Kurgan",
+      "wins": 1,
+      "losses": 2,
+      "total": 3,
+      "lastResult": "Loss"
+    },
+    "122_vs_151": {
+      "label": "Kurgan vs Surgut",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "102_vs_151": {
+      "label": "Adler vs Surgut",
+      "wins": 2,
+      "losses": 2,
+      "total": 4,
+      "lastResult": "Loss"
+    },
+    "114_vs_139": {
+      "label": "Kaliningrad vs Plavsk",
+      "wins": 3,
+      "losses": 0,
+      "total": 3,
+      "lastResult": "Win"
+    },
+    "110_vs_113": {
+      "label": "Gelendzhik vs Kachkanar",
+      "wins": 5,
+      "losses": 1,
+      "total": 6,
+      "lastResult": "Win"
+    },
+    "105_vs_133": {
+      "label": "Barnaul vs Novosibirsk",
+      "wins": 2,
+      "losses": 5,
+      "total": 7,
+      "lastResult": "Loss"
+    },
+    "113_vs_156": {
+      "label": "Kachkanar vs Tver",
+      "wins": 0,
+      "losses": 1,
+      "total": 1,
+      "lastResult": "Loss"
+    },
+    "116_vs_144": {
+      "label": "Kazan vs Samara",
+      "wins": 4,
+      "losses": 1,
+      "total": 5,
+      "lastResult": "Win"
+    },
+    "130_vs_161": {
+      "label": "Nizhny Novgorod vs Volgograd",
+      "wins": 3,
+      "losses": 0,
+      "total": 3,
+      "lastResult": "Win"
+    },
+    "127_vs_164": {
+      "label": "Moscow vs Voronezh",
+      "wins": 0,
+      "losses": 1,
+      "total": 1,
+      "lastResult": "Loss"
+    },
+    "115_vs_131": {
+      "label": "Kaluga (Women) vs Norilsk (Women)",
+      "wins": 3,
+      "losses": 1,
+      "total": 4,
+      "lastResult": "Win"
+    },
+    "104_vs_113": {
+      "label": "Astrakhan vs Kachkanar",
+      "wins": 0,
+      "losses": 3,
+      "total": 3,
+      "lastResult": "Loss"
+    },
+    "104_vs_110": {
+      "label": "Astrakhan vs Gelendzhik",
+      "wins": 6,
+      "losses": 2,
+      "total": 8,
+      "lastResult": "Win"
+    },
+    "133_vs_149": {
+      "label": "Novosibirsk vs St. Petersburg",
+      "wins": 0,
+      "losses": 2,
+      "total": 2,
+      "lastResult": "Loss"
+    },
+    "105_vs_148": {
+      "label": "Barnaul vs Sochi",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "107_vs_132": {
+      "label": "Bryansk (Women) vs Novokuznetsk (Women)",
+      "wins": 2,
+      "losses": 1,
+      "total": 3,
+      "lastResult": "Loss"
+    },
+    "148_vs_149": {
+      "label": "Sochi vs St. Petersburg",
+      "wins": 2,
+      "losses": 2,
+      "total": 4,
+      "lastResult": "Loss"
+    },
+    "120_vs_157": {
+      "label": "Krasnodar vs Tyumen",
+      "wins": 3,
+      "losses": 1,
+      "total": 4,
+      "lastResult": "Loss"
+    },
+    "141_vs_161": {
+      "label": "Rostov-on-Don vs Volgograd",
+      "wins": 4,
+      "losses": 1,
+      "total": 5,
+      "lastResult": "Win"
+    },
+    "129_vs_135": {
+      "label": "Murmansk vs Orel",
+      "wins": 1,
+      "losses": 1,
+      "total": 2,
+      "lastResult": "Win"
+    },
+    "106_vs_154": {
+      "label": "Berezniki (Women) vs Toliatti (Women)",
+      "wins": 0,
+      "losses": 1,
+      "total": 1,
+      "lastResult": "Loss"
+    },
+    "159_vs_163": {
+      "label": "Ukhta vs Vorkuta",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "106_vs_117": {
+      "label": "Berezniki (Women) vs Khimki (Women)",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "134_vs_163": {
+      "label": "Omsk vs Vorkuta",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "140_vs_158": {
+      "label": "Revda vs Ufa",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "128_vs_160": {
+      "label": "Murino (Women) vs Vladivostok (Women)",
+      "wins": 0,
+      "losses": 1,
+      "total": 1,
+      "lastResult": "Loss"
+    },
+    "120_vs_144": {
+      "label": "Krasnodar vs Samara",
+      "wins": 1,
+      "losses": 1,
+      "total": 2,
+      "lastResult": "Win"
+    },
+    "146_vs_162": {
+      "label": "Severodvinsk (Women) vs Vologda (Women)",
+      "wins": 2,
+      "losses": 2,
+      "total": 4,
+      "lastResult": "Loss"
+    },
+    "136_vs_162": {
+      "label": "Orenburg (Women) vs Vologda (Women)",
+      "wins": 0,
+      "losses": 1,
+      "total": 1,
+      "lastResult": "Loss"
+    },
+    "121_vs_141": {
+      "label": "Krasnoyarsk vs Rostov-on-Don",
+      "wins": 3,
+      "losses": 2,
+      "total": 5,
+      "lastResult": "Win"
+    },
+    "105_vs_149": {
+      "label": "Barnaul vs St. Petersburg",
+      "wins": 3,
+      "losses": 2,
+      "total": 5,
+      "lastResult": "Win"
+    },
+    "121_vs_130": {
+      "label": "Krasnoyarsk vs Nizhny Novgorod",
+      "wins": 1,
+      "losses": 1,
+      "total": 2,
+      "lastResult": "Win"
+    },
+    "121_vs_161": {
+      "label": "Krasnoyarsk vs Volgograd",
+      "wins": 3,
+      "losses": 1,
+      "total": 4,
+      "lastResult": "Loss"
+    },
+    "119_vs_137": {
+      "label": "Kostroma (Women) vs Penza (Women)",
+      "wins": 0,
+      "losses": 1,
+      "total": 1,
+      "lastResult": "Loss"
+    },
+    "137_vs_150": {
+      "label": "Penza (Women) vs Stary Oskol (Women)",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "135_vs_138": {
+      "label": "Orel vs Perm",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "130_vs_141": {
+      "label": "Nizhny Novgorod vs Rostov-on-Don",
+      "wins": 1,
+      "losses": 2,
+      "total": 3,
+      "lastResult": "Loss"
+    },
+    "110_vs_156": {
+      "label": "Gelendzhik vs Tver",
+      "wins": 0,
+      "losses": 1,
+      "total": 1,
+      "lastResult": "Loss"
+    },
+    "123_vs_136": {
+      "label": "Kursk (Women) vs Orenburg (Women)",
+      "wins": 1,
+      "losses": 0,
+      "total": 1,
+      "lastResult": "Win"
+    },
+    "116_vs_157": {
+      "label": "Kazan vs Tyumen",
+      "wins": 2,
+      "losses": 0,
+      "total": 2,
+      "lastResult": "Win"
+    }
   },
-  "Voronezh-any": {
-    "wins": 5,
-    "losses": 3,
-    "total": 8
-  },
-  "Kaliningrad-any": {
-    "wins": 8,
-    "losses": 4,
-    "total": 12
-  },
-  "Murino (Women)-any": {
-    "wins": 5,
-    "losses": 3,
-    "total": 8
-  },
-  "Tver-any": {
-    "wins": 5,
-    "losses": 2,
-    "total": 7
-  },
-  "Novokuznetsk (Women)-any": {
-    "wins": 10,
-    "losses": 8,
-    "total": 18
-  },
-  "Magnitogorsk (Women)-any": {
-    "wins": 6,
-    "losses": 2,
-    "total": 8
-  },
-  "Novosibirsk-any": {
-    "wins": 8,
-    "losses": 3,
-    "total": 11
-  },
-  "Cheboksary (Women)-any": {
-    "wins": 15,
-    "losses": 8,
-    "total": 23
-  },
-  "Krasnodar-any": {
-    "wins": 5,
-    "losses": 2,
-    "total": 7
-  },
-  "Tambov (Women)-any": {
-    "wins": 6,
-    "losses": 6,
-    "total": 12
-  },
-  "Yaroslavl (Women)-any": {
-    "wins": 4,
-    "losses": 1,
-    "total": 5
-  },
-  "Samara-any": {
-    "wins": 8,
-    "losses": 3,
-    "total": 11
-  },
-  "Moscow-any": {
-    "wins": 2,
-    "losses": 1,
-    "total": 3
-  },
-  "Kaluga (Women)-any": {
-    "wins": 5,
-    "losses": 5,
-    "total": 10
-  },
-  "Kirov-any": {
-    "wins": 3,
-    "losses": 4,
-    "total": 7
-  },
-  "Toliatti (Women)-any": {
-    "wins": 1,
-    "losses": 2,
-    "total": 3
-  },
-  "Berezniki (Women)-any": {
-    "wins": 2,
-    "losses": 1,
-    "total": 3
-  },
-  "Murmansk-any": {
-    "wins": 0,
-    "losses": 2,
-    "total": 2
-  },
-  "Ekaterinburg (Women)-any": {
-    "wins": 1,
-    "losses": 4,
-    "total": 5
-  },
-  "Ukhta-any": {
-    "wins": 3,
-    "losses": 1,
-    "total": 4
-  },
-  "Kurgan-any": {
-    "wins": 1,
-    "losses": 3,
-    "total": 4
-  },
-  "Ryazan-any": {
-    "wins": 6,
-    "losses": 0,
-    "total": 6
-  },
-  "Abakan-any": {
-    "wins": 1,
-    "losses": 0,
-    "total": 1
-  },
-  "Serov-any": {
-    "wins": 2,
-    "losses": 3,
-    "total": 5
-  },
-  "Ivanovo (Women)-any": {
-    "wins": 1,
-    "losses": 0,
-    "total": 1
-  },
-  "Salavat-any": {
-    "wins": 3,
-    "losses": 4,
-    "total": 7
-  },
-  "Bryansk (Women)-any": {
-    "wins": 5,
-    "losses": 2,
-    "total": 7
-  },
-  "Syktyvkar-any": {
-    "wins": 2,
-    "losses": 5,
-    "total": 7
-  },
-  "Omsk-any": {
-    "wins": 3,
-    "losses": 1,
-    "total": 4
-  },
-  "Magadan-any": {
-    "wins": 1,
-    "losses": 1,
-    "total": 2
-  },
-  "Adler-any": {
-    "wins": 0,
-    "losses": 1,
-    "total": 1
-  },
-  "Yakutsk-any": {
-    "wins": 2,
-    "losses": 0,
-    "total": 2
-  },
-  "Surgut-any": {
-    "wins": 3,
-    "losses": 2,
-    "total": 5
-  },
-  "Kachkanar-any": {
-    "wins": 5,
-    "losses": 4,
-    "total": 9
-  },
-  "Barnaul-any": {
-    "wins": 6,
-    "losses": 7,
-    "total": 13
-  },
-  "Nizhny Novgorod-any": {
-    "wins": 4,
-    "losses": 3,
-    "total": 7
-  },
-  "Gelendzhik-any": {
-    "wins": 6,
-    "losses": 2,
-    "total": 8
-  },
-  "St. Petersburg-any": {
-    "wins": 2,
-    "losses": 2,
-    "total": 4
-  },
-  "Volgograd-any": {
-    "wins": 7,
-    "losses": 2,
-    "total": 9
-  },
-  "Orel-any": {
-    "wins": 2,
-    "losses": 1,
-    "total": 3
-  },
-  "Revda-any": {
-    "wins": 1,
-    "losses": 0,
-    "total": 1
-  },
-  "Severodvinsk (Women)-any": {
-    "wins": 2,
-    "losses": 2,
-    "total": 4
-  },
-  "Orenburg (Women)-any": {
-    "wins": 0,
-    "losses": 1,
-    "total": 1
-  },
-  "Rostov-on-Don-any": {
-    "wins": 3,
-    "losses": 2,
-    "total": 5
-  },
-  "Kostroma (Women)-any": {
-    "wins": 0,
-    "losses": 1,
-    "total": 1
-  },
-  "Penza (Women)-any": {
-    "wins": 1,
-    "losses": 0,
-    "total": 1
-  },
-  "Krasnoyarsk-any": {
-    "wins": 1,
-    "losses": 0,
-    "total": 1
-  },
-  "Kursk (Women)-any": {
-    "wins": 1,
-    "losses": 0,
-    "total": 1
-  },
-  "Kazan-any": {
-    "wins": 2,
-    "losses": 0,
-    "total": 2
+  "teams": {
+    "101": {
+      "label": "Abakan",
+      "wins": 1,
+      "losses": 0,
+      "total": 1
+    },
+    "102": {
+      "label": "Adler",
+      "wins": 5,
+      "losses": 5,
+      "total": 10
+    },
+    "103": {
+      "label": "Anapa",
+      "wins": 1,
+      "losses": 1,
+      "total": 2
+    },
+    "104": {
+      "label": "Astrakhan",
+      "wins": 11,
+      "losses": 5,
+      "total": 16
+    },
+    "105": {
+      "label": "Barnaul",
+      "wins": 6,
+      "losses": 7,
+      "total": 13
+    },
+    "106": {
+      "label": "Berezniki (Women)",
+      "wins": 2,
+      "losses": 2,
+      "total": 4
+    },
+    "107": {
+      "label": "Bryansk (Women)",
+      "wins": 10,
+      "losses": 3,
+      "total": 13
+    },
+    "108": {
+      "label": "Cheboksary (Women)",
+      "wins": 15,
+      "losses": 8,
+      "total": 23
+    },
+    "109": {
+      "label": "Ekaterinburg (Women)",
+      "wins": 2,
+      "losses": 5,
+      "total": 7
+    },
+    "110": {
+      "label": "Gelendzhik",
+      "wins": 11,
+      "losses": 4,
+      "total": 15
+    },
+    "111": {
+      "label": "Ivanovo (Women)",
+      "wins": 1,
+      "losses": 0,
+      "total": 1
+    },
+    "112": {
+      "label": "Izhevsk (Women)",
+      "wins": 13,
+      "losses": 10,
+      "total": 23
+    },
+    "113": {
+      "label": "Kachkanar",
+      "wins": 5,
+      "losses": 5,
+      "total": 10
+    },
+    "114": {
+      "label": "Kaliningrad",
+      "wins": 8,
+      "losses": 4,
+      "total": 12
+    },
+    "115": {
+      "label": "Kaluga (Women)",
+      "wins": 8,
+      "losses": 8,
+      "total": 16
+    },
+    "116": {
+      "label": "Kazan",
+      "wins": 8,
+      "losses": 2,
+      "total": 10
+    },
+    "117": {
+      "label": "Khimki (Women)",
+      "wins": 3,
+      "losses": 5,
+      "total": 8
+    },
+    "118": {
+      "label": "Kirov",
+      "wins": 3,
+      "losses": 4,
+      "total": 7
+    },
+    "119": {
+      "label": "Kostroma (Women)",
+      "wins": 0,
+      "losses": 1,
+      "total": 1
+    },
+    "120": {
+      "label": "Krasnodar",
+      "wins": 6,
+      "losses": 3,
+      "total": 9
+    },
+    "121": {
+      "label": "Krasnoyarsk",
+      "wins": 7,
+      "losses": 4,
+      "total": 11
+    },
+    "122": {
+      "label": "Kurgan",
+      "wins": 2,
+      "losses": 3,
+      "total": 5
+    },
+    "123": {
+      "label": "Kursk (Women)",
+      "wins": 1,
+      "losses": 0,
+      "total": 1
+    },
+    "124": {
+      "label": "Magadan",
+      "wins": 1,
+      "losses": 1,
+      "total": 2
+    },
+    "125": {
+      "label": "Magnitogorsk (Women)",
+      "wins": 9,
+      "losses": 3,
+      "total": 12
+    },
+    "126": {
+      "label": "Makhachkala",
+      "wins": 1,
+      "losses": 0,
+      "total": 1
+    },
+    "127": {
+      "label": "Moscow",
+      "wins": 5,
+      "losses": 4,
+      "total": 9
+    },
+    "128": {
+      "label": "Murino (Women)",
+      "wins": 7,
+      "losses": 8,
+      "total": 15
+    },
+    "129": {
+      "label": "Murmansk",
+      "wins": 1,
+      "losses": 3,
+      "total": 4
+    },
+    "130": {
+      "label": "Nizhny Novgorod",
+      "wins": 5,
+      "losses": 3,
+      "total": 8
+    },
+    "131": {
+      "label": "Norilsk (Women)",
+      "wins": 8,
+      "losses": 8,
+      "total": 16
+    },
+    "132": {
+      "label": "Novokuznetsk (Women)",
+      "wins": 10,
+      "losses": 8,
+      "total": 18
+    },
+    "133": {
+      "label": "Novosibirsk",
+      "wins": 10,
+      "losses": 8,
+      "total": 18
+    },
+    "134": {
+      "label": "Omsk",
+      "wins": 3,
+      "losses": 1,
+      "total": 4
+    },
+    "135": {
+      "label": "Orel",
+      "wins": 3,
+      "losses": 3,
+      "total": 6
+    },
+    "136": {
+      "label": "Orenburg (Women)",
+      "wins": 1,
+      "losses": 1,
+      "total": 2
+    },
+    "137": {
+      "label": "Penza (Women)",
+      "wins": 1,
+      "losses": 1,
+      "total": 2
+    },
+    "138": {
+      "label": "Perm",
+      "wins": 3,
+      "losses": 4,
+      "total": 7
+    },
+    "139": {
+      "label": "Plavsk",
+      "wins": 10,
+      "losses": 3,
+      "total": 13
+    },
+    "140": {
+      "label": "Revda",
+      "wins": 1,
+      "losses": 0,
+      "total": 1
+    },
+    "141": {
+      "label": "Rostov-on-Don",
+      "wins": 8,
+      "losses": 5,
+      "total": 13
+    },
+    "142": {
+      "label": "Ryazan",
+      "wins": 6,
+      "losses": 0,
+      "total": 6
+    },
+    "143": {
+      "label": "Salavat",
+      "wins": 8,
+      "losses": 4,
+      "total": 12
+    },
+    "144": {
+      "label": "Samara",
+      "wins": 8,
+      "losses": 3,
+      "total": 11
+    },
+    "145": {
+      "label": "Serov",
+      "wins": 3,
+      "losses": 3,
+      "total": 6
+    },
+    "146": {
+      "label": "Severodvinsk (Women)",
+      "wins": 2,
+      "losses": 2,
+      "total": 4
+    },
+    "147": {
+      "label": "Smolensk",
+      "wins": 5,
+      "losses": 7,
+      "total": 12
+    },
+    "148": {
+      "label": "Sochi",
+      "wins": 11,
+      "losses": 3,
+      "total": 14
+    },
+    "149": {
+      "label": "St. Petersburg",
+      "wins": 5,
+      "losses": 6,
+      "total": 11
+    },
+    "150": {
+      "label": "Stary Oskol (Women)",
+      "wins": 2,
+      "losses": 0,
+      "total": 2
+    },
+    "151": {
+      "label": "Surgut",
+      "wins": 3,
+      "losses": 2,
+      "total": 5
+    },
+    "152": {
+      "label": "Syktyvkar",
+      "wins": 4,
+      "losses": 6,
+      "total": 10
+    },
+    "153": {
+      "label": "Tambov (Women)",
+      "wins": 13,
+      "losses": 10,
+      "total": 23
+    },
+    "154": {
+      "label": "Toliatti (Women)",
+      "wins": 1,
+      "losses": 2,
+      "total": 3
+    },
+    "155": {
+      "label": "Tomsk (Women)",
+      "wins": 13,
+      "losses": 7,
+      "total": 20
+    },
+    "156": {
+      "label": "Tver",
+      "wins": 5,
+      "losses": 2,
+      "total": 7
+    },
+    "157": {
+      "label": "Tyumen",
+      "wins": 8,
+      "losses": 2,
+      "total": 10
+    },
+    "158": {
+      "label": "Ufa",
+      "wins": 1,
+      "losses": 0,
+      "total": 1
+    },
+    "159": {
+      "label": "Ukhta",
+      "wins": 5,
+      "losses": 2,
+      "total": 7
+    },
+    "160": {
+      "label": "Vladivostok (Women)",
+      "wins": 3,
+      "losses": 8,
+      "total": 11
+    },
+    "161": {
+      "label": "Volgograd",
+      "wins": 10,
+      "losses": 2,
+      "total": 12
+    },
+    "162": {
+      "label": "Vologda (Women)",
+      "wins": 2,
+      "losses": 3,
+      "total": 5
+    },
+    "163": {
+      "label": "Vorkuta",
+      "wins": 4,
+      "losses": 5,
+      "total": 9
+    },
+    "164": {
+      "label": "Voronezh",
+      "wins": 7,
+      "losses": 5,
+      "total": 12
+    },
+    "165": {
+      "label": "Yakutsk",
+      "wins": 2,
+      "losses": 2,
+      "total": 4
+    },
+    "166": {
+      "label": "Yaroslavl (Women)",
+      "wins": 9,
+      "losses": 5,
+      "total": 14
+    }
   }
 }

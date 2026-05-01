@@ -167,7 +167,12 @@ function isTrulyLiveRow(item: Record<string, unknown>): boolean {
     ).getTime();
     const dayDiff = Math.round((nowStart - parsedStart) / 86_400_000);
 
+    // Hard block if not today or yesterday
     if (Math.abs(dayDiff) > 1) return false;
+
+    // Hard block if not the same year or adjacent month (safety)
+    if (parsedLocalDate.getFullYear() !== now.getFullYear()) return false;
+    if (Math.abs(parsedLocalDate.getMonth() - now.getMonth()) > 1) return false;
 
     const liveIndicators = ["online", "live", "current", "progress", "прям", "идет", "онлайн", "в игре"];  
 
