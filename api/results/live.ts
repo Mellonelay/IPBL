@@ -8,6 +8,11 @@ import { parseCalendarItems } from "../admin/server-lib/calendar-normalize.js";
  */
 export default async function handler(_req: VercelRequest, res: VercelResponse) {
     try {
+        // Ensure no caching for live data
+        res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+        res.setHeader("Pragma", "no-cache");
+        res.setHeader("Expires", "0");
+
         const allGames = [];
         const seenIds = new Set<number>();
 
