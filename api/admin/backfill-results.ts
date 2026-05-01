@@ -32,7 +32,9 @@ async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
       const results = [];
       for (const tag of RESULTS_SYNC_TAGS) {
         try {
+          console.log(`Ingesting ${tag}...`);
           const result = await writeResultsMonthToKv({ year, month, divisionTag: tag });
+          console.log(`  Done: ${result.gamesIngested} games.`);
           results.push(result);
         } catch (e: any) {
           console.error(`Failed backfill for ${tag}: ${e.message}`);
