@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { RESULTS_SYNC_TAGS } from "./server-lib/results-sync-constants.js";
 
 export const config = { maxDuration: 300 };
 
@@ -24,7 +25,23 @@ async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
   }
 
   try {
-    const { year, month, division } = req.body;
+    const { year, month, division, allApprovedDivisions } = req.body;
+
+    if (allApprovedDivisions) {
+      console.log(`Starting bulk backfill for ${year}-${month}`);
+      const results = [];
+      for (const tag of RESULTS_SYNC_TAGS) {
+        try {
+          const result = await writeResultsMonthToKv({ year, month, divisionTag: tag });
+          results.push(result);
+        } catch (e: any) {
+          console.error(`Failed backfill for ${tag}: ${e.message}`);
+        }
+      }
+      res.status(200).json({ ok: true, results });
+      return;
+    }
+
     const result = await writeResultsMonthToKv({ year, month, divisionTag: division });
     res.status(200).json({ ok: true, ...result });
   } catch (e: any) {
