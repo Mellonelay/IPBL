@@ -9,10 +9,11 @@ export const RESULTS_SYNC_TAGS = [
   "ipbl-66-m-pro-c",
   "ipbl-66-m-pro-d",
   "ipbl-66-m-pro-g",
-  "ipbl-66-m-pro-j",
   "ipbl-66-w-pro-a",
   "ipbl-66-w-pro-b",
-  "ipbl-66-w-pro-c", "ipbl-66-w-pro-d", "ipbl-66-w-pro-k",
+  "ipbl-66-w-pro-c",
+  "ipbl-66-w-pro-d",
+  "ipbl-66-w-pro-k",
 ] as const;
 
 export const RESULTS_LANG = "ru";
@@ -30,17 +31,18 @@ export function resultsKvKey(year: number, month1to12: number, divisionTag: stri
 
 export const SYNC_CURSOR_KEY = "ipbl:sync:cursor";
 
-/** Duplicated from `src/config/divisions.ts` â€” keep serverless graph free of `src/`. */
+/** Duplicated from `src/config/divisions.ts` — keep serverless graph free of `src/`. */
 const DIVISION_ROWS: { label: string; tag: string }[] = [
   { label: "Pro Men A", tag: "ipbl-66-m-pro-a" },
   { label: "Pro Men B", tag: "ipbl-66-m-pro-b" },
   { label: "Pro Men C", tag: "ipbl-66-m-pro-c" },
   { label: "Pro Men D", tag: "ipbl-66-m-pro-d" },
   { label: "Pro Men G", tag: "ipbl-66-m-pro-g" },
-  { label: "Pro Men J", tag: "ipbl-66-m-pro-j" },
   { label: "Pro Women A", tag: "ipbl-66-w-pro-a" },
   { label: "Pro Women B", tag: "ipbl-66-w-pro-b" },
   { label: "Pro Women C", tag: "ipbl-66-w-pro-c" },
+  { label: "Pro Women D", tag: "ipbl-66-w-pro-d" },
+  { label: "Pro Women K", tag: "ipbl-66-w-pro-k" },
 ];
 
 export const DIVISION_LABEL_BY_TAG = Object.fromEntries(

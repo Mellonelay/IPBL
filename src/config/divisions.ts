@@ -12,10 +12,11 @@ export const LIVE_DIVISION_TAGS = [
     "ipbl-66-m-pro-c",
     "ipbl-66-m-pro-d",
     "ipbl-66-m-pro-g",
-    "ipbl-66-m-pro-j",
     "ipbl-66-w-pro-a",
     "ipbl-66-w-pro-b",
     "ipbl-66-w-pro-c",
+    "ipbl-66-w-pro-d",
+    "ipbl-66-w-pro-k",
 ] as const;
 
 export const DIVISIONS: DivisionConfig[] = [
@@ -24,10 +25,11 @@ export const DIVISIONS: DivisionConfig[] = [
     { label: "Pro Men C", tag: "ipbl-66-m-pro-c", group: "men" },
     { label: "Pro Men D", tag: "ipbl-66-m-pro-d", group: "men" },
     { label: "Pro Men G", tag: "ipbl-66-m-pro-g", group: "men" },
-    { label: "Pro Men J", tag: "ipbl-66-m-pro-j", group: "men" },
     { label: "Pro Women A", tag: "ipbl-66-w-pro-a", group: "women" },
     { label: "Pro Women B", tag: "ipbl-66-w-pro-b", group: "women" },
     { label: "Pro Women C", tag: "ipbl-66-w-pro-c", group: "women" },
+    { label: "Pro Women D", tag: "ipbl-66-w-pro-d", group: "women" },
+    { label: "Pro Women K", tag: "ipbl-66-w-pro-k", group: "women" },
 ];
 
 export const DIVISION_LABEL_BY_TAG = Object.fromEntries(
