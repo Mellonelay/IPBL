@@ -409,7 +409,6 @@ function App() {
     } finally {
       setLiveLoading(false);
     }
-    }
   }, []);
 
   const loadResults = useCallback(async () => {
