@@ -1,0 +1,266 @@
+{
+  "Abakan": {
+    "teamId": 101,
+    "shortName": "Abakan"
+  },
+  "Adler": {
+    "teamId": 102,
+    "shortName": "Adler"
+  },
+  "Anapa": {
+    "teamId": 103,
+    "shortName": "Anapa"
+  },
+  "Astrakhan": {
+    "teamId": 104,
+    "shortName": "Astrakhan"
+  },
+  "Barnaul": {
+    "teamId": 105,
+    "shortName": "Barnaul"
+  },
+  "Berezniki (Women)": {
+    "teamId": 106,
+    "shortName": "Berezniki (Women)"
+  },
+  "Bryansk (Women)": {
+    "teamId": 107,
+    "shortName": "Bryansk (Women)"
+  },
+  "Cheboksary (Women)": {
+    "teamId": 108,
+    "shortName": "Cheboksary (Women)"
+  },
+  "Ekaterinburg (Women)": {
+    "teamId": 109,
+    "shortName": "Ekaterinburg (Women)"
+  },
+  "Gelendzhik": {
+    "teamId": 110,
+    "shortName": "Gelendzhik"
+  },
+  "Ivanovo (Women)": {
+    "teamId": 111,
+    "shortName": "Ivanovo (Women)"
+  },
+  "Izhevsk (Women)": {
+    "teamId": 112,
+    "shortName": "Izhevsk (Women)"
+  },
+  "Kachkanar": {
+    "teamId": 113,
+    "shortName": "Kachkanar"
+  },
+  "Kaliningrad": {
+    "teamId": 114,
+    "shortName": "Kaliningrad"
+  },
+  "Kaluga (Women)": {
+    "teamId": 115,
+    "shortName": "Kaluga (Women)"
+  },
+  "Kazan": {
+    "teamId": 116,
+    "shortName": "Kazan"
+  },
+  "Khimki (Women)": {
+    "teamId": 117,
+    "shortName": "Khimki (Women)"
+  },
+  "Kirov": {
+    "teamId": 118,
+    "shortName": "Kirov"
+  },
+  "Kostroma (Women)": {
+    "teamId": 119,
+    "shortName": "Kostroma (Women)"
+  },
+  "Krasnodar": {
+    "teamId": 120,
+    "shortName": "Krasnodar"
+  },
+  "Krasnoyarsk": {
+    "teamId": 121,
+    "shortName": "Krasnoyarsk"
+  },
+  "Kurgan": {
+    "teamId": 122,
+    "shortName": "Kurgan"
+  },
+  "Kursk (Women)": {
+    "teamId": 123,
+    "shortName": "Kursk (Women)"
+  },
+  "Magadan": {
+    "teamId": 124,
+    "shortName": "Magadan"
+  },
+  "Magnitogorsk (Women)": {
+    "teamId": 125,
+    "shortName": "Magnitogorsk (Women)"
+  },
+  "Makhachkala": {
+    "teamId": 126,
+    "shortName": "Makhachkala"
+  },
+  "Moscow": {
+    "teamId": 127,
+    "shortName": "Moscow"
+  },
+  "Murino (Women)": {
+    "teamId": 128,
+    "shortName": "Murino (Women)"
+  },
+  "Murmansk": {
+    "teamId": 129,
+    "shortName": "Murmansk"
+  },
+  "Nizhny Novgorod": {
+    "teamId": 130,
+    "shortName": "Nizhny Novgorod"
+  },
+  "Norilsk (Women)": {
+    "teamId": 131,
+    "shortName": "Norilsk (Women)"
+  },
+  "Novokuznetsk (Women)": {
+    "teamId": 132,
+    "shortName": "Novokuznetsk (Women)"
+  },
+  "Novosibirsk": {
+    "teamId": 133,
+    "shortName": "Novosibirsk"
+  },
+  "Omsk": {
+    "teamId": 134,
+    "shortName": "Omsk"
+  },
+  "Orel": {
+    "teamId": 135,
+    "shortName": "Orel"
+  },
+  "Orenburg (Women)": {
+    "teamId": 136,
+    "shortName": "Orenburg (Women)"
+  },
+  "Penza (Women)": {
+    "teamId": 137,
+    "shortName": "Penza (Women)"
+  },
+  "Perm": {
+    "teamId": 138,
+    "shortName": "Perm"
+  },
+  "Plavsk": {
+    "teamId": 139,
+    "shortName": "Plavsk"
+  },
+  "Revda": {
+    "teamId": 140,
+    "shortName": "Revda"
+  },
+  "Rostov-on-Don": {
+    "teamId": 141,
+    "shortName": "Rostov-on-Don"
+  },
+  "Ryazan": {
+    "teamId": 142,
+    "shortName": "Ryazan"
+  },
+  "Salavat": {
+    "teamId": 143,
+    "shortName": "Salavat"
+  },
+  "Samara": {
+    "teamId": 144,
+    "shortName": "Samara"
+  },
+  "Serov": {
+    "teamId": 145,
+    "shortName": "Serov"
+  },
+  "Severodvinsk (Women)": {
+    "teamId": 146,
+    "shortName": "Severodvinsk (Women)"
+  },
+  "Smolensk": {
+    "teamId": 147,
+    "shortName": "Smolensk"
+  },
+  "Sochi": {
+    "teamId": 148,
+    "shortName": "Sochi"
+  },
+  "St. Petersburg": {
+    "teamId": 149,
+    "shortName": "St. Petersburg"
+  },
+  "Stary Oskol (Women)": {
+    "teamId": 150,
+    "shortName": "Stary Oskol (Women)"
+  },
+  "Surgut": {
+    "teamId": 151,
+    "shortName": "Surgut"
+  },
+  "Syktyvkar": {
+    "teamId": 152,
+    "shortName": "Syktyvkar"
+  },
+  "Tambov (Women)": {
+    "teamId": 153,
+    "shortName": "Tambov (Women)"
+  },
+  "Toliatti (Women)": {
+    "teamId": 154,
+    "shortName": "Toliatti (Women)"
+  },
+  "Tomsk (Women)": {
+    "teamId": 155,
+    "shortName": "Tomsk (Women)"
+  },
+  "Tver": {
+    "teamId": 156,
+    "shortName": "Tver"
+  },
+  "Tyumen": {
+    "teamId": 157,
+    "shortName": "Tyumen"
+  },
+  "Ufa": {
+    "teamId": 158,
+    "shortName": "Ufa"
+  },
+  "Ukhta": {
+    "teamId": 159,
+    "shortName": "Ukhta"
+  },
+  "Vladivostok (Women)": {
+    "teamId": 160,
+    "shortName": "Vladivostok (Women)"
+  },
+  "Volgograd": {
+    "teamId": 161,
+    "shortName": "Volgograd"
+  },
+  "Vologda (Women)": {
+    "teamId": 162,
+    "shortName": "Vologda (Women)"
+  },
+  "Vorkuta": {
+    "teamId": 163,
+    "shortName": "Vorkuta"
+  },
+  "Voronezh": {
+    "teamId": 164,
+    "shortName": "Voronezh"
+  },
+  "Yakutsk": {
+    "teamId": 165,
+    "shortName": "Yakutsk"
+  },
+  "Yaroslavl (Women)": {
+    "teamId": 166,
+    "shortName": "Yaroslavl (Women)"
+  }
+}

@@ -36,25 +36,47 @@ type RawTeam = {
     name?: string;
 };
 
-type RawGame = {
-    id?: number;
-    gameStatus?: string;
-    score1?: number;
-    score2?: number;
-    score?: string;
-    fullScore?: string | null;
-    localDate?: string;
-    localTime?: string;
-    period?: number | null;
-    timeToGo?: string | null;
+/**
+ * Standardizes team names for better matching.
+ */
+function cleanTeamName(name: string): string {
+    return name
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, " ")
+        .replace(/\(women\)$/i, "")
+        .trim();
+}
+
+/**
+ * Temporary hardcoded fallback mapping for common teams.
+ * In the future, this logic should preferably use the canonical mapping from 
+ * src/config/canonical_team_map.json if accessible.
+ */
+const FALLBACK_MAP: Record<string, { teamId: number; shortName: string }> = {
+    // "canonical name": { teamId: 123, shortName: "CAN" }
 };
 
 function teamRef(t: RawTeam | undefined): TeamRef {
     if (!t) return { teamId: 0, shortName: "?", name: "?" };
+    
+    const rawName = String(t.name ?? t.shortName ?? "?");
+    const cleaned = cleanTeamName(rawName);
+    
+    // Check fallback map
+    const mapped = FALLBACK_MAP[cleaned];
+    if (mapped) {
+        return {
+            teamId: mapped.teamId,
+            shortName: mapped.shortName,
+            name: rawName,
+        };
+    }
+
     return {
         teamId: Number(t.teamId ?? 0),
         shortName: String(t.shortName ?? t.name ?? "?"),
-        name: String(t.name ?? "?"),
+        name: rawName,
     };
 }
 
