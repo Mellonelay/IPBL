@@ -95,6 +95,58 @@ function isTrulyLiveRow(item: Record<string, unknown>): boolean {
     ];
     if (deadIndicators.some((needle) => candidates.includes(needle))) return false;
 
+    // Explicitly check for finished status even if not in deadIndicators
+    if (g?.gameStatus === "Finished" || st?.id === "Finished") return false;
+
+    // Date Strictness: ONLY TODAY OR YESTERDAY
+    const parsedLocalDate = (() => {
+        const raw = String(g?.localDate ?? "").trim();
+        if (!raw) return null;
+        const datePart = raw.split("T")[0].split(" ")[0];
+
+        if (/^\d{4}-\d{2}-\d{2}$/.test(datePart)) {
+            const [y, m, d] = datePart.split("-").map((p) => Number.parseInt(p, 10));
+            if (![y, m, d].every(Number.isFinite)) return null;
+            return new Date(y, m - 1, d);
+        }
+
+        let match = datePart.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+        if (match) {
+            const [, dd, mm, yyyy] = match;
+            const day = Number.parseInt(dd, 10);
+            const month = Number.parseInt(mm, 10);
+            const year = Number.parseInt(yyyy, 10);
+            if (![day, month, year].every(Number.isFinite)) return null;
+            return new Date(year, month - 1, day);
+        }
+
+        match = datePart.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+        if (match) {
+            const [, dd, mm, yyyy] = match;
+            const day = Number.parseInt(dd, 10);
+            const month = Number.parseInt(mm, 10);
+            const year = Number.parseInt(yyyy, 10);
+            if (![day, month, year].every(Number.isFinite)) return null;
+            return new Date(year, month - 1, day);
+        }
+
+        const asDate = new Date(datePart);
+        if (Number.isNaN(asDate.getTime())) return null;
+        return asDate;
+    })();
+
+    if (!parsedLocalDate) return false;
+    const now = new Date();
+    const nowStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+    const parsedStart = new Date(
+        parsedLocalDate.getFullYear(),
+        parsedLocalDate.getMonth(),
+        parsedLocalDate.getDate()
+    ).getTime();
+    const dayDiff = Math.round((nowStart - parsedStart) / 86_400_000);
+
+    if (Math.abs(dayDiff) > 1) return false;
+
     const liveIndicators = ["online", "live", "current", "progress", "прям", "идет", "онлайн", "в игре"];  
 
     const hasLiveIndicator = liveIndicators.some((needle) => candidates.includes(needle));
