@@ -281,3 +281,15 @@ export function parseTeamHistory(raw: unknown, tag: string): TeamHistoryGame[] {
     return out;
 }
 
+export function computeH2H(games: unknown[] = [], teamA?: string, teamB?: string) {
+  const rows = Array.isArray(games) ? games : [];
+  if (!teamA || !teamB) return [];
+  return rows.filter((game) => {
+    if (!game || typeof game !== "object") return false;
+    const record = game as Record<string, unknown>;
+    const names = [record.homeTeam, record.awayTeam, record.home, record.away, record.teamA, record.teamB]
+      .filter((value): value is string => typeof value === "string")
+      .map((value) => value.toLowerCase());
+    return names.includes(teamA.toLowerCase()) && names.includes(teamB.toLowerCase());
+  });
+}

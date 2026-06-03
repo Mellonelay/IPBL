@@ -16,18 +16,19 @@ type CalendarScriptEntry = {
 
 export type ResultsCalendarMap = Record<string, CalendarScriptEntry[]>;
 
-const MARCH_START = new Date("2026-03-01T00:00:00Z");
-const MARCH_END = new Date("2026-03-31T00:00:00Z");
+const BACKFILL_START = new Date("2026-05-01T00:00:00Z");
+const BACKFILL_END = new Date("2026-06-01T00:00:00Z");
 const INCLUDED_TAGS = new Set([
     "ipbl-66-m-pro-a",
     "ipbl-66-m-pro-b",
     "ipbl-66-m-pro-c",
     "ipbl-66-m-pro-d",
     "ipbl-66-m-pro-g",
-    "ipbl-66-m-pro-j",
     "ipbl-66-w-pro-a",
     "ipbl-66-w-pro-b",
     "ipbl-66-w-pro-c",
+    "ipbl-66-w-pro-g",
+    "ipbl-66-w-pro-k",
 ]);
 
 function formatApiDate(day: Date): string {
@@ -66,8 +67,8 @@ export async function fetchResultsCalendar(baseUrl = "/api/ipbl"): Promise<Resul
     const calendar: ResultsCalendarMap = {};
 
     for (
-        let cursor = new Date(MARCH_START);
-        cursor.getTime() <= MARCH_END.getTime();
+        let cursor = new Date(BACKFILL_START);
+        cursor.getTime() <= BACKFILL_END.getTime();
         cursor.setUTCDate(cursor.getUTCDate() + 1)
     ) {
         const dateKey = formatIsoDate(cursor);
