@@ -3,7 +3,7 @@ export type ResultStateKind =
   | "confirmed_empty"
   | "source_unavailable"
   | "division_inactive"
-  | "historical_unverified"
+  | "historical_unverified" | "pending_backfill"
   | "unverified";
 
 export type DivisionDayResultState<TMatch = unknown> =
@@ -11,7 +11,7 @@ export type DivisionDayResultState<TMatch = unknown> =
   | { kind: "confirmed_empty"; divisionId: string; date: string; source: string; checkedAt: string }
   | { kind: "source_unavailable"; divisionId: string; date: string; reason: string }
   | { kind: "division_inactive"; divisionId: string; date: string; reason: "inactive_or_not_currently_listed" }
-  | { kind: "historical_unverified"; divisionId: string; date: string; reason: "no_confirmed_historical_source" }
+  | { kind: "historical_unverified" | "pending_backfill"; divisionId: string; date: string; reason: "no_confirmed_historical_source" }
   | { kind: "unverified"; divisionId: string; date: string; reason: string };
 
 export function loadedResultState<TMatch>(args: { divisionId: string; date: string; matches: TMatch[]; source: string }): DivisionDayResultState<TMatch> {
@@ -23,7 +23,7 @@ export function confirmedEmptyResultState(args: { divisionId: string; date: stri
 }
 
 export function historicalUnverifiedResultState(divisionId: string, date: string): DivisionDayResultState<never> {
-  return { kind: "historical_unverified", divisionId, date, reason: "no_confirmed_historical_source" };
+  return { kind: "historical_unverified" | "pending_backfill", divisionId, date, reason: "no_confirmed_historical_source" };
 }
 
 export function sourceUnavailableResultState(divisionId: string, date: string, reason: string): DivisionDayResultState<never> {
@@ -52,7 +52,7 @@ export function describeResultState<TMatch>(state: DivisionDayResultState<TMatch
       return "Source unavailable";
     case "division_inactive":
       return "Division not currently listed";
-    case "historical_unverified":
+    case "historical_unverified" | "pending_backfill":
       return "Historical data unverified";
     case "unverified":
       return "Result state unverified";
