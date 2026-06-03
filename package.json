@@ -14,7 +14,7 @@
     "audit:teams": "node scripts/audit-teams.mjs",
     "analyze:performance": "node scripts/analyze-performance.mjs",
     "build:memory": "node scripts/build-bet-memory.mjs",
-    "test:ipbl-source": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/division-discovery.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/variable-match-count.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/historical-coverage.test.ts"
+    "test:ipbl-source": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/division-discovery.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/variable-match-count.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/historical-coverage.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/live-source.test.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.34.0",
