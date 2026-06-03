@@ -33,6 +33,14 @@ import {
   type CalendarGridMap,
 } from "./results/calendar";
 
+
+function safeSplit(value: unknown, delimiter: string): string[] {
+  return typeof value === 'string' ? safeSplit(value, delimiter) : [];
+}
+
+function safeText(value: unknown, fallback = ''): string {
+  return typeof value === 'string' && value.trim() ? value : fallback;
+}
 type TabKey = "live" | "results" | "betting";
 
 type LiveInsight = {
@@ -178,6 +186,25 @@ function LiveCard({
   );
 }
 
+
+function normalizeLiveGameForUi(game: any) {
+  const homeTeam = safeText(game?.homeTeam ?? game?.home ?? game?.team1 ?? game?.O1, 'Home');
+  const awayTeam = safeText(game?.awayTeam ?? game?.away ?? game?.team2 ?? game?.O2, 'Away');
+  const division = safeText(game?.divisionTag ?? game?.division ?? game?.divisionLabel, 'ipbl-live');
+  return {
+    ...game,
+    id: game?.id ?? game?.gameId ?? game?.I ?? `${homeTeam}-${awayTeam}`,
+    gameId: game?.gameId ?? game?.id ?? game?.I,
+    homeTeam,
+    awayTeam,
+    division,
+    divisionTag: game?.divisionTag ?? division,
+    homeScore: game?.homeScore ?? game?.score1 ?? game?.SC?.FS?.S1 ?? null,
+    awayScore: game?.awayScore ?? game?.score2 ?? game?.SC?.FS?.S2 ?? null,
+    currentPeriod: game?.currentPeriod ?? game?.period ?? game?.SC?.CP ?? null,
+  };
+}
+
 function App() {
   const [activeTab, setActiveTab] = useState<TabKey>("results");
   const [liveGames, setLiveGames] = useState<ScheduleGame[]>([]);
@@ -238,7 +265,7 @@ function App() {
   const selectedResultsKey = `${selectedMonthKey}|${selectedResultsDivisionTag}`;
 
   const onSelectMonthKey = useCallback((value: string) => {
-    const parts = value.split("-").map((p) => Number.parseInt(p, 10));
+    const parts = safeSplit(value, "-").map((p) => Number.parseInt(p, 10));
     if (parts.length !== 2 || !Number.isFinite(parts[0]) || !Number.isFinite(parts[1])) return;
     const nextYear = parts[0];
     const nextMonthIndex = parts[1] - 1;
@@ -251,7 +278,7 @@ function App() {
 
   const onJumpDateChange = useCallback((value: string) => {
     setJumpDate(value);
-    const parts = value.split("-").map((p) => Number.parseInt(p, 10));
+    const parts = safeSplit(value, "-").map((p) => Number.parseInt(p, 10));
     if (parts.length !== 3 || !Number.isFinite(parts[0]) || !Number.isFinite(parts[1])) return;
     setSelectedResultsYear(parts[0]);
     setSelectedResultsMonthIndex(parts[1] - 1);
@@ -336,7 +363,7 @@ function App() {
     if (tab === "results" || tab === "live") setActiveTab(tab);
     if (date) {
       setJumpDate(date);
-      const parts = date.split("-").map((p) => Number.parseInt(p, 10));
+      const parts = safeSplit(date, "-").map((p) => Number.parseInt(p, 10));
       if (parts.length === 3 && Number.isFinite(parts[0]) && Number.isFinite(parts[1])) {
         setSelectedResultsYear(parts[0]);
         setSelectedResultsMonthIndex(parts[1] - 1);
@@ -355,7 +382,7 @@ function App() {
       if (!res.ok) throw new Error(`Live API error: ${res.status}`);
       const body = (await res.json()) as { games: ScheduleGame[]; status: any };
       const games = body.games || [];
-      
+
       setLiveGames(games);
 
       const insights = await Promise.all(
@@ -458,7 +485,7 @@ function App() {
   // Keep jump date inside the selected month.
   useEffect(() => {
     const mm = String(selectedResultsMonthIndex + 1).padStart(2, "0");
-    const day = jumpDate.split("-")[2] ? Number.parseInt(jumpDate.split("-")[2], 10) : 1;
+    const day = safeSplit(jumpDate, "-")[2] ? safeSplit(Number.parseInt(jumpDate, "-")[2], 10) : 1;
     const maxDay = new Date(selectedResultsYear, selectedResultsMonthIndex + 1, 0).getDate();
     const safeDay = Number.isFinite(day) ? Math.min(maxDay, Math.max(1, day)) : 1;
     const nextJump = `${selectedResultsYear}-${mm}-${String(safeDay).padStart(2, "0")}`;
