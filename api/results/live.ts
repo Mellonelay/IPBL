@@ -15,10 +15,6 @@ type LiveGame = {
 
 const SOURCE_URL = 'https://1xlite-041469.top/service-api/LiveFeed/GetSportsShortZip?sports=3,40&champs=2496666&lng=en&gr=830&country=126&virtualSports=true&groupChamps=true';
 
-function asArray(v: unknown): any[] {
-  return Array.isArray(v) ? v : [];
-}
-
 function pickString(obj: any, keys: string[]): string | null {
   for (const k of keys) {
     const v = obj?.[k];
@@ -37,6 +33,25 @@ function pickNumber(obj: any, keys: string[]): number | null {
   return null;
 }
 
+function pickScore(item: any, side: 'home' | 'away'): number | null {
+  const directKeys = side === 'home'
+    ? ['SC1', 'S1', 'homeScore', 'score1', 'Score1']
+    : ['SC2', 'S2', 'awayScore', 'score2', 'Score2'];
+  const direct = pickNumber(item, directKeys);
+  if (direct !== null) return direct;
+  const fullScore = item?.SC?.FS;
+  const nested = side === 'home' ? fullScore?.S1 : fullScore?.S2;
+  if (typeof nested === 'number' && Number.isFinite(nested)) return nested;
+  if (typeof nested === 'string' && nested.trim() !== '' && Number.isFinite(Number(nested))) return Number(nested);
+  return null;
+}
+
+function pickCurrentPeriod(item: any): string | null {
+  return pickString(item, ['P', 'Period', 'currentPeriod', 'period'])
+    ?? pickString(item?.SC, ['CP', 'CPS', 'S', 'TS'])
+    ?? null;
+}
+
 function walk(value: any, out: any[] = []): any[] {
   if (!value || typeof value !== 'object') return out;
   if (Array.isArray(value)) {
@@ -46,8 +61,8 @@ function walk(value: any, out: any[] = []): any[] {
   const id = pickString(value, ['I', 'Id', 'id', 'gameId', 'GameId', 'CI']);
   const home = pickString(value, ['O1', 'Home', 'home', 'homeTeam', 'Team1', 'T1', 'Name1']);
   const away = pickString(value, ['O2', 'Away', 'away', 'awayTeam', 'Team2', 'T2', 'Name2']);
-  const s1 = pickNumber(value, ['SC1', 'S1', 'homeScore', 'score1', 'Score1']);
-  const s2 = pickNumber(value, ['SC2', 'S2', 'awayScore', 'score2', 'Score2']);
+  const s1 = pickScore(value, 'home');
+  const s2 = pickScore(value, 'away');
   if (id && home && away && (s1 !== null || s2 !== null)) out.push(value);
   for (const child of Object.values(value)) walk(child, out);
   return out;
@@ -68,9 +83,9 @@ function normalize(raw: any): LiveGame[] {
       gameId,
       homeTeam,
       awayTeam,
-      homeScore: pickNumber(item, ['SC1', 'S1', 'homeScore', 'score1', 'Score1']),
-      awayScore: pickNumber(item, ['SC2', 'S2', 'awayScore', 'score2', 'Score2']),
-      currentPeriod: pickString(item, ['P', 'Period', 'currentPeriod', 'period']) ?? null,
+      homeScore: pickScore(item, 'home'),
+      awayScore: pickScore(item, 'away'),
+      currentPeriod: pickCurrentPeriod(item),
       status: 'live',
       division: pickString(item, ['L', 'League', 'Champ', 'champName']) ?? 'IPBL Pro Division',
       divisionTag: 'ipbl-1xlite-live',
