@@ -566,15 +566,6 @@ function App() {
     }
   }, []);
 
-
-  function openLiveDrawerFromInsight(insight: OperatorInsight): void {
-    void openDrawer(insight.game, insight);
-  }
-
-  function openResultsDrawerFromGame(game: IpblGame): void {
-    void openDrawer(game);
-  }
-
   return (
     <div className="console-shell">
       <header className="console-header">
@@ -665,8 +656,8 @@ function App() {
                   <LiveCard
                     key={liveKey(insight.game)}
                     game={insight.game} insight={insight}
-                    onOpen={() => openLiveDrawerFromInsight(insight)}
-                    onOpenH2H={() => openLiveDrawerFromInsight(insight)}
+                    onOpen={() => void openDrawer(insight.game, insight)}
+                    onOpenH2H={() => void openDrawer(insight.game, insight)}
                   />
                 ))}
               </div>
@@ -681,8 +672,8 @@ function App() {
                   <LiveCard
                     key={liveKey(insight.game)}
                     game={insight.game} insight={insight}
-                    onOpen={() => openLiveDrawerFromInsight(insight)}
-                    onOpenH2H={() => openLiveDrawerFromInsight(insight)}
+                    onOpen={() => void openDrawer(insight.game, insight)}
+                    onOpenH2H={() => void openDrawer(insight.game, insight)}
                   />
                 ))}
               </div>
@@ -704,8 +695,8 @@ function App() {
           error={resultsErr}
           onJumpDateChange={onJumpDateChange}
           onSelectDivision={setSelectedResultsDivisionTag}
-          onOpenMatch={openResultsDrawerFromGame}
-          onOpenH2H={openResultsDrawerFromGame}
+          onOpenMatch={(game) => void openDrawer(game)}
+          onOpenH2H={(game) => void openDrawer(game)}
         />
       )}
 
