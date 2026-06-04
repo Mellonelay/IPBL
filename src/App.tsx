@@ -111,15 +111,6 @@ function currentOrNextQuarter(
 
 function Metric({ label, value }: { label: string; value: string | number }) {
 
-
-  function openLiveDrawerFromInsight(insight: OperatorInsight): void {
-    void openDrawer(insight.game, insight);
-  }
-
-  function openResultsDrawerFromGame(game: IpblGame): void {
-    void openDrawer(game);
-  }
-
   return (
     <div className="metric-box">
       <div className="metric-label">{label}</div>
@@ -574,6 +565,15 @@ function App() {
       );
     }
   }, []);
+
+
+  function openLiveDrawerFromInsight(insight: OperatorInsight): void {
+    void openDrawer(insight.game, insight);
+  }
+
+  function openResultsDrawerFromGame(game: IpblGame): void {
+    void openDrawer(game);
+  }
 
   return (
     <div className="console-shell">
