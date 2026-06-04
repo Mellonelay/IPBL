@@ -32,13 +32,6 @@ const StreakBadge = ({ team, memory }: { team: string, memory: any }) => {
     return <span style={{ color: "#00c076", fontSize: "0.7rem", marginLeft: "4px" }}>● {stats.wins}W</span>;
 };
 
-function asFiniteArray<T>(value: T[] | null | undefined): T[] {
-  return Array.isArray(value) ? value.filter(Boolean) : [];
-}
-
-function safeString(value: unknown, fallback = ''): string {
-  return typeof value === 'string' && value.length > 0 ? value : fallback;
-}
 
 export function ResultsCalendarGrid({
     calendarMap,
@@ -101,7 +94,7 @@ export function ResultsCalendarGrid({
             )}
 
             <div className="results-grid">
-                {visibleDays?.map((date) => { console.log("Rendering date:", date, "Data:", (calendarMap ? calendarMap[date] : []));
+                {visibleDays?.map((date) => {
                     const dayData = calendarMap ? calendarMap[date] : [];
                     const divisions = (Array.isArray(dayData) ? dayData : []).filter(
                         (division) => division.divisionTag === selectedDivisionTag
@@ -127,7 +120,7 @@ export function ResultsCalendarGrid({
                                 <section key={`${date}-${division.divisionTag}`} className="calendar-division-group">
                                     <div className="calendar-division-title">{division.division}</div>
                                     <div className="calendar-match-list">
-                                        {division.asFiniteArray(games).map((match) => (
+                                        {(Array.isArray(division.games) ? division.games : []).map((match) => (
                                             <div
                                                 key={`${date}-${division.divisionTag}-${match.game.gameId}`}
                                                 className="calendar-match-row"

@@ -206,17 +206,6 @@ function normalizeLiveGameForUi(game: any) {
 }
 
 
-function asFiniteArray<T>(value: T[] | null | undefined): T[] {
-  return Array.isArray(value) ? value.filter(Boolean) : [];
-}
-
-function safeString(value: unknown, fallback = ''): string {
-  return typeof value === 'string' && value.length > 0 ? value : fallback;
-}
-
-function safeDateKey(value: unknown): string {
-  return safeString(value, 'unknown-date');
-}
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabKey>("results");
@@ -399,7 +388,7 @@ function App() {
       setLiveGames(games);
 
       const insights = await Promise.all(
-        asFiniteArray(games).map(async (game): Promise<[string, LiveInsight]> => {
+        (Array.isArray(games) ? games : []).map(async (game): Promise<[string, LiveInsight]> => {
           try {
             const [gameMeta, boxState] = await Promise.all([
               fetchGame(game.gameId, game.tag),
