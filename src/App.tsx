@@ -110,6 +110,15 @@ function currentOrNextQuarter(
 }
 
 function Metric({ label, value }: { label: string; value: string | number }) {
+
+  function openLiveDrawerFromInsight(insight: OperatorInsight): void {
+    void openDrawer(insight.game, insight);
+  }
+
+  function openResultsDrawerFromGame(game: IpblGame): void {
+    void openDrawer(game);
+  }
+
   return (
     <div className="metric-box">
       <div className="metric-label">{label}</div>
@@ -655,8 +664,8 @@ function App() {
                   <LiveCard
                     key={liveKey(insight.game)}
                     game={insight.game} insight={insight}
-                    onOpen={(g, i) => void openDrawer(g, i)}
-                    onOpenH2H={(g, i) => void openDrawer(g, i)}
+                    onOpen={() => openLiveDrawerFromInsight(insight)}
+                    onOpenH2H={() => openLiveDrawerFromInsight(insight)}
                   />
                 ))}
               </div>
@@ -671,8 +680,8 @@ function App() {
                   <LiveCard
                     key={liveKey(insight.game)}
                     game={insight.game} insight={insight}
-                    onOpen={(g, i) => void openDrawer(g, i)}
-                    onOpenH2H={(g, i) => void openDrawer(g, i)}
+                    onOpen={() => openLiveDrawerFromInsight(insight)}
+                    onOpenH2H={() => openLiveDrawerFromInsight(insight)}
                   />
                 ))}
               </div>
@@ -694,8 +703,8 @@ function App() {
           error={resultsErr}
           onJumpDateChange={onJumpDateChange}
           onSelectDivision={setSelectedResultsDivisionTag}
-          onOpenMatch={(game) => void openDrawer(game)}
-          onOpenH2H={(game) => void openDrawer(game)}
+          onOpenMatch={openResultsDrawerFromGame}
+          onOpenH2H={openResultsDrawerFromGame}
         />
       )}
 
