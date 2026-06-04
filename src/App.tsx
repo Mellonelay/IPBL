@@ -111,6 +111,7 @@ function currentOrNextQuarter(
 
 function Metric({ label, value }: { label: string; value: string | number }) {
 
+
   function openLiveDrawerFromInsight(insight: OperatorInsight): void {
     void openDrawer(insight.game, insight);
   }
