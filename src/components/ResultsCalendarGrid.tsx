@@ -31,6 +31,15 @@ const StreakBadge = ({ team, memory }: { team: string, memory: any }) => {
     if (stats.wins < 3) return null;
     return <span style={{ color: "#00c076", fontSize: "0.7rem", marginLeft: "4px" }}>● {stats.wins}W</span>;
 };
+
+function asFiniteArray<T>(value: T[] | null | undefined): T[] {
+  return Array.isArray(value) ? value.filter(Boolean) : [];
+}
+
+function safeString(value: unknown, fallback = ''): string {
+  return typeof value === 'string' && value.length > 0 ? value : fallback;
+}
+
 export function ResultsCalendarGrid({
     calendarMap,
     selectedDivisionTag,
@@ -118,7 +127,7 @@ export function ResultsCalendarGrid({
                                 <section key={`${date}-${division.divisionTag}`} className="calendar-division-group">
                                     <div className="calendar-division-title">{division.division}</div>
                                     <div className="calendar-match-list">
-                                        {division.games.map((match) => (
+                                        {division.asFiniteArray(games).map((match) => (
                                             <div
                                                 key={`${date}-${division.divisionTag}-${match.game.gameId}`}
                                                 className="calendar-match-row"
