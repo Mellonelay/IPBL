@@ -35,7 +35,7 @@ import {
 
 
 function safeSplit(value: unknown, delimiter: string): string[] {
-  return typeof value === 'string' ? safeSplit(value, delimiter) : [];
+  return typeof value === 'string' ? value.split(delimiter) : [];
 }
 
 function safeText(value: unknown, fallback = ''): string {
@@ -488,7 +488,7 @@ function App() {
   // Keep jump date inside the selected month.
   useEffect(() => {
     const mm = String(selectedResultsMonthIndex + 1).padStart(2, "0");
-    const day = safeSplit(jumpDate, "-")[2] ? safeSplit(Number.parseInt(jumpDate, "-")[2], 10) : 1;
+    const day = safeSplit(jumpDate, "-")[2] ? Number.parseInt(safeSplit(jumpDate, "-")[2], 10) : 1;
     const maxDay = new Date(selectedResultsYear, selectedResultsMonthIndex + 1, 0).getDate();
     const safeDay = Number.isFinite(day) ? Math.min(maxDay, Math.max(1, day)) : 1;
     const nextJump = `${selectedResultsYear}-${mm}-${String(safeDay).padStart(2, "0")}`;
