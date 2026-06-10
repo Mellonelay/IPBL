@@ -1,0 +1,42 @@
+{
+  "name": "ipbl-official-calendar-row-parser-contract",
+  "version": "1.0.1",
+  "source": "https://api1.ipbl.pro",
+  "phase": "G7-calendar-online-row-fixture",
+  "createdAt": "2026-06-09T18:11:08.728790Z",
+  "canonicalFixture": "fixtures/ipbl/calendar-row/game-1024850-calendar-online-row.json",
+  "endpoint": "/calendar/online?tag={tag}&season={season}&lang={lang}",
+  "normalizedGame": {
+    "gameId": "game.id",
+    "divisionTag": "league.tag",
+    "divisionName": "league.name",
+    "date": "game.localDate",
+    "time": "game.localTime",
+    "team1": "team1.name",
+    "team2": "team2.name",
+    "score1": "game.score1",
+    "score2": "game.score2",
+    "score": "game.score",
+    "fullScore": "game.fullScore",
+    "status": "game.gameStatus",
+    "statusDisplay": "status.displayName",
+    "gameNumber": "game.number",
+    "arena": "arena.name",
+    "region": "region.name"
+  },
+  "requiredScoreFields": [
+    "game.id",
+    "game.score1",
+    "game.score2",
+    "game.score",
+    "game.localDate",
+    "team1.name",
+    "team2.name",
+    "league.tag"
+  ],
+  "updatedAt": "2026-06-10T17:19:17Z",
+  "notes": "G7 verified official fixture permits game.fullScore=null while game.score, game.score1, and game.score2 remain required.",
+  "nullableFields": [
+    "game.fullScore"
+  ]
+}

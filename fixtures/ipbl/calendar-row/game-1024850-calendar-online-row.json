@@ -1,0 +1,102 @@
+{
+  "game": {
+    "gameStatus": "Online",
+    "showScore": true,
+    "score1": 87,
+    "score2": 76,
+    "score": "87:76",
+    "fullScore": null,
+    "periods": 4,
+    "attendance": 0,
+    "number": "002",
+    "finalTime": null,
+    "startTime": null,
+    "scheduledTime": "2026-02-09T22:00:00+05:00",
+    "defaultZoneDateTime": "2026-02-09T20:00:00+03:00",
+    "localDate": "09.02.2026",
+    "localTime": "22:00",
+    "defaultZoneTime": "20:00",
+    "hasTime": true,
+    "regionId": 8,
+    "arenaId": 26097,
+    "compTeam1Id": 557124,
+    "compTeam2Id": 557125,
+    "tv": null,
+    "video": null,
+    "videoId": null,
+    "id": 1024850
+  },
+  "comp": {
+    "id": 1301526,
+    "compType": "OneGame",
+    "name": "IPBL: PRO Division (МУЖЧИНЫ)",
+    "abcName": "1/2-2",
+    "level": 10,
+    "season": 2026,
+    "tag": null,
+    "logo": "",
+    "isActual": true
+  },
+  "league": {
+    "id": 1262959,
+    "compType": "League",
+    "name": "Division C",
+    "abcName": "IPBL",
+    "level": 7,
+    "season": 2026,
+    "tag": "ipbl-66-m-pro-c",
+    "logo": "",
+    "isActual": true
+  },
+  "gender": 1,
+  "status": {
+    "icon": "fa-solid fa-play color-darkgreen ",
+    "id": "Online",
+    "displayName": "Онлайн"
+  },
+  "region": {
+    "regionType": "RegionCapital",
+    "timeZoneId": "Ekaterinburg Standard Time",
+    "name": "Екатеринбург",
+    "countryId": "RU",
+    "id": 8
+  },
+  "arena": {
+    "shortName": "БЦ \"Манеж\" Мужской Зал",
+    "name": "БЦ \"Манеж\" Мужской Зал",
+    "regionId": 8,
+    "id": 26097
+  },
+  "team1": {
+    "teamId": 76059,
+    "start": 1,
+    "label": "IPBL66",
+    "abcName": "Vorone",
+    "name": "Voronezh",
+    "regionName": "Екатеринбург",
+    "shortName": "Voronezh",
+    "logo": "https://img.infobasket.su/logo/62413.png",
+    "arenaId": null,
+    "id": 557124
+  },
+  "team2": {
+    "teamId": 76060,
+    "start": 2,
+    "label": "IPBL66",
+    "abcName": "Plavsk",
+    "name": "Plavsk",
+    "regionName": "Екатеринбург",
+    "shortName": "Plavsk",
+    "logo": "https://img.infobasket.su/logo/62414.png",
+    "arenaId": null,
+    "id": 557125
+  },
+  "ot": "",
+  "distanceIndex": -1,
+  "period": null,
+  "timeToGo": null,
+  "timeIsGo": null,
+  "hasCoefficients": false,
+  "photoUrl": null,
+  "division": "Pro Division"
+}
