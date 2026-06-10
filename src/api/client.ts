@@ -52,7 +52,7 @@ export async function fetchSchedule(tag: string, day: Date): Promise<ScheduleGam
     const now = Date.now();
     if (hit && now - hit.at < CAL_TTL_MS) return hit.rows;
     const from = formatApiDate(day);
-    const raw = await getJson("/calendar", q({ tag, from, to: from, lang: LANG }));
+    const raw = await getJson("/calendar/online", q({ tag, from, to: from, lang: LANG }));
     const rows = parseCalendarItems(raw, tag);
     calCache.set(key, { at: now, rows });
     return rows;
