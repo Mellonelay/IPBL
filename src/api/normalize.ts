@@ -289,6 +289,26 @@ export function parseTeamHistory(raw: unknown, tag: string): TeamHistoryGame[] {
     return out;
 }
 
+export function h2hDateTimeKey(date: string, time: string): number {
+  const normalizedDate = String(date ?? "").trim();
+  const normalizedTime = String(time ?? "").trim();
+  const displayMatch = normalizedDate.match(/^(\d{1,2})[.]([0-9]{1,2})[.](\d{4})$/);
+  const isoMatch = normalizedDate.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  const timeMatch = normalizedTime.match(/^(\d{1,2}):(\d{1,2})(?::(\d{1,2}))?$/);
+  const hour = timeMatch ? Number(timeMatch[1]) : 0;
+  const minute = timeMatch ? Number(timeMatch[2]) : 0;
+  const second = timeMatch?.[3] ? Number(timeMatch[3]) : 0;
+
+  if (displayMatch) {
+    return Date.UTC(Number(displayMatch[3]), Number(displayMatch[2]) - 1, Number(displayMatch[1]), hour, minute, second);
+  }
+  if (isoMatch) {
+    return Date.UTC(Number(isoMatch[1]), Number(isoMatch[2]) - 1, Number(isoMatch[3]), hour, minute, second);
+  }
+  const parsed = Date.parse(`${normalizedDate} ${normalizedTime}`.trim());
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
 export function computeH2H(
   teamAGames: TeamHistoryGame[], teamBGames: TeamHistoryGame[],
   teamAId: number, teamBId: number, limit = 15
@@ -307,6 +327,9 @@ export function computeH2H(
         homeTeamId: game.team1.teamId, awayTeamId: game.team2.teamId,
       } as H2HEntry;
     })
-    .sort((a, b) => `${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`))
+    .sort((a, b) => {
+      const dateDelta = h2hDateTimeKey(b.date, b.time) - h2hDateTimeKey(a.date, a.time);
+      return dateDelta || b.gameId - a.gameId;
+    })
     .slice(0, limit);
 }
