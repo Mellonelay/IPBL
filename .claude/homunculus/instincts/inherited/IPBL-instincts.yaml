@@ -1,0 +1,339 @@
+# Instincts generated from https://github.com/Mellonelay/IPBL
+# Generated: 2026-06-11T10:29:52.453Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: IPBL-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Mellonelay/IPBL
+---
+
+# IPBL Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix
+
+## Evidence
+
+- 1 commits analyzed
+- Detected conventional commit pattern
+- Examples: fix(live): add verified MelBet failover for API1 outage
+
+---
+id: IPBL-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Mellonelay/IPBL
+---
+
+# IPBL Commit Length
+
+## Action
+
+Write moderate-length commit messages (~55 characters)
+
+## Evidence
+
+- Average commit message length: 55 chars
+- Based on 1 commits
+
+---
+id: IPBL-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Mellonelay/IPBL
+---
+
+# IPBL Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: IPBL-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Mellonelay/IPBL
+---
+
+# IPBL Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: IPBL-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Mellonelay/IPBL
+---
+
+# IPBL Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: IPBL-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Mellonelay/IPBL
+---
+
+# IPBL Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: ipbl-instinct-file-naming
+trigger: "When creating a new file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct File Naming
+
+## Action
+
+Name the file using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: ipbl-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: ipbl-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: ipbl-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: ipbl-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: ipbl-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: ipbl-instinct-test-location
+trigger: "When adding new tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Test Location
+
+## Action
+
+Place test files in the separate 'tests' folder
+
+## Evidence
+
+- Pattern in folderStructure.testLocation: separate
+- commonFolders includes 'tests'
+
+---
+id: ipbl-instinct-test-structure
+trigger: "When organizing test code"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Test Structure
+
+## Action
+
+Keep tests outside the main 'src' directory
+
+## Evidence
+
+- Pattern in folderStructure.testLocation: separate
+
+---
+id: ipbl-instinct-commit-format
+trigger: "When writing a git commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Commit Format
+
+## Action
+
+Use the conventional commit format with a prefix (e.g., 'fix'), a scope in parentheses, a colon, and a short description
+
+## Evidence
+
+- Pattern in commits.type: conventional
+- Example: fix(live): add verified MelBet failover for API1 outage
+
+---
+id: ipbl-instinct-commit-prefix
+trigger: "When committing a bug fix"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Commit Prefix
+
+## Action
+
+Start the commit message with 'fix'
+
+## Evidence
+
+- Pattern in commits.prefixes: fix
+- Example: fix(live): add verified MelBet failover for API1 outage
+
+---
+id: ipbl-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: Mellonelay/IPBL
+---
+
+# Ipbl Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 55 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength: 55
+
