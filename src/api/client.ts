@@ -96,7 +96,17 @@ export async function fetchTeamGames(
     const hit = teamCache.get(key);
     const now = Date.now();
     if (hit && now - hit.at < TEAM_TTL_MS) return hit.rows;
-    const raw = await getJson("/team/games", q({ teamId, calendarType: 1, tag, season }));
+    let raw: unknown;
+    const storedResponse = await fetch(`/api/teams/history?${q({ teamId, tag, season })}`, {
+        headers: { Accept: "application/json" },
+    });
+    if (storedResponse.ok) {
+        raw = await storedResponse.json();
+    } else if (storedResponse.status === 404 || storedResponse.status === 503) {
+        raw = await getJson("/team/games", q({ teamId, calendarType: 1, tag, season }));
+    } else {
+        throw new Error(`Team history API error: ${storedResponse.status}`);
+    }
     const rows = parseTeamHistory(raw, tag);
     teamCache.set(key, { at: now, rows });
     return rows;
