@@ -4,12 +4,12 @@ import { fetchMelbetLive } from "../../lib/server/bookmaker-live.js";
 
 const PROXY_BASE = "https://worker.mloneslot99.com/ipbl-proxy";
 const LIVE_TAGS = [
-  "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-u", "ipbl-74-m-pro-h",
+  "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-u",
   "ipbl-66-w-pro-a", "ipbl-66-w-pro-b", "ipbl-66-w-pro-c", "ipbl-66-w-pro-d", "ipbl-66-w-pro-g", "ipbl-66-w-pro-k",
 ] as const;
 const LABELS: Record<string, string> = {
   "ipbl-66-m-pro-a": "Pro Men A", "ipbl-66-m-pro-b": "Pro Men B", "ipbl-66-m-pro-c": "Pro Men C",
-  "ipbl-66-m-pro-d": "Pro Men D", "ipbl-66-m-pro-u": "Pro Men U", "ipbl-74-m-pro-h": "Pro Men H",
+  "ipbl-66-m-pro-d": "Pro Men D", "ipbl-66-m-pro-u": "Pro Men U",
   "ipbl-66-w-pro-a": "Pro Women A", "ipbl-66-w-pro-b": "Pro Women B", "ipbl-66-w-pro-c": "Pro Women C",
   "ipbl-66-w-pro-d": "Pro Women D", "ipbl-66-w-pro-g": "Pro Women G", "ipbl-66-w-pro-k": "Pro Women K",
 };

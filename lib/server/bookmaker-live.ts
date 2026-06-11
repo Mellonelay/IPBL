@@ -9,8 +9,6 @@ export type BookmakerSourceEvent = {
   L?: string;
   O1?: string;
   O2?: string;
-  O1I?: number;
-  O2I?: number;
   S?: number;
   U?: number;
   SC?: {
@@ -30,7 +28,7 @@ export type BookmakerEnvelope = {
   Value?: BookmakerSourceEvent[];
 };
 
-type VerifiedTeam = TeamRef & { tag: string; divisionLabel: string; useSourceId?: boolean };
+type VerifiedTeam = TeamRef & { tag: string; divisionLabel: string };
 
 const VERIFIED_TEAM_ALIASES: Record<string, VerifiedTeam> = Object.fromEntries(
   Object.entries({
@@ -86,17 +84,6 @@ const VERIFIED_TEAM_ALIASES: Record<string, VerifiedTeam> = Object.fromEntries(
   "Vologda": { teamId: 76019, shortName: "Vologda", name: "Vologda", tag: "ipbl-66-w-pro-k", divisionLabel: "Pro Women K" },
   }).map(([alias, team]) => [normalizeTeamName(alias), team])
 );
-
-for (const name of ["Belgorod", "Saratov", "Maykop", "Nalchik"]) {
-  VERIFIED_TEAM_ALIASES[normalizeTeamName(name)] = {
-    teamId: 0,
-    shortName: name,
-    name,
-    tag: "ipbl-74-m-pro-h",
-    divisionLabel: "Pro Men H",
-    useSourceId: true,
-  };
-}
 
 export type BookmakerLiveResult = {
   games: ScheduleGame[];
@@ -163,9 +150,7 @@ function toScheduleGame(event: BookmakerSourceEvent, team1: VerifiedTeam, team2:
   const gameId = finiteNumber(event.I);
   const score1 = finiteNumber(event.SC?.FS?.S1);
   const score2 = finiteNumber(event.SC?.FS?.S2);
-  const team1Id = team1.useSourceId ? finiteNumber(event.O1I) : team1.teamId;
-  const team2Id = team2.useSourceId ? finiteNumber(event.O2I) : team2.teamId;
-  if (gameId === null || score1 === null || score2 === null || !team1Id || !team2Id) return null;
+  if (gameId === null || score1 === null || score2 === null) return null;
   const period = finiteNumber(event.SC?.CP);
   const elapsed = finiteNumber(event.SC?.TS);
   const start = finiteNumber(event.S);
@@ -193,8 +178,8 @@ function toScheduleGame(event: BookmakerSourceEvent, team1: VerifiedTeam, team2:
     timeIsGo: event.SC?.TR === 0 ? 0 : 1,
     isLive: true,
     updatedAt: finiteNumber(event.U) === null ? Date.now() : Number(event.U) * 1000,
-    team1: { teamId: team1Id, shortName: team1.shortName, name: team1.name },
-    team2: { teamId: team2Id, shortName: team2.shortName, name: team2.name },
+    team1: { teamId: team1.teamId, shortName: team1.shortName, name: team1.name },
+    team2: { teamId: team2.teamId, shortName: team2.shortName, name: team2.name },
   };
 }
 

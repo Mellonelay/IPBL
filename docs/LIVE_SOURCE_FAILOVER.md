@@ -32,20 +32,13 @@ Clock conversion:
 
 ## Division policy
 
-Historical Results remain on the restored historical registry.
-
-Current Live additionally supports:
-
-- Pro Men H: `ipbl-74-m-pro-h`
-
-Pro Men H is live-only until its historical source coverage is independently reconstructed and validated.
+Live and Results use only the application's approved division registry. Events assigned to divisions outside that list are not displayed.
 
 ## Identity policy
 
-- Existing 44 verified teams keep their established official team IDs.
-- Live-only Pro Men H teams use source event team IDs for live identity.
-- Source IDs are never represented as verified official IPBL IDs.
-- Unknown teams are excluded and listed in `unmatchedBookmakerEvents`.
+- Existing verified teams keep their established official team IDs.
+- Unknown teams or teams from unapproved divisions are excluded and listed in `unmatchedBookmakerEvents`.
+- No source-only team identifiers are promoted into the approved registry.
 
 ## Recovery policy
 
