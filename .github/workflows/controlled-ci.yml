@@ -1,0 +1,55 @@
+name: Controlled CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: controlled-ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify source, statistics, and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Verify Team Statistics
+        run: npm run test:teams
+
+      - name: Verify H2H ordering
+        run: npm run test:h2h-order
+
+      - name: Verify source compatibility
+        run: npm run test:ipbl-compat
+
+      - name: Verify client timeouts
+        run: npm run test:client-timeout
+
+      - name: Verify live clock behavior
+        run: npm run test:live-clock
+
+      - name: Verify bookmaker normalization
+        run: npm run test:bookmaker-live
+
+      - name: Verify IPBL source contracts
+        run: npm run test:ipbl-source
+
+      - name: Build production bundle
+        run: npm run build
