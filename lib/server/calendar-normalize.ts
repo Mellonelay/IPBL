@@ -25,6 +25,7 @@ export type ScheduleGame = {
     divisionLabel: string;
     period: number | null;
     timeToGo: string | null;
+    timeIsGo: number | null;
     isLive: boolean;
     updatedAt: number | null;
     scheduledTime?: string | null;
@@ -255,6 +256,7 @@ export function normalizeCalendarRow(item: Record<string, unknown>, tag: string)
         divisionLabel: cleanText(item.division ?? ""),
         period: numberOrNull(item.period) ?? numberOrNull(g.period),
         timeToGo: text(item.timeToGo) || text(g.timeToGo) || null,
+        timeIsGo: numberOrNull(item.timeIsGo),
         isLive: live,
         updatedAt,
         scheduledTime: g.scheduledTime != null ? String(g.scheduledTime) : null,

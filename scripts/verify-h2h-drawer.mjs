@@ -9,7 +9,9 @@
  * Env:
  *   BASE_URL          default http://127.0.0.1:4873
  *   H2H_TIMEOUT_MS    default 45000
- *   OPEN_LIVE_H2H     default 1 — click first live card H2H (set 0 to skip open; expect drawer already up)
+ *   OPEN_LIVE_H2H     default 1 — click first live card H2H; fall back to a deterministic Results game
+ *   H2H_RESULTS_DATE  default 2026-06-01
+ *   H2H_RESULTS_DIVISION default ipbl-66-m-pro-a
  */
 import { chromium } from "playwright";
 
@@ -17,6 +19,8 @@ const BASE_URL = (process.env.BASE_URL || "http://127.0.0.1:4873").replace(/\/$/
 const H2H_TIMEOUT_MS = Number(process.env.H2H_TIMEOUT_MS || 45_000);
 const NAV_TIMEOUT = 60_000;
 const OPEN_LIVE_H2H = process.env.OPEN_LIVE_H2H !== "0";
+const H2H_RESULTS_DATE = process.env.H2H_RESULTS_DATE || "2026-06-01";
+const H2H_RESULTS_DIVISION = process.env.H2H_RESULTS_DIVISION || "ipbl-66-m-pro-a";
 
 function snapshotH2h(page) {
     return page.evaluate(() => {
@@ -90,7 +94,11 @@ async function main() {
                 await liveH2h.waitFor({ state: "visible", timeout: 20_000 });
                 await liveH2h.click();
             } catch {
-                await page.goto(`${BASE_URL}/?tab=results`, {
+                const resultsUrl = new URL(`${BASE_URL}/`);
+                resultsUrl.searchParams.set("tab", "results");
+                resultsUrl.searchParams.set("date", H2H_RESULTS_DATE);
+                resultsUrl.searchParams.set("division", H2H_RESULTS_DIVISION);
+                await page.goto(resultsUrl.toString(), {
                     waitUntil: "domcontentloaded",
                     timeout: NAV_TIMEOUT,
                 });

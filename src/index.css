@@ -679,3 +679,35 @@ button {
         text-align: left;
     }
 }
+.live-clock {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 8.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.live-clock-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.live-clock-value {
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.live-clock-elapsed,
+.live-clock-paused {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.live-clock-paused {
+  justify-self: end;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

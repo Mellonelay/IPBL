@@ -219,6 +219,7 @@ export function normalizeCalendarRow(
     divisionLabel: String(item.division ?? ""),
     period: numberOrNull(item.period) ?? numberOrNull(g.period),
     timeToGo: text(item.timeToGo) || text(g.timeToGo) || null,
+    timeIsGo: numberOrNull(item.timeIsGo),
     isLive: live,
     updatedAt,
     team1: t1,

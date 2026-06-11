@@ -10,6 +10,7 @@ import {
 } from "./api/client";
 import { computeH2H } from "./api/normalize";
 import type { BoxScoreState, H2HEntry, ScheduleGame } from "./api/types";
+import { projectLiveClock } from "./live/clock";
 import ResultsCalendarGrid from "./components/ResultsCalendarGrid";
 import BettingRecord from "./components/BettingRecord";
 import { canonicalDivisionLabel, LIVE_DIVISIONS, LIVE_DIVISION_TAGS } from "./config/divisions";
@@ -120,6 +121,44 @@ function Metric({ label, value }: { label: string; value: string | number }) {
   );
 }
 
+function LiveGameClock({ game }: { game: ScheduleGame }) {
+  const [capturedAt, setCapturedAt] = useState(() => Date.now());
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const next = Date.now();
+    setCapturedAt(next);
+    setNow(next);
+  }, [game.gameId, game.period, game.timeToGo, game.timeIsGo]);
+
+  useEffect(() => {
+    if (game.timeIsGo !== 1) return;
+    const id = window.setInterval(() => setNow(Date.now()), 250);
+    return () => window.clearInterval(id);
+  }, [game.timeIsGo]);
+
+  const clock = projectLiveClock({
+    period: game.period,
+    timeToGo: game.timeToGo,
+    timeIsGo: game.timeIsGo,
+    elapsedMs: now - capturedAt,
+  });
+
+  return (
+    <div className="live-clock" data-testid="live-game-clock" data-running={clock.running ? "true" : "false"}>
+      <div className="live-clock-row">
+        <span className="live-clock-value" data-testid="live-clock-remaining">{clock.remainingText}</span>
+        <span>remaining</span>
+      </div>
+      <div className="live-clock-row live-clock-elapsed">
+        <span className="live-clock-value" data-testid="live-clock-elapsed">{clock.elapsedText}</span>
+        <span>elapsed</span>
+      </div>
+      {game.timeIsGo === 0 && clock.remainingSeconds !== null && <span className="live-clock-paused">paused</span>}
+    </div>
+  );
+}
+
 function LiveCard({
   game,
   insight,
@@ -157,7 +196,7 @@ function LiveCard({
           <div className="score-main">{game.scoreText || "0 : 0"}</div>
           <div className="score-meta">
             <div>{currentQuarter}</div>
-            <div>{game.timeToGo ?? insight?.board.quarterClock ?? "—"}</div>
+            <LiveGameClock game={game} />
           </div>
         </div>
 

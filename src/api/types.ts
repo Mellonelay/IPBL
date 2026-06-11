@@ -23,6 +23,7 @@ export type ScheduleGame = {
     divisionLabel: string;
     period: number | null;
     timeToGo: string | null;
+    timeIsGo?: number | null;
     isLive: boolean;
     updatedAt?: number | null;
     scheduledTime?: string | null;
