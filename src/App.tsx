@@ -795,6 +795,14 @@ function App() {
               </div>
             </section>
 
+            <section className="drawer-section" data-testid="player-stats-availability">
+              <h3>Player statistics</h3>
+              <p className="muted">
+                Player-level box-score statistics are unavailable in the verified stored Results data.
+                Only confirmed game scores and period totals are shown.
+              </p>
+            </section>
+
             <section className="drawer-section">
               <h3>Live decision block</h3>
               <div className={`decision-banner ${statusTone(drawer.decision.decision)}`}>

@@ -88,24 +88,30 @@ async function main() {
             timeout: NAV_TIMEOUT,
         });
 
+        const openResultsH2H = async () => {
+            const resultsUrl = new URL(`${BASE_URL}/`);
+            resultsUrl.searchParams.set("tab", "results");
+            resultsUrl.searchParams.set("date", H2H_RESULTS_DATE);
+            resultsUrl.searchParams.set("division", H2H_RESULTS_DIVISION);
+            await page.goto(resultsUrl.toString(), {
+                waitUntil: "domcontentloaded",
+                timeout: NAV_TIMEOUT,
+            });
+            const resultsH2h = page.locator('[data-testid="results-calendar-h2h-button"]').first();
+            await resultsH2h.waitFor({ state: "visible", timeout: 45_000 });
+            await resultsH2h.click();
+        };
+
         if (OPEN_LIVE_H2H) {
             const liveH2h = page.locator('[data-testid="live-card-h2h-button"]').first();
             try {
                 await liveH2h.waitFor({ state: "visible", timeout: 20_000 });
                 await liveH2h.click();
             } catch {
-                const resultsUrl = new URL(`${BASE_URL}/`);
-                resultsUrl.searchParams.set("tab", "results");
-                resultsUrl.searchParams.set("date", H2H_RESULTS_DATE);
-                resultsUrl.searchParams.set("division", H2H_RESULTS_DIVISION);
-                await page.goto(resultsUrl.toString(), {
-                    waitUntil: "domcontentloaded",
-                    timeout: NAV_TIMEOUT,
-                });
-                const resultsH2h = page.locator('[data-testid="results-calendar-h2h-button"]').first();
-                await resultsH2h.waitFor({ state: "visible", timeout: 45_000 });
-                await resultsH2h.click();
+                await openResultsH2H();
             }
+        } else {
+            await openResultsH2H();
         }
 
         await page.waitForSelector('[data-testid="game-drawer"]', { timeout: 15_000 });
