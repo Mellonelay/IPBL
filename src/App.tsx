@@ -13,6 +13,7 @@ import type { BoxScoreState, H2HEntry, ScheduleGame } from "./api/types";
 import { projectLiveClock } from "./live/clock";
 import ResultsCalendarGrid from "./components/ResultsCalendarGrid";
 import BettingRecord from "./components/BettingRecord";
+import TeamStatistics from "./components/TeamStatistics";
 import { canonicalDivisionLabel, LIVE_DIVISIONS, LIVE_DIVISION_TAGS } from "./config/divisions";
 import { operatorSummary } from "./operator/data";
 import {
@@ -43,7 +44,7 @@ function safeSplit(value: unknown, delimiter: string): string[] {
 function safeText(value: unknown, fallback = ''): string {
   return typeof value === 'string' && value.trim() ? value : fallback;
 }
-type TabKey = "live" | "results" | "betting";
+type TabKey = "live" | "results" | "teams" | "betting";
 
 type LiveInsight = {
   game: ScheduleGame;
@@ -276,6 +277,7 @@ function App() {
   const resultsLoadGenRef = useRef(0);
 
   const [drawer, setDrawer] = useState<DrawerState | null>(null);
+  const [teamRefreshToken, setTeamRefreshToken] = useState(0);
 
   const resultsMonthOptions = useMemo(() => {
     // Extend by bumping `totalMonths`.
@@ -403,7 +405,7 @@ function App() {
     const tab = params.get("tab");
     const date = params.get("date");
     const division = params.get("division");
-    if (tab === "results" || tab === "live") setActiveTab(tab);
+    if (tab === "results" || tab === "live" || tab === "teams" || tab === "betting") setActiveTab(tab);
     if (date) {
       setJumpDate(date);
       const parts = safeSplit(date, "-").map((p) => Number.parseInt(p, 10));
@@ -618,7 +620,7 @@ function App() {
       <header className="console-header">
         <div>
           <h1>IPBL Operator Console</h1>
-          <p>Quarter-first live decisions plus a month-based results calendar browser.</p>
+          <p>Quarter-first live decisions, historical results, H2H, and team statistics.</p>
         </div>
         <button
           type="button"
@@ -628,6 +630,7 @@ function App() {
             clearResultsCalendarCache();
             if (activeTab === "live") void loadLive();
             if (activeTab === "results") void loadResults();
+            if (activeTab === "teams") setTeamRefreshToken((value) => value + 1);
           }}
         >
           Refresh
@@ -648,6 +651,13 @@ function App() {
           onClick={() => setActiveTab("results")}
         >
           Results
+        </button>
+        <button
+          type="button"
+          className={`tab-btn ${activeTab === "teams" ? "active" : ""}`}
+          onClick={() => setActiveTab("teams")}
+        >
+          Teams
         </button>
         <button
           type="button"
@@ -744,6 +754,14 @@ function App() {
           onSelectDivision={setSelectedResultsDivisionTag}
           onOpenMatch={(game) => void openDrawer(game)}
           onOpenH2H={(game) => void openDrawer(game)}
+        />
+      )}
+
+      {activeTab === "teams" && (
+        <TeamStatistics
+          season={RESULTS_SEASON}
+          refreshToken={teamRefreshToken}
+          onOpenGame={(game) => void openDrawer(game)}
         />
       )}
 

@@ -31,6 +31,10 @@
       "destination": "/api/cron/record-live.ts"
     },
     {
+      "source": "/api/teams/history",
+      "destination": "/api/teams/history.ts"
+    },
+    {
       "source": "/api/ipbl/games/game",
       "destination": "/api/ipbl/games/game.ts"
     },
