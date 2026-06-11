@@ -15,6 +15,7 @@ export const LIVE_DIVISION_TAGS = [
     "ipbl-66-m-pro-c",
     "ipbl-66-m-pro-d",
     "ipbl-66-m-pro-u",
+    "ipbl-74-m-pro-h",
     "ipbl-66-w-pro-a",
     "ipbl-66-w-pro-b",
     "ipbl-66-w-pro-c",
@@ -42,15 +43,22 @@ export const DIVISIONS: DivisionConfig[] = [
     { label: "Pro Women K", tag: "ipbl-66-w-pro-k", group: "women", validFrom: "2026-04-01" },
 ];
 
+/** Current live-only divisions that are not part of the restored historical Results registry. */
+export const LIVE_ONLY_DIVISIONS: DivisionConfig[] = [
+    { label: "Pro Men H", tag: "ipbl-74-m-pro-h", group: "men", validFrom: "2026-05-29" },
+];
+
+const ALL_DIVISION_LABELS = [...DIVISIONS, ...LIVE_ONLY_DIVISIONS];
+
 export const DIVISION_LABEL_BY_TAG = Object.fromEntries(
-    DIVISIONS.map((division) => [division.tag, division.label] as const)
+    ALL_DIVISION_LABELS.map((division) => [division.tag, division.label] as const)
 ) as Record<string, string>;
 
 export function canonicalDivisionLabel(tag: string): string | null {
     return DIVISION_LABEL_BY_TAG[tag] ?? null;
 }
 
-export const LIVE_DIVISIONS = DIVISIONS.filter((division) =>
+export const LIVE_DIVISIONS = ALL_DIVISION_LABELS.filter((division) =>
     LIVE_DIVISION_TAGS.includes(division.tag as (typeof LIVE_DIVISION_TAGS)[number])
 );
 

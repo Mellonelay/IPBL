@@ -16,7 +16,8 @@
     "build:memory": "node scripts/build-bet-memory.mjs",
     "test:ipbl-source": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/division-discovery.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/variable-match-count.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/historical-coverage.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/live-source.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-source/live-route-nested-score.test.ts",
     "test:live-clock": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-clock.test.ts",
-    "test:h2h-order": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/h2h-order.test.ts"
+    "test:h2h-order": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/h2h-order.test.ts",
+    "test:bookmaker-live": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/bookmaker-live.test.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.34.0",
