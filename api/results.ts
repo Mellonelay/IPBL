@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import * as redis from "./admin/server-lib/results-redis.js";
-import * as syncConstants from "./admin/server-lib/results-sync-constants.js";
+import * as redis from "../lib/server/results-redis.js";
+import * as syncConstants from "../lib/server/results-sync-constants.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { year, month, division } = req.query;

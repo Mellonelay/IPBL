@@ -1,58 +1,26 @@
-function assertEqual<T>(actual: T, expected: T, message?: string): void {
-  if (actual !== expected) throw new Error(message ?? `Expected ${String(expected)} but received ${String(actual)}`);
-}
+import assert from "node:assert/strict";
+import { DIVISIONS, LIVE_DIVISION_TAGS, divisionsForResultsMonth } from "../../src/config/divisions.ts";
 
-function assertDeepEqual(actual: unknown, expected: unknown): void {
-  const actualJson = JSON.stringify(actual);
-  const expectedJson = JSON.stringify(expected);
-  if (actualJson !== expectedJson) throw new Error(`Expected ${expectedJson} but received ${actualJson}`);
-}
-
-import { USER_BETTING_WATCHLIST } from "../../src/results/divisions.ts";
-import { discoverActiveDivisionsFromLiveMatches } from "../../src/results/live-division-discovery.ts";
-import type { Ma1xBetLiveMatch } from "../../src/results/live-source.ts";
-
-const ids = USER_BETTING_WATCHLIST.map((division) => division.id);
-assertDeepEqual(ids, [
-  "ipbl-66-m-pro-a",
-  "ipbl-66-m-pro-b",
-  "ipbl-66-m-pro-c",
-  "ipbl-66-m-pro-d",
-  "ipbl-66-m-pro-g",
-  "ipbl-66-w-pro-a",
-  "ipbl-66-w-pro-b",
-  "ipbl-66-w-pro-c",
-  "ipbl-66-w-pro-g",
-  "ipbl-66-w-pro-k",
+assert.deepEqual([...LIVE_DIVISION_TAGS], [
+  "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-u",
+  "ipbl-66-w-pro-a", "ipbl-66-w-pro-b", "ipbl-66-w-pro-c", "ipbl-66-w-pro-d", "ipbl-66-w-pro-g", "ipbl-66-w-pro-k",
 ]);
+assert.equal(LIVE_DIVISION_TAGS.includes("ipbl-66-m-pro-g" as never), false, "Men G is historical-only");
+assert.equal(DIVISIONS.length, 12, "Historical + current registry must contain the 12 May divisions");
 
-const baseMatch: Ma1xBetLiveMatch = {
-  source: "ma-1xbet:GetSportsShortZip",
-  sourceUrl: "fixture",
-  gameId: 1,
-  leagueId: 2496666,
-  division: "IPBL Pro A",
-  homeTeam: "Maykop",
-  awayTeam: "Samara",
-  homeScore: 11,
-  awayScore: 9,
-  periodScores: null,
-  currentPeriod: 1,
-  clock: "08:12",
-  status: "live",
-  rawPathMap: {},
-  confidence: "HIGH",
-};
+const march = divisionsForResultsMonth(2026, 2).map((d) => d.tag);
+assert.equal(march.includes("ipbl-66-m-pro-g"), true);
+assert.equal(march.includes("ipbl-66-m-pro-u"), false);
+assert.equal(march.includes("ipbl-66-w-pro-g"), false);
+assert.equal(march.includes("ipbl-66-w-pro-d"), false);
+assert.equal(march.includes("ipbl-66-w-pro-k"), false);
 
-const discovery = discoverActiveDivisionsFromLiveMatches([baseMatch], { discoveredAt: "2026-06-02T00:00:00Z" });
-assertEqual(discovery.watchlistStatuses["ipbl-66-m-pro-a"], "active");
-assertEqual(discovery.watchlistStatuses["ipbl-66-m-pro-g"], "inactive_or_not_currently_listed");
-assertEqual(discovery.watchlistStatuses["ipbl-66-w-pro-g"], "inactive_or_not_currently_listed");
-assertEqual(discovery.watchlistStatuses["ipbl-66-w-pro-k"], "inactive_or_not_currently_listed");
+const may = divisionsForResultsMonth(2026, 4).map((d) => d.tag);
+assert.equal(may.length, 12, "May must expose both historical and post-change divisions");
+assert.equal(may.includes("ipbl-66-m-pro-g"), true);
+assert.equal(may.includes("ipbl-66-m-pro-u"), true);
+assert.equal(may.includes("ipbl-66-w-pro-g"), true);
 
-const womenDiscovery = discoverActiveDivisionsFromLiveMatches([
-  { ...baseMatch, gameId: 2, division: "Women Pro G", homeTeam: "Women G Team 1", awayTeam: "Women G Team 2" },
-  { ...baseMatch, gameId: 3, division: "Women Pro K", homeTeam: "Women K Team 1", awayTeam: "Women K Team 2" },
-]);
-assertEqual(womenDiscovery.watchlistStatuses["ipbl-66-w-pro-g"], "active");
-assertEqual(womenDiscovery.watchlistStatuses["ipbl-66-w-pro-k"], "active");
+const june = divisionsForResultsMonth(2026, 5).map((d) => d.tag);
+assert.equal(june.includes("ipbl-66-m-pro-g"), false);
+assert.equal(june.includes("ipbl-66-m-pro-u"), true);

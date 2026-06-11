@@ -1,4 +1,5 @@
 import type { H2HEntry, LiveGame, ScheduleGame, TeamHistoryGame } from "./types";
+import { toMyanmarDateTime } from "../time/myanmar";
 
 type RawTeam = {
   teamId?: number;
@@ -17,6 +18,8 @@ type RawGame = {
   localTime?: string;
   period?: number | null;
   timeToGo?: string | null;
+  scheduledTime?: string | null;
+  defaultZoneTime?: string | null;
 };
 
 function teamRef(t: RawTeam | undefined): { teamId: number; shortName: string; name: string } {
@@ -192,6 +195,10 @@ export function normalizeCalendarRow(
   const rawUpdate = item.lastUpdateTime || item.updateTime;
   const updatedAt = typeof rawUpdate === "number" ? rawUpdate : null;
 
+  const sourceLocalDate = String(g.localDate ?? "");
+  const sourceLocalTime = String(g.localTime ?? "");
+  const scheduledTime = g.scheduledTime != null ? String(g.scheduledTime) : null;
+  const display = toMyanmarDateTime({ scheduledTime, localDate: sourceLocalDate, localTime: sourceLocalTime });
   return {
     gameId: Number(g.id),
     tag,
@@ -202,8 +209,13 @@ export function normalizeCalendarRow(
     score2: Number(g.score2 ?? 0),
     scoreText: getScoreText(g, live),
     fullScore: g.fullScore != null ? String(g.fullScore) : null,
-    localDate: String(g.localDate ?? ""),
-    localTime: String(g.localTime ?? ""),
+    localDate: display.displayDate,
+    localTime: display.time,
+    scheduledTime,
+    sourceLocalDate,
+    sourceLocalTime,
+    sourceTimeZone: "UTC+05:00",
+    displayTimeZone: "Asia/Yangon",
     divisionLabel: String(item.division ?? ""),
     period: numberOrNull(item.period) ?? numberOrNull(g.period),
     timeToGo: text(item.timeToGo) || text(g.timeToGo) || null,
@@ -256,40 +268,44 @@ export function toLiveGame(sg: ScheduleGame): LiveGame {
 }
 
 export function parseTeamHistory(raw: unknown, tag: string): TeamHistoryGame[] {
-    const data = raw as {
-        data?: { items?: { game?: RawGame; team1?: RawTeam; team2?: RawTeam }[] };
-    };
+    const data = raw as { data?: { items?: { game?: RawGame; team1?: RawTeam; team2?: RawTeam }[] } };
     const items = data?.data?.items;
     if (!Array.isArray(items)) return [];
     const out: TeamHistoryGame[] = [];
     for (const row of items) {
         const g = row.game;
         if (!g?.id) continue;
+        const scheduledTime = String(g.scheduledTime ?? "");
+        const display = toMyanmarDateTime({ scheduledTime, localDate: g.localDate, localTime: g.localTime });
         out.push({
-            gameId: Number(g.id),
-            scheduledTime: String((g as { scheduledTime?: string }).scheduledTime ?? ""),
-            localDate: String(g.localDate ?? ""),
-            localTime: String(g.localTime ?? ""),
-            status: String(g.gameStatus ?? ""),
-            scoreText: String(g.score ?? ""),
+            gameId: Number(g.id), scheduledTime,
+            localDate: display.displayDate, localTime: display.time,
+            status: String(g.gameStatus ?? ""), scoreText: String(g.score ?? ""),
             fullScore: g.fullScore != null ? String(g.fullScore) : null,
-            team1: teamRef(row.team1),
-            team2: teamRef(row.team2),
-            tag,
+            team1: teamRef(row.team1), team2: teamRef(row.team2), tag,
         });
     }
     return out;
 }
 
-export function computeH2H(games: unknown[] = [], teamA?: string, teamB?: string) {
-  const rows = Array.isArray(games) ? games : [];
-  if (!teamA || !teamB) return [];
-  return rows.filter((game) => {
-    if (!game || typeof game !== "object") return false;
-    const record = game as Record<string, unknown>;
-    const names = [record.homeTeam, record.awayTeam, record.home, record.away, record.teamA, record.teamB]
-      .filter((value): value is string => typeof value === "string")
-      .map((value) => value.toLowerCase());
-    return names.includes(teamA.toLowerCase()) && names.includes(teamB.toLowerCase());
-  });
+export function computeH2H(
+  teamAGames: TeamHistoryGame[], teamBGames: TeamHistoryGame[],
+  teamAId: number, teamBId: number, limit = 15
+): H2HEntry[] {
+  const bIds = new Set(teamBGames.map((game) => game.gameId));
+  const pair = new Set([teamAId, teamBId]);
+  return teamAGames
+    .filter((game) => bIds.has(game.gameId) && pair.has(game.team1.teamId) && pair.has(game.team2.teamId))
+    .map((game) => {
+      const score = game.scoreText.match(/(\d+)\s*:\s*(\d+)/);
+      const home = score ? Number(score[1]) : 0; const away = score ? Number(score[2]) : 0;
+      return {
+        gameId: game.gameId, date: game.localDate, time: game.localTime,
+        scoreText: game.scoreText, fullScore: game.fullScore, status: game.status,
+        winner: home === away ? 0 : home > away ? 1 : 2,
+        homeTeamId: game.team1.teamId, awayTeamId: game.team2.teamId,
+      } as H2HEntry;
+    })
+    .sort((a, b) => `${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`))
+    .slice(0, limit);
 }

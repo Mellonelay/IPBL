@@ -1,139 +1,70 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { parseCalendarItems, type ScheduleGame } from "../../lib/server/calendar-normalize.js";
 
-type LiveGame = {
-  gameId: string;
-  homeTeam: string;
-  awayTeam: string;
-  homeScore: number | null;
-  awayScore: number | null;
-  currentPeriod: string | null;
-  status: 'live';
-  division?: string;
-  divisionTag?: string;
-  raw?: unknown;
+const PROXY_BASE = "https://worker.mloneslot99.com/ipbl-proxy";
+const LIVE_TAGS = [
+  "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-u",
+  "ipbl-66-w-pro-a", "ipbl-66-w-pro-b", "ipbl-66-w-pro-c", "ipbl-66-w-pro-d", "ipbl-66-w-pro-g", "ipbl-66-w-pro-k",
+] as const;
+const LABELS: Record<string, string> = {
+  "ipbl-66-m-pro-a": "Pro Men A", "ipbl-66-m-pro-b": "Pro Men B", "ipbl-66-m-pro-c": "Pro Men C",
+  "ipbl-66-m-pro-d": "Pro Men D", "ipbl-66-m-pro-u": "Pro Men U",
+  "ipbl-66-w-pro-a": "Pro Women A", "ipbl-66-w-pro-b": "Pro Women B", "ipbl-66-w-pro-c": "Pro Women C",
+  "ipbl-66-w-pro-d": "Pro Women D", "ipbl-66-w-pro-g": "Pro Women G", "ipbl-66-w-pro-k": "Pro Women K",
 };
 
-const SOURCE_URL = 'https://1xlite-041469.top/service-api/LiveFeed/GetSportsShortZip?sports=3,40&champs=2496666&lng=en&gr=830&country=126&virtualSports=true&groupChamps=true';
-
-function pickString(obj: any, keys: string[]): string | null {
-  for (const k of keys) {
-    const v = obj?.[k];
-    if (typeof v === 'string' && v.trim()) return v.trim();
-    if (typeof v === 'number') return String(v);
-  }
-  return null;
+function myanmar(game: ScheduleGame): ScheduleGame {
+  const candidate = game.scheduledTime || (game.localDate && game.localTime
+    ? `${game.localDate.split(".").reverse().join("-")}T${game.localTime}:00+05:00` : "");
+  const date = candidate ? new Date(candidate) : null;
+  if (!date || Number.isNaN(date.getTime())) return { ...game, divisionLabel: LABELS[game.tag] ?? game.divisionLabel };
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Yangon", year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+  }).formatToParts(date);
+  const get = (type: Intl.DateTimeFormatPartTypes) => parts.find((p) => p.type === type)?.value ?? "";
+  return {
+    ...game,
+    sourceLocalDate: game.localDate,
+    sourceLocalTime: game.localTime,
+    sourceTimeZone: "UTC+05:00",
+    displayTimeZone: "Asia/Yangon",
+    localDate: `${get("day")}.${get("month")}.${get("year")}`,
+    localTime: `${get("hour")}:${get("minute")}`,
+    divisionLabel: LABELS[game.tag] ?? game.divisionLabel,
+  };
 }
 
-function pickNumber(obj: any, keys: string[]): number | null {
-  for (const k of keys) {
-    const v = obj?.[k];
-    if (typeof v === 'number' && Number.isFinite(v)) return v;
-    if (typeof v === 'string' && v.trim() !== '' && Number.isFinite(Number(v))) return Number(v);
-  }
-  return null;
-}
-
-function pickScore(item: any, side: 'home' | 'away'): number | null {
-  const directKeys = side === 'home'
-    ? ['SC1', 'S1', 'homeScore', 'score1', 'Score1']
-    : ['SC2', 'S2', 'awayScore', 'score2', 'Score2'];
-  const direct = pickNumber(item, directKeys);
-  if (direct !== null) return direct;
-  const fullScore = item?.SC?.FS;
-  const nested = side === 'home' ? fullScore?.S1 : fullScore?.S2;
-  if (typeof nested === 'number' && Number.isFinite(nested)) return nested;
-  if (typeof nested === 'string' && nested.trim() !== '' && Number.isFinite(Number(nested))) return Number(nested);
-  return null;
-}
-
-function pickCurrentPeriod(item: any): string | null {
-  return pickString(item, ['P', 'Period', 'currentPeriod', 'period'])
-    ?? pickString(item?.SC, ['CP', 'CPS', 'S', 'TS'])
-    ?? null;
-}
-
-function walk(value: any, out: any[] = []): any[] {
-  if (!value || typeof value !== 'object') return out;
-  if (Array.isArray(value)) {
-    for (const item of value) walk(item, out);
-    return out;
-  }
-  const id = pickString(value, ['I', 'Id', 'id', 'gameId', 'GameId', 'CI']);
-  const home = pickString(value, ['O1', 'Home', 'home', 'homeTeam', 'Team1', 'T1', 'Name1']);
-  const away = pickString(value, ['O2', 'Away', 'away', 'awayTeam', 'Team2', 'T2', 'Name2']);
-  const s1 = pickScore(value, 'home');
-  const s2 = pickScore(value, 'away');
-  if (id && home && away && (s1 !== null || s2 !== null)) out.push(value);
-  for (const child of Object.values(value)) walk(child, out);
-  return out;
-}
-
-function normalize(raw: any): LiveGame[] {
-  const root = raw?.Value ?? raw?.value ?? raw?.data ?? raw;
-  const candidates = walk(root);
-  const games: LiveGame[] = [];
-  const seen = new Set<string>();
-  for (const item of candidates) {
-    const gameId = pickString(item, ['I', 'Id', 'id', 'gameId', 'GameId', 'CI']);
-    const homeTeam = pickString(item, ['O1', 'Home', 'home', 'homeTeam', 'Team1', 'T1', 'Name1']);
-    const awayTeam = pickString(item, ['O2', 'Away', 'away', 'awayTeam', 'Team2', 'T2', 'Name2']);
-    if (!gameId || !homeTeam || !awayTeam || seen.has(gameId)) continue;
-    seen.add(gameId);
-    games.push({
-      gameId,
-      homeTeam,
-      awayTeam,
-      homeScore: pickScore(item, 'home'),
-      awayScore: pickScore(item, 'away'),
-      currentPeriod: pickCurrentPeriod(item),
-      status: 'live',
-      division: pickString(item, ['L', 'League', 'Champ', 'champName']) ?? 'IPBL Pro Division',
-      divisionTag: 'ipbl-1xlite-live',
-      raw: item,
-    });
-  }
-  return games;
-}
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const started = Date.now();
+async function fetchTag(tag: string): Promise<{ tag: string; games: ScheduleGame[]; error?: string }> {
+  const url = `${PROXY_BASE}/calendar/online?${new URLSearchParams({ tag, lang: "ru" })}`;
   try {
-    const upstream = await fetch(SOURCE_URL, {
-      headers: {
-        accept: 'application/json,text/plain,*/*',
-        'user-agent': 'Mellonelay-IPBL/1.0',
-      },
-    });
-    const text = await upstream.text();
-    if (!upstream.ok) {
-      return res.status(200).json({
-        games: [],
-        status: { lastSyncAt: new Date().toISOString(), status: 'FAIL', errorCode: 'SOURCE_UNAVAILABLE', httpStatus: upstream.status, latencyMs: Date.now() - started },
-      });
-    }
-    let json: any;
-    try { json = JSON.parse(text); }
-    catch {
-      return res.status(200).json({
-        games: [],
-        status: { lastSyncAt: new Date().toISOString(), status: 'FAIL', errorCode: 'PARSER_ERROR', latencyMs: Date.now() - started },
-      });
-    }
-    const games = normalize(json);
-    if (!games.length) {
-      return res.status(200).json({
-        games: [],
-        status: { lastSyncAt: new Date().toISOString(), status: 'FAIL', errorCode: 'EMPTY', upstreamSuccess: json?.Success ?? null, latencyMs: Date.now() - started },
-      });
-    }
-    return res.status(200).json({
-      games,
-      status: { lastSyncAt: new Date().toISOString(), status: 'OK', source: '1xlite:GetSportsShortZip', latencyMs: Date.now() - started },
-    });
-  } catch (err: any) {
-    return res.status(200).json({
-      games: [],
-      status: { lastSyncAt: new Date().toISOString(), status: 'FAIL', errorCode: 'SOURCE_UNAVAILABLE', message: String(err?.message || err).slice(0, 200), latencyMs: Date.now() - started },
-    });
+    const response = await fetch(url, { headers: { Accept: "application/json" } });
+    if (!response.ok) return { tag, games: [], error: `HTTP ${response.status}` };
+    const raw = await response.json();
+    return { tag, games: parseCalendarItems(raw, tag).filter((game) => game.isLive).map(myanmar) };
+  } catch (error) {
+    return { tag, games: [], error: error instanceof Error ? error.message : String(error) };
   }
+}
+
+export default async function handler(_req: VercelRequest, res: VercelResponse) {
+  const started = Date.now();
+  const batches = await Promise.all(LIVE_TAGS.map(fetchTag));
+  const failures = batches.filter((batch) => batch.error).map(({ tag, error }) => ({ tag, error }));
+  const byId = new Map<string, ScheduleGame>();
+  for (const batch of batches) for (const game of batch.games) byId.set(`${game.tag}:${game.gameId}`, game);
+  const games = [...byId.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
+  return res.status(200).json({
+    games,
+    status: {
+      lastSyncAt: new Date().toISOString(),
+      status: failures.length === 0 ? "OK" : failures.length < LIVE_TAGS.length ? "PARTIAL" : "FAIL",
+      source: "official:api1.ipbl.pro",
+      requestedDivisions: LIVE_TAGS.length,
+      successfulDivisions: LIVE_TAGS.length - failures.length,
+      failures,
+      latencyMs: Date.now() - started,
+      displayTimeZone: "Asia/Yangon",
+    },
+  });
 }

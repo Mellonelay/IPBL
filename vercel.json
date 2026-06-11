@@ -32,15 +32,15 @@
     },
     {
       "source": "/api/ipbl/games/game",
-      "destination": "/api/ipbl/games/game.ts"
+      "destination": "https://worker.mloneslot99.com/ipbl-proxy/games/game"
     },
     {
       "source": "/api/ipbl/box-score",
-      "destination": "/api/ipbl/box-score.ts"
+      "destination": "https://worker.mloneslot99.com/ipbl-proxy/box-score"
     },
     {
       "source": "/api/ipbl/(.*)",
-      "destination": "https://api.ipbl.pro/$1"
+      "destination": "https://worker.mloneslot99.com/ipbl-proxy/$1"
     },
     {
       "source": "/(.*)",

@@ -3,10 +3,10 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 export const config = { maxDuration: 120 };
 
 async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
-    const kv = await import("../admin/server-lib/kv-rest-env-aliases.js");
-    const redis = await import("../admin/server-lib/results-redis.js");
-    const sync = await import("../admin/server-lib/results-sync-constants.js");
-    const writer = await import("../admin/server-lib/write-results-month-kv.js");
+    const kv = await import("../../lib/server/kv-rest-env-aliases.js");
+    const redis = await import("../../lib/server/results-redis.js");
+    const sync = await import("../../lib/server/results-sync-constants.js");
+    const writer = await import("../../lib/server/write-results-month-kv.js");
 
     if (req.headers.authorization !== `Bearer ${process.env.CRON_SECRET}`) {
         res.status(401).json({ error: "Unauthorized" });

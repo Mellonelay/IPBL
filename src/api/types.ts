@@ -24,6 +24,12 @@ export type ScheduleGame = {
     period: number | null;
     timeToGo: string | null;
     isLive: boolean;
+    updatedAt?: number | null;
+    scheduledTime?: string | null;
+    sourceLocalDate?: string | null;
+    sourceLocalTime?: string | null;
+    sourceTimeZone?: string | null;
+    displayTimeZone?: string | null;
     team1: TeamRef;
     team2: TeamRef;
 };

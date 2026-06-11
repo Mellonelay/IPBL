@@ -1,14 +1,7 @@
 import { useEffect, useMemo, useRef } from "react";
-import { RESULTS_DIVISIONS, type ResultsCalendarMap, type ResultsGame } from "../results/calendar";
+import { resultsDivisionsForMonth, type CalendarGridGame, type ResultsCalendarMap, type ResultsGame } from "../results/calendar";
 
-type CalendarMatch = {
-  game: ResultsGame;
-  time: string;
-  teams: string;
-  score: string;
-  division: string;
-  quarterTotals: string | null;
-};
+type CalendarMatch = CalendarGridGame;
 
 type Props = {
   calendarMap: ResultsCalendarMap;
@@ -36,43 +29,6 @@ function formatHeader(iso: string): string {
   });
 }
 
-function formatTime(game: ResultsGame): string {
-  return typeof game.time === "string" && game.time.length > 0 ? game.time : "TBD";
-}
-
-function formatTeams(game: ResultsGame): string {
-  return `${game.homeTeam || "Home"} vs ${game.awayTeam || "Away"}`;
-}
-
-function formatScore(game: ResultsGame): string {
-  const home = typeof game.homeScore === "number" ? game.homeScore : null;
-  const away = typeof game.awayScore === "number" ? game.awayScore : null;
-  return home === null || away === null ? "—" : `${home}-${away}`;
-}
-
-function formatQuarterTotals(game: ResultsGame): string | null {
-  const quarters = Array.isArray(game.quarters) ? game.quarters : [];
-  if (!quarters.length) return null;
-  return quarters
-    .map((q, idx) => {
-      const home = typeof q.home === "number" ? q.home : "—";
-      const away = typeof q.away === "number" ? q.away : "—";
-      return `Q${idx + 1} ${home}-${away}`;
-    })
-    .join(" · ");
-}
-
-function normalizeMatch(game: ResultsGame, division: string): CalendarMatch {
-  return {
-    game,
-    time: formatTime(game),
-    teams: formatTeams(game),
-    score: formatScore(game),
-    division,
-    quarterTotals: formatQuarterTotals(game),
-  };
-}
-
 export function ResultsCalendarGrid({
   calendarMap,
   selectedDivisionTag,
@@ -89,6 +45,8 @@ export function ResultsCalendarGrid({
 }: Props) {
   const dayRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const visibleDays = useMemo(() => Object.keys(calendarMap || {}).sort(), [calendarMap]);
+  const [selectedYear, selectedMonth] = selectedMonthKey.split("-").map(Number);
+  const divisionOptions = resultsDivisionsForMonth(selectedYear, selectedMonth - 1);
 
   useEffect(() => {
     if (!jumpDate) return;
@@ -99,6 +57,7 @@ export function ResultsCalendarGrid({
   return (
     <section className="calendar-results-panel">
       <div className="calendar-toolbar">
+        <span className="muted">Times: Myanmar (UTC+06:30)</span>
         <label>
           Month
           <select value={selectedMonthKey} onChange={(e) => onSelectMonthKey(e.target.value)}>
@@ -114,7 +73,7 @@ export function ResultsCalendarGrid({
         <label>
           Division
           <select value={selectedDivisionTag} onChange={(e) => onSelectDivision(e.target.value)}>
-            {RESULTS_DIVISIONS.map((division) => (
+            {divisionOptions.map((division) => (
               <option key={division.tag} value={division.tag}>{division.label}</option>
             ))}
           </select>
@@ -146,7 +105,7 @@ export function ResultsCalendarGrid({
               {visibleDivisions.length === 0 && loading && <div className="no-matches">Loading...</div>}
 
               {visibleDivisions.map((division) => {
-                const matches = division.games.map((game) => normalizeMatch(game, division.division));
+                const matches = division.games;
                 return (
                   <section key={`${date}-${division.divisionTag}`} className="calendar-division-group">
                     <div className="calendar-division-title">{division.division}</div>

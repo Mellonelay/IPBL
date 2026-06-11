@@ -27,6 +27,11 @@ export type ScheduleGame = {
     timeToGo: string | null;
     isLive: boolean;
     updatedAt: number | null;
+    scheduledTime?: string | null;
+    sourceLocalDate?: string | null;
+    sourceLocalTime?: string | null;
+    sourceTimeZone?: string | null;
+    displayTimeZone?: string | null;
     team1: TeamRef;
     team2: TeamRef;
 };
@@ -48,6 +53,8 @@ type RawGame = {
     localTime?: string;
     period?: number | null;
     timeToGo?: string | null;
+    scheduledTime?: string | null;
+    defaultZoneTime?: string | null;
 };
 
 /**
@@ -250,6 +257,10 @@ export function normalizeCalendarRow(item: Record<string, unknown>, tag: string)
         timeToGo: text(item.timeToGo) || text(g.timeToGo) || null,
         isLive: live,
         updatedAt,
+        scheduledTime: g.scheduledTime != null ? String(g.scheduledTime) : null,
+        sourceLocalDate: String(g.localDate ?? ""),
+        sourceLocalTime: String(g.localTime ?? ""),
+        sourceTimeZone: "UTC+05:00",
         team1: t1,
         team2: t2,
     };

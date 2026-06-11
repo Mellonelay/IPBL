@@ -1,11 +1,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { RESULTS_SYNC_TAGS } from "./server-lib/results-sync-constants.js";
+import { RESULTS_SYNC_TAGS } from "../../lib/server/results-sync-constants.js";
 
 export const config = { maxDuration: 300 };
 
 async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
-  const { isKvRestConfigured } = await import("./server-lib/kv-rest-env-aliases.js");
-  const { writeResultsMonthToKv } = await import("./server-lib/write-results-month-kv.js");
+  const { isKvRestConfigured } = await import("../../lib/server/kv-rest-env-aliases.js");
+  const { writeResultsMonthToKv } = await import("../../lib/server/write-results-month-kv.js");
 
   if (req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" });

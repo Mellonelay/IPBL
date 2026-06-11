@@ -28,6 +28,7 @@ import {
 import {
   clearResultsCalendarCache,
   createSkeletonResultsCalendarMap,
+  resultsDivisionsForMonth,
   fetchResultsMonthFromApi,
   RESULTS_DIVISION_TAGS,
   type CalendarGridMap,
@@ -485,6 +486,13 @@ function App() {
     void loadResults();
   }, [loadResults, activeTab]);
 
+  useEffect(() => {
+    const valid = resultsDivisionsForMonth(selectedResultsYear, selectedResultsMonthIndex);
+    if (!valid.some((division) => division.tag === selectedResultsDivisionTag) && valid[0]) {
+      setSelectedResultsDivisionTag(valid[0].tag);
+    }
+  }, [selectedResultsYear, selectedResultsMonthIndex, selectedResultsDivisionTag]);
+
   // Keep jump date inside the selected month.
   useEffect(() => {
     const mm = String(selectedResultsMonthIndex + 1).padStart(2, "0");
@@ -723,7 +731,7 @@ function App() {
                     {canonicalDivisionLabel(drawer.game.tag) ??
                       drawer.game.divisionLabel ??
                       drawer.game.tag}{" "}
-                     ·  {drawer.game.localDate} {drawer.game.localTime}
+                     ·  {drawer.game.localDate} {drawer.game.localTime} Myanmar
                   </div>
                 </div>
                 <span
