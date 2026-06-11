@@ -47,5 +47,17 @@ The official source remains preferred automatically. When API1 returns usable of
 ## Caveats
 
 - MelBet is an unofficial temporary transport and its public contract may change.
-- Official game detail, box score, and H2H routes can remain unavailable while API1 is disabled.
+- Official-source detail, box score, and H2H can remain unavailable while API1 is disabled; verified compatibility routes preserve the application contract.
 - The fallback restores live score, quarter matrix, current period, and countdown clock; it does not claim official-source equivalence.
+
+## Detail, box score, and H2H fallback
+
+The browser-facing compatibility routes are first-party Vercel functions:
+
+- `/api/ipbl/games/game`
+- `/api/ipbl/box-score`
+- `/api/ipbl/team/games`
+
+They prefer the official IPBL transport when it is healthy. When it is unavailable, current game detail and quarter scores use the verified bookmaker live adapter, while completed game detail, quarter matrices, and team histories use the existing Results KV archive. Team history remains newest-first and is strictly scoped by approved division tag and canonical team IDs; historical Pro Men G and current Pro Men U are not merged because their verified team rosters differ.
+
+No event outside the approved Results registry is promoted into detail or H2H data.

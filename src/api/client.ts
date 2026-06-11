@@ -6,6 +6,7 @@ const calCache = new Map<string, { at: number; rows: ScheduleGame[] }>();
 const teamCache = new Map<string, { at: number; rows: TeamHistoryGame[] }>();
 const CAL_TTL_MS = 90_000;
 const TEAM_TTL_MS = 300_000;
+const REQUEST_TIMEOUT_MS = 20_000;
 
 function base(): string {
     return "/api/ipbl";
@@ -22,7 +23,7 @@ function q(obj: Record<string, string | number | undefined>): string {
 async function getJson(path: string, search: string): Promise<unknown> {
     const url = `${base()}${path}${search ? `?${search}` : ""}`;
     const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 8000);
+    const timeout = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
     try {
         const r = await fetch(url, {
             headers: { Accept: "application/json" },
