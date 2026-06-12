@@ -51,7 +51,8 @@ export function resultsDivisionsForMonth(year: number, monthIndex: number): Divi
     return divisionsForResultsMonth(year, monthIndex).filter((d) => (RESULTS_SYNC_TAGS as readonly string[]).includes(d.tag));
 }
 
-const SESSION_CACHE_TTL_MS = 60_000;
+export const RESULTS_SESSION_CACHE_TTL_MS = 60_000;
+export const RESULTS_REFRESH_INTERVAL_MS = 60_000;
 const sessionCache = new Map<string, { at: number; payload: ResultsMonthPayload }>();
 const inflight = new Map<string, Promise<ResultsMonthPayload>>();
 const iso = (y: number, m: number, d: number) => `${y}-${String(m + 1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
@@ -125,6 +126,10 @@ async function fetchRaw(
     throw new Error("Invalid Results response");
 }
 function previousMonth(year:number,monthIndex:number){return monthIndex===0?{year:year-1,monthIndex:11}:{year,monthIndex:monthIndex-1};}
+export function shouldFetchPreviousResultsMonth(year:number,monthIndex:number,divisionTag:string):boolean{
+    const prev=previousMonth(year,monthIndex);
+    return resultsDivisionsForMonth(prev.year,prev.monthIndex).some((division)=>division.tag===divisionTag);
+}
 function regroupMyanmar(maps:CalendarGridMap[],year:number,monthIndex:number,tag:string):CalendarGridMap{
     const cfg=configFor(tag); if(!cfg)return{}; const out=createEmptyMonthMap(year,monthIndex,[cfg]); const seen=new Set<number>();
     for(const map of maps) for(const groups of Object.values(map||{})) for(const group of groups||[]) for(const row of group.games||[]){
@@ -146,12 +151,15 @@ export async function fetchResultsMonthPayloadFromApi({
     force=false,
 }:{year:number;monthIndex:number;divisionTag:string;force?:boolean}):Promise<ResultsMonthPayload>{
     const key=sessionKey(year,monthIndex,divisionTag),now=Date.now(),hit=sessionCache.get(key);
-    if(!force&&hit&&now-hit.at<SESSION_CACHE_TTL_MS)return structuredClone(hit.payload);
+    if(!force&&hit&&now-hit.at<RESULTS_SESSION_CACHE_TTL_MS)return structuredClone(hit.payload);
     const pending=inflight.get(key);if(pending)return pending;
     const promise=(async()=>{
         const prev=previousMonth(year,monthIndex);
+        const previousPromise=shouldFetchPreviousResultsMonth(year,monthIndex,divisionTag)
+            ? fetchRaw(prev.year,prev.monthIndex,divisionTag,true)
+            : Promise.resolve({calendar:{},meta:null});
         const [previous,current]=await Promise.all([
-            fetchRaw(prev.year,prev.monthIndex,divisionTag,true),
+            previousPromise,
             fetchRaw(year,monthIndex,divisionTag),
         ]);
         const payload={calendar:regroupMyanmar([previous.calendar,current.calendar],year,monthIndex,divisionTag),meta:current.meta??legacyMetadata(current.calendar,year,monthIndex,divisionTag)};

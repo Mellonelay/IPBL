@@ -21,7 +21,7 @@
     "test:ipbl-compat": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-compat.test.ts",
     "test:client-timeout": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/client-timeout.test.ts",
     "test:teams": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-registry.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-statistics.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-results.test.ts",
-    "test:results-hardening": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-hardening.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-writer.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-sync-policy.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-state.test.ts"
+    "test:results-hardening": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-hardening.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-writer.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-sync-policy.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-state.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-api-policy.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-refresh-policy.test.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.34.0",

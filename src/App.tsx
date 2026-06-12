@@ -33,6 +33,7 @@ import {
   resultsDivisionsForMonth,
   fetchResultsMonthPayloadFromApi,
   RESULTS_DIVISION_TAGS,
+  RESULTS_REFRESH_INTERVAL_MS,
   type CalendarGridMap,
   type ResultsMonthMetadata,
 } from "./results/calendar";
@@ -42,9 +43,6 @@ function safeSplit(value: unknown, delimiter: string): string[] {
   return typeof value === 'string' ? value.split(delimiter) : [];
 }
 
-function safeText(value: unknown, fallback = ''): string {
-  return typeof value === 'string' && value.trim() ? value : fallback;
-}
 type TabKey = "live" | "results" | "teams" | "betting";
 
 type LiveInsight = {
@@ -83,12 +81,6 @@ function formatCurrency(value: number): string {
 
 function formatPct(value: number): string {
   return `${(value * 100).toFixed(1)}%`;
-}
-
-function devLog(..._args: unknown[]): void {
-  void _args;
-  // Vite exposes DEV at build-time; keep logs out of production bundles.
-  if (((import.meta as any).env as any).DEV) console.debug("[ipbl]", ..._args);
 }
 
 function devAssert(condition: unknown, message: string, detail?: unknown): void {
@@ -229,24 +221,6 @@ function LiveCard({
   );
 }
 
-
-function normalizeLiveGameForUi(game: any) {
-  const homeTeam = safeText(game?.homeTeam ?? game?.home ?? game?.team1 ?? game?.O1, 'Home');
-  const awayTeam = safeText(game?.awayTeam ?? game?.away ?? game?.team2 ?? game?.O2, 'Away');
-  const division = safeText(game?.divisionTag ?? game?.division ?? game?.divisionLabel, 'ipbl-live');
-  return {
-    ...game,
-    id: game?.id ?? game?.gameId ?? game?.I ?? `${homeTeam}-${awayTeam}`,
-    gameId: game?.gameId ?? game?.id ?? game?.I,
-    homeTeam,
-    awayTeam,
-    division,
-    divisionTag: game?.divisionTag ?? division,
-    homeScore: game?.homeScore ?? game?.score1 ?? game?.SC?.FS?.S1 ?? null,
-    awayScore: game?.awayScore ?? game?.score2 ?? game?.SC?.FS?.S2 ?? null,
-    currentPeriod: game?.currentPeriod ?? game?.period ?? game?.SC?.CP ?? null,
-  };
-}
 
 
 
@@ -532,7 +506,7 @@ function App() {
   useEffect(() => {
     if (activeTab !== "results") return;
     void loadResults();
-    const id = window.setInterval(() => void loadResults({ silent: true, force: true }), 60_000);
+    const id = window.setInterval(() => void loadResults({ silent: true, force: true }), RESULTS_REFRESH_INTERVAL_MS);
     return () => window.clearInterval(id);
   }, [loadResults, activeTab]);
 

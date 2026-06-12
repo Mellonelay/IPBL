@@ -4,6 +4,8 @@ import { buildStoredMonthMapWithStats } from "../lib/server/ingest-results-month
 import {
   classifyResultEvidence,
   mergeStoredResultsMonths,
+  parseResultsMetadata,
+  parseStoredResultsMonth,
   verifiedThroughDateForMonth,
 } from "../lib/server/results-hardening.ts";
 
@@ -107,3 +109,22 @@ assert.equal(
 );
 
 console.log("Phase A Results hardening fixture tests passed");
+
+const validMetadata = {
+  schemaVersion: 1 as const,
+  status: "source_unavailable" as const,
+  source: "official:api1.ipbl.pro",
+  checkedAt: "2026-06-12T00:00:00Z",
+  updatedAt: null,
+  verifiedThroughDate: null,
+  year: 2026,
+  month: 6,
+  divisionTag: "ipbl-66-m-pro-a",
+};
+assert.deepEqual(parseResultsMetadata(JSON.stringify(validMetadata)), validMetadata);
+assert.equal(parseResultsMetadata({ schemaVersion: 1, status: "ok" }), null, "incomplete metadata must be rejected");
+assert.equal(parseResultsMetadata({ ...validMetadata, month: 13 }), null, "invalid month metadata must be rejected");
+assert.deepEqual(parseStoredResultsMonth(existing), existing);
+assert.equal(parseStoredResultsMonth({ "2026-06-01": {} }), null, "non-array day groups must be rejected");
+assert.equal(parseStoredResultsMonth({ "not-a-date": [] }), null, "invalid day keys must be rejected");
+assert.equal(parseStoredResultsMonth({ "2026-06-01": [{ date: "2026-06-01", division: "A", divisionTag: "a", games: [{}] }] }), null, "malformed rows must be rejected");

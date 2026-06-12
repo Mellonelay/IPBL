@@ -171,13 +171,108 @@ export function dedupeFinishedGames(games: ScheduleGame[]): {
 }
 
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function isNullableString(value: unknown): value is string | null {
+  return value === null || typeof value === "string";
+}
+
+function isNullableFiniteNumber(value: unknown): value is number | null {
+  return value === null || (typeof value === "number" && Number.isFinite(value));
+}
+
+function isTeamRef(value: unknown): boolean {
+  return isRecord(value)
+    && typeof value.teamId === "number"
+    && Number.isFinite(value.teamId)
+    && typeof value.shortName === "string"
+    && typeof value.name === "string";
+}
+
+function isScheduleGame(value: unknown): boolean {
+  if (!isRecord(value)) return false;
+  return typeof value.gameId === "number"
+    && Number.isFinite(value.gameId)
+    && typeof value.tag === "string"
+    && typeof value.status === "string"
+    && typeof value.statusDisplay === "string"
+    && isNullableString(value.upstreamStatusId)
+    && typeof value.score1 === "number"
+    && Number.isFinite(value.score1)
+    && typeof value.score2 === "number"
+    && Number.isFinite(value.score2)
+    && typeof value.scoreText === "string"
+    && isNullableString(value.fullScore)
+    && typeof value.localDate === "string"
+    && typeof value.localTime === "string"
+    && typeof value.divisionLabel === "string"
+    && isNullableFiniteNumber(value.period)
+    && isNullableString(value.timeToGo)
+    && isNullableFiniteNumber(value.timeIsGo)
+    && typeof value.isLive === "boolean"
+    && isNullableFiniteNumber(value.updatedAt)
+    && (value.scheduledTime === undefined || isNullableString(value.scheduledTime))
+    && (value.sourceLocalDate === undefined || isNullableString(value.sourceLocalDate))
+    && (value.sourceLocalTime === undefined || isNullableString(value.sourceLocalTime))
+    && (value.sourceTimeZone === undefined || isNullableString(value.sourceTimeZone))
+    && (value.displayTimeZone === undefined || isNullableString(value.displayTimeZone))
+    && isTeamRef(value.team1)
+    && isTeamRef(value.team2);
+}
+
+function isStoredResultEvidence(value: unknown): boolean {
+  if (!isRecord(value)) return false;
+  return typeof value.periodCount === "number"
+    && Number.isInteger(value.periodCount)
+    && value.periodCount >= 0
+    && ["complete", "partial", "missing", "conflict"].includes(String(value.periodState))
+    && ["consistent", "partial", "unknown", "conflict"].includes(String(value.scoreIntegrity))
+    && typeof value.quarterEvidenceQuarantined === "boolean";
+}
+
+function isStoredCalendarGridGame(value: unknown): boolean {
+  if (!isRecord(value)) return false;
+  return isScheduleGame(value.game)
+    && typeof value.time === "string"
+    && typeof value.teams === "string"
+    && typeof value.score === "string"
+    && typeof value.division === "string"
+    && typeof value.divisionTag === "string"
+    && isNullableString(value.quarterTotals)
+    && (value.evidence === undefined || isStoredResultEvidence(value.evidence));
+}
+
+function isStoredCalendarGridDivision(value: unknown): boolean {
+  if (!isRecord(value) || !Array.isArray(value.games)) return false;
+  return typeof value.date === "string"
+    && typeof value.division === "string"
+    && typeof value.divisionTag === "string"
+    && value.games.every(isStoredCalendarGridGame);
+}
+
 export function parseResultsMetadata(value: unknown): ResultsMonthMetadata | null {
   try {
     const parsed = typeof value === "string" ? JSON.parse(value) : value;
-    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
-    const candidate = parsed as Partial<ResultsMonthMetadata>;
-    if (candidate.schemaVersion !== 1 || typeof candidate.status !== "string") return null;
-    return candidate as ResultsMonthMetadata;
+    if (!isRecord(parsed)) return null;
+    if (parsed.schemaVersion !== 1) return null;
+    if (!["ok", "source_unavailable", "legacy"].includes(String(parsed.status))) return null;
+    if (typeof parsed.source !== "string" || !parsed.source.trim()) return null;
+    if (typeof parsed.checkedAt !== "string" || !parsed.checkedAt.trim()) return null;
+    if (!isNullableString(parsed.updatedAt) || !isNullableString(parsed.verifiedThroughDate)) return null;
+    if (typeof parsed.year !== "number" || !Number.isInteger(parsed.year)) return null;
+    if (typeof parsed.month !== "number" || !Number.isInteger(parsed.month) || parsed.month < 1 || parsed.month > 12) return null;
+    if (typeof parsed.divisionTag !== "string" || !parsed.divisionTag.trim()) return null;
+    for (const field of [
+      "fetchedRows", "acceptedRows", "mergedRows", "preservedRows", "rejectedNonFinished",
+      "duplicatesCollapsed", "partialPeriodRows", "quarantinedPeriodRows",
+    ]) {
+      const candidate = parsed[field];
+      if (candidate !== undefined && (typeof candidate !== "number" || !Number.isFinite(candidate) || candidate < 0)) return null;
+    }
+    if (parsed.error !== undefined && typeof parsed.error !== "string") return null;
+    return parsed as ResultsMonthMetadata;
   } catch {
     return null;
   }
@@ -186,7 +281,11 @@ export function parseResultsMetadata(value: unknown): ResultsMonthMetadata | nul
 export function parseStoredResultsMonth(value: unknown): StoredResultsMonthMap | null {
   try {
     const parsed = typeof value === "string" ? JSON.parse(value) : value;
-    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
+    if (!isRecord(parsed)) return null;
+    for (const [day, groups] of Object.entries(parsed)) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !Array.isArray(groups)) return null;
+      if (!groups.every(isStoredCalendarGridDivision)) return null;
+    }
     return parsed as StoredResultsMonthMap;
   } catch {
     return null;
