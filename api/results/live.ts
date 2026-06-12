@@ -79,12 +79,16 @@ export default async function handler(_req: VercelRequest, res: VercelResponse) 
       games,
       status: {
         lastSyncAt: new Date().toISOString(),
-        status: games.length > 0 ? (fallback.unmatched.length > 0 ? "PARTIAL" : "OK") : "FAIL",
+        status: games.length > 0
+          ? (fallback.unmatched.length > 0 || fallback.sourceFailures.length > 0 ? "PARTIAL" : "OK")
+          : "FAIL",
         source: "bookmaker:melbet.com",
         fallbackFrom: "official:api1.ipbl.pro",
         requestedDivisions: LIVE_TAGS.length,
         successfulDivisions: new Set(games.map((game) => game.tag)).size,
         failures,
+        bookmakerSourceLeagues: fallback.sourceLeagues,
+        bookmakerSourceFailures: fallback.sourceFailures,
         receivedBookmakerEvents: fallback.receivedEvents,
         unmatchedBookmakerEvents: fallback.unmatched,
         latencyMs: Date.now() - started,

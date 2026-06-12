@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { parseBookmakerLivePayload, remainingClock } from "../lib/server/bookmaker-live.ts";
+import { parseBookmakerLivePayload, parseBookmakerLivePayloads, remainingClock } from "../lib/server/bookmaker-live.ts";
 
 const raw = {
   Success: true,
@@ -36,6 +36,27 @@ const raw = {
   ],
 };
 
+
+const womenRaw = {
+  Success: true,
+  Value: [
+    {
+      I: 728540404, LI: 2496667, L: "IPBL. Pro Division. Women",
+      O1: "Cheboksary (Women)", O2: "Yaroslavl (Women)", O1I: 9814545, O2I: 9814547,
+      S: 1781232900, U: 1781234700,
+      SC: {
+        FS: { S1: 85, S2: 62 },
+        PS: [
+          { Key: 1, Value: { S1: 36, S2: 14 } },
+          { Key: 2, Value: { S1: 17, S2: 32 } },
+          { Key: 3, Value: { S1: 32, S2: 16 } },
+        ],
+        CP: 4, CPS: "Break", TS: 1800, TR: -1,
+      },
+    },
+  ],
+};
+
 assert.equal(remainingClock(3, 1601), "03:19");
 assert.equal(remainingClock(1, 0), "10:00");
 assert.equal(remainingClock(4, 1800), "10:00");
@@ -55,4 +76,20 @@ const excluded = parsed.unmatched.find((event) => event.team1 === "Belgorod" && 
 assert.ok(excluded, "teams outside the approved division list must not render");
 assert.equal(excluded.reason, "unverified-team");
 assert.equal(parsed.unmatched[0].reason, "unverified-team");
+
+const combined = parseBookmakerLivePayloads([raw, womenRaw]);
+assert.equal(combined.receivedEvents, 4);
+assert.deepEqual(combined.sourceLeagues, [2496666, 2496667]);
+assert.equal(combined.games.length, 2);
+assert.equal(combined.unmatched.length, 2);
+const womenB = combined.games.find((game) => game.tag === "ipbl-66-w-pro-b")!;
+assert.ok(womenB, "the separate IPBL women stream must produce a Women B live game");
+assert.equal(womenB.divisionLabel, "Pro Women B");
+assert.equal(womenB.team1.teamId, 76012);
+assert.equal(womenB.team1.shortName, "Cheboksary");
+assert.equal(womenB.team2.teamId, 76013);
+assert.equal(womenB.team2.shortName, "Yaroslavl");
+assert.equal(womenB.scoreText, "85 : 62");
+assert.equal(womenB.fullScore, "36:14,17:32,32:16");
+assert.equal(womenB.period, 4);
 console.log("Bookmaker live adapter tests passed");
