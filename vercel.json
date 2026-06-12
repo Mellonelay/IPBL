@@ -48,11 +48,11 @@
     },
     {
       "source": "/api/recorder/status",
-      "destination": "/api/recorder/status.ts"
+      "destination": "/api/recorder.ts?mode=status"
     },
     {
       "source": "/api/recorder/history",
-      "destination": "/api/recorder/history.ts"
+      "destination": "/api/recorder.ts?mode=history"
     },
     {
       "source": "/api/ipbl/(.*)",

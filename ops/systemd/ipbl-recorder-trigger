@@ -6,7 +6,22 @@ ENV_FILE=${IPBL_RECORDER_ENV_FILE:-/etc/ipbl-recorder.env}
 source "$ENV_FILE"
 : "${CRON_SECRET:?CRON_SECRET is required}"
 RECORDER_URL=${RECORDER_URL:-https://ipbl-minimal-viewer.vercel.app/api/cron/record-live}
-exec /usr/bin/curl --fail --silent --show-error --max-time 50 \
-  -H "Authorization: Bearer ${CRON_SECRET}" \
-  -H 'Accept: application/json' \
-  "$RECORDER_URL"
+[[ "$RECORDER_URL" == https://* ]] || { echo "RECORDER_URL must use https" >&2; exit 2; }
+[[ "$RECORDER_URL" != *$'\n'* && "$RECORDER_URL" != *$'\r'* ]] || { echo "RECORDER_URL contains invalid control characters" >&2; exit 2; }
+[[ "$CRON_SECRET" != *$'\n'* && "$CRON_SECRET" != *$'\r'* ]] || { echo "CRON_SECRET contains invalid control characters" >&2; exit 2; }
+
+config_escape() {
+  printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'
+}
+
+escaped_secret=$(config_escape "$CRON_SECRET")
+escaped_url=$(config_escape "$RECORDER_URL")
+/usr/bin/curl --config - <<EOF_CONFIG
+fail
+silent
+show-error
+max-time = 50
+header = "Authorization: Bearer ${escaped_secret}"
+header = "Accept: application/json"
+url = "${escaped_url}"
+EOF_CONFIG
