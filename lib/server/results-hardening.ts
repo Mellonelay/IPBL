@@ -225,10 +225,25 @@ function isScheduleGame(value: unknown): boolean {
 function sourceIsoFromLegacyLocal(localDate: unknown, localTime: unknown): string | null {
   const date = String(localDate ?? "").trim();
   const time = String(localTime ?? "").trim();
-  const dateMatch = date.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
-  const isoDate = dateMatch ? `${dateMatch[3]}-${dateMatch[2]}-${dateMatch[1]}` : date;
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate) || !/^\d{1,2}:\d{2}$/.test(time)) return null;
-  const candidate = `${isoDate}T${time.padStart(5, "0")}:00+05:00`;
+  const dotted = date.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  const dashed = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const timeMatch = time.match(/^(\d{1,2}):(\d{2})$/);
+  if ((!dotted && !dashed) || !timeMatch) return null;
+
+  const year = Number.parseInt(dotted?.[3] ?? dashed?.[1] ?? "", 10);
+  const month = Number.parseInt(dotted?.[2] ?? dashed?.[2] ?? "", 10);
+  const day = Number.parseInt(dotted?.[1] ?? dashed?.[3] ?? "", 10);
+  const hour = Number.parseInt(timeMatch[1], 10);
+  const minute = Number.parseInt(timeMatch[2], 10);
+  if (!Number.isInteger(year) || year < 1 || year > 9999) return null;
+  if (!Number.isInteger(month) || month < 1 || month > 12) return null;
+  const daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate();
+  if (!Number.isInteger(day) || day < 1 || day > daysInMonth) return null;
+  if (!Number.isInteger(hour) || hour < 0 || hour > 23) return null;
+  if (!Number.isInteger(minute) || minute < 0 || minute > 59) return null;
+
+  const isoDate = `${String(year).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  const candidate = `${isoDate}T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00+05:00`;
   return Number.isNaN(Date.parse(candidate)) ? null : candidate;
 }
 

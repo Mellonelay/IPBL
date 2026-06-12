@@ -62,4 +62,31 @@ assert.equal(malformedGame.scheduledTime, null);
 assert.equal(malformedGame.sourceLocalDate, "not-a-date");
 assert.equal(malformedGame.sourceLocalTime, "not-a-time");
 
+for (const [localDate, localTime] of [
+  ["31.02.2026", "13:00"],
+  ["2026-04-31", "13:00"],
+  ["29.02.2026", "13:00"],
+  ["01.03.2026", "24:00"],
+  ["01.03.2026", "12:60"],
+] as const) {
+  const impossible = structuredClone(malformed);
+  const impossibleGame = impossible["2026-03-01"][0].games[0].game;
+  impossibleGame.localDate = localDate;
+  impossibleGame.localTime = localTime;
+  const parsed = parseStoredResultsMonth(impossible);
+  assert.ok(parsed, `legacy row remains displayable for ${localDate} ${localTime}`);
+  assert.equal(
+    parsed["2026-03-01"][0].games[0].game.scheduledTime,
+    null,
+    `must not fabricate an instant for ${localDate} ${localTime}`
+  );
+}
+
+const leapYear = structuredClone(malformed);
+leapYear["2026-03-01"][0].games[0].game.localDate = "29.02.2024";
+leapYear["2026-03-01"][0].games[0].game.localTime = "7:05";
+const leapYearParsed = parseStoredResultsMonth(leapYear);
+assert.ok(leapYearParsed);
+assert.equal(leapYearParsed["2026-03-01"][0].games[0].game.scheduledTime, "2024-02-29T07:05:00+05:00");
+
 console.log("Phase A legacy historical Results fixtures passed");
