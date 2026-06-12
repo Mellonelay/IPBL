@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-06-12T19:05:10.506884+00:00",
+  "policy": "quarantine_without_invented_team_ids_or_divisions",
+  "events": [
+    {
+      "eventId": 728710967,
+      "leagueId": 2496666,
+      "teams": [
+        "Chita",
+        "Khabarovsk"
+      ],
+      "sourceTeamIds": [
+        8630749,
+        8629433
+      ],
+      "payloadState": "scored",
+      "classification": "unverified_roster_candidates",
+      "action": "quarantine"
+    },
+    {
+      "eventId": 728719352,
+      "leagueId": 2496666,
+      "teams": [
+        "Kaliningrad",
+        "Plavsk"
+      ],
+      "sourceTeamIds": [
+        4431635,
+        9815973
+      ],
+      "payloadState": "live-score-pending",
+      "classification": "verified_teams_incomplete_payload",
+      "action": "defer_until_score_present"
+    },
+    {
+      "eventId": 728720968,
+      "leagueId": 2496667,
+      "teams": [
+        "Grozny (Women)",
+        "Nizhnekamsk (Women)"
+      ],
+      "sourceTeamIds": [
+        10419900,
+        10419902
+      ],
+      "payloadState": "prematch",
+      "classification": "unverified_roster_candidates",
+      "action": "quarantine"
+    }
+  ],
+  "mappingMutationApplied": false
+}

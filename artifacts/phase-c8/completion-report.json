@@ -2,7 +2,7 @@
   "schemaVersion": "completion-report-v1",
   "generatedAt": "2026-06-12T18:50:32.372199+00:00",
   "workload": "IPBL Phase C8 scheduler provenance, retention and source-health contracts",
-  "status": "validated-local-awaiting-controlled-pr",
+  "status": "C8.1-C8.5-validated-awaiting-controlled-pr-review",
   "baseCommit": "c92b8586521f1931edf6131673d2d9702ca60b61",
   "branch": "feature/phase-c8-hardening",
   "worktree": "/root/repos/IPBL-phase-c8-hardening",
@@ -11,7 +11,11 @@
     "retention audit",
     "64-candidate endpoint registry",
     "source-health evaluator",
-    "read-only health API contract"
+    "read-only health API contract",
+    "official proxy TLS diagnosis",
+    "Melbet unmatched identity quarantine",
+    "alert and recovery policy",
+    "transition-only systemd monitor assets"
   ],
   "verification": {
     "phaseC8ContractTests": "pass",
@@ -24,21 +28,36 @@
     "secretScan": "pass",
     "unsafeTlsScan": "pass",
     "artifactHashes": "pass",
-    "productionRedisReadOnlyEvaluation": "pass"
+    "productionRedisReadOnlyEvaluation": "pass",
+    "c8_5AlertRecoveryTests": "pass",
+    "systemdUnitSyntax": "pass",
+    "monitorTransitionSecurity": "pass",
+    "liveProductionPolicyEvaluation": "pass",
+    "liveMelbetDiagnosticMetadata": "pass"
   },
   "productionObservation": {
     "level": "DEGRADED",
-    "reasons": [
-      "source_reported_partial",
-      "fallback_source_active",
-      "division_coverage_partial",
-      "upstream_failures_present",
-      "unmatched_bookmaker_events_present"
-    ],
-    "ageSeconds": 20,
+    "alert": {
+      "severity": "WARNING",
+      "shouldNotify": true,
+      "code": "sustained_partial_source",
+      "incidentStartedAt": null,
+      "thresholdRuns": 5,
+      "recommendedAction": "review_fallback_coverage_and_unmatched_identity_quarantine"
+    },
+    "recovery": {
+      "state": "RECOVERED",
+      "lastFailureAt": "2026-06-12T19:01:07.582Z",
+      "consecutiveNonFailedRuns": 5,
+      "requiredNonFailedRuns": 2
+    },
+    "ageSeconds": 25,
     "maxGapSeconds": 65,
     "recentRuns": 30,
-    "activeGames": 2
+    "preservedActiveGames": 1,
+    "upstreamHttpStatuses": [
+      526
+    ]
   },
   "runtimeAudit": "/root/runtime-audits/ipbl-phase-c8-retention-audit-20260612T184344Z",
   "graphEvidence": {
@@ -50,11 +69,12 @@
       "edge_e93dcb78-0607-4572-89f5-1595ea6b90c9",
       "edge_5877398a-2294-4938-9ac0-077601f3417c",
       "edge_e2861a87-d7a5-429f-a839-c66010a5c4e3",
-      "edge_4fdc721d-14d1-4bb2-bb7e-f095212be49c"
-    ]
+      "edge_4fdc721d-14d1-4bb2-bb7e-f095212be49c",
+      "edge_07feddf0-00d7-4e5f-8568-1cabbc737e23"
+    ],
+    "monitorRecoveryNodeId": "node_58bd2cb9-8280-4cbb-8f9b-24381dabb97d"
   },
   "remaining": [
-    "C8.5 production monitoring and recovery",
     "C8.6 explicit score/quarter event enrichment",
     "C8.7 odds-history source proof"
   ],
@@ -62,5 +82,6 @@
     "production scheduler cadence",
     "Redis destructive cleanup",
     "secret rotation"
-  ]
+  ],
+  "recoveryEventId": "792807a3-3751-48b0-90c1-18b9f1638e5e"
 }

@@ -2,32 +2,62 @@
   "schemaVersion": "phase-c8-plan-v1",
   "generatedAt": "2026-06-12T18:48:10.990510+00:00",
   "phase": "Phase C8",
-  "status": "C8.1-C8.4-validated-local",
+  "status": "C8.1-C8.5-validated",
   "tasks": [
     {
       "id": "C8.1",
       "name": "scheduler provenance",
-      "state": "completed"
+      "state": "completed",
+      "validationScope": [
+        "local-tests",
+        "production-redis-read-only",
+        "vercel-preview",
+        "live-upstream-probes"
+      ]
     },
     {
       "id": "C8.2",
       "name": "retention audit",
-      "state": "completed"
+      "state": "completed",
+      "validationScope": [
+        "local-tests",
+        "production-redis-read-only",
+        "vercel-preview",
+        "live-upstream-probes"
+      ]
     },
     {
       "id": "C8.3",
       "name": "64-candidate endpoint registry",
-      "state": "completed"
+      "state": "completed",
+      "validationScope": [
+        "local-tests",
+        "production-redis-read-only",
+        "vercel-preview",
+        "live-upstream-probes"
+      ]
     },
     {
       "id": "C8.4",
       "name": "source health contract and API",
-      "state": "completed-local-validated"
+      "state": "completed",
+      "validationScope": [
+        "local-tests",
+        "production-redis-read-only",
+        "vercel-preview",
+        "live-upstream-probes"
+      ]
     },
     {
       "id": "C8.5",
       "name": "production monitoring and recovery",
-      "state": "pending"
+      "state": "completed",
+      "validationScope": [
+        "local-tests",
+        "production-redis-read-only",
+        "vercel-preview",
+        "live-upstream-probes"
+      ]
     },
     {
       "id": "C8.6",
@@ -55,7 +85,16 @@
       "edge_e93dcb78-0607-4572-89f5-1595ea6b90c9",
       "edge_5877398a-2294-4938-9ac0-077601f3417c",
       "edge_e2861a87-d7a5-429f-a839-c66010a5c4e3",
-      "edge_4fdc721d-14d1-4bb2-bb7e-f095212be49c"
-    ]
-  }
+      "edge_4fdc721d-14d1-4bb2-bb7e-f095212be49c",
+      "edge_07feddf0-00d7-4e5f-8568-1cabbc737e23"
+    ],
+    "monitorRecoveryNodeId": "node_58bd2cb9-8280-4cbb-8f9b-24381dabb97d"
+  },
+  "validationScope": [
+    "local-tests",
+    "production-redis-read-only",
+    "vercel-preview",
+    "live-upstream-probes"
+  ],
+  "recoveryEventId": "792807a3-3751-48b0-90c1-18b9f1638e5e"
 }

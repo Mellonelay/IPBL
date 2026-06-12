@@ -13,7 +13,10 @@
     "staleAfterSeconds": 150,
     "failedAfterSeconds": 300,
     "maxHealthyGapSeconds": 150,
-    "recentRunWindow": 30
+    "recentRunWindow": 30,
+    "warningAfterConsecutivePartialRuns": 5,
+    "criticalAfterConsecutiveFailedRuns": 3,
+    "recoveryAfterConsecutiveNonFailedRuns": 2
   },
   "dimensions": [
     "freshness",
@@ -23,9 +26,12 @@
     "upstream failures",
     "bookmaker failures",
     "unmatched events",
-    "source latency",
     "scheduler gaps",
-    "retention policy"
+    "retention policy",
+    "consecutive failure streak",
+    "alert severity",
+    "recovery state",
+    "last-known active-set continuity"
   ],
   "endpoint": "/api/recorder/health",
   "evidenceLevel": 4

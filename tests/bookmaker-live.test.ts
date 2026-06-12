@@ -75,6 +75,8 @@ assert.equal(samara.timeToGo, "03:19");
 const excluded = parsed.unmatched.find((event) => event.team1 === "Belgorod" && event.team2 === "Saratov");
 assert.ok(excluded, "teams outside the approved division list must not render");
 assert.equal(excluded.reason, "unverified-team");
+assert.equal(excluded.leagueId, 2496666);
+assert.equal(excluded.payloadState, "scored");
 assert.equal(parsed.unmatched[0].reason, "unverified-team");
 
 const combined = parseBookmakerLivePayloads([raw, womenRaw]);

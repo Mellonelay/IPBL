@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getResultsRedis } from "../lib/server/results-redis.js";
 import { APPROVED_LIVE_TAGS, RECORDER_RETENTION, recorderKeys } from "../lib/server/live-recorder.js";
-import { evaluateRecorderHealth } from "../lib/server/source-health.js";
+import { evaluateRecorderHealth, SOURCE_HEALTH_POLICY } from "../lib/server/source-health.js";
 
 const approved = new Set<string>(APPROVED_LIVE_TAGS);
 
@@ -21,9 +21,9 @@ async function healthResponse(res: VercelResponse) {
   const [status, activeGameKeys, runRows] = await Promise.all([
     redis.get(recorderKeys.status),
     redis.smembers(recorderKeys.active),
-    redis.lrange(recorderKeys.runs, 0, 29),
+    redis.lrange(recorderKeys.runs, 0, SOURCE_HEALTH_POLICY.recentRunWindow - 1),
   ]);
-  const health = evaluateRecorderHealth(status, runRows);
+  const health = evaluateRecorderHealth(status, runRows, Date.now(), activeGameKeys);
   return res.status(200).json({ health, activeGameKeys });
 }
 

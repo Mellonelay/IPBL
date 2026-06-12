@@ -1,0 +1,101 @@
+{
+  "evaluatedFrom": "production Redis read-only",
+  "health": {
+    "schemaVersion": 1,
+    "evaluatedAt": "2026-06-12T19:06:29.714Z",
+    "level": "DEGRADED",
+    "reasons": [
+      "source_reported_partial",
+      "fallback_source_active",
+      "division_coverage_partial",
+      "upstream_failures_present",
+      "unmatched_bookmaker_events_present"
+    ],
+    "freshness": {
+      "lastCapturedAt": "2026-06-12T19:06:04.317Z",
+      "ageSeconds": 25,
+      "freshWithinSeconds": 90,
+      "staleAfterSeconds": 150,
+      "failedAfterSeconds": 300
+    },
+    "source": {
+      "name": "bookmaker:melbet.com",
+      "reportedStatus": "PARTIAL",
+      "fallbackActive": true,
+      "fallbackFrom": "official:api1.ipbl.pro",
+      "requestedDivisions": 11,
+      "successfulDivisions": 1,
+      "coverageRatio": 0.09090909090909091,
+      "upstreamFailureCount": 11,
+      "upstreamHttpStatuses": [
+        526
+      ],
+      "bookmakerFailureCount": 0,
+      "unmatchedEventCount": 2,
+      "unmatchedByReason": {
+        "unverified-team": 2
+      },
+      "receivedBookmakerEvents": 3,
+      "latencyMs": 1170
+    },
+    "scheduler": {
+      "cadenceSeconds": 60,
+      "recentRunCount": 30,
+      "firstRunAt": "2026-06-12T18:37:03.669Z",
+      "lastRunAt": "2026-06-12T19:06:04.317Z",
+      "maxObservedGapSeconds": 65,
+      "okRuns": 0,
+      "partialRuns": 18,
+      "failedRuns": 12,
+      "consecutiveFailedRuns": 0,
+      "consecutivePartialRuns": 5,
+      "consecutiveNonFailedRuns": 5
+    },
+    "alert": {
+      "severity": "WARNING",
+      "shouldNotify": true,
+      "code": "sustained_partial_source",
+      "incidentStartedAt": null,
+      "thresholdRuns": 5,
+      "recommendedAction": "review_fallback_coverage_and_unmatched_identity_quarantine"
+    },
+    "recovery": {
+      "state": "RECOVERED",
+      "lastFailureAt": "2026-06-12T19:01:07.582Z",
+      "consecutiveNonFailedRuns": 5,
+      "requiredNonFailedRuns": 2
+    },
+    "continuity": {
+      "policy": "retain_last_known_active_set_on_source_fail",
+      "activeSetMutationSuppressedOnSourceFail": true,
+      "preservedActiveGameCount": 1,
+      "preservedActiveGameKeys": [
+        "ipbl-66-m-pro-c:728719352"
+      ]
+    },
+    "storage": {
+      "prefix": "ipbl:recorder:v1",
+      "maxSnapshotsPerTimeline": 1440,
+      "perGameTtlSeconds": 2592000,
+      "runsMaxEntries": 1440,
+      "runsTtlSeconds": null,
+      "statusTtlSeconds": null,
+      "activeSetTtlSeconds": null,
+      "dedupeFingerprintFields": [
+        "score1",
+        "score2",
+        "fullScore",
+        "period",
+        "timeToGo",
+        "timeIsGo",
+        "status",
+        "isLive",
+        "source"
+      ]
+    },
+    "evidenceLevel": 4
+  },
+  "activeGameKeys": [
+    "ipbl-66-m-pro-c:728719352"
+  ]
+}
