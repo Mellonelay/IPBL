@@ -1,0 +1,1498 @@
+{
+  "generatedAt": "2026-06-12T18:48:10.986364+00:00",
+  "sourceCorpus": "/root/runtime-audits/melbet-eventsstat-rotating-catalog-20260612T154054Z",
+  "candidateCount": 64,
+  "familyCounts": {
+    "auxiliary_first_party": 40,
+    "live_market_feed": 5,
+    "game_detail_statistics_markets": 3,
+    "league_discovery": 2,
+    "generic_top_statistics": 1,
+    "other_service_api": 9,
+    "subscription_options": 3,
+    "results_frontend": 1
+  },
+  "production": {
+    "host": "melbet.com",
+    "family": "Get1x2_VZip",
+    "implementation": "lib/server/bookmaker-live.ts",
+    "status": "active_fallback"
+  },
+  "capture": {
+    "host": "melbet-319960.top",
+    "status": "rotating_mirror_capture"
+  },
+  "capabilityGaps": [
+    {
+      "capability": "H2H",
+      "status": "not_observed",
+      "evidenceLevel": 0,
+      "parserStatus": "blocked"
+    },
+    {
+      "capability": "MelZone",
+      "status": "not_observed",
+      "evidenceLevel": 0,
+      "parserStatus": "blocked"
+    },
+    {
+      "capability": "standings",
+      "status": "not_observed",
+      "evidenceLevel": 0,
+      "parserStatus": "blocked"
+    },
+    {
+      "capability": "team_profile",
+      "status": "not_observed",
+      "evidenceLevel": 0,
+      "parserStatus": "blocked"
+    },
+    {
+      "capability": "player_profile",
+      "status": "not_observed",
+      "evidenceLevel": 0,
+      "parserStatus": "blocked"
+    },
+    {
+      "capability": "lineup",
+      "status": "not_observed",
+      "evidenceLevel": 0,
+      "parserStatus": "blocked"
+    }
+  ],
+  "registry": [
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/account-api/user/v1/phone-data",
+      "host": "melbet-319960.top",
+      "path": "/account-api/user/v1/phone-data",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/analytics-module-api/v1/analytics?projectId=2220&domain=melbet-319960.top",
+      "host": "melbet-319960.top",
+      "path": "/analytics-module-api/v1/analytics",
+      "queryKeys": [
+        "domain",
+        "projectId"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 6,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/bff-api/config/group/get?groups=b.core,d.core,d.customize,b.other,d.application,d.auth,d.banner,d.betting,d.dicts,d.footer,d.global,d.header,d.information,d.other,d.reg,d.responsible,d.support,d.thirdparty,d.toto,d.white_feature,d.common,d.cyber,d.modules,d.promo,d.host,d.office,d.coupon,d.layout,d.boolean&lang=en",
+      "host": "melbet-319960.top",
+      "path": "/bff-api/config/group/get",
+      "queryKeys": [
+        "groups",
+        "lang"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 6,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/bff-api/config/group/get?groups=b.rum&lang=en",
+      "host": "melbet-319960.top",
+      "path": "/bff-api/config/group/get",
+      "queryKeys": [
+        "groups",
+        "lang"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 6,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/bff-api/config/group/get?groups=d.bringfriend&lang=en",
+      "host": "melbet-319960.top",
+      "path": "/bff-api/config/group/get",
+      "queryKeys": [
+        "groups",
+        "lang"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 6,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/bff-api/config/video.json",
+      "host": "melbet-319960.top",
+      "path": "/bff-api/config/video.json",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 5,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/bff-api/event-logo/v2/suitable.json?lang=en",
+      "host": "melbet-319960.top",
+      "path": "/bff-api/event-logo/v2/suitable.json",
+      "queryKeys": [
+        "lang"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "men-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division",
+      "host": "melbet-319960.top",
+      "path": "/en/live/basketball/2496666-ipbl-pro-division",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "men-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "host": "melbet-319960.top",
+      "path": "/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "host": "melbet-319960.top",
+      "path": "/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "02-men-728670600-ulan-ude-chita-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women",
+      "host": "melbet-319960.top",
+      "path": "/en/live/basketball/2496667-ipbl-pro-division-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "host": "melbet-319960.top",
+      "path": "/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "host": "melbet-319960.top",
+      "path": "/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "https://melbet-319960.top/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/ab.json",
+      "host": "melbet-319960.top",
+      "path": "/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/ab.json",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 6,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "https://melbet-319960.top/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/event.json",
+      "host": "melbet-319960.top",
+      "path": "/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/event.json",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 44,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "https://melbet-319960.top/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/fc",
+      "host": "melbet-319960.top",
+      "path": "/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/fc",
+      "queryKeys": [],
+      "statuses": [
+        "204"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "men-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/metadata.json",
+      "host": "melbet-319960.top",
+      "path": "/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/metadata.json",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "men-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/flexreg-api/v1/registration/form/widget?projectId=2220&country=sg&language=en",
+      "host": "melbet-319960.top",
+      "path": "/flexreg-api/v1/registration/form/widget",
+      "queryKeys": [
+        "country",
+        "language",
+        "projectId"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 5,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "https://melbet-319960.top/platform-apps-legacy-api/mobile",
+      "host": "melbet-319960.top",
+      "path": "/platform-apps-legacy-api/mobile",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 12,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LineFeed/Get1x2_VZip?count=20&lng=en&mode=4&country=169&partner=8&getEmpty=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LineFeed/Get1x2_VZip",
+      "queryKeys": [
+        "count",
+        "country",
+        "getEmpty",
+        "lng",
+        "mode",
+        "partner"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 5,
+      "family": "live_market_feed",
+      "evidence": "browser_captured",
+      "parserStatus": "production_family_on_melbet.com",
+      "productionStatus": "production_fallback",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?count=10&lng=en&gr=2220&mode=4&country=169&top=true&partner=8&virtualSports=true&noFilterBlockEvent=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/Get1x2_VZip",
+      "queryKeys": [
+        "count",
+        "country",
+        "gr",
+        "lng",
+        "mode",
+        "noFilterBlockEvent",
+        "partner",
+        "top",
+        "virtualSports"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 2,
+      "family": "live_market_feed",
+      "evidence": "browser_captured",
+      "parserStatus": "production_family_on_melbet.com",
+      "productionStatus": "production_fallback",
+      "sources": [
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?count=20&lng=en&mode=4&country=169&partner=8&getEmpty=true&isRecommendations=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/Get1x2_VZip",
+      "queryKeys": [
+        "count",
+        "country",
+        "getEmpty",
+        "isRecommendations",
+        "lng",
+        "mode",
+        "partner"
+      ],
+      "statuses": [
+        "200",
+        "pending"
+      ],
+      "observations": 6,
+      "family": "live_market_feed",
+      "evidence": "browser_captured",
+      "parserStatus": "production_family_on_melbet.com",
+      "productionStatus": "production_fallback",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=2220&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/Get1x2_VZip",
+      "queryKeys": [
+        "champs",
+        "count",
+        "country",
+        "getEmpty",
+        "gr",
+        "lng",
+        "mode",
+        "noFilterBlockEvent",
+        "partner",
+        "sports",
+        "virtualSports"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "live_market_feed",
+      "evidence": "browser_captured",
+      "parserStatus": "production_family_on_melbet.com",
+      "productionStatus": "production_fallback",
+      "sources": [
+        "men-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=2220&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/Get1x2_VZip",
+      "queryKeys": [
+        "champs",
+        "count",
+        "country",
+        "getEmpty",
+        "gr",
+        "lng",
+        "mode",
+        "noFilterBlockEvent",
+        "partner",
+        "sports",
+        "virtualSports"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 2,
+      "family": "live_market_feed",
+      "evidence": "browser_captured",
+      "parserStatus": "production_family_on_melbet.com",
+      "productionStatus": "production_fallback",
+      "sources": [
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/GetGameZip?id=728668607&lng=en&isSubGames=true&GroupEvents=true&countevents=250&grMode=4&partner=8&topGroups=&country=169&marketType=1&isNewBuilder=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/GetGameZip",
+      "queryKeys": [
+        "GroupEvents",
+        "countevents",
+        "country",
+        "grMode",
+        "id",
+        "isNewBuilder",
+        "isSubGames",
+        "lng",
+        "marketType",
+        "partner",
+        "topGroups"
+      ],
+      "statuses": [
+        "net::ERR_ABORTED"
+      ],
+      "observations": 1,
+      "family": "game_detail_statistics_markets",
+      "evidence": "verified_direct",
+      "parserStatus": "parser_ready",
+      "productionStatus": "candidate_not_production",
+      "sources": [
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/GetGameZip?id=728669947&lng=en&isSubGames=true&GroupEvents=true&countevents=250&grMode=4&partner=8&topGroups=&country=169&marketType=1&isNewBuilder=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/GetGameZip",
+      "queryKeys": [
+        "GroupEvents",
+        "countevents",
+        "country",
+        "grMode",
+        "id",
+        "isNewBuilder",
+        "isSubGames",
+        "lng",
+        "marketType",
+        "partner",
+        "topGroups"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "game_detail_statistics_markets",
+      "evidence": "verified_direct",
+      "parserStatus": "parser_ready",
+      "productionStatus": "candidate_not_production",
+      "sources": [
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/GetGameZip?id=728670390&lng=en&isSubGames=true&GroupEvents=true&countevents=250&grMode=4&partner=8&topGroups=&country=169&marketType=1&isNewBuilder=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/GetGameZip",
+      "queryKeys": [
+        "GroupEvents",
+        "countevents",
+        "country",
+        "grMode",
+        "id",
+        "isNewBuilder",
+        "isSubGames",
+        "lng",
+        "marketType",
+        "partner",
+        "topGroups"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "game_detail_statistics_markets",
+      "evidence": "verified_direct",
+      "parserStatus": "parser_ready",
+      "productionStatus": "candidate_not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/GetSportsShortZip?sports=3&champs=2496666&lng=en&gr=2220&country=169&partner=8&virtualSports=true&groupChamps=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/GetSportsShortZip",
+      "queryKeys": [
+        "champs",
+        "country",
+        "gr",
+        "groupChamps",
+        "lng",
+        "partner",
+        "sports",
+        "virtualSports"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 2,
+      "family": "league_discovery",
+      "evidence": "verified_direct",
+      "parserStatus": "parser_ready",
+      "productionStatus": "candidate_not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "men-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/GetSportsShortZip?sports=3&champs=2496667&lng=en&gr=2220&country=169&partner=8&virtualSports=true&groupChamps=true",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/GetSportsShortZip",
+      "queryKeys": [
+        "champs",
+        "country",
+        "gr",
+        "groupChamps",
+        "lng",
+        "partner",
+        "sports",
+        "virtualSports"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 4,
+      "family": "league_discovery",
+      "evidence": "verified_direct",
+      "parserStatus": "parser_ready",
+      "productionStatus": "candidate_not_production",
+      "sources": [
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/GetTopGamesStatZip?lng=en&antisports=66&partner=8",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/GetTopGamesStatZip",
+      "queryKeys": [
+        "antisports",
+        "lng",
+        "partner"
+      ],
+      "statuses": [
+        "200",
+        "pending"
+      ],
+      "observations": 6,
+      "family": "generic_top_statistics",
+      "evidence": "verified_direct_generic",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/LiveFeed/WebGetTopChampsZip?lng=en&gr=2220&country=169",
+      "host": "melbet-319960.top",
+      "path": "/service-api/LiveFeed/WebGetTopChampsZip",
+      "queryKeys": [
+        "country",
+        "gr",
+        "lng"
+      ],
+      "statuses": [
+        "200",
+        "pending"
+      ],
+      "observations": 6,
+      "family": "other_service_api",
+      "evidence": "captured_only",
+      "parserStatus": "unclassified",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame?constId=728668607",
+      "host": "melbet-319960.top",
+      "path": "/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame",
+      "queryKeys": [
+        "constId"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "subscription_options",
+      "evidence": "verified_direct",
+      "parserStatus": "parser_ready",
+      "productionStatus": "candidate_not_production",
+      "sources": [
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame?constId=728669947",
+      "host": "melbet-319960.top",
+      "path": "/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame",
+      "queryKeys": [
+        "constId"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "subscription_options",
+      "evidence": "verified_direct",
+      "parserStatus": "parser_ready",
+      "productionStatus": "candidate_not_production",
+      "sources": [
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame?constId=728670390",
+      "host": "melbet-319960.top",
+      "path": "/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame",
+      "queryKeys": [
+        "constId"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "subscription_options",
+      "evidence": "verified_direct",
+      "parserStatus": "parser_ready",
+      "productionStatus": "candidate_not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsViews",
+      "host": "melbet-319960.top",
+      "path": "/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsViews",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 3,
+      "family": "other_service_api",
+      "evidence": "captured_only",
+      "parserStatus": "unclassified",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/gamespreview/getbanner?whence=55&ref=8&gr=2220&lng=en&fCountry=169",
+      "host": "melbet-319960.top",
+      "path": "/service-api/gamespreview/getbanner",
+      "queryKeys": [
+        "fCountry",
+        "gr",
+        "lng",
+        "ref",
+        "whence"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 6,
+      "family": "other_service_api",
+      "evidence": "captured_only",
+      "parserStatus": "unclassified",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/main-line-feed/v1/expressDay?cfView=3&country=169&gr=2220&lng=en&ref=8",
+      "host": "melbet-319960.top",
+      "path": "/service-api/main-line-feed/v1/expressDay",
+      "queryKeys": [
+        "cfView",
+        "country",
+        "gr",
+        "lng",
+        "ref"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 5,
+      "family": "other_service_api",
+      "evidence": "captured_only",
+      "parserStatus": "unclassified",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/main-live-feed/v1/expressDay?cfView=3&country=169&gr=2220&lng=en&ref=8",
+      "host": "melbet-319960.top",
+      "path": "/service-api/main-live-feed/v1/expressDay",
+      "queryKeys": [
+        "cfView",
+        "country",
+        "gr",
+        "lng",
+        "ref"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 5,
+      "family": "other_service_api",
+      "evidence": "captured_only",
+      "parserStatus": "unclassified",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/result/web/api/v2/champs?dateFrom=1781192700&dateTo=1781279100&lng=en&ref=8&sportIds=1,2,3",
+      "host": "melbet-319960.top",
+      "path": "/service-api/result/web/api/v2/champs",
+      "queryKeys": [
+        "dateFrom",
+        "dateTo",
+        "lng",
+        "ref",
+        "sportIds"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 3,
+      "family": "other_service_api",
+      "evidence": "captured_only",
+      "parserStatus": "unclassified",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/result/web/api/v2/champs?dateFrom=1781193000&dateTo=1781279400&lng=en&ref=8&sportIds=1,2,3",
+      "host": "melbet-319960.top",
+      "path": "/service-api/result/web/api/v2/champs",
+      "queryKeys": [
+        "dateFrom",
+        "dateTo",
+        "lng",
+        "ref",
+        "sportIds"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "other_service_api",
+      "evidence": "captured_only",
+      "parserStatus": "unclassified",
+      "productionStatus": "not_production",
+      "sources": [
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/result/web/api/v2/sports?cyberFlag=4&dateFrom=1781192700&dateTo=1781279100&gr=2220&lng=en&ref=8",
+      "host": "melbet-319960.top",
+      "path": "/service-api/result/web/api/v2/sports",
+      "queryKeys": [
+        "cyberFlag",
+        "dateFrom",
+        "dateTo",
+        "gr",
+        "lng",
+        "ref"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 3,
+      "family": "other_service_api",
+      "evidence": "captured_only",
+      "parserStatus": "unclassified",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/service-api/result/web/api/v2/sports?cyberFlag=4&dateFrom=1781193000&dateTo=1781279400&gr=2220&lng=en&ref=8",
+      "host": "melbet-319960.top",
+      "path": "/service-api/result/web/api/v2/sports",
+      "queryKeys": [
+        "cyberFlag",
+        "dateFrom",
+        "dateTo",
+        "gr",
+        "lng",
+        "ref"
+      ],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "other_service_api",
+      "evidence": "captured_only",
+      "parserStatus": "unclassified",
+      "productionStatus": "not_production",
+      "sources": [
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-office-app-front/en/live/basketball/2496666-ipbl-pro-division",
+      "host": "melbet-319960.top",
+      "path": "/sys-office-app-front/en/live/basketball/2496666-ipbl-pro-division",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "men-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-office-app-front/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "host": "melbet-319960.top",
+      "path": "/sys-office-app-front/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-office-app-front/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "host": "melbet-319960.top",
+      "path": "/sys-office-app-front/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "02-men-728670600-ulan-ude-chita-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-office-app-front/en/live/basketball/2496667-ipbl-pro-division-women",
+      "host": "melbet-319960.top",
+      "path": "/sys-office-app-front/en/live/basketball/2496667-ipbl-pro-division-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-office-app-front/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "host": "melbet-319960.top",
+      "path": "/sys-office-app-front/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-office-app-front/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "host": "melbet-319960.top",
+      "path": "/sys-office-app-front/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-platform-apps-front/en/live/basketball/2496666-ipbl-pro-division",
+      "host": "melbet-319960.top",
+      "path": "/sys-platform-apps-front/en/live/basketball/2496666-ipbl-pro-division",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "men-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-platform-apps-front/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "host": "melbet-319960.top",
+      "path": "/sys-platform-apps-front/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-platform-apps-front/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "host": "melbet-319960.top",
+      "path": "/sys-platform-apps-front/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "02-men-728670600-ulan-ude-chita-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-platform-apps-front/en/live/basketball/2496667-ipbl-pro-division-women",
+      "host": "melbet-319960.top",
+      "path": "/sys-platform-apps-front/en/live/basketball/2496667-ipbl-pro-division-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-platform-apps-front/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "host": "melbet-319960.top",
+      "path": "/sys-platform-apps-front/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-platform-apps-front/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "host": "melbet-319960.top",
+      "path": "/sys-platform-apps-front/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-results-frontend-front/en/results",
+      "host": "melbet-319960.top",
+      "path": "/sys-results-frontend-front/en/results",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 4,
+      "family": "results_frontend",
+      "evidence": "page_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-welcome-app-front/en/live/basketball/2496666-ipbl-pro-division",
+      "host": "melbet-319960.top",
+      "path": "/sys-welcome-app-front/en/live/basketball/2496666-ipbl-pro-division",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "men-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-welcome-app-front/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "host": "melbet-319960.top",
+      "path": "/sys-welcome-app-front/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-welcome-app-front/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "host": "melbet-319960.top",
+      "path": "/sys-welcome-app-front/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "02-men-728670600-ulan-ude-chita-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-welcome-app-front/en/live/basketball/2496667-ipbl-pro-division-women",
+      "host": "melbet-319960.top",
+      "path": "/sys-welcome-app-front/en/live/basketball/2496667-ipbl-pro-division-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-welcome-app-front/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "host": "melbet-319960.top",
+      "path": "/sys-welcome-app-front/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/sys-welcome-app-front/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "host": "melbet-319960.top",
+      "path": "/sys-welcome-app-front/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 1,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/web-api/api/third-party/banner-for-header",
+      "host": "melbet-319960.top",
+      "path": "/web-api/api/third-party/banner-for-header",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 6,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/web-api/api/v3/bonuses/first-deposit",
+      "host": "melbet-319960.top",
+      "path": "/web-api/api/v3/bonuses/first-deposit",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 5,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://melbet-319960.top/web-api/api/v3/bonuses/welcome-bonuses",
+      "host": "melbet-319960.top",
+      "path": "/web-api/api/v3/bonuses/welcome-bonuses",
+      "queryKeys": [],
+      "statuses": [
+        "200"
+      ],
+      "observations": 17,
+      "family": "auxiliary_first_party",
+      "evidence": "captured_only",
+      "parserStatus": "not_selected",
+      "productionStatus": "not_production",
+      "sources": [
+        "01-men-728670390-kaliningrad-moscow-network.json",
+        "02-men-728670600-ulan-ude-chita-network.json",
+        "03-women-728668607-vladivostok-women-kaluga-women-network.json",
+        "04-women-728669947-angarsk-women-kirovgrad-women-network.json",
+        "men-league-network.json",
+        "women-league-network.json"
+      ]
+    }
+  ]
+}

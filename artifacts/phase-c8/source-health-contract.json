@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "levels": [
+    "HEALTHY",
+    "DEGRADED",
+    "STALE",
+    "FAILED",
+    "UNKNOWN"
+  ],
+  "policy": {
+    "cadenceSeconds": 60,
+    "freshWithinSeconds": 90,
+    "staleAfterSeconds": 150,
+    "failedAfterSeconds": 300,
+    "maxHealthyGapSeconds": 150,
+    "recentRunWindow": 30
+  },
+  "dimensions": [
+    "freshness",
+    "reported source status",
+    "fallback activation",
+    "division coverage",
+    "upstream failures",
+    "bookmaker failures",
+    "unmatched events",
+    "source latency",
+    "scheduler gaps",
+    "retention policy"
+  ],
+  "endpoint": "/api/recorder/health",
+  "evidenceLevel": 4
+}

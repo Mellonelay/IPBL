@@ -24,7 +24,8 @@
     "test:results-hardening": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-hardening.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-legacy-history.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-writer.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-sync-policy.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-state.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-api-policy.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/results-refresh-policy.test.ts",
     "test:recorder": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-recorder.test.ts && bash tests/recorder-trigger.test.sh",
     "test:phase-c-contracts": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/melbet-contracts.test.ts",
-    "dry-run:phase-c": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs scripts/phase-c-recorder-dry-run.ts"
+    "dry-run:phase-c": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs scripts/phase-c-recorder-dry-run.ts",
+    "test:phase-c8-contracts": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/source-health.test.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.34.0",

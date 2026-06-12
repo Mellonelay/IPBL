@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-06-12T18:43:49.574Z",
+  "scheduler": {
+    "installedAt": "2026-06-12T06:42:55Z",
+    "cadence": "one minute",
+    "systemdTimer": "ipbl-recorder.timer",
+    "systemdService": "ipbl-recorder.service",
+    "starts": 723,
+    "finishes": 723,
+    "failures": 0,
+    "parsedRuns": 723,
+    "firstCapturedAt": "2026-06-12T06:42:57.726Z",
+    "lastCapturedAt": "2026-06-12T18:44:02.129Z",
+    "sourceCounts": {
+      "bookmaker:melbet.com": 723
+    },
+    "statusCounts": {
+      "FAIL": 109,
+      "OK": 1,
+      "PARTIAL": 613
+    },
+    "recordedSnapshots": 1125,
+    "duplicateSnapshots": 27,
+    "runsWithRejectedGames": 0
+  },
+  "redis": {
+    "keyCount": 55,
+    "keyTypes": {
+      "set": 1,
+      "string": 27,
+      "list": 27
+    },
+    "timelines": {
+      "count": 26,
+      "totalRows": 1123,
+      "minRows": 8,
+      "maxRows": 50,
+      "medianRows": 46.0,
+      "minTtlSeconds": 2549118,
+      "maxTtlSeconds": 2591960
+    },
+    "latest": {
+      "count": 26,
+      "minTtlSeconds": 2549119,
+      "maxTtlSeconds": 2591960
+    },
+    "runs": {
+      "length": 723,
+      "ttlSeconds": -1
+    },
+    "noExpiryKeys": [
+      "ipbl:recorder:v1:active",
+      "ipbl:recorder:v1:runs",
+      "ipbl:recorder:v1:status"
+    ]
+  },
+  "policy": {
+    "maxSnapshotsPerTimeline": 1440,
+    "perGameTtlSeconds": 2592000,
+    "perGameTtlDays": 30,
+    "runsMaxEntries": 1440,
+    "runsTtl": "none",
+    "statusTtl": "none",
+    "activeSetTtl": "none",
+    "dedupeFingerprintFields": [
+      "score1",
+      "score2",
+      "fullScore",
+      "period",
+      "timeToGo",
+      "timeIsGo",
+      "status",
+      "isLive",
+      "source"
+    ],
+    "maximumChangedSnapshotWindowAtOnePerMinuteHours": 24
+  }
+}

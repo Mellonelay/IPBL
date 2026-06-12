@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "phase-c8-plan-v1",
+  "generatedAt": "2026-06-12T18:48:10.990510+00:00",
+  "phase": "Phase C8",
+  "status": "C8.1-C8.4-validated-local",
+  "tasks": [
+    {
+      "id": "C8.1",
+      "name": "scheduler provenance",
+      "state": "completed"
+    },
+    {
+      "id": "C8.2",
+      "name": "retention audit",
+      "state": "completed"
+    },
+    {
+      "id": "C8.3",
+      "name": "64-candidate endpoint registry",
+      "state": "completed"
+    },
+    {
+      "id": "C8.4",
+      "name": "source health contract and API",
+      "state": "completed-local-validated"
+    },
+    {
+      "id": "C8.5",
+      "name": "production monitoring and recovery",
+      "state": "pending"
+    },
+    {
+      "id": "C8.6",
+      "name": "score/quarter event enrichment",
+      "state": "pending"
+    },
+    {
+      "id": "C8.7",
+      "name": "odds history source proof",
+      "state": "blocked-source-unverified"
+    }
+  ],
+  "locked": [
+    "production scheduler cadence change",
+    "Redis destructive cleanup",
+    "secret rotation",
+    "automatic merge/deploy"
+  ],
+  "graphEvidence": {
+    "schedulerNodeId": "node_04e1fadf-1cda-4b4f-988e-33d05834cdf6",
+    "retentionNodeId": "node_9b4444be-7fc5-48f8-a3a0-9d77bf286ab5",
+    "endpointRegistryNodeId": "node_576d178e-b172-4372-8739-635a1744abd8",
+    "sourceHealthNodeId": "node_ea55036b-323c-4a7f-867b-1ef50af1dc41",
+    "edges": [
+      "edge_e93dcb78-0607-4572-89f5-1595ea6b90c9",
+      "edge_5877398a-2294-4938-9ac0-077601f3417c",
+      "edge_e2861a87-d7a5-429f-a839-c66010a5c4e3",
+      "edge_4fdc721d-14d1-4bb2-bb7e-f095212be49c"
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getResultsRedis } from "../lib/server/results-redis.js";
 import { APPROVED_LIVE_TAGS, RECORDER_RETENTION, recorderKeys } from "../lib/server/live-recorder.js";
+import { evaluateRecorderHealth } from "../lib/server/source-health.js";
 
 const approved = new Set<string>(APPROVED_LIVE_TAGS);
 
@@ -12,6 +13,18 @@ async function statusResponse(res: VercelResponse) {
     redis.smembers(recorderKeys.active),
   ]);
   return res.status(200).json({ status: status ?? null, activeGameKeys });
+}
+
+async function healthResponse(res: VercelResponse) {
+  const redis = getResultsRedis();
+  if (!redis) return res.status(503).json({ error: "recorder_storage_not_configured" });
+  const [status, activeGameKeys, runRows] = await Promise.all([
+    redis.get(recorderKeys.status),
+    redis.smembers(recorderKeys.active),
+    redis.lrange(recorderKeys.runs, 0, 29),
+  ]);
+  const health = evaluateRecorderHealth(status, runRows);
+  return res.status(200).json({ health, activeGameKeys });
 }
 
 async function historyResponse(req: VercelRequest, res: VercelResponse) {
@@ -37,5 +50,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const mode = typeof req.query.mode === "string" ? req.query.mode : "";
   if (mode === "status") return statusResponse(res);
   if (mode === "history") return historyResponse(req, res);
+  if (mode === "health") return healthResponse(res);
   return res.status(404).json({ error: "unknown_recorder_route" });
 }

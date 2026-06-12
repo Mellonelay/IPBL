@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-06-12T18:50:32.371807+00:00",
+  "phase": "Phase C8",
+  "mode": "typed-local-impact-evidence",
+  "changedNodes": [
+    {
+      "file": "lib/server/source-health.ts",
+      "type": "runtime-health-contract",
+      "impacts": [
+        "recorder health API",
+        "operator monitoring",
+        "Phase F source-health inputs"
+      ]
+    },
+    {
+      "file": "api/recorder.ts",
+      "type": "read-only-api-extension",
+      "impacts": [
+        "GET /api/recorder/health"
+      ]
+    },
+    {
+      "file": "vercel.json",
+      "type": "route-contract",
+      "impacts": [
+        "recorder health rewrite"
+      ]
+    },
+    {
+      "file": "artifacts/phase-c8/endpoint-source-registry.json",
+      "type": "source-registry",
+      "impacts": [
+        "future score/odds/H2H enrichment"
+      ]
+    }
+  ],
+  "runtimeDependencies": [
+    "ipbl-recorder.timer",
+    "ipbl-recorder.service",
+    "ipbl:recorder:v1:status",
+    "ipbl:recorder:v1:runs",
+    "ipbl:recorder:v1:active"
+  ],
+  "lockedBoundaries": [
+    "scheduler cadence unchanged",
+    "no Redis writes or cleanup",
+    "no secret rotation",
+    "no automatic deployment"
+  ],
+  "recommendation": "Proceed through controlled PR and preview. Keep C8.5-C8.7 open."
+}

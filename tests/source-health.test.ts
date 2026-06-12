@@ -1,0 +1,14 @@
+import assert from "node:assert/strict";
+import { evaluateRecorderHealth, SOURCE_HEALTH_POLICY } from "../lib/server/source-health.ts";
+const now = Date.parse("2026-06-12T18:50:00.000Z");
+const run = (capturedAt:string,status="OK") => ({schemaVersion:1,capturedAt,source:"official:api1.ipbl.pro",sourceStatus:status,receivedGames:2,acceptedGames:2,recordedSnapshots:2,duplicateSnapshots:0,rejectedGames:[],missingPreviouslyActive:[],activeGameKeys:["a:1"]});
+const healthy=evaluateRecorderHealth({...run("2026-06-12T18:49:30.000Z"),sourceDetails:{requestedDivisions:11,successfulDivisions:11,latencyMs:120}},[run("2026-06-12T18:48:30.000Z"),run("2026-06-12T18:49:30.000Z")],now);
+assert.equal(healthy.level,"HEALTHY"); assert.deepEqual(healthy.reasons,[]); assert.equal(healthy.scheduler.maxObservedGapSeconds,60);
+const degraded=evaluateRecorderHealth({...run("2026-06-12T18:49:20.000Z","PARTIAL"),source:"bookmaker:melbet.com",sourceStatus:"PARTIAL",sourceDetails:{fallbackFrom:"official:api1.ipbl.pro",requestedDivisions:11,successfulDivisions:2,failures:[{tag:"a"}],unmatchedBookmakerEvents:[{id:1}]}},[run("2026-06-12T18:48:20.000Z","PARTIAL"),run("2026-06-12T18:49:20.000Z","PARTIAL")],now);
+assert.equal(degraded.level,"DEGRADED"); assert.ok(degraded.reasons.includes("fallback_source_active")); assert.ok(degraded.reasons.includes("division_coverage_partial"));
+const stale=evaluateRecorderHealth(run("2026-06-12T18:47:20.000Z"),[run("2026-06-12T18:47:20.000Z")],now);
+assert.equal(stale.level,"STALE"); assert.ok(stale.freshness.ageSeconds! > SOURCE_HEALTH_POLICY.staleAfterSeconds);
+const failed=evaluateRecorderHealth(run("2026-06-12T18:49:30.000Z","FAIL"),[run("2026-06-12T18:49:30.000Z","FAIL")],now);
+assert.equal(failed.level,"FAILED"); assert.ok(failed.reasons.includes("source_reported_fail"));
+const unknown=evaluateRecorderHealth(null,[],now); assert.equal(unknown.level,"UNKNOWN");
+console.log("Phase C8 source health contract tests passed");

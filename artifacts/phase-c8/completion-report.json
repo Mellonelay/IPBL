@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "completion-report-v1",
+  "generatedAt": "2026-06-12T18:50:32.372199+00:00",
+  "workload": "IPBL Phase C8 scheduler provenance, retention and source-health contracts",
+  "status": "validated-local-awaiting-controlled-pr",
+  "baseCommit": "c92b8586521f1931edf6131673d2d9702ca60b61",
+  "branch": "feature/phase-c8-hardening",
+  "worktree": "/root/repos/IPBL-phase-c8-hardening",
+  "completed": [
+    "scheduler provenance",
+    "retention audit",
+    "64-candidate endpoint registry",
+    "source-health evaluator",
+    "read-only health API contract"
+  ],
+  "verification": {
+    "phaseC8ContractTests": "pass",
+    "phaseCContracts": "pass",
+    "bookmakerLiveRegression": "pass",
+    "recorderRegressionAndSecurity": "pass",
+    "ipblSourceRegression": "pass",
+    "viteBuild": "pass",
+    "diffCheck": "pass",
+    "secretScan": "pass",
+    "unsafeTlsScan": "pass",
+    "artifactHashes": "pass",
+    "productionRedisReadOnlyEvaluation": "pass"
+  },
+  "productionObservation": {
+    "level": "DEGRADED",
+    "reasons": [
+      "source_reported_partial",
+      "fallback_source_active",
+      "division_coverage_partial",
+      "upstream_failures_present",
+      "unmatched_bookmaker_events_present"
+    ],
+    "ageSeconds": 20,
+    "maxGapSeconds": 65,
+    "recentRuns": 30,
+    "activeGames": 2
+  },
+  "runtimeAudit": "/root/runtime-audits/ipbl-phase-c8-retention-audit-20260612T184344Z",
+  "graphEvidence": {
+    "schedulerNodeId": "node_04e1fadf-1cda-4b4f-988e-33d05834cdf6",
+    "retentionNodeId": "node_9b4444be-7fc5-48f8-a3a0-9d77bf286ab5",
+    "endpointRegistryNodeId": "node_576d178e-b172-4372-8739-635a1744abd8",
+    "sourceHealthNodeId": "node_ea55036b-323c-4a7f-867b-1ef50af1dc41",
+    "edges": [
+      "edge_e93dcb78-0607-4572-89f5-1595ea6b90c9",
+      "edge_5877398a-2294-4938-9ac0-077601f3417c",
+      "edge_e2861a87-d7a5-429f-a839-c66010a5c4e3",
+      "edge_4fdc721d-14d1-4bb2-bb7e-f095212be49c"
+    ]
+  },
+  "remaining": [
+    "C8.5 production monitoring and recovery",
+    "C8.6 explicit score/quarter event enrichment",
+    "C8.7 odds-history source proof"
+  ],
+  "locksPreserved": [
+    "production scheduler cadence",
+    "Redis destructive cleanup",
+    "secret rotation"
+  ]
+}
