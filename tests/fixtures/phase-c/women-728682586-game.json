@@ -1,0 +1,169 @@
+{
+  "Id": 0,
+  "Success": true,
+  "Error": "",
+  "ErrorCode": 0,
+  "Guid": "",
+  "Value": {
+    "R": 99,
+    "CS": 40,
+    "SC": {
+      "FS": {
+        "S1": 82,
+        "S2": 77
+      },
+      "PS": [
+        {
+          "Key": 1,
+          "Value": {
+            "S1": 20,
+            "S2": 17,
+            "NF": "1st quarter"
+          }
+        },
+        {
+          "Key": 2,
+          "Value": {
+            "S1": 18,
+            "S2": 20,
+            "NF": "2nd quarter"
+          }
+        },
+        {
+          "Key": 3,
+          "Value": {
+            "S1": 20,
+            "S2": 18,
+            "NF": "3rd quarter"
+          }
+        },
+        {
+          "Key": 4,
+          "Value": {
+            "S1": 24,
+            "S2": 22,
+            "NF": "4th quarter"
+          }
+        }
+      ],
+      "CP": 4,
+      "CPS": "Break",
+      "GS": 2,
+      "TS": 2400,
+      "TR": -1,
+      "I": "",
+      "S": [],
+      "ST": [
+        {
+          "Key": 0,
+          "Value": [
+            {
+              "ID": 53,
+              "S1": "0",
+              "S2": "0",
+              "N": "Fouls"
+            },
+            {
+              "ID": 49,
+              "S1": "21",
+              "S2": "24",
+              "N": "2-pointers"
+            },
+            {
+              "ID": 48,
+              "S1": "9",
+              "S2": "7",
+              "N": "3-pointers"
+            },
+            {
+              "ID": 50,
+              "S1": "13",
+              "S2": "8",
+              "N": "Free throws"
+            }
+          ]
+        }
+      ],
+      "BR": 1,
+      "SLS": "40 minutes"
+    },
+    "VI": "19391021",
+    "VA": 1,
+    "ZP": 4626952,
+    "HMH": 1,
+    "AM": true,
+    "U": 1781283274,
+    "OuR": true,
+    "SVoAP": true,
+    "I": 728682586,
+    "N": 231447,
+    "T": 99,
+    "CO": 50,
+    "GE": [],
+    "TG": "",
+    "V": "Including Overtime",
+    "VE": "Including Overtime",
+    "PN": "",
+    "TN": "Quarter",
+    "DI": "",
+    "SS": 3,
+    "STI": "6958868c6d807ed02613e14b",
+    "S": 1781280000,
+    "CHIMG": "5d6624680637e0dddc3cc0fe2d38b77c.png",
+    "O1": "Murino (Women)",
+    "O2": "Norilsk (Women)",
+    "O1I": 9815713,
+    "O2I": 5469095,
+    "O1IS": [
+      9815713
+    ],
+    "O2IS": [
+      5469095
+    ],
+    "O1C": 225,
+    "O2C": 225,
+    "O1IMG": [
+      "c2ebcc54483e9fc6928e03deeb75974e.png"
+    ],
+    "O2IMG": [
+      "e8ca6d6c75a5a3b3e27cc6e116f8f2b6.png"
+    ],
+    "O1R": "Murino (жен)",
+    "O2R": "Norilsk (жен)",
+    "O1E": "Murino (Women)",
+    "O2E": "Norilsk (Women)",
+    "MIS": [
+      {
+        "K": 3,
+        "V": "4x10"
+      },
+      {
+        "K": 11,
+        "V": "Russia"
+      }
+    ],
+    "MIO": {
+      "MaF": "4x10"
+    },
+    "SI": 3,
+    "SN": "Basketball",
+    "SR": "Баскетбол",
+    "SE": "Basketball",
+    "L": "IPBL. Pro Division. Women",
+    "LR": "IPBL. Pro Division. Женщины",
+    "LE": "IPBL. Pro Division. Women",
+    "LI": 2496667,
+    "CN": "Russia",
+    "COI": 1,
+    "MS": [
+      0
+    ],
+    "SGI": "6a2c2d0e5e99bd05c63a82b2",
+    "KI": 1,
+    "CID": 1,
+    "IV": 12,
+    "HHTHS": true,
+    "TNS": "Quarters",
+    "SUBA": true
+  }
+}

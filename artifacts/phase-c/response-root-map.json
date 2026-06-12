@@ -1,0 +1,174 @@
+[
+  {
+    "label": "men-728683234-game",
+    "url": "https://melbet-319960.top/service-api/LiveFeed/GetGameZip?id=728683234&lng=en&isSubGames=true&GroupEvents=true&countevents=250&grMode=4&partner=8&topGroups=&country=169&marketType=1&isNewBuilder=true",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "bytes": 8036,
+    "json": true,
+    "rootKeys": [
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Id",
+      "Success",
+      "Value"
+    ]
+  },
+  {
+    "label": "men-728683234-history",
+    "url": "https://melbet-319960.top/en/services-api/LiveFeed/GetHistoryGraphExt?gameId=728683234&coefView=0&lng=en&partner=8",
+    "status": 404,
+    "contentType": "application/json",
+    "bytes": 71,
+    "json": true,
+    "rootKeys": [
+      "stack",
+      "statusCode",
+      "statusMessage"
+    ],
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "label": "men-728683234-subscription",
+    "url": "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame?constId=728683234",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "bytes": 49,
+    "json": true,
+    "rootKeys": [
+      "options",
+      "sport"
+    ]
+  },
+  {
+    "label": "men-league",
+    "url": "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=2220&country=169&partner=8&mode=4&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+    "status": 406,
+    "contentType": "application/problem+json; charset=utf-8",
+    "bytes": 150,
+    "latencyMs": 398,
+    "json": true,
+    "rootType": "dict",
+    "rootKeys": [
+      "detail",
+      "status",
+      "title",
+      "type"
+    ],
+    "error": "HTTP Error 406: Not Acceptable"
+  },
+  {
+    "label": "men-short",
+    "url": "https://melbet-319960.top/service-api/LiveFeed/GetSportsShortZip?sports=3&champs=2496666&lng=en&gr=2220&country=169&partner=8&virtualSports=true&groupChamps=true",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "bytes": 16781,
+    "latencyMs": 347,
+    "json": true,
+    "rootType": "dict",
+    "rootKeys": [
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Id",
+      "Success",
+      "Value"
+    ]
+  },
+  {
+    "label": "top-games-stat",
+    "url": "https://melbet-319960.top/service-api/LiveFeed/GetTopGamesStatZip?lng=en&antisports=66&partner=8",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "bytes": 10818,
+    "latencyMs": 187,
+    "json": true,
+    "rootType": "dict",
+    "rootKeys": [
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Id",
+      "Success",
+      "Value"
+    ]
+  },
+  {
+    "label": "women-728682586-game",
+    "url": "https://melbet-319960.top/service-api/LiveFeed/GetGameZip?id=728682586&lng=en&isSubGames=true&GroupEvents=true&countevents=250&grMode=4&partner=8&topGroups=&country=169&marketType=1&isNewBuilder=true",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "bytes": 1674,
+    "json": true,
+    "rootKeys": [
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Id",
+      "Success",
+      "Value"
+    ]
+  },
+  {
+    "label": "women-728682586-history",
+    "url": "https://melbet-319960.top/en/services-api/LiveFeed/GetHistoryGraphExt?gameId=728682586&coefView=0&lng=en&partner=8",
+    "status": 404,
+    "contentType": "application/json",
+    "bytes": 71,
+    "json": true,
+    "rootKeys": [
+      "stack",
+      "statusCode",
+      "statusMessage"
+    ],
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "label": "women-728682586-subscription",
+    "url": "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame?constId=728682586",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "bytes": 49,
+    "json": true,
+    "rootKeys": [
+      "options",
+      "sport"
+    ]
+  },
+  {
+    "label": "women-league",
+    "url": "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=2220&country=169&partner=8&mode=4&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+    "status": 406,
+    "contentType": "application/problem+json; charset=utf-8",
+    "bytes": 150,
+    "latencyMs": 181,
+    "json": true,
+    "rootType": "dict",
+    "rootKeys": [
+      "detail",
+      "status",
+      "title",
+      "type"
+    ],
+    "error": "HTTP Error 406: Not Acceptable"
+  },
+  {
+    "label": "women-short",
+    "url": "https://melbet-319960.top/service-api/LiveFeed/GetSportsShortZip?sports=3&champs=2496667&lng=en&gr=2220&country=169&partner=8&virtualSports=true&groupChamps=true",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "bytes": 16956,
+    "latencyMs": 356,
+    "json": true,
+    "rootType": "dict",
+    "rootKeys": [
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Id",
+      "Success",
+      "Value"
+    ]
+  }
+]

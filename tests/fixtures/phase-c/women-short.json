@@ -1,0 +1,1748 @@
+{
+  "Id": 0,
+  "Success": true,
+  "Error": "",
+  "ErrorCode": 0,
+  "Guid": "",
+  "Value": [
+    {
+      "V": 33,
+      "Z": 66,
+      "I": 1,
+      "N": "Football",
+      "R": "Футбол",
+      "C": 126,
+      "CC": 50,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "I": 1,
+      "N": "Football",
+      "R": "Футбол",
+      "C": 64,
+      "CC": 3,
+      "MS": 3,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "V": 1,
+      "Z": 7,
+      "I": 1,
+      "N": "Football",
+      "R": "Футбол",
+      "C": 16,
+      "CC": 8,
+      "MS": 9,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "V": 12,
+      "Z": 1,
+      "I": 66,
+      "N": "Cricket",
+      "R": "Крикет",
+      "C": 20,
+      "CC": 15,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "I": 66,
+      "N": "Cricket",
+      "R": "Крикет",
+      "C": 1,
+      "CC": 1,
+      "MS": 9,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "L": [
+        {
+          "Z": 1,
+          "SI": 3,
+          "L": "Lithuania. LKL",
+          "LR": "Чемпионат Литвы. ЛКЛ",
+          "LI": 151495,
+          "CI": 107,
+          "T": 125,
+          "GC": 1,
+          "CHIMG": "39cf0ef3254b83278df1fbb7fb8db78e.png",
+          "COIMG": "3d8cda782ad82a09080edb129fd25439.png"
+        },
+        {
+          "Z": 1,
+          "V": 1,
+          "SI": 3,
+          "L": "Friendlies. National Teams. Women",
+          "LR": "Товарищеские матчи. Сборные. Женщины",
+          "LI": 1207381,
+          "CI": 225,
+          "T": 50,
+          "GC": 1,
+          "CHIMG": "0f82fc60ee696d0ab1e26804c40cbfd6.png"
+        },
+        {
+          "V": 1,
+          "SI": 3,
+          "L": "Italy. Serie B. Women",
+          "LR": "Чемпионат Италии. Серия Б. Женщины",
+          "LI": 1502409,
+          "CI": 79,
+          "T": 12,
+          "GC": 1,
+          "CHIMG": "a24d583e0224cecc4df7a2b9d33ebc44.png",
+          "COIMG": "06683c9bb5302b6f5ca25d4415bdeb2a.png"
+        },
+        {
+          "SI": 3,
+          "L": "Algeria. 3rd Division",
+          "LR": "Чемпионат Алжира. 3-й дивизион",
+          "LI": 1766683,
+          "CI": 8,
+          "T": 6,
+          "GC": 1,
+          "CHIMG": "ed81ad332c75914ee80b496d886f40c9.png",
+          "COIMG": "c793c9eabe2126406ec8f233622c88e7.png"
+        },
+        {
+          "Z": 1,
+          "SI": 3,
+          "L": "Angola Championship. Women",
+          "LR": "Чемпионат Анголы. Женщины",
+          "LI": 2971921,
+          "CI": 9,
+          "T": 6,
+          "GC": 1,
+          "CHIMG": "df38cebe62cb70a390adbb7ee72c9433.png",
+          "COIMG": "11bf7584854b929da0aa0646e9de1a6c.png"
+        },
+        {
+          "Z": 1,
+          "V": 1,
+          "SI": 3,
+          "L": "Rwanda Championship",
+          "LR": "Чемпионат Руанды",
+          "LI": 1835859,
+          "CI": 151,
+          "T": 6,
+          "GC": 1,
+          "CHIMG": "543a123253c578f1f2ecb446f6d03cce.png",
+          "COIMG": "b96cba6fc78746e92ebd61c2ff906fc5.png"
+        },
+        {
+          "Z": 1,
+          "SI": 3,
+          "L": "Senegal Championship. Division 1",
+          "LR": "Чемпионат Сенегала. Дивизион 1",
+          "LI": 1707350,
+          "CI": 165,
+          "T": 6,
+          "GC": 1,
+          "CHIMG": "3395ae467cfba4ba2ccab7ef06826843.png",
+          "COIMG": "f422defc4f3473d00d7c48c16962d5c1.png"
+        },
+        {
+          "Z": 2,
+          "V": 2,
+          "SI": 3,
+          "L": "IPBL. Pro Division",
+          "LI": 2496666,
+          "CI": 1,
+          "T": 99,
+          "GC": 2,
+          "CHIMG": "95b77fbaa64b9c1f5877579e5ed4349e.png"
+        },
+        {
+          "G": [
+            {
+              "SC": {
+                "FS": {
+                  "S1": 82,
+                  "S2": 77
+                },
+                "PS": [
+                  {
+                    "Key": 1,
+                    "Value": {
+                      "S1": 20,
+                      "S2": 17
+                    }
+                  },
+                  {
+                    "Key": 2,
+                    "Value": {
+                      "S1": 18,
+                      "S2": 20
+                    }
+                  },
+                  {
+                    "Key": 3,
+                    "Value": {
+                      "S1": 20,
+                      "S2": 18
+                    }
+                  },
+                  {
+                    "Key": 4,
+                    "Value": {
+                      "S1": 24,
+                      "S2": 22
+                    }
+                  }
+                ],
+                "CP": 4,
+                "CPS": "Break",
+                "GS": 2,
+                "TS": 2400,
+                "S": [],
+                "SLS": "40 minutes"
+              },
+              "VI": "19391021",
+              "VA": 1,
+              "ZP": 1,
+              "OuR": true,
+              "I": 728682586,
+              "N": 231447,
+              "T": 99,
+              "TG": "",
+              "V": "Including Overtime",
+              "VE": "Including Overtime",
+              "PN": "",
+              "TN": "Quarter",
+              "DI": "",
+              "SS": 3,
+              "STI": "6958868c6d807ed02613e14b",
+              "S": 1781280000,
+              "CHIMG": "5d6624680637e0dddc3cc0fe2d38b77c.png",
+              "O1": "Murino (Women)",
+              "O2": "Norilsk (Women)",
+              "O1I": 9815713,
+              "O2I": 5469095,
+              "O1IS": [
+                9815713
+              ],
+              "O2IS": [
+                5469095
+              ],
+              "O1C": 225,
+              "O2C": 225,
+              "O1IMG": [
+                "c2ebcc54483e9fc6928e03deeb75974e.png"
+              ],
+              "O2IMG": [
+                "e8ca6d6c75a5a3b3e27cc6e116f8f2b6.png"
+              ],
+              "O1R": "Murino (жен)",
+              "O2R": "Norilsk (жен)",
+              "O1E": "Murino (Women)",
+              "O2E": "Norilsk (Women)",
+              "MIS": [
+                {
+                  "K": 3,
+                  "V": "4x10"
+                },
+                {
+                  "K": 11,
+                  "V": "Russia"
+                }
+              ],
+              "MIO": {
+                "MaF": "4x10"
+              },
+              "SI": 3,
+              "SE": "Basketball",
+              "LE": "IPBL. Pro Division. Women",
+              "LI": 2496667,
+              "COI": 1,
+              "MS": [
+                0
+              ],
+              "SGI": "6a2c2d0e5e99bd05c63a82b2",
+              "KI": 1,
+              "IV": 12,
+              "HHTHS": true,
+              "TNS": "Quarters",
+              "SUBA": true
+            },
+            {
+              "SC": {
+                "FS": {
+                  "S1": 118,
+                  "S2": 82
+                },
+                "PS": [
+                  {
+                    "Key": 1,
+                    "Value": {
+                      "S1": 31,
+                      "S2": 32
+                    }
+                  },
+                  {
+                    "Key": 2,
+                    "Value": {
+                      "S1": 26,
+                      "S2": 20
+                    }
+                  },
+                  {
+                    "Key": 3,
+                    "Value": {
+                      "S1": 39,
+                      "S2": 20
+                    }
+                  },
+                  {
+                    "Key": 4,
+                    "Value": {
+                      "S1": 22,
+                      "S2": 10
+                    }
+                  }
+                ],
+                "CP": 4,
+                "CPS": "4th quarter",
+                "TS": 2108,
+                "S": [],
+                "SLS": "35 minutes"
+              },
+              "VI": "19391073",
+              "VA": 1,
+              "ZP": 1,
+              "SG": [
+                {
+                  "R": 99,
+                  "I": 728693543,
+                  "N": 234792,
+                  "T": 99,
+                  "TG": "",
+                  "V": "",
+                  "P": 4,
+                  "PN": "4th quarter",
+                  "DI": "",
+                  "SS": 3,
+                  "SI": 3,
+                  "MG": 728683948
+                }
+              ],
+              "OuR": true,
+              "I": 728683948,
+              "N": 234788,
+              "T": 99,
+              "EC": 46,
+              "TG": "",
+              "V": "Including Overtime",
+              "VE": "Including Overtime",
+              "PN": "",
+              "TN": "Quarter",
+              "DI": "",
+              "SS": 3,
+              "STI": "6958868c6d807ed02613e14b",
+              "S": 1781280600,
+              "CHIMG": "5d6624680637e0dddc3cc0fe2d38b77c.png",
+              "O1": "Saransk (Women)",
+              "O2": "Mytishchi (Women)",
+              "O1I": 10419894,
+              "O2I": 10419890,
+              "O1IS": [
+                10419894
+              ],
+              "O2IS": [
+                10419890
+              ],
+              "O1C": 225,
+              "O2C": 225,
+              "O1IMG": [
+                "21ce954fc4de91bbf74f3af36ffd18cb.png"
+              ],
+              "O2IMG": [
+                "1bed38517d0508bbd674327aac93170f.png"
+              ],
+              "O1R": "Saransk (жен)",
+              "O2R": "Mytishchi (жен)",
+              "O1E": "Saransk (Women)",
+              "O2E": "Mytishchi (Women)",
+              "MIS": [
+                {
+                  "K": 3,
+                  "V": "4x10"
+                },
+                {
+                  "K": 11,
+                  "V": "Russia"
+                }
+              ],
+              "MIO": {
+                "MaF": "4x10"
+              },
+              "SI": 3,
+              "SE": "Basketball",
+              "LE": "IPBL. Pro Division. Women",
+              "LI": 2496667,
+              "COI": 1,
+              "MS": [
+                0
+              ],
+              "SGI": "6a2c2f675e99bd05c63a83e0",
+              "KI": 1,
+              "IV": 12,
+              "HHTHS": true,
+              "TNS": "Quarters",
+              "SUBA": true
+            }
+          ],
+          "Z": 2,
+          "V": 2,
+          "SI": 3,
+          "L": "IPBL. Pro Division. Women",
+          "LR": "IPBL. Pro Division. Женщины",
+          "LI": 2496667,
+          "CI": 1,
+          "T": 99,
+          "GC": 2,
+          "CHIMG": "5d6624680637e0dddc3cc0fe2d38b77c.png"
+        },
+        {
+          "Z": 1,
+          "V": 1,
+          "SI": 3,
+          "L": "IPBL. Prime Division",
+          "LI": 2498892,
+          "CI": 225,
+          "T": 98,
+          "GC": 1,
+          "CHIMG": "def260ef0c6c3692f67c6c357235c7f6.png"
+        },
+        {
+          "Z": 1,
+          "V": 1,
+          "SI": 3,
+          "L": "IPBL. Prime Division. Women",
+          "LR": "IPBL. Prime Division. Женщины",
+          "LI": 2668159,
+          "CI": 225,
+          "T": 98,
+          "GC": 1,
+          "CHIMG": "1c4c7dd7f603ee563028cffeb1c700f3.png"
+        },
+        {
+          "Z": 1,
+          "V": 1,
+          "SI": 3,
+          "L": "China. CDBL",
+          "LR": "Китай. CDBL",
+          "LI": 2631144,
+          "CI": 90,
+          "T": 93,
+          "GC": 1
+        },
+        {
+          "Z": 1,
+          "V": 1,
+          "SI": 3,
+          "L": "IPBL. Space Division",
+          "LI": 2496671,
+          "CI": 1,
+          "T": 92,
+          "GC": 1,
+          "CHIMG": "85fe6de8d0b379f239e4287868544db7.png"
+        },
+        {
+          "V": 2,
+          "SI": 3,
+          "L": "NBA 2K26. Cyber Euro League",
+          "LI": 2983166,
+          "CI": 225,
+          "T": 49,
+          "GC": 2,
+          "CHIMG": "d6e678c41ac2e310acae817cacc26c9a.png"
+        },
+        {
+          "V": 1,
+          "SI": 3,
+          "L": "NBA 2K26. Cyber League",
+          "LI": 2935701,
+          "CI": 225,
+          "T": 49,
+          "GC": 2,
+          "CHIMG": "7a1df339bb1605b7255820fe7728f88b.png"
+        }
+      ],
+      "V": 14,
+      "Z": 13,
+      "I": 3,
+      "N": "Basketball",
+      "R": "Баскетбол",
+      "C": 19,
+      "CC": 15,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "I": 3,
+      "N": "Basketball",
+      "R": "Баскетбол",
+      "C": 4,
+      "CC": 1,
+      "MS": 3,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "Z": 3,
+      "I": 3,
+      "N": "Basketball",
+      "R": "Баскетбол",
+      "C": 5,
+      "CC": 3,
+      "MS": 9,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "V": 11,
+      "I": 40,
+      "N": "Esports",
+      "R": "КиберСпорт",
+      "C": 18,
+      "CC": 11,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "Z": 42,
+      "I": 4,
+      "N": "Tennis",
+      "R": "Теннис",
+      "C": 47,
+      "CC": 33,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "I": 4,
+      "N": "Tennis",
+      "R": "Теннис",
+      "C": 1,
+      "CC": 1,
+      "MS": 9,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "V": 21,
+      "I": 85,
+      "N": "FIFA",
+      "R": "FIFA",
+      "C": 75,
+      "CC": 18,
+      "ICY": true,
+      "CID": 1
+    },
+    {
+      "V": 10,
+      "Z": 9,
+      "I": 6,
+      "N": "Volleyball",
+      "R": "Волейбол",
+      "C": 21,
+      "CC": 10,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "V": 30,
+      "Z": 19,
+      "I": 10,
+      "N": "Table Tennis",
+      "R": "Настольный теннис",
+      "C": 46,
+      "CC": 20,
+      "IT": 1,
+      "CID": 1
+    },
+    {
+      "V": 4,
+      "I": 57,
+      "N": "Athletics",
+      "R": "Атлетика",
+      "C": 4,
+      "CC": 1,
+      "CID": 2
+    },
+    {
+      "V": 5,
+      "I": 16,
+      "N": "Badminton",
+      "R": "Бадминтон",
+      "C": 8,
+      "CC": 5,
+      "CID": 2
+    },
+    {
+      "V": 1,
+      "I": 25,
+      "N": "Beach Soccer",
+      "R": "Пляжный футбол",
+      "C": 1,
+      "CC": 1,
+      "CID": 2
+    },
+    {
+      "V": 2,
+      "I": 29,
+      "N": "Beach Volleyball",
+      "R": "Пляжный волейбол",
+      "C": 5,
+      "CC": 4,
+      "CID": 2
+    },
+    {
+      "V": 1,
+      "I": 113,
+      "N": "Bowling",
+      "R": "Боулинг",
+      "C": 2,
+      "CC": 1,
+      "CID": 2
+    },
+    {
+      "V": 3,
+      "I": 41,
+      "N": "Golf",
+      "R": "Гольф",
+      "C": 9,
+      "CC": 5,
+      "CID": 2
+    },
+    {
+      "I": 68,
+      "N": "Greyhound Racing",
+      "R": "Собачьи бега",
+      "C": 2,
+      "CC": 2,
+      "CID": 2
+    },
+    {
+      "V": 1,
+      "I": 8,
+      "N": "Handball",
+      "R": "Гандбол",
+      "C": 1,
+      "CC": 1,
+      "CID": 2
+    },
+    {
+      "V": 10,
+      "I": 44,
+      "N": "Horse Racing",
+      "R": "Скачки",
+      "C": 15,
+      "CC": 13,
+      "CID": 2
+    },
+    {
+      "V": 8,
+      "Z": 3,
+      "I": 2,
+      "N": "Ice Hockey",
+      "R": "Хоккей",
+      "C": 8,
+      "CC": 5,
+      "IT": 1,
+      "CID": 2
+    },
+    {
+      "I": 2,
+      "N": "Ice Hockey",
+      "R": "Хоккей",
+      "C": 1,
+      "CC": 1,
+      "MS": 9,
+      "IT": 1,
+      "CID": 2
+    },
+    {
+      "I": 180,
+      "N": "Kabaddi",
+      "R": "Кабадди",
+      "C": 1,
+      "CC": 1,
+      "MS": 9,
+      "CID": 2
+    },
+    {
+      "I": 82,
+      "N": "Lottery",
+      "R": "Лотерея",
+      "C": 17,
+      "CC": 15,
+      "CID": 2
+    },
+    {
+      "V": 21,
+      "I": 103,
+      "N": "Mortal Kombat",
+      "R": "Mortal Kombat",
+      "C": 28,
+      "CC": 7,
+      "ICY": true,
+      "CID": 2
+    },
+    {
+      "V": 1,
+      "I": 282,
+      "N": "Padel",
+      "R": "Падел",
+      "C": 1,
+      "CC": 1,
+      "CID": 2
+    },
+    {
+      "V": 1,
+      "Z": 1,
+      "I": 7,
+      "N": "Rugby",
+      "R": "Регби",
+      "C": 3,
+      "CC": 3,
+      "CID": 2
+    },
+    {
+      "I": 30,
+      "N": "Snooker",
+      "R": "Снукер",
+      "C": 2,
+      "CC": 1,
+      "CID": 2
+    },
+    {
+      "I": 102,
+      "N": "Speedway",
+      "R": "Спидвей",
+      "C": 1,
+      "CC": 1,
+      "CID": 2
+    },
+    {
+      "Z": 1,
+      "I": 17,
+      "N": "Water Polo",
+      "R": "Водное поло",
+      "C": 1,
+      "CC": 1,
+      "CID": 2
+    },
+    {
+      "V": 1,
+      "I": 233,
+      "N": "Marble Shooting",
+      "R": "Марбл Стрельба",
+      "C": 1,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 240,
+      "N": "Marble Fidget Spinners",
+      "R": "Марбл Спиннеры",
+      "C": 3,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 244,
+      "N": "Marble Billiards",
+      "R": "Марбл Бильярд",
+      "C": 3,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "I": 248,
+      "N": "Marble Waves",
+      "R": "Марбл Вэйвс",
+      "C": 2,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 250,
+      "N": "Marble Curling",
+      "R": "Марбл Керлинг",
+      "C": 3,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 247,
+      "N": "Marble Round Target",
+      "R": "Марбл Мишень",
+      "C": 2,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 246,
+      "N": "Marble Slides",
+      "R": "Марбл Слайдс",
+      "C": 2,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 245,
+      "N": "Marble Collision",
+      "R": "Марбл Коллижн",
+      "C": 3,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 254,
+      "N": "Marble LOTTO",
+      "R": "Марбл Лото",
+      "C": 2,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 255,
+      "N": "Marble MMA",
+      "R": "Марбл ММА",
+      "C": 2,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "I": 253,
+      "N": "Marble Race",
+      "R": "Марбл Гонки",
+      "C": 2,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 261,
+      "N": "Marble Baseball",
+      "R": "Марбл Бейсбол",
+      "C": 3,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "I": 260,
+      "N": "Marble Block Breaker",
+      "R": "Марбл Смэш",
+      "C": 2,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 1,
+      "I": 266,
+      "N": "Marble Basketball",
+      "R": "Марбл Баскетбол",
+      "C": 2,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 2,
+      "I": 265,
+      "N": "Marble Volleyball",
+      "R": "Марбл Волейбол",
+      "C": 3,
+      "CC": 1,
+      "MS": 8,
+      "ICY": true,
+      "CID": 3
+    },
+    {
+      "V": 5,
+      "I": 89,
+      "N": "Esports Ice Hockey",
+      "R": "Кибер хоккей",
+      "C": 11,
+      "CC": 4,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 128,
+      "N": "StreetFighter",
+      "R": "StreetFighter",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 4,
+      "I": 91,
+      "N": "Esports Basketball",
+      "R": "Кибер баскетбол",
+      "C": 9,
+      "CC": 5,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 280,
+      "N": "Big Rumble Boxing",
+      "R": "Big Rumble Boxing",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 97,
+      "N": "Dota",
+      "R": "Dota",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 125,
+      "N": "Call Of Duty",
+      "R": "CallOfDuty",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 96,
+      "N": "World of tanks",
+      "R": "World of tanks",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 305,
+      "N": "Undisputed",
+      "R": "Undisputed",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 3,
+      "I": 218,
+      "N": "Dead Or Alive",
+      "R": "Dead Or Alive",
+      "C": 3,
+      "CC": 2,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 273,
+      "N": "WWE Battlegrounds",
+      "R": "WWE Battlegrounds",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 144,
+      "N": "PES",
+      "R": "PES",
+      "C": 13,
+      "CC": 4,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 6,
+      "I": 145,
+      "N": "Tekken",
+      "R": "Tekken",
+      "C": 11,
+      "CC": 3,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 141,
+      "N": "King of Fighters",
+      "R": "KingOfFighters",
+      "C": 9,
+      "CC": 2,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 298,
+      "N": "Overwatch",
+      "R": "Overwatch",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 315,
+      "N": "Looney Tunes",
+      "R": "Looney Tunes",
+      "C": 4,
+      "CC": 2,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 117,
+      "N": "Need for Speed",
+      "R": "Need for Speed",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 302,
+      "N": "Roller Champions",
+      "R": "Roller Champions",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 4,
+      "I": 277,
+      "N": "Guilty Gear",
+      "R": "Guilty Gear",
+      "C": 4,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 291,
+      "N": "GigaBash",
+      "R": "GigaBash",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 136,
+      "N": "Angry Birds",
+      "R": "AngryBirds",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 276,
+      "N": "SEGA Football",
+      "R": "SEGA Football",
+      "C": 3,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 269,
+      "N": "Winter Olympics",
+      "R": "Зимние Олимпийские Игры",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 150,
+      "N": "StarCraft 2",
+      "R": "StarCraft 2",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 200,
+      "N": "Esports Volleyball",
+      "R": "Кибер волейбол",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 115,
+      "N": "Esports American Football",
+      "R": "Кибер NFL",
+      "C": 3,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 4,
+      "I": 90,
+      "N": "Esports UFC",
+      "R": "Кибер UFC",
+      "C": 10,
+      "CC": 3,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 99,
+      "N": "Esports Cricket",
+      "R": "Кибер крикет",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 3,
+      "I": 190,
+      "N": "Esports Australian Rules",
+      "R": "Кибер австралийский футбол",
+      "C": 8,
+      "CC": 3,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 114,
+      "N": "Esports Rugby",
+      "R": "Кибер регби",
+      "C": 3,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 86,
+      "N": "Counter Strike",
+      "R": "Counter Strike",
+      "C": 2,
+      "CC": 2,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 264,
+      "N": "Esports Horse Racing",
+      "R": "Cyber Horse Racing",
+      "C": 3,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 263,
+      "N": "Street Power Football",
+      "R": "Street Power Football",
+      "C": 8,
+      "CC": 2,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 9,
+      "I": 94,
+      "N": "Esports Tennis",
+      "R": "Кибер теннис",
+      "C": 11,
+      "CC": 5,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 5,
+      "I": 101,
+      "N": "Esports Wrestling",
+      "R": "Кибер рестлинг",
+      "C": 14,
+      "CC": 5,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 109,
+      "N": "Rocket League",
+      "R": "Rocket League",
+      "C": 5,
+      "CC": 4,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 116,
+      "N": "Esports Rally",
+      "R": "Кибер ралли",
+      "C": 5,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 120,
+      "N": "Esports Golf",
+      "R": "Кибер гольф",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 129,
+      "N": "Esports F1",
+      "R": "Кибер формула 1",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 3,
+      "I": 130,
+      "N": "Esports Lacrosse",
+      "R": "Кибер лакросс",
+      "C": 7,
+      "CC": 2,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 143,
+      "N": "Injustice",
+      "R": "Injustice",
+      "C": 3,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 154,
+      "N": "Flatout",
+      "R": "Flatout",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 166,
+      "N": "LaserLeague",
+      "R": "LaserLeague",
+      "C": 4,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 172,
+      "N": "CrossOut",
+      "R": "CrossOut",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 179,
+      "N": "Pixel Cup Soccer",
+      "R": "PixelCupSoccer",
+      "C": 4,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 3,
+      "I": 181,
+      "N": "Killer Instinct",
+      "R": "Killer Instinct",
+      "C": 3,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 183,
+      "N": "Table Football Pro",
+      "R": "TableFootballPro",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 193,
+      "N": "Assault Squad",
+      "R": "AssaultSquad",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 194,
+      "N": "Cut The Rope",
+      "R": "CutTheRope",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 195,
+      "N": "Subway Surfers",
+      "R": "SubwaySurfers",
+      "C": 5,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 196,
+      "N": "Sonic",
+      "R": "Sonic",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 199,
+      "N": "Crash",
+      "R": "Crash",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 213,
+      "N": "Sekiro",
+      "R": "Sekiro",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 219,
+      "N": "TABS",
+      "R": "TABS",
+      "C": 12,
+      "CC": 2,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 221,
+      "N": "Rumble Stars",
+      "R": "RumbleStars",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 227,
+      "N": "Robot Champions",
+      "R": "Robot Champions",
+      "C": 4,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 228,
+      "N": "Boxing Champs",
+      "R": "Boxing Champs",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 2,
+      "I": 238,
+      "N": "Mega Baseball",
+      "R": "Mega Baseball",
+      "C": 7,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 241,
+      "N": "Raid: Shadow Legends",
+      "R": "Raid: Shadow Legends",
+      "C": 4,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 304,
+      "N": "Power of Power",
+      "R": "Power of Power",
+      "C": 4,
+      "CC": 2,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 169,
+      "N": "Mutant League",
+      "R": "Mutant League",
+      "C": 4,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 272,
+      "N": "Esports Bowling",
+      "R": "Кибер боулинг",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "V": 1,
+      "I": 310,
+      "N": "World of Warcraft",
+      "R": "World of Warcraft",
+      "C": 1,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 317,
+      "N": "Esports Quidditch",
+      "R": "Кибер квиддич",
+      "C": 2,
+      "CC": 1,
+      "MS": 28,
+      "ICY": true,
+      "CID": 4
+    },
+    {
+      "I": 236,
+      "N": "Baccarat",
+      "R": "Баккара",
+      "C": 4,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 243,
+      "N": "Battleships",
+      "R": "Морской бой",
+      "C": 2,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 311,
+      "N": "Card Cricket",
+      "R": "Карточный крикет",
+      "C": 3,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 210,
+      "N": "Card Football",
+      "R": "Карточный футбол",
+      "C": 2,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 287,
+      "N": "Crystal",
+      "R": "Crystal",
+      "C": 3,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 235,
+      "N": "Dice",
+      "R": "Кости",
+      "C": 3,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 153,
+      "N": "Durak",
+      "R": "Карточный дурак",
+      "C": 2,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 167,
+      "N": "Esports Poker",
+      "R": "Cyber Poker",
+      "C": 7,
+      "CC": 2,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 306,
+      "N": "Gold Rush",
+      "R": "Gold Rush",
+      "C": 3,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 292,
+      "N": "Higher vs Lower",
+      "R": "Higher vs Lower",
+      "C": 4,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "V": 2,
+      "I": 321,
+      "N": "Imagic",
+      "R": "Imagic",
+      "C": 6,
+      "CC": 1,
+      "CID": 6
+    },
+    {
+      "I": 274,
+      "N": "Killer Joker",
+      "R": "Killer Joker",
+      "C": 3,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 301,
+      "N": "Roulette",
+      "R": "Рулетка",
+      "C": 6,
+      "CC": 2,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 268,
+      "N": "Russian Lotto",
+      "R": "Русское лото",
+      "C": 3,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 257,
+      "N": "Seka",
+      "R": "Сека",
+      "C": 3,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 284,
+      "N": "Sette e mezzo",
+      "R": "Sette e mezzo",
+      "C": 4,
+      "CC": 2,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 146,
+      "N": "TwentyOne",
+      "R": "21 очко",
+      "C": 10,
+      "CC": 3,
+      "ICY": true,
+      "CID": 6
+    },
+    {
+      "I": 258,
+      "N": "Victory Formula",
+      "R": "Формула победы",
+      "C": 3,
+      "CC": 1,
+      "ICY": true,
+      "CID": 6
+    }
+  ]
+}

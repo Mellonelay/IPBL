@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "swarm-v1-plan-manifest-draft",
+  "workload": "IPBL Phase C source and recorder hardening",
+  "mode": "read-only-materialization",
+  "canonicalRepository": "/root/repos/IPBL",
+  "worktree": "/root/repos/IPBL-phase-c-recorder",
+  "branch": "feature/phase-c-recorder",
+  "lockedMutations": [
+    "production KV",
+    "cron activation",
+    "deployment",
+    "new divisions",
+    "secret rotation"
+  ],
+  "tasks": [
+    {
+      "id": "c1",
+      "name": "classify endpoint corpus",
+      "state": "completed"
+    },
+    {
+      "id": "c2",
+      "name": "verify contracts and fixtures",
+      "state": "completed"
+    },
+    {
+      "id": "c3",
+      "name": "typed parser layer",
+      "state": "completed"
+    },
+    {
+      "id": "c4",
+      "name": "recorder dry-run",
+      "state": "completed"
+    },
+    {
+      "id": "c5",
+      "name": "Graphify evidence update",
+      "state": "completed"
+    },
+    {
+      "id": "c6",
+      "name": "controlled PR",
+      "state": "push-ready-auth-restored"
+    },
+    {
+      "id": "c7",
+      "name": "production activation",
+      "state": "locked"
+    }
+  ],
+  "graphEvidence": {
+    "catalogNodeId": "node_8426a8d5-c63f-4e06-9539-9e4ea8458dde",
+    "contractNodeId": "node_cea2d732-f002-4ff9-899a-182333363a8f",
+    "fixtureNodeId": "node_6d27900b-f5a9-44dd-8a6a-fd041d037db1",
+    "dryRunNodeId": "node_005fd9fa-3bcf-4abe-9bc2-cc8830fa31c8",
+    "reportId": "a24fbd33-524f-4711-897e-3670fc005c69",
+    "reportArtifact": "graph-reports-v2/a24fbd33-524f-4711-897e-3670fc005c69.json"
+  },
+  "controlledCiAuth": {
+    "status": "restored",
+    "method": "existing GitHub CLI HTTPS credential",
+    "account": "Mellonelay",
+    "credentialRotated": false,
+    "secretExposed": false
+  }
+}
