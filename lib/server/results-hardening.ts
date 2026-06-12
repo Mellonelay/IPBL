@@ -210,7 +210,7 @@ function isScheduleGame(value: unknown): boolean {
     && typeof value.divisionLabel === "string"
     && isNullableFiniteNumber(value.period)
     && isNullableString(value.timeToGo)
-    && isNullableFiniteNumber(value.timeIsGo)
+    && (value.timeIsGo === undefined || isNullableFiniteNumber(value.timeIsGo))
     && typeof value.isLive === "boolean"
     && isNullableFiniteNumber(value.updatedAt)
     && (value.scheduledTime === undefined || isNullableString(value.scheduledTime))
