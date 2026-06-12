@@ -41,7 +41,7 @@
     {
       "id": "c6",
       "name": "controlled PR",
-      "state": "push-ready-auth-restored"
+      "state": "completed-pr-open"
     },
     {
       "id": "c7",
@@ -63,5 +63,12 @@
     "account": "Mellonelay",
     "credentialRotated": false,
     "secretExposed": false
+  },
+  "controlledCi": {
+    "sourceCommit": "e7b7b1b24dab76863b0ff4b58ea1acdcfa20b3ed",
+    "pullRequestNumber": 20,
+    "pullRequestUrl": "https://github.com/Mellonelay/IPBL/pull/20",
+    "state": "open",
+    "deploymentAttempted": false
   }
 }

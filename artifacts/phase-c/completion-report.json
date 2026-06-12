@@ -2,7 +2,7 @@
   "schemaVersion": "completion-report-v1",
   "generatedAt": "2026-06-12T16:56:54.172405+00:00",
   "workload": "IPBL Phase C endpoint corpus materialization",
-  "status": "validated-local-auth-restored-push-ready",
+  "status": "c6-controlled-pr-open",
   "evidence": {
     "catalog": "/root/runtime-audits/melbet-eventsstat-rotating-catalog-20260612T154054Z",
     "verification": "/root/runtime-audits/ipbl-phase-c-contract-verification-20260612T165339Z"
@@ -134,7 +134,7 @@
     "secretScan": "pass",
     "unsafeTlsScan": "pass"
   },
-  "nextState": "C6 push and controlled PR",
+  "nextState": "CI review and merge gate; C7 production activation remains locked",
   "dryRun": {
     "path": "/root/runtime-audits/ipbl-phase-c-dry-run-20260612T165757797Z",
     "iterations": 3,
@@ -154,8 +154,11 @@
   "controlledCi": {
     "localCommitCreated": true,
     "auth": "restored-existing-credential",
-    "push": "pending",
-    "pullRequest": "pending",
+    "push": "verified",
+    "pullRequest": "open",
+    "pullRequestNumber": 20,
+    "pullRequestUrl": "https://github.com/Mellonelay/IPBL/pull/20",
+    "sourceCommit": "e7b7b1b24dab76863b0ff4b58ea1acdcfa20b3ed",
     "deployment": "not-attempted"
   }
 }
