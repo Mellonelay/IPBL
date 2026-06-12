@@ -1,0 +1,2497 @@
+[
+  {
+    "parameter": "11045.5|0.9547032377684997",
+    "occurrences": 1,
+    "exampleValues": [
+      ""
+    ],
+    "families": {
+      "external_static": 1
+    },
+    "topPaths": [
+      {
+        "path": "/cedexis/r20.gif",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "13106.5|0.839767514305831",
+    "occurrences": 1,
+    "exampleValues": [
+      ""
+    ],
+    "families": {
+      "external_static": 1
+    },
+    "topPaths": [
+      {
+        "path": "/cedexis/r20-100KB.png",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "2791.1999999284744|0.0031883180189455906",
+    "occurrences": 1,
+    "exampleValues": [
+      ""
+    ],
+    "families": {
+      "external_static": 1
+    },
+    "topPaths": [
+      {
+        "path": "/cedexis/r20.gif",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "4862.699999928474|0.7184919516613263",
+    "occurrences": 1,
+    "exampleValues": [
+      ""
+    ],
+    "families": {
+      "external_static": 1
+    },
+    "topPaths": [
+      {
+        "path": "/cedexis/r20-100KB.png",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "6903.5|0.36825219953602184",
+    "occurrences": 1,
+    "exampleValues": [
+      ""
+    ],
+    "families": {
+      "external_static": 1
+    },
+    "topPaths": [
+      {
+        "path": "/cedexis/r20.gif",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "8985.899999976158|0.6035808265564124",
+    "occurrences": 1,
+    "exampleValues": [
+      ""
+    ],
+    "families": {
+      "external_static": 1
+    },
+    "topPaths": [
+      {
+        "path": "/cedexis/r20-100KB.png",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "GroupEvents",
+    "occurrences": 3,
+    "exampleValues": [
+      "true"
+    ],
+    "families": {
+      "first_party_livefeed": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "_ee",
+    "occurrences": 3,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 3
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "_et",
+    "occurrences": 12,
+    "exampleValues": [
+      "13040",
+      "2442",
+      "6495",
+      "1390",
+      "7196",
+      "198",
+      "293",
+      "2",
+      "287",
+      "1056",
+      "5859",
+      "6198"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "_eu",
+    "occurrences": 27,
+    "exampleValues": [
+      "AAAAAGA",
+      "AAAAAGQ",
+      "AEAAAGQ"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "_fv",
+    "occurrences": 2,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 2
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "_gaz",
+    "occurrences": 4,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 4
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "_nsi",
+    "occurrences": 1,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 1
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "_p",
+    "occurrences": 27,
+    "exampleValues": [
+      "1781278875971",
+      "1781278969847",
+      "1781279013539",
+      "1781279055910",
+      "1781279096831",
+      "1781278920194"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "_r",
+    "occurrences": 4,
+    "exampleValues": [
+      "4"
+    ],
+    "families": {
+      "analytics_ad": 4
+    },
+    "topPaths": [
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "_s",
+    "occurrences": 27,
+    "exampleValues": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "_ss",
+    "occurrences": 2,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 2
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "ae",
+    "occurrences": 13,
+    "exampleValues": [
+      "a",
+      "g"
+    ],
+    "families": {
+      "analytics_ad": 13
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 7
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "aip",
+    "occurrences": 6,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 6
+    },
+    "topPaths": [
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      },
+      {
+        "path": "/g/collect",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "antisports",
+    "occurrences": 1,
+    "exampleValues": [
+      "66"
+    ],
+    "families": {
+      "first_party_livefeed": 1
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetTopGamesStatZip",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "apvc",
+    "occurrences": 6,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 6
+    },
+    "topPaths": [
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "apve",
+    "occurrences": 6,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 6
+    },
+    "topPaths": [
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "apvf",
+    "occurrences": 6,
+    "exampleValues": [
+      "f"
+    ],
+    "families": {
+      "analytics_ad": 6
+    },
+    "topPaths": [
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "are",
+    "occurrences": 27,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "auid",
+    "occurrences": 7,
+    "exampleValues": [
+      "450853596.1781278880"
+    ],
+    "families": {
+      "analytics_ad": 7
+    },
+    "topPaths": [
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      },
+      {
+        "path": "/ccm/s/collect",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "bci",
+    "occurrences": 12,
+    "exampleValues": [
+      "4"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "cfView",
+    "occurrences": 2,
+    "exampleValues": [
+      "3"
+    ],
+    "families": {
+      "first_party_other_api": 2
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/main-line-feed/v1/expressDay",
+        "count": 1
+      },
+      {
+        "path": "/service-api/main-live-feed/v1/expressDay",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "champs",
+    "occurrences": 4,
+    "exampleValues": [
+      "2496666",
+      "2496667"
+    ],
+    "families": {
+      "first_party_livefeed": 4
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 2
+      },
+      {
+        "path": "/service-api/LiveFeed/GetSportsShortZip",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "cid",
+    "occurrences": 33,
+    "exampleValues": [
+      "695268526.1781278880"
+    ],
+    "families": {
+      "analytics_ad": 33
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "constId",
+    "occurrences": 3,
+    "exampleValues": [
+      "728668607",
+      "728669947",
+      "728670390"
+    ],
+    "families": {
+      "first_party_subscription": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "count",
+    "occurrences": 5,
+    "exampleValues": [
+      "20",
+      "10",
+      "40"
+    ],
+    "families": {
+      "first_party_other_api": 1,
+      "first_party_livefeed": 4
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 4
+      },
+      {
+        "path": "/service-api/LineFeed/Get1x2_VZip",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "countevents",
+    "occurrences": 3,
+    "exampleValues": [
+      "250"
+    ],
+    "families": {
+      "first_party_livefeed": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "country",
+    "occurrences": 14,
+    "exampleValues": [
+      "sg",
+      "169"
+    ],
+    "families": {
+      "first_party_other_api": 4,
+      "first_party_livefeed": 10
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 4
+      },
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      },
+      {
+        "path": "/service-api/LiveFeed/GetSportsShortZip",
+        "count": 2
+      },
+      {
+        "path": "/flexreg-api/v1/registration/form/widget",
+        "count": 1
+      },
+      {
+        "path": "/service-api/LineFeed/Get1x2_VZip",
+        "count": 1
+      },
+      {
+        "path": "/service-api/LiveFeed/WebGetTopChampsZip",
+        "count": 1
+      },
+      {
+        "path": "/service-api/main-line-feed/v1/expressDay",
+        "count": 1
+      },
+      {
+        "path": "/service-api/main-live-feed/v1/expressDay",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "cx",
+    "occurrences": 2,
+    "exampleValues": [
+      "c"
+    ],
+    "families": {
+      "analytics_ad": 2
+    },
+    "topPaths": [
+      {
+        "path": "/gtag/destination",
+        "count": 1
+      },
+      {
+        "path": "/gtag/js",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "cyberFlag",
+    "occurrences": 2,
+    "exampleValues": [
+      "4"
+    ],
+    "families": {
+      "first_party_results": 2
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/result/web/api/v2/sports",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "dateFrom",
+    "occurrences": 4,
+    "exampleValues": [
+      "1781192700",
+      "1781193000"
+    ],
+    "families": {
+      "first_party_results": 4
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/result/web/api/v2/champs",
+        "count": 2
+      },
+      {
+        "path": "/service-api/result/web/api/v2/sports",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "dateTo",
+    "occurrences": 4,
+    "exampleValues": [
+      "1781279100",
+      "1781279400"
+    ],
+    "families": {
+      "first_party_results": 4
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/result/web/api/v2/champs",
+        "count": 2
+      },
+      {
+        "path": "/service-api/result/web/api/v2/sports",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "dl",
+    "occurrences": 33,
+    "exampleValues": [
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division",
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "https://melbet-319960.top/en/results",
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women"
+    ],
+    "families": {
+      "analytics_ad": 33
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "dma",
+    "occurrences": 39,
+    "exampleValues": [
+      "0"
+    ],
+    "families": {
+      "analytics_ad": 39
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "domain",
+    "occurrences": 2,
+    "exampleValues": [
+      "melbet-319960.top"
+    ],
+    "families": {
+      "analytics_ad": 1,
+      "first_party_other_api": 1
+    },
+    "topPaths": [
+      {
+        "path": "/signals/config/726215172055603",
+        "count": 1
+      },
+      {
+        "path": "/analytics-module-api/v1/analytics",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "dp",
+    "occurrences": 12,
+    "exampleValues": [
+      "/en/results"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "dr",
+    "occurrences": 7,
+    "exampleValues": [
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women"
+    ],
+    "families": {
+      "analytics_ad": 7
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "parameter": "dt",
+    "occurrences": 33,
+    "exampleValues": [
+      "MelBet"
+    ],
+    "families": {
+      "analytics_ad": 33
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "dv",
+    "occurrences": 12,
+    "exampleValues": [
+      "UTC&en-US,en&Google Inc.&Linux x86_64&255&800&600&1&24&800&600&0&na"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "ec_mode",
+    "occurrences": 12,
+    "exampleValues": [
+      "a"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "eci",
+    "occurrences": 12,
+    "exampleValues": [
+      "3"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "ecid",
+    "occurrences": 16,
+    "exampleValues": [
+      "1744732383"
+    ],
+    "families": {
+      "analytics_ad": 16
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 16
+      }
+    ]
+  },
+  {
+    "parameter": "en",
+    "occurrences": 25,
+    "exampleValues": [
+      "page_view",
+      "reg_phone_reg_currency_change_SGD"
+    ],
+    "families": {
+      "analytics_ad": 25
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 19
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "ep.ads_data_redaction",
+    "occurrences": 6,
+    "exampleValues": [
+      "0"
+    ],
+    "families": {
+      "analytics_ad": 6
+    },
+    "topPaths": [
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "ep.optimize_id",
+    "occurrences": 7,
+    "exampleValues": [
+      "GTM-5R4MT54"
+    ],
+    "families": {
+      "analytics_ad": 7
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "parameter": "event",
+    "occurrences": 12,
+    "exampleValues": [
+      "{}"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "event_id",
+    "occurrences": 12,
+    "exampleValues": [
+      "42912ea8-fd55-4a64-958c-e932f2758497",
+      "63c2939a-de59-49b5-82c0-8d289485ec25",
+      "6c22e741-3e10-4f5a-92c2-cde16804d186",
+      "ce282b39-4377-48a4-baa0-4cdee4818f23",
+      "f1d9ed3f-17b4-4792-91ef-8e41125d791a",
+      "f8965c01-0faf-4375-a733-b4b0c69f0151"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "ex_m",
+    "occurrences": 1,
+    "exampleValues": [
+      "105,208,156,22,73,74,147,69,68,11,165,91,16,139,128,39,76,79,135,161,167,8,4,5,7,6,3,92,102,168,173,222,30,75,234,233,232,23,33,55,104,61,10,64,98,99,100,106,131,31,29,133,134,130,129,157,77,160,158,159,50,60,124,15,164,45,267,268,266,26,27,28,48,148,78,113,18,20,44,40,42,41,84,93,97,111,146,149,46,112,24,21,120,70,36,151,150,152,143,141,25,35,59,110,163,71,17,154,115,82,67,19,86,87,117,85,137,136,140,162,34,281,297,215,204,62,205,203,300,291,52,216,108,132,81,122,54,47,49,114,121,127,126,58,65,63,153,116,37,32,53,56,101,166,1,125,14,123,12,2,57,94,66,119,90,89,169,170,95,96,9,103,51,144,88,80,72,118,107,43,145,0,83,138,142,155,38,109,13,171"
+    ],
+    "families": {
+      "analytics_ad": 1
+    },
+    "topPaths": [
+      {
+        "path": "/signals/config/726215172055603",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "fCountry",
+    "occurrences": 1,
+    "exampleValues": [
+      "169"
+    ],
+    "families": {
+      "first_party_other_api": 1
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/gamespreview/getbanner",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "frm",
+    "occurrences": 39,
+    "exampleValues": [
+      "0"
+    ],
+    "families": {
+      "analytics_ad": 39
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "gaf",
+    "occurrences": 27,
+    "exampleValues": [
+      "2"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "gcd",
+    "occurrences": 39,
+    "exampleValues": [
+      "13l3l3l3l1l1"
+    ],
+    "families": {
+      "analytics_ad": 39
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "geo",
+    "occurrences": 1,
+    "exampleValues": [
+      "SG"
+    ],
+    "families": {
+      "first_party_other": 1
+    },
+    "topPaths": [
+      {
+        "path": "/paysystems/information/systems",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "getEmpty",
+    "occurrences": 4,
+    "exampleValues": [
+      "true"
+    ],
+    "families": {
+      "first_party_other_api": 1,
+      "first_party_livefeed": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 3
+      },
+      {
+        "path": "/service-api/LineFeed/Get1x2_VZip",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "gr",
+    "occurrences": 11,
+    "exampleValues": [
+      "2220"
+    ],
+    "families": {
+      "first_party_livefeed": 6,
+      "first_party_other_api": 3,
+      "first_party_results": 2
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 3
+      },
+      {
+        "path": "/service-api/LiveFeed/GetSportsShortZip",
+        "count": 2
+      },
+      {
+        "path": "/service-api/result/web/api/v2/sports",
+        "count": 2
+      },
+      {
+        "path": "/service-api/LiveFeed/WebGetTopChampsZip",
+        "count": 1
+      },
+      {
+        "path": "/service-api/gamespreview/getbanner",
+        "count": 1
+      },
+      {
+        "path": "/service-api/main-line-feed/v1/expressDay",
+        "count": 1
+      },
+      {
+        "path": "/service-api/main-live-feed/v1/expressDay",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "grMode",
+    "occurrences": 3,
+    "exampleValues": [
+      "4"
+    ],
+    "families": {
+      "first_party_livefeed": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "groupChamps",
+    "occurrences": 2,
+    "exampleValues": [
+      "true"
+    ],
+    "families": {
+      "first_party_livefeed": 2
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetSportsShortZip",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "groups",
+    "occurrences": 3,
+    "exampleValues": [
+      "b.core,d.core,d.customize,b.other,d.application,d.auth,d.banner,d.betting,d.dicts,d.footer,d.global,d.header,d.information,d.other,d.reg,d.responsible,d.support,d.thirdparty,d.toto,d.white_feature,d.common,d.cyber,d.modules,d.promo,d.host,d.office,d.coupon,d.layout,d.boolean",
+      "b.rum",
+      "d.bringfriend"
+    ],
+    "families": {
+      "first_party_config": 3
+    },
+    "topPaths": [
+      {
+        "path": "/bff-api/config/group/get",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "gtm",
+    "occurrences": 42,
+    "exampleValues": [
+      "45He66a1h1v894758050za200zd894758050xea",
+      "45je66a1v9100497636za200zd9100497636",
+      "45je66a1h1v894765892z8894758050za20gzb894758050zd894758050",
+      "45je66a1h1v894765892za20gzb894758050zd894758050",
+      "4e66a1h1"
+    ],
+    "families": {
+      "analytics_ad": 42
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      },
+      {
+        "path": "/ccm/s/collect",
+        "count": 1
+      },
+      {
+        "path": "/gtag/destination",
+        "count": 1
+      },
+      {
+        "path": "/gtag/js",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "hme",
+    "occurrences": 1,
+    "exampleValues": [
+      "ed806287581422089c496fd485507306546b2937977788da80b80247d3e2e94b"
+    ],
+    "families": {
+      "analytics_ad": 1
+    },
+    "topPaths": [
+      {
+        "path": "/signals/config/726215172055603",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "id",
+    "occurrences": 7,
+    "exampleValues": [
+      "728668607",
+      "728669947",
+      "728670390",
+      "G-8SZ536WC7F",
+      "G-435XWQE678",
+      "GTM-5P5J869"
+    ],
+    "families": {
+      "first_party_livefeed": 3,
+      "analytics_ad": 4
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      },
+      {
+        "path": "/gtag/js",
+        "count": 2
+      },
+      {
+        "path": "/gtag/destination",
+        "count": 1
+      },
+      {
+        "path": "/gtm.js",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "integration",
+    "occurrences": 12,
+    "exampleValues": [
+      "gtm"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "isNewBuilder",
+    "occurrences": 3,
+    "exampleValues": [
+      "true"
+    ],
+    "families": {
+      "first_party_livefeed": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "isRecommendations",
+    "occurrences": 1,
+    "exampleValues": [
+      "true"
+    ],
+    "families": {
+      "first_party_livefeed": 1
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "isSubGames",
+    "occurrences": 3,
+    "exampleValues": [
+      "true"
+    ],
+    "families": {
+      "first_party_livefeed": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "lang",
+    "occurrences": 5,
+    "exampleValues": [
+      "en"
+    ],
+    "families": {
+      "first_party_config": 4,
+      "first_party_other": 1
+    },
+    "topPaths": [
+      {
+        "path": "/bff-api/config/group/get",
+        "count": 3
+      },
+      {
+        "path": "/bff-api/event-logo/v2/suitable.json",
+        "count": 1
+      },
+      {
+        "path": "/paysystems/information/systems",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "language",
+    "occurrences": 1,
+    "exampleValues": [
+      "en"
+    ],
+    "families": {
+      "first_party_other_api": 1
+    },
+    "topPaths": [
+      {
+        "path": "/flexreg-api/v1/registration/form/widget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "lng",
+    "occurrences": 19,
+    "exampleValues": [
+      "en"
+    ],
+    "families": {
+      "first_party_other_api": 4,
+      "first_party_livefeed": 11,
+      "first_party_results": 4
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 4
+      },
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      },
+      {
+        "path": "/service-api/LiveFeed/GetSportsShortZip",
+        "count": 2
+      },
+      {
+        "path": "/service-api/result/web/api/v2/champs",
+        "count": 2
+      },
+      {
+        "path": "/service-api/result/web/api/v2/sports",
+        "count": 2
+      },
+      {
+        "path": "/service-api/LineFeed/Get1x2_VZip",
+        "count": 1
+      },
+      {
+        "path": "/service-api/LiveFeed/GetTopGamesStatZip",
+        "count": 1
+      },
+      {
+        "path": "/service-api/LiveFeed/WebGetTopChampsZip",
+        "count": 1
+      },
+      {
+        "path": "/service-api/gamespreview/getbanner",
+        "count": 1
+      },
+      {
+        "path": "/service-api/main-line-feed/v1/expressDay",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "marketType",
+    "occurrences": 3,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "first_party_livefeed": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "mode",
+    "occurrences": 5,
+    "exampleValues": [
+      "4"
+    ],
+    "families": {
+      "first_party_other_api": 1,
+      "first_party_livefeed": 4
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 4
+      },
+      {
+        "path": "/service-api/LineFeed/Get1x2_VZip",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "navt",
+    "occurrences": 6,
+    "exampleValues": [
+      "n"
+    ],
+    "families": {
+      "analytics_ad": 6
+    },
+    "topPaths": [
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "noFilterBlockEvent",
+    "occurrences": 3,
+    "exampleValues": [
+      "true"
+    ],
+    "families": {
+      "first_party_livefeed": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "npa",
+    "occurrences": 39,
+    "exampleValues": [
+      "0"
+    ],
+    "families": {
+      "analytics_ad": 39
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "p_id",
+    "occurrences": 12,
+    "exampleValues": [
+      "Twitter"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "p_user_id",
+    "occurrences": 12,
+    "exampleValues": [
+      "0"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "partner",
+    "occurrences": 11,
+    "exampleValues": [
+      "8"
+    ],
+    "families": {
+      "first_party_other_api": 1,
+      "first_party_livefeed": 10
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 4
+      },
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      },
+      {
+        "path": "/service-api/LiveFeed/GetSportsShortZip",
+        "count": 2
+      },
+      {
+        "path": "/service-api/LineFeed/Get1x2_VZip",
+        "count": 1
+      },
+      {
+        "path": "/service-api/LiveFeed/GetTopGamesStatZip",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "pl_id",
+    "occurrences": 12,
+    "exampleValues": [
+      "adeaf4db-c8a9-4f2a-bbb5-47ecf485ec52",
+      "10d7a53a-1051-4b27-84de-8a531467b2ae",
+      "daf25439-06ed-47d9-a97b-b6da0ec6673a",
+      "ce685f5b-30ba-4566-87fb-0e5c50ab5b66",
+      "b7c2598e-9e73-4432-8175-73dd8cfcbf89",
+      "020c0808-dba5-4e0f-ac45-224b96fad367"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "projectId",
+    "occurrences": 2,
+    "exampleValues": [
+      "2220"
+    ],
+    "families": {
+      "first_party_other_api": 2
+    },
+    "topPaths": [
+      {
+        "path": "/analytics-module-api/v1/analytics",
+        "count": 1
+      },
+      {
+        "path": "/flexreg-api/v1/registration/form/widget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "pscdl",
+    "occurrences": 27,
+    "exampleValues": [
+      "noapi"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "pt",
+    "occurrences": 12,
+    "exampleValues": [
+      "MelBet"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "r",
+    "occurrences": 1,
+    "exampleValues": [
+      "stable"
+    ],
+    "families": {
+      "analytics_ad": 1
+    },
+    "topPaths": [
+      {
+        "path": "/signals/config/726215172055603",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "rcb",
+    "occurrences": 39,
+    "exampleValues": [
+      "6",
+      "11",
+      "19",
+      "3",
+      "0",
+      "10",
+      "4",
+      "1",
+      "15",
+      "16",
+      "2",
+      "8"
+    ],
+    "families": {
+      "analytics_ad": 39
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "ref",
+    "occurrences": 7,
+    "exampleValues": [
+      "8"
+    ],
+    "families": {
+      "first_party_other_api": 3,
+      "first_party_results": 4
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/result/web/api/v2/champs",
+        "count": 2
+      },
+      {
+        "path": "/service-api/result/web/api/v2/sports",
+        "count": 2
+      },
+      {
+        "path": "/service-api/gamespreview/getbanner",
+        "count": 1
+      },
+      {
+        "path": "/service-api/main-line-feed/v1/expressDay",
+        "count": 1
+      },
+      {
+        "path": "/service-api/main-live-feed/v1/expressDay",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "ref_id",
+    "occurrences": 1,
+    "exampleValues": [
+      "8"
+    ],
+    "families": {
+      "first_party_other": 1
+    },
+    "topPaths": [
+      {
+        "path": "/paysystems/information/systems",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "rnd",
+    "occurrences": 6,
+    "exampleValues": [
+      "1064389016.1781279100",
+      "1843538407.1781278972",
+      "175280676.1781278922",
+      "1481911411.1781278880",
+      "1966551968.1781279059",
+      "741240187.1781279016"
+    ],
+    "families": {
+      "analytics_ad": 6
+    },
+    "topPaths": [
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "scrsrc",
+    "occurrences": 6,
+    "exampleValues": [
+      "www.googletagmanager.com"
+    ],
+    "families": {
+      "analytics_ad": 6
+    },
+    "topPaths": [
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "sct",
+    "occurrences": 27,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "seg",
+    "occurrences": 27,
+    "exampleValues": [
+      "0",
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "sentry_client",
+    "occurrences": 1,
+    "exampleValues": [
+      "sentry.javascript.nextjs/10.29.0"
+    ],
+    "families": {
+      "support_widget": 1
+    },
+    "topPaths": [
+      {
+        "path": "/sentry/api/4/envelope/",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "sentry_key",
+    "occurrences": 1,
+    "exampleValues": [
+      "54aebdecb99f115c1da18145f74725b0"
+    ],
+    "families": {
+      "support_widget": 1
+    },
+    "topPaths": [
+      {
+        "path": "/sentry/api/4/envelope/",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "sentry_version",
+    "occurrences": 1,
+    "exampleValues": [
+      "7"
+    ],
+    "families": {
+      "support_widget": 1
+    },
+    "topPaths": [
+      {
+        "path": "/sentry/api/4/envelope/",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "sid",
+    "occurrences": 27,
+    "exampleValues": [
+      "1781278879",
+      "1781278881"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "slf_rd",
+    "occurrences": 4,
+    "exampleValues": [
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 4
+    },
+    "topPaths": [
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "sportIds",
+    "occurrences": 2,
+    "exampleValues": [
+      "1,2,3"
+    ],
+    "families": {
+      "first_party_results": 2
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/result/web/api/v2/champs",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "sports",
+    "occurrences": 4,
+    "exampleValues": [
+      "3"
+    ],
+    "families": {
+      "first_party_livefeed": 4
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 2
+      },
+      {
+        "path": "/service-api/LiveFeed/GetSportsShortZip",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "sr",
+    "occurrences": 27,
+    "exampleValues": [
+      "800x600"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "t",
+    "occurrences": 4,
+    "exampleValues": [
+      "sr"
+    ],
+    "families": {
+      "analytics_ad": 4
+    },
+    "topPaths": [
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "tag_exp",
+    "occurrences": 39,
+    "exampleValues": [
+      "115616986~115938465~115938469~119456239~119456247",
+      "115616986~115938466~115938468~119456239~119456247",
+      "115938465~115938469~119381662~119456239~119456247",
+      "115938465~115938469~119456239~119456247",
+      "115616986~115938466~115938469~119456239~119456247",
+      "115616986~115938465~115938468~117776793~119456239~119456247",
+      "115938466~115938468~119456239~119456247",
+      "115938466~115938469~119456239~119456247",
+      "115616985~115938465~115938468~117776794~119456239~119456247",
+      "115616985~115938466~115938469~119456239~119456247",
+      "115616986~115938466~115938469~117776793~119456239~119456247",
+      "115616985~115938465~115938469~118395335~119456239~119456247"
+    ],
+    "families": {
+      "analytics_ad": 39
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "tfd",
+    "occurrences": 33,
+    "exampleValues": [
+      "23661",
+      "41821",
+      "21530",
+      "26893",
+      "18351",
+      "25969",
+      "30973",
+      "19962",
+      "25802",
+      "31247",
+      "25535",
+      "27302"
+    ],
+    "families": {
+      "analytics_ad": 33
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      },
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "tft",
+    "occurrences": 6,
+    "exampleValues": [
+      "1781279099979",
+      "1781278972442",
+      "1781278922221",
+      "1781278880213",
+      "1781279059277",
+      "1781279015906"
+    ],
+    "families": {
+      "analytics_ad": 6
+    },
+    "topPaths": [
+      {
+        "path": "/ccm/collect",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "parameter": "tid",
+    "occurrences": 33,
+    "exampleValues": [
+      "G-435XWQE678",
+      "G-8SZ536WC7F"
+    ],
+    "families": {
+      "analytics_ad": 33
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "parameter": "top",
+    "occurrences": 1,
+    "exampleValues": [
+      "true"
+    ],
+    "families": {
+      "first_party_livefeed": 1
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "topGroups",
+    "occurrences": 3,
+    "exampleValues": [
+      ""
+    ],
+    "families": {
+      "first_party_livefeed": 3
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/GetGameZip",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "parameter": "tw_document_href",
+    "occurrences": 12,
+    "exampleValues": [
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women",
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division",
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "https://melbet-319960.top/en/results"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "tw_iframe_status",
+    "occurrences": 12,
+    "exampleValues": [
+      "0"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "tw_pid_src",
+    "occurrences": 12,
+    "exampleValues": [
+      "2",
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "twpid",
+    "occurrences": 12,
+    "exampleValues": [
+      "tw.1781278881141.903722150830692906"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "txn_id",
+    "occurrences": 12,
+    "exampleValues": [
+      "oh6wn"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "type",
+    "occurrences": 12,
+    "exampleValues": [
+      "javascript"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "uaa",
+    "occurrences": 27,
+    "exampleValues": [
+      "x86"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "uab",
+    "occurrences": 27,
+    "exampleValues": [
+      "64"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "uafvl",
+    "occurrences": 27,
+    "exampleValues": [
+      "Chromium;149.0.7827.53|Not)A%3BBrand;24.0.0.0"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "uam",
+    "occurrences": 27,
+    "exampleValues": [
+      ""
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "uamb",
+    "occurrences": 27,
+    "exampleValues": [
+      "0"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "uap",
+    "occurrences": 27,
+    "exampleValues": [
+      "Linux"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "uapv",
+    "occurrences": 27,
+    "exampleValues": [
+      ""
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "uaw",
+    "occurrences": 27,
+    "exampleValues": [
+      "0"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "ul",
+    "occurrences": 27,
+    "exampleValues": [
+      "en-us"
+    ],
+    "families": {
+      "analytics_ad": 27
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "parameter": "upn.ref_id",
+    "occurrences": 7,
+    "exampleValues": [
+      "8"
+    ],
+    "families": {
+      "analytics_ad": 7
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "parameter": "v",
+    "occurrences": 34,
+    "exampleValues": [
+      "2",
+      "2.9.338",
+      "1"
+    ],
+    "families": {
+      "analytics_ad": 34
+    },
+    "topPaths": [
+      {
+        "path": "/g/collect",
+        "count": 29
+      },
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      },
+      {
+        "path": "/signals/config/726215172055603",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "version",
+    "occurrences": 12,
+    "exampleValues": [
+      "2.3.53"
+    ],
+    "families": {
+      "analytics_ad": 12
+    },
+    "topPaths": [
+      {
+        "path": "/1/i/adsct",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "parameter": "virtualSports",
+    "occurrences": 5,
+    "exampleValues": [
+      "true"
+    ],
+    "families": {
+      "first_party_livefeed": 5
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/LiveFeed/Get1x2_VZip",
+        "count": 3
+      },
+      {
+        "path": "/service-api/LiveFeed/GetSportsShortZip",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "parameter": "whence",
+    "occurrences": 1,
+    "exampleValues": [
+      "55"
+    ],
+    "families": {
+      "first_party_other_api": 1
+    },
+    "topPaths": [
+      {
+        "path": "/service-api/gamespreview/getbanner",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "parameter": "z",
+    "occurrences": 4,
+    "exampleValues": [
+      "1244162976",
+      "1506848705",
+      "88454205",
+      "1512353560"
+    ],
+    "families": {
+      "analytics_ad": 4
+    },
+    "topPaths": [
+      {
+        "path": "/ads/ga-audiences",
+        "count": 4
+      }
+    ]
+  }
+]

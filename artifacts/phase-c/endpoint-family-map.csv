@@ -1,0 +1,13 @@
+family,uniqueEndpoints,observations,methods,hosts,statuses
+analytics_ad,59,89,"{""GET"": 23, ""POST"": 36}","{""ad.doubleclick.net"": 1, ""analytics.google.com"": 27, ""analytics.twitter.com"": 6, ""connect.facebook.net"": 2, ""static.ads-twitter.com"": 1, ""stats.g.doubleclick.net"": 2, ""t.co"": 6, ""www.google.com"": 6, ""www.google.com.sg"": 4, ""www.googletagmanager.com"": 4}","{""200"": 29, ""204"": 29, ""304"": 1, ""pending"": 1}"
+cdn_static,423,1882,"{""GET"": 423}","{""v3.traincdn.com"": 423}","{""200"": 423, ""pending"": 2}"
+external_static,7,12,"{""GET"": 7}","{""images.dmca.com"": 1, ""v2cn.cdnsfree.com"": 2, ""v2d.cdnsfree.com"": 2, ""v2l.cdnsfree.com"": 2}","{""200"": 7}"
+first_party_config,5,24,"{""GET"": 5}","{""melbet-319960.top"": 5}","{""200"": 5}"
+first_party_livefeed,11,32,"{""GET"": 11}","{""melbet-319960.top"": 11}","{""200"": 10, ""net::ERR_ABORTED"": 1, ""pending"": 3}"
+first_party_other,1,6,"{""GET"": 1}","{""melbet-319960.top"": 1}","{""200"": 1}"
+first_party_other_api,15,125,"{""GET"": 11, ""POST"": 4}","{""melbet-319960.top"": 15}","{""200"": 14, ""204"": 1}"
+first_party_page_shell,24,24,"{""GET"": 24}","{""melbet-319960.top"": 24}","{""200"": 24}"
+first_party_results,5,12,"{""GET"": 5}","{""melbet-319960.top"": 5}","{""200"": 5}"
+first_party_static,54,299,"{""GET"": 54}","{""melbet-319960.top"": 54}","{""200"": 54}"
+first_party_subscription,4,6,"{""GET"": 4}","{""melbet-319960.top"": 4}","{""200"": 4}"
+support_widget,18,104,"{""GET"": 17, ""POST"": 1}","{""widget.suphelper.top"": 18}","{""200"": 18, ""304"": 2}"

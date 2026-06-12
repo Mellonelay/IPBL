@@ -1,0 +1,164 @@
+{
+  "schemaVersion": "completion-report-v1",
+  "generatedAt": "2026-06-12T16:56:54.172405+00:00",
+  "workload": "IPBL Phase C endpoint corpus materialization",
+  "status": "c6-controlled-pr-open",
+  "evidence": {
+    "catalog": "/root/runtime-audits/melbet-eventsstat-rotating-catalog-20260612T154054Z",
+    "verification": "/root/runtime-audits/ipbl-phase-c-contract-verification-20260612T165339Z"
+  },
+  "artifacts": [
+    {
+      "file": "artifacts/phase-c/endpoint-family-map.csv",
+      "bytes": 1581,
+      "sha256": "daad19113a94d425f23c44da5a3811d8a79ae6d0fa8062aab2167e43c8124b3b"
+    },
+    {
+      "file": "artifacts/phase-c/endpoint-family-map.json",
+      "bytes": 15938,
+      "sha256": "e3ba38145baa572b5a4e17f33908c45831c3d0c63c427062080c47b3bf44cdcd"
+    },
+    {
+      "file": "artifacts/phase-c/orchestrator-plan-manifest.json",
+      "bytes": 1113,
+      "sha256": "4cbec8dfb47a5202d7ad9d33f0e4b14132d809698492840755fb775d6ad47d4a"
+    },
+    {
+      "file": "artifacts/phase-c/parameter-dictionary.json",
+      "bytes": 44929,
+      "sha256": "4dd6d385b93bf7709ac2af47cd61a97e3db62c29e338905cc102c2f082f5ce0c"
+    },
+    {
+      "file": "artifacts/phase-c/polling-frequency-report.json",
+      "bytes": 1067,
+      "sha256": "709cb64a2c7e21b547eb4309727bf6b62237feab44832a461dcf300fbad27383"
+    },
+    {
+      "file": "artifacts/phase-c/request-contract-map.json",
+      "bytes": 3045,
+      "sha256": "67ee838643219fe76f71f59f13a30549b86937b11391ef9f5c64c7c97fc101a8"
+    },
+    {
+      "file": "artifacts/phase-c/response-root-map.json",
+      "bytes": 4910,
+      "sha256": "cb3d0df19e19243379d51140bdcbb732d301b727da8202466c09836e8473163e"
+    },
+    {
+      "file": "artifacts/phase-c/source-confidence-report.json",
+      "bytes": 3856,
+      "sha256": "d2e05d953789caaac891017d8e7fccd39e3cfaf9cf2110716e0d67f54afc622f"
+    },
+    {
+      "file": "docs/phase-c/ENDPOINT_CORPUS_CLASSIFICATION.md",
+      "bytes": 2161,
+      "sha256": "63067a9c9eb03ab181c5a6c2abf2dd0875099a649eab972ed68687a19284d81b"
+    },
+    {
+      "file": "docs/phase-c/PHASE_C_SYNCHRONIZATION.md",
+      "bytes": 702,
+      "sha256": "e601b575c8cc8b052db4dcc92ff13b463b0ba474671091a942c5d82ea9e84c69"
+    },
+    {
+      "file": "docs/phase-c/RECORDER_READ_ONLY_DESIGN.md",
+      "bytes": 1510,
+      "sha256": "0c843b7cab72b942b24b1cc5f7acc046e057401fd7b44919b014a4c6994e643c"
+    },
+    {
+      "file": "lib/server/melbet-contracts.ts",
+      "bytes": 6061,
+      "sha256": "ddb52b8b8917c63856ebba829721c78945ae7d4958c870d9ed84faf8bcb97b28"
+    },
+    {
+      "file": "tests/fixtures/phase-c/men-728683234-game.json",
+      "bytes": 26015,
+      "sha256": "4c360a72a223980250534d4c2371d3c0f538718555916054ececfbfbbc33aa39"
+    },
+    {
+      "file": "tests/fixtures/phase-c/men-728683234-history.json",
+      "bytes": 72,
+      "sha256": "e4524445e41e0faf4586ddb9fe1a5152a4e9acb6c19e6a0c369f4c0a750c8365"
+    },
+    {
+      "file": "tests/fixtures/phase-c/men-728683234-subscription.json",
+      "bytes": 104,
+      "sha256": "f59ac07729c3673827a0387ed405c3e2e04059e0a9857b2b65a9ab92375c3aa6"
+    },
+    {
+      "file": "tests/fixtures/phase-c/men-short.json",
+      "bytes": 32477,
+      "sha256": "03206c0d9614d9965765eed4a74df3839bdfe8776182c8fea08dcf3dc47fe82e"
+    },
+    {
+      "file": "tests/fixtures/phase-c/top-games-stat.json",
+      "bytes": 27095,
+      "sha256": "8ad010416ed7488479caf4b001c8149e14ddc0f732f27448fa8a47547f506a5b"
+    },
+    {
+      "file": "tests/fixtures/phase-c/women-728682586-game.json",
+      "bytes": 3144,
+      "sha256": "d235187d8639b131ddd5dace920ff4a20bb0b54dc3347cb230505a1966c04200"
+    },
+    {
+      "file": "tests/fixtures/phase-c/women-728682586-history.json",
+      "bytes": 72,
+      "sha256": "e4524445e41e0faf4586ddb9fe1a5152a4e9acb6c19e6a0c369f4c0a750c8365"
+    },
+    {
+      "file": "tests/fixtures/phase-c/women-728682586-subscription.json",
+      "bytes": 104,
+      "sha256": "f59ac07729c3673827a0387ed405c3e2e04059e0a9857b2b65a9ab92375c3aa6"
+    },
+    {
+      "file": "tests/fixtures/phase-c/women-short.json",
+      "bytes": 33052,
+      "sha256": "9650b768ede0c41f0ded6ebd4126fa9f035772ab282ebb3ce90d1e3093e12fd6"
+    },
+    {
+      "file": "tests/melbet-contracts.test.ts",
+      "bytes": 1401,
+      "sha256": "2a743b0af97e5a9dbf99e6154ac76e02429b48ee5e4555b49c4f53694a71e3be"
+    }
+  ],
+  "locksPreserved": [
+    "production KV",
+    "cron activation",
+    "deployment",
+    "new divisions"
+  ],
+  "verification": {
+    "phaseCContractTests": "pass",
+    "bookmakerLiveRegression": "pass",
+    "recorderRegressionAndSecurity": "pass",
+    "viteProductionBuild": "pass",
+    "gitDiffCheck": "pass",
+    "secretScan": "pass",
+    "unsafeTlsScan": "pass"
+  },
+  "nextState": "CI review and merge gate; C7 production activation remains locked",
+  "dryRun": {
+    "path": "/root/runtime-audits/ipbl-phase-c-dry-run-20260612T165757797Z",
+    "iterations": 3,
+    "rows": 9,
+    "games": 3,
+    "productionWrites": false,
+    "result": "PASS"
+  },
+  "graphEvidence": {
+    "catalogNodeId": "node_8426a8d5-c63f-4e06-9539-9e4ea8458dde",
+    "contractNodeId": "node_cea2d732-f002-4ff9-899a-182333363a8f",
+    "fixtureNodeId": "node_6d27900b-f5a9-44dd-8a6a-fd041d037db1",
+    "dryRunNodeId": "node_005fd9fa-3bcf-4abe-9bc2-cc8830fa31c8",
+    "reportId": "a24fbd33-524f-4711-897e-3670fc005c69",
+    "reportArtifact": "graph-reports-v2/a24fbd33-524f-4711-897e-3670fc005c69.json"
+  },
+  "controlledCi": {
+    "localCommitCreated": true,
+    "auth": "restored-existing-credential",
+    "push": "verified",
+    "pullRequest": "open",
+    "pullRequestNumber": 20,
+    "pullRequestUrl": "https://github.com/Mellonelay/IPBL/pull/20",
+    "sourceCommit": "e7b7b1b24dab76863b0ff4b58ea1acdcfa20b3ed",
+    "deployment": "not-attempted"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-06-12T16:57:34.997912+00:00",
+  "graphMode": "typed-local-impact-evidence",
+  "sourceNode": {
+    "id": "melbet-rotating-catalog-20260612",
+    "type": "evidence-corpus"
+  },
+  "changedNodes": [
+    {
+      "id": "lib/server/melbet-contracts.ts",
+      "type": "parser-contract",
+      "dependsOn": [
+        "GetSportsShortZip",
+        "GetGameZip",
+        "GetSubsOptionsForGame"
+      ],
+      "impacts": [
+        "Phase C dry-run recorder",
+        "fixture tests"
+      ]
+    },
+    {
+      "id": "tests/melbet-contracts.test.ts",
+      "type": "validated-fixture-test",
+      "validates": [
+        "LeagueSnapshot",
+        "LiveGameSnapshot",
+        "StatisticsSnapshot",
+        "MarketDefinition",
+        "SubscriptionOption"
+      ]
+    },
+    {
+      "id": "docs/phase-c/RECORDER_READ_ONLY_DESIGN.md",
+      "type": "architecture-checkpoint",
+      "locks": [
+        "production KV",
+        "cron activation",
+        "deployment"
+      ]
+    }
+  ],
+  "sourceEdges": [
+    {
+      "from": "GetSportsShortZip",
+      "to": "LeagueSnapshot",
+      "type": "produces"
+    },
+    {
+      "from": "GetGameZip",
+      "to": "LiveGameSnapshot",
+      "type": "produces"
+    },
+    {
+      "from": "GetGameZip",
+      "to": "StatisticsSnapshot",
+      "type": "produces"
+    },
+    {
+      "from": "GetGameZip",
+      "to": "MarketDefinition",
+      "type": "produces"
+    },
+    {
+      "from": "GetSubsOptionsForGame",
+      "to": "SubscriptionOption",
+      "type": "produces"
+    },
+    {
+      "from": "GetHistoryGraphExt",
+      "to": "ScoreHistoryPoint",
+      "type": "blocked-by-404"
+    },
+    {
+      "from": "GetHistoryGraphExt",
+      "to": "OddsHistorySeries",
+      "type": "blocked-by-404"
+    }
+  ],
+  "changedFiles": [
+    "dist/assets/index-C2_JMDnz.js",
+    "dist/assets/index-ClSvXu6E.css",
+    "dist/index.html",
+    "package.json",
+    "artifacts/phase-c/",
+    "dist/assets/index-CPchaUV-.css",
+    "dist/assets/index-yDnGrLru.js",
+    "docs/phase-c/",
+    "lib/server/melbet-contracts.ts",
+    "tests/fixtures/phase-c/",
+    "tests/melbet-contracts.test.ts"
+  ],
+  "recommendation": "Proceed to local read-only polling dry run only; do not activate production writes or cron."
+}

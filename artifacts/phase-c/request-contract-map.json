@@ -1,0 +1,177 @@
+[
+  {
+    "family": "GetSportsShortZip",
+    "status": "verified",
+    "evidenceLevel": 5,
+    "stable": [
+      "sports=3",
+      "champs={leagueId}",
+      "lng",
+      "gr",
+      "country",
+      "partner",
+      "virtualSports",
+      "groupChamps"
+    ],
+    "rotating": [
+      "league content",
+      "game IDs",
+      "scores",
+      "period",
+      "elapsed seconds",
+      "source timestamps"
+    ],
+    "identifierFields": [
+      "LI league ID",
+      "G[].I game ID",
+      "O1I/O2I team IDs"
+    ],
+    "freshHttp": [
+      200,
+      200
+    ]
+  },
+  {
+    "family": "GetGameZip",
+    "status": "verified",
+    "evidenceLevel": 5,
+    "stable": [
+      "lng",
+      "isSubGames",
+      "GroupEvents",
+      "countevents",
+      "grMode",
+      "partner",
+      "country",
+      "marketType",
+      "isNewBuilder"
+    ],
+    "rotating": [
+      "id={gameId}",
+      "SC",
+      "GE",
+      "U",
+      "market coefficients"
+    ],
+    "identifierFields": [
+      "Value.I",
+      "Value.LI",
+      "Value.O1I",
+      "Value.O2I"
+    ],
+    "freshHttp": [
+      200,
+      200
+    ]
+  },
+  {
+    "family": "GetSubsOptionsForGame",
+    "status": "verified",
+    "evidenceLevel": 5,
+    "stable": [
+      "constId={gameId}"
+    ],
+    "rotating": [
+      "options"
+    ],
+    "identifierFields": [
+      "request constId",
+      "response sport/options"
+    ],
+    "freshHttp": [
+      200,
+      200
+    ]
+  },
+  {
+    "family": "GetTopGamesStatZip",
+    "status": "verified-generic-not-ipbl-specific",
+    "evidenceLevel": 5,
+    "stable": [
+      "lng",
+      "antisports",
+      "partner"
+    ],
+    "rotating": [
+      "Value game list and score state"
+    ],
+    "identifierFields": [
+      "Value[].I",
+      "Value[].LI"
+    ],
+    "freshHttp": [
+      200
+    ]
+  },
+  {
+    "family": "Get1x2_VZip",
+    "status": "browser-captured-direct-replay-406",
+    "evidenceLevel": 4,
+    "stable": [
+      "sports",
+      "champs",
+      "count",
+      "lng",
+      "gr",
+      "mode",
+      "country",
+      "partner"
+    ],
+    "rotating": [
+      "games and markets"
+    ],
+    "identifierFields": [
+      "captured only"
+    ],
+    "freshHttp": [
+      406,
+      406
+    ]
+  },
+  {
+    "family": "GetHistoryGraphExt",
+    "status": "unverified-current-path-404",
+    "evidenceLevel": 2,
+    "stable": [
+      "gameId",
+      "coefView",
+      "lng",
+      "partner"
+    ],
+    "rotating": [
+      "unknown"
+    ],
+    "identifierFields": [],
+    "freshHttp": [
+      404,
+      404
+    ]
+  },
+  {
+    "family": "H2H",
+    "status": "not-observed",
+    "evidenceLevel": 0,
+    "stable": [],
+    "rotating": [],
+    "identifierFields": [],
+    "freshHttp": []
+  },
+  {
+    "family": "MelZone",
+    "status": "not-observed",
+    "evidenceLevel": 0,
+    "stable": [],
+    "rotating": [],
+    "identifierFields": [],
+    "freshHttp": []
+  },
+  {
+    "family": "standings/player/lineup",
+    "status": "not-observed",
+    "evidenceLevel": 0,
+    "stable": [],
+    "rotating": [],
+    "identifierFields": [],
+    "freshHttp": []
+  }
+]

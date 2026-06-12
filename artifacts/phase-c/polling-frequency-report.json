@@ -1,0 +1,37 @@
+[
+  {
+    "family": "GetSportsShortZip",
+    "role": "league discovery and broad score state",
+    "observedCadence": "not measured",
+    "proposedDryRunCadenceSeconds": 25,
+    "productionStatus": "gated"
+  },
+  {
+    "family": "GetGameZip",
+    "role": "active-game detail, score, period statistics and markets",
+    "observedCadence": "not measured",
+    "proposedDryRunCadenceSeconds": 15,
+    "productionStatus": "gated"
+  },
+  {
+    "family": "GetSubsOptionsForGame",
+    "role": "subscription capabilities",
+    "observedCadence": "not measured",
+    "proposedDryRunCadenceSeconds": 60,
+    "productionStatus": "gated"
+  },
+  {
+    "family": "GetTopGamesStatZip",
+    "role": "generic top-game statistics",
+    "observedCadence": "not measured",
+    "proposedDryRunCadenceSeconds": 60,
+    "productionStatus": "not selected for recorder"
+  },
+  {
+    "family": "GetHistoryGraphExt",
+    "role": "historical score/odds candidate",
+    "observedCadence": "unavailable; HTTP 404",
+    "proposedDryRunCadenceSeconds": null,
+    "productionStatus": "blocked"
+  }
+]

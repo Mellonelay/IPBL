@@ -1,0 +1,295 @@
+[
+  {
+    "family": "analytics_ad",
+    "uniqueEndpoints": 59,
+    "observations": 89,
+    "methods": {
+      "POST": 36,
+      "GET": 23
+    },
+    "hosts": {
+      "ad.doubleclick.net": 1,
+      "analytics.google.com": 27,
+      "analytics.twitter.com": 6,
+      "connect.facebook.net": 2,
+      "static.ads-twitter.com": 1,
+      "stats.g.doubleclick.net": 2,
+      "t.co": 6,
+      "www.google.com": 6,
+      "www.google.com.sg": 4,
+      "www.googletagmanager.com": 4
+    },
+    "statuses": {
+      "204": 29,
+      "pending": 1,
+      "200": 29,
+      "304": 1
+    },
+    "examples": [
+      "https://ad.doubleclick.net/ccm/s/collect?auid=450853596.1781278880&gtm=45He66a1h1v894758050za200zd894758050xea",
+      "https://analytics.google.com/g/collect?v=2&tid=G-435XWQE678&gtm=45je66a1v9100497636za200zd9100497636&_p=1781278875971&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&are=1&cid=695268526.1781278880&frm=0&pscdl=noapi&rcb=6&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B149.0.7827.53%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115616986~115938465~115938469~119456239~119456247&sid=1781278879&sct=1&seg=0&dl=https%3A%2F%2Fmelbet-319960.top%2Fen%2Flive%2Fbasketball%2F2496666-ipbl-pro-division&dt=MelBet&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&ep.optimize_id=GTM-5R4MT54&upn.ref_id=8&tfd=23661",
+      "https://analytics.google.com/g/collect?v=2&tid=G-435XWQE678&gtm=45je66a1v9100497636za200zd9100497636&_p=1781278875971&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQ&are=1&cid=695268526.1781278880&frm=0&pscdl=noapi&rcb=6&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B149.0.7827.53%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115616986~115938465~115938469~119456239~119456247&sid=1781278879&sct=1&seg=1&dl=https%3A%2F%2Fmelbet-319960.top%2Fen%2Flive%2Fbasketball%2F2496666-ipbl-pro-division&dt=MelBet&en=reg_phone_reg_currency_change_SGD&_ee=1&ep.optimize_id=GTM-5R4MT54&_et=13040&tfd=41821",
+      "https://analytics.google.com/g/collect?v=2&tid=G-435XWQE678&gtm=45je66a1v9100497636za200zd9100497636&_p=1781278969847&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQ&are=1&cid=695268526.1781278880&frm=0&pscdl=noapi&rcb=11&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B149.0.7827.53%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&tag_exp=115616986~115938466~115938468~119456239~119456247&sid=1781278879&sct=1&seg=1&dl=https%3A%2F%2Fmelbet-319960.top%2Fen%2Flive%2Fbasketball%2F2496666-ipbl-pro-division%2F728670390-kaliningrad-moscow&dt=MelBet&_s=1&tfd=21530",
+      "https://analytics.google.com/g/collect?v=2&tid=G-435XWQE678&gtm=45je66a1v9100497636za200zd9100497636&_p=1781278969847&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQ&ae=a&are=1&cid=695268526.1781278880&frm=0&pscdl=noapi&rcb=11&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B149.0.7827.53%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115616986~115938466~115938468~119456239~119456247&dl=https%3A%2F%2Fmelbet-319960.top%2Fen%2Fresults&dr=https%3A%2F%2Fmelbet-319960.top%2Fen%2Flive%2Fbasketball%2F2496666-ipbl-pro-division%2F728670390-kaliningrad-moscow&sid=1781278879&sct=1&seg=1&dt=MelBet&dp=%2Fen%2Fresults&en=page_view&ep.optimize_id=GTM-5R4MT54&_et=2442&tfd=26893",
+      "https://analytics.google.com/g/collect?v=2&tid=G-435XWQE678&gtm=45je66a1v9100497636za200zd9100497636&_p=1781279013539&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQ&are=1&cid=695268526.1781278880&frm=0&pscdl=noapi&rcb=19&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B149.0.7827.53%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115938465~115938469~119381662~119456239~119456247&sid=1781278879&sct=1&seg=1&dl=https%3A%2F%2Fmelbet-319960.top%2Fen%2Flive%2Fbasketball%2F2496666-ipbl-pro-division%2F728670600-ulan-ude-chita&dt=MelBet&en=page_view&_ee=1&ep.optimize_id=GTM-5R4MT54&upn.ref_id=8&tfd=18351",
+      "https://analytics.google.com/g/collect?v=2&tid=G-435XWQE678&gtm=45je66a1v9100497636za200zd9100497636&_p=1781279013539&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQ&are=1&cid=695268526.1781278880&frm=0&pscdl=noapi&rcb=19&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B149.0.7827.53%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&tag_exp=115938465~115938469~119381662~119456239~119456247&sid=1781278879&sct=1&seg=1&dl=https%3A%2F%2Fmelbet-319960.top%2Fen%2Flive%2Fbasketball%2F2496666-ipbl-pro-division%2F728670600-ulan-ude-chita&dt=MelBet&_s=2&tfd=25969",
+      "https://analytics.google.com/g/collect?v=2&tid=G-435XWQE678&gtm=45je66a1v9100497636za200zd9100497636&_p=1781279013539&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQ&ae=a&are=1&cid=695268526.1781278880&frm=0&pscdl=noapi&rcb=19&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B149.0.7827.53%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=3&tag_exp=115938465~115938469~119381662~119456239~119456247&dl=https%3A%2F%2Fmelbet-319960.top%2Fen%2Fresults&dr=https%3A%2F%2Fmelbet-319960.top%2Fen%2Flive%2Fbasketball%2F2496666-ipbl-pro-division%2F728670600-ulan-ude-chita&sid=1781278879&sct=1&seg=1&dt=MelBet&dp=%2Fen%2Fresults&en=page_view&ep.optimize_id=GTM-5R4MT54&_et=6495&tfd=30973"
+    ]
+  },
+  {
+    "family": "cdn_static",
+    "uniqueEndpoints": 423,
+    "observations": 1882,
+    "methods": {
+      "GET": 423
+    },
+    "hosts": {
+      "v3.traincdn.com": 423
+    },
+    "statuses": {
+      "200": 423,
+      "pending": 2
+    },
+    "examples": [
+      "https://v3.traincdn.com/genfiles/cms/1/desktop/fonts/RobotoVariable/RobotoVariable.woff2",
+      "https://v3.traincdn.com/genfiles/cms/8-2220/desktop/media_asset/0446223563b58207e56389fe48d17816.json",
+      "https://v3.traincdn.com/genfiles/cms/8-2220/desktop/media_asset/0589dc01334f22252c7b0ba43054b997.json",
+      "https://v3.traincdn.com/genfiles/cms/8-2220/desktop/media_asset/066aa4c6b4f58841e339523a107cf983.json",
+      "https://v3.traincdn.com/genfiles/cms/8-2220/desktop/media_asset/07e0dd3c42e3d3a9ce8d2396a97b3e5b.json",
+      "https://v3.traincdn.com/genfiles/cms/8-2220/desktop/media_asset/0caf999d4561b5971510c367ba9c8fac.json",
+      "https://v3.traincdn.com/genfiles/cms/8-2220/desktop/media_asset/148d7f03cfd4bdca632d5c3d066f8df1.json",
+      "https://v3.traincdn.com/genfiles/cms/8-2220/desktop/media_asset/155853b1f676719720ae3d8890648bc4.json"
+    ]
+  },
+  {
+    "family": "external_static",
+    "uniqueEndpoints": 7,
+    "observations": 12,
+    "methods": {
+      "GET": 7
+    },
+    "hosts": {
+      "images.dmca.com": 1,
+      "v2cn.cdnsfree.com": 2,
+      "v2d.cdnsfree.com": 2,
+      "v2l.cdnsfree.com": 2
+    },
+    "statuses": {
+      "200": 7
+    },
+    "examples": [
+      "https://images.dmca.com/Badges/DMCABadgeHelper.min.js",
+      "https://v2cn.cdnsfree.com/cedexis/r20-100KB.png?4862.699999928474|0.7184919516613263",
+      "https://v2cn.cdnsfree.com/cedexis/r20.gif?2791.1999999284744|0.0031883180189455906",
+      "https://v2d.cdnsfree.com/cedexis/r20-100KB.png?8985.899999976158|0.6035808265564124",
+      "https://v2d.cdnsfree.com/cedexis/r20.gif?6903.5|0.36825219953602184",
+      "https://v2l.cdnsfree.com/cedexis/r20-100KB.png?13106.5|0.839767514305831",
+      "https://v2l.cdnsfree.com/cedexis/r20.gif?11045.5|0.9547032377684997"
+    ]
+  },
+  {
+    "family": "first_party_config",
+    "uniqueEndpoints": 5,
+    "observations": 24,
+    "methods": {
+      "GET": 5
+    },
+    "hosts": {
+      "melbet-319960.top": 5
+    },
+    "statuses": {
+      "200": 5
+    },
+    "examples": [
+      "https://melbet-319960.top/bff-api/config/group/get?groups=b.core,d.core,d.customize,b.other,d.application,d.auth,d.banner,d.betting,d.dicts,d.footer,d.global,d.header,d.information,d.other,d.reg,d.responsible,d.support,d.thirdparty,d.toto,d.white_feature,d.common,d.cyber,d.modules,d.promo,d.host,d.office,d.coupon,d.layout,d.boolean&lang=en",
+      "https://melbet-319960.top/bff-api/config/group/get?groups=b.rum&lang=en",
+      "https://melbet-319960.top/bff-api/config/group/get?groups=d.bringfriend&lang=en",
+      "https://melbet-319960.top/bff-api/config/video.json",
+      "https://melbet-319960.top/bff-api/event-logo/v2/suitable.json?lang=en"
+    ]
+  },
+  {
+    "family": "first_party_livefeed",
+    "uniqueEndpoints": 11,
+    "observations": 32,
+    "methods": {
+      "GET": 11
+    },
+    "hosts": {
+      "melbet-319960.top": 11
+    },
+    "statuses": {
+      "200": 10,
+      "pending": 3,
+      "net::ERR_ABORTED": 1
+    },
+    "examples": [
+      "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?count=10&lng=en&gr=2220&mode=4&country=169&top=true&partner=8&virtualSports=true&noFilterBlockEvent=true",
+      "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?count=20&lng=en&mode=4&country=169&partner=8&getEmpty=true&isRecommendations=true",
+      "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=2220&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+      "https://melbet-319960.top/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=2220&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+      "https://melbet-319960.top/service-api/LiveFeed/GetGameZip?id=728668607&lng=en&isSubGames=true&GroupEvents=true&countevents=250&grMode=4&partner=8&topGroups=&country=169&marketType=1&isNewBuilder=true",
+      "https://melbet-319960.top/service-api/LiveFeed/GetGameZip?id=728669947&lng=en&isSubGames=true&GroupEvents=true&countevents=250&grMode=4&partner=8&topGroups=&country=169&marketType=1&isNewBuilder=true",
+      "https://melbet-319960.top/service-api/LiveFeed/GetGameZip?id=728670390&lng=en&isSubGames=true&GroupEvents=true&countevents=250&grMode=4&partner=8&topGroups=&country=169&marketType=1&isNewBuilder=true",
+      "https://melbet-319960.top/service-api/LiveFeed/GetSportsShortZip?sports=3&champs=2496666&lng=en&gr=2220&country=169&partner=8&virtualSports=true&groupChamps=true"
+    ]
+  },
+  {
+    "family": "first_party_other",
+    "uniqueEndpoints": 1,
+    "observations": 6,
+    "methods": {
+      "GET": 1
+    },
+    "hosts": {
+      "melbet-319960.top": 1
+    },
+    "statuses": {
+      "200": 1
+    },
+    "examples": [
+      "https://melbet-319960.top/paysystems/information/systems?ref_id=8&geo=SG&lang=en"
+    ]
+  },
+  {
+    "family": "first_party_other_api",
+    "uniqueEndpoints": 15,
+    "observations": 125,
+    "methods": {
+      "GET": 11,
+      "POST": 4
+    },
+    "hosts": {
+      "melbet-319960.top": 15
+    },
+    "statuses": {
+      "200": 14,
+      "204": 1
+    },
+    "examples": [
+      "https://melbet-319960.top/account-api/user/v1/phone-data",
+      "https://melbet-319960.top/analytics-module-api/v1/analytics?projectId=2220&domain=melbet-319960.top",
+      "https://melbet-319960.top/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/ab.json",
+      "https://melbet-319960.top/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/event.json",
+      "https://melbet-319960.top/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/fc",
+      "https://melbet-319960.top/fatman-api/a6f69e4388362d761ee5bb073edb23ae3d9341fb/metadata.json",
+      "https://melbet-319960.top/flexreg-api/v1/registration/form/widget?projectId=2220&country=sg&language=en",
+      "https://melbet-319960.top/platform-apps-legacy-api/mobile"
+    ]
+  },
+  {
+    "family": "first_party_page_shell",
+    "uniqueEndpoints": 24,
+    "observations": 24,
+    "methods": {
+      "GET": 24
+    },
+    "hosts": {
+      "melbet-319960.top": 24
+    },
+    "statuses": {
+      "200": 24
+    },
+    "examples": [
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division",
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow",
+      "https://melbet-319960.top/en/live/basketball/2496666-ipbl-pro-division/728670600-ulan-ude-chita",
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women",
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women/728668607-vladivostok-women-kaluga-women",
+      "https://melbet-319960.top/en/live/basketball/2496667-ipbl-pro-division-women/728669947-angarsk-women-kirovgrad-women",
+      "https://melbet-319960.top/sys-office-app-front/en/live/basketball/2496666-ipbl-pro-division",
+      "https://melbet-319960.top/sys-office-app-front/en/live/basketball/2496666-ipbl-pro-division/728670390-kaliningrad-moscow"
+    ]
+  },
+  {
+    "family": "first_party_results",
+    "uniqueEndpoints": 5,
+    "observations": 12,
+    "methods": {
+      "GET": 5
+    },
+    "hosts": {
+      "melbet-319960.top": 5
+    },
+    "statuses": {
+      "200": 5
+    },
+    "examples": [
+      "https://melbet-319960.top/service-api/result/web/api/v2/champs?dateFrom=1781192700&dateTo=1781279100&lng=en&ref=8&sportIds=1,2,3",
+      "https://melbet-319960.top/service-api/result/web/api/v2/champs?dateFrom=1781193000&dateTo=1781279400&lng=en&ref=8&sportIds=1,2,3",
+      "https://melbet-319960.top/service-api/result/web/api/v2/sports?cyberFlag=4&dateFrom=1781192700&dateTo=1781279100&gr=2220&lng=en&ref=8",
+      "https://melbet-319960.top/service-api/result/web/api/v2/sports?cyberFlag=4&dateFrom=1781193000&dateTo=1781279400&gr=2220&lng=en&ref=8",
+      "https://melbet-319960.top/sys-results-frontend-front/en/results"
+    ]
+  },
+  {
+    "family": "first_party_static",
+    "uniqueEndpoints": 54,
+    "observations": 299,
+    "methods": {
+      "GET": 54
+    },
+    "hosts": {
+      "melbet-319960.top": 54
+    },
+    "statuses": {
+      "200": 54
+    },
+    "examples": [
+      "https://melbet-319960.top/captcha-api/assets/hunt-captcha.js",
+      "https://melbet-319960.top/check-rum.worker.js",
+      "https://melbet-319960.top/genfiles/cms/desktop/event-logo/7957a512c029216f21dd687f68fe9b9b.svg",
+      "https://melbet-319960.top/hd-api/external/019ebc7e-7cbb-7444-b7d2-b62d6f9e77d2.js",
+      "https://melbet-319960.top/hd-api/external/apps/c5e31d5915661de4393e3f1489b00ebc4497dd48/api.js",
+      "https://melbet-319960.top/hd-api/external/assets/hdf.js",
+      "https://melbet-319960.top/paysystems/xpay/images/money/algorand.png",
+      "https://melbet-319960.top/paysystems/xpay/images/money/arbitrumeth.png"
+    ]
+  },
+  {
+    "family": "first_party_subscription",
+    "uniqueEndpoints": 4,
+    "observations": 6,
+    "methods": {
+      "GET": 4
+    },
+    "hosts": {
+      "melbet-319960.top": 4
+    },
+    "statuses": {
+      "200": 4
+    },
+    "examples": [
+      "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame?constId=728668607",
+      "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame?constId=728669947",
+      "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsForGame?constId=728670390",
+      "https://melbet-319960.top/service-api/SubscriptionServiceV3/api/v3/games/GetSubsOptionsViews"
+    ]
+  },
+  {
+    "family": "support_widget",
+    "uniqueEndpoints": 18,
+    "observations": 104,
+    "methods": {
+      "GET": 17,
+      "POST": 1
+    },
+    "hosts": {
+      "widget.suphelper.top": 18
+    },
+    "statuses": {
+      "200": 18,
+      "304": 2
+    },
+    "examples": [
+      "https://widget.suphelper.top/",
+      "https://widget.suphelper.top/_next/static/chunks/11-af12898befc3e465.js",
+      "https://widget.suphelper.top/_next/static/chunks/281.2b47fa2ea2a0663c.js",
+      "https://widget.suphelper.top/_next/static/chunks/a02d8926-8481015140d7419d.js",
+      "https://widget.suphelper.top/_next/static/chunks/c1eae3d0-366a3fcbd3724454.js",
+      "https://widget.suphelper.top/_next/static/chunks/framework-1df031800c5b959e.js",
+      "https://widget.suphelper.top/_next/static/chunks/main-8e0e9dc80617d068.js",
+      "https://widget.suphelper.top/_next/static/chunks/pages/_app-15efd681a5840cbd.js"
+    ]
+  }
+]
