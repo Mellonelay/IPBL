@@ -1,0 +1,15 @@
+[Unit]
+Description=IPBL Phase C live recorder trigger
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/ipbl-recorder-trigger
+User=root
+Group=root
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadOnlyPaths=/etc/ipbl-recorder.env

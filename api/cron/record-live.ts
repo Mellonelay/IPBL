@@ -1,26 +1,30 @@
-import { VercelRequest, VercelResponse } from "@vercel/node";
-import { Redis } from "@upstash/redis";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { requireResultsRedis } from "../../lib/server/results-redis.js";
+import { isAuthorizedCronRequest, recordLiveEnvelope, type LiveFeedEnvelope } from "../../lib/server/live-recorder.js";
 
-export default async function handler(_req: VercelRequest, res: VercelResponse) {
-    const redis = new Redis({
-        url: process.env.KV_REST_API_URL!,
-        token: process.env.KV_REST_API_TOKEN!,
-    });
+function requestBase(req: VercelRequest): string {
+  const configured = process.env.RECORDER_LIVE_BASE_URL?.trim();
+  if (configured) return configured.replace(/\/$/, "");
+  const host = String(req.headers["x-forwarded-host"] ?? req.headers.host ?? "ipbl-minimal-viewer.vercel.app");
+  const protocol = String(req.headers["x-forwarded-proto"] ?? "https");
+  return `${protocol}://${host}`;
+}
 
-    try {
-        // Fetch real live data from the proxy
-        const liveRes = await fetch("https://api.ipbl.pro/calendar/online?tag=/api/results/live&lang=ru");
-        const raw = await liveRes.json();
-        
-        const timestamp = Date.now();
-        // Just recording the raw count and timestamp for this milestone
-        const snapshot = { timestamp, count: (raw as any)?.data?.length || 0, data: raw };
-        
-        await redis.lpush("ipbl:timeline:live", JSON.stringify(snapshot));
-        await redis.ltrim("ipbl:timeline:live", 0, 1440); // Keep last 24 hours of minute-by-minute data
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== "GET" && req.method !== "POST") return res.status(405).json({ error: "method_not_allowed" });
+  const secret = process.env.CRON_SECRET;
+  if (!secret) return res.status(503).json({ error: "recorder_not_configured" });
+  const authorization = typeof req.headers.authorization === "string" ? req.headers.authorization : undefined;
+  if (!isAuthorizedCronRequest(authorization, secret)) return res.status(401).json({ error: "unauthorized" });
 
-        return res.status(200).json({ ok: true, recorded: snapshot.count });
-    } catch (e: any) {
-        return res.status(500).json({ error: e.message });
-    }
+  try {
+    const liveUrl = `${requestBase(req)}/api/results/live?recorder=${Date.now()}`;
+    const liveResponse = await fetch(liveUrl, { headers: { Accept: "application/json", "Cache-Control": "no-cache" }, signal: AbortSignal.timeout(25_000) });
+    if (!liveResponse.ok) throw new Error(`Live feed HTTP ${liveResponse.status}`);
+    const envelope = await liveResponse.json() as LiveFeedEnvelope;
+    const run = await recordLiveEnvelope(requireResultsRedis(), envelope);
+    return res.status(200).json({ ok: true, run });
+  } catch (error) {
+    return res.status(500).json({ error: error instanceof Error ? error.message : String(error) });
+  }
 }
