@@ -40,3 +40,35 @@ export const DIVISION_LABEL_BY_TAG = Object.fromEntries(
 export function canonicalDivisionLabel(tag: string): string | null {
   return DIVISION_LABEL_BY_TAG[tag] ?? null;
 }
+
+export function resultsMetadataKey(year: number, month1to12: number, divisionTag: string): string {
+  return `${resultsKvKey(year, month1to12, divisionTag)}:meta`;
+}
+
+export function resultsSyncTagsForMonth(year: number, month1to12: number): readonly string[] {
+  const legacyMenGActive = year < 2026 || (year === 2026 && month1to12 <= 5);
+  return legacyMenGActive
+    ? RESULTS_SYNC_TAGS
+    : RESULTS_SYNC_TAGS.filter((tag) => tag !== "ipbl-66-m-pro-g");
+}
+
+function myanmarYearMonth(now: Date): { year: number; month: number } {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Yangon",
+      year: "numeric",
+      month: "2-digit",
+    }).formatToParts(now).map((part) => [part.type, part.value])
+  );
+  return { year: Number(parts.year), month: Number(parts.month) };
+}
+
+export function resultsSyncSlots(now = new Date()): Array<{ year: number; month: number; tag: string }> {
+  const current = myanmarYearMonth(now);
+  const previous = current.month === 1
+    ? { year: current.year - 1, month: 12 }
+    : { year: current.year, month: current.month - 1 };
+  return [current, previous].flatMap(({ year, month }) =>
+    resultsSyncTagsForMonth(year, month).map((tag) => ({ year, month, tag }))
+  );
+}

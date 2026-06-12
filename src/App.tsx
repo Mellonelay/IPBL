@@ -31,9 +31,11 @@ import {
   clearResultsCalendarCache,
   createSkeletonResultsCalendarMap,
   resultsDivisionsForMonth,
-  fetchResultsMonthFromApi,
+  fetchResultsMonthPayloadFromApi,
   RESULTS_DIVISION_TAGS,
+  RESULTS_REFRESH_INTERVAL_MS,
   type CalendarGridMap,
+  type ResultsMonthMetadata,
 } from "./results/calendar";
 
 
@@ -41,9 +43,6 @@ function safeSplit(value: unknown, delimiter: string): string[] {
   return typeof value === 'string' ? value.split(delimiter) : [];
 }
 
-function safeText(value: unknown, fallback = ''): string {
-  return typeof value === 'string' && value.trim() ? value : fallback;
-}
 type TabKey = "live" | "results" | "teams" | "betting";
 
 type LiveInsight = {
@@ -82,12 +81,6 @@ function formatCurrency(value: number): string {
 
 function formatPct(value: number): string {
   return `${(value * 100).toFixed(1)}%`;
-}
-
-function devLog(..._args: unknown[]): void {
-  void _args;
-  // Vite exposes DEV at build-time; keep logs out of production bundles.
-  if (((import.meta as any).env as any).DEV) console.debug("[ipbl]", ..._args);
 }
 
 function devAssert(condition: unknown, message: string, detail?: unknown): void {
@@ -229,24 +222,6 @@ function LiveCard({
 }
 
 
-function normalizeLiveGameForUi(game: any) {
-  const homeTeam = safeText(game?.homeTeam ?? game?.home ?? game?.team1 ?? game?.O1, 'Home');
-  const awayTeam = safeText(game?.awayTeam ?? game?.away ?? game?.team2 ?? game?.O2, 'Away');
-  const division = safeText(game?.divisionTag ?? game?.division ?? game?.divisionLabel, 'ipbl-live');
-  return {
-    ...game,
-    id: game?.id ?? game?.gameId ?? game?.I ?? `${homeTeam}-${awayTeam}`,
-    gameId: game?.gameId ?? game?.id ?? game?.I,
-    homeTeam,
-    awayTeam,
-    division,
-    divisionTag: game?.divisionTag ?? division,
-    homeScore: game?.homeScore ?? game?.score1 ?? game?.SC?.FS?.S1 ?? null,
-    awayScore: game?.awayScore ?? game?.score2 ?? game?.SC?.FS?.S2 ?? null,
-    currentPeriod: game?.currentPeriod ?? game?.period ?? game?.SC?.CP ?? null,
-  };
-}
-
 
 
 function App() {
@@ -273,6 +248,7 @@ function App() {
   );
   const [resultsLoading, setResultsLoading] = useState(false);
   const [resultsErr, setResultsErr] = useState<string | null>(null);
+  const [resultsMetadata, setResultsMetadata] = useState<ResultsMonthMetadata | null>(null);
   const [loadedResultsKey, setLoadedResultsKey] = useState<string | null>(null);
   const resultsLoadGenRef = useRef(0);
 
@@ -486,30 +462,35 @@ function App() {
     }
   }, []);
 
-  const loadResults = useCallback(async () => {
+  const loadResults = useCallback(async (options: { silent?: boolean; force?: boolean } = {}) => {
     const gen = (resultsLoadGenRef.current += 1);
-    setCalendarMap(
-      createSkeletonResultsCalendarMap(selectedResultsYear, selectedResultsMonthIndex, [
-        selectedResultsDivisionTag,
-      ])
-    );
-    setResultsLoading(true);
+    if (!options.silent) {
+      setCalendarMap(
+        createSkeletonResultsCalendarMap(selectedResultsYear, selectedResultsMonthIndex, [
+          selectedResultsDivisionTag,
+        ])
+      );
+      setResultsMetadata(null);
+      setResultsLoading(true);
+    }
     setResultsErr(null);
     try {
-      const map = await fetchResultsMonthFromApi({
+      const payload = await fetchResultsMonthPayloadFromApi({
         year: selectedResultsYear,
         monthIndex: selectedResultsMonthIndex,
         divisionTag: selectedResultsDivisionTag,
+        force: options.force,
       });
       if (resultsLoadGenRef.current !== gen) return;
-      setCalendarMap(map);
+      setCalendarMap(payload.calendar);
+      setResultsMetadata(payload.meta);
       setLoadedResultsKey(`${selectedMonthKey}|${selectedResultsDivisionTag}`);
     } catch (error) {
       if (resultsLoadGenRef.current === gen) {
         setResultsErr(error instanceof Error ? error.message : "Results load failed");
       }
     } finally {
-      if (resultsLoadGenRef.current === gen) {
+      if (!options.silent && resultsLoadGenRef.current === gen) {
         setResultsLoading(false);
       }
     }
@@ -525,6 +506,8 @@ function App() {
   useEffect(() => {
     if (activeTab !== "results") return;
     void loadResults();
+    const id = window.setInterval(() => void loadResults({ silent: true, force: true }), RESULTS_REFRESH_INTERVAL_MS);
+    return () => window.clearInterval(id);
   }, [loadResults, activeTab]);
 
   useEffect(() => {
@@ -629,7 +612,7 @@ function App() {
             clearFetchCaches();
             clearResultsCalendarCache();
             if (activeTab === "live") void loadLive();
-            if (activeTab === "results") void loadResults();
+            if (activeTab === "results") void loadResults({ force: true });
             if (activeTab === "teams") setTeamRefreshToken((value) => value + 1);
           }}
         >
@@ -750,6 +733,7 @@ function App() {
           jumpDate={jumpDate}
           loading={resultsLoading}
           error={resultsErr}
+          metadata={resultsMetadata}
           onJumpDateChange={onJumpDateChange}
           onSelectDivision={setSelectedResultsDivisionTag}
           onOpenMatch={(game) => void openDrawer(game)}

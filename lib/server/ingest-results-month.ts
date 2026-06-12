@@ -1,25 +1,13 @@
 import { parseCalendarItems, type ScheduleGame } from "./calendar-normalize.js";
 import { canonicalDivisionLabel, IPBL_API_BASE, RESULTS_LANG } from "./results-sync-constants.js";
 
-export type StoredCalendarGridGame = {
-  game: ScheduleGame;
-  time: string;
-  teams: string;
-  score: string;
-  division: string;
-  divisionTag: string;
-  quarterTotals: string | null;
-};
-
-export type StoredCalendarGridDivision = {
-  date: string;
-  division: string;
-  divisionTag: string;
-  games: StoredCalendarGridGame[];
-};
-
-/** Same shape as client `CalendarGridMap` — JSON-serializable. */
-export type StoredResultsMonthMap = Record<string, StoredCalendarGridDivision[]>;
+export type {
+  StoredCalendarGridGame,
+  StoredCalendarGridDivision,
+  StoredResultsMonthMap,
+} from "./results-types.js";
+import type { StoredCalendarGridGame, StoredResultsMonthMap } from "./results-types.js";
+import { dedupeFinishedGames } from "./results-hardening.js";
 
 function formatApiDate(d: Date): string {
   const dd = String(d.getDate()).padStart(2, "0");
@@ -54,7 +42,7 @@ function normalizeCalendarDate(value: string): string {
   return datePart;
 }
 
-function parseQuarterTotals(fullScore: string | null): string | null {
+export function parseQuarterTotals(fullScore: string | null, partial = false): string | null {
   if (!fullScore) return null;
   const totals = fullScore
     .split(",")
@@ -68,10 +56,11 @@ function parseQuarterTotals(fullScore: string | null): string | null {
       return `Q${index + 1} ${points[0] + points[1]}`;
     })
     .filter((value): value is string => Boolean(value));
-  return totals.length > 0 ? totals.join(" · ") : null;
+  if (totals.length === 0) return null;
+  return partial ? `${totals.join(" · ")} · partial periods` : totals.join(" · ");
 }
 
-function normalizeCalendarGame(game: ScheduleGame): StoredCalendarGridGame {
+function normalizeCalendarGame(game: ScheduleGame, evidence: import("./results-types.js").StoredResultEvidence): StoredCalendarGridGame {
   const canonical = canonicalDivisionLabel(game.tag);
   return {
     game,
@@ -80,7 +69,8 @@ function normalizeCalendarGame(game: ScheduleGame): StoredCalendarGridGame {
     score: game.scoreText || "—",
     division: canonical ?? (game.divisionLabel || game.tag),
     divisionTag: game.tag,
-    quarterTotals: parseQuarterTotals(game.fullScore),
+    quarterTotals: parseQuarterTotals(game.fullScore, evidence.periodState === "partial"),
+    evidence,
   };
 }
 
@@ -174,17 +164,28 @@ export function buildStoredMonthMap(
   divisionTag: string,
   divisionLabel: string
 ): StoredResultsMonthMap {
+  return buildStoredMonthMapWithStats(games, year, monthIndex, divisionTag, divisionLabel).map;
+}
+
+export function buildStoredMonthMapWithStats(
+  games: ScheduleGame[],
+  year: number,
+  monthIndex: number,
+  divisionTag: string,
+  divisionLabel: string
+): { map: StoredResultsMonthMap; stats: import("./results-hardening.js").BuildHardeningStats } {
   const tmp = createEmptyMonthMap(year, monthIndex, divisionTag, divisionLabel);
-  for (const game of games) {
+  const hardened = dedupeFinishedGames(games);
+  for (const { game, evidence } of hardened.games) {
     const day = normalizeCalendarDate(game.localDate);
     const row = tmp[day];
     if (!row?.[0]) continue;
-    row[0].games.push(normalizeCalendarGame(game));
+    row[0].games.push(normalizeCalendarGame(game, evidence));
   }
   for (const divisions of Object.values(tmp)) {
     for (const division of divisions) {
       division.games.sort((a, b) => a.time.localeCompare(b.time));
     }
   }
-  return tmp;
+  return { map: tmp, stats: hardened.stats };
 }

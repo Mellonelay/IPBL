@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from "react";
-import { resultsDivisionsForMonth, type CalendarGridGame, type ResultsCalendarMap, type ResultsGame } from "../results/calendar";
+import { resultsDivisionsForMonth, type ResultsCalendarMap, type ResultsGame, type ResultsMonthMetadata } from "../results/calendar";
+import { describeResultState, resultStateForStoredDay } from "../results/result-states";
 
-type CalendarMatch = CalendarGridGame;
 
 type Props = {
   calendarMap: ResultsCalendarMap;
@@ -12,6 +12,7 @@ type Props = {
   jumpDate: string;
   loading: boolean;
   error: string | null;
+  metadata: ResultsMonthMetadata | null;
   onJumpDateChange: (date: string) => void;
   onSelectDivision: (divisionTag: string) => void;
   onOpenMatch: (game: ResultsGame) => void;
@@ -38,6 +39,7 @@ export function ResultsCalendarGrid({
   jumpDate,
   loading,
   error,
+  metadata,
   onJumpDateChange,
   onSelectDivision,
   onOpenMatch,
@@ -81,6 +83,12 @@ export function ResultsCalendarGrid({
       </div>
 
       {error && <p className="err">{error}</p>}
+      {metadata?.status === "source_unavailable" && (
+        <p className="err">Stored results are preserved, but the source was unavailable during the latest sync.</p>
+      )}
+      {metadata?.status === "legacy" && (
+        <p className="muted">Legacy stored results: empty dates are not treated as confirmed.</p>
+      )}
       {loading && <p className="muted">Loading results from cache (KV)...</p>}
 
       <div className="results-grid">
@@ -89,6 +97,13 @@ export function ResultsCalendarGrid({
           const dayData = Array.isArray(rawDayData) ? rawDayData : [];
           const divisions = dayData.filter((division) => division.divisionTag === selectedDivisionTag);
           const visibleDivisions = divisions.filter((division) => Array.isArray(division.games) && division.games.length > 0);
+          const matches = divisions.flatMap((division) => division.games ?? []);
+          const dayState = resultStateForStoredDay({
+            divisionId: selectedDivisionTag,
+            date,
+            matches,
+            metadata,
+          });
 
           return (
             <div
@@ -101,7 +116,7 @@ export function ResultsCalendarGrid({
               }}
             >
               <h3>{formatHeader(date)}</h3>
-              {visibleDivisions.length === 0 && !loading && <div className="no-matches">No matches today</div>}
+              {visibleDivisions.length === 0 && !loading && <div className="no-matches">{describeResultState(dayState)}</div>}
               {visibleDivisions.length === 0 && loading && <div className="no-matches">Loading...</div>}
 
               {visibleDivisions.map((division) => {
