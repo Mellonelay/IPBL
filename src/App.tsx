@@ -31,9 +31,10 @@ import {
   clearResultsCalendarCache,
   createSkeletonResultsCalendarMap,
   resultsDivisionsForMonth,
-  fetchResultsMonthFromApi,
+  fetchResultsMonthPayloadFromApi,
   RESULTS_DIVISION_TAGS,
   type CalendarGridMap,
+  type ResultsMonthMetadata,
 } from "./results/calendar";
 
 
@@ -273,6 +274,7 @@ function App() {
   );
   const [resultsLoading, setResultsLoading] = useState(false);
   const [resultsErr, setResultsErr] = useState<string | null>(null);
+  const [resultsMetadata, setResultsMetadata] = useState<ResultsMonthMetadata | null>(null);
   const [loadedResultsKey, setLoadedResultsKey] = useState<string | null>(null);
   const resultsLoadGenRef = useRef(0);
 
@@ -486,30 +488,35 @@ function App() {
     }
   }, []);
 
-  const loadResults = useCallback(async () => {
+  const loadResults = useCallback(async (options: { silent?: boolean; force?: boolean } = {}) => {
     const gen = (resultsLoadGenRef.current += 1);
-    setCalendarMap(
-      createSkeletonResultsCalendarMap(selectedResultsYear, selectedResultsMonthIndex, [
-        selectedResultsDivisionTag,
-      ])
-    );
-    setResultsLoading(true);
+    if (!options.silent) {
+      setCalendarMap(
+        createSkeletonResultsCalendarMap(selectedResultsYear, selectedResultsMonthIndex, [
+          selectedResultsDivisionTag,
+        ])
+      );
+      setResultsMetadata(null);
+      setResultsLoading(true);
+    }
     setResultsErr(null);
     try {
-      const map = await fetchResultsMonthFromApi({
+      const payload = await fetchResultsMonthPayloadFromApi({
         year: selectedResultsYear,
         monthIndex: selectedResultsMonthIndex,
         divisionTag: selectedResultsDivisionTag,
+        force: options.force,
       });
       if (resultsLoadGenRef.current !== gen) return;
-      setCalendarMap(map);
+      setCalendarMap(payload.calendar);
+      setResultsMetadata(payload.meta);
       setLoadedResultsKey(`${selectedMonthKey}|${selectedResultsDivisionTag}`);
     } catch (error) {
       if (resultsLoadGenRef.current === gen) {
         setResultsErr(error instanceof Error ? error.message : "Results load failed");
       }
     } finally {
-      if (resultsLoadGenRef.current === gen) {
+      if (!options.silent && resultsLoadGenRef.current === gen) {
         setResultsLoading(false);
       }
     }
@@ -525,6 +532,8 @@ function App() {
   useEffect(() => {
     if (activeTab !== "results") return;
     void loadResults();
+    const id = window.setInterval(() => void loadResults({ silent: true, force: true }), 60_000);
+    return () => window.clearInterval(id);
   }, [loadResults, activeTab]);
 
   useEffect(() => {
@@ -629,7 +638,7 @@ function App() {
             clearFetchCaches();
             clearResultsCalendarCache();
             if (activeTab === "live") void loadLive();
-            if (activeTab === "results") void loadResults();
+            if (activeTab === "results") void loadResults({ force: true });
             if (activeTab === "teams") setTeamRefreshToken((value) => value + 1);
           }}
         >
@@ -750,6 +759,7 @@ function App() {
           jumpDate={jumpDate}
           loading={resultsLoading}
           error={resultsErr}
+          metadata={resultsMetadata}
           onJumpDateChange={onJumpDateChange}
           onSelectDivision={setSelectedResultsDivisionTag}
           onOpenMatch={(game) => void openDrawer(game)}

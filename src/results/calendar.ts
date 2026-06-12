@@ -3,14 +3,48 @@ import { DIVISIONS, divisionsForResultsMonth, type DivisionConfig } from "../con
 import { RESULTS_SYNC_TAGS } from "../../lib/results-constants";
 import { toMyanmarDateTime } from "../time/myanmar";
 
+export type ResultsMonthMetadata = {
+    schemaVersion: 1;
+    status: "ok" | "source_unavailable" | "legacy";
+    source: string;
+    checkedAt: string;
+    updatedAt: string | null;
+    verifiedThroughDate: string | null;
+    year: number;
+    month: number;
+    divisionTag: string;
+    fetchedRows?: number;
+    acceptedRows?: number;
+    mergedRows?: number;
+    preservedRows?: number;
+    rejectedNonFinished?: number;
+    duplicatesCollapsed?: number;
+    partialPeriodRows?: number;
+    quarantinedPeriodRows?: number;
+    error?: string;
+};
+
 export type CalendarGridGame = {
-    game: ScheduleGame; time: string; teams: string; score: string;
-    division: string; divisionTag: string; quarterTotals: string | null;
+    game: ScheduleGame;
+    time: string;
+    teams: string;
+    score: string;
+    division: string;
+    divisionTag: string;
+    quarterTotals: string | null;
+    evidence?: {
+        periodCount: number;
+        periodState: "complete" | "partial" | "missing" | "conflict";
+        scoreIntegrity: "consistent" | "partial" | "unknown" | "conflict";
+        quarterEvidenceQuarantined: boolean;
+    };
 };
 export type CalendarGridDivision = { date: string; division: string; divisionTag: string; games: CalendarGridGame[] };
 export type CalendarGridMap = Record<string, CalendarGridDivision[]>;
 export type ResultsCalendarMap = CalendarGridMap;
 export type ResultsGame = ScheduleGame;
+export type ResultsMonthPayload = { calendar: CalendarGridMap; meta: ResultsMonthMetadata };
+
 export const RESULTS_DIVISION_TAGS = RESULTS_SYNC_TAGS;
 export const RESULTS_DIVISIONS: DivisionConfig[] = DIVISIONS.filter((d) => (RESULTS_SYNC_TAGS as readonly string[]).includes(d.tag));
 export function resultsDivisionsForMonth(year: number, monthIndex: number): DivisionConfig[] {
@@ -18,8 +52,8 @@ export function resultsDivisionsForMonth(year: number, monthIndex: number): Divi
 }
 
 const SESSION_CACHE_TTL_MS = 60_000;
-const sessionCache = new Map<string, { at: number; map: CalendarGridMap }>();
-const inflight = new Map<string, Promise<CalendarGridMap>>();
+const sessionCache = new Map<string, { at: number; payload: ResultsMonthPayload }>();
+const inflight = new Map<string, Promise<ResultsMonthPayload>>();
 const iso = (y: number, m: number, d: number) => `${y}-${String(m + 1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
 function monthDayKeys(year: number, monthIndex: number): string[] {
     return Array.from({ length: new Date(year, monthIndex + 1, 0).getDate() }, (_, i) => iso(year, monthIndex, i + 1));
@@ -38,12 +72,57 @@ export function isCalendarMapCompleteForMonth(map:CalendarGridMap,year:number,mo
 }
 export function clearResultsCalendarCache(){sessionCache.clear();inflight.clear();}
 
-async function fetchRaw(year:number,monthIndex:number,divisionTag:string,optional=false):Promise<CalendarGridMap>{
-    const url=`/api/results?year=${year}&month=${monthIndex+1}&division=${encodeURIComponent(divisionTag)}`;
-    const res=await fetch(url,{headers:{Accept:"application/json"}}); const text=await res.text();
-    if(!res.ok){if(optional&&res.status===404)return{};let msg=`HTTP ${res.status}`;try{msg=String((JSON.parse(text) as {error?:unknown}).error??msg);}catch{}throw new Error(msg);}
-    const body=JSON.parse(text) as CalendarGridMap|{calendar:CalendarGridMap};
-    return "calendar" in body ? body.calendar : body;
+function latestPopulatedDate(map: CalendarGridMap): string | null {
+    const days = Object.entries(map)
+        .filter(([, groups]) => groups.some((group) => group.games.length > 0))
+        .map(([day]) => day)
+        .sort();
+    return days.at(-1) ?? null;
+}
+
+function legacyMetadata(map: CalendarGridMap, year: number, monthIndex: number, divisionTag: string): ResultsMonthMetadata {
+    return {
+        schemaVersion: 1,
+        status: "legacy",
+        source: "results-kv",
+        checkedAt: new Date(0).toISOString(),
+        updatedAt: null,
+        verifiedThroughDate: latestPopulatedDate(map),
+        year,
+        month: monthIndex + 1,
+        divisionTag,
+    };
+}
+
+async function fetchRaw(
+    year:number,
+    monthIndex:number,
+    divisionTag:string,
+    optional=false
+):Promise<{ calendar: CalendarGridMap; meta: ResultsMonthMetadata | null }> {
+    const url=`/api/results?year=${year}&month=${monthIndex+1}&division=${encodeURIComponent(divisionTag)}&meta=1`;
+    const res=await fetch(url,{headers:{Accept:"application/json"}});
+    const text=await res.text();
+    if(!res.ok){
+        if(optional&&res.status===404)return{calendar:{},meta:null};
+        let msg=`HTTP ${res.status}`;
+        try{msg=String((JSON.parse(text) as {error?:unknown}).error??msg);}catch{}
+        throw new Error(msg);
+    }
+    const body=JSON.parse(text) as unknown;
+    if (body && typeof body === "object" && !Array.isArray(body)) {
+        const envelope = body as { calendar?: unknown; meta?: unknown };
+        if (envelope.calendar && typeof envelope.calendar === "object" && !Array.isArray(envelope.calendar)) {
+            const calendar = envelope.calendar as CalendarGridMap;
+            const meta = envelope.meta && typeof envelope.meta === "object"
+                ? envelope.meta as ResultsMonthMetadata
+                : legacyMetadata(calendar, year, monthIndex, divisionTag);
+            return { calendar, meta };
+        }
+        const calendar = body as CalendarGridMap;
+        return { calendar, meta: legacyMetadata(calendar, year, monthIndex, divisionTag) };
+    }
+    throw new Error("Invalid Results response");
 }
 function previousMonth(year:number,monthIndex:number){return monthIndex===0?{year:year-1,monthIndex:11}:{year,monthIndex:monthIndex-1};}
 function regroupMyanmar(maps:CalendarGridMap[],year:number,monthIndex:number,tag:string):CalendarGridMap{
@@ -59,9 +138,29 @@ function regroupMyanmar(maps:CalendarGridMap[],year:number,monthIndex:number,tag
     for(const groups of Object.values(out))groups[0].games.sort((a,b)=>a.time.localeCompare(b.time));
     return out;
 }
-export async function fetchResultsMonthFromApi({year,monthIndex,divisionTag}:{year:number;monthIndex:number;divisionTag:string}):Promise<CalendarGridMap>{
-    const key=sessionKey(year,monthIndex,divisionTag),now=Date.now(),hit=sessionCache.get(key); if(hit&&now-hit.at<SESSION_CACHE_TTL_MS)return structuredClone(hit.map);
+
+export async function fetchResultsMonthPayloadFromApi({
+    year,
+    monthIndex,
+    divisionTag,
+    force=false,
+}:{year:number;monthIndex:number;divisionTag:string;force?:boolean}):Promise<ResultsMonthPayload>{
+    const key=sessionKey(year,monthIndex,divisionTag),now=Date.now(),hit=sessionCache.get(key);
+    if(!force&&hit&&now-hit.at<SESSION_CACHE_TTL_MS)return structuredClone(hit.payload);
     const pending=inflight.get(key);if(pending)return pending;
-    const promise=(async()=>{const prev=previousMonth(year,monthIndex);const [previous,current]=await Promise.all([fetchRaw(prev.year,prev.monthIndex,divisionTag,true),fetchRaw(year,monthIndex,divisionTag)]);const map=regroupMyanmar([previous,current],year,monthIndex,divisionTag);sessionCache.set(key,{at:Date.now(),map});return structuredClone(map);})();
+    const promise=(async()=>{
+        const prev=previousMonth(year,monthIndex);
+        const [previous,current]=await Promise.all([
+            fetchRaw(prev.year,prev.monthIndex,divisionTag,true),
+            fetchRaw(year,monthIndex,divisionTag),
+        ]);
+        const payload={calendar:regroupMyanmar([previous.calendar,current.calendar],year,monthIndex,divisionTag),meta:current.meta??legacyMetadata(current.calendar,year,monthIndex,divisionTag)};
+        sessionCache.set(key,{at:Date.now(),payload});
+        return structuredClone(payload);
+    })();
     inflight.set(key,promise);try{return await promise;}finally{inflight.delete(key);}
+}
+
+export async function fetchResultsMonthFromApi(args:{year:number;monthIndex:number;divisionTag:string;force?:boolean}):Promise<CalendarGridMap>{
+    return (await fetchResultsMonthPayloadFromApi(args)).calendar;
 }

@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { RESULTS_SYNC_TAGS } from "../../lib/server/results-sync-constants.js";
+import { resultsSyncTagsForMonth } from "../../lib/server/results-sync-constants.js";
 
 export const config = { maxDuration: 300 };
 
@@ -30,7 +30,7 @@ async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
     if (allApprovedDivisions) {
       console.log(`Starting bulk backfill for ${year}-${month}`);
       const results = [];
-      for (const tag of RESULTS_SYNC_TAGS) {
+      for (const tag of resultsSyncTagsForMonth(Number(year), Number(month))) {
         try {
           console.log(`Ingesting ${tag}...`);
           const result = await writeResultsMonthToKv({ year, month, divisionTag: tag });

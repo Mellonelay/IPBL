@@ -20,7 +20,7 @@ async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
 
     try {
         const client = redis.requireResultsRedis();
-        const slots = sync.RESULTS_SYNC_TAGS.map(tag => ({ year: 2026, month: 4, tag }));
+        const slots = sync.resultsSyncSlots();
         const prev = await client.get<string>(sync.SYNC_CURSOR_KEY);
         let cursor = prev ? Number.parseInt(prev, 10) : 0;
         const slot = slots[cursor % slots.length];
