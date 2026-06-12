@@ -222,6 +222,50 @@ function isScheduleGame(value: unknown): boolean {
     && isTeamRef(value.team2);
 }
 
+function sourceIsoFromLegacyLocal(localDate: unknown, localTime: unknown): string | null {
+  const date = String(localDate ?? "").trim();
+  const time = String(localTime ?? "").trim();
+  const dateMatch = date.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  const isoDate = dateMatch ? `${dateMatch[3]}-${dateMatch[2]}-${dateMatch[1]}` : date;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate) || !/^\d{1,2}:\d{2}$/.test(time)) return null;
+  const candidate = `${isoDate}T${time.padStart(5, "0")}:00+05:00`;
+  return Number.isNaN(Date.parse(candidate)) ? null : candidate;
+}
+
+function normalizeLegacyScheduleGame(value: unknown): unknown {
+  if (!isRecord(value)) return value;
+  const sourceLocalDate = value.sourceLocalDate === undefined ? value.localDate : value.sourceLocalDate;
+  const sourceLocalTime = value.sourceLocalTime === undefined ? value.localTime : value.sourceLocalTime;
+  const sourceTimeZone = value.sourceTimeZone === undefined ? "UTC+05:00" : value.sourceTimeZone;
+  const scheduledTime = value.scheduledTime === undefined
+    ? sourceIsoFromLegacyLocal(sourceLocalDate, sourceLocalTime)
+    : value.scheduledTime;
+  return {
+    ...value,
+    scheduledTime,
+    sourceLocalDate,
+    sourceLocalTime,
+    sourceTimeZone,
+    updatedAt: value.updatedAt === undefined ? null : value.updatedAt,
+  };
+}
+
+function normalizeLegacyStoredResultsMonth(value: Record<string, unknown>): Record<string, unknown> {
+  return Object.fromEntries(Object.entries(value).map(([day, groups]) => [
+    day,
+    Array.isArray(groups)
+      ? groups.map((group) => isRecord(group) && Array.isArray(group.games)
+        ? {
+            ...group,
+            games: group.games.map((row) => isRecord(row)
+              ? { ...row, game: normalizeLegacyScheduleGame(row.game) }
+              : row),
+          }
+        : group)
+      : groups,
+  ]));
+}
+
 function isStoredResultEvidence(value: unknown): boolean {
   if (!isRecord(value)) return false;
   return typeof value.periodCount === "number"
@@ -282,11 +326,12 @@ export function parseStoredResultsMonth(value: unknown): StoredResultsMonthMap |
   try {
     const parsed = typeof value === "string" ? JSON.parse(value) : value;
     if (!isRecord(parsed)) return null;
-    for (const [day, groups] of Object.entries(parsed)) {
+    const normalized = normalizeLegacyStoredResultsMonth(parsed);
+    for (const [day, groups] of Object.entries(normalized)) {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !Array.isArray(groups)) return null;
       if (!groups.every(isStoredCalendarGridDivision)) return null;
     }
-    return parsed as StoredResultsMonthMap;
+    return normalized as StoredResultsMonthMap;
   } catch {
     return null;
   }

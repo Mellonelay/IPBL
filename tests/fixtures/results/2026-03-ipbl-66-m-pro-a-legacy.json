@@ -1,0 +1,46 @@
+{
+  "2026-03-01": [
+    {
+      "date": "2026-03-01",
+      "division": "Pro Men A",
+      "divisionTag": "ipbl-66-m-pro-a",
+      "games": [
+        {
+          "game": {
+            "gameId": 1040057,
+            "tag": "ipbl-66-m-pro-a",
+            "status": "ResultConfirmed",
+            "statusDisplay": "Завершена",
+            "upstreamStatusId": "ResultConfirmed",
+            "score1": 93,
+            "score2": 97,
+            "scoreText": "93 : 97",
+            "fullScore": "22:21,18:26,23:25,30:25",
+            "localDate": "01.03.2026",
+            "localTime": "13:00",
+            "divisionLabel": "Pro Division",
+            "period": null,
+            "timeToGo": null,
+            "isLive": false,
+            "team1": {
+              "teamId": 76042,
+              "shortName": "Omsk",
+              "name": "Omsk"
+            },
+            "team2": {
+              "teamId": 76043,
+              "shortName": "Ukhta",
+              "name": "Ukhta"
+            }
+          },
+          "time": "13:00",
+          "teams": "Omsk vs Ukhta",
+          "score": "93 : 97",
+          "division": "Pro Men A",
+          "divisionTag": "ipbl-66-m-pro-a",
+          "quarterTotals": "Q1 43 · Q2 44 · Q3 48 · Q4 55"
+        }
+      ]
+    }
+  ]
+}
