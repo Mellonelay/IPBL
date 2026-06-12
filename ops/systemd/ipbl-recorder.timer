@@ -1,0 +1,12 @@
+[Unit]
+Description=Trigger IPBL Phase C live recorder every minute
+
+[Timer]
+OnCalendar=*-*-* *:*:00
+AccuracySec=5s
+RandomizedDelaySec=3s
+Persistent=true
+Unit=ipbl-recorder.service
+
+[Install]
+WantedBy=timers.target

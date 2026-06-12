@@ -47,12 +47,26 @@
       "destination": "/api/ipbl/team/games.ts"
     },
     {
+      "source": "/api/recorder/status",
+      "destination": "/api/recorder/status.ts"
+    },
+    {
+      "source": "/api/recorder/history",
+      "destination": "/api/recorder/history.ts"
+    },
+    {
       "source": "/api/ipbl/(.*)",
       "destination": "https://worker.mloneslot99.com/ipbl-proxy/$1"
     },
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/record-live",
+      "schedule": "0 0 * * *"
     }
   ]
 }

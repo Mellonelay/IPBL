@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+ENV_FILE=${IPBL_RECORDER_ENV_FILE:-/etc/ipbl-recorder.env}
+[ -r "$ENV_FILE" ] || { echo "recorder environment missing" >&2; exit 2; }
+# shellcheck disable=SC1090
+source "$ENV_FILE"
+: "${CRON_SECRET:?CRON_SECRET is required}"
+RECORDER_URL=${RECORDER_URL:-https://ipbl-minimal-viewer.vercel.app/api/cron/record-live}
+exec /usr/bin/curl --fail --silent --show-error --max-time 50 \
+  -H "Authorization: Bearer ${CRON_SECRET}" \
+  -H 'Accept: application/json' \
+  "$RECORDER_URL"
