@@ -222,6 +222,65 @@ function isScheduleGame(value: unknown): boolean {
     && isTeamRef(value.team2);
 }
 
+function sourceIsoFromLegacyLocal(localDate: unknown, localTime: unknown): string | null {
+  const date = String(localDate ?? "").trim();
+  const time = String(localTime ?? "").trim();
+  const dotted = date.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  const dashed = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const timeMatch = time.match(/^(\d{1,2}):(\d{2})$/);
+  if ((!dotted && !dashed) || !timeMatch) return null;
+
+  const year = Number.parseInt(dotted?.[3] ?? dashed?.[1] ?? "", 10);
+  const month = Number.parseInt(dotted?.[2] ?? dashed?.[2] ?? "", 10);
+  const day = Number.parseInt(dotted?.[1] ?? dashed?.[3] ?? "", 10);
+  const hour = Number.parseInt(timeMatch[1], 10);
+  const minute = Number.parseInt(timeMatch[2], 10);
+  if (!Number.isInteger(year) || year < 1 || year > 9999) return null;
+  if (!Number.isInteger(month) || month < 1 || month > 12) return null;
+  const daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate();
+  if (!Number.isInteger(day) || day < 1 || day > daysInMonth) return null;
+  if (!Number.isInteger(hour) || hour < 0 || hour > 23) return null;
+  if (!Number.isInteger(minute) || minute < 0 || minute > 59) return null;
+
+  const isoDate = `${String(year).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  const candidate = `${isoDate}T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00+05:00`;
+  return Number.isNaN(Date.parse(candidate)) ? null : candidate;
+}
+
+function normalizeLegacyScheduleGame(value: unknown): unknown {
+  if (!isRecord(value)) return value;
+  const sourceLocalDate = value.sourceLocalDate === undefined ? value.localDate : value.sourceLocalDate;
+  const sourceLocalTime = value.sourceLocalTime === undefined ? value.localTime : value.sourceLocalTime;
+  const sourceTimeZone = value.sourceTimeZone === undefined ? "UTC+05:00" : value.sourceTimeZone;
+  const scheduledTime = value.scheduledTime === undefined
+    ? sourceIsoFromLegacyLocal(sourceLocalDate, sourceLocalTime)
+    : value.scheduledTime;
+  return {
+    ...value,
+    scheduledTime,
+    sourceLocalDate,
+    sourceLocalTime,
+    sourceTimeZone,
+    updatedAt: value.updatedAt === undefined ? null : value.updatedAt,
+  };
+}
+
+function normalizeLegacyStoredResultsMonth(value: Record<string, unknown>): Record<string, unknown> {
+  return Object.fromEntries(Object.entries(value).map(([day, groups]) => [
+    day,
+    Array.isArray(groups)
+      ? groups.map((group) => isRecord(group) && Array.isArray(group.games)
+        ? {
+            ...group,
+            games: group.games.map((row) => isRecord(row)
+              ? { ...row, game: normalizeLegacyScheduleGame(row.game) }
+              : row),
+          }
+        : group)
+      : groups,
+  ]));
+}
+
 function isStoredResultEvidence(value: unknown): boolean {
   if (!isRecord(value)) return false;
   return typeof value.periodCount === "number"
@@ -282,11 +341,12 @@ export function parseStoredResultsMonth(value: unknown): StoredResultsMonthMap |
   try {
     const parsed = typeof value === "string" ? JSON.parse(value) : value;
     if (!isRecord(parsed)) return null;
-    for (const [day, groups] of Object.entries(parsed)) {
+    const normalized = normalizeLegacyStoredResultsMonth(parsed);
+    for (const [day, groups] of Object.entries(normalized)) {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !Array.isArray(groups)) return null;
       if (!groups.every(isStoredCalendarGridDivision)) return null;
     }
-    return parsed as StoredResultsMonthMap;
+    return normalized as StoredResultsMonthMap;
   } catch {
     return null;
   }
