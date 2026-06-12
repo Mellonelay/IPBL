@@ -131,7 +131,7 @@ assert.equal(parseStoredResultsMonth({ "2026-06-01": [{ date: "2026-06-01", divi
 
 const productionShapedLegacy = JSON.parse(JSON.stringify(existing));
 for (const groups of Object.values(productionShapedLegacy)) {
-  for (const group of groups as any[]) {
+  for (const group of groups as Array<{ games?: Array<{ game: { timeIsGo?: number | null } }> }>) {
     for (const row of group.games ?? []) delete row.game.timeIsGo;
   }
 }
