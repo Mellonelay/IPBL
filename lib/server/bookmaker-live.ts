@@ -1,7 +1,16 @@
 import type { ScheduleGame, TeamRef } from "./calendar-normalize.js";
 
-export const MELBET_IPBL_URL =
-  "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true";
+export const MELBET_IPBL_LEAGUES = [
+  { leagueId: 2496666, label: "IPBL Pro Men" },
+  { leagueId: 2496667, label: "IPBL Pro Women" },
+] as const;
+
+function melbetIpblUrl(leagueId: number): string {
+  return `https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=${leagueId}&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true`;
+}
+
+export const MELBET_IPBL_URLS = MELBET_IPBL_LEAGUES.map(({ leagueId }) => melbetIpblUrl(leagueId));
+export const MELBET_IPBL_URL = MELBET_IPBL_URLS[0];
 
 export type BookmakerSourceEvent = {
   I?: number;
@@ -89,6 +98,8 @@ export type BookmakerLiveResult = {
   games: ScheduleGame[];
   unmatched: Array<{ eventId: number | null; team1: string; team2: string; reason: string }>;
   receivedEvents: number;
+  sourceLeagues: number[];
+  sourceFailures: Array<{ leagueId: number; error: string }>;
 };
 
 export function normalizeTeamName(value: string): string {
@@ -183,9 +194,19 @@ function toScheduleGame(event: BookmakerSourceEvent, team1: VerifiedTeam, team2:
   };
 }
 
-export function parseBookmakerLivePayload(raw: unknown): BookmakerLiveResult {
-  const envelope = raw as BookmakerEnvelope;
-  const events = Array.isArray(envelope?.Value) ? envelope.Value : [];
+export function parseBookmakerLivePayloads(rawPayloads: unknown[]): BookmakerLiveResult {
+  const eventsById = new Map<string, BookmakerSourceEvent>();
+  const sourceLeagues = new Set<number>();
+  for (const raw of rawPayloads) {
+    const envelope = raw as BookmakerEnvelope;
+    const events = Array.isArray(envelope?.Value) ? envelope.Value : [];
+    for (const event of events) {
+      if (typeof event.LI === "number") sourceLeagues.add(event.LI);
+      const key = `${event.LI ?? "unknown"}:${event.I ?? JSON.stringify(event)}`;
+      eventsById.set(key, event);
+    }
+  }
+  const events = [...eventsById.values()];
   const games: ScheduleGame[] = [];
   const unmatched: BookmakerLiveResult["unmatched"] = [];
   for (const event of events) {
@@ -209,22 +230,48 @@ export function parseBookmakerLivePayload(raw: unknown): BookmakerLiveResult {
     }
     games.push(game);
   }
-  return { games, unmatched, receivedEvents: events.length };
+  return {
+    games,
+    unmatched,
+    receivedEvents: events.length,
+    sourceLeagues: [...sourceLeagues].sort((a, b) => a - b),
+    sourceFailures: [],
+  };
+}
+
+export function parseBookmakerLivePayload(raw: unknown): BookmakerLiveResult {
+  return parseBookmakerLivePayloads([raw]);
 }
 
 export async function fetchMelbetLive(): Promise<BookmakerLiveResult> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15_000);
   try {
-    const response = await fetch(MELBET_IPBL_URL, {
-      headers: {
-        Accept: "application/json",
-        "User-Agent": "IPBL-Minimal-Viewer/1.0",
-      },
-      signal: controller.signal,
-    });
-    if (!response.ok) throw new Error(`MelBet HTTP ${response.status}`);
-    return parseBookmakerLivePayload(await response.json());
+    const settled = await Promise.allSettled(MELBET_IPBL_LEAGUES.map(async ({ leagueId }) => {
+      const response = await fetch(melbetIpblUrl(leagueId), {
+        headers: {
+          Accept: "application/json",
+          "User-Agent": "IPBL-Minimal-Viewer/1.0",
+        },
+        signal: controller.signal,
+      });
+      if (!response.ok) throw new Error(`MelBet league ${leagueId} HTTP ${response.status}`);
+      return { leagueId, payload: await response.json() };
+    }));
+
+    const payloads: unknown[] = [];
+    const sourceFailures: BookmakerLiveResult["sourceFailures"] = [];
+    for (let index = 0; index < settled.length; index += 1) {
+      const result = settled[index];
+      const leagueId = MELBET_IPBL_LEAGUES[index].leagueId;
+      if (result.status === "fulfilled") payloads.push(result.value.payload);
+      else sourceFailures.push({ leagueId, error: result.reason instanceof Error ? result.reason.message : String(result.reason) });
+    }
+    if (payloads.length === 0) {
+      throw new Error(sourceFailures.map(({ leagueId, error }) => `${leagueId}: ${error}`).join("; ") || "MelBet live sources failed");
+    }
+    const parsed = parseBookmakerLivePayloads(payloads);
+    return { ...parsed, sourceFailures };
   } finally {
     clearTimeout(timeout);
   }
