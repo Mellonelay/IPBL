@@ -1,6 +1,6 @@
 4211859bcd12d4a1e9b0897fda24837fd4646f107c8381eb1e98d1075a54e4ed  artifacts/phase-c/changed-file-audit.txt
 cdaba64c7d54c7b92bef3acef5b7b8816bd0d9ebd132b050c85d5cf53a6e5e15  artifacts/phase-c/completion-report.json
-daad19113a94d425f23c44da5a3811d8a79ae6d0fa8062aab2167e43c8124b3b  artifacts/phase-c/endpoint-family-map.csv
+423a1f5d04623c5a34e70775a4c6f7db65fdee6a3e22ac7a1394e059e1598611  artifacts/phase-c/endpoint-family-map.csv
 e3ba38145baa572b5a4e17f33908c45831c3d0c63c427062080c47b3bf44cdcd  artifacts/phase-c/endpoint-family-map.json
 b2425e71d8ef7383b26e279d8155f7f2e31bf41b6388b1a9b1f3c448f2d59a1a  artifacts/phase-c/graphify-impact-report.json
 3130a5eb7afd40ba3343b173bc44117447124b7c66cf3a8cd4bf60e5f2d4415f  artifacts/phase-c/orchestrator-plan-manifest.json
