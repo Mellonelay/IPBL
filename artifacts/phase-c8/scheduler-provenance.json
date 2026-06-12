@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-06-12T18:48:10.990066+00:00",
+  "repository": {
+    "trigger": "ops/systemd/ipbl-recorder-trigger",
+    "test": "tests/recorder-trigger.test.sh",
+    "trackedInstalledSha256": "5eed133df9d80c7e3021a18c2926f247b43813a5da1864a5ea1bb34c8e69f8e9",
+    "exactInstalledMatch": true
+  },
+  "runtime": {
+    "timer": "ipbl-recorder.timer",
+    "service": "ipbl-recorder.service",
+    "cadence": "*-*-* *:*:00",
+    "accuracySeconds": 5,
+    "randomizedDelaySeconds": 3,
+    "enabledSince": "2026-06-12T06:42:55Z",
+    "user": "root",
+    "environmentFile": "/etc/ipbl-recorder.env",
+    "environmentFileMode": "0600",
+    "triggerPath": "/usr/local/sbin/ipbl-recorder-trigger",
+    "triggerMode": "0755"
+  },
+  "vercelCron": {
+    "path": "/api/cron/record-live",
+    "schedule": "0 0 * * *",
+    "role": "daily safety invocation; not continuous scheduler"
+  },
+  "evidence": {
+    "installedAt": "2026-06-12T06:42:55Z",
+    "cadence": "one minute",
+    "systemdTimer": "ipbl-recorder.timer",
+    "systemdService": "ipbl-recorder.service",
+    "starts": 723,
+    "finishes": 723,
+    "failures": 0,
+    "parsedRuns": 723,
+    "firstCapturedAt": "2026-06-12T06:42:57.726Z",
+    "lastCapturedAt": "2026-06-12T18:44:02.129Z",
+    "sourceCounts": {
+      "bookmaker:melbet.com": 723
+    },
+    "statusCounts": {
+      "FAIL": 109,
+      "OK": 1,
+      "PARTIAL": 613
+    },
+    "recordedSnapshots": 1125,
+    "duplicateSnapshots": 27,
+    "runsWithRejectedGames": 0
+  }
+}

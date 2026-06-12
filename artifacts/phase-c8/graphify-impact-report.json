@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-06-12T18:50:32.371807+00:00",
+  "phase": "Phase C8",
+  "mode": "typed-local-impact-evidence",
+  "changedNodes": [
+    {
+      "file": "lib/server/source-health.ts",
+      "type": "runtime-health-contract",
+      "impacts": [
+        "recorder health API",
+        "operator monitoring",
+        "Phase F source-health inputs"
+      ]
+    },
+    {
+      "file": "api/recorder.ts",
+      "type": "read-only-api-extension",
+      "impacts": [
+        "GET /api/recorder/health"
+      ]
+    },
+    {
+      "file": "vercel.json",
+      "type": "route-contract",
+      "impacts": [
+        "recorder health rewrite"
+      ]
+    },
+    {
+      "file": "artifacts/phase-c8/endpoint-source-registry.json",
+      "type": "source-registry",
+      "impacts": [
+        "future score/odds/H2H enrichment"
+      ]
+    }
+  ],
+  "runtimeDependencies": [
+    "ipbl-recorder.timer",
+    "ipbl-recorder.service",
+    "ipbl:recorder:v1:status",
+    "ipbl:recorder:v1:runs",
+    "ipbl:recorder:v1:active"
+  ],
+  "lockedBoundaries": [
+    "scheduler cadence unchanged",
+    "no Redis writes or cleanup",
+    "no secret rotation",
+    "no automatic deployment"
+  ],
+  "recommendation": "Proceed through controlled PR and preview. Keep C8.5-C8.7 open.",
+  "nodes": [
+    {
+      "id": "node_04e1fadf-1cda-4b4f-988e-33d05834cdf6",
+      "label": "IPBL Phase C8 scheduler provenance",
+      "type": "runtime_scheduler_evidence"
+    },
+    {
+      "id": "node_9b4444be-7fc5-48f8-a3a0-9d77bf286ab5",
+      "label": "IPBL Phase C8 recorder retention policy",
+      "type": "storage_retention_contract"
+    },
+    {
+      "id": "node_576d178e-b172-4372-8739-635a1744abd8",
+      "label": "IPBL Phase C8 endpoint registry",
+      "type": "source_endpoint_registry"
+    },
+    {
+      "id": "node_ea55036b-323c-4a7f-867b-1ef50af1dc41",
+      "label": "IPBL Phase C8 source-health contract",
+      "type": "runtime_health_contract"
+    },
+    {
+      "id": "node_58bd2cb9-8280-4cbb-8f9b-24381dabb97d",
+      "label": "IPBL Phase C8 bounded monitoring and recovery policy",
+      "type": "runtime_monitoring_policy"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_e93dcb78-0607-4572-89f5-1595ea6b90c9",
+      "source": "phase-c-recorder-baseline",
+      "target": "node_04e1fadf-1cda-4b4f-988e-33d05834cdf6",
+      "type": "operationalized_by"
+    },
+    {
+      "id": "edge_5877398a-2294-4938-9ac0-077601f3417c",
+      "source": "node_04e1fadf-1cda-4b4f-988e-33d05834cdf6",
+      "target": "node_9b4444be-7fc5-48f8-a3a0-9d77bf286ab5",
+      "type": "enforces_retention_for"
+    },
+    {
+      "id": "edge_e2861a87-d7a5-429f-a839-c66010a5c4e3",
+      "source": "node_576d178e-b172-4372-8739-635a1744abd8",
+      "target": "node_ea55036b-323c-4a7f-867b-1ef50af1dc41",
+      "type": "source_evidence_for"
+    },
+    {
+      "id": "edge_4fdc721d-14d1-4bb2-bb7e-f095212be49c",
+      "source": "node_04e1fadf-1cda-4b4f-988e-33d05834cdf6",
+      "target": "node_ea55036b-323c-4a7f-867b-1ef50af1dc41",
+      "type": "monitored_by"
+    },
+    {
+      "id": "edge_07feddf0-00d7-4e5f-8568-1cabbc737e23",
+      "source": "node_ea55036b-323c-4a7f-867b-1ef50af1dc41",
+      "target": "node_58bd2cb9-8280-4cbb-8f9b-24381dabb97d",
+      "type": "implemented_by"
+    }
+  ]
+}

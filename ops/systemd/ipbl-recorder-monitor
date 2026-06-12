@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+HEALTH_URL=${RECORDER_HEALTH_URL:-https://ipbl-minimal-viewer.vercel.app/api/recorder/health}
+STATE_FILE=${IPBL_MONITOR_STATE_FILE:-/var/lib/ipbl-recorder-monitor/state}
+CURL_BIN=${IPBL_MONITOR_CURL_BIN:-/usr/bin/curl}
+PYTHON_BIN=${IPBL_MONITOR_PYTHON_BIN:-/usr/bin/python3}
+[[ "$HEALTH_URL" == https://* ]] || { echo "RECORDER_HEALTH_URL must use https" >&2; exit 2; }
+body=$($CURL_BIN --fail --silent --show-error --max-time 20 --header 'Accept: application/json' "$HEALTH_URL")
+parsed=$(printf '%s' "$body" | "$PYTHON_BIN" -c '
+import json,sys
+x=json.load(sys.stdin); h=x.get("health") or {}; a=h.get("alert") or {}; r=h.get("recovery") or {}; f=h.get("freshness") or {}; s=h.get("source") or {}
+level=str(h.get("level") or "UNKNOWN"); severity=str(a.get("severity") or "WARNING"); recovery=str(r.get("state") or "UNKNOWN")
+fingerprint="|".join([level,severity,str(a.get("code") or "unknown"),recovery])
+event={"event":"ipbl_recorder_health_transition","level":level,"severity":severity,"alertCode":a.get("code"),"recoveryState":recovery,"lastCapturedAt":f.get("lastCapturedAt"),"source":s.get("name"),"reasons":h.get("reasons") or []}
+print(fingerprint); print(json.dumps(event,separators=(",",":")))
+')
+fingerprint=${parsed%%$'\n'*}
+event=${parsed#*$'\n'}
+install -d -m 0700 "$(dirname "$STATE_FILE")"
+previous=$(cat "$STATE_FILE" 2>/dev/null || true)
+if [[ "$fingerprint" != "$previous" ]]; then
+  printf '%s\n' "$event"
+  tmp=$(mktemp "${STATE_FILE}.XXXXXX")
+  printf '%s\n' "$fingerprint" > "$tmp"
+  chmod 0600 "$tmp"
+  mv -f "$tmp" "$STATE_FILE"
+fi
+if [[ ${IPBL_MONITOR_FAIL_ON_CRITICAL:-0} == 1 && "$fingerprint" == *'|CRITICAL|'* ]]; then exit 3; fi

@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-06-12T19:05:10.506441+00:00",
+  "endpoint": "https://api1.ipbl.pro/calendar/online",
+  "workerStatus": 526,
+  "certificate": {
+    "subject": "CN=*.netangels.ru",
+    "sans": [
+      "*.netangels.ru",
+      "netangels.ru"
+    ],
+    "validForRequestedHost": false
+  },
+  "alternateHost": {
+    "host": "api.ipbl.pro",
+    "certificateValid": true,
+    "compatibleCalendarOnlineRoute": false,
+    "observedStatus": 404
+  },
+  "classification": "external_upstream_tls_hostname_failure",
+  "safeHostSubstitution": null,
+  "tlsBypassAllowed": false,
+  "boundedRecovery": "retain last-known active set; alert after three failed runs; continue strict-TLS probes; require two non-failed runs for recovery"
+}

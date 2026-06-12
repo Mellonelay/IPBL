@@ -96,7 +96,10 @@ const VERIFIED_TEAM_ALIASES: Record<string, VerifiedTeam> = Object.fromEntries(
 
 export type BookmakerLiveResult = {
   games: ScheduleGame[];
-  unmatched: Array<{ eventId: number | null; team1: string; team2: string; reason: string }>;
+  unmatched: Array<{
+    eventId: number | null; leagueId: number | null; sourceTeam1Id: number | null; sourceTeam2Id: number | null;
+    team1: string; team2: string; reason: string; payloadState: "scored" | "prematch" | "live-score-pending" | "incomplete";
+  }>;
   receivedEvents: number;
   sourceLeagues: number[];
   sourceFailures: Array<{ leagueId: number; error: string }>;
@@ -194,6 +197,22 @@ function toScheduleGame(event: BookmakerSourceEvent, team1: VerifiedTeam, team2:
   };
 }
 
+function payloadState(event: BookmakerSourceEvent): BookmakerLiveResult["unmatched"][number]["payloadState"] {
+  if (finiteNumber(event.SC?.FS?.S1) !== null && finiteNumber(event.SC?.FS?.S2) !== null) return "scored";
+  const info = `${event.SC?.I ?? ""} ${event.SC?.SLS ?? ""}`.toLowerCase();
+  if (info.includes("pre-match") || info.includes("starting in")) return "prematch";
+  if (finiteNumber(event.SC?.CP) !== null) return "live-score-pending";
+  return "incomplete";
+}
+
+function unmatchedEvent(event: BookmakerSourceEvent, team1: string, team2: string, reason: string): BookmakerLiveResult["unmatched"][number] {
+  return {
+    eventId: finiteNumber(event.I), leagueId: finiteNumber(event.LI),
+    sourceTeam1Id: finiteNumber(event.O1I), sourceTeam2Id: finiteNumber(event.O2I),
+    team1, team2, reason, payloadState: payloadState(event),
+  };
+}
+
 export function parseBookmakerLivePayloads(rawPayloads: unknown[]): BookmakerLiveResult {
   const eventsById = new Map<string, BookmakerSourceEvent>();
   const sourceLeagues = new Set<number>();
@@ -216,16 +235,16 @@ export function parseBookmakerLivePayloads(rawPayloads: unknown[]): BookmakerLiv
     const team1 = VERIFIED_TEAM_ALIASES[normalizeTeamName(rawTeam1)];
     const team2 = VERIFIED_TEAM_ALIASES[normalizeTeamName(rawTeam2)];
     if (!team1 || !team2) {
-      unmatched.push({ eventId: finiteNumber(event.I), team1: rawTeam1, team2: rawTeam2, reason: "unverified-team" });
+      unmatched.push(unmatchedEvent(event, rawTeam1, rawTeam2, "unverified-team"));
       continue;
     }
     if (team1.tag !== team2.tag) {
-      unmatched.push({ eventId: finiteNumber(event.I), team1: rawTeam1, team2: rawTeam2, reason: "division-mismatch" });
+      unmatched.push(unmatchedEvent(event, rawTeam1, rawTeam2, "division-mismatch"));
       continue;
     }
     const game = toScheduleGame(event, team1, team2);
     if (!game) {
-      unmatched.push({ eventId: finiteNumber(event.I), team1: rawTeam1, team2: rawTeam2, reason: "incomplete-live-payload" });
+      unmatched.push(unmatchedEvent(event, rawTeam1, rawTeam2, "incomplete-live-payload"));
       continue;
     }
     games.push(game);

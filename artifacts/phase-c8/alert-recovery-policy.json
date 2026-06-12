@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "warningAfterConsecutivePartialRuns": 5,
+  "criticalAfterConsecutiveFailedRuns": 3,
+  "recoveryAfterConsecutiveNonFailedRuns": 2,
+  "failedHeartbeatSeconds": 300,
+  "continuityPolicy": "retain_last_known_active_set_on_source_fail",
+  "monitor": "ops/systemd/ipbl-recorder-monitor",
+  "transitionOnly": true,
+  "installed": false
+}

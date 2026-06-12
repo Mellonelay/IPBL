@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-06-12T19:06:31.712Z",
+  "receivedEvents": 3,
+  "acceptedGames": 1,
+  "sourceLeagues": [
+    2496666,
+    2496667
+  ],
+  "sourceFailures": [],
+  "unmatched": [
+    {
+      "eventId": 728722353,
+      "leagueId": 2496666,
+      "sourceTeam1Id": 8629431,
+      "sourceTeam2Id": 8629433,
+      "team1": "Ulan-Ude",
+      "team2": "Khabarovsk",
+      "reason": "unverified-team",
+      "payloadState": "prematch"
+    },
+    {
+      "eventId": 728720968,
+      "leagueId": 2496667,
+      "sourceTeam1Id": 10419900,
+      "sourceTeam2Id": 10419902,
+      "team1": "Grozny (Women)",
+      "team2": "Nizhnekamsk (Women)",
+      "reason": "unverified-team",
+      "payloadState": "prematch"
+    }
+  ]
+}

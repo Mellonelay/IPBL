@@ -55,6 +55,10 @@
       "destination": "/api/recorder.ts?mode=history"
     },
     {
+      "source": "/api/recorder/health",
+      "destination": "/api/recorder.ts?mode=health"
+    },
+    {
       "source": "/api/ipbl/(.*)",
       "destination": "https://worker.mloneslot99.com/ipbl-proxy/$1"
     },
