@@ -128,3 +128,15 @@ assert.deepEqual(parseStoredResultsMonth(existing), existing);
 assert.equal(parseStoredResultsMonth({ "2026-06-01": {} }), null, "non-array day groups must be rejected");
 assert.equal(parseStoredResultsMonth({ "not-a-date": [] }), null, "invalid day keys must be rejected");
 assert.equal(parseStoredResultsMonth({ "2026-06-01": [{ date: "2026-06-01", division: "A", divisionTag: "a", games: [{}] }] }), null, "malformed rows must be rejected");
+
+const productionShapedLegacy = JSON.parse(JSON.stringify(existing));
+for (const groups of Object.values(productionShapedLegacy)) {
+  for (const group of groups as Array<{ games?: Array<{ game: { timeIsGo?: number | null } }> }>) {
+    for (const row of group.games ?? []) delete row.game.timeIsGo;
+  }
+}
+assert.deepEqual(
+  parseStoredResultsMonth(productionShapedLegacy),
+  productionShapedLegacy,
+  "legacy production rows may omit optional timeIsGo"
+);
