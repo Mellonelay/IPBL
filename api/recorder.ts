@@ -5,6 +5,12 @@ import { evaluateRecorderHealth, SOURCE_HEALTH_POLICY } from "../lib/server/sour
 
 const approved = new Set<string>(APPROVED_LIVE_TAGS);
 
+function requestSearchParams(req: VercelRequest): URLSearchParams {
+  const host = Array.isArray(req.headers.host) ? req.headers.host[0] : req.headers.host;
+  const base = `https://${host || "ipbl-minimal-viewer.vercel.app"}`;
+  return new URL(req.url || "/api/recorder", base).searchParams;
+}
+
 async function statusResponse(res: VercelResponse) {
   const redis = getResultsRedis();
   if (!redis) return res.status(503).json({ error: "recorder_storage_not_configured" });
@@ -27,10 +33,10 @@ async function healthResponse(res: VercelResponse) {
   return res.status(200).json({ health, activeGameKeys });
 }
 
-async function historyResponse(req: VercelRequest, res: VercelResponse) {
-  const division = typeof req.query.division === "string" ? req.query.division : "";
-  const gameId = Number.parseInt(typeof req.query.gameId === "string" ? req.query.gameId : "", 10);
-  const requestedLimit = Number.parseInt(typeof req.query.limit === "string" ? req.query.limit : "120", 10);
+async function historyResponse(search: URLSearchParams, res: VercelResponse) {
+  const division = search.get("division") ?? "";
+  const gameId = Number.parseInt(search.get("gameId") ?? "", 10);
+  const requestedLimit = Number.parseInt(search.get("limit") ?? "120", 10);
   if (!approved.has(division)) return res.status(400).json({ error: "invalid_division" });
   if (!Number.isInteger(gameId) || gameId <= 0) return res.status(400).json({ error: "invalid_game_id" });
   const limit = Math.min(Math.max(Number.isInteger(requestedLimit) ? requestedLimit : 120, 1), RECORDER_RETENTION);
@@ -47,9 +53,10 @@ async function historyResponse(req: VercelRequest, res: VercelResponse) {
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") return res.status(405).json({ error: "method_not_allowed" });
-  const mode = typeof req.query.mode === "string" ? req.query.mode : "";
+  const search = requestSearchParams(req);
+  const mode = search.get("mode") ?? "";
   if (mode === "status") return statusResponse(res);
-  if (mode === "history") return historyResponse(req, res);
+  if (mode === "history") return historyResponse(search, res);
   if (mode === "health") return healthResponse(res);
   return res.status(404).json({ error: "unknown_recorder_route" });
 }
