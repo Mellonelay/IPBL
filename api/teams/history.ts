@@ -27,15 +27,25 @@ function isoDay(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
-function recentCalendarWindow(): { from: string; to: string } {
+function recentCalendarWindows(days = 6): Array<{ from: string; to: string }> {
   const now = new Date();
-  const from = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - 4));
-  const to = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1));
-  return { from: isoDay(from), to: isoDay(to) };
+  const windows: Array<{ from: string; to: string }> = [];
+  for (let offset = days; offset >= 0; offset -= 1) {
+    const to = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - offset + 1));
+    const from = new Date(Date.UTC(to.getUTCFullYear(), to.getUTCMonth(), to.getUTCDate() - 1));
+    windows.push({ from: isoDay(from), to: isoDay(to) });
+  }
+  return windows;
 }
 
-async function fetchOfficialRecentCalendarHistoryRows(teamId: number, tag: string): Promise<{ items: ReturnType<typeof officialOnlineTeamHistoryItems>; ok: boolean; error: string | null; window: { from: string; to: string } }> {
-  const window = recentCalendarWindow();
+type OfficialRecentCalendarResult = {
+  items: ReturnType<typeof officialOnlineTeamHistoryItems>;
+  ok: boolean;
+  error: string | null;
+  windows: Array<{ from: string; to: string; ok: boolean; itemCount: number; error: string | null }>;
+};
+
+async function fetchOfficialRecentCalendarWindow(teamId: number, tag: string, window: { from: string; to: string }): Promise<{ items: ReturnType<typeof officialOnlineTeamHistoryItems>; ok: boolean; error: string | null; window: { from: string; to: string } }> {
   const params = new URLSearchParams({ tag, lang: RESULTS_LANG, from: window.from, to: window.to });
   const url = `${IPBL_API_BASE}/calendar?${params}`;
   try {
@@ -46,6 +56,20 @@ async function fetchOfficialRecentCalendarHistoryRows(teamId: number, tag: strin
   } catch (error) {
     return { items: [], ok: false, error: error instanceof Error ? error.message : String(error), window };
   }
+}
+
+async function fetchOfficialRecentCalendarHistoryRows(teamId: number, tag: string): Promise<OfficialRecentCalendarResult> {
+  const results = await Promise.all(recentCalendarWindows().map((window) => fetchOfficialRecentCalendarWindow(teamId, tag, window)));
+  const byGameId = new Map<number, ReturnType<typeof officialOnlineTeamHistoryItems>[number]>();
+  for (const result of results) {
+    for (const item of result.items) byGameId.set(item.game.id, item);
+  }
+  return {
+    items: [...byGameId.values()],
+    ok: results.some((result) => result.ok),
+    error: results.every((result) => !result.ok) ? results.map((result) => result.error).filter(Boolean).join('; ') || 'all recent calendar windows failed' : null,
+    windows: results.map((result) => ({ ...result.window, ok: result.ok, itemCount: result.items.length, error: result.error })),
+  };
 }
 
 function scalar(value: string | string[] | undefined): string {
@@ -95,7 +119,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           ok: officialRecentCalendar.ok,
           itemCount: officialRecentCalendar.items.length,
           error: officialRecentCalendar.error,
-          window: officialRecentCalendar.window,
+          windows: officialRecentCalendar.windows,
         },
       },
       source: officialOnline.items.length || officialRecentCalendar.items.length ? "results-kv+official-calendar" : "results-kv",

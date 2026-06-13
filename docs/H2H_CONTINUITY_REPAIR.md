@@ -10,3 +10,7 @@ The H2H block can be fresher than Results KV when official confirmed results are
 Rows are still accepted only when they match the requested approved division and requested team ID, have a real official game ID, and have a score. Dedupe remains by game ID, and sorting remains newest-first.
 
 This specifically fixes the case where Novokuznetsk vs Izhevsk displayed `13.06` and then jumped back to `10.06` while official confirmed calendar data contained `12.06`.
+
+## Daily window hotfix
+
+The official `/calendar` endpoint can omit intermediate confirmed rows when queried with one broad range. The implementation therefore queries recent one-day windows and deduplicates by official game ID before merging into Results KV.
