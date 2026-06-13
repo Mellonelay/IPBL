@@ -1,0 +1,173 @@
+{
+  "api1_calendar_online_ipbl-66-w-pro-b_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "ipbl_live_": {
+    "json": false,
+    "bytes": 81110,
+    "endpoints": []
+  },
+  "api1_calendar_online_ipbl-66-w-pro-d_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_widget_js_": {
+    "json": false,
+    "bytes": 7748,
+    "endpoints": [
+      "/calendar/online?",
+      "/player/best?"
+    ]
+  },
+  "api1_calendar_online_ipbl-66-w-pro-c_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_calendar_online_ipbl-66-w-pro-a_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_widget_css_": {
+    "json": false,
+    "bytes": 8174,
+    "endpoints": []
+  },
+  "api1_calendar_online_ipbl-66-m-pro-c_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_calendar_online_ipbl-66-m-pro-b_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_calendar_online_ipbl-66-w-pro-g_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_calendar_online_ipbl-66-m-pro-d_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_calendar_online_ipbl-66-w-pro-k_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_divisions_tree_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_standings_x_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_calendar_online_ipbl-66-m-pro-u_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_game_x_1073025_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_team_games_76043_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_calendar_online_ipbl-66-m-pro-a_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_box_x_1073025_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  },
+  "api1_calendar_online_x_": {
+    "json": true,
+    "type": "dict",
+    "keys": [
+      "data"
+    ],
+    "len": 1,
+    "sample": null
+  }
+}

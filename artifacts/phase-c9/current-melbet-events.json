@@ -1,0 +1,298 @@
+{
+  "capturedAt": "2026-06-13T06:42:18.406Z",
+  "output": [
+    {
+      "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+      "status": 200,
+      "leagueId": 2496666,
+      "error": null,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "events": [
+        {
+          "I": 728820121,
+          "LI": 2496666,
+          "L": "IPBL. Pro Division",
+          "LE": "IPBL. Pro Division",
+          "O1": "Tikhoretsk",
+          "O2": "Engels",
+          "O1I": 9949219,
+          "O2I": 9949233,
+          "S": 1781331000,
+          "SC": {
+            "FS": {
+              "S1": 67,
+              "S2": 83
+            },
+            "PS": [
+              {
+                "Key": 1,
+                "Value": {
+                  "S1": 24,
+                  "S2": 26,
+                  "NF": "1st quarter"
+                }
+              },
+              {
+                "Key": 2,
+                "Value": {
+                  "S1": 29,
+                  "S2": 27,
+                  "NF": "2nd quarter"
+                }
+              },
+              {
+                "Key": 3,
+                "Value": {
+                  "S1": 14,
+                  "S2": 30,
+                  "NF": "3rd quarter"
+                }
+              }
+            ],
+            "CP": 3,
+            "CPS": "3rd quarter",
+            "TS": 1686,
+            "TR": -1,
+            "I": "",
+            "ST": [
+              {
+                "Key": 0,
+                "Value": [
+                  {
+                    "ID": 53,
+                    "S1": "0",
+                    "S2": "0",
+                    "N": "Fouls"
+                  },
+                  {
+                    "ID": 49,
+                    "S1": "6",
+                    "S2": "16",
+                    "N": "2-pointers"
+                  },
+                  {
+                    "ID": 48,
+                    "S1": "18",
+                    "S2": "15",
+                    "N": "3-pointers"
+                  },
+                  {
+                    "ID": 50,
+                    "S1": "1",
+                    "S2": "6",
+                    "N": "Free throws"
+                  }
+                ]
+              }
+            ],
+            "SLS": "28 minutes"
+          },
+          "U": 1781332935
+        },
+        {
+          "I": 728819144,
+          "LI": 2496666,
+          "L": "IPBL. Pro Division",
+          "LE": "IPBL. Pro Division",
+          "O1": "Ukhta",
+          "O2": "Vorkuta",
+          "O1I": 9830015,
+          "O2I": 9830021,
+          "S": 1781330401,
+          "SC": {
+            "FS": {
+              "S1": 93,
+              "S2": 99
+            },
+            "PS": [
+              {
+                "Key": 1,
+                "Value": {
+                  "S1": 35,
+                  "S2": 31,
+                  "NF": "1st quarter"
+                }
+              },
+              {
+                "Key": 2,
+                "Value": {
+                  "S1": 14,
+                  "S2": 25,
+                  "NF": "2nd quarter"
+                }
+              },
+              {
+                "Key": 3,
+                "Value": {
+                  "S1": 27,
+                  "S2": 25,
+                  "NF": "3rd quarter"
+                }
+              },
+              {
+                "Key": 4,
+                "Value": {
+                  "S1": 17,
+                  "S2": 18,
+                  "NF": "4th quarter"
+                }
+              }
+            ],
+            "CP": 4,
+            "CPS": "4th quarter",
+            "TS": 2147,
+            "TR": -1,
+            "I": "",
+            "ST": [
+              {
+                "Key": 0,
+                "Value": [
+                  {
+                    "ID": 53,
+                    "S1": "0",
+                    "S2": "0",
+                    "N": "Fouls"
+                  },
+                  {
+                    "ID": 49,
+                    "S1": "31",
+                    "S2": "20",
+                    "N": "2-pointers"
+                  },
+                  {
+                    "ID": 48,
+                    "S1": "9",
+                    "S2": "18",
+                    "N": "3-pointers"
+                  },
+                  {
+                    "ID": 50,
+                    "S1": "6",
+                    "S2": "8",
+                    "N": "Free throws"
+                  }
+                ]
+              }
+            ],
+            "SLS": "35 minutes"
+          },
+          "U": 1781332938
+        }
+      ],
+      "bodyPreview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":67,\"S2\":83},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":24,\"S2\":26,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":29,\"S2\":27,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":14,\"S2\":30,\"NF\":\"3rd quarter\"}}],\"CP\":3,\"CPS\":\"3rd quarter\",\"TS\":1686,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49"
+    },
+    {
+      "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+      "status": 200,
+      "leagueId": 2496667,
+      "error": null,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "events": [
+        {
+          "I": 728819200,
+          "LI": 2496667,
+          "L": "IPBL. Pro Division. Women",
+          "LE": "IPBL. Pro Division. Women",
+          "O1": "Yaroslavl (Women)",
+          "O2": "Tomsk (Women)",
+          "O1I": 9814547,
+          "O2I": 9814563,
+          "S": 1781330400,
+          "SC": {
+            "FS": {
+              "S1": 74,
+              "S2": 78
+            },
+            "PS": [
+              {
+                "Key": 1,
+                "Value": {
+                  "S1": 17,
+                  "S2": 23,
+                  "NF": "1st quarter"
+                }
+              },
+              {
+                "Key": 2,
+                "Value": {
+                  "S1": 27,
+                  "S2": 22,
+                  "NF": "2nd quarter"
+                }
+              },
+              {
+                "Key": 3,
+                "Value": {
+                  "S1": 17,
+                  "S2": 23,
+                  "NF": "3rd quarter"
+                }
+              },
+              {
+                "Key": 4,
+                "Value": {
+                  "S1": 13,
+                  "S2": 10,
+                  "NF": "4th quarter"
+                }
+              }
+            ],
+            "CP": 4,
+            "CPS": "4th quarter",
+            "TS": 2038,
+            "TR": -1,
+            "I": "",
+            "ST": [
+              {
+                "Key": 0,
+                "Value": [
+                  {
+                    "ID": 53,
+                    "S1": "0",
+                    "S2": "0",
+                    "N": "Fouls"
+                  },
+                  {
+                    "ID": 49,
+                    "S1": "27",
+                    "S2": "22",
+                    "N": "2-pointers"
+                  },
+                  {
+                    "ID": 48,
+                    "S1": "5",
+                    "S2": "10",
+                    "N": "3-pointers"
+                  },
+                  {
+                    "ID": 50,
+                    "S1": "7",
+                    "S2": "4",
+                    "N": "Free throws"
+                  }
+                ]
+              }
+            ],
+            "SLS": "33 minutes"
+          },
+          "U": 1781332935
+        }
+      ],
+      "bodyPreview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":74,\"S2\":78},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":17,\"S2\":23,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":27,\"S2\":22,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":17,\"S2\":23,\"NF\":\"3rd quarter\"}},{\"Key\":4,\"Value\":{\"S1\":13,\"S2\":10,\"NF\":\"4th quarter\"}}],\"CP\":4,\"CPS\":\"4th quarter\",\"TS\":2038,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"V"
+    }
+  ]
+}

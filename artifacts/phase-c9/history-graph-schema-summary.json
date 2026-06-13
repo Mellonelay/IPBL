@@ -1,0 +1,65 @@
+{
+  "fixtureSourceUrl": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728820121&coefView=3&lng=en&partner=8",
+  "rootKeys": [
+    "Id",
+    "Success",
+    "Error",
+    "ErrorCode",
+    "Guid",
+    "Value"
+  ],
+  "valueKeys": [
+    "EG",
+    "SH",
+    "DS"
+  ],
+  "egCount": 5,
+  "shCount": 65,
+  "egFirstKeys": [
+    "E",
+    "C",
+    "CWV",
+    "S"
+  ],
+  "egFirstEventKeys": [
+    "PL",
+    "T",
+    "G",
+    "GS"
+  ],
+  "egFirstCCount": 118,
+  "shFirst": {
+    "DtUpdate": "/Date(1781330407190)/",
+    "Period": 1,
+    "PeriodName": "1st quarter",
+    "FullScore": {
+      "S1": 0,
+      "S2": 0
+    },
+    "PeriodScore": {
+      "S1": 0,
+      "S2": 0
+    },
+    "SubScore": {
+      "S1": null,
+      "S2": null
+    }
+  },
+  "shLast": {
+    "DtUpdate": "/Date(1781332933067)/",
+    "Period": 3,
+    "PeriodName": "3rd quarter",
+    "FullScore": {
+      "S1": 67,
+      "S2": 83
+    },
+    "PeriodScore": {
+      "S1": 14,
+      "S2": 30
+    },
+    "SubScore": {
+      "S1": null,
+      "S2": null
+    }
+  }
+}

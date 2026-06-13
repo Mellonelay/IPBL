@@ -1,0 +1,28 @@
+{
+  "phase": "C9",
+  "title": "Official IPBL Revival + 1xBet-family / EventsStat Intelligence Integration",
+  "generatedAt": "2026-06-13T06:43:03.017960+00:00",
+  "sourceAudit": "/root/runtime-audits/ipbl-c9-source-revival-20260613T064012Z",
+  "status": "proof-contract-materialized-not-deployed",
+  "tracks": {
+    "C9A": "Official IPBL revival audit",
+    "C9B": "EventsStat EG/SH intelligence proof"
+  },
+  "proofs": {
+    "officialDirectReachable": true,
+    "workerProxyReachableForTestedPaths": true,
+    "historyGraphExtProven": true,
+    "productionOddsFeaturesDeployed": false,
+    "newDivisionsAdded": false,
+    "tlsWeakened": false,
+    "unverifiedTeamsMapped": false
+  },
+  "remaining": [
+    "full EG market ID and selection ID mapping",
+    "full SH timestamp and score-alignment proof",
+    "odds-vs-score divergence feature design",
+    "recorder enrichment write-budget and retention policy",
+    "UI/API movement graph review",
+    "Results KV and Team Statistics reconciliation"
+  ]
+}
