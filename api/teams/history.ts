@@ -72,16 +72,19 @@ async function fetchOfficialRecentCalendarHistoryRows(teamId: number, tag: strin
   };
 }
 
-function scalar(value: string | string[] | undefined): string {
-  return Array.isArray(value) ? value[0] ?? "" : value ?? "";
+function requestSearchParams(req: VercelRequest): URLSearchParams {
+  const host = Array.isArray(req.headers.host) ? req.headers.host[0] : req.headers.host;
+  const base = `https://${host || "ipbl-minimal-viewer.vercel.app"}`;
+  return new URL(req.url || "/api/teams/history", base).searchParams;
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") return res.status(405).json({ error: "Method not allowed" });
 
-  const teamId = Number(scalar(req.query.teamId));
-  const tag = scalar(req.query.tag);
-  const season = Number(scalar(req.query.season));
+  const search = requestSearchParams(req);
+  const teamId = Number(search.get("teamId") ?? "");
+  const tag = search.get("tag") ?? "";
+  const season = Number(search.get("season") ?? "");
   if (!Number.isInteger(teamId) || teamId <= 0 || !Number.isInteger(season) || season < 2020 || !tag) {
     return res.status(400).json({ error: "Invalid teamId, tag, or season" });
   }

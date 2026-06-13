@@ -3,7 +3,7 @@ import { parseCalendarItems, type ScheduleGame } from "../../lib/server/calendar
 import { fetchMelbetLive } from "../../lib/server/bookmaker-live.js";
 
 const PROXY_BASE = "https://worker.mloneslot99.com/ipbl-proxy";
-const LIVE_TAGS = [
+export const LIVE_TAGS = [
   "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-u",
   "ipbl-66-w-pro-a", "ipbl-66-w-pro-b", "ipbl-66-w-pro-c", "ipbl-66-w-pro-d", "ipbl-66-w-pro-g", "ipbl-66-w-pro-k",
 ] as const;
@@ -36,7 +36,7 @@ function myanmar(game: ScheduleGame): ScheduleGame {
   };
 }
 
-async function fetchTag(tag: string): Promise<{ tag: string; games: ScheduleGame[]; error?: string }> {
+export async function fetchLiveTag(tag: string): Promise<{ tag: string; games: ScheduleGame[]; error?: string }> {
   const url = `${PROXY_BASE}/calendar/online?${new URLSearchParams({ tag, lang: "ru" })}`;
   try {
     const response = await fetch(url, { headers: { Accept: "application/json" } });
@@ -48,16 +48,21 @@ async function fetchTag(tag: string): Promise<{ tag: string; games: ScheduleGame
   }
 }
 
-export default async function handler(_req: VercelRequest, res: VercelResponse) {
+export type LiveFeedEnvelope = {
+  games: ScheduleGame[];
+  status: Record<string, unknown>;
+};
+
+export async function buildLiveFeedEnvelope(): Promise<LiveFeedEnvelope> {
   const started = Date.now();
-  const batches = await Promise.all(LIVE_TAGS.map(fetchTag));
+  const batches = await Promise.all(LIVE_TAGS.map(fetchLiveTag));
   const failures = batches.filter((batch) => batch.error).map(({ tag, error }) => ({ tag, error }));
   const byId = new Map<string, ScheduleGame>();
   for (const batch of batches) for (const game of batch.games) byId.set(`${game.tag}:${game.gameId}`, game);
   const officialGames = [...byId.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
 
   if (officialGames.length > 0) {
-    return res.status(200).json({
+    return {
       games: officialGames,
       status: {
         lastSyncAt: new Date().toISOString(),
@@ -69,13 +74,13 @@ export default async function handler(_req: VercelRequest, res: VercelResponse) 
         latencyMs: Date.now() - started,
         displayTimeZone: "Asia/Yangon",
       },
-    });
+    };
   }
 
   try {
     const fallback = await fetchMelbetLive();
     const games = fallback.games.sort((a, b) => a.localTime.localeCompare(b.localTime));
-    return res.status(200).json({
+    return {
       games,
       status: {
         lastSyncAt: new Date().toISOString(),
@@ -94,9 +99,9 @@ export default async function handler(_req: VercelRequest, res: VercelResponse) 
         latencyMs: Date.now() - started,
         displayTimeZone: "Asia/Yangon",
       },
-    });
+    };
   } catch (error) {
-    return res.status(200).json({
+    return {
       games: [],
       status: {
         lastSyncAt: new Date().toISOString(),
@@ -112,6 +117,10 @@ export default async function handler(_req: VercelRequest, res: VercelResponse) 
         latencyMs: Date.now() - started,
         displayTimeZone: "Asia/Yangon",
       },
-    });
+    };
   }
+}
+
+export default async function handler(_req: VercelRequest, res: VercelResponse) {
+  return res.status(200).json(await buildLiveFeedEnvelope());
 }
