@@ -31,7 +31,7 @@ It probes all current Melbet IPBL candidate IDs for evidence, while keeping a se
 
 ## Row normalization
 
-Each source row is normalized into a deterministic structure: `source`, `rowKey`, `gameId`, `divisionTag`, home/away names, normalized team names, score, period, clock, status, and raw key shape.
+Each source row is normalized into a deterministic structure: `source`, `rowKey`, `gameId`, `divisionTag`, home/away names, normalized team names, score, period, clock, status, and raw key shape. The normalizer strips bookmaker gender suffixes such as `(Women)` and `Women` before team-pair comparison, matching the production bookmaker adapter behavior.
 
 Matching priority is scoped `divisionTag:gameId`, then `gameId`, then normalized home/away pair. `source:index` is only a diagnostic fallback.
 
@@ -44,3 +44,5 @@ Matching priority is scoped `divisionTag:gameId`, then `gameId`, then normalized
 The default command probes EventsStat only when production has active live games. The fallback reprobe command can sample known IDs, but fallback evidence does not unlock production odds deployment.
 
 Odds deployment remains blocked until active-production EG/SH/DS, row-level reconciliation, source policy, parser tests, and evidence review are all accepted.
+
+The odds implementation gate is explicit: `oddsImplementationGate.requiresActiveMatchedEventsstatProven` must be `true` and `oddsImplementationGate.passed` must be `true`. PR23 never sets `oddsDeploymentAllowed=true`; it only records whether the prerequisite evidence exists.

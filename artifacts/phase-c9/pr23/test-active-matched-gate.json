@@ -1,6 +1,6 @@
 {
   "summary": {
-    "capturedAt": "2026-06-13T11:45:54.225Z",
+    "capturedAt": "2026-06-13T11:46:00.541Z",
     "endpoints": {
       "officialLivePage": {
         "url": "https://ipbl.pro/live",
@@ -109,7 +109,7 @@
         ]
       },
       "productionLive": {
-        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781351146702",
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781351154602",
         "http": 200,
         "ok": true,
         "bytes": 854,
@@ -155,7 +155,7 @@
             "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
             "http": 200,
             "ok": true,
-            "bytes": 4645,
+            "bytes": 4635,
             "error": null
           },
           {
@@ -264,7 +264,7 @@
     "officialLivePage": {
       "label": "officialLivePage",
       "url": "https://ipbl.pro/live",
-      "capturedAt": "2026-06-13T11:45:47.824Z",
+      "capturedAt": "2026-06-13T11:45:55.958Z",
       "http": 200,
       "ok": true,
       "bytes": 81374,
@@ -275,14 +275,14 @@
     "officialCalendar": {
       "label": "officialCalendar",
       "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
-      "capturedAt": "2026-06-13T11:45:51.751Z",
+      "capturedAt": "2026-06-13T11:45:58.640Z",
       "ok": true,
       "http": 200,
       "components": [
         {
           "label": "officialCalendar-ipbl-66-m-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
-          "capturedAt": "2026-06-13T11:45:48.440Z",
+          "capturedAt": "2026-06-13T11:45:55.036Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -301,7 +301,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
-          "capturedAt": "2026-06-13T11:45:49.166Z",
+          "capturedAt": "2026-06-13T11:45:55.497Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -320,7 +320,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
-          "capturedAt": "2026-06-13T11:45:49.469Z",
+          "capturedAt": "2026-06-13T11:45:55.779Z",
           "http": 200,
           "ok": true,
           "bytes": 1864,
@@ -442,7 +442,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
-          "capturedAt": "2026-06-13T11:45:49.775Z",
+          "capturedAt": "2026-06-13T11:45:56.068Z",
           "http": 200,
           "ok": true,
           "bytes": 1908,
@@ -564,7 +564,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-u",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
-          "capturedAt": "2026-06-13T11:45:50.051Z",
+          "capturedAt": "2026-06-13T11:45:56.348Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -583,7 +583,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
-          "capturedAt": "2026-06-13T11:45:50.328Z",
+          "capturedAt": "2026-06-13T11:45:56.632Z",
           "http": 200,
           "ok": true,
           "bytes": 1855,
@@ -705,7 +705,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
-          "capturedAt": "2026-06-13T11:45:50.618Z",
+          "capturedAt": "2026-06-13T11:45:56.918Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -724,7 +724,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
-          "capturedAt": "2026-06-13T11:45:50.893Z",
+          "capturedAt": "2026-06-13T11:45:57.815Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -743,7 +743,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
-          "capturedAt": "2026-06-13T11:45:51.184Z",
+          "capturedAt": "2026-06-13T11:45:58.094Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -762,7 +762,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-g",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
-          "capturedAt": "2026-06-13T11:45:51.470Z",
+          "capturedAt": "2026-06-13T11:45:58.369Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -781,7 +781,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-k",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
-          "capturedAt": "2026-06-13T11:45:51.751Z",
+          "capturedAt": "2026-06-13T11:45:58.639Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -1117,8 +1117,8 @@
     },
     "productionLive": {
       "label": "productionLive",
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781351146702",
-      "capturedAt": "2026-06-13T11:45:48.014Z",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781351154602",
+      "capturedAt": "2026-06-13T11:45:55.851Z",
       "http": 200,
       "ok": true,
       "bytes": 854,
@@ -1161,22 +1161,22 @@
           }
         ],
         "status": {
-          "lastSyncAt": "2026-06-13T11:45:47.898Z",
+          "lastSyncAt": "2026-06-13T11:45:55.736Z",
           "status": "OK",
           "source": "official:api1.ipbl.pro",
           "requestedDivisions": 11,
           "successfulDivisions": 11,
           "failures": [],
-          "latencyMs": 910,
+          "latencyMs": 873,
           "displayTimeZone": "Asia/Yangon"
         }
       },
-      "preview": "{\"games\":[{\"gameId\":1071074,\"tag\":\"ipbl-66-w-pro-a\",\"status\":\"Online\",\"statusDisplay\":\"Live\",\"upstreamStatusId\":\"Online\",\"score1\":70,\"score2\":65,\"scoreText\":\"70 : 65\",\"fullScore\":null,\"localDate\":\"13.06.2026\",\"localTime\":\"17:35\",\"divisionLabel\":\"Pro Women A\",\"period\":3,\"timeToGo\":\"0.34\",\"timeIsGo\":1,\"isLive\":true,\"updatedAt\":null,\"scheduledTime\":\"2026-06-13T16:05:00+05:00\",\"sourceLocalDate\":\"13.06.2026\",\"sourceLocalTime\":\"16:05\",\"sourceTimeZone\":\"UTC+05:00\",\"team1\":{\"teamId\":76020,\"shortName\":\"Novokuznetsk\",\"name\":\"Novokuznetsk\"},\"team2\":{\"teamId\":76022,\"shortName\":\"Magnitogorsk\",\"name\":\"Magnitogorsk\"},\"displayTimeZone\":\"Asia/Yangon\"}],\"status\":{\"lastSyncAt\":\"2026-06-13T11:45:47.898Z\",\"status\":\"OK\",\"source\":\"official:api1.ipbl.pro\",\"requestedDivisions\":11,\"successfulDivisions\":11,\"failures\":[],\"latencyMs\":910,\"displayTimeZone\":\"Asia/Yangon\"}}"
+      "preview": "{\"games\":[{\"gameId\":1071074,\"tag\":\"ipbl-66-w-pro-a\",\"status\":\"Online\",\"statusDisplay\":\"Live\",\"upstreamStatusId\":\"Online\",\"score1\":70,\"score2\":65,\"scoreText\":\"70 : 65\",\"fullScore\":null,\"localDate\":\"13.06.2026\",\"localTime\":\"17:35\",\"divisionLabel\":\"Pro Women A\",\"period\":3,\"timeToGo\":\"0.34\",\"timeIsGo\":1,\"isLive\":true,\"updatedAt\":null,\"scheduledTime\":\"2026-06-13T16:05:00+05:00\",\"sourceLocalDate\":\"13.06.2026\",\"sourceLocalTime\":\"16:05\",\"sourceTimeZone\":\"UTC+05:00\",\"team1\":{\"teamId\":76020,\"shortName\":\"Novokuznetsk\",\"name\":\"Novokuznetsk\"},\"team2\":{\"teamId\":76022,\"shortName\":\"Magnitogorsk\",\"name\":\"Magnitogorsk\"},\"displayTimeZone\":\"Asia/Yangon\"}],\"status\":{\"lastSyncAt\":\"2026-06-13T11:45:55.736Z\",\"status\":\"OK\",\"source\":\"official:api1.ipbl.pro\",\"requestedDivisions\":11,\"successfulDivisions\":11,\"failures\":[],\"latencyMs\":873,\"displayTimeZone\":\"Asia/Yangon\"}}"
     },
     "recorderStatus": {
       "label": "recorderStatus",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
-      "capturedAt": "2026-06-13T11:45:47.327Z",
+      "capturedAt": "2026-06-13T11:45:55.196Z",
       "http": 200,
       "ok": true,
       "bytes": 561,
@@ -1216,14 +1216,14 @@
     "recorderHistory": {
       "label": "recorderHistory",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
-      "capturedAt": "2026-06-13T11:45:52.256Z",
+      "capturedAt": "2026-06-13T11:45:59.120Z",
       "ok": true,
       "http": 200,
       "components": [
         {
           "label": "recorderHistory-ipbl-66-w-pro-a-1071074",
           "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-w-pro-a&gameId=1071074&limit=5",
-          "capturedAt": "2026-06-13T11:45:52.256Z",
+          "capturedAt": "2026-06-13T11:45:59.120Z",
           "http": 200,
           "ok": true,
           "bytes": 4964,
@@ -1726,17 +1726,17 @@
     "melbetLiveDiscovery": {
       "label": "melbetLiveDiscovery",
       "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
-      "capturedAt": "2026-06-13T11:45:47.729Z",
+      "capturedAt": "2026-06-13T11:45:55.508Z",
       "ok": true,
       "http": 200,
       "components": [
         {
           "label": "melbetLive-2496666",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-13T11:45:47.538Z",
+          "capturedAt": "2026-06-13T11:45:55.343Z",
           "http": 200,
           "ok": true,
-          "bytes": 4645,
+          "bytes": 4635,
           "contentType": "application/json; charset=utf-8",
           "json": {
             "Id": 0,
@@ -1788,7 +1788,7 @@
                   ],
                   "CP": 4,
                   "CPS": "4th quarter",
-                  "TS": 2365,
+                  "TS": 2375,
                   "TR": -1,
                   "I": "",
                   "ST": [
@@ -1828,7 +1828,7 @@
                 "VA": 1,
                 "ZP": 4627910,
                 "HMH": 1,
-                "U": 1781351144,
+                "U": 1781351154,
                 "OuR": true,
                 "SVoAP": true,
                 "I": 728878363,
@@ -1987,7 +1987,7 @@
                 "VA": 1,
                 "ZP": 4628327,
                 "HMH": 1,
-                "U": 1781351147,
+                "U": 1781351154,
                 "OuR": true,
                 "SVoAP": true,
                 "I": 728880079,
@@ -1997,82 +1997,82 @@
                 "E": [
                   {
                     "T": 401,
-                    "C": 1.31,
-                    "CV": "1.31",
+                    "C": 1.175,
+                    "CV": "1.175",
                     "G": 101
                   },
                   {
                     "T": 3653,
-                    "C": 1.365,
-                    "CV": "1.365",
+                    "C": 1.216,
+                    "CV": "1.216",
                     "G": 2766
                   },
                   {
                     "T": 14,
-                    "P": 95.5,
-                    "C": 1.744,
-                    "CV": "1.744",
+                    "P": 94.5,
+                    "C": 1.735,
+                    "CV": "1.735",
                     "G": 62
+                  },
+                  {
+                    "T": 11,
+                    "P": 100.5,
+                    "C": 1.768,
+                    "CV": "1.768",
+                    "G": 15
                   },
                   {
                     "T": 9,
                     "P": 194.5,
-                    "C": 1.76,
-                    "CV": "1.76",
+                    "C": 1.77,
+                    "CV": "1.77",
                     "G": 17
                   },
                   {
-                    "T": 11,
-                    "P": 99.5,
-                    "C": 1.76,
-                    "CV": "1.76",
-                    "G": 15
-                  },
-                  {
                     "T": 7,
-                    "P": -4.5,
-                    "C": 1.805,
-                    "CV": "1.805",
+                    "P": -6.5,
+                    "C": 1.8,
+                    "CV": "1.8",
                     "G": 2
                   },
                   {
                     "T": 8,
-                    "P": 4.5,
-                    "C": 1.856,
-                    "CV": "1.856",
+                    "P": 6.5,
+                    "C": 1.86,
+                    "CV": "1.86",
                     "G": 2
                   },
                   {
                     "T": 10,
                     "P": 194.5,
-                    "C": 1.904,
-                    "CV": "1.904",
+                    "C": 1.896,
+                    "CV": "1.896",
                     "G": 17
                   },
                   {
                     "T": 12,
-                    "P": 99.5,
-                    "C": 1.904,
-                    "CV": "1.904",
+                    "P": 100.5,
+                    "C": 1.9,
+                    "CV": "1.9",
                     "G": 15
                   },
                   {
                     "T": 13,
-                    "P": 95.5,
-                    "C": 1.92,
-                    "CV": "1.92",
+                    "P": 94.5,
+                    "C": 1.94,
+                    "CV": "1.94",
                     "G": 62
                   },
                   {
                     "T": 402,
-                    "C": 3.016,
-                    "CV": "3.016",
+                    "C": 4.12,
+                    "CV": "4.12",
                     "G": 101
                   },
                   {
                     "T": 3655,
-                    "C": 3.344,
-                    "CV": "3.344",
+                    "C": 4.64,
+                    "CV": "4.64",
                     "G": 2766
                   },
                   {
@@ -2088,74 +2088,74 @@
                     "ME": [
                       {
                         "T": 7,
-                        "P": -2.5,
-                        "C": 1.504,
-                        "CV": "1.504",
+                        "P": -4.5,
+                        "C": 1.51,
+                        "CV": "1.51",
                         "G": 2
                       },
                       {
                         "T": 8,
-                        "P": 2.5,
-                        "C": 2.304,
-                        "CV": "2.304",
+                        "P": 4.5,
+                        "C": 2.296,
+                        "CV": "2.296",
                         "G": 2
                       },
                       {
                         "T": 7,
-                        "P": -3.5,
+                        "P": -5.5,
                         "C": 1.64,
                         "CV": "1.64",
                         "G": 2
                       },
                       {
                         "T": 8,
-                        "P": 3.5,
+                        "P": 5.5,
                         "C": 2.06,
                         "CV": "2.06",
                         "G": 2
                       },
                       {
                         "T": 7,
-                        "P": -4.5,
-                        "C": 1.805,
-                        "CV": "1.805",
-                        "G": 2,
-                        "CE": 1
-                      },
-                      {
-                        "T": 8,
-                        "P": 4.5,
-                        "C": 1.856,
-                        "CV": "1.856",
-                        "G": 2,
-                        "CE": 1
-                      },
-                      {
-                        "T": 7,
-                        "P": -5.5,
-                        "C": 1.995,
-                        "CV": "1.995",
-                        "G": 2
-                      },
-                      {
-                        "T": 8,
-                        "P": 5.5,
-                        "C": 1.685,
-                        "CV": "1.685",
-                        "G": 2
-                      },
-                      {
-                        "T": 7,
                         "P": -6.5,
-                        "C": 2.23,
-                        "CV": "2.23",
-                        "G": 2
+                        "C": 1.8,
+                        "CV": "1.8",
+                        "G": 2,
+                        "CE": 1
                       },
                       {
                         "T": 8,
                         "P": 6.5,
-                        "C": 1.54,
-                        "CV": "1.54",
+                        "C": 1.86,
+                        "CV": "1.86",
+                        "G": 2,
+                        "CE": 1
+                      },
+                      {
+                        "T": 7,
+                        "P": -7.5,
+                        "C": 1.98,
+                        "CV": "1.98",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": 7.5,
+                        "C": 1.696,
+                        "CV": "1.696",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": -8.5,
+                        "C": 2.21,
+                        "CV": "2.21",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": 8.5,
+                        "C": 1.55,
+                        "CV": "1.55",
                         "G": 2
                       }
                     ]
@@ -2166,73 +2166,73 @@
                       {
                         "T": 9,
                         "P": 192.5,
-                        "C": 1.488,
-                        "CV": "1.488",
+                        "C": 1.49,
+                        "CV": "1.49",
                         "G": 17
                       },
                       {
                         "T": 10,
                         "P": 192.5,
-                        "C": 2.25,
-                        "CV": "2.25",
+                        "C": 2.24,
+                        "CV": "2.24",
                         "G": 17
                       },
                       {
                         "T": 9,
                         "P": 193.5,
-                        "C": 1.6,
-                        "CV": "1.6",
+                        "C": 1.605,
+                        "CV": "1.605",
                         "G": 17
                       },
                       {
                         "T": 10,
                         "P": 193.5,
-                        "C": 2.03,
-                        "CV": "2.03",
+                        "C": 2.025,
+                        "CV": "2.025",
                         "G": 17
                       },
                       {
                         "T": 9,
                         "P": 194.5,
-                        "C": 1.76,
-                        "CV": "1.76",
+                        "C": 1.77,
+                        "CV": "1.77",
                         "G": 17,
                         "CE": 1
                       },
                       {
                         "T": 10,
                         "P": 194.5,
-                        "C": 1.904,
-                        "CV": "1.904",
+                        "C": 1.896,
+                        "CV": "1.896",
                         "G": 17,
                         "CE": 1
                       },
                       {
                         "T": 9,
                         "P": 195.5,
-                        "C": 1.88,
-                        "CV": "1.88",
+                        "C": 1.888,
+                        "CV": "1.888",
                         "G": 17
                       },
                       {
                         "T": 10,
                         "P": 195.5,
-                        "C": 1.71,
-                        "CV": "1.71",
+                        "C": 1.704,
+                        "CV": "1.704",
                         "G": 17
                       },
                       {
                         "T": 9,
                         "P": 196.5,
-                        "C": 2.048,
-                        "CV": "2.048",
+                        "C": 2.06,
+                        "CV": "2.06",
                         "G": 17
                       },
                       {
                         "T": 10,
                         "P": 196.5,
-                        "C": 1.59,
-                        "CV": "1.59",
+                        "C": 1.584,
+                        "CV": "1.584",
                         "G": 17
                       }
                     ]
@@ -2309,12 +2309,12 @@
               }
             ]
           },
-          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":94,\"S2\":110},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":29,\"S2\":33,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":18,\"S2\":22,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":32,\"S2\":28,\"NF\":\"3rd quarter\"}},{\"Key\":4,\"Value\":{\"S1\":15,\"S2\":27,\"NF\":\"4th quarter\"}}],\"CP\":4,\"CPS\":\"4th quarter\",\"TS\":2365,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"26\",\"S2\":\"26\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"10\",\"S2\":\"16\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"12\",\"S2\":\"10\",\"N\":\"Free throws\"}]}],\"SLS\":\"39 minutes\"},\"VI\":\"19397760\",\"VA\":1,\"ZP\":4627910,\"HMH\":1,\"U\":1781351144,\"OuR\":true,\"SVoAP\":true,\"I\":728878363,\"N\":159527,\"T\":99,\"CO\":50,\"E\":[],\"AE\":[],\"EC\":2,\"TG\":\"\",\"V\":\"Including Overtime\",\"VE\":\"Including Overtime\",\"PN\":\"\",\"TN\":\"Quarter\",\"DI\":\"\",\"SS\":3,\"STI\":\"695888e76d807ed026780f0e\",\"S\":1781348400,\"CHIMG\":\"95b77fbaa64b9c1f5877579e5ed4349e.png\",\"O1\":\"Revda\",\"O2\":\"Anapa\",\"O1I\":9829757,\"O2I\":9829755,\"O1IS\":[9829757],\"O2IS\":[9829755],\"O1C\":225,\"O2C\":225,\"O1IMG\":[\"992b7b53bb89a36df52640ac751d344a.png\"],\"O2IMG\":[\"e5af40ceac6255eb23bb69398930f834.png\"],\"O1R\":\"Revda\",\"O2R\":\"Anapa\",\"O1E\":\"Revda\",\"O"
+          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":94,\"S2\":110},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":29,\"S2\":33,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":18,\"S2\":22,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":32,\"S2\":28,\"NF\":\"3rd quarter\"}},{\"Key\":4,\"Value\":{\"S1\":15,\"S2\":27,\"NF\":\"4th quarter\"}}],\"CP\":4,\"CPS\":\"4th quarter\",\"TS\":2375,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"26\",\"S2\":\"26\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"10\",\"S2\":\"16\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"12\",\"S2\":\"10\",\"N\":\"Free throws\"}]}],\"SLS\":\"39 minutes\"},\"VI\":\"19397760\",\"VA\":1,\"ZP\":4627910,\"HMH\":1,\"U\":1781351154,\"OuR\":true,\"SVoAP\":true,\"I\":728878363,\"N\":159527,\"T\":99,\"CO\":50,\"E\":[],\"AE\":[],\"EC\":2,\"TG\":\"\",\"V\":\"Including Overtime\",\"VE\":\"Including Overtime\",\"PN\":\"\",\"TN\":\"Quarter\",\"DI\":\"\",\"SS\":3,\"STI\":\"695888e76d807ed026780f0e\",\"S\":1781348400,\"CHIMG\":\"95b77fbaa64b9c1f5877579e5ed4349e.png\",\"O1\":\"Revda\",\"O2\":\"Anapa\",\"O1I\":9829757,\"O2I\":9829755,\"O1IS\":[9829757],\"O2IS\":[9829755],\"O1C\":225,\"O2C\":225,\"O1IMG\":[\"992b7b53bb89a36df52640ac751d344a.png\"],\"O2IMG\":[\"e5af40ceac6255eb23bb69398930f834.png\"],\"O1R\":\"Revda\",\"O2R\":\"Anapa\",\"O1E\":\"Revda\",\"O"
         },
         {
           "label": "melbetLive-2496667",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-13T11:45:47.729Z",
+          "capturedAt": "2026-06-13T11:45:55.508Z",
           "http": 200,
           "ok": true,
           "bytes": 3256,
@@ -2369,7 +2369,7 @@
                   ],
                   "CP": 4,
                   "CPS": "4th quarter",
-                  "TS": 1956,
+                  "TS": 1964,
                   "TR": -1,
                   "I": "",
                   "ST": [
@@ -2409,7 +2409,7 @@
                 "VA": 1,
                 "ZP": 4628317,
                 "HMH": 1,
-                "U": 1781351146,
+                "U": 1781351154,
                 "OuR": true,
                 "SVoAP": true,
                 "I": 728878178,
@@ -2731,7 +2731,7 @@
               }
             ]
           },
-          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":78,\"S2\":75},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":28,\"S2\":26,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":19,\"S2\":25,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":23,\"S2\":17,\"NF\":\"3rd quarter\"}},{\"Key\":4,\"Value\":{\"S1\":8,\"S2\":7,\"NF\":\"4th quarter\"}}],\"CP\":4,\"CPS\":\"4th quarter\",\"TS\":1956,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"22\",\"S2\":\"22\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"9\",\"S2\":\"10\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"7\",\"S2\":\"1\",\"N\":\"Free throws\"}]}],\"SLS\":\"32 minutes\"},\"VI\":\"19397804\",\"VA\":1,\"ZP\":4628317,\"HMH\":1,\"U\":1781351146,\"OuR\":true,\"SVoAP\":true,\"I\":728878178,\"N\":159332,\"T\":99,\"CO\":50,\"E\":[{\"T\":401,\"C\":1.464,\"CV\":\"1.464\",\"G\":101},{\"T\":3653,\"C\":1.55,\"CV\":\"1.55\",\"G\":2766},{\"T\":13,\"P\":93.5,\"C\":1.768,\"CV\":\"1.768\",\"G\":62},{\"T\":10,\"P\":190.5,\"C\":1.77,\"CV\":\"1.77\",\"G\":17},{\"T\":7,\"P\":-2.5,\"C\":1.78,\"CV\":\"1.78\",\"G\":2},{\"T\":12,\"P\":96.5,\"C\":1.79,\"CV\":\"1.79\",\"G\":15},{\"T\":11,\"P\":96.5,\"C\":1.87,\"CV\":\"1.87\",\"G\":15},{\"T\":8,\"P\":2.5,\"C\":1.88,\"CV\":\"1.88\",\"G\":2},{\"T\":9,\"P\":190.5,\"C\":1.896,\"CV\":\"1.896\",\"G\":17},{\"T\":14,\"P\":93.5,\"C\":1.9,\"CV\":\"1.9\",\"G\":62},{\"T\":402,\"C\":2.41"
+          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":78,\"S2\":75},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":28,\"S2\":26,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":19,\"S2\":25,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":23,\"S2\":17,\"NF\":\"3rd quarter\"}},{\"Key\":4,\"Value\":{\"S1\":8,\"S2\":7,\"NF\":\"4th quarter\"}}],\"CP\":4,\"CPS\":\"4th quarter\",\"TS\":1964,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"22\",\"S2\":\"22\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"9\",\"S2\":\"10\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"7\",\"S2\":\"1\",\"N\":\"Free throws\"}]}],\"SLS\":\"32 minutes\"},\"VI\":\"19397804\",\"VA\":1,\"ZP\":4628317,\"HMH\":1,\"U\":1781351154,\"OuR\":true,\"SVoAP\":true,\"I\":728878178,\"N\":159332,\"T\":99,\"CO\":50,\"E\":[{\"T\":401,\"C\":1.464,\"CV\":\"1.464\",\"G\":101},{\"T\":3653,\"C\":1.55,\"CV\":\"1.55\",\"G\":2766},{\"T\":13,\"P\":93.5,\"C\":1.768,\"CV\":\"1.768\",\"G\":62},{\"T\":10,\"P\":190.5,\"C\":1.77,\"CV\":\"1.77\",\"G\":17},{\"T\":7,\"P\":-2.5,\"C\":1.78,\"CV\":\"1.78\",\"G\":2},{\"T\":12,\"P\":96.5,\"C\":1.79,\"CV\":\"1.79\",\"G\":15},{\"T\":11,\"P\":96.5,\"C\":1.87,\"CV\":\"1.87\",\"G\":15},{\"T\":8,\"P\":2.5,\"C\":1.88,\"CV\":\"1.88\",\"G\":2},{\"T\":9,\"P\":190.5,\"C\":1.896,\"CV\":\"1.896\",\"G\":17},{\"T\":14,\"P\":93.5,\"C\":1.9,\"CV\":\"1.9\",\"G\":62},{\"T\":402,\"C\":2.41"
         }
       ],
       "json": {
@@ -3729,7 +3729,7 @@
       "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728878363&coefView=3&lng=en&partner=25",
       "http": 200,
       "ok": true,
-      "bytes": 31753,
+      "bytes": 35603,
       "success": true,
       "rootKeys": [
         "Id",
@@ -3931,7 +3931,7 @@
       "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728880079&coefView=3&lng=en&partner=25",
       "http": 200,
       "ok": true,
-      "bytes": 29107,
+      "bytes": 23437,
       "success": true,
       "rootKeys": [
         "Id",
