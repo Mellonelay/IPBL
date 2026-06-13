@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "migration": "ipbl-66-m-pro-z-approved-division-boundary",
+  "classification": "format-change-migration",
+  "newApprovedDivision": "ipbl-66-m-pro-z",
+  "men": ["ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-u", "ipbl-66-m-pro-z"],
+  "women": ["ipbl-66-w-pro-a", "ipbl-66-w-pro-b", "ipbl-66-w-pro-c", "ipbl-66-w-pro-d", "ipbl-66-w-pro-g", "ipbl-66-w-pro-k"],
+  "totalApprovedDivisions": 12,
+  "sourceEvidence": {
+    "officialLiveScreenshotProvidedByOperator": true,
+    "officialProxyProbe": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-z&lang=en",
+    "observedTeams": ["Anapa", "Magadan"],
+    "observedTeamIds": [76055, 76054],
+    "observedDivisionTag": "ipbl-66-m-pro-z",
+    "observedDivisionLabel": "Pro Division Men Z",
+    "observedOfficialGameId": 1072122
+  },
+  "policy": { "oddsDeployment": false, "experimentalDivision": false, "approvedBoundaryUpdate": true }
+}
