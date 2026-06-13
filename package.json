@@ -33,7 +33,8 @@
     "test:c9-active-matched-gate": "node tests/phase-c9-active-matched-gate.test.mjs",
     "test:approved-divisions": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-approved-divisions.test.mjs",
     "test:h2h-freshness": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-live.test.ts",
-    "test:h2h-continuity": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-recent-calendar.test.ts"
+    "test:h2h-continuity": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-recent-calendar.test.ts",
+    "ops:vercel-preflight": "node scripts/ops/vercel-release-preflight.mjs"
   },
   "dependencies": {
     "@upstash/redis": "^1.34.0",
