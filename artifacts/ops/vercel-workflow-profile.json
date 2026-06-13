@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "profile": "vercel-execution-fabric-workflow",
+  "classification": {
+    "previewDeployment": "routine_after_local_gates",
+    "productionDeployment": "gated",
+    "productionPromotion": "separate_gated_action",
+    "routeMutation": "separate_explicit_gate",
+    "globalSkillMutation": "avoid_by_default"
+  },
+  "preferredPreviewFlow": [
+    "verify canonical repo and sha",
+    "verify Vercel project linkage",
+    "npm ci",
+    "local gates",
+    "vercel build",
+    "verify .vercel/output",
+    "vercel deploy --prebuilt",
+    "vercel inspect",
+    "smoke test deployment URL",
+    "vercel logs --limit 50 with redaction",
+    "runtime audit archive and sha"
+  ],
+  "preferredProductionFlow": [
+    "confirm release authorization",
+    "vercel pull --yes --environment=production without logging secrets",
+    "vercel build --prod",
+    "verify .vercel/output",
+    "vercel deploy --prebuilt --prod --skip-domain",
+    "inspect staged production deployment",
+    "smoke/E2E staged deployment",
+    "logs with redaction",
+    "vercel promote deployment",
+    "verify custom domain",
+    "runtime audit archive and sha"
+  ],
+  "neverCasual": [
+    "vercel --prod",
+    "vercel deploy --prebuilt --prod",
+    "vercel promote",
+    "vercel rollback",
+    "vercel routes add --ai",
+    "vercel routes publish",
+    "npx skills add -g",
+    "REST deployment API",
+    "git push origin main"
+  ],
+  "redactedSecrets": [
+    "VERCEL_TOKEN",
+    "VERCEL_AUTOMATION_BYPASS_SECRET",
+    "VERCEL_OIDC_TOKEN",
+    "NPM_TOKEN",
+    "NPM_RC",
+    ".env values"
+  ]
+}
