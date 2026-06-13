@@ -1,8 +1,10 @@
 {
   "summary": {
-    "generatedAt": "2026-06-13T18:54:05.472Z",
+    "generatedAt": "2026-06-13T18:55:44.899Z",
     "base": "https://ipbl-minimal-viewer.vercel.app",
     "season": 2026,
+    "timeoutMs": 45000,
+    "retries": 2,
     "registry": {
       "divisionCount": 12,
       "liveDivisionCount": 12,
@@ -89,9 +91,9 @@
         "label": "Pro Men A",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 2,
-        "teamsWithHistory": 2,
-        "teamsWithQuarterMatrix": 2,
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
         "sources": [
           "results-kv+official-calendar"
         ]
@@ -161,9 +163,9 @@
         "label": "Pro Women A",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 3,
-        "teamsWithHistory": 3,
-        "teamsWithQuarterMatrix": 3,
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
         "sources": [
           "results-kv+official-calendar"
         ]
@@ -231,15 +233,12 @@
     ],
     "totals": {
       "teamsChecked": 46,
-      "okTeams": 43,
-      "teamsWithHistory": 43,
-      "teamsWithQuarterMatrix": 43
+      "okTeams": 46,
+      "teamsWithHistory": 46,
+      "teamsWithQuarterMatrix": 46
     },
-    "classification": "PARTIAL",
-    "failures": [
-      "history_fetch_failure:ipbl-66-m-pro-a",
-      "history_fetch_failure:ipbl-66-w-pro-a"
-    ],
+    "classification": "RECONCILED",
+    "failures": [],
     "policy": {
       "oddsDeploymentAllowed": false,
       "productionMutation": false,
@@ -252,15 +251,94 @@
       "name": "Barnaul",
       "divisionTag": "ipbl-66-m-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76038&tag=ipbl-66-m-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "error": "AbortError: This operation was aborted",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-07",
+              "to": "2026-06-08",
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
+            },
+            {
+              "from": "2026-06-08",
+              "to": "2026-06-09",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-09",
+              "to": "2026-06-10",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-10",
+              "to": "2026-06-11",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-11",
+              "to": "2026-06-12",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-12",
+              "to": "2026-06-13",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-13",
+              "to": "2026-06-14",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 163,
+      "completedCount": 163,
+      "quarterMatrixCount": 153,
+      "latest": {
+        "gameId": 1072755,
+        "localDate": "12.06.2026",
+        "localTime": "13:00",
+        "score": "111 : 104",
+        "fullScore": "25:29,24:23,33:32,29:20",
+        "team1": "Barnaul",
+        "team2": "Sochi"
+      }
     },
     {
       "teamId": 76040,
@@ -269,6 +347,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76040&tag=ipbl-66-m-pro-a&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -360,15 +439,94 @@
       "name": "Sochi",
       "divisionTag": "ipbl-66-m-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76041&tag=ipbl-66-m-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "error": "AbortError: This operation was aborted",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-07",
+              "to": "2026-06-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-08",
+              "to": "2026-06-09",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-09",
+              "to": "2026-06-10",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-10",
+              "to": "2026-06-11",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-11",
+              "to": "2026-06-12",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-12",
+              "to": "2026-06-13",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-13",
+              "to": "2026-06-14",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 163,
+      "completedCount": 163,
+      "quarterMatrixCount": 155,
+      "latest": {
+        "gameId": 1072755,
+        "localDate": "12.06.2026",
+        "localTime": "13:00",
+        "score": "111 : 104",
+        "fullScore": "25:29,24:23,33:32,29:20",
+        "team1": "Barnaul",
+        "team2": "Sochi"
+      }
     },
     {
       "teamId": 76039,
@@ -377,6 +535,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76039&tag=ipbl-66-m-pro-a&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -470,6 +629,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76051&tag=ipbl-66-m-pro-b&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -563,6 +723,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76050&tag=ipbl-66-m-pro-b&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -656,6 +817,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76049&tag=ipbl-66-m-pro-b&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -674,22 +836,22 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 14,
+          "itemCount": 12,
           "error": null,
           "windows": [
             {
               "from": "2026-06-07",
               "to": "2026-06-08",
-              "ok": false,
-              "itemCount": 0,
-              "error": "HTTP 500"
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             },
             {
               "from": "2026-06-08",
               "to": "2026-06-09",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-09",
@@ -749,6 +911,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76052&tag=ipbl-66-m-pro-b&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -767,7 +930,7 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 14,
+          "itemCount": 15,
           "error": null,
           "windows": [
             {
@@ -794,9 +957,9 @@
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": false,
-              "itemCount": 0,
-              "error": "HTTP 500"
+              "ok": true,
+              "itemCount": 5,
+              "error": null
             },
             {
               "from": "2026-06-11",
@@ -842,6 +1005,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76057&tag=ipbl-66-m-pro-c&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -935,6 +1099,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76058&tag=ipbl-66-m-pro-c&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1028,6 +1193,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76060&tag=ipbl-66-m-pro-c&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1121,6 +1287,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76059&tag=ipbl-66-m-pro-c&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1214,6 +1381,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76068&tag=ipbl-66-m-pro-d&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1307,6 +1475,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76067&tag=ipbl-66-m-pro-d&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1400,6 +1569,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76066&tag=ipbl-66-m-pro-d&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1493,6 +1663,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76065&tag=ipbl-66-m-pro-d&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1586,6 +1757,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76061&tag=ipbl-66-m-pro-u&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1677,6 +1849,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76064&tag=ipbl-66-m-pro-u&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1720,9 +1893,9 @@
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-11",
@@ -1768,6 +1941,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76062&tag=ipbl-66-m-pro-u&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1784,15 +1958,15 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 9,
+          "itemCount": 8,
           "error": null,
           "windows": [
             {
               "from": "2026-06-07",
               "to": "2026-06-08",
-              "ok": true,
-              "itemCount": 1,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-08",
@@ -1859,6 +2033,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76063&tag=ipbl-66-m-pro-u&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -1950,6 +2125,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76055&tag=ipbl-66-m-pro-z&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2038,6 +2214,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76054&tag=ipbl-66-m-pro-z&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2126,6 +2303,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76021&tag=ipbl-66-w-pro-a&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2219,6 +2397,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76023&tag=ipbl-66-w-pro-a&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2310,23 +2489,9 @@
       "name": "Magnitogorsk",
       "divisionTag": "ipbl-66-w-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76022&tag=ipbl-66-w-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "error": "AbortError: This operation was aborted",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
-    },
-    {
-      "teamId": 76020,
-      "name": "Novokuznetsk",
-      "divisionTag": "ipbl-66-w-pro-a",
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76020&tag=ipbl-66-w-pro-a&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2404,27 +2569,28 @@
       "completedCount": 222,
       "quarterMatrixCount": 222,
       "latest": {
-        "gameId": 1071077,
+        "gameId": 1071076,
         "localDate": "13.06.2026",
-        "localTime": "19:00",
-        "score": "98 : 96",
-        "fullScore": "24:23,16:17,22:22,22:22,14:12",
-        "team1": "Novokuznetsk",
-        "team2": "Izhevsk"
+        "localTime": "18:05",
+        "score": "111 : 96",
+        "fullScore": "32:31,28:23,27:29,24:13",
+        "team1": "Magnitogorsk",
+        "team2": "Bryansk"
       }
     },
     {
-      "teamId": 76012,
-      "name": "Cheboksary",
-      "divisionTag": "ipbl-66-w-pro-b",
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76012&tag=ipbl-66-w-pro-b&season=2026&source=team-stats-reconciliation",
+      "teamId": 76020,
+      "name": "Novokuznetsk",
+      "divisionTag": "ipbl-66-w-pro-a",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76020&tag=ipbl-66-w-pro-a&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
         "season": 2026,
-        "divisionTag": "ipbl-66-w-pro-b",
+        "divisionTag": "ipbl-66-w-pro-a",
         "loadedMonths": [
           3,
           4,
@@ -2438,7 +2604,7 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 15,
+          "itemCount": 14,
           "error": null,
           "windows": [
             {
@@ -2461,6 +2627,100 @@
               "ok": true,
               "itemCount": 5,
               "error": null
+            },
+            {
+              "from": "2026-06-10",
+              "to": "2026-06-11",
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
+            },
+            {
+              "from": "2026-06-11",
+              "to": "2026-06-12",
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
+            },
+            {
+              "from": "2026-06-12",
+              "to": "2026-06-13",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-13",
+              "to": "2026-06-14",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 222,
+      "completedCount": 222,
+      "quarterMatrixCount": 222,
+      "latest": {
+        "gameId": 1071077,
+        "localDate": "13.06.2026",
+        "localTime": "19:00",
+        "score": "98 : 96",
+        "fullScore": "24:23,16:17,22:22,22:22,14:12",
+        "team1": "Novokuznetsk",
+        "team2": "Izhevsk"
+      }
+    },
+    {
+      "teamId": 76012,
+      "name": "Cheboksary",
+      "divisionTag": "ipbl-66-w-pro-b",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76012&tag=ipbl-66-w-pro-b&season=2026&source=team-stats-reconciliation",
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-b",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 14,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-07",
+              "to": "2026-06-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-08",
+              "to": "2026-06-09",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-09",
+              "to": "2026-06-10",
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-10",
@@ -2513,6 +2773,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76014&tag=ipbl-66-w-pro-b&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2531,7 +2792,7 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 15,
+          "itemCount": 14,
           "error": null,
           "windows": [
             {
@@ -2558,9 +2819,9 @@
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-11",
@@ -2606,6 +2867,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76015&tag=ipbl-66-w-pro-b&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2637,9 +2899,9 @@
             {
               "from": "2026-06-08",
               "to": "2026-06-09",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-09",
@@ -2658,9 +2920,9 @@
             {
               "from": "2026-06-11",
               "to": "2026-06-12",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-12",
@@ -2699,6 +2961,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76013&tag=ipbl-66-w-pro-b&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2711,9 +2974,9 @@
           6
         ],
         "currentOfficialOnline": {
-          "ok": true,
+          "ok": false,
           "itemCount": 0,
-          "error": null
+          "error": "HTTP 500"
         },
         "recentOfficialCalendar": {
           "ok": true,
@@ -2792,6 +3055,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76029&tag=ipbl-66-w-pro-c&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2885,6 +3149,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76030&tag=ipbl-66-w-pro-c&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2978,6 +3243,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76031&tag=ipbl-66-w-pro-c&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -2996,7 +3262,7 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 10,
+          "itemCount": 8,
           "error": null,
           "windows": [
             {
@@ -3030,16 +3296,16 @@
             {
               "from": "2026-06-11",
               "to": "2026-06-12",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-12",
               "to": "2026-06-13",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-13",
@@ -3051,16 +3317,16 @@
           ]
         }
       },
-      "totalCount": 148,
-      "completedCount": 148,
-      "quarterMatrixCount": 148,
+      "totalCount": 146,
+      "completedCount": 146,
+      "quarterMatrixCount": 146,
       "latest": {
-        "gameId": 1071167,
-        "localDate": "12.06.2026",
+        "gameId": 1071163,
+        "localDate": "11.06.2026",
         "localTime": "23:00",
-        "score": "88 : 73",
-        "fullScore": "26:20,22:17,23:24,17:12",
-        "team1": "Vladivostok",
+        "score": "83 : 69",
+        "fullScore": "30:13,21:18,13:18,19:20",
+        "team1": "Kaluga",
         "team2": "Norilsk"
       }
     },
@@ -3071,6 +3337,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76028&tag=ipbl-66-w-pro-c&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3130,9 +3397,9 @@
             {
               "from": "2026-06-12",
               "to": "2026-06-13",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-13",
@@ -3164,6 +3431,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76026&tag=ipbl-66-w-pro-d&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3209,9 +3477,9 @@
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-11",
@@ -3257,6 +3525,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76025&tag=ipbl-66-w-pro-d&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3269,9 +3538,9 @@
           6
         ],
         "currentOfficialOnline": {
-          "ok": true,
+          "ok": false,
           "itemCount": 0,
-          "error": null
+          "error": "HTTP 500"
         },
         "recentOfficialCalendar": {
           "ok": true,
@@ -3316,9 +3585,9 @@
             {
               "from": "2026-06-12",
               "to": "2026-06-13",
-              "ok": true,
+              "ok": false,
               "itemCount": 0,
-              "error": null
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-13",
@@ -3350,6 +3619,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76027&tag=ipbl-66-w-pro-d&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3395,9 +3665,9 @@
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-11",
@@ -3416,9 +3686,9 @@
             {
               "from": "2026-06-13",
               "to": "2026-06-14",
-              "ok": true,
+              "ok": false,
               "itemCount": 0,
-              "error": null
+              "error": "HTTP 500"
             }
           ]
         }
@@ -3443,6 +3713,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76024&tag=ipbl-66-w-pro-d&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3536,6 +3807,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76034&tag=ipbl-66-w-pro-g&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3579,9 +3851,9 @@
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-11",
@@ -3627,6 +3899,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76032&tag=ipbl-66-w-pro-g&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3718,6 +3991,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76035&tag=ipbl-66-w-pro-g&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3809,6 +4083,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76036&tag=ipbl-66-w-pro-g&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3838,9 +4113,9 @@
             {
               "from": "2026-06-08",
               "to": "2026-06-09",
-              "ok": true,
+              "ok": false,
               "itemCount": 0,
-              "error": null
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-09",
@@ -3900,6 +4175,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76018&tag=ipbl-66-w-pro-k&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -3912,21 +4188,21 @@
           6
         ],
         "currentOfficialOnline": {
-          "ok": true,
+          "ok": false,
           "itemCount": 0,
-          "error": null
+          "error": "HTTP 500"
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 6,
+          "itemCount": 3,
           "error": null,
           "windows": [
             {
               "from": "2026-06-07",
               "to": "2026-06-08",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-08",
@@ -3993,6 +4269,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76017&tag=ipbl-66-w-pro-k&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -4011,22 +4288,22 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 6,
+          "itemCount": 3,
           "error": null,
           "windows": [
             {
               "from": "2026-06-07",
               "to": "2026-06-08",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-08",
               "to": "2026-06-09",
-              "ok": true,
+              "ok": false,
               "itemCount": 0,
-              "error": null
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-09",
@@ -4086,6 +4363,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76016&tag=ipbl-66-w-pro-k&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -4179,6 +4457,7 @@
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76019&tag=ipbl-66-w-pro-k&season=2026&source=team-stats-reconciliation",
       "http": 200,
       "ok": true,
+      "attempt": 1,
       "error": null,
       "source": "results-kv+official-calendar",
       "coverage": {
@@ -4197,15 +4476,15 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 6,
+          "itemCount": 3,
           "error": null,
           "windows": [
             {
               "from": "2026-06-07",
               "to": "2026-06-08",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "HTTP 500"
             },
             {
               "from": "2026-06-08",

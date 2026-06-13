@@ -11,7 +11,8 @@ for (let i = 2; i < process.argv.length; i += 1) {
 const base = String(args.get('--base-url') ?? 'https://ipbl-minimal-viewer.vercel.app').replace(/\/$/, '');
 const season = Number(args.get('--season') ?? '2026');
 const outPath = String(args.get('--out') ?? 'artifacts/team-statistics/team-statistics-reconciliation-latest.json');
-const timeoutMs = Number(args.get('--timeout-ms') ?? '30000');
+const timeoutMs = Number(args.get('--timeout-ms') ?? '45000');
+const retries = Number(args.get('--retries') ?? '2');
 
 function withTimeout(ms) {
   const controller = new AbortController();
@@ -19,7 +20,7 @@ function withTimeout(ms) {
   return { signal: controller.signal, done: () => clearTimeout(timer) };
 }
 
-async function fetchJson(url) {
+async function fetchJsonOnce(url) {
   const t = withTimeout(timeoutMs);
   try {
     const res = await fetch(url, { signal: t.signal, headers: { accept: 'application/json', 'cache-control': 'no-cache' } });
@@ -32,6 +33,18 @@ async function fetchJson(url) {
   } finally {
     t.done();
   }
+}
+
+async function fetchJson(url) {
+  let last = null;
+  const attempts = Math.max(1, retries + 1);
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    last = await fetchJsonOnce(url);
+    last.attempt = attempt;
+    if (last.ok) return last;
+    if (attempt < attempts) await new Promise((resolve) => setTimeout(resolve, 1000 * attempt));
+  }
+  return last;
 }
 
 async function mapLimit(items, limit, fn) {
@@ -82,6 +95,7 @@ const teamResults = await mapLimit(ACTIVE_TEAMS, 6, async (team) => {
     url,
     http: result.http,
     ok: result.ok,
+    attempt: result.attempt ?? null,
     error: result.error ?? result.json?.error ?? null,
     source: result.json?.source ?? null,
     coverage: result.json?.coverage ?? null,
@@ -124,6 +138,8 @@ const summary = {
   generatedAt: new Date().toISOString(),
   base,
   season,
+  timeoutMs,
+  retries,
   registry,
   divisionSummary,
   totals: {
