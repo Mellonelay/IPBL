@@ -1,0 +1,200 @@
+[
+  {
+    "gameId": 728820121,
+    "partner": 8,
+    "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728820121&coefView=3&lng=en&partner=8",
+    "http": 200,
+    "bytes": 18978,
+    "error": null,
+    "success": true,
+    "rootKeys": [
+      "Id",
+      "Success",
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Value"
+    ],
+    "valueKeys": [
+      "EG"
+    ],
+    "egCount": 5,
+    "shCount": null,
+    "dsType": "NoneType",
+    "hasEG": true,
+    "hasSH": false,
+    "hasDS": false,
+    "firstEGKeys": [
+      "E",
+      "C",
+      "CWV",
+      "S"
+    ],
+    "marketSample": []
+  },
+  {
+    "gameId": 728820121,
+    "partner": 25,
+    "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728820121&coefView=3&lng=en&partner=25",
+    "http": 200,
+    "bytes": 18978,
+    "error": null,
+    "success": true,
+    "rootKeys": [
+      "Id",
+      "Success",
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Value"
+    ],
+    "valueKeys": [
+      "EG"
+    ],
+    "egCount": 5,
+    "shCount": null,
+    "dsType": "NoneType",
+    "hasEG": true,
+    "hasSH": false,
+    "hasDS": false,
+    "firstEGKeys": [
+      "E",
+      "C",
+      "CWV",
+      "S"
+    ],
+    "marketSample": []
+  },
+  {
+    "gameId": 728819144,
+    "partner": 8,
+    "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819144&coefView=3&lng=en&partner=8",
+    "http": 200,
+    "bytes": 21656,
+    "error": null,
+    "success": true,
+    "rootKeys": [
+      "Id",
+      "Success",
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Value"
+    ],
+    "valueKeys": [
+      "EG"
+    ],
+    "egCount": 5,
+    "shCount": null,
+    "dsType": "NoneType",
+    "hasEG": true,
+    "hasSH": false,
+    "hasDS": false,
+    "firstEGKeys": [
+      "E",
+      "C",
+      "CWV",
+      "S"
+    ],
+    "marketSample": []
+  },
+  {
+    "gameId": 728819144,
+    "partner": 25,
+    "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819144&coefView=3&lng=en&partner=25",
+    "http": 200,
+    "bytes": 21656,
+    "error": null,
+    "success": true,
+    "rootKeys": [
+      "Id",
+      "Success",
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Value"
+    ],
+    "valueKeys": [
+      "EG"
+    ],
+    "egCount": 5,
+    "shCount": null,
+    "dsType": "NoneType",
+    "hasEG": true,
+    "hasSH": false,
+    "hasDS": false,
+    "firstEGKeys": [
+      "E",
+      "C",
+      "CWV",
+      "S"
+    ],
+    "marketSample": []
+  },
+  {
+    "gameId": 728819200,
+    "partner": 8,
+    "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819200&coefView=3&lng=en&partner=8",
+    "http": 200,
+    "bytes": 21460,
+    "error": null,
+    "success": true,
+    "rootKeys": [
+      "Id",
+      "Success",
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Value"
+    ],
+    "valueKeys": [
+      "EG"
+    ],
+    "egCount": 5,
+    "shCount": null,
+    "dsType": "NoneType",
+    "hasEG": true,
+    "hasSH": false,
+    "hasDS": false,
+    "firstEGKeys": [
+      "E",
+      "C",
+      "CWV",
+      "S"
+    ],
+    "marketSample": []
+  },
+  {
+    "gameId": 728819200,
+    "partner": 25,
+    "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819200&coefView=3&lng=en&partner=25",
+    "http": 200,
+    "bytes": 21460,
+    "error": null,
+    "success": true,
+    "rootKeys": [
+      "Id",
+      "Success",
+      "Error",
+      "ErrorCode",
+      "Guid",
+      "Value"
+    ],
+    "valueKeys": [
+      "EG"
+    ],
+    "egCount": 5,
+    "shCount": null,
+    "dsType": "NoneType",
+    "hasEG": true,
+    "hasSH": false,
+    "hasDS": false,
+    "firstEGKeys": [
+      "E",
+      "C",
+      "CWV",
+      "S"
+    ],
+    "marketSample": []
+  }
+]

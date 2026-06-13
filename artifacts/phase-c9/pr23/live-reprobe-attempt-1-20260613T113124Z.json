@@ -1,0 +1,4235 @@
+{
+  "summary": {
+    "capturedAt": "2026-06-13T11:32:08.636Z",
+    "endpoints": {
+      "officialLivePage": {
+        "url": "https://ipbl.pro/live",
+        "http": 200,
+        "ok": true,
+        "bytes": 81374,
+        "error": null,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      "officialCalendar": {
+        "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
+        "http": 200,
+        "ok": true,
+        "bytes": null,
+        "error": null,
+        "contentType": null,
+        "components": [
+          {
+            "label": "officialCalendar-ipbl-66-m-pro-a",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 75,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-m-pro-b",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 75,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-m-pro-c",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 1864,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-m-pro-d",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 1908,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-m-pro-u",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 75,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-w-pro-a",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 1855,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-w-pro-b",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 75,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-w-pro-c",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 75,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-w-pro-d",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 75,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-w-pro-g",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 75,
+            "error": null
+          },
+          {
+            "label": "officialCalendar-ipbl-66-w-pro-k",
+            "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
+            "http": 200,
+            "ok": true,
+            "bytes": 75,
+            "error": null
+          }
+        ]
+      },
+      "productionLive": {
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781350285209",
+        "http": 200,
+        "ok": true,
+        "bytes": 905,
+        "error": null,
+        "contentType": "application/json; charset=utf-8"
+      },
+      "recorderStatus": {
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
+        "http": 200,
+        "ok": true,
+        "bytes": 561,
+        "error": null,
+        "contentType": "application/json; charset=utf-8"
+      },
+      "recorderHistory": {
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
+        "http": 200,
+        "ok": true,
+        "bytes": null,
+        "error": null,
+        "contentType": null,
+        "components": [
+          {
+            "label": "recorderHistory-ipbl-66-w-pro-a-1071074",
+            "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-w-pro-a&gameId=1071074&limit=5",
+            "http": 200,
+            "ok": true,
+            "bytes": 3972,
+            "error": null
+          }
+        ]
+      },
+      "melbetLiveDiscovery": {
+        "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
+        "http": 200,
+        "ok": true,
+        "bytes": null,
+        "error": null,
+        "contentType": null,
+        "components": [
+          {
+            "label": "melbetLive-2496666",
+            "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+            "http": 200,
+            "ok": true,
+            "bytes": 5932,
+            "error": null
+          },
+          {
+            "label": "melbetLive-2496667",
+            "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+            "http": 200,
+            "ok": true,
+            "bytes": 3185,
+            "error": null
+          }
+        ]
+      }
+    },
+    "rowCounts": {
+      "officialCalendar": 3,
+      "productionLive": 1,
+      "recorderHistory": 4
+    },
+    "activeProductionGameIds": [
+      "1071074"
+    ],
+    "melbetLiveCandidateCount": 3,
+    "melbetCandidateIds": [
+      "728878363",
+      "728880079",
+      "728878178"
+    ],
+    "melbetMatchedActiveProduction": [],
+    "eventsstatProbeMode": "active-production-games-with-melbet-live-discovery",
+    "eventsstatProbeIds": [
+      "1071074",
+      "728878363",
+      "728880079",
+      "728878178"
+    ],
+    "eventsstatProven": true,
+    "activeMatchedEventsstatProven": false,
+    "activeMatchedEventsstatProofs": [],
+    "partner8Proven": true,
+    "partner25Proven": true,
+    "reconciliation": {
+      "primarySource": "productionLive",
+      "matchCount": 1,
+      "missingCount": 0,
+      "mismatchCount": 2,
+      "classification": "PARTIAL"
+    },
+    "oddsDeploymentAllowed": false,
+    "oddsDeploymentBlockReason": "PR23 is reconciliation/proof only; live odds deployment requires active EG/SH/DS proof, row-level reconciliation, source policy, and tests."
+  },
+  "fetched": {
+    "officialLivePage": {
+      "label": "officialLivePage",
+      "url": "https://ipbl.pro/live",
+      "capturedAt": "2026-06-13T11:31:26.563Z",
+      "http": 200,
+      "ok": true,
+      "bytes": 81374,
+      "contentType": "text/html; charset=UTF-8",
+      "json": null,
+      "preview": "<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\" /> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /> <!--metatextblock--> <title>Прямые трансляции | IPBL</title> <meta property=\"og:url\" content=\"https://ipbl.pro/live\" /> <meta property=\"og:title\" content=\"Прямые трансляции | IPBL\" /> <meta property=\"og:description\" content=\"\" /> <meta property=\"og:type\" content=\"website\" /> <link rel=\"canonical\" href=\"https://ipbl.pro/live\"> <!--/metatextblock--> <meta name=\"format-detection\" content=\"telephone=no\" /> <meta http-equiv=\"x-dns-prefetch-control\" content=\"on\"> <link rel=\"dns-prefetch\" href=\"https://ws.tildacdn.com\"> <link rel=\"dns-prefetch\" href=\"https://static.tildacdn.com\"> <!--favicons--> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3638-3630-4735-b264-386461326231/logo_gray.svg\" media=\"(prefers-color-scheme: light)\"/> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3731-3163-4436-b066-393065323337/logo_white.svg\" media=\"(prefers-color-scheme: dark)\"/> <!--/favicons--> <!-- Assets --> <script src=\"https:"
+    },
+    "officialCalendar": {
+      "label": "officialCalendar",
+      "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
+      "capturedAt": "2026-06-13T11:31:30.405Z",
+      "ok": true,
+      "http": 200,
+      "components": [
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-a",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
+          "capturedAt": "2026-06-13T11:31:26.481Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 75,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": []
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-b",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
+          "capturedAt": "2026-06-13T11:31:26.779Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 75,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": []
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-c",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
+          "capturedAt": "2026-06-13T11:31:27.044Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 1864,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 1,
+              "items": [
+                {
+                  "game": {
+                    "gameStatus": "Online",
+                    "showScore": true,
+                    "score1": 87,
+                    "score2": 76,
+                    "score": "87:76",
+                    "fullScore": null,
+                    "periods": 4,
+                    "attendance": 0,
+                    "number": "002",
+                    "finalTime": null,
+                    "startTime": null,
+                    "scheduledTime": "2026-02-09T22:00:00+05:00",
+                    "defaultZoneDateTime": "2026-02-09T20:00:00+03:00",
+                    "localDate": "09.02.2026",
+                    "localTime": "22:00",
+                    "defaultZoneTime": "20:00",
+                    "hasTime": true,
+                    "regionId": 8,
+                    "arenaId": 26097,
+                    "compTeam1Id": 557124,
+                    "compTeam2Id": 557125,
+                    "tv": null,
+                    "video": null,
+                    "videoId": null,
+                    "id": 1024850
+                  },
+                  "comp": {
+                    "id": 1301526,
+                    "compType": "OneGame",
+                    "name": "IPBL: PRO Division (МУЖЧИНЫ)",
+                    "abcName": "1/2-2",
+                    "level": 10,
+                    "season": 2026,
+                    "tag": null,
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "league": {
+                    "id": 1262959,
+                    "compType": "League",
+                    "name": "Division C",
+                    "abcName": "IPBL",
+                    "level": 7,
+                    "season": 2026,
+                    "tag": "ipbl-66-m-pro-c",
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "gender": 1,
+                  "status": {
+                    "icon": "fa-solid fa-play color-darkgreen ",
+                    "id": "Online",
+                    "displayName": "Онлайн"
+                  },
+                  "region": {
+                    "regionType": "RegionCapital",
+                    "timeZoneId": "Ekaterinburg Standard Time",
+                    "name": "Екатеринбург",
+                    "countryId": "RU",
+                    "id": 8
+                  },
+                  "arena": {
+                    "shortName": "БЦ \"Манеж\" Мужской Зал",
+                    "name": "БЦ \"Манеж\" Мужской Зал",
+                    "regionId": 8,
+                    "id": 26097
+                  },
+                  "team1": {
+                    "teamId": 76059,
+                    "start": 1,
+                    "label": "IPBL66",
+                    "abcName": "Vorone",
+                    "name": "Voronezh",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Voronezh",
+                    "logo": "https://img.infobasket.su/logo/62413.png",
+                    "arenaId": null,
+                    "id": 557124
+                  },
+                  "team2": {
+                    "teamId": 76060,
+                    "start": 2,
+                    "label": "IPBL66",
+                    "abcName": "Plavsk",
+                    "name": "Plavsk",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Plavsk",
+                    "logo": "https://img.infobasket.su/logo/62414.png",
+                    "arenaId": null,
+                    "id": 557125
+                  },
+                  "ot": "",
+                  "distanceIndex": -1,
+                  "period": null,
+                  "timeToGo": null,
+                  "timeIsGo": null,
+                  "hasCoefficients": false,
+                  "photoUrl": null,
+                  "division": "Pro Division"
+                }
+              ]
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"Online\",\"showScore\":true,\"score1\":87,\"score2\":76,\"score\":\"87:76\",\"fullScore\":null,\"periods\":4,\"attendance\":0,\"number\":\"002\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-02-09T22:00:00+05:00\",\"defaultZoneDateTime\":\"2026-02-09T20:00:00+03:00\",\"localDate\":\"09.02.2026\",\"localTime\":\"22:00\",\"defaultZoneTime\":\"20:00\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26097,\"compTeam1Id\":557124,\"compTeam2Id\":557125,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1024850},\"comp\":{\"id\":1301526,\"compType\":\"OneGame\",\"name\":\"IPBL: PRO Division (МУЖЧИНЫ)\",\"abcName\":\"1/2-2\",\"level\":10,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1262959,\"compType\":\"League\",\"name\":\"Division C\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-m-pro-c\",\"logo\":\"\",\"isActual\":true},\"gender\":1,\"status\":{\"icon\":\"fa-solid fa-play color-darkgreen \",\"id\":\"Online\",\"displayName\":\"Онлайн\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"name\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"regionId\":8,\"id"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-d",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
+          "capturedAt": "2026-06-13T11:31:27.319Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 1908,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 1,
+              "items": [
+                {
+                  "game": {
+                    "gameStatus": "ResultWaiting",
+                    "showScore": true,
+                    "score1": 132,
+                    "score2": 135,
+                    "score": "132:135",
+                    "fullScore": null,
+                    "periods": 4,
+                    "attendance": 0,
+                    "number": "020",
+                    "finalTime": null,
+                    "startTime": null,
+                    "scheduledTime": "2026-02-02T08:00:00+05:00",
+                    "defaultZoneDateTime": "2026-02-02T06:00:00+03:00",
+                    "localDate": "02.02.2026",
+                    "localTime": "08:00",
+                    "defaultZoneTime": "06:00",
+                    "hasTime": true,
+                    "regionId": 8,
+                    "arenaId": 26097,
+                    "compTeam1Id": 553363,
+                    "compTeam2Id": 553362,
+                    "tv": null,
+                    "video": null,
+                    "videoId": null,
+                    "id": 1022276
+                  },
+                  "comp": {
+                    "id": 1297670,
+                    "compType": "OneGame",
+                    "name": "Финал за 3 место",
+                    "abcName": "Ф3",
+                    "level": 11,
+                    "season": 2026,
+                    "tag": null,
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "league": {
+                    "id": 1262990,
+                    "compType": "League",
+                    "name": "Division D",
+                    "abcName": "IPBL",
+                    "level": 7,
+                    "season": 2026,
+                    "tag": "ipbl-66-m-pro-d",
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "gender": 1,
+                  "status": {
+                    "icon": "fa-solid fa-circle-play color-orange ",
+                    "id": "ResultWaiting",
+                    "displayName": "Завершена"
+                  },
+                  "region": {
+                    "regionType": "RegionCapital",
+                    "timeZoneId": "Ekaterinburg Standard Time",
+                    "name": "Екатеринбург",
+                    "countryId": "RU",
+                    "id": 8
+                  },
+                  "arena": {
+                    "shortName": "БЦ \"Манеж\" Мужской Зал",
+                    "name": "БЦ \"Манеж\" Мужской Зал",
+                    "regionId": 8,
+                    "id": 26097
+                  },
+                  "team1": {
+                    "teamId": 76068,
+                    "start": 1,
+                    "label": "IPBL66",
+                    "abcName": "Krasno",
+                    "name": "Krasnoyarsk",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Krasnoyarsk",
+                    "logo": "https://img.infobasket.su/logo/62422.png",
+                    "arenaId": null,
+                    "id": 553363
+                  },
+                  "team2": {
+                    "teamId": 76067,
+                    "start": 2,
+                    "label": "IPBL66",
+                    "abcName": "Nizhni",
+                    "name": "NizhniyNovgorod",
+                    "regionName": "Екатеринбург",
+                    "shortName": "NizhniyNovgorod",
+                    "logo": "https://img.infobasket.su/logo/62421.png",
+                    "arenaId": null,
+                    "id": 553362
+                  },
+                  "ot": "",
+                  "distanceIndex": 131,
+                  "period": null,
+                  "timeToGo": null,
+                  "timeIsGo": null,
+                  "hasCoefficients": false,
+                  "photoUrl": null,
+                  "division": "Pro Division"
+                }
+              ]
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"ResultWaiting\",\"showScore\":true,\"score1\":132,\"score2\":135,\"score\":\"132:135\",\"fullScore\":null,\"periods\":4,\"attendance\":0,\"number\":\"020\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-02-02T08:00:00+05:00\",\"defaultZoneDateTime\":\"2026-02-02T06:00:00+03:00\",\"localDate\":\"02.02.2026\",\"localTime\":\"08:00\",\"defaultZoneTime\":\"06:00\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26097,\"compTeam1Id\":553363,\"compTeam2Id\":553362,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1022276},\"comp\":{\"id\":1297670,\"compType\":\"OneGame\",\"name\":\"Финал за 3 место\",\"abcName\":\"Ф3\",\"level\":11,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1262990,\"compType\":\"League\",\"name\":\"Division D\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-m-pro-d\",\"logo\":\"\",\"isActual\":true},\"gender\":1,\"status\":{\"icon\":\"fa-solid fa-circle-play color-orange \",\"id\":\"ResultWaiting\",\"displayName\":\"Завершена\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"name\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"regio"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-u",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
+          "capturedAt": "2026-06-13T11:31:27.593Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 75,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": []
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-a",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
+          "capturedAt": "2026-06-13T11:31:28.716Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 1855,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 1,
+              "items": [
+                {
+                  "game": {
+                    "gameStatus": "Online",
+                    "showScore": false,
+                    "score1": 49,
+                    "score2": 51,
+                    "score": "49:51",
+                    "fullScore": null,
+                    "periods": 4,
+                    "attendance": null,
+                    "number": "003",
+                    "finalTime": null,
+                    "startTime": null,
+                    "scheduledTime": "2026-06-13T16:05:00+05:00",
+                    "defaultZoneDateTime": "2026-06-13T14:05:00+03:00",
+                    "localDate": "13.06.2026",
+                    "localTime": "16:05",
+                    "defaultZoneTime": "14:05",
+                    "hasTime": true,
+                    "regionId": 8,
+                    "arenaId": 26098,
+                    "compTeam1Id": 615004,
+                    "compTeam2Id": 615006,
+                    "tv": null,
+                    "video": null,
+                    "videoId": null,
+                    "id": 1071074
+                  },
+                  "comp": {
+                    "id": 1349487,
+                    "compType": "RoundRobin",
+                    "name": "13.06.2026",
+                    "abcName": "13.06.",
+                    "level": 10,
+                    "season": 2026,
+                    "tag": null,
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "league": {
+                    "id": 1262774,
+                    "compType": "League",
+                    "name": "Division A",
+                    "abcName": "IPBL",
+                    "level": 7,
+                    "season": 2026,
+                    "tag": "ipbl-66-w-pro-a",
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "gender": 2,
+                  "status": {
+                    "icon": "fa-solid fa-play color-darkgreen ",
+                    "id": "Online",
+                    "displayName": "Live"
+                  },
+                  "region": {
+                    "regionType": "RegionCapital",
+                    "timeZoneId": "Ekaterinburg Standard Time",
+                    "name": "Екатеринбург",
+                    "countryId": "RU",
+                    "id": 8
+                  },
+                  "arena": {
+                    "shortName": "БЦ \"Манеж\" Женский Зал",
+                    "name": "БЦ \"Манеж\" Женский Зал",
+                    "regionId": 8,
+                    "id": 26098
+                  },
+                  "team1": {
+                    "teamId": 76020,
+                    "start": 1,
+                    "label": "IPBL66",
+                    "abcName": "Novoku",
+                    "name": "Novokuznetsk",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Novokuznetsk",
+                    "logo": "https://img.infobasket.su/logo/62455.png",
+                    "arenaId": null,
+                    "id": 615004
+                  },
+                  "team2": {
+                    "teamId": 76022,
+                    "start": 3,
+                    "label": "IPBL66",
+                    "abcName": "Magnit",
+                    "name": "Magnitogorsk",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Magnitogorsk",
+                    "logo": "https://img.infobasket.su/logo/62457.png",
+                    "arenaId": null,
+                    "id": 615006
+                  },
+                  "ot": "",
+                  "distanceIndex": -1,
+                  "period": 3,
+                  "timeToGo": "9.52",
+                  "timeIsGo": 1,
+                  "hasCoefficients": false,
+                  "photoUrl": null,
+                  "division": "Pro Division"
+                }
+              ]
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"Online\",\"showScore\":false,\"score1\":49,\"score2\":51,\"score\":\"49:51\",\"fullScore\":null,\"periods\":4,\"attendance\":null,\"number\":\"003\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-06-13T16:05:00+05:00\",\"defaultZoneDateTime\":\"2026-06-13T14:05:00+03:00\",\"localDate\":\"13.06.2026\",\"localTime\":\"16:05\",\"defaultZoneTime\":\"14:05\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26098,\"compTeam1Id\":615004,\"compTeam2Id\":615006,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1071074},\"comp\":{\"id\":1349487,\"compType\":\"RoundRobin\",\"name\":\"13.06.2026\",\"abcName\":\"13.06.\",\"level\":10,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1262774,\"compType\":\"League\",\"name\":\"Division A\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-w-pro-a\",\"logo\":\"\",\"isActual\":true},\"gender\":2,\"status\":{\"icon\":\"fa-solid fa-play color-darkgreen \",\"id\":\"Online\",\"displayName\":\"Live\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Женский Зал\",\"name\":\"БЦ \\\"Манеж\\\" Женский Зал\",\"regionId\":8,\"id\":26098},\"te"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-b",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
+          "capturedAt": "2026-06-13T11:31:29.015Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 75,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": []
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-c",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
+          "capturedAt": "2026-06-13T11:31:29.587Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 75,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": []
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-d",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
+          "capturedAt": "2026-06-13T11:31:29.863Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 75,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": []
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-g",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
+          "capturedAt": "2026-06-13T11:31:30.139Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 75,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": []
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-k",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
+          "capturedAt": "2026-06-13T11:31:30.405Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 75,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": []
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+        }
+      ],
+      "json": {
+        "games": [
+          {
+            "game": {
+              "gameStatus": "Online",
+              "showScore": true,
+              "score1": 87,
+              "score2": 76,
+              "score": "87:76",
+              "fullScore": null,
+              "periods": 4,
+              "attendance": 0,
+              "number": "002",
+              "finalTime": null,
+              "startTime": null,
+              "scheduledTime": "2026-02-09T22:00:00+05:00",
+              "defaultZoneDateTime": "2026-02-09T20:00:00+03:00",
+              "localDate": "09.02.2026",
+              "localTime": "22:00",
+              "defaultZoneTime": "20:00",
+              "hasTime": true,
+              "regionId": 8,
+              "arenaId": 26097,
+              "compTeam1Id": 557124,
+              "compTeam2Id": 557125,
+              "tv": null,
+              "video": null,
+              "videoId": null,
+              "id": 1024850
+            },
+            "comp": {
+              "id": 1301526,
+              "compType": "OneGame",
+              "name": "IPBL: PRO Division (МУЖЧИНЫ)",
+              "abcName": "1/2-2",
+              "level": 10,
+              "season": 2026,
+              "tag": null,
+              "logo": "",
+              "isActual": true
+            },
+            "league": {
+              "id": 1262959,
+              "compType": "League",
+              "name": "Division C",
+              "abcName": "IPBL",
+              "level": 7,
+              "season": 2026,
+              "tag": "ipbl-66-m-pro-c",
+              "logo": "",
+              "isActual": true
+            },
+            "gender": 1,
+            "status": {
+              "icon": "fa-solid fa-play color-darkgreen ",
+              "id": "Online",
+              "displayName": "Онлайн"
+            },
+            "region": {
+              "regionType": "RegionCapital",
+              "timeZoneId": "Ekaterinburg Standard Time",
+              "name": "Екатеринбург",
+              "countryId": "RU",
+              "id": 8
+            },
+            "arena": {
+              "shortName": "БЦ \"Манеж\" Мужской Зал",
+              "name": "БЦ \"Манеж\" Мужской Зал",
+              "regionId": 8,
+              "id": 26097
+            },
+            "team1": {
+              "teamId": 76059,
+              "start": 1,
+              "label": "IPBL66",
+              "abcName": "Vorone",
+              "name": "Voronezh",
+              "regionName": "Екатеринбург",
+              "shortName": "Voronezh",
+              "logo": "https://img.infobasket.su/logo/62413.png",
+              "arenaId": null,
+              "id": 557124
+            },
+            "team2": {
+              "teamId": 76060,
+              "start": 2,
+              "label": "IPBL66",
+              "abcName": "Plavsk",
+              "name": "Plavsk",
+              "regionName": "Екатеринбург",
+              "shortName": "Plavsk",
+              "logo": "https://img.infobasket.su/logo/62414.png",
+              "arenaId": null,
+              "id": 557125
+            },
+            "ot": "",
+            "distanceIndex": -1,
+            "period": null,
+            "timeToGo": null,
+            "timeIsGo": null,
+            "hasCoefficients": false,
+            "photoUrl": null,
+            "division": "Pro Division",
+            "tag": "ipbl-66-m-pro-c",
+            "divisionTag": "ipbl-66-m-pro-c"
+          },
+          {
+            "game": {
+              "gameStatus": "ResultWaiting",
+              "showScore": true,
+              "score1": 132,
+              "score2": 135,
+              "score": "132:135",
+              "fullScore": null,
+              "periods": 4,
+              "attendance": 0,
+              "number": "020",
+              "finalTime": null,
+              "startTime": null,
+              "scheduledTime": "2026-02-02T08:00:00+05:00",
+              "defaultZoneDateTime": "2026-02-02T06:00:00+03:00",
+              "localDate": "02.02.2026",
+              "localTime": "08:00",
+              "defaultZoneTime": "06:00",
+              "hasTime": true,
+              "regionId": 8,
+              "arenaId": 26097,
+              "compTeam1Id": 553363,
+              "compTeam2Id": 553362,
+              "tv": null,
+              "video": null,
+              "videoId": null,
+              "id": 1022276
+            },
+            "comp": {
+              "id": 1297670,
+              "compType": "OneGame",
+              "name": "Финал за 3 место",
+              "abcName": "Ф3",
+              "level": 11,
+              "season": 2026,
+              "tag": null,
+              "logo": "",
+              "isActual": true
+            },
+            "league": {
+              "id": 1262990,
+              "compType": "League",
+              "name": "Division D",
+              "abcName": "IPBL",
+              "level": 7,
+              "season": 2026,
+              "tag": "ipbl-66-m-pro-d",
+              "logo": "",
+              "isActual": true
+            },
+            "gender": 1,
+            "status": {
+              "icon": "fa-solid fa-circle-play color-orange ",
+              "id": "ResultWaiting",
+              "displayName": "Завершена"
+            },
+            "region": {
+              "regionType": "RegionCapital",
+              "timeZoneId": "Ekaterinburg Standard Time",
+              "name": "Екатеринбург",
+              "countryId": "RU",
+              "id": 8
+            },
+            "arena": {
+              "shortName": "БЦ \"Манеж\" Мужской Зал",
+              "name": "БЦ \"Манеж\" Мужской Зал",
+              "regionId": 8,
+              "id": 26097
+            },
+            "team1": {
+              "teamId": 76068,
+              "start": 1,
+              "label": "IPBL66",
+              "abcName": "Krasno",
+              "name": "Krasnoyarsk",
+              "regionName": "Екатеринбург",
+              "shortName": "Krasnoyarsk",
+              "logo": "https://img.infobasket.su/logo/62422.png",
+              "arenaId": null,
+              "id": 553363
+            },
+            "team2": {
+              "teamId": 76067,
+              "start": 2,
+              "label": "IPBL66",
+              "abcName": "Nizhni",
+              "name": "NizhniyNovgorod",
+              "regionName": "Екатеринбург",
+              "shortName": "NizhniyNovgorod",
+              "logo": "https://img.infobasket.su/logo/62421.png",
+              "arenaId": null,
+              "id": 553362
+            },
+            "ot": "",
+            "distanceIndex": 131,
+            "period": null,
+            "timeToGo": null,
+            "timeIsGo": null,
+            "hasCoefficients": false,
+            "photoUrl": null,
+            "division": "Pro Division",
+            "tag": "ipbl-66-m-pro-d",
+            "divisionTag": "ipbl-66-m-pro-d"
+          },
+          {
+            "game": {
+              "gameStatus": "Online",
+              "showScore": false,
+              "score1": 49,
+              "score2": 51,
+              "score": "49:51",
+              "fullScore": null,
+              "periods": 4,
+              "attendance": null,
+              "number": "003",
+              "finalTime": null,
+              "startTime": null,
+              "scheduledTime": "2026-06-13T16:05:00+05:00",
+              "defaultZoneDateTime": "2026-06-13T14:05:00+03:00",
+              "localDate": "13.06.2026",
+              "localTime": "16:05",
+              "defaultZoneTime": "14:05",
+              "hasTime": true,
+              "regionId": 8,
+              "arenaId": 26098,
+              "compTeam1Id": 615004,
+              "compTeam2Id": 615006,
+              "tv": null,
+              "video": null,
+              "videoId": null,
+              "id": 1071074
+            },
+            "comp": {
+              "id": 1349487,
+              "compType": "RoundRobin",
+              "name": "13.06.2026",
+              "abcName": "13.06.",
+              "level": 10,
+              "season": 2026,
+              "tag": null,
+              "logo": "",
+              "isActual": true
+            },
+            "league": {
+              "id": 1262774,
+              "compType": "League",
+              "name": "Division A",
+              "abcName": "IPBL",
+              "level": 7,
+              "season": 2026,
+              "tag": "ipbl-66-w-pro-a",
+              "logo": "",
+              "isActual": true
+            },
+            "gender": 2,
+            "status": {
+              "icon": "fa-solid fa-play color-darkgreen ",
+              "id": "Online",
+              "displayName": "Live"
+            },
+            "region": {
+              "regionType": "RegionCapital",
+              "timeZoneId": "Ekaterinburg Standard Time",
+              "name": "Екатеринбург",
+              "countryId": "RU",
+              "id": 8
+            },
+            "arena": {
+              "shortName": "БЦ \"Манеж\" Женский Зал",
+              "name": "БЦ \"Манеж\" Женский Зал",
+              "regionId": 8,
+              "id": 26098
+            },
+            "team1": {
+              "teamId": 76020,
+              "start": 1,
+              "label": "IPBL66",
+              "abcName": "Novoku",
+              "name": "Novokuznetsk",
+              "regionName": "Екатеринбург",
+              "shortName": "Novokuznetsk",
+              "logo": "https://img.infobasket.su/logo/62455.png",
+              "arenaId": null,
+              "id": 615004
+            },
+            "team2": {
+              "teamId": 76022,
+              "start": 3,
+              "label": "IPBL66",
+              "abcName": "Magnit",
+              "name": "Magnitogorsk",
+              "regionName": "Екатеринбург",
+              "shortName": "Magnitogorsk",
+              "logo": "https://img.infobasket.su/logo/62457.png",
+              "arenaId": null,
+              "id": 615006
+            },
+            "ot": "",
+            "distanceIndex": -1,
+            "period": 3,
+            "timeToGo": "9.52",
+            "timeIsGo": 1,
+            "hasCoefficients": false,
+            "photoUrl": null,
+            "division": "Pro Division",
+            "tag": "ipbl-66-w-pro-a",
+            "divisionTag": "ipbl-66-w-pro-a"
+          }
+        ]
+      }
+    },
+    "productionLive": {
+      "label": "productionLive",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781350285209",
+      "capturedAt": "2026-06-13T11:32:06.184Z",
+      "http": 200,
+      "ok": true,
+      "bytes": 905,
+      "contentType": "application/json; charset=utf-8",
+      "json": {
+        "games": [
+          {
+            "gameId": 1071074,
+            "tag": "ipbl-66-w-pro-a",
+            "status": "Online",
+            "statusDisplay": "Live",
+            "upstreamStatusId": "Online",
+            "score1": 49,
+            "score2": 51,
+            "scoreText": "49 : 51",
+            "fullScore": null,
+            "localDate": "13.06.2026",
+            "localTime": "17:35",
+            "divisionLabel": "Pro Women A",
+            "period": 3,
+            "timeToGo": "9.52",
+            "timeIsGo": 1,
+            "isLive": true,
+            "updatedAt": null,
+            "scheduledTime": "2026-06-13T16:05:00+05:00",
+            "sourceLocalDate": "13.06.2026",
+            "sourceLocalTime": "16:05",
+            "sourceTimeZone": "UTC+05:00",
+            "team1": {
+              "teamId": 76020,
+              "shortName": "Novokuznetsk",
+              "name": "Novokuznetsk"
+            },
+            "team2": {
+              "teamId": 76022,
+              "shortName": "Magnitogorsk",
+              "name": "Magnitogorsk"
+            },
+            "displayTimeZone": "Asia/Yangon"
+          }
+        ],
+        "status": {
+          "lastSyncAt": "2026-06-13T11:32:06.067Z",
+          "status": "PARTIAL",
+          "source": "official:api1.ipbl.pro",
+          "requestedDivisions": 11,
+          "successfulDivisions": 10,
+          "failures": [
+            {
+              "tag": "ipbl-66-m-pro-d",
+              "error": "HTTP 500"
+            }
+          ],
+          "latencyMs": 40615,
+          "displayTimeZone": "Asia/Yangon"
+        }
+      },
+      "preview": "{\"games\":[{\"gameId\":1071074,\"tag\":\"ipbl-66-w-pro-a\",\"status\":\"Online\",\"statusDisplay\":\"Live\",\"upstreamStatusId\":\"Online\",\"score1\":49,\"score2\":51,\"scoreText\":\"49 : 51\",\"fullScore\":null,\"localDate\":\"13.06.2026\",\"localTime\":\"17:35\",\"divisionLabel\":\"Pro Women A\",\"period\":3,\"timeToGo\":\"9.52\",\"timeIsGo\":1,\"isLive\":true,\"updatedAt\":null,\"scheduledTime\":\"2026-06-13T16:05:00+05:00\",\"sourceLocalDate\":\"13.06.2026\",\"sourceLocalTime\":\"16:05\",\"sourceTimeZone\":\"UTC+05:00\",\"team1\":{\"teamId\":76020,\"shortName\":\"Novokuznetsk\",\"name\":\"Novokuznetsk\"},\"team2\":{\"teamId\":76022,\"shortName\":\"Magnitogorsk\",\"name\":\"Magnitogorsk\"},\"displayTimeZone\":\"Asia/Yangon\"}],\"status\":{\"lastSyncAt\":\"2026-06-13T11:32:06.067Z\",\"status\":\"PARTIAL\",\"source\":\"official:api1.ipbl.pro\",\"requestedDivisions\":11,\"successfulDivisions\":10,\"failures\":[{\"tag\":\"ipbl-66-m-pro-d\",\"error\":\"HTTP 500\"}],\"latencyMs\":40615,\"displayTimeZone\":\"Asia/Yangon\"}}"
+    },
+    "recorderStatus": {
+      "label": "recorderStatus",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
+      "capturedAt": "2026-06-13T11:31:25.809Z",
+      "http": 200,
+      "ok": true,
+      "bytes": 561,
+      "contentType": "application/json; charset=utf-8",
+      "json": {
+        "status": {
+          "schemaVersion": 1,
+          "capturedAt": "2026-06-13T11:30:10.085Z",
+          "source": "official:api1.ipbl.pro",
+          "sourceStatus": "OK",
+          "receivedGames": 1,
+          "acceptedGames": 1,
+          "recordedSnapshots": 0,
+          "duplicateSnapshots": 1,
+          "rejectedGames": [],
+          "missingPreviouslyActive": [],
+          "activeGameKeys": [
+            "ipbl-66-w-pro-a:1071074"
+          ],
+          "sourceDetails": {
+            "lastSyncAt": "2026-06-13T11:30:10.080Z",
+            "status": "OK",
+            "source": "official:api1.ipbl.pro",
+            "requestedDivisions": 11,
+            "successfulDivisions": 11,
+            "failures": [],
+            "latencyMs": 3595,
+            "displayTimeZone": "Asia/Yangon"
+          }
+        },
+        "activeGameKeys": [
+          "ipbl-66-w-pro-a:1071074"
+        ]
+      },
+      "preview": "{\"status\":{\"schemaVersion\":1,\"capturedAt\":\"2026-06-13T11:30:10.085Z\",\"source\":\"official:api1.ipbl.pro\",\"sourceStatus\":\"OK\",\"receivedGames\":1,\"acceptedGames\":1,\"recordedSnapshots\":0,\"duplicateSnapshots\":1,\"rejectedGames\":[],\"missingPreviouslyActive\":[],\"activeGameKeys\":[\"ipbl-66-w-pro-a:1071074\"],\"sourceDetails\":{\"lastSyncAt\":\"2026-06-13T11:30:10.080Z\",\"status\":\"OK\",\"source\":\"official:api1.ipbl.pro\",\"requestedDivisions\":11,\"successfulDivisions\":11,\"failures\":[],\"latencyMs\":3595,\"displayTimeZone\":\"Asia/Yangon\"}},\"activeGameKeys\":[\"ipbl-66-w-pro-a:1071074\"]}"
+    },
+    "recorderHistory": {
+      "label": "recorderHistory",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
+      "capturedAt": "2026-06-13T11:32:06.700Z",
+      "ok": true,
+      "http": 200,
+      "components": [
+        {
+          "label": "recorderHistory-ipbl-66-w-pro-a-1071074",
+          "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-w-pro-a&gameId=1071074&limit=5",
+          "capturedAt": "2026-06-13T11:32:06.699Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 3972,
+          "contentType": "application/json; charset=utf-8",
+          "json": {
+            "gameKey": "ipbl-66-w-pro-a:1071074",
+            "newestFirst": true,
+            "count": 4,
+            "snapshots": [
+              {
+                "schemaVersion": 1,
+                "capturedAt": "2026-06-13T11:26:08.639Z",
+                "capturedAtMs": 1781349968639,
+                "gameKey": "ipbl-66-w-pro-a:1071074",
+                "gameId": 1071074,
+                "divisionTag": "ipbl-66-w-pro-a",
+                "divisionLabel": "Pro Women A",
+                "team1": {
+                  "teamId": 76020,
+                  "shortName": "Novokuznetsk",
+                  "name": "Novokuznetsk"
+                },
+                "team2": {
+                  "teamId": 76022,
+                  "shortName": "Magnitogorsk",
+                  "name": "Magnitogorsk"
+                },
+                "score1": 44,
+                "score2": 46,
+                "scoreText": "44 : 46",
+                "fullScore": null,
+                "quarterScores": [],
+                "period": 2,
+                "timeToGo": "2.55",
+                "timeIsGo": 1,
+                "status": "Online",
+                "statusDisplay": "Live",
+                "isLive": true,
+                "scheduledTime": "2026-06-13T16:05:00+05:00",
+                "localDate": "13.06.2026",
+                "localTime": "17:35",
+                "displayTimeZone": "Asia/Yangon",
+                "source": "official:api1.ipbl.pro",
+                "fallbackFrom": null,
+                "sourceStatus": "OK",
+                "sourceUpdatedAt": "2026-06-13T11:26:08.625Z",
+                "transition": {
+                  "previousCapturedAt": "2026-06-13T11:21:10.695Z",
+                  "scoreDelta1": 13,
+                  "scoreDelta2": 13,
+                  "scoreChanged": true,
+                  "periodChanged": false,
+                  "clockDeltaSeconds": null,
+                  "clockAnomaly": false,
+                  "sourceChanged": false
+                }
+              },
+              {
+                "schemaVersion": 1,
+                "capturedAt": "2026-06-13T11:21:10.695Z",
+                "capturedAtMs": 1781349670695,
+                "gameKey": "ipbl-66-w-pro-a:1071074",
+                "gameId": 1071074,
+                "divisionTag": "ipbl-66-w-pro-a",
+                "divisionLabel": "Pro Women A",
+                "team1": {
+                  "teamId": 76020,
+                  "shortName": "Novokuznetsk",
+                  "name": "Novokuznetsk"
+                },
+                "team2": {
+                  "teamId": 76022,
+                  "shortName": "Magnitogorsk",
+                  "name": "Magnitogorsk"
+                },
+                "score1": 31,
+                "score2": 33,
+                "scoreText": "31 : 33",
+                "fullScore": null,
+                "quarterScores": [],
+                "period": 2,
+                "timeToGo": "7.23",
+                "timeIsGo": 1,
+                "status": "Online",
+                "statusDisplay": "Live",
+                "isLive": true,
+                "scheduledTime": "2026-06-13T16:05:00+05:00",
+                "localDate": "13.06.2026",
+                "localTime": "17:35",
+                "displayTimeZone": "Asia/Yangon",
+                "source": "official:api1.ipbl.pro",
+                "fallbackFrom": null,
+                "sourceStatus": "OK",
+                "sourceUpdatedAt": "2026-06-13T11:21:10.690Z",
+                "transition": {
+                  "previousCapturedAt": "2026-06-13T11:17:08.820Z",
+                  "scoreDelta1": 7,
+                  "scoreDelta2": 13,
+                  "scoreChanged": true,
+                  "periodChanged": true,
+                  "clockDeltaSeconds": null,
+                  "clockAnomaly": false,
+                  "sourceChanged": false
+                }
+              },
+              {
+                "schemaVersion": 1,
+                "capturedAt": "2026-06-13T11:17:08.820Z",
+                "capturedAtMs": 1781349428820,
+                "gameKey": "ipbl-66-w-pro-a:1071074",
+                "gameId": 1071074,
+                "divisionTag": "ipbl-66-w-pro-a",
+                "divisionLabel": "Pro Women A",
+                "team1": {
+                  "teamId": 76020,
+                  "shortName": "Novokuznetsk",
+                  "name": "Novokuznetsk"
+                },
+                "team2": {
+                  "teamId": 76022,
+                  "shortName": "Magnitogorsk",
+                  "name": "Magnitogorsk"
+                },
+                "score1": 24,
+                "score2": 20,
+                "scoreText": "24 : 20",
+                "fullScore": null,
+                "quarterScores": [],
+                "period": 1,
+                "timeToGo": "1.54",
+                "timeIsGo": 1,
+                "status": "Online",
+                "statusDisplay": "Live",
+                "isLive": true,
+                "scheduledTime": "2026-06-13T16:05:00+05:00",
+                "localDate": "13.06.2026",
+                "localTime": "17:35",
+                "displayTimeZone": "Asia/Yangon",
+                "source": "official:api1.ipbl.pro",
+                "fallbackFrom": null,
+                "sourceStatus": "OK",
+                "sourceUpdatedAt": "2026-06-13T11:17:08.815Z",
+                "transition": {
+                  "previousCapturedAt": "2026-06-13T11:10:07.099Z",
+                  "scoreDelta1": 14,
+                  "scoreDelta2": 8,
+                  "scoreChanged": true,
+                  "periodChanged": false,
+                  "clockDeltaSeconds": null,
+                  "clockAnomaly": false,
+                  "sourceChanged": false
+                }
+              },
+              {
+                "schemaVersion": 1,
+                "capturedAt": "2026-06-13T11:10:07.099Z",
+                "capturedAtMs": 1781349007099,
+                "gameKey": "ipbl-66-w-pro-a:1071074",
+                "gameId": 1071074,
+                "divisionTag": "ipbl-66-w-pro-a",
+                "divisionLabel": "Pro Women A",
+                "team1": {
+                  "teamId": 76020,
+                  "shortName": "Novokuznetsk",
+                  "name": "Novokuznetsk"
+                },
+                "team2": {
+                  "teamId": 76022,
+                  "shortName": "Magnitogorsk",
+                  "name": "Magnitogorsk"
+                },
+                "score1": 10,
+                "score2": 12,
+                "scoreText": "10 : 12",
+                "fullScore": null,
+                "quarterScores": [],
+                "period": 1,
+                "timeToGo": "5.26",
+                "timeIsGo": 1,
+                "status": "Online",
+                "statusDisplay": "Live",
+                "isLive": true,
+                "scheduledTime": "2026-06-13T16:05:00+05:00",
+                "localDate": "13.06.2026",
+                "localTime": "17:35",
+                "displayTimeZone": "Asia/Yangon",
+                "source": "official:api1.ipbl.pro",
+                "fallbackFrom": null,
+                "sourceStatus": "OK",
+                "sourceUpdatedAt": "2026-06-13T11:10:07.095Z",
+                "transition": {
+                  "previousCapturedAt": null,
+                  "scoreDelta1": null,
+                  "scoreDelta2": null,
+                  "scoreChanged": false,
+                  "periodChanged": false,
+                  "clockDeltaSeconds": null,
+                  "clockAnomaly": false,
+                  "sourceChanged": false
+                }
+              }
+            ]
+          },
+          "preview": "{\"gameKey\":\"ipbl-66-w-pro-a:1071074\",\"newestFirst\":true,\"count\":4,\"snapshots\":[{\"schemaVersion\":1,\"capturedAt\":\"2026-06-13T11:26:08.639Z\",\"capturedAtMs\":1781349968639,\"gameKey\":\"ipbl-66-w-pro-a:1071074\",\"gameId\":1071074,\"divisionTag\":\"ipbl-66-w-pro-a\",\"divisionLabel\":\"Pro Women A\",\"team1\":{\"teamId\":76020,\"shortName\":\"Novokuznetsk\",\"name\":\"Novokuznetsk\"},\"team2\":{\"teamId\":76022,\"shortName\":\"Magnitogorsk\",\"name\":\"Magnitogorsk\"},\"score1\":44,\"score2\":46,\"scoreText\":\"44 : 46\",\"fullScore\":null,\"quarterScores\":[],\"period\":2,\"timeToGo\":\"2.55\",\"timeIsGo\":1,\"status\":\"Online\",\"statusDisplay\":\"Live\",\"isLive\":true,\"scheduledTime\":\"2026-06-13T16:05:00+05:00\",\"localDate\":\"13.06.2026\",\"localTime\":\"17:35\",\"displayTimeZone\":\"Asia/Yangon\",\"source\":\"official:api1.ipbl.pro\",\"fallbackFrom\":null,\"sourceStatus\":\"OK\",\"sourceUpdatedAt\":\"2026-06-13T11:26:08.625Z\",\"transition\":{\"previousCapturedAt\":\"2026-06-13T11:21:10.695Z\",\"scoreDelta1\":13,\"scoreDelta2\":13,\"scoreChanged\":true,\"periodChanged\":false,\"clockDeltaSeconds\":null,\"clockAnomaly\":false,\"sourceChanged\":false}},{\"schemaVersion\":1,\"capturedAt\":\"2026-06-13T11:21:10.695Z\",\"capturedAtMs\":1781349670695,\"gameKey\":\"ipbl-66-w-pro-a:1071074\",\"gameId\":1071074,\"d"
+        }
+      ],
+      "json": {
+        "snapshots": [
+          {
+            "schemaVersion": 1,
+            "capturedAt": "2026-06-13T11:26:08.639Z",
+            "capturedAtMs": 1781349968639,
+            "gameKey": "ipbl-66-w-pro-a:1071074",
+            "gameId": 1071074,
+            "divisionTag": "ipbl-66-w-pro-a",
+            "divisionLabel": "Pro Women A",
+            "team1": {
+              "teamId": 76020,
+              "shortName": "Novokuznetsk",
+              "name": "Novokuznetsk"
+            },
+            "team2": {
+              "teamId": 76022,
+              "shortName": "Magnitogorsk",
+              "name": "Magnitogorsk"
+            },
+            "score1": 44,
+            "score2": 46,
+            "scoreText": "44 : 46",
+            "fullScore": null,
+            "quarterScores": [],
+            "period": 2,
+            "timeToGo": "2.55",
+            "timeIsGo": 1,
+            "status": "Online",
+            "statusDisplay": "Live",
+            "isLive": true,
+            "scheduledTime": "2026-06-13T16:05:00+05:00",
+            "localDate": "13.06.2026",
+            "localTime": "17:35",
+            "displayTimeZone": "Asia/Yangon",
+            "source": "official:api1.ipbl.pro",
+            "fallbackFrom": null,
+            "sourceStatus": "OK",
+            "sourceUpdatedAt": "2026-06-13T11:26:08.625Z",
+            "transition": {
+              "previousCapturedAt": "2026-06-13T11:21:10.695Z",
+              "scoreDelta1": 13,
+              "scoreDelta2": 13,
+              "scoreChanged": true,
+              "periodChanged": false,
+              "clockDeltaSeconds": null,
+              "clockAnomaly": false,
+              "sourceChanged": false
+            }
+          },
+          {
+            "schemaVersion": 1,
+            "capturedAt": "2026-06-13T11:21:10.695Z",
+            "capturedAtMs": 1781349670695,
+            "gameKey": "ipbl-66-w-pro-a:1071074",
+            "gameId": 1071074,
+            "divisionTag": "ipbl-66-w-pro-a",
+            "divisionLabel": "Pro Women A",
+            "team1": {
+              "teamId": 76020,
+              "shortName": "Novokuznetsk",
+              "name": "Novokuznetsk"
+            },
+            "team2": {
+              "teamId": 76022,
+              "shortName": "Magnitogorsk",
+              "name": "Magnitogorsk"
+            },
+            "score1": 31,
+            "score2": 33,
+            "scoreText": "31 : 33",
+            "fullScore": null,
+            "quarterScores": [],
+            "period": 2,
+            "timeToGo": "7.23",
+            "timeIsGo": 1,
+            "status": "Online",
+            "statusDisplay": "Live",
+            "isLive": true,
+            "scheduledTime": "2026-06-13T16:05:00+05:00",
+            "localDate": "13.06.2026",
+            "localTime": "17:35",
+            "displayTimeZone": "Asia/Yangon",
+            "source": "official:api1.ipbl.pro",
+            "fallbackFrom": null,
+            "sourceStatus": "OK",
+            "sourceUpdatedAt": "2026-06-13T11:21:10.690Z",
+            "transition": {
+              "previousCapturedAt": "2026-06-13T11:17:08.820Z",
+              "scoreDelta1": 7,
+              "scoreDelta2": 13,
+              "scoreChanged": true,
+              "periodChanged": true,
+              "clockDeltaSeconds": null,
+              "clockAnomaly": false,
+              "sourceChanged": false
+            }
+          },
+          {
+            "schemaVersion": 1,
+            "capturedAt": "2026-06-13T11:17:08.820Z",
+            "capturedAtMs": 1781349428820,
+            "gameKey": "ipbl-66-w-pro-a:1071074",
+            "gameId": 1071074,
+            "divisionTag": "ipbl-66-w-pro-a",
+            "divisionLabel": "Pro Women A",
+            "team1": {
+              "teamId": 76020,
+              "shortName": "Novokuznetsk",
+              "name": "Novokuznetsk"
+            },
+            "team2": {
+              "teamId": 76022,
+              "shortName": "Magnitogorsk",
+              "name": "Magnitogorsk"
+            },
+            "score1": 24,
+            "score2": 20,
+            "scoreText": "24 : 20",
+            "fullScore": null,
+            "quarterScores": [],
+            "period": 1,
+            "timeToGo": "1.54",
+            "timeIsGo": 1,
+            "status": "Online",
+            "statusDisplay": "Live",
+            "isLive": true,
+            "scheduledTime": "2026-06-13T16:05:00+05:00",
+            "localDate": "13.06.2026",
+            "localTime": "17:35",
+            "displayTimeZone": "Asia/Yangon",
+            "source": "official:api1.ipbl.pro",
+            "fallbackFrom": null,
+            "sourceStatus": "OK",
+            "sourceUpdatedAt": "2026-06-13T11:17:08.815Z",
+            "transition": {
+              "previousCapturedAt": "2026-06-13T11:10:07.099Z",
+              "scoreDelta1": 14,
+              "scoreDelta2": 8,
+              "scoreChanged": true,
+              "periodChanged": false,
+              "clockDeltaSeconds": null,
+              "clockAnomaly": false,
+              "sourceChanged": false
+            }
+          },
+          {
+            "schemaVersion": 1,
+            "capturedAt": "2026-06-13T11:10:07.099Z",
+            "capturedAtMs": 1781349007099,
+            "gameKey": "ipbl-66-w-pro-a:1071074",
+            "gameId": 1071074,
+            "divisionTag": "ipbl-66-w-pro-a",
+            "divisionLabel": "Pro Women A",
+            "team1": {
+              "teamId": 76020,
+              "shortName": "Novokuznetsk",
+              "name": "Novokuznetsk"
+            },
+            "team2": {
+              "teamId": 76022,
+              "shortName": "Magnitogorsk",
+              "name": "Magnitogorsk"
+            },
+            "score1": 10,
+            "score2": 12,
+            "scoreText": "10 : 12",
+            "fullScore": null,
+            "quarterScores": [],
+            "period": 1,
+            "timeToGo": "5.26",
+            "timeIsGo": 1,
+            "status": "Online",
+            "statusDisplay": "Live",
+            "isLive": true,
+            "scheduledTime": "2026-06-13T16:05:00+05:00",
+            "localDate": "13.06.2026",
+            "localTime": "17:35",
+            "displayTimeZone": "Asia/Yangon",
+            "source": "official:api1.ipbl.pro",
+            "fallbackFrom": null,
+            "sourceStatus": "OK",
+            "sourceUpdatedAt": "2026-06-13T11:10:07.095Z",
+            "transition": {
+              "previousCapturedAt": null,
+              "scoreDelta1": null,
+              "scoreDelta2": null,
+              "scoreChanged": false,
+              "periodChanged": false,
+              "clockDeltaSeconds": null,
+              "clockAnomaly": false,
+              "sourceChanged": false
+            }
+          }
+        ]
+      }
+    },
+    "melbetLiveDiscovery": {
+      "label": "melbetLiveDiscovery",
+      "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
+      "capturedAt": "2026-06-13T11:31:26.179Z",
+      "ok": true,
+      "http": 200,
+      "components": [
+        {
+          "label": "melbetLive-2496666",
+          "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+          "capturedAt": "2026-06-13T11:31:26.002Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 5932,
+          "contentType": "application/json; charset=utf-8",
+          "json": {
+            "Id": 0,
+            "Success": true,
+            "Error": "",
+            "ErrorCode": 0,
+            "Guid": "",
+            "Value": [
+              {
+                "R": 99,
+                "SC": {
+                  "FS": {
+                    "S1": 66,
+                    "S2": 72
+                  },
+                  "PS": [
+                    {
+                      "Key": 1,
+                      "Value": {
+                        "S1": 29,
+                        "S2": 33,
+                        "NF": "1st quarter"
+                      }
+                    },
+                    {
+                      "Key": 2,
+                      "Value": {
+                        "S1": 18,
+                        "S2": 22,
+                        "NF": "2nd quarter"
+                      }
+                    },
+                    {
+                      "Key": 3,
+                      "Value": {
+                        "S1": 19,
+                        "S2": 17,
+                        "NF": "3rd quarter"
+                      }
+                    }
+                  ],
+                  "CP": 3,
+                  "CPS": "3rd quarter",
+                  "TS": 1620,
+                  "TR": -1,
+                  "I": "",
+                  "ST": [
+                    {
+                      "Key": 0,
+                      "Value": [
+                        {
+                          "ID": 53,
+                          "S1": "0",
+                          "S2": "0",
+                          "N": "Fouls"
+                        },
+                        {
+                          "ID": 49,
+                          "S1": "18",
+                          "S2": "20",
+                          "N": "2-pointers"
+                        },
+                        {
+                          "ID": 48,
+                          "S1": "7",
+                          "S2": "8",
+                          "N": "3-pointers"
+                        },
+                        {
+                          "ID": 50,
+                          "S1": "9",
+                          "S2": "8",
+                          "N": "Free throws"
+                        }
+                      ]
+                    }
+                  ],
+                  "SLS": "27 minutes"
+                },
+                "VI": "19397760",
+                "VA": 1,
+                "ZP": 4627910,
+                "HMH": 1,
+                "U": 1781350284,
+                "OuR": true,
+                "SVoAP": true,
+                "I": 728878363,
+                "N": 159527,
+                "T": 99,
+                "CO": 50,
+                "E": [
+                  {
+                    "T": 402,
+                    "C": 1.14,
+                    "CV": "1.14",
+                    "G": 101
+                  },
+                  {
+                    "T": 3655,
+                    "C": 1.17,
+                    "CV": "1.17",
+                    "G": 2766
+                  },
+                  {
+                    "T": 11,
+                    "P": 98.5,
+                    "C": 1.77,
+                    "CV": "1.77",
+                    "G": 15
+                  },
+                  {
+                    "T": 14,
+                    "P": 107.5,
+                    "C": 1.775,
+                    "CV": "1.775",
+                    "G": 62
+                  },
+                  {
+                    "T": 10,
+                    "P": 206.5,
+                    "C": 1.78,
+                    "CV": "1.78",
+                    "G": 17
+                  },
+                  {
+                    "T": 7,
+                    "P": 8.5,
+                    "C": 1.784,
+                    "CV": "1.784",
+                    "G": 2
+                  },
+                  {
+                    "T": 8,
+                    "P": -8.5,
+                    "C": 1.875,
+                    "CV": "1.875",
+                    "G": 2
+                  },
+                  {
+                    "T": 9,
+                    "P": 206.5,
+                    "C": 1.88,
+                    "CV": "1.88",
+                    "G": 17
+                  },
+                  {
+                    "T": 13,
+                    "P": 107.5,
+                    "C": 1.888,
+                    "CV": "1.888",
+                    "G": 62
+                  },
+                  {
+                    "T": 12,
+                    "P": 98.5,
+                    "C": 1.896,
+                    "CV": "1.896",
+                    "G": 15
+                  },
+                  {
+                    "T": 401,
+                    "C": 4.61,
+                    "CV": "4.61",
+                    "G": 101
+                  },
+                  {
+                    "T": 3653,
+                    "C": 5.17,
+                    "CV": "5.17",
+                    "G": 2766
+                  },
+                  {
+                    "T": 3654,
+                    "C": 13,
+                    "CV": "13",
+                    "G": 2766
+                  }
+                ],
+                "AE": [
+                  {
+                    "G": 2,
+                    "ME": [
+                      {
+                        "T": 8,
+                        "P": -6.5,
+                        "C": 1.59,
+                        "CV": "1.59",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 6.5,
+                        "C": 2.136,
+                        "CV": "2.136",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": -7.5,
+                        "C": 1.72,
+                        "CV": "1.72",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 7.5,
+                        "C": 1.945,
+                        "CV": "1.945",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": -8.5,
+                        "C": 1.875,
+                        "CV": "1.875",
+                        "G": 2,
+                        "CE": 1
+                      },
+                      {
+                        "T": 7,
+                        "P": 8.5,
+                        "C": 1.784,
+                        "CV": "1.784",
+                        "G": 2,
+                        "CE": 1
+                      },
+                      {
+                        "T": 8,
+                        "P": -9.5,
+                        "C": 2.06,
+                        "CV": "2.06",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 9.5,
+                        "C": 1.64,
+                        "CV": "1.64",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": -10.5,
+                        "C": 2.28,
+                        "CV": "2.28",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 10.5,
+                        "C": 1.52,
+                        "CV": "1.52",
+                        "G": 2
+                      }
+                    ]
+                  },
+                  {
+                    "G": 17,
+                    "ME": [
+                      {
+                        "T": 9,
+                        "P": 204.5,
+                        "C": 1.6,
+                        "CV": "1.6",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 204.5,
+                        "C": 2.03,
+                        "CV": "2.03",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 205.5,
+                        "C": 1.715,
+                        "CV": "1.715",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 205.5,
+                        "C": 1.87,
+                        "CV": "1.87",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 206.5,
+                        "C": 1.88,
+                        "CV": "1.88",
+                        "G": 17,
+                        "CE": 1
+                      },
+                      {
+                        "T": 10,
+                        "P": 206.5,
+                        "C": 1.78,
+                        "CV": "1.78",
+                        "G": 17,
+                        "CE": 1
+                      },
+                      {
+                        "T": 9,
+                        "P": 207.5,
+                        "C": 1.99,
+                        "CV": "1.99",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 207.5,
+                        "C": 1.625,
+                        "CV": "1.625",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 208.5,
+                        "C": 2.16,
+                        "CV": "2.16",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 208.5,
+                        "C": 1.53,
+                        "CV": "1.53",
+                        "G": 17
+                      }
+                    ]
+                  }
+                ],
+                "EC": 47,
+                "TG": "",
+                "V": "Including Overtime",
+                "VE": "Including Overtime",
+                "PN": "",
+                "TN": "Quarter",
+                "DI": "",
+                "SS": 3,
+                "STI": "695888e76d807ed026780f0e",
+                "S": 1781348400,
+                "HS": 1,
+                "SGC": 1,
+                "CHIMG": "95b77fbaa64b9c1f5877579e5ed4349e.png",
+                "O1": "Revda",
+                "O2": "Anapa",
+                "O1I": 9829757,
+                "O2I": 9829755,
+                "O1IS": [
+                  9829757
+                ],
+                "O2IS": [
+                  9829755
+                ],
+                "O1C": 225,
+                "O2C": 225,
+                "O1IMG": [
+                  "992b7b53bb89a36df52640ac751d344a.png"
+                ],
+                "O2IMG": [
+                  "e5af40ceac6255eb23bb69398930f834.png"
+                ],
+                "O1R": "Revda",
+                "O2R": "Anapa",
+                "O1E": "Revda",
+                "O2E": "Anapa",
+                "MIS": [
+                  {
+                    "K": 3,
+                    "V": "4x10"
+                  },
+                  {
+                    "K": 11,
+                    "V": "Russia"
+                  }
+                ],
+                "MIO": {
+                  "MaF": "4x10"
+                },
+                "SI": 3,
+                "SN": "Basketball",
+                "SR": "Баскетбол",
+                "SE": "Basketball",
+                "L": "IPBL. Pro Division",
+                "LR": "IPBL. Pro Division",
+                "LE": "IPBL. Pro Division",
+                "LI": 2496666,
+                "CN": "Russia",
+                "COI": 1,
+                "MS": [
+                  0
+                ],
+                "SGI": "6a2d38405e99bd05c63afbeb",
+                "KI": 1,
+                "CID": 1,
+                "IV": 12,
+                "HHTHS": true,
+                "TNS": "Quarters",
+                "SUBA": true
+              },
+              {
+                "R": 99,
+                "SC": {
+                  "FS": {
+                    "S1": 49,
+                    "S2": 54
+                  },
+                  "PS": [
+                    {
+                      "Key": 1,
+                      "Value": {
+                        "S1": 20,
+                        "S2": 24,
+                        "NF": "1st quarter"
+                      }
+                    },
+                    {
+                      "Key": 2,
+                      "Value": {
+                        "S1": 29,
+                        "S2": 30,
+                        "NF": "2nd quarter"
+                      }
+                    }
+                  ],
+                  "CP": 2,
+                  "CPS": "2nd quarter",
+                  "TS": 1138,
+                  "TR": -1,
+                  "I": "",
+                  "ST": [
+                    {
+                      "Key": 0,
+                      "Value": [
+                        {
+                          "ID": 53,
+                          "S1": "0",
+                          "S2": "0",
+                          "N": "Fouls"
+                        },
+                        {
+                          "ID": 49,
+                          "S1": "10",
+                          "S2": "18",
+                          "N": "2-pointers"
+                        },
+                        {
+                          "ID": 48,
+                          "S1": "9",
+                          "S2": "6",
+                          "N": "3-pointers"
+                        },
+                        {
+                          "ID": 50,
+                          "S1": "2",
+                          "S2": "0",
+                          "N": "Free throws"
+                        }
+                      ]
+                    }
+                  ],
+                  "SLS": "18 minutes"
+                },
+                "VI": "19397849",
+                "VA": 1,
+                "ZP": 4628327,
+                "HMH": 1,
+                "U": 1781350285,
+                "OuR": true,
+                "SVoAP": true,
+                "I": 728880079,
+                "N": 180760,
+                "T": 99,
+                "CO": 50,
+                "E": [
+                  {
+                    "T": 402,
+                    "C": 1.715,
+                    "CV": "1.715",
+                    "G": 101
+                  },
+                  {
+                    "T": 12,
+                    "P": 100.5,
+                    "C": 1.78,
+                    "CV": "1.78",
+                    "G": 15
+                  },
+                  {
+                    "T": 3655,
+                    "C": 1.792,
+                    "CV": "1.792",
+                    "G": 2766
+                  },
+                  {
+                    "T": 9,
+                    "P": 201.5,
+                    "C": 1.8,
+                    "CV": "1.8",
+                    "G": 17
+                  },
+                  {
+                    "T": 13,
+                    "P": 101.5,
+                    "C": 1.81,
+                    "CV": "1.81",
+                    "G": 62
+                  },
+                  {
+                    "T": 7,
+                    "P": 1.5,
+                    "C": 1.816,
+                    "CV": "1.816",
+                    "G": 2
+                  },
+                  {
+                    "T": 8,
+                    "P": -1.5,
+                    "C": 1.84,
+                    "CV": "1.84",
+                    "G": 2
+                  },
+                  {
+                    "T": 14,
+                    "P": 101.5,
+                    "C": 1.85,
+                    "CV": "1.85",
+                    "G": 62
+                  },
+                  {
+                    "T": 10,
+                    "P": 201.5,
+                    "C": 1.86,
+                    "CV": "1.86",
+                    "G": 17
+                  },
+                  {
+                    "T": 11,
+                    "P": 100.5,
+                    "C": 1.885,
+                    "CV": "1.885",
+                    "G": 15
+                  },
+                  {
+                    "T": 401,
+                    "C": 1.95,
+                    "CV": "1.95",
+                    "G": 101
+                  },
+                  {
+                    "T": 3653,
+                    "C": 2.064,
+                    "CV": "2.064",
+                    "G": 2766
+                  },
+                  {
+                    "T": 3654,
+                    "C": 13,
+                    "CV": "13",
+                    "G": 2766
+                  }
+                ],
+                "AE": [
+                  {
+                    "G": 2,
+                    "ME": [
+                      {
+                        "T": 7,
+                        "P": -0.5,
+                        "C": 1.95,
+                        "CV": "1.95",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": -0.5,
+                        "C": 1.715,
+                        "CV": "1.715",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 0.5,
+                        "C": 1.945,
+                        "CV": "1.945",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": 0.5,
+                        "C": 1.715,
+                        "CV": "1.715",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": -1.5,
+                        "C": 1.84,
+                        "CV": "1.84",
+                        "G": 2,
+                        "CE": 1
+                      },
+                      {
+                        "T": 7,
+                        "P": 1.5,
+                        "C": 1.816,
+                        "CV": "1.816",
+                        "G": 2,
+                        "CE": 1
+                      },
+                      {
+                        "T": 8,
+                        "P": -2.5,
+                        "C": 1.97,
+                        "CV": "1.97",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 2.5,
+                        "C": 1.704,
+                        "CV": "1.704",
+                        "G": 2
+                      }
+                    ]
+                  },
+                  {
+                    "G": 17,
+                    "ME": [
+                      {
+                        "T": 9,
+                        "P": 199.5,
+                        "C": 1.575,
+                        "CV": "1.575",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 199.5,
+                        "C": 2.07,
+                        "CV": "2.07",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 200.5,
+                        "C": 1.66,
+                        "CV": "1.66",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 200.5,
+                        "C": 1.94,
+                        "CV": "1.94",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 201.5,
+                        "C": 1.8,
+                        "CV": "1.8",
+                        "G": 17,
+                        "CE": 1
+                      },
+                      {
+                        "T": 10,
+                        "P": 201.5,
+                        "C": 1.86,
+                        "CV": "1.86",
+                        "G": 17,
+                        "CE": 1
+                      },
+                      {
+                        "T": 9,
+                        "P": 202.5,
+                        "C": 1.864,
+                        "CV": "1.864",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 202.5,
+                        "C": 1.72,
+                        "CV": "1.72",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 203.5,
+                        "C": 1.99,
+                        "CV": "1.99",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 203.5,
+                        "C": 1.625,
+                        "CV": "1.625",
+                        "G": 17
+                      }
+                    ]
+                  }
+                ],
+                "EC": 53,
+                "TG": "",
+                "V": "Including Overtime",
+                "VE": "Including Overtime",
+                "PN": "",
+                "TN": "Quarter",
+                "DI": "",
+                "SS": 3,
+                "STI": "695888e76d807ed026780f0e",
+                "S": 1781349000,
+                "CHIMG": "95b77fbaa64b9c1f5877579e5ed4349e.png",
+                "O1": "Vladikavkaz",
+                "O2": "Tula",
+                "O1I": 10014781,
+                "O2I": 10014779,
+                "O1IS": [
+                  10014781
+                ],
+                "O2IS": [
+                  10014779
+                ],
+                "O1C": 1,
+                "O2C": 1,
+                "O1IMG": [
+                  "4f3474ab57a559bab377fac08a8d15c0.png"
+                ],
+                "O2IMG": [
+                  "6e4f3ac3ad7b59a7fb994d93d9c834c4.png"
+                ],
+                "O1R": "Vladikavkaz",
+                "O2R": "Tula",
+                "O1E": "Vladikavkaz",
+                "O2E": "Tula",
+                "MIS": [
+                  {
+                    "K": 3,
+                    "V": "4x10"
+                  },
+                  {
+                    "K": 11,
+                    "V": "Russia"
+                  }
+                ],
+                "MIO": {
+                  "MaF": "4x10"
+                },
+                "SI": 3,
+                "SN": "Basketball",
+                "SR": "Баскетбол",
+                "SE": "Basketball",
+                "L": "IPBL. Pro Division",
+                "LR": "IPBL. Pro Division",
+                "LE": "IPBL. Pro Division",
+                "LI": 2496666,
+                "CN": "Russia",
+                "COI": 1,
+                "MS": [
+                  0
+                ],
+                "SGI": "6a2d3a995e99bd05c63afd15",
+                "KI": 1,
+                "CID": 1,
+                "IV": 12,
+                "HHTHS": true,
+                "TNS": "Quarters",
+                "SUBA": true
+              }
+            ]
+          },
+          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":66,\"S2\":72},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":29,\"S2\":33,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":18,\"S2\":22,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":19,\"S2\":17,\"NF\":\"3rd quarter\"}}],\"CP\":3,\"CPS\":\"3rd quarter\",\"TS\":1620,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"18\",\"S2\":\"20\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"7\",\"S2\":\"8\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"9\",\"S2\":\"8\",\"N\":\"Free throws\"}]}],\"SLS\":\"27 minutes\"},\"VI\":\"19397760\",\"VA\":1,\"ZP\":4627910,\"HMH\":1,\"U\":1781350284,\"OuR\":true,\"SVoAP\":true,\"I\":728878363,\"N\":159527,\"T\":99,\"CO\":50,\"E\":[{\"T\":402,\"C\":1.14,\"CV\":\"1.14\",\"G\":101},{\"T\":3655,\"C\":1.17,\"CV\":\"1.17\",\"G\":2766},{\"T\":11,\"P\":98.5,\"C\":1.77,\"CV\":\"1.77\",\"G\":15},{\"T\":14,\"P\":107.5,\"C\":1.775,\"CV\":\"1.775\",\"G\":62},{\"T\":10,\"P\":206.5,\"C\":1.78,\"CV\":\"1.78\",\"G\":17},{\"T\":7,\"P\":8.5,\"C\":1.784,\"CV\":\"1.784\",\"G\":2},{\"T\":8,\"P\":-8.5,\"C\":1.875,\"CV\":\"1.875\",\"G\":2},{\"T\":9,\"P\":206.5,\"C\":1.88,\"CV\":\"1.88\",\"G\":17},{\"T\":13,\"P\":107.5,\"C\":1.888,\"CV\":\"1.888\",\"G\":62},{\"T\":12,\"P\":98.5,\"C\":1.896,\"CV\":\"1.896\",\"G\":15},{\"T\":401,\"C\":4.61,\"CV\":\"4.61\",\"G\":101},{\"T\":3653,\"C\":5.17,\"CV\":"
+        },
+        {
+          "label": "melbetLive-2496667",
+          "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+          "capturedAt": "2026-06-13T11:31:26.179Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 3185,
+          "contentType": "application/json; charset=utf-8",
+          "json": {
+            "Id": 0,
+            "Success": true,
+            "Error": "",
+            "ErrorCode": 0,
+            "Guid": "",
+            "Value": [
+              {
+                "R": 99,
+                "SC": {
+                  "FS": {
+                    "S1": 49,
+                    "S2": 51
+                  },
+                  "PS": [
+                    {
+                      "Key": 1,
+                      "Value": {
+                        "S1": 28,
+                        "S2": 26,
+                        "NF": "1st quarter"
+                      }
+                    },
+                    {
+                      "Key": 2,
+                      "Value": {
+                        "S1": 19,
+                        "S2": 25,
+                        "NF": "2nd quarter"
+                      }
+                    },
+                    {
+                      "Key": 3,
+                      "Value": {
+                        "S1": 2,
+                        "NF": "3rd quarter"
+                      }
+                    }
+                  ],
+                  "CP": 3,
+                  "CPS": "3rd quarter",
+                  "TS": 1234,
+                  "TR": -1,
+                  "I": "",
+                  "ST": [
+                    {
+                      "Key": 0,
+                      "Value": [
+                        {
+                          "ID": 53,
+                          "S1": "0",
+                          "S2": "0",
+                          "N": "Fouls"
+                        },
+                        {
+                          "ID": 49,
+                          "S1": "15",
+                          "S2": "16",
+                          "N": "2-pointers"
+                        },
+                        {
+                          "ID": 48,
+                          "S1": "5",
+                          "S2": "6",
+                          "N": "3-pointers"
+                        },
+                        {
+                          "ID": 50,
+                          "S1": "4",
+                          "S2": "1",
+                          "N": "Free throws"
+                        }
+                      ]
+                    }
+                  ],
+                  "SLS": "20 minutes"
+                },
+                "VI": "19397804",
+                "VA": 1,
+                "ZP": 4628317,
+                "HMH": 1,
+                "U": 1781350282,
+                "OuR": true,
+                "SVoAP": true,
+                "I": 728878178,
+                "N": 159332,
+                "T": 99,
+                "CO": 50,
+                "E": [
+                  {
+                    "T": 402,
+                    "C": 1.355,
+                    "CV": "1.355",
+                    "G": 101
+                  },
+                  {
+                    "T": 3655,
+                    "C": 1.408,
+                    "CV": "1.408",
+                    "G": 2766
+                  },
+                  {
+                    "T": 11,
+                    "P": 96.5,
+                    "C": 1.76,
+                    "CV": "1.76",
+                    "G": 15
+                  },
+                  {
+                    "T": 14,
+                    "P": 102.5,
+                    "C": 1.78,
+                    "CV": "1.78",
+                    "G": 62
+                  },
+                  {
+                    "T": 10,
+                    "P": 199.5,
+                    "C": 1.79,
+                    "CV": "1.79",
+                    "G": 17
+                  },
+                  {
+                    "T": 7,
+                    "P": 5.5,
+                    "C": 1.82,
+                    "CV": "1.82",
+                    "G": 2
+                  },
+                  {
+                    "T": 8,
+                    "P": -5.5,
+                    "C": 1.84,
+                    "CV": "1.84",
+                    "G": 2
+                  },
+                  {
+                    "T": 9,
+                    "P": 199.5,
+                    "C": 1.87,
+                    "CV": "1.87",
+                    "G": 17
+                  },
+                  {
+                    "T": 13,
+                    "P": 102.5,
+                    "C": 1.885,
+                    "CV": "1.885",
+                    "G": 62
+                  },
+                  {
+                    "T": 12,
+                    "P": 96.5,
+                    "C": 1.904,
+                    "CV": "1.904",
+                    "G": 15
+                  },
+                  {
+                    "T": 401,
+                    "C": 2.8,
+                    "CV": "2.8",
+                    "G": 101
+                  },
+                  {
+                    "T": 3653,
+                    "C": 3,
+                    "CV": "3",
+                    "G": 2766
+                  },
+                  {
+                    "T": 3654,
+                    "C": 13,
+                    "CV": "13",
+                    "G": 2766
+                  }
+                ],
+                "AE": [
+                  {
+                    "G": 2,
+                    "ME": [
+                      {
+                        "T": 8,
+                        "P": -3.5,
+                        "C": 1.605,
+                        "CV": "1.605",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 3.5,
+                        "C": 2.115,
+                        "CV": "2.115",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": -4.5,
+                        "C": 1.715,
+                        "CV": "1.715",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 4.5,
+                        "C": 1.955,
+                        "CV": "1.955",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": -5.5,
+                        "C": 1.84,
+                        "CV": "1.84",
+                        "G": 2,
+                        "CE": 1
+                      },
+                      {
+                        "T": 7,
+                        "P": 5.5,
+                        "C": 1.82,
+                        "CV": "1.82",
+                        "G": 2,
+                        "CE": 1
+                      },
+                      {
+                        "T": 8,
+                        "P": -6.5,
+                        "C": 1.98,
+                        "CV": "1.98",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 6.5,
+                        "C": 1.696,
+                        "CV": "1.696",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": -7.5,
+                        "C": 2.144,
+                        "CV": "2.144",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": 7.5,
+                        "C": 1.584,
+                        "CV": "1.584",
+                        "G": 2
+                      }
+                    ]
+                  },
+                  {
+                    "G": 17,
+                    "ME": [
+                      {
+                        "T": 9,
+                        "P": 197.5,
+                        "C": 1.63,
+                        "CV": "1.63",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 197.5,
+                        "C": 1.984,
+                        "CV": "1.984",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 198.5,
+                        "C": 1.72,
+                        "CV": "1.72",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 198.5,
+                        "C": 1.864,
+                        "CV": "1.864",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 199.5,
+                        "C": 1.87,
+                        "CV": "1.87",
+                        "G": 17,
+                        "CE": 1
+                      },
+                      {
+                        "T": 10,
+                        "P": 199.5,
+                        "C": 1.79,
+                        "CV": "1.79",
+                        "G": 17,
+                        "CE": 1
+                      },
+                      {
+                        "T": 9,
+                        "P": 200.5,
+                        "C": 1.945,
+                        "CV": "1.945",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 200.5,
+                        "C": 1.656,
+                        "CV": "1.656",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 201.5,
+                        "C": 2.085,
+                        "CV": "2.085",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 201.5,
+                        "C": 1.57,
+                        "CV": "1.57",
+                        "G": 17
+                      }
+                    ]
+                  }
+                ],
+                "EC": 51,
+                "TG": "",
+                "V": "Including Overtime",
+                "VE": "Including Overtime",
+                "PN": "",
+                "TN": "Quarter",
+                "DI": "",
+                "SS": 3,
+                "STI": "6958868c6d807ed02613e14b",
+                "S": 1781348700,
+                "HS": 1,
+                "SGC": 2,
+                "CHIMG": "5d6624680637e0dddc3cc0fe2d38b77c.png",
+                "O1": "Novokuznetsk (Women)",
+                "O2": "Magnitogorsk (Women)",
+                "O1I": 9815129,
+                "O2I": 9815137,
+                "O1IS": [
+                  9815129
+                ],
+                "O2IS": [
+                  9815137
+                ],
+                "O1C": 225,
+                "O2C": 225,
+                "O1IMG": [
+                  "8a633a96ab7116fc31e9220a33e2d6f7.png"
+                ],
+                "O2IMG": [
+                  "0239498afc1aab5b37ce1bb4616731df.png"
+                ],
+                "O1R": "Novokuznetsk (жен)",
+                "O2R": "Magnitogorsk (жен)",
+                "O1E": "Novokuznetsk (Women)",
+                "O2E": "Magnitogorsk (Women)",
+                "MIS": [
+                  {
+                    "K": 3,
+                    "V": "4x10"
+                  },
+                  {
+                    "K": 11,
+                    "V": "Russia"
+                  }
+                ],
+                "MIO": {
+                  "MaF": "4x10"
+                },
+                "SI": 3,
+                "SN": "Basketball",
+                "SR": "Баскетбол",
+                "SE": "Basketball",
+                "L": "IPBL. Pro Division. Women",
+                "LR": "IPBL. Pro Division. Женщины",
+                "LE": "IPBL. Pro Division. Women",
+                "LI": 2496667,
+                "CN": "Russia",
+                "COI": 1,
+                "MS": [
+                  0
+                ],
+                "SGI": "6a2d39aa5e99bd05c63afcb0",
+                "KI": 1,
+                "CID": 1,
+                "IV": 12,
+                "HHTHS": true,
+                "TNS": "Quarters",
+                "SUBA": true
+              }
+            ]
+          },
+          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":49,\"S2\":51},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":28,\"S2\":26,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":19,\"S2\":25,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":2,\"NF\":\"3rd quarter\"}}],\"CP\":3,\"CPS\":\"3rd quarter\",\"TS\":1234,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"15\",\"S2\":\"16\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"5\",\"S2\":\"6\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"4\",\"S2\":\"1\",\"N\":\"Free throws\"}]}],\"SLS\":\"20 minutes\"},\"VI\":\"19397804\",\"VA\":1,\"ZP\":4628317,\"HMH\":1,\"U\":1781350282,\"OuR\":true,\"SVoAP\":true,\"I\":728878178,\"N\":159332,\"T\":99,\"CO\":50,\"E\":[{\"T\":402,\"C\":1.355,\"CV\":\"1.355\",\"G\":101},{\"T\":3655,\"C\":1.408,\"CV\":\"1.408\",\"G\":2766},{\"T\":11,\"P\":96.5,\"C\":1.76,\"CV\":\"1.76\",\"G\":15},{\"T\":14,\"P\":102.5,\"C\":1.78,\"CV\":\"1.78\",\"G\":62},{\"T\":10,\"P\":199.5,\"C\":1.79,\"CV\":\"1.79\",\"G\":17},{\"T\":7,\"P\":5.5,\"C\":1.82,\"CV\":\"1.82\",\"G\":2},{\"T\":8,\"P\":-5.5,\"C\":1.84,\"CV\":\"1.84\",\"G\":2},{\"T\":9,\"P\":199.5,\"C\":1.87,\"CV\":\"1.87\",\"G\":17},{\"T\":13,\"P\":102.5,\"C\":1.885,\"CV\":\"1.885\",\"G\":62},{\"T\":12,\"P\":96.5,\"C\":1.904,\"CV\":\"1.904\",\"G\":15},{\"T\":401,\"C\":2.8,\"CV\":\"2.8\",\"G\":101},{\"T\":3653,\"C\":3,\"CV\":\"3\",\"G\":2766},{\""
+        }
+      ],
+      "json": {
+        "games": [
+          {
+            "source": "melbetLive",
+            "index": 0,
+            "rowKey": "728878363",
+            "gameId": "728878363",
+            "leagueId": 2496666,
+            "divisionTag": null,
+            "homeName": "Revda",
+            "awayName": "Anapa",
+            "homeNorm": "revda",
+            "awayNorm": "anapa",
+            "homeScore": 66,
+            "awayScore": 72,
+            "period": 3,
+            "clock": null,
+            "status": "3rd quarter",
+            "rawShape": [
+              "R",
+              "SC",
+              "VI",
+              "VA",
+              "ZP",
+              "HMH",
+              "U",
+              "OuR",
+              "SVoAP",
+              "I",
+              "N",
+              "T",
+              "CO",
+              "E",
+              "AE",
+              "EC",
+              "TG",
+              "V",
+              "VE",
+              "PN",
+              "TN",
+              "DI",
+              "SS",
+              "STI",
+              "S",
+              "HS",
+              "SGC",
+              "CHIMG",
+              "O1",
+              "O2",
+              "O1I",
+              "O2I",
+              "O1IS",
+              "O2IS",
+              "O1C",
+              "O2C",
+              "O1IMG",
+              "O2IMG",
+              "O1R",
+              "O2R",
+              "O1E",
+              "O2E",
+              "MIS",
+              "MIO",
+              "SI",
+              "SN",
+              "SR",
+              "SE",
+              "L",
+              "LR",
+              "LE",
+              "LI",
+              "CN",
+              "COI",
+              "MS",
+              "SGI",
+              "KI",
+              "CID",
+              "IV",
+              "HHTHS",
+              "TNS",
+              "SUBA"
+            ]
+          },
+          {
+            "source": "melbetLive",
+            "index": 1,
+            "rowKey": "728880079",
+            "gameId": "728880079",
+            "leagueId": 2496666,
+            "divisionTag": null,
+            "homeName": "Vladikavkaz",
+            "awayName": "Tula",
+            "homeNorm": "vladikavkaz",
+            "awayNorm": "tula",
+            "homeScore": 49,
+            "awayScore": 54,
+            "period": 2,
+            "clock": null,
+            "status": "2nd quarter",
+            "rawShape": [
+              "R",
+              "SC",
+              "VI",
+              "VA",
+              "ZP",
+              "HMH",
+              "U",
+              "OuR",
+              "SVoAP",
+              "I",
+              "N",
+              "T",
+              "CO",
+              "E",
+              "AE",
+              "EC",
+              "TG",
+              "V",
+              "VE",
+              "PN",
+              "TN",
+              "DI",
+              "SS",
+              "STI",
+              "S",
+              "CHIMG",
+              "O1",
+              "O2",
+              "O1I",
+              "O2I",
+              "O1IS",
+              "O2IS",
+              "O1C",
+              "O2C",
+              "O1IMG",
+              "O2IMG",
+              "O1R",
+              "O2R",
+              "O1E",
+              "O2E",
+              "MIS",
+              "MIO",
+              "SI",
+              "SN",
+              "SR",
+              "SE",
+              "L",
+              "LR",
+              "LE",
+              "LI",
+              "CN",
+              "COI",
+              "MS",
+              "SGI",
+              "KI",
+              "CID",
+              "IV",
+              "HHTHS",
+              "TNS",
+              "SUBA"
+            ]
+          },
+          {
+            "source": "melbetLive",
+            "index": 0,
+            "rowKey": "728878178",
+            "gameId": "728878178",
+            "leagueId": 2496667,
+            "divisionTag": null,
+            "homeName": "Novokuznetsk (Women)",
+            "awayName": "Magnitogorsk (Women)",
+            "homeNorm": "novokuznetsk women",
+            "awayNorm": "magnitogorsk women",
+            "homeScore": 49,
+            "awayScore": 51,
+            "period": 3,
+            "clock": null,
+            "status": "3rd quarter",
+            "rawShape": [
+              "R",
+              "SC",
+              "VI",
+              "VA",
+              "ZP",
+              "HMH",
+              "U",
+              "OuR",
+              "SVoAP",
+              "I",
+              "N",
+              "T",
+              "CO",
+              "E",
+              "AE",
+              "EC",
+              "TG",
+              "V",
+              "VE",
+              "PN",
+              "TN",
+              "DI",
+              "SS",
+              "STI",
+              "S",
+              "HS",
+              "SGC",
+              "CHIMG",
+              "O1",
+              "O2",
+              "O1I",
+              "O2I",
+              "O1IS",
+              "O2IS",
+              "O1C",
+              "O2C",
+              "O1IMG",
+              "O2IMG",
+              "O1R",
+              "O2R",
+              "O1E",
+              "O2E",
+              "MIS",
+              "MIO",
+              "SI",
+              "SN",
+              "SR",
+              "SE",
+              "L",
+              "LR",
+              "LE",
+              "LI",
+              "CN",
+              "COI",
+              "MS",
+              "SGI",
+              "KI",
+              "CID",
+              "IV",
+              "HHTHS",
+              "TNS",
+              "SUBA"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rowSets": {
+    "officialCalendar": [
+      {
+        "source": "officialCalendar",
+        "index": 0,
+        "rowKey": "voronezh v plavsk",
+        "gameId": null,
+        "divisionTag": "ipbl-66-m-pro-c",
+        "homeName": "Voronezh",
+        "awayName": "Plavsk",
+        "homeNorm": "voronezh",
+        "awayNorm": "plavsk",
+        "homeScore": 0,
+        "awayScore": 0,
+        "period": null,
+        "clock": null,
+        "status": {
+          "icon": "fa-solid fa-play color-darkgreen ",
+          "id": "Online",
+          "displayName": "Онлайн"
+        },
+        "rawShape": [
+          "game",
+          "comp",
+          "league",
+          "gender",
+          "status",
+          "region",
+          "arena",
+          "team1",
+          "team2",
+          "ot",
+          "distanceIndex",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "hasCoefficients",
+          "photoUrl",
+          "division",
+          "tag",
+          "divisionTag"
+        ]
+      },
+      {
+        "source": "officialCalendar",
+        "index": 1,
+        "rowKey": "krasnoyarsk v nizhniynovgorod",
+        "gameId": null,
+        "divisionTag": "ipbl-66-m-pro-d",
+        "homeName": "Krasnoyarsk",
+        "awayName": "NizhniyNovgorod",
+        "homeNorm": "krasnoyarsk",
+        "awayNorm": "nizhniynovgorod",
+        "homeScore": 0,
+        "awayScore": 0,
+        "period": null,
+        "clock": null,
+        "status": {
+          "icon": "fa-solid fa-circle-play color-orange ",
+          "id": "ResultWaiting",
+          "displayName": "Завершена"
+        },
+        "rawShape": [
+          "game",
+          "comp",
+          "league",
+          "gender",
+          "status",
+          "region",
+          "arena",
+          "team1",
+          "team2",
+          "ot",
+          "distanceIndex",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "hasCoefficients",
+          "photoUrl",
+          "division",
+          "tag",
+          "divisionTag"
+        ]
+      },
+      {
+        "source": "officialCalendar",
+        "index": 2,
+        "rowKey": "novokuznetsk v magnitogorsk",
+        "gameId": null,
+        "divisionTag": "ipbl-66-w-pro-a",
+        "homeName": "Novokuznetsk",
+        "awayName": "Magnitogorsk",
+        "homeNorm": "novokuznetsk",
+        "awayNorm": "magnitogorsk",
+        "homeScore": 0,
+        "awayScore": 0,
+        "period": 3,
+        "clock": "9.52",
+        "status": {
+          "icon": "fa-solid fa-play color-darkgreen ",
+          "id": "Online",
+          "displayName": "Live"
+        },
+        "rawShape": [
+          "game",
+          "comp",
+          "league",
+          "gender",
+          "status",
+          "region",
+          "arena",
+          "team1",
+          "team2",
+          "ot",
+          "distanceIndex",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "hasCoefficients",
+          "photoUrl",
+          "division",
+          "tag",
+          "divisionTag"
+        ]
+      }
+    ],
+    "productionLive": [
+      {
+        "source": "productionLive",
+        "index": 0,
+        "rowKey": "1071074",
+        "gameId": "1071074",
+        "divisionTag": "ipbl-66-w-pro-a",
+        "homeName": "Novokuznetsk",
+        "awayName": "Magnitogorsk",
+        "homeNorm": "novokuznetsk",
+        "awayNorm": "magnitogorsk",
+        "homeScore": 49,
+        "awayScore": 51,
+        "period": 3,
+        "clock": "9.52",
+        "status": "Online",
+        "rawShape": [
+          "gameId",
+          "tag",
+          "status",
+          "statusDisplay",
+          "upstreamStatusId",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "localDate",
+          "localTime",
+          "divisionLabel",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "isLive",
+          "updatedAt",
+          "scheduledTime",
+          "sourceLocalDate",
+          "sourceLocalTime",
+          "sourceTimeZone",
+          "team1",
+          "team2",
+          "displayTimeZone"
+        ]
+      }
+    ],
+    "recorderHistory": [
+      {
+        "source": "recorderHistory",
+        "index": 0,
+        "rowKey": "1071074",
+        "gameId": "1071074",
+        "divisionTag": "ipbl-66-w-pro-a",
+        "homeName": "Novokuznetsk",
+        "awayName": "Magnitogorsk",
+        "homeNorm": "novokuznetsk",
+        "awayNorm": "magnitogorsk",
+        "homeScore": 44,
+        "awayScore": 46,
+        "period": 2,
+        "clock": "2.55",
+        "status": "Online",
+        "rawShape": [
+          "schemaVersion",
+          "capturedAt",
+          "capturedAtMs",
+          "gameKey",
+          "gameId",
+          "divisionTag",
+          "divisionLabel",
+          "team1",
+          "team2",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "quarterScores",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "status",
+          "statusDisplay",
+          "isLive",
+          "scheduledTime",
+          "localDate",
+          "localTime",
+          "displayTimeZone",
+          "source",
+          "fallbackFrom",
+          "sourceStatus",
+          "sourceUpdatedAt",
+          "transition"
+        ]
+      },
+      {
+        "source": "recorderHistory",
+        "index": 1,
+        "rowKey": "1071074",
+        "gameId": "1071074",
+        "divisionTag": "ipbl-66-w-pro-a",
+        "homeName": "Novokuznetsk",
+        "awayName": "Magnitogorsk",
+        "homeNorm": "novokuznetsk",
+        "awayNorm": "magnitogorsk",
+        "homeScore": 31,
+        "awayScore": 33,
+        "period": 2,
+        "clock": "7.23",
+        "status": "Online",
+        "rawShape": [
+          "schemaVersion",
+          "capturedAt",
+          "capturedAtMs",
+          "gameKey",
+          "gameId",
+          "divisionTag",
+          "divisionLabel",
+          "team1",
+          "team2",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "quarterScores",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "status",
+          "statusDisplay",
+          "isLive",
+          "scheduledTime",
+          "localDate",
+          "localTime",
+          "displayTimeZone",
+          "source",
+          "fallbackFrom",
+          "sourceStatus",
+          "sourceUpdatedAt",
+          "transition"
+        ]
+      },
+      {
+        "source": "recorderHistory",
+        "index": 2,
+        "rowKey": "1071074",
+        "gameId": "1071074",
+        "divisionTag": "ipbl-66-w-pro-a",
+        "homeName": "Novokuznetsk",
+        "awayName": "Magnitogorsk",
+        "homeNorm": "novokuznetsk",
+        "awayNorm": "magnitogorsk",
+        "homeScore": 24,
+        "awayScore": 20,
+        "period": 1,
+        "clock": "1.54",
+        "status": "Online",
+        "rawShape": [
+          "schemaVersion",
+          "capturedAt",
+          "capturedAtMs",
+          "gameKey",
+          "gameId",
+          "divisionTag",
+          "divisionLabel",
+          "team1",
+          "team2",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "quarterScores",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "status",
+          "statusDisplay",
+          "isLive",
+          "scheduledTime",
+          "localDate",
+          "localTime",
+          "displayTimeZone",
+          "source",
+          "fallbackFrom",
+          "sourceStatus",
+          "sourceUpdatedAt",
+          "transition"
+        ]
+      },
+      {
+        "source": "recorderHistory",
+        "index": 3,
+        "rowKey": "1071074",
+        "gameId": "1071074",
+        "divisionTag": "ipbl-66-w-pro-a",
+        "homeName": "Novokuznetsk",
+        "awayName": "Magnitogorsk",
+        "homeNorm": "novokuznetsk",
+        "awayNorm": "magnitogorsk",
+        "homeScore": 10,
+        "awayScore": 12,
+        "period": 1,
+        "clock": "5.26",
+        "status": "Online",
+        "rawShape": [
+          "schemaVersion",
+          "capturedAt",
+          "capturedAtMs",
+          "gameKey",
+          "gameId",
+          "divisionTag",
+          "divisionLabel",
+          "team1",
+          "team2",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "quarterScores",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "status",
+          "statusDisplay",
+          "isLive",
+          "scheduledTime",
+          "localDate",
+          "localTime",
+          "displayTimeZone",
+          "source",
+          "fallbackFrom",
+          "sourceStatus",
+          "sourceUpdatedAt",
+          "transition"
+        ]
+      }
+    ]
+  },
+  "reconciliation": {
+    "primarySource": "productionLive",
+    "matches": [
+      {
+        "rowKey": "1071074",
+        "baseSource": "productionLive",
+        "base": {
+          "source": "productionLive",
+          "index": 0,
+          "rowKey": "1071074",
+          "gameId": "1071074",
+          "divisionTag": "ipbl-66-w-pro-a",
+          "homeName": "Novokuznetsk",
+          "awayName": "Magnitogorsk",
+          "homeNorm": "novokuznetsk",
+          "awayNorm": "magnitogorsk",
+          "homeScore": 49,
+          "awayScore": 51,
+          "period": 3,
+          "clock": "9.52",
+          "status": "Online",
+          "rawShape": [
+            "gameId",
+            "tag",
+            "status",
+            "statusDisplay",
+            "upstreamStatusId",
+            "score1",
+            "score2",
+            "scoreText",
+            "fullScore",
+            "localDate",
+            "localTime",
+            "divisionLabel",
+            "period",
+            "timeToGo",
+            "timeIsGo",
+            "isLive",
+            "updatedAt",
+            "scheduledTime",
+            "sourceLocalDate",
+            "sourceLocalTime",
+            "sourceTimeZone",
+            "team1",
+            "team2",
+            "displayTimeZone"
+          ]
+        },
+        "matched": {
+          "officialCalendar": {
+            "source": "officialCalendar",
+            "index": 2,
+            "rowKey": "novokuznetsk v magnitogorsk",
+            "gameId": null,
+            "divisionTag": "ipbl-66-w-pro-a",
+            "homeName": "Novokuznetsk",
+            "awayName": "Magnitogorsk",
+            "homeNorm": "novokuznetsk",
+            "awayNorm": "magnitogorsk",
+            "homeScore": 0,
+            "awayScore": 0,
+            "period": 3,
+            "clock": "9.52",
+            "status": {
+              "icon": "fa-solid fa-play color-darkgreen ",
+              "id": "Online",
+              "displayName": "Live"
+            },
+            "rawShape": [
+              "game",
+              "comp",
+              "league",
+              "gender",
+              "status",
+              "region",
+              "arena",
+              "team1",
+              "team2",
+              "ot",
+              "distanceIndex",
+              "period",
+              "timeToGo",
+              "timeIsGo",
+              "hasCoefficients",
+              "photoUrl",
+              "division",
+              "tag",
+              "divisionTag"
+            ]
+          },
+          "recorderHistory": {
+            "source": "recorderHistory",
+            "index": 3,
+            "rowKey": "1071074",
+            "gameId": "1071074",
+            "divisionTag": "ipbl-66-w-pro-a",
+            "homeName": "Novokuznetsk",
+            "awayName": "Magnitogorsk",
+            "homeNorm": "novokuznetsk",
+            "awayNorm": "magnitogorsk",
+            "homeScore": 10,
+            "awayScore": 12,
+            "period": 1,
+            "clock": "5.26",
+            "status": "Online",
+            "rawShape": [
+              "schemaVersion",
+              "capturedAt",
+              "capturedAtMs",
+              "gameKey",
+              "gameId",
+              "divisionTag",
+              "divisionLabel",
+              "team1",
+              "team2",
+              "score1",
+              "score2",
+              "scoreText",
+              "fullScore",
+              "quarterScores",
+              "period",
+              "timeToGo",
+              "timeIsGo",
+              "status",
+              "statusDisplay",
+              "isLive",
+              "scheduledTime",
+              "localDate",
+              "localTime",
+              "displayTimeZone",
+              "source",
+              "fallbackFrom",
+              "sourceStatus",
+              "sourceUpdatedAt",
+              "transition"
+            ]
+          }
+        }
+      }
+    ],
+    "missing": [],
+    "mismatches": [
+      {
+        "type": "score",
+        "rowKey": "1071074",
+        "source": "officialCalendar",
+        "baseScore": [
+          49,
+          51
+        ],
+        "candidateScore": [
+          0,
+          0
+        ]
+      },
+      {
+        "type": "score",
+        "rowKey": "1071074",
+        "source": "recorderHistory",
+        "baseScore": [
+          49,
+          51
+        ],
+        "candidateScore": [
+          10,
+          12
+        ]
+      }
+    ]
+  },
+  "eventsstat": [
+    {
+      "gameId": "1071074",
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=1071074&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "ok": true,
+      "bytes": 76,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG"
+      ],
+      "hasEG": false,
+      "egCount": 0,
+      "hasSH": false,
+      "shCount": 0,
+      "hasDS": false,
+      "dsType": "undefined",
+      "firstSH": null,
+      "lastSH": null,
+      "firstEGKeys": [],
+      "marketSample": [],
+      "error": null
+    },
+    {
+      "gameId": "1071074",
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=1071074&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "ok": true,
+      "bytes": 76,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG"
+      ],
+      "hasEG": false,
+      "egCount": 0,
+      "hasSH": false,
+      "shCount": 0,
+      "hasDS": false,
+      "dsType": "undefined",
+      "firstSH": null,
+      "lastSH": null,
+      "firstEGKeys": [],
+      "marketSample": [],
+      "error": null
+    },
+    {
+      "gameId": "728878363",
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728878363&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "ok": true,
+      "bytes": 26667,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 74,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1781347974147)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1781350314670)/",
+        "Period": 3,
+        "PeriodName": "3rd quarter",
+        "FullScore": {
+          "S1": 69,
+          "S2": 72
+        },
+        "PeriodScore": {
+          "S1": 22,
+          "S2": 17
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        2.112,
+        2.05,
+        2.235,
+        2.232,
+        2.08,
+        2.23,
+        2.352,
+        2.35,
+        2.112,
+        2.35,
+        2.07,
+        1.68,
+        1.61,
+        1.648,
+        1.544,
+        1.63,
+        1.55,
+        1.496,
+        1.61,
+        1.496,
+        1.632,
+        2.005,
+        1.635,
+        1.51,
+        2.205,
+        2.136,
+        2.336,
+        2.17,
+        2.33,
+        2.464
+      ],
+      "error": null
+    },
+    {
+      "gameId": "728878363",
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728878363&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "ok": true,
+      "bytes": 26667,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 74,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1781347974147)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1781350314670)/",
+        "Period": 3,
+        "PeriodName": "3rd quarter",
+        "FullScore": {
+          "S1": 69,
+          "S2": 72
+        },
+        "PeriodScore": {
+          "S1": 22,
+          "S2": 17
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        2.112,
+        2.05,
+        2.235,
+        2.232,
+        2.08,
+        2.23,
+        2.352,
+        2.35,
+        2.112,
+        2.35,
+        2.07,
+        1.68,
+        1.61,
+        1.648,
+        1.544,
+        1.63,
+        1.55,
+        1.496,
+        1.61,
+        1.496,
+        1.632,
+        2.005,
+        1.635,
+        1.51,
+        2.205,
+        2.136,
+        2.336,
+        2.17,
+        2.33,
+        2.464
+      ],
+      "error": null
+    },
+    {
+      "gameId": "728880079",
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728880079&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "ok": true,
+      "bytes": 19644,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 48,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1781348366276)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1781350313719)/",
+        "Period": 2,
+        "PeriodName": "2nd quarter",
+        "FullScore": {
+          "S1": 51,
+          "S2": 54
+        },
+        "PeriodScore": {
+          "S1": 31,
+          "S2": 30
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        1.57,
+        1.53,
+        1.535,
+        1.48,
+        1.575,
+        1.57,
+        1.704,
+        1.864,
+        2.05,
+        2.056,
+        2.42,
+        2.256,
+        2.19,
+        2.264,
+        2.39,
+        2.18,
+        1.97,
+        1.79,
+        1.648,
+        1.645,
+        1.47,
+        1.536,
+        1.41,
+        1.408,
+        1.62,
+        1.58,
+        1.525,
+        1.625,
+        1.77,
+        1.94
+      ],
+      "error": null
+    },
+    {
+      "gameId": "728880079",
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728880079&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "ok": true,
+      "bytes": 19644,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 48,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1781348366276)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1781350313719)/",
+        "Period": 2,
+        "PeriodName": "2nd quarter",
+        "FullScore": {
+          "S1": 51,
+          "S2": 54
+        },
+        "PeriodScore": {
+          "S1": 31,
+          "S2": 30
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        1.57,
+        1.53,
+        1.535,
+        1.48,
+        1.575,
+        1.57,
+        1.704,
+        1.864,
+        2.05,
+        2.056,
+        2.42,
+        2.256,
+        2.19,
+        2.264,
+        2.39,
+        2.18,
+        1.97,
+        1.79,
+        1.648,
+        1.645,
+        1.47,
+        1.536,
+        1.41,
+        1.408,
+        1.62,
+        1.58,
+        1.525,
+        1.625,
+        1.77,
+        1.94
+      ],
+      "error": null
+    },
+    {
+      "gameId": "728878178",
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728878178&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "ok": true,
+      "bytes": 18163,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 51,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1781347909660)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1781350303820)/",
+        "Period": 3,
+        "PeriodName": "3rd quarter",
+        "FullScore": {
+          "S1": 49,
+          "S2": 54
+        },
+        "PeriodScore": {
+          "S1": 2,
+          "S2": 3
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        2.49,
+        2.152,
+        2.15,
+        2.31,
+        2.584,
+        2.92,
+        2.688,
+        2.69,
+        2.26,
+        2.435,
+        2.43,
+        2.256,
+        1.445,
+        1.585,
+        1.59,
+        1.512,
+        1.415,
+        1.33,
+        1.384,
+        1.536,
+        1.535,
+        1.464,
+        1.536,
+        1.464,
+        2.608,
+        2.245,
+        2.24,
+        2.41,
+        2.71,
+        3.075
+      ],
+      "error": null
+    },
+    {
+      "gameId": "728878178",
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728878178&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "ok": true,
+      "bytes": 18163,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 51,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1781347909660)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1781350303820)/",
+        "Period": 3,
+        "PeriodName": "3rd quarter",
+        "FullScore": {
+          "S1": 49,
+          "S2": 54
+        },
+        "PeriodScore": {
+          "S1": 2,
+          "S2": 3
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        2.49,
+        2.152,
+        2.15,
+        2.31,
+        2.584,
+        2.92,
+        2.688,
+        2.69,
+        2.26,
+        2.435,
+        2.43,
+        2.256,
+        1.445,
+        1.585,
+        1.59,
+        1.512,
+        1.415,
+        1.33,
+        1.384,
+        1.536,
+        1.535,
+        1.464,
+        1.536,
+        1.464,
+        2.608,
+        2.245,
+        2.24,
+        2.41,
+        2.71,
+        3.075
+      ],
+      "error": null
+    }
+  ]
+}

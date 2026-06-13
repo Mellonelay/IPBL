@@ -1,0 +1,247 @@
+[
+  {
+    "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live",
+    "capturedAt": "2026-06-13T11:00:34.158977+00:00",
+    "http": 200,
+    "bytes": 968,
+    "contentType": "application/json; charset=utf-8",
+    "preview": "{\"games\":[],\"status\":{\"lastSyncAt\":\"2026-06-13T11:00:35.561Z\",\"status\":\"FAIL\",\"source\":\"bookmaker:melbet.com\",\"fallbackFrom\":\"official:api1.ipbl.pro\",\"requestedDivisions\":11,\"successfulDivisions\":0,\"failures\":[],\"bookmakerSourceLeagues\":[2496666,2496667],\"bookmakerSourceFailures\":[],\"receivedBookmakerEvents\":3,\"unmatchedBookmakerEvents\":[{\"eventId\":728878363,\"leagueId\":2496666,\"sourceTeam1Id\":9829757,\"sourceTeam2Id\":9829755,\"team1\":\"Revda\",\"team2\":\"Anapa\",\"reason\":\"unverified-team\",\"payloadState\":\"live-score-pending\"},{\"eventId\":728880079,\"leagueId\":2496666,\"sourceTeam1Id\":10014781,\"sourceTeam2Id\":10014779,\"team1\":\"Vladikavkaz\",\"team2\":\"Tula\",\"reason\":\"unverified-team\",\"payloadState\":\"prematch\"},{\"eventId\":728878178,\"leagueId\":2496667,\"sourceTeam1Id\":9815129,\"sourceTeam2Id\":9815137,\"team1\":\"Novokuznetsk (Women)\",\"team2\":\"Magnitogorsk (Women)\",\"reason\":\"incomplete-live-payload\",\"payloadState\":\"prematch\"}],\"latencyMs\":1253,\"displayTimeZone\":\"Asia/Yangon\"}}",
+    "json": {
+      "games": [],
+      "status": {
+        "lastSyncAt": "2026-06-13T11:00:35.561Z",
+        "status": "FAIL",
+        "source": "bookmaker:melbet.com",
+        "fallbackFrom": "official:api1.ipbl.pro",
+        "requestedDivisions": 11,
+        "successfulDivisions": 0,
+        "failures": [],
+        "bookmakerSourceLeagues": [
+          2496666,
+          2496667
+        ],
+        "bookmakerSourceFailures": [],
+        "receivedBookmakerEvents": 3,
+        "unmatchedBookmakerEvents": [
+          {
+            "eventId": 728878363,
+            "leagueId": 2496666,
+            "sourceTeam1Id": 9829757,
+            "sourceTeam2Id": 9829755,
+            "team1": "Revda",
+            "team2": "Anapa",
+            "reason": "unverified-team",
+            "payloadState": "live-score-pending"
+          },
+          {
+            "eventId": 728880079,
+            "leagueId": 2496666,
+            "sourceTeam1Id": 10014781,
+            "sourceTeam2Id": 10014779,
+            "team1": "Vladikavkaz",
+            "team2": "Tula",
+            "reason": "unverified-team",
+            "payloadState": "prematch"
+          },
+          {
+            "eventId": 728878178,
+            "leagueId": 2496667,
+            "sourceTeam1Id": 9815129,
+            "sourceTeam2Id": 9815137,
+            "team1": "Novokuznetsk (Women)",
+            "team2": "Magnitogorsk (Women)",
+            "reason": "incomplete-live-payload",
+            "payloadState": "prematch"
+          }
+        ],
+        "latencyMs": 1253,
+        "displayTimeZone": "Asia/Yangon"
+      }
+    }
+  },
+  {
+    "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/health",
+    "capturedAt": "2026-06-13T11:00:35.678246+00:00",
+    "http": 200,
+    "bytes": 1907,
+    "contentType": "application/json; charset=utf-8",
+    "preview": "{\"health\":{\"schemaVersion\":1,\"evaluatedAt\":\"2026-06-13T11:00:36.073Z\",\"level\":\"FAILED\",\"reasons\":[\"source_reported_fail\"],\"freshness\":{\"lastCapturedAt\":\"2026-06-13T11:00:09.419Z\",\"ageSeconds\":26,\"freshWithinSeconds\":90,\"staleAfterSeconds\":150,\"failedAfterSeconds\":300},\"source\":{\"name\":\"bookmaker:melbet.com\",\"reportedStatus\":\"FAIL\",\"fallbackActive\":true,\"fallbackFrom\":\"official:api1.ipbl.pro\",\"requestedDivisions\":11,\"successfulDivisions\":0,\"coverageRatio\":0,\"upstreamFailureCount\":0,\"upstreamHttpStatuses\":[],\"bookmakerFailureCount\":0,\"unmatchedEventCount\":3,\"unmatchedByReason\":{\"unverified-team\":2,\"incomplete-live-payload\":1},\"receivedBookmakerEvents\":3,\"latencyMs\":2020},\"scheduler\":{\"cadenceSeconds\":60,\"recentRunCount\":30,\"firstRunAt\":\"2026-06-13T10:30:07.554Z\",\"lastRunAt\":\"2026-06-13T11:00:09.419Z\",\"maxObservedGapSeconds\":122,\"okRuns\":21,\"partialRuns\":0,\"failedRuns\":9,\"consecutiveFailedRuns\":9,\"consecutivePartialRuns\":0,\"consecutiveNonFailedRuns\":0},\"alert\":{\"severity\":\"CRITICAL\",\"shouldNotify\":true,\"code\":\"sustained_source_failure\",\"incidentStartedAt\":\"2026-06-13T10:52:07.945Z\",\"thresholdRuns\":3,\"recommendedAction\":\"investigate_official_upstream_and_quarantined_fallback_identities",
+    "json": {
+      "health": {
+        "schemaVersion": 1,
+        "evaluatedAt": "2026-06-13T11:00:36.073Z",
+        "level": "FAILED",
+        "reasons": [
+          "source_reported_fail"
+        ],
+        "freshness": {
+          "lastCapturedAt": "2026-06-13T11:00:09.419Z",
+          "ageSeconds": 26,
+          "freshWithinSeconds": 90,
+          "staleAfterSeconds": 150,
+          "failedAfterSeconds": 300
+        },
+        "source": {
+          "name": "bookmaker:melbet.com",
+          "reportedStatus": "FAIL",
+          "fallbackActive": true,
+          "fallbackFrom": "official:api1.ipbl.pro",
+          "requestedDivisions": 11,
+          "successfulDivisions": 0,
+          "coverageRatio": 0,
+          "upstreamFailureCount": 0,
+          "upstreamHttpStatuses": [],
+          "bookmakerFailureCount": 0,
+          "unmatchedEventCount": 3,
+          "unmatchedByReason": {
+            "unverified-team": 2,
+            "incomplete-live-payload": 1
+          },
+          "receivedBookmakerEvents": 3,
+          "latencyMs": 2020
+        },
+        "scheduler": {
+          "cadenceSeconds": 60,
+          "recentRunCount": 30,
+          "firstRunAt": "2026-06-13T10:30:07.554Z",
+          "lastRunAt": "2026-06-13T11:00:09.419Z",
+          "maxObservedGapSeconds": 122,
+          "okRuns": 21,
+          "partialRuns": 0,
+          "failedRuns": 9,
+          "consecutiveFailedRuns": 9,
+          "consecutivePartialRuns": 0,
+          "consecutiveNonFailedRuns": 0
+        },
+        "alert": {
+          "severity": "CRITICAL",
+          "shouldNotify": true,
+          "code": "sustained_source_failure",
+          "incidentStartedAt": "2026-06-13T10:52:07.945Z",
+          "thresholdRuns": 3,
+          "recommendedAction": "investigate_official_upstream_and_quarantined_fallback_identities"
+        },
+        "recovery": {
+          "state": "INCIDENT",
+          "lastFailureAt": "2026-06-13T11:00:09.419Z",
+          "consecutiveNonFailedRuns": 0,
+          "requiredNonFailedRuns": 2
+        },
+        "continuity": {
+          "policy": "retain_last_known_active_set_on_source_fail",
+          "activeSetMutationSuppressedOnSourceFail": true,
+          "preservedActiveGameCount": 1,
+          "preservedActiveGameKeys": [
+            "ipbl-66-w-pro-a:1071073"
+          ]
+        },
+        "storage": {
+          "prefix": "ipbl:recorder:v1",
+          "maxSnapshotsPerTimeline": 1440,
+          "perGameTtlSeconds": 2592000,
+          "runsMaxEntries": 1440,
+          "runsTtlSeconds": null,
+          "statusTtlSeconds": null,
+          "activeSetTtlSeconds": null,
+          "dedupeFingerprintFields": [
+            "score1",
+            "score2",
+            "fullScore",
+            "period",
+            "timeToGo",
+            "timeIsGo",
+            "status",
+            "isLive",
+            "source"
+          ]
+        },
+        "evidenceLevel": 4
+      },
+      "activeGameKeys": [
+        "ipbl-66-w-pro-a:1071073"
+      ]
+    }
+  },
+  {
+    "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
+    "capturedAt": "2026-06-13T11:00:36.193491+00:00",
+    "http": 200,
+    "bytes": 1281,
+    "contentType": "application/json; charset=utf-8",
+    "preview": "{\"status\":{\"schemaVersion\":1,\"capturedAt\":\"2026-06-13T11:00:09.419Z\",\"source\":\"bookmaker:melbet.com\",\"sourceStatus\":\"FAIL\",\"receivedGames\":0,\"acceptedGames\":0,\"recordedSnapshots\":0,\"duplicateSnapshots\":0,\"rejectedGames\":[],\"missingPreviouslyActive\":[],\"activeGameKeys\":[],\"sourceDetails\":{\"lastSyncAt\":\"2026-06-13T11:00:09.415Z\",\"status\":\"FAIL\",\"source\":\"bookmaker:melbet.com\",\"fallbackFrom\":\"official:api1.ipbl.pro\",\"requestedDivisions\":11,\"successfulDivisions\":0,\"failures\":[],\"bookmakerSourceLeagues\":[2496666,2496667],\"bookmakerSourceFailures\":[],\"receivedBookmakerEvents\":3,\"unmatchedBookmakerEvents\":[{\"eventId\":728878363,\"leagueId\":2496666,\"sourceTeam1Id\":9829757,\"sourceTeam2Id\":9829755,\"team1\":\"Revda\",\"team2\":\"Anapa\",\"reason\":\"unverified-team\",\"payloadState\":\"live-score-pending\"},{\"eventId\":728880079,\"leagueId\":2496666,\"sourceTeam1Id\":10014781,\"sourceTeam2Id\":10014779,\"team1\":\"Vladikavkaz\",\"team2\":\"Tula\",\"reason\":\"unverified-team\",\"payloadState\":\"prematch\"},{\"eventId\":728878178,\"leagueId\":2496667,\"sourceTeam1Id\":9815129,\"sourceTeam2Id\":9815137,\"team1\":\"Novokuznetsk (Women)\",\"team2\":\"Magnitogorsk (Women)\",\"reason\":\"incomplete-live-payload\",\"payloadState\":\"prematch\"}],\"latencyMs\":202",
+    "json": {
+      "status": {
+        "schemaVersion": 1,
+        "capturedAt": "2026-06-13T11:00:09.419Z",
+        "source": "bookmaker:melbet.com",
+        "sourceStatus": "FAIL",
+        "receivedGames": 0,
+        "acceptedGames": 0,
+        "recordedSnapshots": 0,
+        "duplicateSnapshots": 0,
+        "rejectedGames": [],
+        "missingPreviouslyActive": [],
+        "activeGameKeys": [],
+        "sourceDetails": {
+          "lastSyncAt": "2026-06-13T11:00:09.415Z",
+          "status": "FAIL",
+          "source": "bookmaker:melbet.com",
+          "fallbackFrom": "official:api1.ipbl.pro",
+          "requestedDivisions": 11,
+          "successfulDivisions": 0,
+          "failures": [],
+          "bookmakerSourceLeagues": [
+            2496666,
+            2496667
+          ],
+          "bookmakerSourceFailures": [],
+          "receivedBookmakerEvents": 3,
+          "unmatchedBookmakerEvents": [
+            {
+              "eventId": 728878363,
+              "leagueId": 2496666,
+              "sourceTeam1Id": 9829757,
+              "sourceTeam2Id": 9829755,
+              "team1": "Revda",
+              "team2": "Anapa",
+              "reason": "unverified-team",
+              "payloadState": "live-score-pending"
+            },
+            {
+              "eventId": 728880079,
+              "leagueId": 2496666,
+              "sourceTeam1Id": 10014781,
+              "sourceTeam2Id": 10014779,
+              "team1": "Vladikavkaz",
+              "team2": "Tula",
+              "reason": "unverified-team",
+              "payloadState": "prematch"
+            },
+            {
+              "eventId": 728878178,
+              "leagueId": 2496667,
+              "sourceTeam1Id": 9815129,
+              "sourceTeam2Id": 9815137,
+              "team1": "Novokuznetsk (Women)",
+              "team2": "Magnitogorsk (Women)",
+              "reason": "incomplete-live-payload",
+              "payloadState": "prematch"
+            }
+          ],
+          "latencyMs": 2020,
+          "displayTimeZone": "Asia/Yangon"
+        }
+      },
+      "activeGameKeys": [
+        "ipbl-66-w-pro-a:1071073"
+      ]
+    }
+  },
+  {
+    "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?limit=5",
+    "capturedAt": "2026-06-13T11:00:36.693316+00:00",
+    "http": 400,
+    "error": "HTTPError",
+    "body": "{\"error\":\"invalid_division\"}"
+  }
+]
