@@ -34,7 +34,9 @@
     "test:approved-divisions": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-approved-divisions.test.mjs",
     "test:h2h-freshness": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-live.test.ts",
     "test:h2h-continuity": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-recent-calendar.test.ts",
-    "ops:vercel-preflight": "node scripts/ops/vercel-release-preflight.mjs"
+    "ops:vercel-preflight": "node scripts/ops/vercel-release-preflight.mjs",
+    "reconcile:team-statistics": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs scripts/team-statistics-reconciliation.mjs",
+    "test:team-statistics-reconciliation": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-statistics-reconciliation.test.mjs"
   },
   "dependencies": {
     "@upstash/redis": "^1.34.0",
