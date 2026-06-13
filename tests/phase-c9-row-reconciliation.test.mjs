@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+const out = path.join(os.tmpdir(), `c9-row-reconciliation-${Date.now()}.json`);
+const stdout = execFileSync('node', ['scripts/phase-c9-row-reconciliation.mjs', '--out', out], { encoding: 'utf8', timeout: 90000 });
+assert.match(stdout, /"oddsDeploymentAllowed": false/);
+const data = JSON.parse(fs.readFileSync(out, 'utf8'));
+assert.equal(data.summary.oddsDeploymentAllowed, false);
+assert.ok(data.summary.endpoints.productionLive);
+assert.ok(data.summary.rowCounts);
+assert.ok(Array.isArray(data.eventsstat));
+assert.ok(data.summary.eventsstatProbeMode);
+console.log('Phase C9 row reconciliation smoke test passed');

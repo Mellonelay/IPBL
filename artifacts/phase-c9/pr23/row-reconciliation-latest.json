@@ -1,0 +1,173 @@
+{
+  "summary": {
+    "capturedAt": "2026-06-13T11:16:06.401Z",
+    "endpoints": {
+      "officialLivePage": {
+        "url": "https://ipbl.pro/live",
+        "http": 200,
+        "ok": true,
+        "bytes": 81374,
+        "error": null,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      "officialCalendar": {
+        "url": "https://api1.ipbl.pro/api/Calendar/GetOnline?lng=en",
+        "http": 404,
+        "ok": false,
+        "bytes": 333,
+        "error": null,
+        "contentType": "application/json"
+      },
+      "productionLive": {
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live",
+        "http": null,
+        "ok": false,
+        "bytes": null,
+        "error": "AbortError: This operation was aborted",
+        "contentType": null
+      },
+      "recorderStatus": {
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
+        "http": 200,
+        "ok": true,
+        "bytes": 560,
+        "error": null,
+        "contentType": "application/json; charset=utf-8"
+      },
+      "recorderHistory": {
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?limit=5",
+        "http": 400,
+        "ok": false,
+        "bytes": 28,
+        "error": null,
+        "contentType": "application/json; charset=utf-8"
+      }
+    },
+    "rowCounts": {
+      "officialCalendar": 0,
+      "productionLive": 0,
+      "recorderHistory": 0
+    },
+    "activeProductionGameIds": [],
+    "eventsstatProbeMode": "skipped-no-active-production-games",
+    "eventsstatProven": false,
+    "partner8Proven": false,
+    "partner25Proven": false,
+    "reconciliation": {
+      "primarySource": "productionLive",
+      "matchCount": 0,
+      "missingCount": 0,
+      "mismatchCount": 0,
+      "classification": "PARTIAL"
+    },
+    "oddsDeploymentAllowed": false,
+    "oddsDeploymentBlockReason": "PR23 is reconciliation/proof only; live odds deployment requires active EG/SH/DS proof, row-level reconciliation, source policy, and tests."
+  },
+  "fetched": {
+    "officialLivePage": {
+      "label": "officialLivePage",
+      "url": "https://ipbl.pro/live",
+      "capturedAt": "2026-06-13T11:15:42.663Z",
+      "http": 200,
+      "ok": true,
+      "bytes": 81374,
+      "contentType": "text/html; charset=UTF-8",
+      "json": null,
+      "preview": "<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\" /> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /> <!--metatextblock--> <title>Прямые трансляции | IPBL</title> <meta property=\"og:url\" content=\"https://ipbl.pro/live\" /> <meta property=\"og:title\" content=\"Прямые трансляции | IPBL\" /> <meta property=\"og:description\" content=\"\" /> <meta property=\"og:type\" content=\"website\" /> <link rel=\"canonical\" href=\"https://ipbl.pro/live\"> <!--/metatextblock--> <meta name=\"format-detection\" content=\"telephone=no\" /> <meta http-equiv=\"x-dns-prefetch-control\" content=\"on\"> <link rel=\"dns-prefetch\" href=\"https://ws.tildacdn.com\"> <link rel=\"dns-prefetch\" href=\"https://static.tildacdn.com\"> <!--favicons--> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3638-3630-4735-b264-386461326231/logo_gray.svg\" media=\"(prefers-color-scheme: light)\"/> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3731-3163-4436-b066-393065323337/logo_white.svg\" media=\"(prefers-color-scheme: dark)\"/> <!--/favicons--> <!-- Assets --> <script src=\"https:"
+    },
+    "officialCalendar": {
+      "label": "officialCalendar",
+      "url": "https://api1.ipbl.pro/api/Calendar/GetOnline?lng=en",
+      "capturedAt": "2026-06-13T11:15:42.330Z",
+      "http": 404,
+      "ok": false,
+      "bytes": 333,
+      "contentType": "application/json",
+      "json": {
+        "message": "404 Not Found",
+        "exception": [
+          {
+            "type": "Slim\\Exception\\HttpNotFoundException",
+            "code": 404,
+            "message": "Not found.",
+            "file": "/home/c501821/api1.ipbl.pro/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php",
+            "line": 76
+          }
+        ]
+      },
+      "preview": "{\n    \"message\": \"404 Not Found\",\n    \"exception\": [\n        {\n            \"type\": \"Slim\\\\Exception\\\\HttpNotFoundException\",\n            \"code\": 404,\n            \"message\": \"Not found.\",\n            \"file\": \"/home/c501821/api1.ipbl.pro/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php\",\n            \"line\": 76\n        }\n    ]\n}"
+    },
+    "productionLive": {
+      "label": "productionLive",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live",
+      "capturedAt": "2026-06-13T11:16:06.400Z",
+      "ok": false,
+      "error": "AbortError: This operation was aborted"
+    },
+    "recorderStatus": {
+      "label": "recorderStatus",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
+      "capturedAt": "2026-06-13T11:15:42.110Z",
+      "http": 200,
+      "ok": true,
+      "bytes": 560,
+      "contentType": "application/json; charset=utf-8",
+      "json": {
+        "status": {
+          "schemaVersion": 1,
+          "capturedAt": "2026-06-13T11:14:07.363Z",
+          "source": "official:api1.ipbl.pro",
+          "sourceStatus": "OK",
+          "receivedGames": 1,
+          "acceptedGames": 1,
+          "recordedSnapshots": 0,
+          "duplicateSnapshots": 1,
+          "rejectedGames": [],
+          "missingPreviouslyActive": [],
+          "activeGameKeys": [
+            "ipbl-66-w-pro-a:1071074"
+          ],
+          "sourceDetails": {
+            "lastSyncAt": "2026-06-13T11:14:07.359Z",
+            "status": "OK",
+            "source": "official:api1.ipbl.pro",
+            "requestedDivisions": 11,
+            "successfulDivisions": 11,
+            "failures": [],
+            "latencyMs": 925,
+            "displayTimeZone": "Asia/Yangon"
+          }
+        },
+        "activeGameKeys": [
+          "ipbl-66-w-pro-a:1071074"
+        ]
+      },
+      "preview": "{\"status\":{\"schemaVersion\":1,\"capturedAt\":\"2026-06-13T11:14:07.363Z\",\"source\":\"official:api1.ipbl.pro\",\"sourceStatus\":\"OK\",\"receivedGames\":1,\"acceptedGames\":1,\"recordedSnapshots\":0,\"duplicateSnapshots\":1,\"rejectedGames\":[],\"missingPreviouslyActive\":[],\"activeGameKeys\":[\"ipbl-66-w-pro-a:1071074\"],\"sourceDetails\":{\"lastSyncAt\":\"2026-06-13T11:14:07.359Z\",\"status\":\"OK\",\"source\":\"official:api1.ipbl.pro\",\"requestedDivisions\":11,\"successfulDivisions\":11,\"failures\":[],\"latencyMs\":925,\"displayTimeZone\":\"Asia/Yangon\"}},\"activeGameKeys\":[\"ipbl-66-w-pro-a:1071074\"]}"
+    },
+    "recorderHistory": {
+      "label": "recorderHistory",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?limit=5",
+      "capturedAt": "2026-06-13T11:15:42.452Z",
+      "http": 400,
+      "ok": false,
+      "bytes": 28,
+      "contentType": "application/json; charset=utf-8",
+      "json": {
+        "error": "invalid_division"
+      },
+      "preview": "{\"error\":\"invalid_division\"}"
+    }
+  },
+  "rowSets": {
+    "officialCalendar": [],
+    "productionLive": [],
+    "recorderHistory": []
+  },
+  "reconciliation": {
+    "primarySource": "productionLive",
+    "matches": [],
+    "missing": [],
+    "mismatches": []
+  },
+  "eventsstat": []
+}
