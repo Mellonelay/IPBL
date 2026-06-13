@@ -66,3 +66,98 @@ export function teamHistoryItemsFromMonths(
     return right - left || b.game.id - a.game.id;
   });
 }
+
+
+type OfficialOnlineCalendarPayload = {
+  data?: {
+    items?: Array<{
+      game?: {
+        id?: number;
+        scheduledTime?: string | null;
+        localDate?: string | null;
+        localTime?: string | null;
+        gameStatus?: string | null;
+        score?: string | null;
+        score1?: number | null;
+        score2?: number | null;
+        fullScore?: string | null;
+      };
+      league?: { tag?: string | null };
+      status?: { id?: string | null; displayName?: string | null };
+      team1?: { teamId?: number; shortName?: string | null; name?: string | null };
+      team2?: { teamId?: number; shortName?: string | null; name?: string | null };
+    }>;
+  };
+};
+
+function officialTeamRef(team: OfficialOnlineCalendarPayload['data'] extends { items?: Array<infer Item> } ? Item extends { team1?: infer T } ? T : never : never): { teamId: number; shortName: string; name: string } {
+  const t = (team ?? {}) as { teamId?: number; shortName?: string | null; name?: string | null };
+  return {
+    teamId: Number(t.teamId ?? 0),
+    shortName: String(t.shortName ?? t.name ?? '?'),
+    name: String(t.name ?? t.shortName ?? '?'),
+  };
+}
+
+function officialScoreText(game: NonNullable<NonNullable<OfficialOnlineCalendarPayload['data']>['items']>[number]['game']): string {
+  const explicit = String(game.score ?? '').trim();
+  if (explicit) return explicit.replace(':', ' : ');
+  if (typeof game.score1 === 'number' && typeof game.score2 === 'number') return `${game.score1} : ${game.score2}`;
+  return '';
+}
+
+function isCurrentOfficialHistoryRow(row: NonNullable<NonNullable<OfficialOnlineCalendarPayload['data']>['items']>[number], divisionTag: string, teamId: number): boolean {
+  const game = row.game;
+  if (!game || !Number.isFinite(game.id)) return false;
+  if (row.league?.tag !== divisionTag) return false;
+  const team1 = Number(row.team1?.teamId ?? 0);
+  const team2 = Number(row.team2?.teamId ?? 0);
+  if (team1 !== teamId && team2 !== teamId) return false;
+  const status = `${game.gameStatus ?? ''} ${row.status?.id ?? ''} ${row.status?.displayName ?? ''}`.toLowerCase();
+  if (!/(online|live|result|confirmed|finish|finished)/i.test(status)) return false;
+  if (!officialScoreText(game)) return false;
+  return true;
+}
+
+export function officialOnlineTeamHistoryItems(
+  raw: unknown,
+  teamId: number,
+  divisionTag: string
+): StoredTeamHistoryItem[] {
+  const payload = raw as OfficialOnlineCalendarPayload;
+  const items = payload?.data?.items;
+  if (!Array.isArray(items)) return [];
+  const out: StoredTeamHistoryItem[] = [];
+  for (const row of items) {
+    if (!isCurrentOfficialHistoryRow(row, divisionTag, teamId)) continue;
+    const game = row.game!;
+    out.push({
+      game: {
+        id: Number(game.id),
+        scheduledTime: game.scheduledTime ?? null,
+        localDate: String(game.localDate ?? ''),
+        localTime: String(game.localTime ?? ''),
+        gameStatus: String(game.gameStatus ?? row.status?.id ?? row.status?.displayName ?? 'Online'),
+        score: officialScoreText(game),
+        fullScore: game.fullScore ?? null,
+      },
+      team1: officialTeamRef(row.team1),
+      team2: officialTeamRef(row.team2),
+    });
+  }
+  return out;
+}
+
+export function mergeTeamHistoryItems(
+  stored: StoredTeamHistoryItem[],
+  currentOfficial: StoredTeamHistoryItem[]
+): StoredTeamHistoryItem[] {
+  const byGame = new Map<number, StoredTeamHistoryItem>();
+  for (const item of stored) byGame.set(item.game.id, item);
+  for (const item of currentOfficial) byGame.set(item.game.id, item);
+  return [...byGame.values()].sort((a, b) => {
+    const left = Date.parse(a.game.scheduledTime ?? '') || 0;
+    const right = Date.parse(b.game.scheduledTime ?? '') || 0;
+    return right - left || b.game.id - a.game.id;
+  });
+}

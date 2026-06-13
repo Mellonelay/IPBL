@@ -31,7 +31,8 @@
     "reprobe:c9-eventsstat": "node scripts/phase-c9-row-reconciliation.mjs --out artifacts/phase-c9/pr23/eventsstat-reprobe-latest.json --allow-fallback-game-ids --fallback-game-ids 728820121,728819144,728819200",
     "test:c9-reconciliation": "node tests/phase-c9-row-reconciliation.test.mjs",
     "test:c9-active-matched-gate": "node tests/phase-c9-active-matched-gate.test.mjs",
-    "test:approved-divisions": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-approved-divisions.test.mjs"
+    "test:approved-divisions": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-approved-divisions.test.mjs",
+    "test:h2h-freshness": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-live.test.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.34.0",
