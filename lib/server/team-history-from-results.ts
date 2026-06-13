@@ -90,8 +90,12 @@ type OfficialOnlineCalendarPayload = {
   };
 };
 
-function officialTeamRef(team: OfficialOnlineCalendarPayload['data'] extends { items?: Array<infer Item> } ? Item extends { team1?: infer T } ? T : never : never): { teamId: number; shortName: string; name: string } {
-  const t = (team ?? {}) as { teamId?: number; shortName?: string | null; name?: string | null };
+type OfficialOnlineCalendarItem = NonNullable<NonNullable<OfficialOnlineCalendarPayload['data']>['items']>[number];
+type OfficialOnlineTeamRef = NonNullable<OfficialOnlineCalendarItem['team1']>;
+type OfficialOnlineGame = NonNullable<OfficialOnlineCalendarItem['game']>;
+
+function officialTeamRef(team: OfficialOnlineTeamRef | undefined): { teamId: number; shortName: string; name: string } {
+  const t = team ?? {};
   return {
     teamId: Number(t.teamId ?? 0),
     shortName: String(t.shortName ?? t.name ?? '?'),
@@ -99,14 +103,14 @@ function officialTeamRef(team: OfficialOnlineCalendarPayload['data'] extends { i
   };
 }
 
-function officialScoreText(game: NonNullable<NonNullable<OfficialOnlineCalendarPayload['data']>['items']>[number]['game']): string {
+function officialScoreText(game: OfficialOnlineGame): string {
   const explicit = String(game.score ?? '').trim();
   if (explicit) return explicit.replace(':', ' : ');
   if (typeof game.score1 === 'number' && typeof game.score2 === 'number') return `${game.score1} : ${game.score2}`;
   return '';
 }
 
-function isCurrentOfficialHistoryRow(row: NonNullable<NonNullable<OfficialOnlineCalendarPayload['data']>['items']>[number], divisionTag: string, teamId: number): boolean {
+function isCurrentOfficialHistoryRow(row: OfficialOnlineCalendarItem, divisionTag: string, teamId: number): row is OfficialOnlineCalendarItem & { game: OfficialOnlineGame } {
   const game = row.game;
   if (!game || !Number.isFinite(game.id)) return false;
   if (row.league?.tag !== divisionTag) return false;
@@ -130,7 +134,7 @@ export function officialOnlineTeamHistoryItems(
   const out: StoredTeamHistoryItem[] = [];
   for (const row of items) {
     if (!isCurrentOfficialHistoryRow(row, divisionTag, teamId)) continue;
-    const game = row.game!;
+    const game = row.game;
     out.push({
       game: {
         id: Number(game.id),

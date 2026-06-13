@@ -28,7 +28,10 @@ export type BookmakerSourceEvent = {
     TS?: number;
     TR?: number;
     SLS?: string;
+    I?: string;
   };
+  O1I?: number;
+  O2I?: number;
 };
 
 export type BookmakerEnvelope = {
