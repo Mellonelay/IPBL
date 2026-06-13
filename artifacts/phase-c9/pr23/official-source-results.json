@@ -1,0 +1,45 @@
+[
+  {
+    "url": "https://ipbl.pro/live",
+    "capturedAt": "2026-06-13T11:00:16.548871+00:00",
+    "http": 200,
+    "bytes": 81374,
+    "contentType": "text/html; charset=UTF-8",
+    "preview": "<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\" /> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /> <!--metatextblock--> <title>\u041f\u0440\u044f\u043c\u044b\u0435 \u0442\u0440\u0430\u043d\u0441\u043b\u044f\u0446\u0438\u0438 | IPBL</title> <meta property=\"og:url\" content=\"https://ipbl.pro/live\" /> <meta property=\"og:title\" content=\"\u041f\u0440\u044f\u043c\u044b\u0435 \u0442\u0440\u0430\u043d\u0441\u043b\u044f\u0446\u0438\u0438 | IPBL\" /> <meta property=\"og:description\" content=\"\" /> <meta property=\"og:type\" content=\"website\" /> <link rel=\"canonical\" href=\"https://ipbl.pro/live\"> <!--/metatextblock--> <meta name=\"format-detection\" content=\"telephone=no\" /> <meta http-equiv=\"x-dns-prefetch-control\" content=\"on\"> <link rel=\"dns-prefetch\" href=\"https://ws.tildacdn.com\"> <link rel=\"dns-prefetch\" href=\"https://static.tildacdn.com\"> <!--favicons--> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3638-3630-4735-b264-386461326231/logo_gray.svg\" media=\"(prefers-color-scheme: light)\"/> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3731-3163-4436-b066-393065323337/logo_white.svg\" media=\"(prefers-color-scheme: dark)\"/> <!--/favicons--> <!-- Assets --> <script src=\"https:"
+  },
+  {
+    "url": "https://api1.ipbl.pro/widget.js",
+    "capturedAt": "2026-06-13T11:00:18.347920+00:00",
+    "http": 404,
+    "error": "HTTPError",
+    "body": "{\n    \"message\": \"404 Not Found\",\n    \"exception\": [\n        {\n            \"type\": \"Slim\\\\Exception\\\\HttpNotFoundException\",\n            \"code\": 404,\n            \"message\": \"Not found.\",\n            \"file\": \"/home/c501821/api1.ipbl.pro/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php\",\n            \"line\": 76\n        }\n    ]\n}"
+  },
+  {
+    "url": "https://api1.ipbl.pro/widget.css",
+    "capturedAt": "2026-06-13T11:00:28.523370+00:00",
+    "http": 404,
+    "error": "HTTPError",
+    "body": "{\n    \"message\": \"404 Not Found\",\n    \"exception\": [\n        {\n            \"type\": \"Slim\\\\Exception\\\\HttpNotFoundException\",\n            \"code\": 404,\n            \"message\": \"Not found.\",\n            \"file\": \"/home/c501821/api1.ipbl.pro/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php\",\n            \"line\": 76\n        }\n    ]\n}"
+  },
+  {
+    "url": "https://api1.ipbl.pro/api/Calendar/GetOnline?lng=en",
+    "capturedAt": "2026-06-13T11:00:30.080586+00:00",
+    "http": 404,
+    "error": "HTTPError",
+    "body": "{\n    \"message\": \"404 Not Found\",\n    \"exception\": [\n        {\n            \"type\": \"Slim\\\\Exception\\\\HttpNotFoundException\",\n            \"code\": 404,\n            \"message\": \"Not found.\",\n            \"file\": \"/home/c501821/api1.ipbl.pro/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php\",\n            \"line\": 76\n        }\n    ]\n}"
+  },
+  {
+    "url": "https://api1.ipbl.pro/api/Divisions/GetTree?lng=en",
+    "capturedAt": "2026-06-13T11:00:32.075811+00:00",
+    "http": 404,
+    "error": "HTTPError",
+    "body": "{\n    \"message\": \"404 Not Found\",\n    \"exception\": [\n        {\n            \"type\": \"Slim\\\\Exception\\\\HttpNotFoundException\",\n            \"code\": 404,\n            \"message\": \"Not found.\",\n            \"file\": \"/home/c501821/api1.ipbl.pro/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php\",\n            \"line\": 76\n        }\n    ]\n}"
+  },
+  {
+    "url": "https://api1.ipbl.pro/api/Standings/Get?lng=en",
+    "capturedAt": "2026-06-13T11:00:32.797210+00:00",
+    "http": 404,
+    "error": "HTTPError",
+    "body": "{\n    \"message\": \"404 Not Found\",\n    \"exception\": [\n        {\n            \"type\": \"Slim\\\\Exception\\\\HttpNotFoundException\",\n            \"code\": 404,\n            \"message\": \"Not found.\",\n            \"file\": \"/home/c501821/api1.ipbl.pro/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php\",\n            \"line\": 76\n        }\n    ]\n}"
+  }
+]

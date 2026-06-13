@@ -1,0 +1,280 @@
+{
+  "capturedAt": "2026-06-13T11:00:41.989611+00:00",
+  "official": [
+    {
+      "url": "https://ipbl.pro/live",
+      "capturedAt": "2026-06-13T11:00:16.548871+00:00",
+      "http": 200,
+      "bytes": 81374,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://api1.ipbl.pro/widget.js",
+      "capturedAt": "2026-06-13T11:00:18.347920+00:00",
+      "http": 404,
+      "error": "HTTPError"
+    },
+    {
+      "url": "https://api1.ipbl.pro/widget.css",
+      "capturedAt": "2026-06-13T11:00:28.523370+00:00",
+      "http": 404,
+      "error": "HTTPError"
+    },
+    {
+      "url": "https://api1.ipbl.pro/api/Calendar/GetOnline?lng=en",
+      "capturedAt": "2026-06-13T11:00:30.080586+00:00",
+      "http": 404,
+      "error": "HTTPError"
+    },
+    {
+      "url": "https://api1.ipbl.pro/api/Divisions/GetTree?lng=en",
+      "capturedAt": "2026-06-13T11:00:32.075811+00:00",
+      "http": 404,
+      "error": "HTTPError"
+    },
+    {
+      "url": "https://api1.ipbl.pro/api/Standings/Get?lng=en",
+      "capturedAt": "2026-06-13T11:00:32.797210+00:00",
+      "http": 404,
+      "error": "HTTPError"
+    }
+  ],
+  "production": [
+    {
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live",
+      "capturedAt": "2026-06-13T11:00:34.158977+00:00",
+      "http": 200,
+      "bytes": 968,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/health",
+      "capturedAt": "2026-06-13T11:00:35.678246+00:00",
+      "http": 200,
+      "bytes": 1907,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
+      "capturedAt": "2026-06-13T11:00:36.193491+00:00",
+      "http": 200,
+      "bytes": 1281,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?limit=5",
+      "capturedAt": "2026-06-13T11:00:36.693316+00:00",
+      "http": 400,
+      "error": "HTTPError"
+    }
+  ],
+  "productionLiveGameCount": 0,
+  "productionLiveGameIds": [
+    728820121,
+    728819144,
+    728819200
+  ],
+  "eventsstat": [
+    {
+      "gameId": 728820121,
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728820121&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "bytes": 18978,
+      "error": null,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG"
+      ],
+      "egCount": 5,
+      "shCount": null,
+      "dsType": "NoneType",
+      "hasEG": true,
+      "hasSH": false,
+      "hasDS": false,
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": []
+    },
+    {
+      "gameId": 728820121,
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728820121&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "bytes": 18978,
+      "error": null,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG"
+      ],
+      "egCount": 5,
+      "shCount": null,
+      "dsType": "NoneType",
+      "hasEG": true,
+      "hasSH": false,
+      "hasDS": false,
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": []
+    },
+    {
+      "gameId": 728819144,
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819144&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "bytes": 21656,
+      "error": null,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG"
+      ],
+      "egCount": 5,
+      "shCount": null,
+      "dsType": "NoneType",
+      "hasEG": true,
+      "hasSH": false,
+      "hasDS": false,
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": []
+    },
+    {
+      "gameId": 728819144,
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819144&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "bytes": 21656,
+      "error": null,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG"
+      ],
+      "egCount": 5,
+      "shCount": null,
+      "dsType": "NoneType",
+      "hasEG": true,
+      "hasSH": false,
+      "hasDS": false,
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": []
+    },
+    {
+      "gameId": 728819200,
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819200&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "bytes": 21460,
+      "error": null,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG"
+      ],
+      "egCount": 5,
+      "shCount": null,
+      "dsType": "NoneType",
+      "hasEG": true,
+      "hasSH": false,
+      "hasDS": false,
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": []
+    },
+    {
+      "gameId": 728819200,
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819200&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "bytes": 21460,
+      "error": null,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG"
+      ],
+      "egCount": 5,
+      "shCount": null,
+      "dsType": "NoneType",
+      "hasEG": true,
+      "hasSH": false,
+      "hasDS": false,
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": []
+    }
+  ],
+  "eventsstatProven": false,
+  "partner8Proven": false,
+  "partner25Proven": false
+}
