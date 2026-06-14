@@ -37,6 +37,31 @@ const raw = {
 };
 
 
+
+const currentMenRaw = {
+  Success: true,
+  Value: [
+    {
+      I: 2496666001, LI: 2496666, L: "IPBL. Pro Division",
+      O1: "Omsk", O2: "Vorkuta", O1I: 111001, O2I: 111002,
+      S: 1781176200, U: 1781176647,
+      SC: { FS: { S1: 5, S2: 4 }, PS: [{ Key: 1, Value: { S1: 5, S2: 4 } }], CP: 1, CPS: "1st quarter", TS: 123, TR: -1 },
+    },
+  ],
+};
+
+const currentWomenRaw = {
+  Success: true,
+  Value: [
+    {
+      I: 2496667001, LI: 2496667, L: "IPBL. Pro Division. Women",
+      O1: "Kursk (Women)", O2: "Orenburg (Women)", O1I: 222001, O2I: 222002,
+      S: 1781176200, U: 1781176647,
+      SC: { FS: { S1: 0, S2: 0 }, PS: [{ Key: 1, Value: { S1: 0, S2: 0 } }], CP: 1, CPS: "1st quarter", TS: 60, TR: -1 },
+    },
+  ],
+};
+
 const womenRaw = {
   Success: true,
   Value: [
@@ -94,4 +119,23 @@ assert.equal(womenB.team2.shortName, "Yaroslavl");
 assert.equal(womenB.scoreText, "85 : 62");
 assert.equal(womenB.fullScore, "36:14,17:32,32:16");
 assert.equal(womenB.period, 4);
+
+const currentCombined = parseBookmakerLivePayloads([currentMenRaw, currentWomenRaw]);
+assert.equal(currentCombined.receivedEvents, 2);
+assert.equal(currentCombined.unmatched.length, 0);
+const omskLive = currentCombined.games.find((game) => game.team1.shortName === "Omsk" && game.team2.shortName === "Vorkuta")!;
+assert.ok(omskLive, "current IPBL Pro Division Omsk vs Vorkuta must render as a live card");
+assert.equal(omskLive.tag, "ipbl-66-m-pro-a");
+assert.equal(omskLive.divisionLabel, "Pro Men A");
+assert.equal(omskLive.team1.teamId, 134);
+assert.equal(omskLive.team2.teamId, 163);
+assert.equal(omskLive.scoreText, "5 : 4");
+const kurskLive = currentCombined.games.find((game) => game.team1.shortName === "Kursk" && game.team2.shortName === "Orenburg")!;
+assert.ok(kurskLive, "current IPBL Pro Division Women Kursk vs Orenburg must render as a live card");
+assert.equal(kurskLive.tag, "ipbl-66-w-pro-k");
+assert.equal(kurskLive.divisionLabel, "Pro Women K");
+assert.equal(kurskLive.team1.teamId, 76018);
+assert.equal(kurskLive.team2.teamId, 76017);
+assert.equal(kurskLive.scoreText, "0 : 0");
+
 console.log("Bookmaker live adapter tests passed");

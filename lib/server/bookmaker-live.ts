@@ -77,6 +77,8 @@ const VERIFIED_TEAM_ALIASES: Record<string, VerifiedTeam> = Object.fromEntries(
   "Kurgan": { teamId: 76069, shortName: "Kurgan", name: "Kurgan", tag: "ipbl-66-m-pro-l", divisionLabel: "Pro Men L" },
   "Surgut": { teamId: 76071, shortName: "Surgut", name: "Surgut", tag: "ipbl-66-m-pro-l", divisionLabel: "Pro Men L" },
   "Yakutsk": { teamId: 76070, shortName: "Yakutsk", name: "Yakutsk", tag: "ipbl-66-m-pro-l", divisionLabel: "Pro Men L" },
+  "Omsk": { teamId: 134, shortName: "Omsk", name: "Omsk", tag: "ipbl-66-m-pro-a", divisionLabel: "Pro Men A" },
+  "Vorkuta": { teamId: 163, shortName: "Vorkuta", name: "Vorkuta", tag: "ipbl-66-m-pro-a", divisionLabel: "Pro Men A" },
   "Bryansk": { teamId: 76021, shortName: "Bryansk", name: "Bryansk", tag: "ipbl-66-w-pro-a", divisionLabel: "Pro Women A" },
   "Izhevsk": { teamId: 76023, shortName: "Izhevsk", name: "Izhevsk", tag: "ipbl-66-w-pro-a", divisionLabel: "Pro Women A" },
   "Magnitogorsk": { teamId: 76022, shortName: "Magnitogorsk", name: "Magnitogorsk", tag: "ipbl-66-w-pro-a", divisionLabel: "Pro Women A" },
