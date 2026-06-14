@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { fetchTeamGames } from "../api/client";
 import type { ScheduleGame, TeamHistoryGame } from "../api/types";
 import { TEAM_STATISTICS_DIVISIONS, teamsForDivision } from "../config/teams";
+import { resolveTeamSelectionFromParams } from "./team-selection";
 import {
   buildTeamProfile,
   parseQuarterTotals,
@@ -10,26 +11,8 @@ import {
   type TeamRange,
 } from "../teams/statistics";
 
-const DEFAULT_DIVISION = "ipbl-66-m-pro-a";
-
 function initialSelection(): { divisionTag: string; teamId: number; range: TeamRange } {
-  const params = new URLSearchParams(window.location.search);
-  const requestedDivision = params.get("division") ?? DEFAULT_DIVISION;
-  const divisionTag = TEAM_STATISTICS_DIVISIONS.some((division) => division.tag === requestedDivision)
-    ? requestedDivision
-    : DEFAULT_DIVISION;
-  const teams = teamsForDivision(divisionTag);
-  const requestedTeamId = Number(params.get("team"));
-  const teamId = teams.some((team) => team.teamId === requestedTeamId)
-    ? requestedTeamId
-    : teams[0]?.teamId ?? 0;
-  const requestedRange = params.get("range");
-  const range: TeamRange = requestedRange === "all"
-    ? "all"
-    : requestedRange === "5" || requestedRange === "10" || requestedRange === "30"
-      ? Number(requestedRange) as 5 | 10 | 30
-      : 30;
-  return { divisionTag, teamId, range };
+  return resolveTeamSelectionFromParams(new URLSearchParams(window.location.search));
 }
 
 function formatNumber(value: number | null, digits = 1): string {
@@ -78,7 +61,7 @@ export default function TeamStatistics({
     let cancelled = false;
     setLoading(true);
     setError(null);
-    void fetchTeamGames(teamId, divisionTag, season)
+    void fetchTeamGames(teamId, divisionTag, season, range)
       .then((rows) => {
         if (!cancelled) setGames(rows);
       })
@@ -91,7 +74,7 @@ export default function TeamStatistics({
     return () => {
       cancelled = true;
     };
-  }, [divisionTag, teamId, season, refreshToken]);
+  }, [divisionTag, teamId, season, range, refreshToken]);
 
   const team = availableTeams.find((item) => item.teamId === teamId) ?? availableTeams[0] ?? null;
   const profile = useMemo(() => buildTeamProfile(games, teamId, range), [games, teamId, range]);

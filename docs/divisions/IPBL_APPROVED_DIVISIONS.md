@@ -24,7 +24,7 @@ This is the current approved boundary for Live, Recorder, Results current-month 
 ## Total
 
 ```text
-12 approved divisions
+13 approved divisions
 ```
 
 ## Notes

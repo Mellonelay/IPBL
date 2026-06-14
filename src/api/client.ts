@@ -90,14 +90,15 @@ export async function fetchBoxScore(gameId: number, tag: string): Promise<BoxSco
 export async function fetchTeamGames(
     teamId: number,
     tag: string,
-    season: number
+    season: number,
+    range?: 5 | 10 | 30 | "all"
 ): Promise<TeamHistoryGame[]> {
-    const key = `${teamId}|${tag}|${season}`;
+    const key = `${teamId}|${tag}|${season}|${range ?? "all"}`;
     const hit = teamCache.get(key);
     const now = Date.now();
     if (hit && now - hit.at < TEAM_TTL_MS) return hit.rows;
     let raw: unknown;
-    const storedResponse = await fetch(`/api/teams/history?${q({ teamId, tag, season })}`, {
+    const storedResponse = await fetch(`/api/teams/history?${q({ teamId, tag, season, range: range ?? "all" })}`, {
         headers: { Accept: "application/json" },
     });
     if (storedResponse.ok) {
