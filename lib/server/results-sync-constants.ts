@@ -1,6 +1,6 @@
 export const RESULTS_SYNC_TAGS = [
   "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d",
-  "ipbl-66-m-pro-g", "ipbl-66-m-pro-u", "ipbl-66-m-pro-z",
+  "ipbl-66-m-pro-g", "ipbl-66-m-pro-u", "ipbl-66-m-pro-z", "ipbl-66-m-pro-l",
   "ipbl-66-w-pro-a", "ipbl-66-w-pro-b", "ipbl-66-w-pro-c", "ipbl-66-w-pro-d",
   "ipbl-66-w-pro-g", "ipbl-66-w-pro-k",
 ] as const;
@@ -26,6 +26,7 @@ const DIVISION_ROWS: { label: string; tag: string }[] = [
   { label: "Pro Men G", tag: "ipbl-66-m-pro-g" },
   { label: "Pro Men U", tag: "ipbl-66-m-pro-u" },
   { label: "Pro Men Z", tag: "ipbl-66-m-pro-z" },
+  { label: "Pro Men L", tag: "ipbl-66-m-pro-l" },
   { label: "Pro Women A", tag: "ipbl-66-w-pro-a" },
   { label: "Pro Women B", tag: "ipbl-66-w-pro-b" },
   { label: "Pro Women C", tag: "ipbl-66-w-pro-c" },
