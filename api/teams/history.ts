@@ -72,6 +72,44 @@ async function fetchOfficialRecentCalendarHistoryRows(teamId: number, tag: strin
   };
 }
 
+
+export type TeamHistoryRange = 5 | 10 | 30 | "all";
+
+function currentSeason(now = new Date()): number {
+  const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Yangon", year: "numeric" }).formatToParts(now);
+  return Number(parts.find((part) => part.type === "year")?.value ?? now.getUTCFullYear());
+}
+
+export type ResolvedTeamHistoryQuery = {
+  ok: true;
+  teamId: number;
+  tag: string;
+  season: number;
+  range: TeamHistoryRange;
+  defaultedSeason: boolean;
+} | { ok: false; status: number; error: string };
+
+export function resolveTeamHistoryQuery(search: URLSearchParams, now = new Date()): ResolvedTeamHistoryQuery {
+  const teamId = Number(search.get("teamId") ?? "");
+  const tag = search.get("tag") ?? "";
+  const seasonRaw = search.get("season");
+  const season = seasonRaw ? Number(seasonRaw) : currentSeason(now);
+  const rangeRaw = search.get("range") ?? "all";
+  const range = rangeRaw === "all" ? "all" : Number(rangeRaw);
+  if (!Number.isInteger(teamId) || teamId <= 0 || !Number.isInteger(season) || season < 2020 || !tag) {
+    return { ok: false, status: 400, error: "Invalid teamId, tag, or season" };
+  }
+  if (!isApprovedResultsTag(tag)) return { ok: false, status: 400, error: "Unsupported division tag" };
+  if (!(range === "all" || range === 5 || range === 10 || range === 30)) {
+    return { ok: false, status: 400, error: "Invalid range" };
+  }
+  return { ok: true, teamId, tag, season, range, defaultedSeason: !seasonRaw };
+}
+
+function limitTeamHistoryItems<T>(items: T[], range: TeamHistoryRange): T[] {
+  return range === "all" ? items : items.slice(0, range);
+}
+
 function requestSearchParams(req: VercelRequest): URLSearchParams {
   const host = Array.isArray(req.headers.host) ? req.headers.host[0] : req.headers.host;
   const base = `https://${host || "ipbl-minimal-viewer.vercel.app"}`;
@@ -82,13 +120,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") return res.status(405).json({ error: "Method not allowed" });
 
   const search = requestSearchParams(req);
-  const teamId = Number(search.get("teamId") ?? "");
-  const tag = search.get("tag") ?? "";
-  const season = Number(search.get("season") ?? "");
-  if (!Number.isInteger(teamId) || teamId <= 0 || !Number.isInteger(season) || season < 2020 || !tag) {
-    return res.status(400).json({ error: "Invalid teamId, tag, or season" });
-  }
-  if (!isApprovedResultsTag(tag)) return res.status(400).json({ error: "Unsupported division tag" });
+  const resolved = resolveTeamHistoryQuery(search);
+  if (!resolved.ok) return res.status(resolved.status).json({ error: resolved.error });
+  const { teamId, tag, season, range } = resolved;
 
   const redis = getResultsRedis();
   if (!redis) return res.status(503).json({ error: "KV not configured" });
@@ -102,17 +136,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       fetchOfficialOnlineHistoryRows(teamId, tag),
       fetchOfficialRecentCalendarHistoryRows(teamId, tag),
     ]);
-    const items = mergeTeamHistoryItems(storedItems, [
+    const mergedItems = mergeTeamHistoryItems(storedItems, [
       ...officialRecentCalendar.items,
       ...officialOnline.items,
     ]);
+    const items = limitTeamHistoryItems(mergedItems, range);
     const loadedMonths = months
       .map((month, index) => month ? index + 1 : null)
       .filter((month): month is number => month !== null);
 
     res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate=300");
     return res.status(200).json({
-      data: { items, totalCount: items.length },
+      data: { items, totalCount: items.length, totalAvailable: mergedItems.length, range },
       coverage: {
         season,
         divisionTag: tag,
