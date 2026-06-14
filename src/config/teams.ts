@@ -38,6 +38,10 @@ export const ACTIVE_TEAMS: ActiveTeamConfig[] = [
 
   { teamId: 76055, name: "Anapa", divisionTag: "ipbl-66-m-pro-z" },
   { teamId: 76054, name: "Magadan", divisionTag: "ipbl-66-m-pro-z" },
+  { teamId: 76072, name: "Adler", divisionTag: "ipbl-66-m-pro-l" },
+  { teamId: 76069, name: "Kurgan", divisionTag: "ipbl-66-m-pro-l" },
+  { teamId: 76071, name: "Surgut", divisionTag: "ipbl-66-m-pro-l" },
+  { teamId: 76070, name: "Yakutsk", divisionTag: "ipbl-66-m-pro-l" },
 
   { teamId: 76021, name: "Bryansk", divisionTag: "ipbl-66-w-pro-a" },
   { teamId: 76023, name: "Izhevsk", divisionTag: "ipbl-66-w-pro-a" },

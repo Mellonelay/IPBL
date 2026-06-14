@@ -6,7 +6,7 @@ export const RESULTS_SYNC_TAGS = [
     "ipbl-66-m-pro-d",
     "ipbl-66-m-pro-g",
     "ipbl-66-m-pro-u",
-    "ipbl-66-m-pro-z",
+    "ipbl-66-m-pro-z", "ipbl-66-m-pro-l",
     "ipbl-66-w-pro-a",
     "ipbl-66-w-pro-b",
     "ipbl-66-w-pro-c",

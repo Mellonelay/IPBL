@@ -1,0 +1,45 @@
+{
+  "newApprovedDivision": "ipbl-66-m-pro-l",
+  "classification": "format-change migration",
+  "evidenceSource": "official IPBL proxy calendar range",
+  "officialCalendarRange": {
+    "tag": "ipbl-66-m-pro-l",
+    "from": "2026-01-01",
+    "to": "2026-12-31",
+    "declaredTotal": 48,
+    "leagueName": "Division L"
+  },
+  "teams": [
+    {
+      "teamId": 76072,
+      "name": "Adler"
+    },
+    {
+      "teamId": 76069,
+      "name": "Kurgan"
+    },
+    {
+      "teamId": 76071,
+      "name": "Surgut"
+    },
+    {
+      "teamId": 76070,
+      "name": "Yakutsk"
+    }
+  ],
+  "bookmakerContext": {
+    "leagueId": 2496666,
+    "currentUnmatchedTeams": [
+      "Omsk",
+      "Ukhta",
+      "Stavropol",
+      "Tikhoretsk"
+    ],
+    "note": "bookmaker current teams were not used as Pro L mapping because official calendar identifies Pro L teams independently"
+  },
+  "totalCurrentApprovedDivisions": 13,
+  "policy": {
+    "approvedBoundaryUpdate": true,
+    "experimentalDivision": false
+  }
+}

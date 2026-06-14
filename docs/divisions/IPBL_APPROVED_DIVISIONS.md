@@ -10,6 +10,7 @@ This is the current approved boundary for Live, Recorder, Results current-month 
 - `ipbl-66-m-pro-d`
 - `ipbl-66-m-pro-u`
 - `ipbl-66-m-pro-z`
+- `ipbl-66-m-pro-l`
 
 ## Women
 
@@ -33,3 +34,6 @@ This is the current approved boundary for Live, Recorder, Results current-month 
 ## Change record
 
 `ipbl-66-m-pro-z` was added as a format-change migration after official IPBL Live displayed Pro Division Men Z with Anapa vs Magadan. This is an approved division-boundary update, not an experimental division.
+
+
+`ipbl-66-m-pro-l` was added as a format-change migration after official IPBL calendar range evidence displayed Division L with Adler, Kurgan, Surgut, and Yakutsk. This is an approved division-boundary update, not an experimental division.
