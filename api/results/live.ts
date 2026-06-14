@@ -86,7 +86,7 @@ export async function buildLiveFeedEnvelope(): Promise<LiveFeedEnvelope> {
         lastSyncAt: new Date().toISOString(),
         status: games.length > 0
           ? (fallback.unmatched.length > 0 || fallback.sourceFailures.length > 0 ? "PARTIAL" : "OK")
-          : "FAIL",
+          : (fallback.sourceFailures.length > 0 ? "PARTIAL" : "IDLE"),
         source: "bookmaker:melbet.com",
         fallbackFrom: "official:api1.ipbl.pro",
         requestedDivisions: LIVE_TAGS.length,
