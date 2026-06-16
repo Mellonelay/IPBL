@@ -11,17 +11,31 @@ import {
 
 export const config = { maxDuration: 60 };
 
+const HISTORY_FETCH_TIMEOUT_MS = 8_000;
+
+async function fetchJsonWithTimeout(url: string, timeoutMs = HISTORY_FETCH_TIMEOUT_MS): Promise<{ ok: true; data: unknown } | { ok: false; error: string }> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, { headers: { Accept: "application/json" }, signal: controller.signal });
+    if (!response.ok) return { ok: false, error: `HTTP ${response.status}` };
+    return { ok: true, data: await response.json() as unknown };
+  } catch (error) {
+    if (error instanceof DOMException && error.name === "AbortError") {
+      return { ok: false, error: `timeout after ${timeoutMs}ms` };
+    }
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 
 async function fetchOfficialOnlineHistoryRows(teamId: number, tag: string): Promise<{ items: ReturnType<typeof officialOnlineTeamHistoryItems>; ok: boolean; error: string | null }> {
   const url = `${IPBL_API_BASE}/calendar/online?tag=${encodeURIComponent(tag)}&lang=${encodeURIComponent(RESULTS_LANG)}`;
-  try {
-    const response = await fetch(url, { headers: { Accept: "application/json" } });
-    if (!response.ok) return { items: [], ok: false, error: `HTTP ${response.status}` };
-    const raw = await response.json() as unknown;
-    return { items: officialOnlineTeamHistoryItems(raw, teamId, tag), ok: true, error: null };
-  } catch (error) {
-    return { items: [], ok: false, error: error instanceof Error ? error.message : String(error) };
-  }
+  const result = await fetchJsonWithTimeout(url);
+  if (!result.ok) return { items: [], ok: false, error: result.error };
+  return { items: officialOnlineTeamHistoryItems(result.data, teamId, tag), ok: true, error: null };
 }
 
 function isoDay(date: Date): string {
@@ -49,14 +63,9 @@ type OfficialRecentCalendarResult = {
 async function fetchOfficialRecentCalendarWindow(teamId: number, tag: string, window: { from: string; to: string }): Promise<{ items: ReturnType<typeof officialOnlineTeamHistoryItems>; ok: boolean; error: string | null; window: { from: string; to: string } }> {
   const params = new URLSearchParams({ tag, lang: RESULTS_LANG, from: window.from, to: window.to });
   const url = `${IPBL_API_BASE}/calendar?${params}`;
-  try {
-    const response = await fetch(url, { headers: { Accept: "application/json" } });
-    if (!response.ok) return { items: [], ok: false, error: `HTTP ${response.status}`, window };
-    const raw = await response.json() as unknown;
-    return { items: officialOnlineTeamHistoryItems(raw, teamId, tag), ok: true, error: null, window };
-  } catch (error) {
-    return { items: [], ok: false, error: error instanceof Error ? error.message : String(error), window };
-  }
+  const result = await fetchJsonWithTimeout(url);
+  if (!result.ok) return { items: [], ok: false, error: result.error, window };
+  return { items: officialOnlineTeamHistoryItems(result.data, teamId, tag), ok: true, error: null, window };
 }
 
 async function fetchOfficialRecentCalendarHistoryRows(teamId: number, tag: string): Promise<OfficialRecentCalendarResult> {
