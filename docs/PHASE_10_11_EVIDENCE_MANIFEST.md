@@ -14,7 +14,7 @@ This manifest is read-only. It maps existing workload and C9 evidence into the c
 
 ### Status
 
-- Active.
+- Complete / materialized.
 
 ### Existing evidence
 
@@ -23,12 +23,14 @@ This manifest is read-only. It maps existing workload and C9 evidence into the c
   - [docs/TEAM_STATISTICS_PHASE_E2.md](/root/repos/IPBL/docs/TEAM_STATISTICS_PHASE_E2.md)
   - [docs/GRAPHIFY_INTELLIGENCE_ROADMAP.md](/root/repos/IPBL/docs/GRAPHIFY_INTELLIGENCE_ROADMAP.md)
 - Active artifacts:
+  - [artifacts/workload-graph/ipbl-workload-graph.json](/root/repos/IPBL/artifacts/workload-graph/ipbl-workload-graph.json)
   - [artifacts/team-statistics/team-statistics-reconciliation-latest.json](/root/repos/IPBL/artifacts/team-statistics/team-statistics-reconciliation-latest.json)
   - [artifacts/phase-c9/c9-plan-manifest.json](/root/repos/IPBL/artifacts/phase-c9/c9-plan-manifest.json)
   - [artifacts/phase-c9/c9-source-proof-summary.json](/root/repos/IPBL/artifacts/phase-c9/c9-source-proof-summary.json)
   - [artifacts/phase-c9/history-graph-proof.json](/root/repos/IPBL/artifacts/phase-c9/history-graph-proof.json)
   - [artifacts/phase-c9/history-graph-schema-summary.json](/root/repos/IPBL/artifacts/phase-c9/history-graph-schema-summary.json)
 - Tests already proving the workload boundaries:
+  - [tests/ipbl-workload-graph.test.ts](/root/repos/IPBL/tests/ipbl-workload-graph.test.ts)
   - [tests/ipbl-approved-divisions.test.mjs](/root/repos/IPBL/tests/ipbl-approved-divisions.test.mjs)
   - [tests/team-statistics-reconciliation.test.mjs](/root/repos/IPBL/tests/team-statistics-reconciliation.test.mjs)
   - [tests/team-statistics.test.ts](/root/repos/IPBL/tests/team-statistics.test.ts)
@@ -86,4 +88,3 @@ npm run test:c9-active-matched-gate
 
 - No new odds or betting behavior is introduced here.
 - This manifest only documents the existing workload and C9 proof surface.
-

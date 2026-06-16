@@ -5,10 +5,12 @@ cd "$(git rev-parse --show-toplevel)"
 
 echo "[PHASE 10] IPBL WORKLOAD GRAPH CHECKS"
 test -f docs/PHASE_10_11_EVIDENCE_MANIFEST.md
+test -f artifacts/workload-graph/ipbl-workload-graph.json
 test -f docs/TEAM_STATISTICS_RECONCILIATION.md
 test -f docs/TEAM_STATISTICS_PHASE_E2.md
 test -f artifacts/team-statistics/team-statistics-reconciliation-latest.json
 
+npm run test:ipbl-workload-graph
 npm run reconcile:team-statistics
 npm run test:approved-divisions
 npm run test:team-statistics-reconciliation

@@ -12,6 +12,7 @@ Total phases: 14
 - [x] Phase 0 - Execution Fabric Baseline (`complete`) - VM executor, grouped routers, runtime audits, GitHub/Vercel workflow, production operator mode.
 - [x] Phase 1 - Graphify Bootstrap (`complete / materialized`) - Graphify installation, graph extraction, `graphify-out`, graph reports, communities, God Node analysis, source-discovery corpus.
 - [x] Phase 8 - Quarter-State Recorder (`fully complete`) - deterministic quarter-state snapshot scaffold, read-only live snapshot normalization, Agnix-clean support-layer baseline, isolated worktree verification.
+- [x] Phase 10 - IPBL Workload Graph (`fully complete`) - canonical read-only workload graph snapshot, repository-derived subgraph index, and validation coverage across team statistics, H2H, recorder, release, evidence, and operator intelligence surfaces.
 
 ## Validated / Support-Ready
 
@@ -26,12 +27,11 @@ Total phases: 14
 
 - [x] Phase 4 - Source Archaeology Graph (`fully complete`) - canonical source-archaeology graph, official source, bookmaker source, raw responses, parser candidates, fixtures, validations, and production proof nodes.
 - [x] Phase 9 - Runtime Agent Graph (`fully complete`) - materialized tracking for agents, workflows, jobs, artifacts, audits, and recovery actions, plus a canonical repository-derived snapshot.
-- [ ] Phase 10 - IPBL Workload Graph (`active`) - keep Live Source, Official Source, Bookmaker Source, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence aligned.
 - [ ] Phase 12 - GEN / Operator Intelligence (`planned / seeded / blocked`) - wait on recorder data, backtests, and evidence-grade foundations.
 - [ ] Phase 13 - Visualization (`evaluated / not wired`) - Obsidian exports, Graphistry/Gephi views, optional graph DB inspection.
 
 ## Summary
 
-- Clearly complete: 4
+- Clearly complete: 6
 - Validated / support-ready: 6
-- Open: 4
+- Open: 2
