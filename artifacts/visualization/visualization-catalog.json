@@ -1,0 +1,37 @@
+{
+  "schema": "ipbl.visualization-catalog.v1",
+  "phase": 13,
+  "status": "materialized",
+  "readOnly": true,
+  "sources": {
+    "graphify": {
+      "graphJson": "graphify-out/graph.json",
+      "graphJsonExists": true,
+      "graphReport": "graphify-out/GRAPH_REPORT.md",
+      "graphReportExists": true
+    },
+    "obsidian": {
+      "directory": "graphify-out/obsidian",
+      "directoryExists": true,
+      "fileCount": 377
+    },
+    "codeReviewGraph": {
+      "database": ".code-review-graph/graph.db",
+      "databaseExists": true
+    }
+  },
+  "targets": {
+    "graphistry": {
+      "status": "planned",
+      "exportPath": "graphify-out/graphistry"
+    },
+    "gephi": {
+      "status": "planned",
+      "exportPath": "graphify-out/gephi"
+    },
+    "neo4j": {
+      "status": "optional",
+      "exportPath": "graphify-out/neo4j"
+    }
+  }
+}

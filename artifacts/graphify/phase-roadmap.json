@@ -84,8 +84,8 @@
     {
       "id": "phase_13_visualization",
       "name": "Visualization",
-      "state": "evaluated_not_wired",
-      "summary": "Obsidian exports exist; Graphistry/Gephi/optional graph DB views remain future work."
+      "state": "complete_materialized_read_only",
+      "summary": "Read-only visualization catalog materialized over Graphify, Obsidian, and code-review graph exports."
     }
   ],
   "productionCheckpoints": [

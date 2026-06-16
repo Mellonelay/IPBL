@@ -63,6 +63,9 @@ bash scripts/validate-phase-10-11.sh
 echo "[STEP 6B] PHASE 12 OPERATOR INTELLIGENCE"
 npm run test:operator-intelligence
 
+echo "[STEP 6C] PHASE 13 VISUALIZATION"
+npm run test:visualization-catalog
+
 echo "[STEP 7] FINAL AGNIX RECHECK"
 npx agnix@0.32.0 .
 

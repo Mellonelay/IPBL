@@ -524,13 +524,15 @@ Canonical artifact: `artifacts/operator-intelligence/operator-intelligence.json`
 
 ### Phase 13 - Visualization
 
-Status: evaluated / not fully wired.
+Status: complete / materialized / read-only catalog.
 
 Preferred outputs:
 
 - Obsidian graph exports
 - Graphistry or Gephi views
 - optional Neo4j/Kuzu-backed inspection
+
+Canonical artifact: `artifacts/visualization/visualization-catalog.json`.
 
 ## Mandatory Change Workflow
 

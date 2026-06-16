@@ -88,6 +88,13 @@
       "children": ["prebuilt_deploy", "skip_domain_staging", "vercel_curl", "chrome_cdp"]
     },
     {
+      "id": "god_visualization",
+      "name": "Visualization",
+      "status": "materialized_read_only",
+      "role": "Read-only export catalog over Graphify, Obsidian, and code-review graph surfaces",
+      "children": ["graphify_out", "obsidian_exports", "code_review_graph", "graphistry_stub", "gephi_stub"]
+    },
+    {
       "id": "god_runtime_audits",
       "name": "Runtime Audits",
       "status": "active",

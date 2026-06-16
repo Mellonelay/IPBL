@@ -88,6 +88,15 @@ These phases are backed by durable evidence and validation coverage, but they re
   - Implementation module at [lib/server/operator-intelligence.ts](/root/repos/IPBL/lib/server/operator-intelligence.ts)
   - Phase validator hook in [scripts/validate-phase-master.sh](/root/repos/IPBL/scripts/validate-phase-master.sh)
 
+## Phase 13: Fully Complete
+
+- Phase 13 - Visualization:
+  - Canonical read-only visualization catalog at [artifacts/visualization/visualization-catalog.json](/root/repos/IPBL/artifacts/visualization/visualization-catalog.json)
+  - Repository-backed exports for Graphify, Obsidian, and code-review graph surfaces
+  - Dedicated contract test at [tests/visualization-catalog.test.ts](/root/repos/IPBL/tests/visualization-catalog.test.ts)
+  - Implementation module at [lib/server/visualization-catalog.ts](/root/repos/IPBL/lib/server/visualization-catalog.ts)
+  - Phase validator hook in [scripts/validate-phase-master.sh](/root/repos/IPBL/scripts/validate-phase-master.sh)
+
 ## Validation Entry Points
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
@@ -103,6 +112,7 @@ npm run validate:phase-master
 npm run validate:phase-6-7
 npm run validate:phase-10-11
 npm run test:operator-intelligence
+npm run test:visualization-catalog
 npx agnix@0.32.0 .
 bash scripts/validate-phase-4-5.sh
 npm run test:approved-divisions
