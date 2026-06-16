@@ -242,7 +242,7 @@ export function buildRuntimeAgentGraphFromRepository(): RuntimeAgentGraph {
     buildNode(
       "artifact",
       "phase-c8-completion-report",
-      workloadGraph?.schema ?? "IPBL Workload Graph Manifest",
+      "IPBL Workload Graph Manifest",
       "artifacts/workload-graph/ipbl-workload-graph.json",
       ["artifacts/workload-graph/ipbl-workload-graph.json"],
     ),

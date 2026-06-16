@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-06-16T19:56:53.728Z",
+    "generatedAt": "2026-06-16T20:31:56.829Z",
     "base": "https://ipbl-minimal-viewer.vercel.app",
     "season": 2026,
     "timeoutMs": 45000,
@@ -669,7 +669,7 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 15,
+          "itemCount": 14,
           "error": null,
           "windows": [
             {
@@ -682,9 +682,9 @@
             {
               "from": "2026-06-11",
               "to": "2026-06-12",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-12",
@@ -724,9 +724,9 @@
           ]
         }
       },
-      "totalCount": 169,
-      "completedCount": 169,
-      "quarterMatrixCount": 165,
+      "totalCount": 168,
+      "completedCount": 168,
+      "quarterMatrixCount": 164,
       "latest": {
         "gameId": 1073717,
         "localDate": "16.06.2026",
@@ -857,7 +857,7 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 13,
+          "itemCount": 15,
           "error": null,
           "windows": [
             {
@@ -870,9 +870,9 @@
             {
               "from": "2026-06-11",
               "to": "2026-06-12",
-              "ok": false,
-              "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "ok": true,
+              "itemCount": 5,
+              "error": null
             },
             {
               "from": "2026-06-12",
@@ -905,24 +905,24 @@
             {
               "from": "2026-06-16",
               "to": "2026-06-17",
-              "ok": false,
-              "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
       },
-      "totalCount": 167,
-      "completedCount": 167,
-      "quarterMatrixCount": 166,
+      "totalCount": 169,
+      "completedCount": 169,
+      "quarterMatrixCount": 168,
       "latest": {
-        "gameId": 1073714,
+        "gameId": 1073716,
         "localDate": "16.06.2026",
-        "localTime": "16:00",
-        "score": "72 : 61",
-        "fullScore": "19:16,21:12,21:19,11:14",
+        "localTime": "18:00",
+        "score": "82 : 73",
+        "fullScore": "27:26,19:14,22:20,14:13",
         "team1": "Samara",
-        "team2": "Kazan"
+        "team2": "Tyumen"
       }
     },
     {
@@ -1139,15 +1139,15 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 12,
+          "itemCount": 10,
           "error": null,
           "windows": [
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-11",
@@ -1253,9 +1253,9 @@
             {
               "from": "2026-06-12",
               "to": "2026-06-13",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-13",
@@ -1281,9 +1281,9 @@
             {
               "from": "2026-06-16",
               "to": "2026-06-17",
-              "ok": true,
-              "itemCount": 1,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             }
           ]
         }
@@ -1340,9 +1340,9 @@
             {
               "from": "2026-06-11",
               "to": "2026-06-12",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-12",
@@ -1421,7 +1421,7 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 15,
+          "itemCount": 14,
           "error": null,
           "windows": [
             {
@@ -1434,9 +1434,9 @@
             {
               "from": "2026-06-11",
               "to": "2026-06-12",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-12",
@@ -1462,9 +1462,9 @@
             {
               "from": "2026-06-15",
               "to": "2026-06-16",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-16",
@@ -1515,15 +1515,15 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 12,
+          "itemCount": 15,
           "error": null,
           "windows": [
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": false,
-              "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "ok": true,
+              "itemCount": 5,
+              "error": null
             },
             {
               "from": "2026-06-11",
@@ -1703,15 +1703,15 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 12,
+          "itemCount": 15,
           "error": null,
           "windows": [
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": false,
-              "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "ok": true,
+              "itemCount": 5,
+              "error": null
             },
             {
               "from": "2026-06-11",
@@ -1822,9 +1822,9 @@
             {
               "from": "2026-06-13",
               "to": "2026-06-14",
-              "ok": false,
-              "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             },
             {
               "from": "2026-06-14",
@@ -1836,9 +1836,9 @@
             {
               "from": "2026-06-15",
               "to": "2026-06-16",
-              "ok": false,
-              "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "ok": true,
+              "itemCount": 2,
+              "error": null
             },
             {
               "from": "2026-06-16",
@@ -1857,7 +1857,7 @@
         "gameId": 1073820,
         "localDate": "17.06.2026",
         "localTime": "00:00",
-        "score": "0 : 0",
+        "score": "107 : 99",
         "fullScore": "28:28,31:28,24:24,24:19",
         "team1": "Ryazan",
         "team2": "Smolensk"
@@ -2133,7 +2133,7 @@
         "gameId": 1073820,
         "localDate": "17.06.2026",
         "localTime": "00:00",
-        "score": "0 : 0",
+        "score": "107 : 99",
         "fullScore": "28:28,31:28,24:24,24:19",
         "team1": "Ryazan",
         "team2": "Smolensk"
@@ -2208,9 +2208,9 @@
             {
               "from": "2026-06-16",
               "to": "2026-06-17",
-              "ok": true,
+              "ok": false,
               "itemCount": 0,
-              "error": null
+              "error": "timeout after 8000ms"
             }
           ]
         }
@@ -2243,9 +2243,9 @@
         "divisionTag": "ipbl-66-m-pro-z",
         "loadedMonths": [],
         "currentOfficialOnline": {
-          "ok": true,
+          "ok": false,
           "itemCount": 0,
-          "error": null
+          "error": "timeout after 8000ms"
         },
         "recentOfficialCalendar": {
           "ok": true,
@@ -2338,7 +2338,7 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 6,
+          "itemCount": 5,
           "error": null,
           "windows": [
             {
@@ -2358,9 +2358,9 @@
             {
               "from": "2026-06-12",
               "to": "2026-06-13",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-13",
@@ -2372,16 +2372,16 @@
             {
               "from": "2026-06-14",
               "to": "2026-06-15",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-15",
               "to": "2026-06-16",
-              "ok": true,
+              "ok": false,
               "itemCount": 0,
-              "error": null
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-16",
@@ -2393,16 +2393,16 @@
           ]
         }
       },
-      "totalCount": 6,
-      "completedCount": 6,
-      "quarterMatrixCount": 6,
+      "totalCount": 5,
+      "completedCount": 5,
+      "quarterMatrixCount": 5,
       "latest": {
-        "gameId": 1073007,
+        "gameId": 1073005,
         "localDate": "14.06.2026",
-        "localTime": "07:00",
-        "score": "105 : 120",
-        "fullScore": "26:28,30:25,24:29,25:38",
-        "team1": "Kurgan",
+        "localTime": "05:00",
+        "score": "88 : 96",
+        "fullScore": "26:25,23:31,22:17,17:23",
+        "team1": "Yakutsk",
         "team2": "Adler"
       }
     },
@@ -2454,9 +2454,9 @@
             {
               "from": "2026-06-13",
               "to": "2026-06-14",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-14",
@@ -2510,9 +2510,9 @@
         "divisionTag": "ipbl-66-m-pro-l",
         "loadedMonths": [],
         "currentOfficialOnline": {
-          "ok": false,
+          "ok": true,
           "itemCount": 0,
-          "error": "timeout after 8000ms"
+          "error": null
         },
         "recentOfficialCalendar": {
           "ok": true,
@@ -2653,9 +2653,9 @@
             {
               "from": "2026-06-16",
               "to": "2026-06-17",
-              "ok": false,
+              "ok": true,
               "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "error": null
             }
           ]
         }
@@ -2806,9 +2806,9 @@
             {
               "from": "2026-06-11",
               "to": "2026-06-12",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-12",
@@ -3357,15 +3357,15 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 15,
+          "itemCount": 12,
           "error": null,
           "windows": [
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-11",
@@ -3781,9 +3781,9 @@
             {
               "from": "2026-06-16",
               "to": "2026-06-17",
-              "ok": false,
-              "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "ok": true,
+              "itemCount": 2,
+              "error": null
             }
           ]
         }
@@ -4619,9 +4619,9 @@
             {
               "from": "2026-06-16",
               "to": "2026-06-17",
-              "ok": false,
+              "ok": true,
               "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "error": null
             }
           ]
         }
@@ -4859,9 +4859,9 @@
             {
               "from": "2026-06-10",
               "to": "2026-06-11",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
             },
             {
               "from": "2026-06-11",
@@ -4894,9 +4894,9 @@
             {
               "from": "2026-06-15",
               "to": "2026-06-16",
-              "ok": false,
+              "ok": true,
               "itemCount": 0,
-              "error": "timeout after 8000ms"
+              "error": null
             },
             {
               "from": "2026-06-16",

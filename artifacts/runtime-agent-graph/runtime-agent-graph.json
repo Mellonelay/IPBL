@@ -33,7 +33,7 @@
     {
       "kind": "artifact",
       "id": "phase-c8-completion-report",
-      "label": "ipbl.workload-graph.v1",
+      "label": "IPBL Workload Graph Manifest",
       "source": "artifacts/workload-graph/ipbl-workload-graph.json",
       "evidence": [
         "artifacts/workload-graph/ipbl-workload-graph.json"

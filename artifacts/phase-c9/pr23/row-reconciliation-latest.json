@@ -1,6 +1,6 @@
 {
   "summary": {
-    "capturedAt": "2026-06-16T19:57:07.140Z",
+    "capturedAt": "2026-06-16T20:32:06.432Z",
     "endpoints": {
       "officialLivePage": {
         "url": "https://ipbl.pro/live",
@@ -125,7 +125,7 @@
         ]
       },
       "productionLive": {
-        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781639815280",
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781641918842",
         "http": 200,
         "ok": true,
         "bytes": 1577,
@@ -179,7 +179,7 @@
             "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
             "http": 200,
             "ok": true,
-            "bytes": 4387,
+            "bytes": 6045,
             "error": null
           },
           {
@@ -187,7 +187,7 @@
             "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
             "http": 200,
             "ok": true,
-            "bytes": 2975,
+            "bytes": 3129,
             "error": null
           }
         ]
@@ -204,8 +204,8 @@
     ],
     "melbetLiveCandidateCount": 3,
     "melbetCandidateIds": [
+      "729713431",
       "729712029",
-      "729703502",
       "729712858"
     ],
     "melbetMatchedActiveProduction": [],
@@ -214,8 +214,8 @@
     "eventsstatProbeIds": [
       "1073715",
       "1073505",
+      "729713431",
       "729712029",
-      "729703502",
       "729712858"
     ],
     "eventsstatProven": true,
@@ -243,7 +243,7 @@
     "officialLivePage": {
       "label": "officialLivePage",
       "url": "https://ipbl.pro/live",
-      "capturedAt": "2026-06-16T19:56:56.486Z",
+      "capturedAt": "2026-06-16T20:32:00.062Z",
       "http": 200,
       "ok": true,
       "bytes": 81374,
@@ -254,14 +254,14 @@
     "officialCalendar": {
       "label": "officialCalendar",
       "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
-      "capturedAt": "2026-06-16T19:57:04.004Z",
+      "capturedAt": "2026-06-16T20:32:03.176Z",
       "ok": true,
       "http": 200,
       "components": [
         {
           "label": "officialCalendar-ipbl-66-m-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
-          "capturedAt": "2026-06-16T19:56:56.795Z",
+          "capturedAt": "2026-06-16T20:32:00.068Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -280,7 +280,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
-          "capturedAt": "2026-06-16T19:56:57.058Z",
+          "capturedAt": "2026-06-16T20:32:00.332Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -299,7 +299,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
-          "capturedAt": "2026-06-16T19:56:57.333Z",
+          "capturedAt": "2026-06-16T20:32:00.599Z",
           "http": 200,
           "ok": true,
           "bytes": 1864,
@@ -421,7 +421,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
-          "capturedAt": "2026-06-16T19:56:57.603Z",
+          "capturedAt": "2026-06-16T20:32:00.853Z",
           "http": 200,
           "ok": true,
           "bytes": 1908,
@@ -543,7 +543,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-u",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
-          "capturedAt": "2026-06-16T19:56:57.869Z",
+          "capturedAt": "2026-06-16T20:32:01.109Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -562,7 +562,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-z",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-z&lang=ru",
-          "capturedAt": "2026-06-16T19:56:58.134Z",
+          "capturedAt": "2026-06-16T20:32:01.370Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -581,7 +581,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-l",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-l&lang=ru",
-          "capturedAt": "2026-06-16T19:56:58.391Z",
+          "capturedAt": "2026-06-16T20:32:01.633Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -600,7 +600,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
-          "capturedAt": "2026-06-16T19:56:58.649Z",
+          "capturedAt": "2026-06-16T20:32:01.897Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -619,7 +619,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
-          "capturedAt": "2026-06-16T19:56:58.931Z",
+          "capturedAt": "2026-06-16T20:32:02.152Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -638,7 +638,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
-          "capturedAt": "2026-06-16T19:56:59.188Z",
+          "capturedAt": "2026-06-16T20:32:02.408Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -657,7 +657,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
-          "capturedAt": "2026-06-16T19:57:03.463Z",
+          "capturedAt": "2026-06-16T20:32:02.665Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -676,7 +676,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-g",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
-          "capturedAt": "2026-06-16T19:57:03.745Z",
+          "capturedAt": "2026-06-16T20:32:02.920Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -695,7 +695,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-k",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
-          "capturedAt": "2026-06-16T19:57:04.003Z",
+          "capturedAt": "2026-06-16T20:32:03.176Z",
           "http": 200,
           "ok": true,
           "bytes": 75,
@@ -927,8 +927,8 @@
     },
     "productionLive": {
       "label": "productionLive",
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781639815280",
-      "capturedAt": "2026-06-16T19:56:56.184Z",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781641918842",
+      "capturedAt": "2026-06-16T20:31:59.700Z",
       "http": 200,
       "ok": true,
       "bytes": 1577,
@@ -1024,7 +1024,7 @@
     "recorderStatus": {
       "label": "recorderStatus",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
-      "capturedAt": "2026-06-16T19:56:55.921Z",
+      "capturedAt": "2026-06-16T20:31:59.502Z",
       "http": 200,
       "ok": true,
       "bytes": 728,
@@ -1032,7 +1032,7 @@
       "json": {
         "status": {
           "schemaVersion": 1,
-          "capturedAt": "2026-06-16T19:56:06.281Z",
+          "capturedAt": "2026-06-16T20:31:07.774Z",
           "source": "official:api1.ipbl.pro",
           "sourceStatus": "OK",
           "receivedGames": 2,
@@ -1061,23 +1061,23 @@
           }
         },
         "activeGameKeys": [
-          "ipbl-66-m-pro-b:1073715",
-          "ipbl-66-w-pro-a:1073505"
+          "ipbl-66-w-pro-a:1073505",
+          "ipbl-66-m-pro-b:1073715"
         ]
       },
-      "preview": "{\"status\":{\"schemaVersion\":1,\"capturedAt\":\"2026-06-16T19:56:06.281Z\",\"source\":\"official:api1.ipbl.pro\",\"sourceStatus\":\"OK\",\"receivedGames\":2,\"acceptedGames\":2,\"recordedSnapshots\":0,\"duplicateSnapshots\":2,\"rejectedGames\":[],\"missingPreviouslyActive\":[],\"activeGameKeys\":[\"ipbl-66-m-pro-b:1073715\",\"ipbl-66-w-pro-a:1073505\"],\"sourceDetails\":{\"lastSyncAt\":\"2026-06-16T12:44:04.749Z\",\"status\":\"OK\",\"source\":\"official:api1.ipbl.pro\",\"requestedDivisions\":13,\"successfulDivisions\":13,\"failures\":[],\"latencyMs\":1420,\"displayTimeZone\":\"Asia/Yangon\",\"bookmakerSourceLeagues\":[],\"bookmakerSourceFailures\":[],\"receivedBookmakerEvents\":0,\"unmatchedBookmakerEvents\":[]}},\"activeGameKeys\":[\"ipbl-66-m-pro-b:1073715\",\"ipbl-66-w-pro-a:1073505\"]}"
+      "preview": "{\"status\":{\"schemaVersion\":1,\"capturedAt\":\"2026-06-16T20:31:07.774Z\",\"source\":\"official:api1.ipbl.pro\",\"sourceStatus\":\"OK\",\"receivedGames\":2,\"acceptedGames\":2,\"recordedSnapshots\":0,\"duplicateSnapshots\":2,\"rejectedGames\":[],\"missingPreviouslyActive\":[],\"activeGameKeys\":[\"ipbl-66-m-pro-b:1073715\",\"ipbl-66-w-pro-a:1073505\"],\"sourceDetails\":{\"lastSyncAt\":\"2026-06-16T12:44:04.749Z\",\"status\":\"OK\",\"source\":\"official:api1.ipbl.pro\",\"requestedDivisions\":13,\"successfulDivisions\":13,\"failures\":[],\"latencyMs\":1420,\"displayTimeZone\":\"Asia/Yangon\",\"bookmakerSourceLeagues\":[],\"bookmakerSourceFailures\":[],\"receivedBookmakerEvents\":0,\"unmatchedBookmakerEvents\":[]}},\"activeGameKeys\":[\"ipbl-66-w-pro-a:1073505\",\"ipbl-66-m-pro-b:1073715\"]}"
     },
     "recorderHistory": {
       "label": "recorderHistory",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
-      "capturedAt": "2026-06-16T19:57:04.963Z",
+      "capturedAt": "2026-06-16T20:32:04.128Z",
       "ok": true,
       "http": 200,
       "components": [
         {
           "label": "recorderHistory-ipbl-66-m-pro-b-1073715",
           "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-m-pro-b&gameId=1073715&limit=5",
-          "capturedAt": "2026-06-16T19:57:04.492Z",
+          "capturedAt": "2026-06-16T20:32:03.649Z",
           "http": 200,
           "ok": true,
           "bytes": 4866,
@@ -1334,7 +1334,7 @@
         {
           "label": "recorderHistory-ipbl-66-w-pro-a-1073505",
           "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-w-pro-a&gameId=1073505&limit=5",
-          "capturedAt": "2026-06-16T19:57:04.963Z",
+          "capturedAt": "2026-06-16T20:32:04.128Z",
           "http": 200,
           "ok": true,
           "bytes": 4865,
@@ -2077,17 +2077,17 @@
     "melbetLiveDiscovery": {
       "label": "melbetLiveDiscovery",
       "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
-      "capturedAt": "2026-06-16T19:56:56.311Z",
+      "capturedAt": "2026-06-16T20:31:59.799Z",
       "ok": true,
       "http": 200,
       "components": [
         {
           "label": "melbetLive-2496666",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-16T19:56:56.132Z",
+          "capturedAt": "2026-06-16T20:31:59.626Z",
           "http": 200,
           "ok": true,
-          "bytes": 4387,
+          "bytes": 6045,
           "contentType": "application/json; charset=utf-8",
           "json": {
             "Id": 0,
@@ -2099,20 +2099,33 @@
               {
                 "R": 99,
                 "SC": {
-                  "FS": {},
+                  "FS": {
+                    "S1": 63,
+                    "S2": 47
+                  },
                   "PS": [
                     {
                       "Key": 1,
                       "Value": {
+                        "S1": 34,
+                        "S2": 22,
                         "NF": "1st quarter"
+                      }
+                    },
+                    {
+                      "Key": 2,
+                      "Value": {
+                        "S1": 29,
+                        "S2": 25,
+                        "NF": "2nd quarter"
                       }
                     }
                   ],
-                  "CP": 1,
-                  "CPS": "",
-                  "TD": -1,
+                  "CP": 2,
+                  "CPS": "2nd quarter",
+                  "TS": 1192,
                   "TR": -1,
-                  "I": "Pre-match betting",
+                  "I": "",
                   "ST": [
                     {
                       "Key": 0,
@@ -2125,117 +2138,117 @@
                         },
                         {
                           "ID": 49,
-                          "S1": "0",
-                          "S2": "0",
+                          "S1": "18",
+                          "S2": "12",
                           "N": "2-pointers"
                         },
                         {
                           "ID": 48,
-                          "S1": "0",
-                          "S2": "0",
+                          "S1": "7",
+                          "S2": "7",
                           "N": "3-pointers"
                         },
                         {
                           "ID": 50,
-                          "S1": "0",
-                          "S2": "0",
+                          "S1": "6",
+                          "S2": "2",
                           "N": "Free throws"
                         }
                       ]
                     }
                   ],
-                  "SLS": "Starting in 4 minutes"
+                  "SLS": "19 minutes"
                 },
-                "VI": "19426564",
+                "VI": "19426616",
                 "VA": 1,
-                "ZP": 4633899,
-                "GNS": true,
-                "U": 1781639816,
+                "ZP": 4634088,
+                "HMH": 1,
+                "U": 1781641919,
                 "OuR": true,
                 "SVoAP": true,
-                "I": 729712029,
-                "N": 228021,
+                "I": 729713431,
+                "N": 229793,
                 "T": 99,
                 "CO": 50,
                 "E": [
                   {
                     "T": 401,
-                    "C": 1.645,
-                    "CV": "1.645",
+                    "C": 1.112,
+                    "CV": "1.112",
                     "G": 101
                   },
                   {
                     "T": 3653,
-                    "C": 1.7,
-                    "CV": "1.7",
+                    "C": 1.136,
+                    "CV": "1.136",
                     "G": 2766
                   },
                   {
                     "T": 12,
-                    "P": 103.5,
-                    "C": 1.79,
-                    "CV": "1.79",
+                    "P": 113.5,
+                    "C": 1.768,
+                    "CV": "1.768",
                     "G": 15
                   },
                   {
+                    "T": 14,
+                    "P": 100.5,
+                    "C": 1.81,
+                    "CV": "1.81",
+                    "G": 62
+                  },
+                  {
                     "T": 9,
-                    "P": 203.5,
-                    "C": 1.792,
-                    "CV": "1.792",
+                    "P": 213.5,
+                    "C": 1.825,
+                    "CV": "1.825",
+                    "G": 17
+                  },
+                  {
+                    "T": 7,
+                    "P": -12.5,
+                    "C": 1.83,
+                    "CV": "1.83",
+                    "G": 2
+                  },
+                  {
+                    "T": 8,
+                    "P": 12.5,
+                    "C": 1.83,
+                    "CV": "1.83",
+                    "G": 2
+                  },
+                  {
+                    "T": 10,
+                    "P": 213.5,
+                    "C": 1.835,
+                    "CV": "1.835",
                     "G": 17
                   },
                   {
                     "T": 13,
                     "P": 100.5,
-                    "C": 1.795,
-                    "CV": "1.795",
-                    "G": 62
-                  },
-                  {
-                    "T": 7,
-                    "P": -2.5,
-                    "C": 1.81,
-                    "CV": "1.81",
-                    "G": 2
-                  },
-                  {
-                    "T": 8,
-                    "P": 2.5,
                     "C": 1.85,
                     "CV": "1.85",
-                    "G": 2
-                  },
-                  {
-                    "T": 14,
-                    "P": 100.5,
-                    "C": 1.864,
-                    "CV": "1.864",
                     "G": 62
-                  },
-                  {
-                    "T": 10,
-                    "P": 203.5,
-                    "C": 1.865,
-                    "CV": "1.865",
-                    "G": 17
                   },
                   {
                     "T": 11,
-                    "P": 103.5,
-                    "C": 1.875,
-                    "CV": "1.875",
+                    "P": 113.5,
+                    "C": 1.896,
+                    "CV": "1.896",
                     "G": 15
                   },
                   {
                     "T": 402,
-                    "C": 2.06,
-                    "CV": "2.06",
+                    "C": 5.1,
+                    "CV": "5.1",
                     "G": 101
                   },
                   {
                     "T": 3655,
-                    "C": 2.144,
-                    "CV": "2.144",
+                    "C": 5.65,
+                    "CV": "5.65",
                     "G": 2766
                   },
                   {
@@ -2251,74 +2264,74 @@
                     "ME": [
                       {
                         "T": 7,
-                        "P": -0.5,
-                        "C": 1.645,
-                        "CV": "1.645",
+                        "P": -10.5,
+                        "C": 1.64,
+                        "CV": "1.64",
                         "G": 2
                       },
                       {
                         "T": 8,
-                        "P": 0.5,
-                        "C": 2.056,
-                        "CV": "2.056",
+                        "P": 10.5,
+                        "C": 2.06,
+                        "CV": "2.06",
                         "G": 2
                       },
                       {
                         "T": 7,
-                        "P": -1.5,
-                        "C": 1.72,
-                        "CV": "1.72",
+                        "P": -11.5,
+                        "C": 1.73,
+                        "CV": "1.73",
                         "G": 2
                       },
                       {
                         "T": 8,
-                        "P": 1.5,
-                        "C": 1.944,
-                        "CV": "1.944",
+                        "P": 11.5,
+                        "C": 1.94,
+                        "CV": "1.94",
                         "G": 2
                       },
                       {
                         "T": 7,
-                        "P": -2.5,
-                        "C": 1.81,
-                        "CV": "1.81",
+                        "P": -12.5,
+                        "C": 1.83,
+                        "CV": "1.83",
                         "G": 2,
                         "CE": 1
                       },
                       {
                         "T": 8,
-                        "P": 2.5,
-                        "C": 1.85,
-                        "CV": "1.85",
+                        "P": 12.5,
+                        "C": 1.83,
+                        "CV": "1.83",
                         "G": 2,
                         "CE": 1
                       },
                       {
                         "T": 7,
-                        "P": -3.5,
-                        "C": 1.904,
-                        "CV": "1.904",
+                        "P": -13.5,
+                        "C": 1.94,
+                        "CV": "1.94",
                         "G": 2
                       },
                       {
                         "T": 8,
-                        "P": 3.5,
-                        "C": 1.76,
-                        "CV": "1.76",
+                        "P": 13.5,
+                        "C": 1.725,
+                        "CV": "1.725",
                         "G": 2
                       },
                       {
                         "T": 7,
-                        "P": -4.5,
-                        "C": 2.008,
-                        "CV": "2.008",
+                        "P": -14.5,
+                        "C": 2.064,
+                        "CV": "2.064",
                         "G": 2
                       },
                       {
                         "T": 8,
-                        "P": 4.5,
-                        "C": 1.675,
-                        "CV": "1.675",
+                        "P": 14.5,
+                        "C": 1.635,
+                        "CV": "1.635",
                         "G": 2
                       }
                     ]
@@ -2328,89 +2341,484 @@
                     "ME": [
                       {
                         "T": 9,
-                        "P": 201.5,
-                        "C": 1.62,
-                        "CV": "1.62",
+                        "P": 211.5,
+                        "C": 1.592,
+                        "CV": "1.592",
                         "G": 17
                       },
                       {
                         "T": 10,
-                        "P": 201.5,
-                        "C": 2,
-                        "CV": "2",
+                        "P": 211.5,
+                        "C": 2.04,
+                        "CV": "2.04",
                         "G": 17
                       },
                       {
                         "T": 9,
-                        "P": 202.5,
+                        "P": 212.5,
                         "C": 1.68,
                         "CV": "1.68",
                         "G": 17
                       },
                       {
                         "T": 10,
-                        "P": 202.5,
-                        "C": 1.91,
-                        "CV": "1.91",
+                        "P": 212.5,
+                        "C": 1.912,
+                        "CV": "1.912",
                         "G": 17
                       },
                       {
                         "T": 9,
-                        "P": 203.5,
-                        "C": 1.792,
-                        "CV": "1.792",
+                        "P": 213.5,
+                        "C": 1.825,
+                        "CV": "1.825",
                         "G": 17,
                         "CE": 1
                       },
                       {
                         "T": 10,
-                        "P": 203.5,
-                        "C": 1.865,
-                        "CV": "1.865",
+                        "P": 213.5,
+                        "C": 1.835,
+                        "CV": "1.835",
                         "G": 17,
                         "CE": 1
                       },
                       {
                         "T": 9,
-                        "P": 204.5,
-                        "C": 1.83,
-                        "CV": "1.83",
+                        "P": 214.5,
+                        "C": 1.895,
+                        "CV": "1.895",
                         "G": 17
                       },
                       {
                         "T": 10,
-                        "P": 204.5,
-                        "C": 1.75,
-                        "CV": "1.75",
+                        "P": 214.5,
+                        "C": 1.7,
+                        "CV": "1.7",
                         "G": 17
                       },
                       {
                         "T": 9,
-                        "P": 205.5,
-                        "C": 1.915,
-                        "CV": "1.915",
+                        "P": 215.5,
+                        "C": 2.02,
+                        "CV": "2.02",
                         "G": 17
                       },
                       {
                         "T": 10,
-                        "P": 205.5,
-                        "C": 1.68,
-                        "CV": "1.68",
+                        "P": 215.5,
+                        "C": 1.608,
+                        "CV": "1.608",
                         "G": 17
                       }
                     ]
                   }
                 ],
-                "EC": 55,
+                "EC": 47,
                 "TG": "",
                 "V": "Including Overtime",
                 "VE": "Including Overtime",
                 "PN": "",
                 "TN": "Quarter",
                 "DI": "",
+                "SS": 3,
+                "STI": "695888e76d807ed026780f0e",
+                "S": 1781640300,
+                "CHIMG": "95b77fbaa64b9c1f5877579e5ed4349e.png",
+                "O1": "Chita",
+                "O2": "Chelyabinsk",
+                "O1I": 8630749,
+                "O2I": 8630751,
+                "O1IS": [
+                  8630749
+                ],
+                "O2IS": [
+                  8630751
+                ],
+                "O1C": 225,
+                "O2C": 225,
+                "O1IMG": [
+                  "735048b23b11e80cdc41527296190033.png"
+                ],
+                "O2IMG": [
+                  "698f86e3aab29dc62a268a7cebfd3519.png"
+                ],
+                "O1R": "Chita",
+                "O2R": "Chelyabinsk",
+                "O1E": "Chita",
+                "O2E": "Chelyabinsk",
+                "MIS": [
+                  {
+                    "K": 3,
+                    "V": "4x10"
+                  },
+                  {
+                    "K": 11,
+                    "V": "Russia"
+                  }
+                ],
+                "MIO": {
+                  "MaF": "4x10"
+                },
+                "SI": 3,
+                "SN": "Basketball",
+                "SR": "Баскетбол",
+                "SE": "Basketball",
+                "L": "IPBL. Pro Division",
+                "LR": "IPBL. Pro Division",
+                "LE": "IPBL. Pro Division",
+                "LI": 2496666,
+                "CN": "Russia",
+                "COI": 1,
+                "MS": [
+                  0
+                ],
+                "SGI": "6a31acc35e99bd05c63d077b",
+                "KI": 1,
+                "CID": 1,
+                "IV": 12,
+                "HHTHS": true,
+                "TNS": "Quarters",
+                "SUBA": true
+              },
+              {
+                "R": 99,
+                "SC": {
+                  "FS": {
+                    "S1": 79,
+                    "S2": 69
+                  },
+                  "PS": [
+                    {
+                      "Key": 1,
+                      "Value": {
+                        "S1": 30,
+                        "S2": 21,
+                        "NF": "1st quarter"
+                      }
+                    },
+                    {
+                      "Key": 2,
+                      "Value": {
+                        "S1": 25,
+                        "S2": 23,
+                        "NF": "2nd quarter"
+                      }
+                    },
+                    {
+                      "Key": 3,
+                      "Value": {
+                        "S1": 24,
+                        "S2": 25,
+                        "NF": "3rd quarter"
+                      }
+                    }
+                  ],
+                  "CP": 3,
+                  "CPS": "3rd quarter",
+                  "TS": 1766,
+                  "TR": -1,
+                  "I": "",
+                  "ST": [
+                    {
+                      "Key": 0,
+                      "Value": [
+                        {
+                          "ID": 53,
+                          "S1": "0",
+                          "S2": "0",
+                          "N": "Fouls"
+                        },
+                        {
+                          "ID": 49,
+                          "S1": "10",
+                          "S2": "24",
+                          "N": "2-pointers"
+                        },
+                        {
+                          "ID": 48,
+                          "S1": "18",
+                          "S2": "5",
+                          "N": "3-pointers"
+                        },
+                        {
+                          "ID": 50,
+                          "S1": "5",
+                          "S2": "6",
+                          "N": "Free throws"
+                        }
+                      ]
+                    }
+                  ],
+                  "SLS": "29 minutes"
+                },
+                "VI": "19426564",
+                "VA": 1,
+                "ZP": 4633899,
+                "HMH": 1,
+                "U": 1781641919,
+                "OuR": true,
+                "SVoAP": true,
+                "I": 729712029,
+                "N": 228021,
+                "T": 99,
+                "CO": 50,
+                "E": [
+                  {
+                    "T": 401,
+                    "C": 1.075,
+                    "CV": "1.075",
+                    "G": 101
+                  },
+                  {
+                    "T": 3653,
+                    "C": 1.1,
+                    "CV": "1.1",
+                    "G": 2766
+                  },
+                  {
+                    "T": 12,
+                    "P": 107.5,
+                    "C": 1.74,
+                    "CV": "1.74",
+                    "G": 15
+                  },
+                  {
+                    "T": 8,
+                    "P": 9.5,
+                    "C": 1.784,
+                    "CV": "1.784",
+                    "G": 2
+                  },
+                  {
+                    "T": 14,
+                    "P": 97.5,
+                    "C": 1.79,
+                    "CV": "1.79",
+                    "G": 62
+                  },
+                  {
+                    "T": 10,
+                    "P": 204.5,
+                    "C": 1.82,
+                    "CV": "1.82",
+                    "G": 17
+                  },
+                  {
+                    "T": 9,
+                    "P": 204.5,
+                    "C": 1.84,
+                    "CV": "1.84",
+                    "G": 17
+                  },
+                  {
+                    "T": 7,
+                    "P": -9.5,
+                    "C": 1.875,
+                    "CV": "1.875",
+                    "G": 2
+                  },
+                  {
+                    "T": 13,
+                    "P": 97.5,
+                    "C": 1.875,
+                    "CV": "1.875",
+                    "G": 62
+                  },
+                  {
+                    "T": 11,
+                    "P": 107.5,
+                    "C": 1.93,
+                    "CV": "1.93",
+                    "G": 15
+                  },
+                  {
+                    "T": 402,
+                    "C": 6.1,
+                    "CV": "6.1",
+                    "G": 101
+                  },
+                  {
+                    "T": 3655,
+                    "C": 7.04,
+                    "CV": "7.04",
+                    "G": 2766
+                  },
+                  {
+                    "T": 3654,
+                    "C": 13,
+                    "CV": "13",
+                    "G": 2766
+                  }
+                ],
+                "AE": [
+                  {
+                    "G": 2,
+                    "ME": [
+                      {
+                        "T": 7,
+                        "P": -7.5,
+                        "C": 1.57,
+                        "CV": "1.57",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": 7.5,
+                        "C": 2.175,
+                        "CV": "2.175",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": -8.5,
+                        "C": 1.71,
+                        "CV": "1.71",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": 8.5,
+                        "C": 1.96,
+                        "CV": "1.96",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": -9.5,
+                        "C": 1.875,
+                        "CV": "1.875",
+                        "G": 2,
+                        "CE": 1
+                      },
+                      {
+                        "T": 8,
+                        "P": 9.5,
+                        "C": 1.784,
+                        "CV": "1.784",
+                        "G": 2,
+                        "CE": 1
+                      },
+                      {
+                        "T": 7,
+                        "P": -10.5,
+                        "C": 2.06,
+                        "CV": "2.06",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": 10.5,
+                        "C": 1.64,
+                        "CV": "1.64",
+                        "G": 2
+                      },
+                      {
+                        "T": 7,
+                        "P": -11.5,
+                        "C": 2.27,
+                        "CV": "2.27",
+                        "G": 2
+                      },
+                      {
+                        "T": 8,
+                        "P": 11.5,
+                        "C": 1.52,
+                        "CV": "1.52",
+                        "G": 2
+                      }
+                    ]
+                  },
+                  {
+                    "G": 17,
+                    "ME": [
+                      {
+                        "T": 9,
+                        "P": 202.5,
+                        "C": 1.55,
+                        "CV": "1.55",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 202.5,
+                        "C": 2.115,
+                        "CV": "2.115",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 203.5,
+                        "C": 1.665,
+                        "CV": "1.665",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 203.5,
+                        "C": 1.93,
+                        "CV": "1.93",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 204.5,
+                        "C": 1.84,
+                        "CV": "1.84",
+                        "G": 17,
+                        "CE": 1
+                      },
+                      {
+                        "T": 10,
+                        "P": 204.5,
+                        "C": 1.82,
+                        "CV": "1.82",
+                        "G": 17,
+                        "CE": 1
+                      },
+                      {
+                        "T": 9,
+                        "P": 205.5,
+                        "C": 1.955,
+                        "CV": "1.955",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 205.5,
+                        "C": 1.65,
+                        "CV": "1.65",
+                        "G": 17
+                      },
+                      {
+                        "T": 9,
+                        "P": 206.5,
+                        "C": 2.135,
+                        "CV": "2.135",
+                        "G": 17
+                      },
+                      {
+                        "T": 10,
+                        "P": 206.5,
+                        "C": 1.54,
+                        "CV": "1.54",
+                        "G": 17
+                      }
+                    ]
+                  }
+                ],
+                "EC": 51,
+                "TG": "",
+                "V": "Including Overtime",
+                "VE": "Including Overtime",
+                "PN": "",
+                "TN": "Quarter",
+                "DI": "",
+                "SS": 3,
+                "STI": "695888e76d807ed026780f0e",
                 "S": 1781640000,
                 "HS": 1,
-                "SGC": 2,
+                "SGC": 1,
                 "CHIMG": "95b77fbaa64b9c1f5877579e5ed4349e.png",
                 "O1": "Salavat",
                 "O2": "Serov",
@@ -2460,56 +2868,61 @@
                 "MS": [
                   0
                 ],
+                "SGI": "6a31ab5b5e99bd05c63d06d1",
                 "KI": 1,
                 "CID": 1,
                 "IV": 12,
+                "HHTHS": true,
                 "TNS": "Quarters",
                 "SUBA": true
-              },
+              }
+            ]
+          },
+          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":63,\"S2\":47},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":34,\"S2\":22,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":29,\"S2\":25,\"NF\":\"2nd quarter\"}}],\"CP\":2,\"CPS\":\"2nd quarter\",\"TS\":1192,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"18\",\"S2\":\"12\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"7\",\"S2\":\"7\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"6\",\"S2\":\"2\",\"N\":\"Free throws\"}]}],\"SLS\":\"19 minutes\"},\"VI\":\"19426616\",\"VA\":1,\"ZP\":4634088,\"HMH\":1,\"U\":1781641919,\"OuR\":true,\"SVoAP\":true,\"I\":729713431,\"N\":229793,\"T\":99,\"CO\":50,\"E\":[{\"T\":401,\"C\":1.112,\"CV\":\"1.112\",\"G\":101},{\"T\":3653,\"C\":1.136,\"CV\":\"1.136\",\"G\":2766},{\"T\":12,\"P\":113.5,\"C\":1.768,\"CV\":\"1.768\",\"G\":15},{\"T\":14,\"P\":100.5,\"C\":1.81,\"CV\":\"1.81\",\"G\":62},{\"T\":9,\"P\":213.5,\"C\":1.825,\"CV\":\"1.825\",\"G\":17},{\"T\":7,\"P\":-12.5,\"C\":1.83,\"CV\":\"1.83\",\"G\":2},{\"T\":8,\"P\":12.5,\"C\":1.83,\"CV\":\"1.83\",\"G\":2},{\"T\":10,\"P\":213.5,\"C\":1.835,\"CV\":\"1.835\",\"G\":17},{\"T\":13,\"P\":100.5,\"C\":1.85,\"CV\":\"1.85\",\"G\":62},{\"T\":11,\"P\":113.5,\"C\":1.896,\"CV\":\"1.896\",\"G\":15},{\"T\":402,\"C\":5.1,\"CV\":\"5.1\",\"G\":101},{\"T\":3655,\"C\":5.65,\"CV\":\"5.65\",\"G\":2766},{\"T\":3654,\"C\":13,\"CV\":\"13\",\"G\":276"
+        },
+        {
+          "label": "melbetLive-2496667",
+          "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+          "capturedAt": "2026-06-16T20:31:59.799Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 3129,
+          "contentType": "application/json; charset=utf-8",
+          "json": {
+            "Id": 0,
+            "Success": true,
+            "Error": "",
+            "ErrorCode": 0,
+            "Guid": "",
+            "Value": [
               {
                 "R": 99,
                 "SC": {
                   "FS": {
-                    "S1": 83,
-                    "S2": 94
+                    "S1": 60,
+                    "S2": 67
                   },
                   "PS": [
                     {
                       "Key": 1,
                       "Value": {
-                        "S1": 25,
-                        "S2": 32,
+                        "S1": 33,
+                        "S2": 36,
                         "NF": "1st quarter"
                       }
                     },
                     {
                       "Key": 2,
                       "Value": {
-                        "S1": 14,
-                        "S2": 18,
+                        "S1": 27,
+                        "S2": 31,
                         "NF": "2nd quarter"
-                      }
-                    },
-                    {
-                      "Key": 3,
-                      "Value": {
-                        "S1": 24,
-                        "S2": 26,
-                        "NF": "3rd quarter"
-                      }
-                    },
-                    {
-                      "Key": 4,
-                      "Value": {
-                        "S1": 20,
-                        "S2": 18,
-                        "NF": "4th quarter"
                       }
                     }
                   ],
-                  "CP": 4,
-                  "CPS": "4th quarter",
-                  "TS": 2392,
+                  "CP": 2,
+                  "CPS": "2nd quarter",
+                  "TS": 1197,
                   "TR": -1,
                   "I": "",
                   "ST": [
@@ -2524,162 +2937,14 @@
                         },
                         {
                           "ID": 49,
-                          "S1": "28",
-                          "S2": "24",
+                          "S1": "24",
+                          "S2": "20",
                           "N": "2-pointers"
                         },
                         {
                           "ID": 48,
-                          "S1": "6",
-                          "S2": "12",
-                          "N": "3-pointers"
-                        },
-                        {
-                          "ID": 50,
-                          "S1": "9",
-                          "S2": "10",
-                          "N": "Free throws"
-                        }
-                      ]
-                    }
-                  ],
-                  "SLS": "39 minutes"
-                },
-                "VI": "19426256",
-                "VA": 1,
-                "ZP": 4634003,
-                "HMH": 1,
-                "U": 1781639814,
-                "OuR": true,
-                "SVoAP": true,
-                "I": 729703502,
-                "N": 170771,
-                "T": 99,
-                "CO": 50,
-                "E": [],
-                "AE": [],
-                "TG": "",
-                "V": "Including Overtime",
-                "VE": "Including Overtime",
-                "PN": "",
-                "TN": "Quarter",
-                "DI": "",
-                "SS": 3,
-                "STI": "695888e76d807ed026780f0e",
-                "S": 1781636701,
-                "CHIMG": "95b77fbaa64b9c1f5877579e5ed4349e.png",
-                "O1": "Ulan-Ude",
-                "O2": "Khabarovsk",
-                "O1I": 8629431,
-                "O2I": 8629433,
-                "O1IS": [
-                  8629431
-                ],
-                "O2IS": [
-                  8629433
-                ],
-                "O1C": 225,
-                "O2C": 225,
-                "O1IMG": [
-                  "74727a3b5856880c64da32d7e17d1ea4.png"
-                ],
-                "O2IMG": [
-                  "234993e5b93ec88ff575d0180651256c.png"
-                ],
-                "O1R": "Ulan-Ude",
-                "O2R": "Khabarovsk",
-                "O1E": "Ulan-Ude",
-                "O2E": "Khabarovsk",
-                "MIS": [
-                  {
-                    "K": 3,
-                    "V": "4x10"
-                  },
-                  {
-                    "K": 11,
-                    "V": "Russia"
-                  }
-                ],
-                "MIO": {
-                  "MaF": "4x10"
-                },
-                "SI": 3,
-                "SN": "Basketball",
-                "SR": "Баскетбол",
-                "SE": "Basketball",
-                "L": "IPBL. Pro Division",
-                "LR": "IPBL. Pro Division",
-                "LE": "IPBL. Pro Division",
-                "LI": 2496666,
-                "CN": "Russia",
-                "COI": 1,
-                "MS": [
-                  0
-                ],
-                "SGI": "6a319eb25e99bd05c63d0099",
-                "KI": 1,
-                "CID": 1,
-                "IV": 12,
-                "HHTHS": true,
-                "TNS": "Quarters",
-                "SUBA": true
-              }
-            ]
-          },
-          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{},\"PS\":[{\"Key\":1,\"Value\":{\"NF\":\"1st quarter\"}}],\"CP\":1,\"CPS\":\"\",\"TD\":-1,\"TR\":-1,\"I\":\"Pre-match betting\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Free throws\"}]}],\"SLS\":\"Starting in 4 minutes\"},\"VI\":\"19426564\",\"VA\":1,\"ZP\":4633899,\"GNS\":true,\"U\":1781639816,\"OuR\":true,\"SVoAP\":true,\"I\":729712029,\"N\":228021,\"T\":99,\"CO\":50,\"E\":[{\"T\":401,\"C\":1.645,\"CV\":\"1.645\",\"G\":101},{\"T\":3653,\"C\":1.7,\"CV\":\"1.7\",\"G\":2766},{\"T\":12,\"P\":103.5,\"C\":1.79,\"CV\":\"1.79\",\"G\":15},{\"T\":9,\"P\":203.5,\"C\":1.792,\"CV\":\"1.792\",\"G\":17},{\"T\":13,\"P\":100.5,\"C\":1.795,\"CV\":\"1.795\",\"G\":62},{\"T\":7,\"P\":-2.5,\"C\":1.81,\"CV\":\"1.81\",\"G\":2},{\"T\":8,\"P\":2.5,\"C\":1.85,\"CV\":\"1.85\",\"G\":2},{\"T\":14,\"P\":100.5,\"C\":1.864,\"CV\":\"1.864\",\"G\":62},{\"T\":10,\"P\":203.5,\"C\":1.865,\"CV\":\"1.865\",\"G\":17},{\"T\":11,\"P\":103.5,\"C\":1.875,\"CV\":\"1.875\",\"G\":15},{\"T\":402,\"C\":2.06,\"CV\":\"2.06\",\"G\":101},{\"T\":3655,\"C\":2.144,\"CV\":\"2.144\",\"G\":2766},{\"T\":3654,\"C\":13,\"CV\":\"13\",\"G\":2766}],\"AE\":[{\"G\":2,\"ME\":[{\"T\":7,\"P\":-0.5,\"C\":1.645,\"CV\":\"1.645\",\"G\":2},{"
-        },
-        {
-          "label": "melbetLive-2496667",
-          "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-16T19:56:56.311Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 2975,
-          "contentType": "application/json; charset=utf-8",
-          "json": {
-            "Id": 0,
-            "Success": true,
-            "Error": "",
-            "ErrorCode": 0,
-            "Guid": "",
-            "Value": [
-              {
-                "R": 99,
-                "SC": {
-                  "FS": {},
-                  "PS": [
-                    {
-                      "Key": 1,
-                      "Value": {
-                        "NF": "1st quarter"
-                      }
-                    }
-                  ],
-                  "CP": 1,
-                  "CPS": "",
-                  "TD": -1,
-                  "TR": -1,
-                  "I": "Pre-match betting",
-                  "ST": [
-                    {
-                      "Key": 0,
-                      "Value": [
-                        {
-                          "ID": 53,
-                          "S1": "0",
-                          "S2": "0",
-                          "N": "Fouls"
-                        },
-                        {
-                          "ID": 49,
-                          "S1": "0",
-                          "S2": "0",
-                          "N": "2-pointers"
-                        },
-                        {
-                          "ID": 48,
-                          "S1": "0",
-                          "S2": "0",
+                          "S1": "4",
+                          "S2": "9",
                           "N": "3-pointers"
                         },
                         {
@@ -2691,14 +2956,15 @@
                       ]
                     }
                   ],
-                  "SLS": "Starting in 14 minutes"
+                  "SLS": "19 minutes"
                 },
                 "VI": "19426597",
                 "VA": 1,
                 "ZP": 4634005,
-                "GNS": true,
-                "U": 1781639815,
+                "HMH": 1,
+                "U": 1781641918,
                 "OuR": true,
+                "SVoAP": true,
                 "I": 729712858,
                 "N": 229081,
                 "T": 99,
@@ -2706,82 +2972,82 @@
                 "E": [
                   {
                     "T": 402,
-                    "C": 1.63,
-                    "CV": "1.63",
+                    "C": 1.24,
+                    "CV": "1.24",
                     "G": 101
                   },
                   {
                     "T": 3655,
-                    "C": 1.685,
-                    "CV": "1.685",
+                    "C": 1.275,
+                    "CV": "1.275",
                     "G": 2766
                   },
                   {
-                    "T": 14,
-                    "P": 112.5,
-                    "C": 1.78,
-                    "CV": "1.78",
-                    "G": 62
-                  },
-                  {
-                    "T": 8,
-                    "P": -2.5,
-                    "C": 1.792,
-                    "CV": "1.792",
-                    "G": 2
-                  },
-                  {
                     "T": 12,
-                    "P": 109.5,
-                    "C": 1.825,
-                    "CV": "1.825",
+                    "P": 118.5,
+                    "C": 1.77,
+                    "CV": "1.77",
                     "G": 15
                   },
                   {
-                    "T": 9,
-                    "P": 221.5,
-                    "C": 1.83,
-                    "CV": "1.83",
-                    "G": 17
+                    "T": 14,
+                    "P": 126.5,
+                    "C": 1.77,
+                    "CV": "1.77",
+                    "G": 62
                   },
                   {
                     "T": 10,
-                    "P": 221.5,
-                    "C": 1.83,
-                    "CV": "1.83",
+                    "P": 244.5,
+                    "C": 1.8,
+                    "CV": "1.8",
+                    "G": 17
+                  },
+                  {
+                    "T": 8,
+                    "P": -7.5,
+                    "C": 1.82,
+                    "CV": "1.82",
+                    "G": 2
+                  },
+                  {
+                    "T": 7,
+                    "P": 7.5,
+                    "C": 1.84,
+                    "CV": "1.84",
+                    "G": 2
+                  },
+                  {
+                    "T": 9,
+                    "P": 244.5,
+                    "C": 1.864,
+                    "CV": "1.864",
                     "G": 17
                   },
                   {
                     "T": 11,
-                    "P": 109.5,
-                    "C": 1.835,
-                    "CV": "1.835",
+                    "P": 118.5,
+                    "C": 1.896,
+                    "CV": "1.896",
                     "G": 15
                   },
                   {
-                    "T": 7,
-                    "P": 2.5,
-                    "C": 1.864,
-                    "CV": "1.864",
-                    "G": 2
-                  },
-                  {
                     "T": 13,
-                    "P": 112.5,
-                    "C": 1.885,
-                    "CV": "1.885",
+                    "P": 126.5,
+                    "C": 1.896,
+                    "CV": "1.896",
                     "G": 62
                   },
                   {
                     "T": 401,
-                    "C": 2.08,
-                    "CV": "2.08",
+                    "C": 3.485,
+                    "CV": "3.485",
                     "G": 101
                   },
                   {
                     "T": 3653,
-                    "C": 2.168,
-                    "CV": "2.168",
+                    "C": 3.79,
+                    "CV": "3.79",
                     "G": 2766
                   },
                   {
@@ -2797,74 +3063,74 @@
                     "ME": [
                       {
                         "T": 8,
-                        "P": -0.5,
-                        "C": 1.63,
-                        "CV": "1.63",
+                        "P": -5.5,
+                        "C": 1.59,
+                        "CV": "1.59",
                         "G": 2
                       },
                       {
                         "T": 7,
-                        "P": 0.5,
-                        "C": 2.075,
-                        "CV": "2.075",
+                        "P": 5.5,
+                        "C": 2.144,
+                        "CV": "2.144",
                         "G": 2
                       },
                       {
                         "T": 8,
-                        "P": -1.5,
-                        "C": 1.705,
-                        "CV": "1.705",
+                        "P": -6.5,
+                        "C": 1.696,
+                        "CV": "1.696",
                         "G": 2
                       },
                       {
                         "T": 7,
-                        "P": 1.5,
-                        "C": 1.968,
-                        "CV": "1.968",
+                        "P": 6.5,
+                        "C": 1.98,
+                        "CV": "1.98",
                         "G": 2
                       },
                       {
                         "T": 8,
-                        "P": -2.5,
-                        "C": 1.792,
-                        "CV": "1.792",
+                        "P": -7.5,
+                        "C": 1.82,
+                        "CV": "1.82",
                         "G": 2,
                         "CE": 1
                       },
                       {
                         "T": 7,
-                        "P": 2.5,
-                        "C": 1.864,
-                        "CV": "1.864",
+                        "P": 7.5,
+                        "C": 1.84,
+                        "CV": "1.84",
                         "G": 2,
                         "CE": 1
                       },
                       {
                         "T": 8,
-                        "P": -3.5,
-                        "C": 1.885,
-                        "CV": "1.885",
+                        "P": -8.5,
+                        "C": 1.955,
+                        "CV": "1.955",
                         "G": 2
                       },
                       {
                         "T": 7,
-                        "P": 3.5,
-                        "C": 1.775,
-                        "CV": "1.775",
+                        "P": 8.5,
+                        "C": 1.715,
+                        "CV": "1.715",
                         "G": 2
                       },
                       {
                         "T": 8,
-                        "P": -4.5,
-                        "C": 1.984,
-                        "CV": "1.984",
+                        "P": -9.5,
+                        "C": 2.11,
+                        "CV": "2.11",
                         "G": 2
                       },
                       {
                         "T": 7,
-                        "P": 4.5,
-                        "C": 1.69,
-                        "CV": "1.69",
+                        "P": 9.5,
+                        "C": 1.61,
+                        "CV": "1.61",
                         "G": 2
                       }
                     ]
@@ -2874,86 +3140,88 @@
                     "ME": [
                       {
                         "T": 9,
-                        "P": 219.5,
-                        "C": 1.65,
-                        "CV": "1.65",
+                        "P": 242.5,
+                        "C": 1.63,
+                        "CV": "1.63",
                         "G": 17
                       },
                       {
                         "T": 10,
-                        "P": 219.5,
-                        "C": 1.955,
-                        "CV": "1.955",
+                        "P": 242.5,
+                        "C": 1.984,
+                        "CV": "1.984",
                         "G": 17
                       },
                       {
                         "T": 9,
-                        "P": 220.5,
-                        "C": 1.715,
-                        "CV": "1.715",
+                        "P": 243.5,
+                        "C": 1.725,
+                        "CV": "1.725",
                         "G": 17
                       },
                       {
                         "T": 10,
-                        "P": 220.5,
-                        "C": 1.87,
-                        "CV": "1.87",
+                        "P": 243.5,
+                        "C": 1.86,
+                        "CV": "1.86",
                         "G": 17
                       },
                       {
                         "T": 9,
-                        "P": 221.5,
-                        "C": 1.83,
-                        "CV": "1.83",
+                        "P": 244.5,
+                        "C": 1.864,
+                        "CV": "1.864",
                         "G": 17,
                         "CE": 1
                       },
                       {
                         "T": 10,
-                        "P": 221.5,
-                        "C": 1.83,
-                        "CV": "1.83",
+                        "P": 244.5,
+                        "C": 1.8,
+                        "CV": "1.8",
                         "G": 17,
                         "CE": 1
                       },
                       {
                         "T": 9,
-                        "P": 222.5,
-                        "C": 1.87,
-                        "CV": "1.87",
+                        "P": 245.5,
+                        "C": 1.94,
+                        "CV": "1.94",
                         "G": 17
                       },
                       {
                         "T": 10,
-                        "P": 222.5,
-                        "C": 1.72,
-                        "CV": "1.72",
+                        "P": 245.5,
+                        "C": 1.66,
+                        "CV": "1.66",
                         "G": 17
                       },
                       {
                         "T": 9,
-                        "P": 223.5,
-                        "C": 1.955,
-                        "CV": "1.955",
+                        "P": 246.5,
+                        "C": 2.064,
+                        "CV": "2.064",
                         "G": 17
                       },
                       {
                         "T": 10,
-                        "P": 223.5,
-                        "C": 1.65,
-                        "CV": "1.65",
+                        "P": 246.5,
+                        "C": 1.58,
+                        "CV": "1.58",
                         "G": 17
                       }
                     ]
                   }
                 ],
-                "EC": 55,
+                "EC": 51,
                 "TG": "",
                 "V": "Including Overtime",
                 "VE": "Including Overtime",
                 "PN": "",
                 "TN": "Quarter",
                 "DI": "Match for 3rd Place",
+                "SS": 3,
+                "STI": "6958868c6d807ed02613e14b",
                 "S": 1781640600,
                 "HS": 1,
                 "SGC": 1,
@@ -3006,15 +3274,17 @@
                 "MS": [
                   0
                 ],
+                "SGI": "6a31adb35e99bd05c63d0859",
                 "KI": 1,
                 "CID": 1,
                 "IV": 12,
+                "HHTHS": true,
                 "TNS": "Quarters",
                 "SUBA": true
               }
             ]
           },
-          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{},\"PS\":[{\"Key\":1,\"Value\":{\"NF\":\"1st quarter\"}}],\"CP\":1,\"CPS\":\"\",\"TD\":-1,\"TR\":-1,\"I\":\"Pre-match betting\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Free throws\"}]}],\"SLS\":\"Starting in 14 minutes\"},\"VI\":\"19426597\",\"VA\":1,\"ZP\":4634005,\"GNS\":true,\"U\":1781639815,\"OuR\":true,\"I\":729712858,\"N\":229081,\"T\":99,\"CO\":50,\"E\":[{\"T\":402,\"C\":1.63,\"CV\":\"1.63\",\"G\":101},{\"T\":3655,\"C\":1.685,\"CV\":\"1.685\",\"G\":2766},{\"T\":14,\"P\":112.5,\"C\":1.78,\"CV\":\"1.78\",\"G\":62},{\"T\":8,\"P\":-2.5,\"C\":1.792,\"CV\":\"1.792\",\"G\":2},{\"T\":12,\"P\":109.5,\"C\":1.825,\"CV\":\"1.825\",\"G\":15},{\"T\":9,\"P\":221.5,\"C\":1.83,\"CV\":\"1.83\",\"G\":17},{\"T\":10,\"P\":221.5,\"C\":1.83,\"CV\":\"1.83\",\"G\":17},{\"T\":11,\"P\":109.5,\"C\":1.835,\"CV\":\"1.835\",\"G\":15},{\"T\":7,\"P\":2.5,\"C\":1.864,\"CV\":\"1.864\",\"G\":2},{\"T\":13,\"P\":112.5,\"C\":1.885,\"CV\":\"1.885\",\"G\":62},{\"T\":401,\"C\":2.08,\"CV\":\"2.08\",\"G\":101},{\"T\":3653,\"C\":2.168,\"CV\":\"2.168\",\"G\":2766},{\"T\":3654,\"C\":13,\"CV\":\"13\",\"G\":2766}],\"AE\":[{\"G\":2,\"ME\":[{\"T\":8,\"P\":-0.5,\"C\":1.63,\"CV\":\"1.63\",\"G\":2},{\"T\":7,\"P\":0."
+          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":60,\"S2\":67},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":33,\"S2\":36,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":27,\"S2\":31,\"NF\":\"2nd quarter\"}}],\"CP\":2,\"CPS\":\"2nd quarter\",\"TS\":1197,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"24\",\"S2\":\"20\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"4\",\"S2\":\"9\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Free throws\"}]}],\"SLS\":\"19 minutes\"},\"VI\":\"19426597\",\"VA\":1,\"ZP\":4634005,\"HMH\":1,\"U\":1781641918,\"OuR\":true,\"SVoAP\":true,\"I\":729712858,\"N\":229081,\"T\":99,\"CO\":50,\"E\":[{\"T\":402,\"C\":1.24,\"CV\":\"1.24\",\"G\":101},{\"T\":3655,\"C\":1.275,\"CV\":\"1.275\",\"G\":2766},{\"T\":12,\"P\":118.5,\"C\":1.77,\"CV\":\"1.77\",\"G\":15},{\"T\":14,\"P\":126.5,\"C\":1.77,\"CV\":\"1.77\",\"G\":62},{\"T\":10,\"P\":244.5,\"C\":1.8,\"CV\":\"1.8\",\"G\":17},{\"T\":8,\"P\":-7.5,\"C\":1.82,\"CV\":\"1.82\",\"G\":2},{\"T\":7,\"P\":7.5,\"C\":1.84,\"CV\":\"1.84\",\"G\":2},{\"T\":9,\"P\":244.5,\"C\":1.864,\"CV\":\"1.864\",\"G\":17},{\"T\":11,\"P\":118.5,\"C\":1.896,\"CV\":\"1.896\",\"G\":15},{\"T\":13,\"P\":126.5,\"C\":1.896,\"CV\":\"1.896\",\"G\":62},{\"T\":401,\"C\":3.485,\"CV\":\"3.485\",\"G\":101},{\"T\":3653,\"C\":3.79,\"CV\":\"3.79\",\"G\":2766},{\"T\":3654,\"C\":13,\"CV\":\"13\",\"G\":2766}],"
         }
       ],
       "json": {
@@ -3022,96 +3292,19 @@
           {
             "source": "melbetLive",
             "index": 0,
-            "rowKey": "729712029",
-            "gameId": "729712029",
+            "rowKey": "729713431",
+            "gameId": "729713431",
             "leagueId": 2496666,
             "divisionTag": null,
-            "homeName": "Salavat",
-            "awayName": "Serov",
-            "homeNorm": "salavat",
-            "awayNorm": "serov",
-            "homeScore": null,
-            "awayScore": null,
-            "period": 1,
+            "homeName": "Chita",
+            "awayName": "Chelyabinsk",
+            "homeNorm": "chita",
+            "awayNorm": "chelyabinsk",
+            "homeScore": 63,
+            "awayScore": 47,
+            "period": 2,
             "clock": null,
-            "status": "Starting in 4 minutes",
-            "rawShape": [
-              "R",
-              "SC",
-              "VI",
-              "VA",
-              "ZP",
-              "GNS",
-              "U",
-              "OuR",
-              "SVoAP",
-              "I",
-              "N",
-              "T",
-              "CO",
-              "E",
-              "AE",
-              "EC",
-              "TG",
-              "V",
-              "VE",
-              "PN",
-              "TN",
-              "DI",
-              "S",
-              "HS",
-              "SGC",
-              "CHIMG",
-              "O1",
-              "O2",
-              "O1I",
-              "O2I",
-              "O1IS",
-              "O2IS",
-              "O1C",
-              "O2C",
-              "O1IMG",
-              "O2IMG",
-              "O1R",
-              "O2R",
-              "O1E",
-              "O2E",
-              "MIS",
-              "MIO",
-              "SI",
-              "SN",
-              "SR",
-              "SE",
-              "L",
-              "LR",
-              "LE",
-              "LI",
-              "CN",
-              "COI",
-              "MS",
-              "KI",
-              "CID",
-              "IV",
-              "TNS",
-              "SUBA"
-            ]
-          },
-          {
-            "source": "melbetLive",
-            "index": 1,
-            "rowKey": "729703502",
-            "gameId": "729703502",
-            "leagueId": 2496666,
-            "divisionTag": null,
-            "homeName": "Ulan-Ude",
-            "awayName": "Khabarovsk",
-            "homeNorm": "ulan ude",
-            "awayNorm": "khabarovsk",
-            "homeScore": 83,
-            "awayScore": 94,
-            "period": 4,
-            "clock": null,
-            "status": "4th quarter",
+            "status": "2nd quarter",
             "rawShape": [
               "R",
               "SC",
@@ -3128,6 +3321,7 @@
               "CO",
               "E",
               "AE",
+              "EC",
               "TG",
               "V",
               "VE",
@@ -3176,29 +3370,30 @@
           },
           {
             "source": "melbetLive",
-            "index": 0,
-            "rowKey": "729712858",
-            "gameId": "729712858",
-            "leagueId": 2496667,
+            "index": 1,
+            "rowKey": "729712029",
+            "gameId": "729712029",
+            "leagueId": 2496666,
             "divisionTag": null,
-            "homeName": "Armavir (Women)",
-            "awayName": "Grozny (Women)",
-            "homeNorm": "armavir",
-            "awayNorm": "grozny",
-            "homeScore": null,
-            "awayScore": null,
-            "period": 1,
+            "homeName": "Salavat",
+            "awayName": "Serov",
+            "homeNorm": "salavat",
+            "awayNorm": "serov",
+            "homeScore": 79,
+            "awayScore": 69,
+            "period": 3,
             "clock": null,
-            "status": "Starting in 14 minutes",
+            "status": "3rd quarter",
             "rawShape": [
               "R",
               "SC",
               "VI",
               "VA",
               "ZP",
-              "GNS",
+              "HMH",
               "U",
               "OuR",
+              "SVoAP",
               "I",
               "N",
               "T",
@@ -3212,6 +3407,8 @@
               "PN",
               "TN",
               "DI",
+              "SS",
+              "STI",
               "S",
               "HS",
               "SGC",
@@ -3243,9 +3440,92 @@
               "CN",
               "COI",
               "MS",
+              "SGI",
               "KI",
               "CID",
               "IV",
+              "HHTHS",
+              "TNS",
+              "SUBA"
+            ]
+          },
+          {
+            "source": "melbetLive",
+            "index": 0,
+            "rowKey": "729712858",
+            "gameId": "729712858",
+            "leagueId": 2496667,
+            "divisionTag": null,
+            "homeName": "Armavir (Women)",
+            "awayName": "Grozny (Women)",
+            "homeNorm": "armavir",
+            "awayNorm": "grozny",
+            "homeScore": 60,
+            "awayScore": 67,
+            "period": 2,
+            "clock": null,
+            "status": "2nd quarter",
+            "rawShape": [
+              "R",
+              "SC",
+              "VI",
+              "VA",
+              "ZP",
+              "HMH",
+              "U",
+              "OuR",
+              "SVoAP",
+              "I",
+              "N",
+              "T",
+              "CO",
+              "E",
+              "AE",
+              "EC",
+              "TG",
+              "V",
+              "VE",
+              "PN",
+              "TN",
+              "DI",
+              "SS",
+              "STI",
+              "S",
+              "HS",
+              "SGC",
+              "CHIMG",
+              "O1",
+              "O2",
+              "O1I",
+              "O2I",
+              "O1IS",
+              "O2IS",
+              "O1C",
+              "O2C",
+              "O1IMG",
+              "O2IMG",
+              "O1R",
+              "O2R",
+              "O1E",
+              "O2E",
+              "MIS",
+              "MIO",
+              "SI",
+              "SN",
+              "SR",
+              "SE",
+              "L",
+              "LR",
+              "LE",
+              "LI",
+              "CN",
+              "COI",
+              "MS",
+              "SGI",
+              "KI",
+              "CID",
+              "IV",
+              "HHTHS",
               "TNS",
               "SUBA"
             ]
@@ -4263,12 +4543,12 @@
       "error": null
     },
     {
-      "gameId": "729712029",
+      "gameId": "729713431",
       "partner": 8,
-      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=729712029&coefView=3&lng=en&partner=8",
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=729713431&coefView=3&lng=en&partner=8",
       "http": 200,
       "ok": true,
-      "bytes": 764,
+      "bytes": 20249,
       "success": true,
       "rootKeys": [
         "Id",
@@ -4286,7 +4566,209 @@
       "hasEG": true,
       "egCount": 5,
       "hasSH": true,
-      "shCount": 1,
+      "shCount": 55,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1781639999122)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1781641913849)/",
+        "Period": 2,
+        "PeriodName": "2nd quarter",
+        "FullScore": {
+          "S1": 63,
+          "S2": 47
+        },
+        "PeriodScore": {
+          "S1": 29,
+          "S2": 25
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        2.26,
+        2.25,
+        2.248,
+        2.136,
+        2.13,
+        2.29,
+        1.968,
+        1.965,
+        1.79,
+        1.648,
+        1.736,
+        1.99,
+        1.536,
+        1.54,
+        1.6,
+        1.52,
+        1.705,
+        1.71,
+        1.864,
+        2.05,
+        1.93,
+        1.69,
+        1.784,
+        1.785,
+        2.355,
+        2.344,
+        2.225,
+        2.22,
+        2.39,
+        2.045
+      ],
+      "error": null
+    },
+    {
+      "gameId": "729713431",
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=729713431&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "ok": true,
+      "bytes": 15399,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 55,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1781639999122)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1781641913849)/",
+        "Period": 2,
+        "PeriodName": "2nd quarter",
+        "FullScore": {
+          "S1": 63,
+          "S2": 47
+        },
+        "PeriodScore": {
+          "S1": 29,
+          "S2": 25
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        2.26,
+        2.25,
+        2.248,
+        2.136,
+        2.13,
+        2.29,
+        1.968,
+        1.965,
+        1.79,
+        1.648,
+        1.736,
+        1.99,
+        1.536,
+        1.54,
+        1.6,
+        1.52,
+        1.705,
+        1.71,
+        1.864,
+        2.05,
+        1.93,
+        1.69,
+        1.784,
+        1.785,
+        2.355,
+        2.344,
+        2.225,
+        2.22,
+        2.39,
+        2.045
+      ],
+      "error": null
+    },
+    {
+      "gameId": "729712029",
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=729712029&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "ok": true,
+      "bytes": 26071,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 72,
       "hasDS": true,
       "dsType": "string",
       "firstSH": {
@@ -4307,16 +4789,16 @@
         }
       },
       "lastSH": {
-        "DtUpdate": "/Date(1781639519706)/",
-        "Period": 1,
-        "PeriodName": "1st quarter",
+        "DtUpdate": "/Date(1781641921066)/",
+        "Period": 3,
+        "PeriodName": "3rd quarter",
         "FullScore": {
-          "S1": 0,
-          "S2": 0
+          "S1": 79,
+          "S2": 70
         },
         "PeriodScore": {
-          "S1": 0,
-          "S2": 0
+          "S1": 24,
+          "S2": 26
         },
         "SubScore": {
           "S1": null,
@@ -4331,10 +4813,35 @@
       ],
       "marketSample": [
         1.645,
+        1.58,
+        1.525,
+        1.392,
+        1.456,
+        1.56,
+        1.69,
+        1.54,
+        1.384,
+        1.39,
+        1.45,
+        1.39,
         2.06,
+        2.165,
+        2.28,
+        2.656,
+        2.46,
+        2.205,
+        2.2,
+        2.205,
+        1.99,
+        2.25,
+        2.685,
+        2.67,
         1.7,
-        13,
-        2.144
+        1.632,
+        1.575,
+        1.43,
+        1.496,
+        1.5
       ],
       "error": null
     },
@@ -4344,7 +4851,7 @@
       "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=729712029&coefView=3&lng=en&partner=25",
       "http": 200,
       "ok": true,
-      "bytes": 764,
+      "bytes": 26071,
       "success": true,
       "rootKeys": [
         "Id",
@@ -4362,7 +4869,7 @@
       "hasEG": true,
       "egCount": 5,
       "hasSH": true,
-      "shCount": 1,
+      "shCount": 72,
       "hasDS": true,
       "dsType": "string",
       "firstSH": {
@@ -4383,16 +4890,16 @@
         }
       },
       "lastSH": {
-        "DtUpdate": "/Date(1781639519706)/",
-        "Period": 1,
-        "PeriodName": "1st quarter",
+        "DtUpdate": "/Date(1781641921066)/",
+        "Period": 3,
+        "PeriodName": "3rd quarter",
         "FullScore": {
-          "S1": 0,
-          "S2": 0
+          "S1": 79,
+          "S2": 70
         },
         "PeriodScore": {
-          "S1": 0,
-          "S2": 0
+          "S1": 24,
+          "S2": 26
         },
         "SubScore": {
           "S1": null,
@@ -4407,212 +4914,35 @@
       ],
       "marketSample": [
         1.645,
+        1.58,
+        1.525,
+        1.392,
+        1.456,
+        1.56,
+        1.69,
+        1.54,
+        1.384,
+        1.39,
+        1.45,
+        1.39,
         2.06,
+        2.165,
+        2.28,
+        2.656,
+        2.46,
+        2.205,
+        2.2,
+        2.205,
+        1.99,
+        2.25,
+        2.685,
+        2.67,
         1.7,
-        13,
-        2.144
-      ],
-      "error": null
-    },
-    {
-      "gameId": "729703502",
-      "partner": 8,
-      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=729703502&coefView=3&lng=en&partner=8",
-      "http": 200,
-      "ok": true,
-      "bytes": 32039,
-      "success": true,
-      "rootKeys": [
-        "Id",
-        "Success",
-        "Error",
-        "ErrorCode",
-        "Guid",
-        "Value"
-      ],
-      "valueKeys": [
-        "EG",
-        "SH",
-        "DS"
-      ],
-      "hasEG": true,
-      "egCount": 5,
-      "hasSH": true,
-      "shCount": 95,
-      "hasDS": true,
-      "dsType": "string",
-      "firstSH": {
-        "DtUpdate": "/Date(1781636580343)/",
-        "Period": 1,
-        "PeriodName": "1st quarter",
-        "FullScore": {
-          "S1": 0,
-          "S2": 0
-        },
-        "PeriodScore": {
-          "S1": 0,
-          "S2": 0
-        },
-        "SubScore": {
-          "S1": null,
-          "S2": null
-        }
-      },
-      "lastSH": {
-        "DtUpdate": "/Date(1781639800682)/",
-        "Period": 4,
-        "PeriodName": "4th quarter",
-        "FullScore": {
-          "S1": 83,
-          "S2": 94
-        },
-        "PeriodScore": {
-          "S1": 20,
-          "S2": 18
-        },
-        "SubScore": {
-          "S1": null,
-          "S2": null
-        }
-      },
-      "firstEGKeys": [
-        "E",
-        "C",
-        "CWV",
-        "S"
-      ],
-      "marketSample": [
-        1.568,
-        1.565,
-        1.475,
-        1.38,
-        1.445,
-        1.38,
-        1.425,
-        1.55,
-        1.68,
-        1.835,
-        2.136,
-        1.99,
-        2.192,
-        2.195,
-        2.405,
-        2.4,
-        2.405,
-        2.4,
-        2.71,
-        2.49,
-        2.71,
-        2.544,
-        2.225,
-        2,
-        1.616,
-        1.52,
-        1.416,
-        1.488,
-        1.416,
-        1.47
-      ],
-      "error": null
-    },
-    {
-      "gameId": "729703502",
-      "partner": 25,
-      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=729703502&coefView=3&lng=en&partner=25",
-      "http": 200,
-      "ok": true,
-      "bytes": 33417,
-      "success": true,
-      "rootKeys": [
-        "Id",
-        "Success",
-        "Error",
-        "ErrorCode",
-        "Guid",
-        "Value"
-      ],
-      "valueKeys": [
-        "EG",
-        "SH",
-        "DS"
-      ],
-      "hasEG": true,
-      "egCount": 5,
-      "hasSH": true,
-      "shCount": 95,
-      "hasDS": true,
-      "dsType": "string",
-      "firstSH": {
-        "DtUpdate": "/Date(1781636580343)/",
-        "Period": 1,
-        "PeriodName": "1st quarter",
-        "FullScore": {
-          "S1": 0,
-          "S2": 0
-        },
-        "PeriodScore": {
-          "S1": 0,
-          "S2": 0
-        },
-        "SubScore": {
-          "S1": null,
-          "S2": null
-        }
-      },
-      "lastSH": {
-        "DtUpdate": "/Date(1781639800682)/",
-        "Period": 4,
-        "PeriodName": "4th quarter",
-        "FullScore": {
-          "S1": 83,
-          "S2": 94
-        },
-        "PeriodScore": {
-          "S1": 20,
-          "S2": 18
-        },
-        "SubScore": {
-          "S1": null,
-          "S2": null
-        }
-      },
-      "firstEGKeys": [
-        "E",
-        "C",
-        "CWV",
-        "S"
-      ],
-      "marketSample": [
-        1.568,
-        1.565,
-        1.475,
-        1.38,
-        1.445,
-        1.38,
-        1.425,
-        1.55,
-        1.68,
-        1.835,
-        2.136,
-        1.99,
-        2.192,
-        2.195,
-        2.405,
-        2.4,
-        2.405,
-        2.4,
-        2.71,
-        2.49,
-        2.71,
-        2.544,
-        2.225,
-        2,
-        1.616,
-        1.52,
-        1.416,
-        1.488,
-        1.416,
-        1.47
+        1.632,
+        1.575,
+        1.43,
+        1.496,
+        1.5
       ],
       "error": null
     },
@@ -4622,7 +4952,7 @@
       "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=729712858&coefView=3&lng=en&partner=8",
       "http": 200,
       "ok": true,
-      "bytes": 766,
+      "bytes": 20975,
       "success": true,
       "rootKeys": [
         "Id",
@@ -4640,7 +4970,7 @@
       "hasEG": true,
       "egCount": 5,
       "hasSH": true,
-      "shCount": 1,
+      "shCount": 59,
       "hasDS": true,
       "dsType": "string",
       "firstSH": {
@@ -4661,16 +4991,16 @@
         }
       },
       "lastSH": {
-        "DtUpdate": "/Date(1781639759631)/",
-        "Period": 1,
-        "PeriodName": "1st quarter",
+        "DtUpdate": "/Date(1781641913205)/",
+        "Period": 2,
+        "PeriodName": "2nd quarter",
         "FullScore": {
-          "S1": 0,
-          "S2": 0
+          "S1": 60,
+          "S2": 67
         },
         "PeriodScore": {
-          "S1": 0,
-          "S2": 0
+          "S1": 27,
+          "S2": 31
         },
         "SubScore": {
           "S1": null,
@@ -4685,10 +5015,35 @@
       ],
       "marketSample": [
         2.08,
+        2.38,
+        2.375,
+        3,
+        2.77,
+        3.2,
+        2.944,
+        2.945,
+        3.192,
+        2.944,
+        2.6,
+        2.805,
         1.63,
+        1.485,
+        1.312,
+        1.365,
+        1.28,
+        1.325,
+        1.28,
+        1.325,
+        1.41,
+        1.355,
+        1.456,
+        1.565,
         2.168,
-        13,
-        1.685
+        2.165,
+        2.495,
+        2.49,
+        2.488,
+        3.17
       ],
       "error": null
     },
@@ -4698,7 +5053,7 @@
       "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=729712858&coefView=3&lng=en&partner=25",
       "http": 200,
       "ok": true,
-      "bytes": 766,
+      "bytes": 20975,
       "success": true,
       "rootKeys": [
         "Id",
@@ -4716,7 +5071,7 @@
       "hasEG": true,
       "egCount": 5,
       "hasSH": true,
-      "shCount": 1,
+      "shCount": 59,
       "hasDS": true,
       "dsType": "string",
       "firstSH": {
@@ -4737,16 +5092,16 @@
         }
       },
       "lastSH": {
-        "DtUpdate": "/Date(1781639759631)/",
-        "Period": 1,
-        "PeriodName": "1st quarter",
+        "DtUpdate": "/Date(1781641913205)/",
+        "Period": 2,
+        "PeriodName": "2nd quarter",
         "FullScore": {
-          "S1": 0,
-          "S2": 0
+          "S1": 60,
+          "S2": 67
         },
         "PeriodScore": {
-          "S1": 0,
-          "S2": 0
+          "S1": 27,
+          "S2": 31
         },
         "SubScore": {
           "S1": null,
@@ -4761,10 +5116,35 @@
       ],
       "marketSample": [
         2.08,
+        2.38,
+        2.375,
+        3,
+        2.77,
+        3.2,
+        2.944,
+        2.945,
+        3.192,
+        2.944,
+        2.6,
+        2.805,
         1.63,
+        1.485,
+        1.312,
+        1.365,
+        1.28,
+        1.325,
+        1.28,
+        1.325,
+        1.41,
+        1.355,
+        1.456,
+        1.565,
         2.168,
-        13,
-        1.685
+        2.165,
+        2.495,
+        2.49,
+        2.488,
+        3.17
       ],
       "error": null
     }
