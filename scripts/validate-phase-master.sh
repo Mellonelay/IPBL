@@ -60,6 +60,9 @@ npm run test:runtime-agent-graph
 echo "[STEP 6] PHASE 10-11 ACTIVE WORKLOAD CHECKS"
 bash scripts/validate-phase-10-11.sh
 
+echo "[STEP 6B] PHASE 12 OPERATOR INTELLIGENCE"
+npm run test:operator-intelligence
+
 echo "[STEP 7] FINAL AGNIX RECHECK"
 npx agnix@0.32.0 .
 

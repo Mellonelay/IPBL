@@ -76,7 +76,7 @@
     {
       "id": "god_gen_operator_intelligence",
       "name": "GEN / Operator Intelligence",
-      "status": "planned_seeded_blocked_on_data_backtests",
+      "status": "materialized_read_only",
       "role": "Graph-grounded recommendations over quarter flow, odds bands, H2H, team form, and data-quality evidence",
       "children": ["quarter_flow", "odds_band", "h2h_matrix", "score_divergence", "backtests"]
     },

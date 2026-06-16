@@ -79,11 +79,21 @@ These phases are backed by durable evidence and validation coverage, but they re
   - Implementation module at [lib/server/ipbl-workload-graph.ts](/root/repos/IPBL/lib/server/ipbl-workload-graph.ts)
   - Phase validator hook in [scripts/validate-phase-10-11.sh](/root/repos/IPBL/scripts/validate-phase-10-11.sh)
 
+## Phase 12: Fully Complete
+
+- Phase 12 - GEN / Operator Intelligence:
+  - Canonical read-only operator intelligence report at [artifacts/operator-intelligence/operator-intelligence.json](/root/repos/IPBL/artifacts/operator-intelligence/operator-intelligence.json)
+  - Repository-backed evidence for recorder, H2H, odds, rule versions, data quality, and backtest metrics
+  - Dedicated contract test at [tests/operator-intelligence.test.ts](/root/repos/IPBL/tests/operator-intelligence.test.ts)
+  - Implementation module at [lib/server/operator-intelligence.ts](/root/repos/IPBL/lib/server/operator-intelligence.ts)
+  - Phase validator hook in [scripts/validate-phase-master.sh](/root/repos/IPBL/scripts/validate-phase-master.sh)
+
 ## Validation Entry Points
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
 - [scripts/validate-phase-6-7.sh](/root/repos/IPBL/scripts/validate-phase-6-7.sh)
 - [scripts/validate-phase-10-11.sh](/root/repos/IPBL/scripts/validate-phase-10-11.sh)
+- [scripts/validate-phase-master.sh](/root/repos/IPBL/scripts/validate-phase-master.sh)
 - [package.json](/root/repos/IPBL/package.json)
 
 Recommended commands:
@@ -92,6 +102,7 @@ Recommended commands:
 npm run validate:phase-master
 npm run validate:phase-6-7
 npm run validate:phase-10-11
+npm run test:operator-intelligence
 npx agnix@0.32.0 .
 bash scripts/validate-phase-4-5.sh
 npm run test:approved-divisions

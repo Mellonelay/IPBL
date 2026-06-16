@@ -508,7 +508,7 @@ Open work:
 
 ### Phase 12 - GEN / Operator Intelligence
 
-Status: planned / seeded / blocked until data and backtesting foundations are verified.
+Status: complete / materialized / read-only evidence pack.
 
 Required before production:
 
@@ -519,6 +519,8 @@ Required before production:
 - data-quality states
 - backtest metrics
 - holdout validation
+
+Canonical artifact: `artifacts/operator-intelligence/operator-intelligence.json`.
 
 ### Phase 13 - Visualization
 

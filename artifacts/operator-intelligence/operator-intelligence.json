@@ -1,0 +1,103 @@
+{
+  "schema": "ipbl.operator-intelligence.v1",
+  "phase": 12,
+  "status": "seeded",
+  "readOnly": true,
+  "recommendations": {
+    "enabled": false,
+    "mode": "evidence_only",
+    "reason": "Holdout validation remains blocked until the recorder, H2H, odds, and backtest evidence are all release-grade."
+  },
+  "evidence": {
+    "recorder": {
+      "coverage": "repository-backed",
+      "sources": [
+        "lib/server/quarter-state-recorder.ts",
+        "tests/quarter-state-recorder.test.ts",
+        "lib/server/runtime-agent-graph.ts",
+        "tests/runtime-agent-graph.test.ts"
+      ]
+    },
+    "h2h": {
+      "coverage": "repository-backed",
+      "sources": [
+        "docs/H2H_FRESHNESS_REPAIR.md",
+        "docs/H2H_CONTINUITY_REPAIR.md",
+        "tests/team-history-official-live.test.ts",
+        "tests/team-history-official-recent-calendar.test.ts"
+      ]
+    },
+    "odds": {
+      "coverage": "repository-backed",
+      "sources": [
+        "lib/server/odds-movement.ts",
+        "tests/odds-movement.test.ts",
+        "src/operator/engine.ts"
+      ]
+    },
+    "backtests": {
+      "coverage": "repository-backed",
+      "overall": {
+        "bets": 300,
+        "wins": 178,
+        "losses": 122,
+        "win_rate": 0.5933333333333334,
+        "stake_total": 107374176.53,
+        "payout_total": 104110936.19,
+        "net_profit": -3263240.34,
+        "avg_odds": 1.67138,
+        "median_stake": 310000,
+        "profit_factor": 0.925451134284653
+      },
+      "bestQuarter": {
+        "name": "Q4",
+        "bets": 60,
+        "wins": 35,
+        "losses": 25,
+        "win_rate": 0.5833333333333334,
+        "stake_total": 18936683,
+        "payout_total": 20216058.12,
+        "net_profit": 1279375.12,
+        "avg_odds": 1.6524,
+        "median_stake": 300000,
+        "profit_factor": 1.1964755157583353
+      },
+      "worstQuarter": {
+        "name": "Q1",
+        "bets": 108,
+        "wins": 60,
+        "losses": 48,
+        "win_rate": 0.5555555555555556,
+        "stake_total": 42963871,
+        "payout_total": 38098600.78,
+        "net_profit": -4865270.22,
+        "avg_odds": 1.6797314814814814,
+        "median_stake": 415000,
+        "profit_factor": 0.755127665518842
+      },
+      "topRedFlags": [
+        "Q1 is your worst quarter by net P/L: -4,865,270.22 MMK across 108 bets.",
+        "Women's IPBL bets lost -4,067,780.90 MMK, worse than men's.",
+        "Odds 2.00+ lost -196,435.12 MMK with win rate 40.0%.",
+        "Large stakes 400k+ lost -2,055,449.04 MMK.",
+        "Most dangerous matchup: norilsk vs vladivostok at -1,760,610.00 MMK.",
+        "Most dangerous team exposure: murino at -2,333,473.52 MMK.",
+        "Worst hour is 17:00 with -3,036,990.75 MMK net.",
+        "Your same-match quarter chaining mixes continuation and reversal rather than following one stable pattern.",
+        "Overall profit factor is below 1 at 0.925.",
+        "Nearly all bets are live quarter totals, so small quarter-level variance can swing results sharply."
+      ],
+      "theoryCall": "weakly supported for Q2 over Q1, but execution style is mixed"
+    },
+    "rules": {
+      "safeQuarters": ["Q2", "Q4"],
+      "dangerousQuarters": ["Q1"],
+      "safeDivisions": ["Men"],
+      "dangerousDivisions": ["Women"],
+      "safeOddsRanges": ["1.60-1.79"],
+      "dangerousOddsRanges": ["1.80+"],
+      "safeHours": [6, 10, 13, 19, 22],
+      "dangerousHours": [17, 7, 18, 16, 11]
+    }
+  }
+}
