@@ -53,16 +53,20 @@ test -f artifacts/team-statistics/team-statistics-reconciliation-latest.json
 echo "[STEP 4] PHASE 6-7 CONFIG CHECKS"
 bash scripts/validate-phase-6-7.sh
 
-echo "[STEP 5] PHASE 10-11 ACTIVE WORKLOAD CHECKS"
+echo "[STEP 5] PHASE 9 RUNTIME AGENT GRAPH"
+test -f artifacts/runtime-agent-graph/runtime-agent-graph.json
+npm run test:runtime-agent-graph
+
+echo "[STEP 6] PHASE 10-11 ACTIVE WORKLOAD CHECKS"
 bash scripts/validate-phase-10-11.sh
 
-echo "[STEP 6] FINAL AGNIX RECHECK"
+echo "[STEP 7] FINAL AGNIX RECHECK"
 npx agnix@0.32.0 .
 
-echo "[STEP 7] BUILD CHECK"
+echo "[STEP 8] BUILD CHECK"
 npm run build
 
-echo "[STEP 8] PRODUCTION READ-ONLY CHECKS"
+echo "[STEP 9] PRODUCTION READ-ONLY CHECKS"
 if command -v vercel >/dev/null 2>&1; then
   vercel inspect "${PROD_BASE}" --format=json
 else

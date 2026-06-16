@@ -472,9 +472,15 @@ Target behavior: graph-aware answers about missing live cards, source coverage, 
 
 ### Phase 9 - Runtime Agent Graph
 
-Status: direction established.
+Status: complete / materialized.
 
-Track AgentNode, WorkflowNode, JobNode, ArtifactNode, AuditNode, RecoveryNode.
+Track AgentNode, WorkflowNode, JobNode, ArtifactNode, AuditNode, RecoveryNode, and the canonical runtime-agent graph snapshot.
+
+### Phase 10 - IPBL Workload Graph
+
+Status: active.
+
+Includes Live Source, Official Source, Bookmaker Source, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence subgraphs.
 
 ### Phase 10 - IPBL Workload Graph
 

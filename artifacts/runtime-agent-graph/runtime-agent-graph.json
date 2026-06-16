@@ -1,0 +1,96 @@
+{
+  "nodes": [
+    {
+      "kind": "agent",
+      "id": "recorder-trigger",
+      "label": "ops/systemd/ipbl-recorder-trigger",
+      "source": "artifacts/phase-c8/scheduler-provenance.json",
+      "evidence": [
+        "artifacts/phase-c8/scheduler-provenance.json"
+      ],
+      "key": "agent:recorder-trigger"
+    },
+    {
+      "kind": "workflow",
+      "id": "record-live",
+      "label": "vercel-execution-fabric-workflow",
+      "source": "artifacts/ops/vercel-workflow-profile.json",
+      "evidence": [
+        "artifacts/ops/vercel-workflow-profile.json"
+      ],
+      "key": "workflow:record-live"
+    },
+    {
+      "kind": "job",
+      "id": "record-live-run",
+      "label": "Phase C9 Reconciliation Job",
+      "source": "artifacts/phase-c9/pr23/reconciliation-summary.json",
+      "evidence": [
+        "artifacts/phase-c9/pr23/reconciliation-summary.json"
+      ],
+      "key": "job:record-live-run"
+    },
+    {
+      "kind": "artifact",
+      "id": "phase-c8-completion-report",
+      "label": "ipbl.workload-graph.v1",
+      "source": "artifacts/workload-graph/ipbl-workload-graph.json",
+      "evidence": [
+        "artifacts/workload-graph/ipbl-workload-graph.json"
+      ],
+      "key": "artifact:phase-c8-completion-report"
+    },
+    {
+      "kind": "audit",
+      "id": "identity-audit-report",
+      "label": "Identity Audit Report",
+      "source": "artifacts/identity_audit_report.json",
+      "evidence": [
+        "artifacts/identity_audit_report.json"
+      ],
+      "key": "audit:identity-audit-report"
+    },
+    {
+      "kind": "recovery",
+      "id": "phase-c8-monitor",
+      "label": "Phase C8 Recovery Monitor",
+      "source": "artifacts/phase-c8/completion-report.json",
+      "evidence": [
+        "artifacts/phase-c8/completion-report.json"
+      ],
+      "key": "recovery:phase-c8-monitor"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "owns",
+      "from": "agent:recorder-trigger",
+      "to": "workflow:record-live",
+      "source": "artifacts/phase-c8/scheduler-provenance.json"
+    },
+    {
+      "kind": "contains",
+      "from": "workflow:record-live",
+      "to": "job:record-live-run",
+      "source": "artifacts/ops/vercel-workflow-profile.json"
+    },
+    {
+      "kind": "produces",
+      "from": "job:record-live-run",
+      "to": "artifact:phase-c8-completion-report",
+      "source": "artifacts/phase-c9/pr23/reconciliation-summary.json"
+    },
+    {
+      "kind": "reviews",
+      "from": "audit:identity-audit-report",
+      "to": "job:record-live-run",
+      "source": "artifacts/identity_audit_report.json"
+    },
+    {
+      "kind": "recovers",
+      "from": "recovery:phase-c8-monitor",
+      "to": "job:record-live-run",
+      "source": "artifacts/phase-c8/completion-report.json"
+    }
+  ]
+}

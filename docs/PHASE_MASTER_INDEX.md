@@ -61,6 +61,15 @@ These phases are backed by durable evidence and validation coverage, but they re
   - Canonical source-proof bundle for official source, bookmaker source, raw responses, parser candidates, fixtures, validations, and production proof
   - Read-only aggregation only; no runtime behavior change
 
+## Phase 9: Fully Complete
+
+- Phase 9 - Runtime Agent Graph:
+  - Runtime graph materialization for agents, workflows, jobs, artifacts, audits, and recovery actions
+  - Canonical repository-derived snapshot at [artifacts/runtime-agent-graph/runtime-agent-graph.json](/root/repos/IPBL/artifacts/runtime-agent-graph/runtime-agent-graph.json)
+  - Deterministic graph builder with read-only event normalization
+  - Dedicated contract test at [tests/runtime-agent-graph.test.ts](/root/repos/IPBL/tests/runtime-agent-graph.test.ts)
+  - Implementation module at [lib/server/runtime-agent-graph.ts](/root/repos/IPBL/lib/server/runtime-agent-graph.ts)
+
 ## Validation Entry Points
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
