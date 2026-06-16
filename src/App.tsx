@@ -11,6 +11,7 @@ import {
 import { computeH2H } from "./api/normalize";
 import type { BoxScoreState, H2HEntry, ScheduleGame } from "./api/types";
 import { projectLiveClock } from "./live/clock";
+import { buildLiveDisplayInsights } from "./live/display";
 import ResultsCalendarGrid from "./components/ResultsCalendarGrid";
 import BettingRecord from "./components/BettingRecord";
 import TeamStatistics from "./components/TeamStatistics";
@@ -307,10 +308,12 @@ function App() {
 
   const displayLiveInsights = useMemo(
     () => {
-      return liveGames
-        .filter((game) => selectedLiveDivisionTag === "" || game.tag === selectedLiveDivisionTag)
-        .map((game) => liveInsights[liveKey(game)])
-        .filter(Boolean);
+      return buildLiveDisplayInsights({
+        games: liveGames,
+        insights: liveInsights,
+        selectedDivisionTag: selectedLiveDivisionTag,
+        keyForGame: liveKey,
+      });
     },
     [liveGames, liveInsights, selectedLiveDivisionTag]
   );
