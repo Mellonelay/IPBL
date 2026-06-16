@@ -6,7 +6,7 @@ export const RECORDER_TTL_SECONDS = 30 * 24 * 60 * 60;
 export const RECORDER_PREFIX = "ipbl:recorder:v1";
 
 export const APPROVED_LIVE_TAGS = [
-  "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-u",
+  "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-u", "ipbl-66-m-pro-z", "ipbl-66-m-pro-l",
   "ipbl-66-w-pro-a", "ipbl-66-w-pro-b", "ipbl-66-w-pro-c", "ipbl-66-w-pro-d", "ipbl-66-w-pro-g", "ipbl-66-w-pro-k",
 ] as const;
 
@@ -50,7 +50,14 @@ export type RecordedLiveSnapshot = {
   gameKey: string;
   gameId: number;
   divisionTag: string;
+  division: string;
   divisionLabel: string;
+  quarter: number | null;
+  timeRemaining: string | null;
+  score: string;
+  quarterScore: string | null;
+  totalScore: string | null;
+  snapshotTime: string;
   team1: ScheduleGame["team1"];
   team2: ScheduleGame["team2"];
   score1: number;
@@ -127,6 +134,12 @@ function clockSeconds(clock: string | null): number | null {
   return minutes * 60 + seconds;
 }
 
+function currentQuarterScore(fullScore: string | null, period: number | null): string | null {
+  if (!fullScore || period === null || period < 1) return null;
+  const row = parseQuarterScores(fullScore).find((entry) => entry.period === period);
+  return row ? `${row.team1}:${row.team2}` : null;
+}
+
 export function parseQuarterScores(fullScore: string | null): QuarterScore[] {
   if (!fullScore) return [];
   const rows: QuarterScore[] = [];
@@ -174,7 +187,14 @@ export function buildSnapshot(game: ScheduleGame, sourceStatus: LiveSourceStatus
     gameKey: `${game.tag}:${game.gameId}`,
     gameId: game.gameId,
     divisionTag: game.tag,
+    division: game.divisionLabel,
     divisionLabel: game.divisionLabel,
+    quarter: game.period,
+    timeRemaining: game.timeToGo,
+    score: game.scoreText,
+    quarterScore: currentQuarterScore(game.fullScore, game.period),
+    totalScore: `${game.score1} : ${game.score2}`,
+    snapshotTime: capturedAt,
     team1: game.team1,
     team2: game.team2,
     score1: game.score1,
