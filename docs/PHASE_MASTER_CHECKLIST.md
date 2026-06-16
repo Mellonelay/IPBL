@@ -27,11 +27,11 @@ Total phases: 14
 
 - [x] Phase 4 - Source Archaeology Graph (`fully complete`) - canonical source-archaeology graph, official source, bookmaker source, raw responses, parser candidates, fixtures, validations, and production proof nodes.
 - [x] Phase 9 - Runtime Agent Graph (`fully complete`) - materialized tracking for agents, workflows, jobs, artifacts, audits, and recovery actions, plus a canonical repository-derived snapshot.
-- [ ] Phase 12 - GEN / Operator Intelligence (`planned / seeded / blocked`) - wait on recorder data, backtests, and evidence-grade foundations.
+- [x] Phase 12 - GEN / Operator Intelligence (`fully complete`) - read-only operator intelligence report, backtest evidence, and repository-backed rule/data-quality foundations.
 - [ ] Phase 13 - Visualization (`evaluated / not wired`) - Obsidian exports, Graphistry/Gephi views, optional graph DB inspection.
 
 ## Summary
 
-- Clearly complete: 6
+- Clearly complete: 7
 - Validated / support-ready: 6
-- Open: 2
+- Open: 1

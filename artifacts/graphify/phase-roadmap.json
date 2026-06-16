@@ -78,8 +78,8 @@
     {
       "id": "phase_12_gen_operator_intelligence",
       "name": "GEN / Operator Intelligence",
-      "state": "planned_seeded_blocked",
-      "summary": "Seeded operator-engine concepts exist; production recommendations are blocked until recorder data, backtests, and evidence confidence are ready."
+      "state": "complete_materialized_read_only",
+      "summary": "Read-only operator intelligence report materialized with recorder, H2H, odds, rule, data-quality, and backtest evidence."
     },
     {
       "id": "phase_13_visualization",
