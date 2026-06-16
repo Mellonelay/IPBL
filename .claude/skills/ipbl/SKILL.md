@@ -1,3 +1,10 @@
+---
+name: ipbl
+description: Repository-specific patterns and workflows for IPBL.
+---
+
+# IPBL Development Patterns
+
 ```markdown
 # IPBL Development Patterns
 
