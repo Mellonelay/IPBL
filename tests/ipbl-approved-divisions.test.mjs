@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { LIVE_DIVISION_TAGS, LIVE_DIVISIONS, DIVISIONS } from '../src/config/divisions.ts';
 import { LIVE_TAGS as API_LIVE_TAGS } from '../api/results/live.ts';
+import { APPROVED_LIVE_TAGS as RECORDER_LIVE_TAGS } from '../lib/server/live-recorder.ts';
 import { ACTIVE_TEAMS, teamsForDivision } from '../src/config/teams.ts';
 import { RESULTS_SYNC_TAGS as CLIENT_RESULTS_SYNC_TAGS } from '../lib/results-constants.ts';
 import { RESULTS_SYNC_TAGS as SERVER_RESULTS_SYNC_TAGS, canonicalDivisionLabel } from '../lib/server/results-sync-constants.ts';
@@ -13,6 +14,7 @@ const current = [...currentMen, ...currentWomen];
 
 assert.deepEqual([...LIVE_DIVISION_TAGS], current);
 assert.deepEqual([...API_LIVE_TAGS], current);
+assert.deepEqual([...RECORDER_LIVE_TAGS], current);
 assert.equal(LIVE_DIVISIONS.length, 13);
 assert.ok(DIVISIONS.some((division) => division.tag === 'ipbl-66-m-pro-z' && division.label === 'Pro Men Z'));
 assert.ok(CLIENT_RESULTS_SYNC_TAGS.includes('ipbl-66-m-pro-z'));

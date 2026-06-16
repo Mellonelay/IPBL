@@ -1,0 +1,145 @@
+{
+  "schema": "ipbl.graphify.phase-roadmap.v1",
+  "updatedAt": "2026-06-15",
+  "status": "canonical_seed",
+  "phases": [
+    {
+      "id": "phase_0_execution_fabric_baseline",
+      "name": "Execution Fabric Baseline",
+      "state": "complete",
+      "summary": "VM executor, grouped routers, runtime audits, GitHub/Vercel workflow, production operator mode."
+    },
+    {
+      "id": "phase_1_graphify_bootstrap",
+      "name": "Graphify Bootstrap",
+      "state": "complete_materialized",
+      "summary": "Graphify extraction, graphify-out, graph reports, communities, God Node analysis, source-discovery corpus."
+    },
+    {
+      "id": "phase_2_graphify_skill_installation",
+      "name": "Graphify Skill Installation",
+      "state": "complete_in_source_discovery_repo_alignment_open",
+      "summary": "Project-local Graphify skill and hook evidence exists in source-discovery context; repo-local alignment remains open."
+    },
+    {
+      "id": "phase_3_repo_archaeology_code_review_graph",
+      "name": "Repo Archaeology / Code Review Graph",
+      "state": "materialized",
+      "summary": "Repo graph and .code-review-graph/graph.db exist for impact analysis and patch safety."
+    },
+    {
+      "id": "phase_4_source_archaeology_graph",
+      "name": "Source Archaeology Graph",
+      "state": "active_incomplete",
+      "summary": "Official IPBL and bookmaker sources are active; raw response, parser, fixture, validation, and production proof chain must be maintained."
+    },
+    {
+      "id": "phase_5_evidence_graph",
+      "name": "Evidence Graph",
+      "state": "partial",
+      "summary": "Runtime audits exist; open work is durable EvidenceNode conversion and supersession tracking."
+    },
+    {
+      "id": "phase_6_skill_forge_materialization",
+      "name": "Skill Forge Materialization",
+      "state": "direction_established_packaging_open",
+      "summary": "Graph knowledge must become scoped SKILL.md procedures with inputs, outputs, validation contracts, and guardrails."
+    },
+    {
+      "id": "phase_7_agnix_integration",
+      "name": "agnix Integration",
+      "state": "usable_via_npx_ci_gate_open",
+      "summary": "npx agnix@0.32.0 is usable; make it a local/CI gate for agent configs."
+    },
+    {
+      "id": "phase_8_graphrag_reasoning",
+      "name": "GraphRAG Reasoning",
+      "state": "architecture_established_not_productized",
+      "summary": "Graph-aware answers over source, evidence, and impact graphs are planned; production UX not yet built."
+    },
+    {
+      "id": "phase_9_runtime_agent_graph",
+      "name": "Runtime Agent Graph",
+      "state": "direction_established",
+      "summary": "Track agents, workflows, jobs, artifacts, audits, recovery actions, and completion reports."
+    },
+    {
+      "id": "phase_10_ipbl_workload_graph",
+      "name": "IPBL Workload Graph",
+      "state": "active",
+      "summary": "IPBL is the active workload God Node with live, official, bookmaker, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence subgraphs."
+    },
+    {
+      "id": "phase_11_c9_intelligence",
+      "name": "C9 Intelligence",
+      "state": "proof_foundation_partial",
+      "summary": "Row reconciliation and EventsStat contracts exist; market/selection mapping, score-history alignment, and movement graph remain open."
+    },
+    {
+      "id": "phase_12_gen_operator_intelligence",
+      "name": "GEN / Operator Intelligence",
+      "state": "planned_seeded_blocked",
+      "summary": "Seeded operator-engine concepts exist; production recommendations are blocked until recorder data, backtests, and evidence confidence are ready."
+    },
+    {
+      "id": "phase_13_visualization",
+      "name": "Visualization",
+      "state": "evaluated_not_wired",
+      "summary": "Obsidian exports exist; Graphistry/Gephi/optional graph DB views remain future work."
+    }
+  ],
+  "productionCheckpoints": [
+    {
+      "id": "pr_36_frontend_api_contract_repair",
+      "state": "api_verified_browser_blocked_by_deployment_protection",
+      "branch": "execution-fabric/ipbl-frontend-api-contract-repair",
+      "commit": "a14b6375cfccc2b27ef370a25d938e8397d1ac62",
+      "pr": 36,
+      "auditPath": "/root/runtime-audits/ipbl-frontend-api-repair-20260614T050139Z"
+    },
+    {
+      "id": "pr_37_live_registry_team_mapping_repair",
+      "state": "merged_production_browser_verified_for_active_women_k_men_a_pair_requires_active_match_or_fixture",
+      "repairCommit": "9882bfe1cab07d9179e7bf265e072ed6dc5f0d82",
+      "mergeCommit": "ebd27282e5cbcb4b03edb29ce53e839df03896b9",
+      "pr": 37,
+      "verificationFolder": "/root/runtime-audits/ipbl-frontend-api-repair-20260614T050139Z/14_prod_live_registry_pr37_verify",
+      "browserProof": "Kursk vs Orenburg Pro Women K rendered on production Live tab",
+      "remainingPrecision": "Omsk/Vorkuta Pro Men A mapping was patched and unit-tested, but the pair was not active during the captured production browser window."
+    },
+    {
+      "id": "recorder_live_registry_alignment_20260615",
+      "state": "complete_verified",
+      "summary": "Recorder approved live tags now match the canonical 13 live division registry, including Pro Men Z and Pro Men L.",
+      "evidence": [
+        "tests/ipbl-approved-divisions.test.mjs asserts recorder tags match LIVE_DIVISION_TAGS",
+        "npm run test:approved-divisions passed",
+        "npm run test:recorder passed"
+      ],
+      "riskClosed": "Approved divisions could previously be live in /api/results/live but silently rejected by recorder snapshot capture."
+    },
+    {
+      "id": "live_delay_freshness_repair_20260615",
+      "state": "local_verified_not_deployed",
+      "summary": "Live feed now merges official and bookmaker rows by verified matchup freshness, disables live API/browser caching, and renders cards from the freshest live game snapshot.",
+      "evidence": [
+        "Production probes showed /api/results/live age=0 and x-vercel-cache=MISS while UI delay was still reported.",
+        "tests/live-feed-freshness.test.ts passed",
+        "tests/live-display-state.test.ts passed",
+        "npm run test:ipbl-source passed",
+        "npm run test:bookmaker-live passed",
+        "npm run build passed"
+      ],
+      "remainingPrecision": "Not promoted from the dirty local workspace; deploy through a clean branch/PR or isolated worktree."
+    }
+  ],
+  "openGaps": [
+    "Poll or rerun PR37 production Live tab Chrome/CDP verification.",
+    "Prove Team Statistics data population completeness.",
+    "Refresh Graphify and code-review graph after PR36/PR37.",
+    "Package Graphify/IPBL workflows into scoped skills.",
+    "Add agnix local/CI gate without using unsupported --include.",
+    "Build odds timeline, market close/open capture, and quarter replay UI before production GEN recommendations.",
+    "Build GEN/operator intelligence only after recorder data and backtests are evidence-grade."
+  ]
+}

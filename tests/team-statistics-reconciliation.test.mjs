@@ -4,10 +4,10 @@ import { ACTIVE_TEAMS, TEAM_STATISTICS_DIVISIONS, teamsForDivision } from '../sr
 import { LIVE_DIVISION_TAGS } from '../src/config/divisions.ts';
 import { buildTeamProfile } from '../src/teams/statistics.ts';
 
-assert.equal(TEAM_STATISTICS_DIVISIONS.length, 12);
+assert.equal(TEAM_STATISTICS_DIVISIONS.length, LIVE_DIVISION_TAGS.length);
 assert.deepEqual(TEAM_STATISTICS_DIVISIONS.map((division) => division.tag), [...LIVE_DIVISION_TAGS]);
-assert.equal(ACTIVE_TEAMS.length, 46);
-assert.equal(new Set(ACTIVE_TEAMS.map((team) => team.teamId)).size, 46);
+assert.equal(ACTIVE_TEAMS.length, TEAM_STATISTICS_DIVISIONS.reduce((sum, division) => sum + (division.tag === 'ipbl-66-m-pro-z' ? 2 : 4), 0));
+assert.equal(new Set(ACTIVE_TEAMS.map((team) => team.teamId)).size, ACTIVE_TEAMS.length);
 for (const division of TEAM_STATISTICS_DIVISIONS) {
   const expected = division.tag === 'ipbl-66-m-pro-z' ? 2 : 4;
   assert.equal(teamsForDivision(division.tag).length, expected, `${division.tag} team count`);

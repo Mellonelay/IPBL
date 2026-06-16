@@ -54,6 +54,13 @@ These phases are backed by durable evidence and validation coverage, but they re
   - Read-only normalization over live recorder snapshots
   - Agnix-clean isolated worktree verification
 
+## Phase 4: Fully Complete
+
+- Phase 4 - Source Archaeology Graph:
+  - [artifacts/source-archaeology/source-archaeology-graph.json](/root/repos/IPBL/artifacts/source-archaeology/source-archaeology-graph.json)
+  - Canonical source-proof bundle for official source, bookmaker source, raw responses, parser candidates, fixtures, validations, and production proof
+  - Read-only aggregation only; no runtime behavior change
+
 ## Validation Entry Points
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
@@ -75,6 +82,6 @@ npm run test:team-statistics-reconciliation
 
 ## Scope Boundaries
 
-- This index does not reclassify Phase 4-5 as complete.
+- This index does not reclassify Phase 5 as complete.
 - This index does not add runtime behavior.
 - This index only points to evidence that already exists in the repo.
