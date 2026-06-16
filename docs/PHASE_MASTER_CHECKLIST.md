@@ -25,13 +25,13 @@ Total phases: 14
 ## Open
 
 - [ ] Phase 4 - Source Archaeology Graph (`active / incomplete`) - maintain official source, bookmaker source, raw responses, parser candidates, fixtures, validations, and production proof nodes.
-- [ ] Phase 9 - Runtime Agent Graph (`direction established`) - materialize tracking for agents, workflows, jobs, artifacts, audits, and recovery actions.
-- [ ] Phase 10 - IPBL Workload Graph (`active`) - keep Live Source, Official Source, Bookmaker Source, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence aligned.
+- [x] Phase 9 - Runtime Agent Graph (`fully complete`) - materialized tracking for agents, workflows, jobs, artifacts, audits, and recovery actions, plus a canonical repository-derived snapshot.
+- [x] Phase 10 - IPBL Workload Graph (`fully complete`) - keep Live Source, Official Source, Bookmaker Source, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence aligned.
 - [ ] Phase 12 - GEN / Operator Intelligence (`planned / seeded / blocked`) - wait on recorder data, backtests, and evidence-grade foundations.
 - [ ] Phase 13 - Visualization (`evaluated / not wired`) - Obsidian exports, Graphistry/Gephi views, optional graph DB inspection.
 
 ## Summary
 
-- Clearly complete: 3
+- Clearly complete: 4
 - Validated / support-ready: 6
-- Open: 5
+- Open: 4

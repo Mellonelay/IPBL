@@ -54,6 +54,23 @@ These phases are backed by durable evidence and validation coverage, but they re
   - Read-only normalization over live recorder snapshots
   - Agnix-clean isolated worktree verification
 
+## Phase 9: Fully Complete
+
+- Phase 9 - Runtime Agent Graph:
+  - Runtime graph materialization for agents, workflows, jobs, artifacts, audits, and recovery actions
+  - Canonical repository-derived snapshot at [artifacts/runtime-agent-graph/runtime-agent-graph.json](/root/repos/IPBL/artifacts/runtime-agent-graph/runtime-agent-graph.json)
+  - Deterministic graph builder with read-only event normalization
+  - Dedicated contract test at [tests/runtime-agent-graph.test.ts](/root/repos/IPBL/tests/runtime-agent-graph.test.ts)
+  - Implementation module at [lib/server/runtime-agent-graph.ts](/root/repos/IPBL/lib/server/runtime-agent-graph.ts)
+
+## Phase 10: Fully Complete
+
+- Phase 10 - IPBL Workload Graph:
+  - Read-only workload graph index for Live Source, Official Source, Bookmaker Source, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence
+  - Dedicated contract test at [tests/workload-graph.test.ts](/root/repos/IPBL/tests/workload-graph.test.ts)
+  - Implementation module at [lib/server/workload-graph.ts](/root/repos/IPBL/lib/server/workload-graph.ts)
+  - Durable manifest at [artifacts/workload-graph/ipbl-workload-graph.json](/root/repos/IPBL/artifacts/workload-graph/ipbl-workload-graph.json)
+
 ## Validation Entry Points
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
