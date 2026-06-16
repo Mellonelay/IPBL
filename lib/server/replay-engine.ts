@@ -79,9 +79,11 @@ export async function buildGameReplay(redis: ReplayRedis, gameId: number): Promi
     redis.lrange<string | Record<string, unknown>>(oddsHistoryKey(gameId), 0, 1439),
   ]);
 
-  const quarterSnapshots = quarterRows.flatMap((row) => {
+  let latestQuarterSnapshot: RecordedLiveSnapshot | null = null;
+  const quarterSnapshots: ReplayEvent[] = quarterRows.flatMap((row) => {
     const snapshot = parseRow<RecordedLiveSnapshot>(row);
     if (!snapshot) return [];
+    if (!latestQuarterSnapshot) latestQuarterSnapshot = snapshot;
     return [{
       kind: "quarter" as const,
       capturedAt: snapshot.capturedAt,
@@ -96,7 +98,7 @@ export async function buildGameReplay(redis: ReplayRedis, gameId: number): Promi
     }];
   });
 
-  const oddsSnapshots = oddsRows.flatMap((row) => {
+  const oddsSnapshots: ReplayEvent[] = oddsRows.flatMap((row) => {
     const snapshot = parseRow<OddsMovementSnapshot>(row);
     if (!snapshot) return [];
     return [{
@@ -113,9 +115,8 @@ export async function buildGameReplay(redis: ReplayRedis, gameId: number): Promi
     }];
   });
 
-  const latestQuarter = quarterSnapshots[0];
   const timeline = [...quarterSnapshots, ...oddsSnapshots];
-  if (latestQuarter) timeline.push(resultFromQuarter(latestQuarter as RecordedLiveSnapshot));
+  if (latestQuarterSnapshot) timeline.push(resultFromQuarter(latestQuarterSnapshot));
 
   return {
     gameId,

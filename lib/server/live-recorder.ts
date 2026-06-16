@@ -368,10 +368,10 @@ export async function readRecordedLiveFeed(redis: RecorderRedis): Promise<LiveFe
     games,
     status: {
       ...sourceDetails,
-      lastSyncAt: typeof summary.lastSyncAt === "string" ? summary.lastSyncAt : sourceDetails.lastSyncAt ?? null,
+      lastSyncAt: typeof summary.lastSyncAt === "string" ? summary.lastSyncAt : sourceDetails.lastSyncAt ?? undefined,
       source: typeof summary.source === "string" ? summary.source : sourceDetails.source ?? "recorder",
       status: typeof summary.sourceStatus === "string" ? summary.sourceStatus : sourceDetails.status ?? "OK",
-      fallbackFrom: sourceDetails.fallbackFrom ?? null,
+      fallbackFrom: sourceDetails.fallbackFrom ?? undefined,
       requestedDivisions: Number(sourceDetails.requestedDivisions ?? activeGameKeys.length ?? 13),
       successfulDivisions: Number(sourceDetails.successfulDivisions ?? new Set(games.map((game) => game.tag)).size),
       failures: Array.isArray(sourceDetails.failures) ? sourceDetails.failures : [],

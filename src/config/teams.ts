@@ -1,4 +1,4 @@
-import { LIVE_DIVISIONS, type DivisionConfig } from "./divisions";
+import { LIVE_DIVISIONS, type DivisionConfig } from "./divisions.js";
 
 export type ActiveTeamConfig = {
   teamId: number;
