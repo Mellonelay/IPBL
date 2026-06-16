@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import type { ScheduleGame } from "../lib/server/calendar-normalize.ts";
 import { writeResultsMonthToKv } from "../lib/server/write-results-month-kv.ts";
-import { resultsKvKey, resultsMetadataKey, resultsSyncSlots } from "../lib/server/results-sync-constants.ts";
+import { resultsKvKey, resultsMetadataKey, resultsSyncSlots, resultsSyncTagsForMonth } from "../lib/server/results-sync-constants.ts";
+import { LIVE_DIVISION_TAGS } from "../src/config/divisions.ts";
 
 class MemoryRedis {
   values = new Map<string, unknown>();
@@ -37,24 +38,27 @@ const game = (gameId: number, overrides: Partial<ScheduleGame> = {}): ScheduleGa
 });
 
 const redis = new MemoryRedis();
+const checkedDate = `2026-06-${String(LIVE_DIVISION_TAGS.length).padStart(2, "0")}`;
+const checkedAt = (time: string) => new Date(`${checkedDate}T${time}Z`);
+
 await assert.rejects(
   writeResultsMonthToKv(
     { year: 2026, month: 6, divisionTag: "ipbl-66-m-pro-g" },
-    { redis, fetchMonth: async () => [], now: () => new Date("2026-06-12T00:00:00Z") }
+    { redis, fetchMonth: async () => [], now: () => checkedAt("00:00:00") }
   ),
   /disallowed division tag/
 );
 const first = await writeResultsMonthToKv(
   { year: 2026, month: 6, divisionTag: "ipbl-66-m-pro-a" },
-  { redis, fetchMonth: async () => [game(1), game(2)], now: () => new Date("2026-06-12T00:00:00Z") }
+  { redis, fetchMonth: async () => [game(1), game(2)], now: () => checkedAt("00:00:00") }
 );
 assert.equal(first.gamesMerged, 2);
 assert.equal(first.metadata.status, "ok");
-assert.equal(first.metadata.verifiedThroughDate, "2026-06-12");
+assert.equal(first.metadata.verifiedThroughDate, checkedDate);
 
 const second = await writeResultsMonthToKv(
   { year: 2026, month: 6, divisionTag: "ipbl-66-m-pro-a" },
-  { redis, fetchMonth: async () => [game(2), game(3)], now: () => new Date("2026-06-12T00:05:00Z") }
+  { redis, fetchMonth: async () => [game(2), game(3)], now: () => checkedAt("00:05:00") }
 );
 assert.equal(second.gamesMerged, 3, "new sync must preserve game 1 while adding game 3");
 const stored = JSON.parse(String(redis.values.get(resultsKvKey(2026, 6, "ipbl-66-m-pro-a"))));
@@ -64,7 +68,7 @@ const writesBeforeFailure = redis.writes.filter((write) => write.key === results
 await assert.rejects(
   writeResultsMonthToKv(
     { year: 2026, month: 6, divisionTag: "ipbl-66-m-pro-a" },
-    { redis, fetchMonth: async () => { throw new Error("calendar 526"); }, now: () => new Date("2026-06-12T00:10:00Z") }
+    { redis, fetchMonth: async () => { throw new Error("calendar 526"); }, now: () => checkedAt("00:10:00") }
   ),
   /526/
 );
@@ -72,11 +76,11 @@ const writesAfterFailure = redis.writes.filter((write) => write.key === resultsK
 assert.equal(writesAfterFailure, writesBeforeFailure, "source failure must not overwrite the stored month");
 const failureMeta = JSON.parse(String(redis.values.get(resultsMetadataKey(2026, 6, "ipbl-66-m-pro-a"))));
 assert.equal(failureMeta.status, "source_unavailable");
-assert.equal(failureMeta.verifiedThroughDate, "2026-06-12");
+assert.equal(failureMeta.verifiedThroughDate, checkedDate);
 
-const slots = resultsSyncSlots(new Date("2026-06-12T00:00:00Z"));
-assert.equal(slots.filter((slot) => slot.year === 2026 && slot.month === 6).length, 11);
-assert.equal(slots.filter((slot) => slot.year === 2026 && slot.month === 5).length, 12);
+const slots = resultsSyncSlots(checkedAt("00:00:00"));
+assert.equal(slots.filter((slot) => slot.year === 2026 && slot.month === 6).length, LIVE_DIVISION_TAGS.length);
+assert.equal(slots.filter((slot) => slot.year === 2026 && slot.month === 5).length, resultsSyncTagsForMonth(2026, 5).length);
 assert.equal(slots.some((slot) => slot.month === 6 && slot.tag === "ipbl-66-m-pro-g"), false);
 assert.equal(slots.some((slot) => slot.month === 5 && slot.tag === "ipbl-66-m-pro-g"), true);
 

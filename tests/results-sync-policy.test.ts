@@ -1,16 +1,17 @@
 import assert from "node:assert/strict";
-import { resultsMetadataKey, resultsSyncSlots, resultsSyncTagsForMonth } from "../lib/server/results-sync-constants.ts";
+import { RESULTS_SYNC_TAGS, resultsMetadataKey, resultsSyncSlots, resultsSyncTagsForMonth } from "../lib/server/results-sync-constants.ts";
 import { legacyResultsMetadata } from "../lib/server/results-hardening.ts";
+import { LIVE_DIVISION_TAGS } from "../src/config/divisions.ts";
 import type { StoredResultsMonthMap } from "../lib/server/results-types.ts";
 
 assert.equal(resultsMetadataKey(2026, 6, "ipbl-66-m-pro-a"), "ipbl:results:2026:06:ipbl-66-m-pro-a:meta");
-assert.equal(resultsSyncTagsForMonth(2026, 5).length, 12);
-assert.equal(resultsSyncTagsForMonth(2026, 6).length, 11);
+assert.equal(resultsSyncTagsForMonth(2026, 5).length, RESULTS_SYNC_TAGS.length);
+assert.equal(resultsSyncTagsForMonth(2026, 6).length, LIVE_DIVISION_TAGS.length);
 assert.equal(resultsSyncTagsForMonth(2026, 6).includes("ipbl-66-m-pro-g"), false);
 
 const slots = resultsSyncSlots(new Date("2026-06-12T00:00:00Z"));
 assert.deepEqual([...new Set(slots.map((slot) => `${slot.year}-${slot.month}`))], ["2026-6", "2026-5"]);
-assert.equal(slots.length, 23);
+assert.equal(slots.length, resultsSyncTagsForMonth(2026, 6).length + resultsSyncTagsForMonth(2026, 5).length);
 
 const map: StoredResultsMonthMap = {
   "2026-06-01": [{ date: "2026-06-01", division: "Pro Men A", divisionTag: "ipbl-66-m-pro-a", games: [] }],

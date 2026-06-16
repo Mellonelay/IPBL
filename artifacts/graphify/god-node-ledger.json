@@ -1,0 +1,98 @@
+{
+  "schema": "ipbl.graphify.god-node-ledger.v1",
+  "updatedAt": "2026-06-15",
+  "status": "canonical_seed",
+  "sourceDocs": [
+    "docs/GRAPHIFY_INTELLIGENCE_ROADMAP.md",
+    "/root/runtime-audits/graphify-architecture-roadmap-reanchor-20260614T074047Z",
+    "/root/runtime-audits/graphify-phase-roadmap-recovery-20260614T074735Z",
+    "/root/runtime-audits/ipbl-graphify-production-chain-20260610T203458Z",
+    "/root/runtime-audits/roadmap-operating-model-update-20260613T094228Z"
+  ],
+  "godNodes": [
+    {
+      "id": "god_execution_fabric",
+      "name": "Execution Fabric",
+      "status": "complete_baseline",
+      "role": "Runtime OS and controlled execution plane",
+      "children": ["vm_executor", "runtime_audits", "graphRouter", "repoRouter", "skillRouter", "opsRouter", "vmRouter"]
+    },
+    {
+      "id": "god_graphify",
+      "name": "Graphify",
+      "status": "materialized_underintegrated",
+      "role": "Knowledge extraction, community detection, God Node discovery, source/evidence/impact reasoning",
+      "children": ["graphify_out", "communities", "gods", "source_graph", "evidence_graph", "impact_graph"]
+    },
+    {
+      "id": "god_skill_forge",
+      "name": "Skill Forge",
+      "status": "direction_established_packaging_open",
+      "role": "Materializes graph knowledge into reusable skills and runtime procedures",
+      "children": ["skill_artifacts", "install_plans", "validation_contracts", "runtime_workflows"]
+    },
+    {
+      "id": "god_agnix",
+      "name": "agnix",
+      "status": "usable_via_npx_not_global",
+      "role": "Static configuration integrity gate for skills, AGENTS.md, hooks, and MCP config",
+      "children": ["skill_validation", "agent_instruction_validation", "hook_validation", "mcp_validation"]
+    },
+    {
+      "id": "god_repo_archaeology",
+      "name": "Repo Archaeology",
+      "status": "materialized",
+      "role": "File index, dependency graph, community graph, patch impact reasoning",
+      "children": ["graphify_out", "code_review_graph", "impact_reports"]
+    },
+    {
+      "id": "god_source_archaeology",
+      "name": "Source Archaeology",
+      "status": "active_incomplete",
+      "role": "Turns external source hints into raw evidence, fixtures, parsers, validations, and production proofs",
+      "children": ["official_ipbl_source", "bookmaker_source", "raw_responses", "fixtures", "parser_candidates"]
+    },
+    {
+      "id": "god_code_review_graph",
+      "name": "Code Review Graph",
+      "status": "materialized",
+      "role": "Patch safety and risk graphing",
+      "children": [".code-review-graph/graph.db"]
+    },
+    {
+      "id": "god_ipbl",
+      "name": "IPBL",
+      "status": "active_production_workload",
+      "role": "Vercel-hosted live basketball operator console and intelligence workload",
+      "children": ["live_operations", "results_operations", "team_statistics", "h2h", "recorder", "release", "operator_intelligence"]
+    },
+    {
+      "id": "god_c9_intelligence",
+      "name": "C9 Intelligence",
+      "status": "proof_foundation_partial",
+      "role": "Row reconciliation, EventsStat contracts, score-history graph, odds-vs-score divergence foundation",
+      "children": ["eventsstat", "row_reconciliation", "history_graph", "active_matched_gate", "market_mapping"]
+    },
+    {
+      "id": "god_gen_operator_intelligence",
+      "name": "GEN / Operator Intelligence",
+      "status": "planned_seeded_blocked_on_data_backtests",
+      "role": "Graph-grounded recommendations over quarter flow, odds bands, H2H, team form, and data-quality evidence",
+      "children": ["quarter_flow", "odds_band", "h2h_matrix", "score_divergence", "backtests"]
+    },
+    {
+      "id": "god_vercel_release",
+      "name": "Vercel Release",
+      "status": "active",
+      "role": "GitHub-to-Vercel deployment, protected preview/staged production verification, production proof",
+      "children": ["prebuilt_deploy", "skip_domain_staging", "vercel_curl", "chrome_cdp"]
+    },
+    {
+      "id": "god_runtime_audits",
+      "name": "Runtime Audits",
+      "status": "active",
+      "role": "Durable evidence for VM jobs, commands, logs, reports, deployment checks, and supersession",
+      "children": ["job_evidence", "audit_reports", "artifacts", "completion_reports"]
+    }
+  ]
+}
