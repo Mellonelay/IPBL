@@ -114,6 +114,7 @@ export const recorderKeys = {
   status: `${RECORDER_PREFIX}:status`,
   gameTimeline: (gameKey: string) => `${RECORDER_PREFIX}:game:${gameKey}:timeline`,
   gameLatest: (gameKey: string) => `${RECORDER_PREFIX}:game:${gameKey}:latest`,
+  gameById: (gameId: number) => `${RECORDER_PREFIX}:game-id:${gameId}`,
 };
 
 function finiteNumber(value: unknown): number | null {
@@ -267,6 +268,7 @@ export async function recordLiveEnvelope(redis: RecorderRedis, envelope: LiveFee
       await redis.set(recorderKeys.gameLatest(gameKey), JSON.stringify(snapshot), { ex: RECORDER_TTL_SECONDS });
       recordedSnapshots += 1;
     }
+    await redis.set(recorderKeys.gameById(game.gameId), gameKey, { ex: RECORDER_TTL_SECONDS });
   }
 
   const previousActive = await redis.smembers(recorderKeys.active);
