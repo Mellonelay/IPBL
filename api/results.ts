@@ -18,6 +18,14 @@ function firstQueryValue(value: string | string[] | undefined): string | undefin
     return Array.isArray(value) ? value[0] : value;
 }
 
+function queryFromSearchParams(search: URLSearchParams): VercelRequest["query"] {
+    const query: Record<string, string> = {};
+    for (const [key, value] of search.entries()) {
+        if (!(key in query)) query[key] = value;
+    }
+    return query;
+}
+
 export function defaultResultsYearMonth(now = new Date()): { year: number; month: number } {
     const parts = Object.fromEntries(
         new Intl.DateTimeFormat("en-CA", {
@@ -84,7 +92,9 @@ function coldResultsMetadata(year: number, month: number, divisionTag: string): 
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-    const resolved = resolveResultsQuery(req.query);
+    const host = Array.isArray(req.headers.host) ? req.headers.host[0] : req.headers.host;
+    const base = `https://${host || "ipbl-minimal-viewer.vercel.app"}`;
+    const resolved = resolveResultsQuery(queryFromSearchParams(new URL(req.url || "/api/results", base).searchParams));
     if (!resolved.ok) return res.status(resolved.status).json({ error: resolved.error });
     const { year: parsedYear, month: parsedMonth, divisionTag, wantsMetadata, defaultedYearMonth, usedTagAlias } = resolved;
 
