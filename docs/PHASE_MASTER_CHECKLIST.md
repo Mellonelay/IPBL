@@ -28,10 +28,10 @@ Total phases: 14
 - [x] Phase 4 - Source Archaeology Graph (`fully complete`) - canonical source-archaeology graph, official source, bookmaker source, raw responses, parser candidates, fixtures, validations, and production proof nodes.
 - [x] Phase 9 - Runtime Agent Graph (`fully complete`) - materialized tracking for agents, workflows, jobs, artifacts, audits, and recovery actions, plus a canonical repository-derived snapshot.
 - [x] Phase 12 - GEN / Operator Intelligence (`fully complete`) - read-only operator intelligence report, backtest evidence, and repository-backed rule/data-quality foundations.
-- [ ] Phase 13 - Visualization (`evaluated / not wired`) - Obsidian exports, Graphistry/Gephi views, optional graph DB inspection.
+- [x] Phase 13 - Visualization (`fully complete`) - read-only visualization catalog over Graphify, Obsidian, and code-review graph exports; Graphistry/Gephi remain planned targets.
 
 ## Summary
 
-- Clearly complete: 7
+- Clearly complete: 8
 - Validated / support-ready: 6
-- Open: 1
+- Open: 0
