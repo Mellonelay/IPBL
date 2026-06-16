@@ -55,6 +55,10 @@
       "destination": "/api/recorder.ts?mode=history"
     },
     {
+      "source": "/api/replay/game/(.*)",
+      "destination": "/api/recorder.ts?mode=replay&gameId=$1"
+    },
+    {
       "source": "/api/recorder/health",
       "destination": "/api/recorder.ts?mode=health"
     },
