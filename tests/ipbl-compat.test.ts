@@ -1,3 +1,4 @@
+import { LIVE_DIVISION_TAGS } from "../src/config/divisions.ts";
 import assert from "node:assert/strict";
 import {
   buildBoxScorePayload,

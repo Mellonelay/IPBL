@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { parseCalendarItems, type ScheduleGame } from "../../lib/server/calendar-normalize.js";
-import { fetchMelbetLive } from "../../lib/server/bookmaker-live.js";
+import { fetchMelbetLive, normalizeTeamName, type BookmakerLiveResult } from "../../lib/server/bookmaker-live.js";
 
 const PROXY_BASE = "https://worker.mloneslot99.com/ipbl-proxy";
 export const LIVE_TAGS = [
@@ -53,74 +53,100 @@ export type LiveFeedEnvelope = {
   status: Record<string, unknown>;
 };
 
+function matchupKey(game: ScheduleGame): string {
+  return [
+    game.tag,
+    normalizeTeamName(game.team1.name || game.team1.shortName),
+    normalizeTeamName(game.team2.name || game.team2.shortName),
+  ].join(":");
+}
+
+function timestamp(game: ScheduleGame): number {
+  return typeof game.updatedAt === "number" && Number.isFinite(game.updatedAt) ? game.updatedAt : 0;
+}
+
+export function mergeLiveGamesByFreshness(
+  officialGames: ScheduleGame[],
+  bookmakerGames: ScheduleGame[],
+): ScheduleGame[] {
+  const byMatchup = new Map<string, ScheduleGame>();
+  for (const game of officialGames) byMatchup.set(matchupKey(game), game);
+  for (const game of bookmakerGames) {
+    const key = matchupKey(game);
+    const existing = byMatchup.get(key);
+    if (!existing || timestamp(game) >= timestamp(existing)) byMatchup.set(key, game);
+  }
+  return [...byMatchup.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
+}
+
 export async function buildLiveFeedEnvelope(): Promise<LiveFeedEnvelope> {
   const started = Date.now();
-  const batches = await Promise.all(LIVE_TAGS.map(fetchLiveTag));
+  const [batches, bookmakerSettled] = await Promise.all([
+    Promise.all(LIVE_TAGS.map(fetchLiveTag)),
+    fetchMelbetLive()
+      .then((fallback): { ok: true; fallback: BookmakerLiveResult } => ({ ok: true, fallback }))
+      .catch((error): { ok: false; error: unknown } => ({ ok: false, error })),
+  ]);
   const failures = batches.filter((batch) => batch.error).map(({ tag, error }) => ({ tag, error }));
   const byId = new Map<string, ScheduleGame>();
   for (const batch of batches) for (const game of batch.games) byId.set(`${game.tag}:${game.gameId}`, game);
   const officialGames = [...byId.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
+  const fallback = bookmakerSettled.ok ? bookmakerSettled.fallback : null;
+  const bookmakerGames = fallback?.games ?? [];
+  const mergedGames = mergeLiveGamesByFreshness(officialGames, bookmakerGames);
 
-  if (officialGames.length > 0) {
+  if (mergedGames.length > 0) {
+    const source = officialGames.length > 0 && bookmakerGames.length > 0
+      ? "official:api1.ipbl.pro+bookmaker:melbet.com"
+      : officialGames.length > 0
+        ? "official:api1.ipbl.pro"
+        : "bookmaker:melbet.com";
     return {
-      games: officialGames,
+      games: mergedGames,
       status: {
         lastSyncAt: new Date().toISOString(),
-        status: failures.length === 0 ? "OK" : "PARTIAL",
-        source: "official:api1.ipbl.pro",
+        status: failures.length === 0 && (!fallback || (fallback.unmatched.length === 0 && fallback.sourceFailures.length === 0)) ? "OK" : "PARTIAL",
+        source,
+        fallbackFrom: officialGames.length > 0 ? null : "official:api1.ipbl.pro",
         requestedDivisions: LIVE_TAGS.length,
-        successfulDivisions: LIVE_TAGS.length - failures.length,
+        successfulDivisions: new Set(mergedGames.map((game) => game.tag)).size,
         failures,
+        bookmakerSourceLeagues: fallback?.sourceLeagues ?? [],
+        bookmakerSourceFailures: fallback?.sourceFailures ?? (bookmakerSettled.ok ? [] : [{ error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }]),
+        receivedBookmakerEvents: fallback?.receivedEvents ?? 0,
+        unmatchedBookmakerEvents: fallback?.unmatched ?? [],
         latencyMs: Date.now() - started,
         displayTimeZone: "Asia/Yangon",
       },
     };
   }
 
-  try {
-    const fallback = await fetchMelbetLive();
-    const games = fallback.games.sort((a, b) => a.localTime.localeCompare(b.localTime));
-    return {
-      games,
-      status: {
-        lastSyncAt: new Date().toISOString(),
-        status: games.length > 0
-          ? (fallback.unmatched.length > 0 || fallback.sourceFailures.length > 0 ? "PARTIAL" : "OK")
-          : (fallback.sourceFailures.length > 0 ? "PARTIAL" : "IDLE"),
-        source: "bookmaker:melbet.com",
-        fallbackFrom: "official:api1.ipbl.pro",
-        requestedDivisions: LIVE_TAGS.length,
-        successfulDivisions: new Set(games.map((game) => game.tag)).size,
-        failures,
-        bookmakerSourceLeagues: fallback.sourceLeagues,
-        bookmakerSourceFailures: fallback.sourceFailures,
-        receivedBookmakerEvents: fallback.receivedEvents,
-        unmatchedBookmakerEvents: fallback.unmatched,
-        latencyMs: Date.now() - started,
-        displayTimeZone: "Asia/Yangon",
-      },
-    };
-  } catch (error) {
-    return {
-      games: [],
-      status: {
-        lastSyncAt: new Date().toISOString(),
-        status: "FAIL",
-        source: "none",
-        fallbackFrom: "official:api1.ipbl.pro",
-        requestedDivisions: LIVE_TAGS.length,
-        successfulDivisions: 0,
-        failures: [
-          ...failures,
-          { tag: "bookmaker:melbet.com", error: error instanceof Error ? error.message : String(error) },
-        ],
-        latencyMs: Date.now() - started,
-        displayTimeZone: "Asia/Yangon",
-      },
-    };
-  }
+  return {
+    games: [],
+    status: {
+      lastSyncAt: new Date().toISOString(),
+      status: bookmakerSettled.ok && bookmakerSettled.fallback.sourceFailures.length === 0 ? "IDLE" : "FAIL",
+      source: "none",
+      fallbackFrom: "official:api1.ipbl.pro",
+      requestedDivisions: LIVE_TAGS.length,
+      successfulDivisions: 0,
+      failures: [
+        ...failures,
+        ...(bookmakerSettled.ok ? bookmakerSettled.fallback.sourceFailures : [{ tag: "bookmaker:melbet.com", error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }]),
+      ],
+      bookmakerSourceLeagues: bookmakerSettled.ok ? bookmakerSettled.fallback.sourceLeagues : [],
+      bookmakerSourceFailures: bookmakerSettled.ok ? bookmakerSettled.fallback.sourceFailures : [{ error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }],
+      receivedBookmakerEvents: bookmakerSettled.ok ? bookmakerSettled.fallback.receivedEvents : 0,
+      unmatchedBookmakerEvents: bookmakerSettled.ok ? bookmakerSettled.fallback.unmatched : [],
+      latencyMs: Date.now() - started,
+      displayTimeZone: "Asia/Yangon",
+    },
+  };
 }
 
 export default async function handler(_req: VercelRequest, res: VercelResponse) {
+  res.setHeader("Cache-Control", "no-store, max-age=0");
+  res.setHeader("CDN-Cache-Control", "no-store");
+  res.setHeader("Vercel-CDN-Cache-Control", "no-store");
   return res.status(200).json(await buildLiveFeedEnvelope());
 }
