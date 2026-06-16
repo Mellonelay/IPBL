@@ -15,6 +15,10 @@ assert.equal(exactResults.divisionTag, 'ipbl-66-m-pro-a');
 assert.equal(exactResults.wantsMetadata, true);
 assert.equal(exactResults.defaultedYearMonth, true);
 
+const defaultResults = resolveResultsQuery({ meta: '1' }, now);
+assert.equal(defaultResults.ok, true);
+assert.equal(defaultResults.divisionTag, 'ipbl-66-m-pro-a');
+
 const tagAlias = resolveResultsQuery({ tag: 'ipbl-66-m-pro-a', meta: '1' }, now);
 assert.equal(tagAlias.ok, true);
 assert.equal(tagAlias.usedTagAlias, true);
@@ -31,6 +35,12 @@ assert.equal(exactTeamHistory.tag, 'ipbl-66-m-pro-a');
 assert.equal(exactTeamHistory.season, 2026);
 assert.equal(exactTeamHistory.range, 30);
 assert.equal(exactTeamHistory.defaultedSeason, true);
+
+const aliasTeamHistory = resolveTeamHistoryQuery(new URLSearchParams('division=ipbl-66-w-pro-k&team=76016&range=30'), now);
+assert.equal(aliasTeamHistory.ok, true);
+assert.equal(aliasTeamHistory.tag, 'ipbl-66-w-pro-k');
+assert.equal(aliasTeamHistory.teamId, 76016);
+assert.equal(aliasTeamHistory.defaultedSeason, true);
 
 const womenTeamHistory = resolveTeamHistoryQuery(new URLSearchParams('teamId=76016&tag=ipbl-66-w-pro-k&range=30'), now);
 assert.equal(womenTeamHistory.ok, true);

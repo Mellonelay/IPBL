@@ -239,6 +239,19 @@ async function readLatest(redis: RecorderRedis, gameKey: string): Promise<Record
   return value;
 }
 
+function parseJsonRecord(value: unknown): Record<string, unknown> | null {
+  if (!value) return null;
+  if (typeof value === "string") {
+    try {
+      const parsed = JSON.parse(value) as unknown;
+      return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : null;
+    } catch {
+      return null;
+    }
+  }
+  return typeof value === "object" ? value as Record<string, unknown> : null;
+}
+
 export async function recordLiveEnvelope(redis: RecorderRedis, envelope: LiveFeedEnvelope, capturedAtMs = Date.now()): Promise<RecorderRun> {
   const games = Array.isArray(envelope?.games) ? envelope.games : [];
   const sourceStatus = envelope?.status && typeof envelope.status === "object" ? envelope.status : {};
@@ -295,6 +308,81 @@ export async function recordLiveEnvelope(redis: RecorderRedis, envelope: LiveFee
   await redis.ltrim(recorderKeys.runs, 0, RECORDER_RETENTION - 1);
   await redis.set(recorderKeys.status, JSON.stringify({ ...run, sourceDetails: sourceStatus }));
   return run;
+}
+
+function snapshotToScheduleGame(snapshot: RecordedLiveSnapshot): ScheduleGame {
+  return {
+    gameId: snapshot.gameId,
+    tag: snapshot.divisionTag,
+    status: snapshot.status,
+    statusDisplay: snapshot.statusDisplay,
+    upstreamStatusId: snapshot.sourceStatus,
+    score1: snapshot.score1,
+    score2: snapshot.score2,
+    scoreText: snapshot.scoreText,
+    fullScore: snapshot.fullScore,
+    localDate: snapshot.localDate,
+    localTime: snapshot.localTime,
+    divisionLabel: snapshot.divisionLabel,
+    period: snapshot.period,
+    timeToGo: snapshot.timeToGo,
+    timeIsGo: snapshot.timeIsGo,
+    isLive: snapshot.isLive,
+    updatedAt: snapshot.capturedAtMs,
+    scheduledTime: snapshot.scheduledTime,
+    sourceLocalDate: snapshot.localDate,
+    sourceLocalTime: snapshot.localTime,
+    sourceTimeZone: snapshot.displayTimeZone ?? undefined,
+    displayTimeZone: snapshot.displayTimeZone ?? undefined,
+    team1: snapshot.team1,
+    team2: snapshot.team2,
+  };
+}
+
+export async function readRecordedLiveFeed(redis: RecorderRedis): Promise<LiveFeedEnvelope> {
+  const [statusRaw, activeSet] = await Promise.all([
+    redis.get<unknown>(recorderKeys.status),
+    redis.smembers(recorderKeys.active),
+  ]);
+  const summary = parseJsonRecord(statusRaw) ?? {};
+  const sourceDetails = summary && typeof summary === "object" && "sourceDetails" in summary
+    ? (summary.sourceDetails as LiveSourceStatus)
+    : {};
+  const activeGameKeys = activeSet.length > 0
+    ? activeSet
+    : Array.isArray(summary.activeGameKeys)
+      ? summary.activeGameKeys.filter((value): value is string => typeof value === "string")
+      : [];
+  const latestRows = await Promise.all(activeGameKeys.map((gameKey) => redis.get<RecordedLiveSnapshot | string>(recorderKeys.gameLatest(gameKey))));
+  const games = latestRows.flatMap((row) => {
+    if (!row) return [];
+    const snapshot = typeof row === "string"
+      ? (() => {
+          try { return JSON.parse(row) as RecordedLiveSnapshot; } catch { return null; }
+        })()
+      : row;
+    return snapshot ? [snapshotToScheduleGame(snapshot)] : [];
+  }).sort((left, right) => (right.updatedAt ?? 0) - (left.updatedAt ?? 0));
+
+  return {
+    games,
+    status: {
+      ...sourceDetails,
+      lastSyncAt: typeof summary.lastSyncAt === "string" ? summary.lastSyncAt : sourceDetails.lastSyncAt ?? null,
+      source: typeof summary.source === "string" ? summary.source : sourceDetails.source ?? "recorder",
+      status: typeof summary.sourceStatus === "string" ? summary.sourceStatus : sourceDetails.status ?? "OK",
+      fallbackFrom: sourceDetails.fallbackFrom ?? null,
+      requestedDivisions: Number(sourceDetails.requestedDivisions ?? activeGameKeys.length ?? 13),
+      successfulDivisions: Number(sourceDetails.successfulDivisions ?? new Set(games.map((game) => game.tag)).size),
+      failures: Array.isArray(sourceDetails.failures) ? sourceDetails.failures : [],
+      bookmakerSourceLeagues: Array.isArray(sourceDetails.bookmakerSourceLeagues) ? sourceDetails.bookmakerSourceLeagues : [],
+      bookmakerSourceFailures: Array.isArray(sourceDetails.bookmakerSourceFailures) ? sourceDetails.bookmakerSourceFailures : [],
+      receivedBookmakerEvents: Number(sourceDetails.receivedBookmakerEvents ?? 0),
+      unmatchedBookmakerEvents: Array.isArray(sourceDetails.unmatchedBookmakerEvents) ? sourceDetails.unmatchedBookmakerEvents : [],
+      latencyMs: Number(sourceDetails.latencyMs ?? 0),
+      displayTimeZone: sourceDetails.displayTimeZone ?? "Asia/Yangon",
+    },
+  };
 }
 
 export function isAuthorizedCronRequest(authorization: string | undefined, secret: string | undefined): boolean {

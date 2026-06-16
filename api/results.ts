@@ -40,23 +40,21 @@ export type ResolvedResultsQuery = {
 } | { ok: false; status: number; error: string };
 
 export function resolveResultsQuery(query: VercelRequest["query"], now = new Date()): ResolvedResultsQuery {
-    const divisionTag = firstQueryValue(query.division) ?? firstQueryValue(query.tag) ?? "";
-    if (!divisionTag) return { ok: false, status: 400, error: "Missing division" };
-
     const yearRaw = firstQueryValue(query.year);
     const monthRaw = firstQueryValue(query.month);
     const defaults = defaultResultsYearMonth(now);
     const parsedYear = yearRaw ? Number(yearRaw) : defaults.year;
     const parsedMonth = monthRaw ? Number(monthRaw) : defaults.month;
     const defaultedYearMonth = !yearRaw || !monthRaw;
+    const requestedDivision = firstQueryValue(query.division) ?? firstQueryValue(query.tag) ?? firstQueryValue(query.divisionTag) ?? "";
+    const normalizedDivision = syncConstants.normalizeResultsDivisionTag(requestedDivision);
+    const fallbackDivision = syncConstants.resultsSyncTagsForMonth(parsedYear, parsedMonth)[0] ?? syncConstants.DEFAULT_RESULTS_DIVISION_TAG;
+    const divisionTag = normalizedDivision ?? fallbackDivision;
 
     if (!Number.isInteger(parsedYear) || !Number.isInteger(parsedMonth) || parsedMonth < 1 || parsedMonth > 12) {
         return { ok: false, status: 400, error: "Invalid year or month" };
     }
-    if (
-        !syncConstants.isApprovedResultsTag(divisionTag)
-        || !syncConstants.resultsSyncTagsForMonth(parsedYear, parsedMonth).includes(divisionTag)
-    ) {
+    if (!syncConstants.resultsSyncTagsForMonth(parsedYear, parsedMonth).includes(divisionTag)) {
         return { ok: false, status: 400, error: "Unknown or disallowed division for requested month" };
     }
     return {

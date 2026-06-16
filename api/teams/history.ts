@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getResultsRedis } from "../../lib/server/results-redis.js";
-import { IPBL_API_BASE, RESULTS_LANG, isApprovedResultsTag, resultsKvKey } from "../../lib/server/results-sync-constants.js";
+import { IPBL_API_BASE, RESULTS_LANG, normalizeResultsDivisionTag, resultsKvKey } from "../../lib/server/results-sync-constants.js";
+import { teamsForDivision } from "../../src/config/teams.js";
 import {
   mergeTeamHistoryItems,
   officialOnlineTeamHistoryItems,
@@ -90,16 +91,20 @@ export type ResolvedTeamHistoryQuery = {
 } | { ok: false; status: number; error: string };
 
 export function resolveTeamHistoryQuery(search: URLSearchParams, now = new Date()): ResolvedTeamHistoryQuery {
-  const teamId = Number(search.get("teamId") ?? "");
-  const tag = search.get("tag") ?? "";
+  const requestedTag = search.get("tag") ?? search.get("division") ?? "";
+  const tag = normalizeResultsDivisionTag(requestedTag) ?? "ipbl-66-m-pro-a";
   const seasonRaw = search.get("season");
   const season = seasonRaw ? Number(seasonRaw) : currentSeason(now);
+  const requestedTeamId = Number(search.get("teamId") ?? search.get("team") ?? "");
   const rangeRaw = search.get("range") ?? "all";
   const range = rangeRaw === "all" ? "all" : Number(rangeRaw);
+  const teamCandidates = teamsForDivision(tag);
+  const teamId = Number.isInteger(requestedTeamId) && requestedTeamId > 0
+    ? requestedTeamId
+    : teamCandidates[0]?.teamId ?? 0;
   if (!Number.isInteger(teamId) || teamId <= 0 || !Number.isInteger(season) || season < 2020 || !tag) {
     return { ok: false, status: 400, error: "Invalid teamId, tag, or season" };
   }
-  if (!isApprovedResultsTag(tag)) return { ok: false, status: 400, error: "Unsupported division tag" };
   if (!(range === "all" || range === 5 || range === 10 || range === 30)) {
     return { ok: false, status: 400, error: "Invalid range" };
   }

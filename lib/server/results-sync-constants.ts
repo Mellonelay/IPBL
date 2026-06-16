@@ -12,6 +12,8 @@ export function isApprovedResultsTag(tag: string): tag is (typeof RESULTS_SYNC_T
   return (RESULTS_SYNC_TAGS as readonly string[]).includes(tag);
 }
 
+export const DEFAULT_RESULTS_DIVISION_TAG = "ipbl-66-m-pro-a";
+
 export function resultsKvKey(year: number, month1to12: number, divisionTag: string): string {
   return `ipbl:results:${year}:${String(month1to12).padStart(2, "0")}:${divisionTag}`;
 }
@@ -39,8 +41,19 @@ export const DIVISION_LABEL_BY_TAG = Object.fromEntries(
   DIVISION_ROWS.map((d) => [d.tag, d.label] as const)
 ) as Record<string, string>;
 
+export const DIVISION_TAG_BY_LABEL = Object.fromEntries(
+  DIVISION_ROWS.map((d) => [d.label.toLowerCase(), d.tag] as const)
+) as Record<string, string>;
+
 export function canonicalDivisionLabel(tag: string): string | null {
   return DIVISION_LABEL_BY_TAG[tag] ?? null;
+}
+
+export function normalizeResultsDivisionTag(value: string | null | undefined): string | null {
+  const raw = String(value ?? "").trim();
+  if (!raw) return null;
+  if (isApprovedResultsTag(raw)) return raw;
+  return DIVISION_TAG_BY_LABEL[raw.toLowerCase()] ?? null;
 }
 
 export function resultsMetadataKey(year: number, month1to12: number, divisionTag: string): string {

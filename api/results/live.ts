@@ -1,5 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { parseCalendarItems, type ScheduleGame } from "../../lib/server/calendar-normalize.js";
+import { getResultsRedis } from "../../lib/server/results-redis.js";
+import { readRecordedLiveFeed } from "../../lib/server/live-recorder.js";
 import { fetchMelbetLive, normalizeTeamName, type BookmakerLiveResult } from "../../lib/server/bookmaker-live.js";
 
 const PROXY_BASE = "https://worker.mloneslot99.com/ipbl-proxy";
@@ -80,6 +82,15 @@ export function mergeLiveGamesByFreshness(
 }
 
 export async function buildLiveFeedEnvelope(): Promise<LiveFeedEnvelope> {
+  const redis = getResultsRedis();
+  if (redis) {
+    try {
+      return await readRecordedLiveFeed(redis);
+    } catch {
+      // Fall through to legacy fetch path only if recorder access fails.
+    }
+  }
+
   const started = Date.now();
   const [batches, bookmakerSettled] = await Promise.all([
     Promise.all(LIVE_TAGS.map(fetchLiveTag)),
