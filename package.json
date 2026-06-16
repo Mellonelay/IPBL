@@ -36,6 +36,7 @@
     "test:h2h-freshness": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-live.test.ts",
     "test:h2h-continuity": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-recent-calendar.test.ts",
     "test:quarter-state-recorder": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/quarter-state-recorder.test.ts",
+    "test:ipbl-workload-graph": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-workload-graph.test.ts",
     "test:runtime-agent-graph": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/runtime-agent-graph.test.ts",
     "ops:vercel-preflight": "node scripts/ops/vercel-release-preflight.mjs",
     "reconcile:team-statistics": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs scripts/team-statistics-reconciliation.mjs",

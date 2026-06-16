@@ -1,6 +1,6 @@
 {
   "schema": "ipbl.graphify.phase-roadmap.v1",
-  "updatedAt": "2026-06-15",
+  "updatedAt": "2026-06-16",
   "status": "canonical_seed",
   "phases": [
     {
@@ -66,8 +66,8 @@
     {
       "id": "phase_10_ipbl_workload_graph",
       "name": "IPBL Workload Graph",
-      "state": "active",
-      "summary": "IPBL is the active workload God Node with live, official, bookmaker, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence subgraphs."
+      "state": "complete_materialized",
+      "summary": "Canonical read-only workload graph snapshot now materialized with live, official, bookmaker, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence subgraphs."
     },
     {
       "id": "phase_11_c9_intelligence",

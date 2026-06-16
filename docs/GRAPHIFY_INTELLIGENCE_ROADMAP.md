@@ -478,15 +478,17 @@ Track AgentNode, WorkflowNode, JobNode, ArtifactNode, AuditNode, RecoveryNode, a
 
 ### Phase 10 - IPBL Workload Graph
 
-Status: active.
+Status: complete / materialized.
 
 Includes Live Source, Official Source, Bookmaker Source, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence subgraphs.
+Canonical artifact: `artifacts/workload-graph/ipbl-workload-graph.json`.
 
 ### Phase 10 - IPBL Workload Graph
 
-Status: active.
+Status: complete / materialized.
 
 Includes Live Source, Official Source, Bookmaker Source, Results, Team Statistics, H2H, Recorder, Release, Evidence, and Operator Intelligence subgraphs.
+Canonical artifact: `artifacts/workload-graph/ipbl-workload-graph.json`.
 
 ### Phase 11 - C9 Intelligence
 

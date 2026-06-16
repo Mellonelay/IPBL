@@ -70,6 +70,15 @@ These phases are backed by durable evidence and validation coverage, but they re
   - Dedicated contract test at [tests/runtime-agent-graph.test.ts](/root/repos/IPBL/tests/runtime-agent-graph.test.ts)
   - Implementation module at [lib/server/runtime-agent-graph.ts](/root/repos/IPBL/lib/server/runtime-agent-graph.ts)
 
+## Phase 10: Fully Complete
+
+- Phase 10 - IPBL Workload Graph:
+  - Canonical read-only workload graph snapshot at [artifacts/workload-graph/ipbl-workload-graph.json](/root/repos/IPBL/artifacts/workload-graph/ipbl-workload-graph.json)
+  - Repository-derived workload index over live source, official source, bookmaker source, results, team statistics, H2H, recorder, release, evidence, and operator intelligence surfaces
+  - Dedicated contract test at [tests/ipbl-workload-graph.test.ts](/root/repos/IPBL/tests/ipbl-workload-graph.test.ts)
+  - Implementation module at [lib/server/ipbl-workload-graph.ts](/root/repos/IPBL/lib/server/ipbl-workload-graph.ts)
+  - Phase validator hook in [scripts/validate-phase-10-11.sh](/root/repos/IPBL/scripts/validate-phase-10-11.sh)
+
 ## Validation Entry Points
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)

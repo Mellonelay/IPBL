@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const APPROVED_LIVE_TAGS = [
   'ipbl-66-m-pro-a', 'ipbl-66-m-pro-b', 'ipbl-66-m-pro-c', 'ipbl-66-m-pro-d', 'ipbl-66-m-pro-u', 'ipbl-66-m-pro-z', 'ipbl-66-m-pro-l',
@@ -173,11 +174,13 @@ async function eventsstat(gameIds) {
   }
   return out;
 }
-async function main() {
-  const outPath = String(arg('--out','artifacts/phase-c9/pr23/row-reconciliation-latest.json'));
-  const prod = String(arg('--production-base','https://ipbl-minimal-viewer.vercel.app')).replace(/\/$/,'');
-  const proxyBase = String(arg('--official-proxy-base','https://worker.mloneslot99.com/ipbl-proxy')).replace(/\/$/,'');
-  const historyLimit = Number(arg('--history-limit','5')) || 5;
+export async function runPhaseC9RowReconciliation(options = {}) {
+  const outPath = String(options.outPath ?? arg('--out','artifacts/phase-c9/pr23/row-reconciliation-latest.json'));
+  const prod = String(options.productionBase ?? arg('--production-base','https://ipbl-minimal-viewer.vercel.app')).replace(/\/$/,'');
+  const proxyBase = String(options.officialProxyBase ?? arg('--official-proxy-base','https://worker.mloneslot99.com/ipbl-proxy')).replace(/\/$/,'');
+  const historyLimit = Number(options.historyLimit ?? arg('--history-limit','5')) || 5;
+  const allowFallbackGameIds = Boolean(options.allowFallbackGameIds ?? has('--allow-fallback-game-ids'));
+  const fallbackIds = (options.fallbackGameIds ?? String(arg('--fallback-game-ids','')).split(',').map(s=>s.trim()).filter(Boolean)).map(String);
   const endpoints = { officialLivePage: String(arg('--official-live-url','https://ipbl.pro/live')), productionLive: `${prod}/api/results/live?reconcile=${Date.now()}`, recorderStatus:`${prod}/api/recorder/status` };
   const [officialLivePage, officialCalendar, productionLive, recorderStatus, melbetLiveDiscovery] = await Promise.all([
     fetchJson('officialLivePage', endpoints.officialLivePage),
@@ -191,17 +194,21 @@ async function main() {
   const fetched = { officialLivePage, officialCalendar, productionLive, recorderStatus, recorderHistory, melbetLiveDiscovery };
   const rowSets = { officialCalendar:extract(officialCalendar.json).map((g,i)=>row('officialCalendar',g,i)), productionLive:productionRows, recorderHistory:extract(recorderHistory.json).map((g,i)=>row('recorderHistory',g,i)) };
   const activeIds = rowSets.productionLive.map(r=>r.gameId).filter(Boolean);
-  const fallbackIds = String(arg('--fallback-game-ids','')).split(',').map(s=>s.trim()).filter(Boolean);
   const melbetRows = extract(melbetLiveDiscovery.json).map((g,i)=>row('melbetLive',g,i));
   const melbetMatch = melbetIdsForActiveProduction(productionRows, melbetRows);
   const melbetCandidateIds = melbetRows.map((r)=>r.gameId).filter(Boolean);
-  const ids = activeIds.length ? [...new Set([...collectEventsStatIds(productionRows, productionLive.json, []), ...melbetCandidateIds, ...(has('--allow-fallback-game-ids') ? fallbackIds : [])])] : (has('--allow-fallback-game-ids') ? fallbackIds : []);
+  const ids = activeIds.length ? [...new Set([...collectEventsStatIds(productionRows, productionLive.json, []), ...melbetCandidateIds, ...(allowFallbackGameIds ? fallbackIds : [])])] : (allowFallbackGameIds ? fallbackIds : []);
   const ev = await eventsstat(ids); const rec = reconcile(rowSets);
   const provenIds = new Set(ev.filter((r)=>r.hasEG&&r.hasSH&&r.hasDS).map((r)=>String(r.gameId)));
   const matchedProven = melbetMatch.matches.filter((m)=>provenIds.has(String(m.melbetGameId)));
   const deterministicTeamPairEvidence = melbetMatch.matches.map((m)=>({ ...m, eventsstatProven: provenIds.has(String(m.melbetGameId)), requiredForOddsGate: true }));
   const activeMatchedEventsstatProven = matchedProven.length > 0;
-  const summary = { capturedAt:iso(), endpoints:Object.fromEntries(Object.entries(fetched).map(([k,v])=>[k,{url:v.url,http:v.http??null,ok:v.ok,bytes:v.bytes??null,error:v.error??null,contentType:v.contentType??null, components:Array.isArray(v.components)?v.components.map((c)=>({label:c.label,url:c.url,http:c.http??null,ok:c.ok,bytes:c.bytes??null,error:c.error??null})):undefined}])), rowCounts:Object.fromEntries(Object.entries(rowSets).map(([k,v])=>[k,v.length])), activeProductionGameIds:activeIds, melbetLiveCandidateCount:melbetRows.length, melbetCandidateIds, melbetMatchedActiveProduction:melbetMatch.matches, deterministicTeamPairEvidence, eventsstatProbeMode:activeIds.length?'active-production-games-with-melbet-live-discovery':(has('--allow-fallback-game-ids')?'fallback-game-ids-no-active-production-games':'skipped-no-active-production-games'), eventsstatProbeIds:ids, eventsstatProven:ev.some(r=>r.hasEG&&r.hasSH&&r.hasDS), activeMatchedEventsstatProven, activeMatchedEventsstatProofs:matchedProven, partner8Proven:ev.some(r=>r.partner===8&&r.hasEG&&r.hasSH&&r.hasDS), partner25Proven:ev.some(r=>r.partner===25&&r.hasEG&&r.hasSH&&r.hasDS), oddsImplementationGate:{ requiresActiveMatchedEventsstatProven:true, activeMatchedEventsstatProven, passed:activeMatchedEventsstatProven, blocksOddsImplementation:!activeMatchedEventsstatProven }, reconciliation:{primarySource:rec.primarySource,matchCount:rec.matches.length,missingCount:rec.missing.length,mismatchCount:rec.mismatches.length,classification:rec.mismatches.length===0&&rec.missing.length===0&&rec.matches.length>0?'RECONCILED':'PARTIAL'}, oddsDeploymentAllowed:false, oddsDeploymentBlockReason: activeMatchedEventsstatProven ? 'PR23 proves active matched EG/SH/DS but remains reconciliation/proof only; odds implementation still requires separate approved scope, parser policy, tests, and review.' : 'PR23 is reconciliation/proof only; live odds deployment requires activeMatchedEventsstatProven=true, row-level reconciliation, source policy, and tests.' };
+  const summary = { capturedAt:iso(), endpoints:Object.fromEntries(Object.entries(fetched).map(([k,v])=>[k,{url:v.url,http:v.http??null,ok:v.ok,bytes:v.bytes??null,error:v.error??null,contentType:v.contentType??null, components:Array.isArray(v.components)?v.components.map((c)=>({label:c.label,url:c.url,http:c.http??null,ok:c.ok,bytes:c.bytes??null,error:c.error??null})):undefined}])), rowCounts:Object.fromEntries(Object.entries(rowSets).map(([k,v])=>[k,v.length])), activeProductionGameIds:activeIds, melbetLiveCandidateCount:melbetRows.length, melbetCandidateIds, melbetMatchedActiveProduction:melbetMatch.matches, deterministicTeamPairEvidence, eventsstatProbeMode:activeIds.length?'active-production-games-with-melbet-live-discovery':(allowFallbackGameIds?'fallback-game-ids-no-active-production-games':'skipped-no-active-production-games'), eventsstatProbeIds:ids, eventsstatProven:ev.some(r=>r.hasEG&&r.hasSH&&r.hasDS), activeMatchedEventsstatProven, activeMatchedEventsstatProofs:matchedProven, partner8Proven:ev.some(r=>r.partner===8&&r.hasEG&&r.hasSH&&r.hasDS), partner25Proven:ev.some(r=>r.partner===25&&r.hasEG&&r.hasSH&&r.hasDS), oddsImplementationGate:{ requiresActiveMatchedEventsstatProven:true, activeMatchedEventsstatProven, passed:activeMatchedEventsstatProven, blocksOddsImplementation:!activeMatchedEventsstatProven }, reconciliation:{primarySource:rec.primarySource,matchCount:rec.matches.length,missingCount:rec.missing.length,mismatchCount:rec.mismatches.length,classification:rec.mismatches.length===0&&rec.missing.length===0&&rec.matches.length>0?'RECONCILED':'PARTIAL'}, oddsDeploymentAllowed:false, oddsDeploymentBlockReason: activeMatchedEventsstatProven ? 'PR23 proves active matched EG/SH/DS but remains reconciliation/proof only; odds implementation still requires separate approved scope, parser policy, tests, and review.' : 'PR23 is reconciliation/proof only; live odds deployment requires activeMatchedEventsstatProven=true, row-level reconciliation, source policy, and tests.' };
   await fs.mkdir(path.dirname(outPath),{recursive:true}); await fs.writeFile(outPath,JSON.stringify({summary,fetched,rowSets,reconciliation:rec,eventsstat:ev},null,2)); console.log(JSON.stringify(summary,null,2));
+  return { summary, fetched, rowSets, reconciliation: rec, eventsstat: ev };
 }
-main().catch(e=>{console.error(e?.stack||e);process.exit(1)});
+
+const isEntryPoint = path.resolve(process.argv[1] ?? '') === fileURLToPath(import.meta.url);
+if (isEntryPoint) {
+  runPhaseC9RowReconciliation().catch(e=>{console.error(e?.stack||e);process.exit(1)});
+}
