@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mergeLiveGamesByFreshness } from "../api/results/live.ts";
+import { mergeLiveGamesByFreshness, officialGameDetailIsTerminal, reconcileLiveGamesWithOfficialDetail } from "../api/results/live.ts";
 import type { ScheduleGame } from "../lib/server/calendar-normalize.ts";
 
 function game(overrides: Partial<ScheduleGame>): ScheduleGame {
@@ -50,3 +50,43 @@ assert.equal(merged[0].scoreText, "23 : 18");
 assert.equal(merged[0].timeToGo, "04:02");
 
 console.log("Live feed freshness merge tests passed");
+
+
+const terminalOfficialPayload = {
+  data: {
+    status: "Ok",
+    result: {
+      game: { gameStatus: "ResultConfirmed", score1: 101, score2: 96 },
+      status: { id: "ResultConfirmed", displayName: "Завершена" },
+    },
+  },
+};
+
+assert.equal(officialGameDetailIsTerminal(terminalOfficialPayload), true);
+
+const originalFetch = globalThis.fetch;
+globalThis.fetch = async () => new Response(JSON.stringify(terminalOfficialPayload), {
+  status: 200,
+  headers: { "content-type": "application/json" },
+});
+try {
+  const staleGhost = game({
+    gameId: 1073505,
+    tag: "ipbl-66-w-pro-a",
+    score1: 81,
+    score2: 76,
+    scoreText: "81 : 76",
+    team1: { teamId: 76021, shortName: "Bryansk", name: "Bryansk" },
+    team2: { teamId: 76023, shortName: "Izhevsk", name: "Izhevsk" },
+    upstreamStatusId: "melbet-live",
+    sourceTimeZone: "bookmaker-epoch",
+  });
+  const reconciled = await reconcileLiveGamesWithOfficialDetail([staleGhost]);
+  assert.equal(reconciled.checked, 1);
+  assert.equal(reconciled.dropped, 1);
+  assert.equal(reconciled.games.length, 0);
+} finally {
+  globalThis.fetch = originalFetch;
+}
+
+console.log("Official-detail live reconciliation tests passed");
