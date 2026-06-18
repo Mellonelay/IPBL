@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "ipbl.operator-intelligence-refresh-plan.v1",
+  "generatedAt": "2026-06-18T20:43:20Z",
+  "phase": 12,
+  "inputs": [
+    "artifacts/operator-intelligence/operator-intelligence.json",
+    "src/operator/data.ts",
+    "lib/server/operator-intelligence.ts",
+    "tests/operator-intelligence.test.ts",
+    "artifacts/team-statistics/team-statistics-reconciliation-latest.json",
+    "docs/H2H_FRESHNESS_REPAIR.md",
+    "docs/H2H_CONTINUITY_REPAIR.md",
+    "artifacts/phase-c9/pr23/row-reconciliation-latest.json",
+    "artifacts/phase-c9/pr23/eventsstat-reprobe-latest.json"
+  ],
+  "refreshCommands": [
+    "npm run test:operator-intelligence",
+    "npm run test:ipbl-workload-graph",
+    "npm run test:bookmaker-live",
+    "npm run test:c9-contracts",
+    "npm run test:c9-reconciliation",
+    "npm run test:c9-active-matched-gate"
+  ],
+  "backtestLoop": [
+    "Refresh the supporting evidence artifacts.",
+    "Rebuild the operator intelligence report from repository-backed inputs.",
+    "Run the operator-intelligence test.",
+    "Compare the rebuilt report to the canonical artifact.",
+    "Keep recommendations disabled until holdout validation becomes release-grade."
+  ],
+  "dataQualityScoring": {
+    "priorityOrder": [
+      "recorder coverage",
+      "H2H freshness",
+      "odds coverage",
+      "C9 reconciliation coverage",
+      "backtest stability"
+    ],
+    "penalties": [
+      "stale live rows",
+      "conflicting official and bookmaker rows",
+      "missing replay evidence",
+      "unsupported recommendation mode"
+    ]
+  },
+  "evidenceDependencies": [
+    "Recorder alignment and live division coverage",
+    "H2H freshness repair and continuity repair",
+    "Odds movement and quarter-based backtest evidence",
+    "C9 row reconciliation and EventsStat contracts",
+    "Workload graph evidence"
+  ],
+  "currentGaps": [
+    "Recommendations are disabled.",
+    "The artifact remains evidence_only.",
+    "Holdout validation is blocked until recorder, H2H, odds, and backtest evidence are all release-grade.",
+    "Browser proof is not part of this artifact."
+  ],
+  "validationSteps": [
+    "Parse the JSON artifact.",
+    "Run the operator-intelligence test.",
+    "Confirm the artifact matches buildOperatorIntelligenceReport().",
+    "Re-run upstream workload and reconciliation tests when supporting evidence changes."
+  ]
+}
+

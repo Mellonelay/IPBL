@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "ipbl.graphify-freshness-report.v1",
+  "generatedAt": "2026-06-18T20:43:20Z",
+  "currentGraphArtifactPaths": [
+    "graphify-out/graph.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.html",
+    "graphify-out/obsidian/",
+    "graphify-out/.graphify_analysis.json",
+    "graphify-out/.graphify_ast.json"
+  ],
+  "currentGodNodeArtifactPaths": [
+    "artifacts/graphify/god-node-ledger.json",
+    "artifacts/graphify/phase-roadmap.json",
+    ".code-review-graph/graph.db"
+  ],
+  "freshnessRisks": [
+    "Graphify artifacts can drift after docs or code edits until `graphify update .` runs.",
+    "The God Node ledger can lag behind the latest graph extraction.",
+    "Phase roadmap summaries can become stale after closure packaging changes.",
+    "Community snapshots can diverge from the current repository topology."
+  ],
+  "regeneration": {
+    "commands": [
+      "graphify update .",
+      "graphify query \"phase closure evidence supersession\"",
+      "graphify path \"live-source\" \"operator-intelligence\"",
+      "graphify explain \"God Node\""
+    ],
+    "notes": [
+      "Keep regeneration read-only with respect to production data.",
+      "Refresh downstream docs after graph output changes."
+    ]
+  },
+  "verification": {
+    "commands": [
+      "python -m json.tool graphify-out/graph.json",
+      "python -m json.tool artifacts/graphify/god-node-ledger.json",
+      "npm run test:source-archaeology-graph",
+      "npm run test:runtime-agent-graph",
+      "npm run test:visualization-catalog"
+    ],
+    "expectedOutcome": "Graph, God Node, and visualization surfaces should agree on read-only source paths and current materialization status."
+  },
+  "driftDetection": {
+    "signals": [
+      "graphify-out/graph.json timestamp newer than evidence docs without matching doc refresh",
+      "missing file paths in graph report or artifact links",
+      "community count or hub labels changing unexpectedly",
+      "God Node ledger status diverging from the extracted graph"
+    ]
+  }
+}
+
