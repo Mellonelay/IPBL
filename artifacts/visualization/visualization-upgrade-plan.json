@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "ipbl.visualization-upgrade-plan.v1",
+  "generatedAt": "2026-06-18T20:43:20Z",
+  "phase": 13,
+  "frontendOwnedSurfaces": [
+    "graph and evidence navigation",
+    "catalog presentation",
+    "read-only drill-down views",
+    "export discovery affordances"
+  ],
+  "backendOwnedDataContracts": [
+    "artifacts/visualization/visualization-catalog.json",
+    "lib/server/visualization-catalog.ts",
+    "tests/visualization-catalog.test.ts",
+    "artifacts/evidence/evidence-supersession-index.json",
+    "artifacts/graphify/freshness/graphify-freshness-report.json",
+    "artifacts/graphify/freshness/god-node-freshness-report.json"
+  ],
+  "drilldownMap": [
+    "Graphify graph and report anchor the source layer.",
+    "Evidence supersession explains artifact lineage.",
+    "The workload graph binds live, results, H2H, recorder, and operator-intelligence surfaces.",
+    "The visualization catalog exposes those surfaces without owning truth."
+  ],
+  "exportFidelityRequirements": [
+    "Preserve stable artifact paths.",
+    "Preserve schema and phase labels.",
+    "Preserve node and evidence identifiers.",
+    "Keep exports read-only.",
+    "Do not rewrite source truth in the frontend."
+  ],
+  "uiVerificationChecklist": [
+    "npm run test:visualization-catalog",
+    "npm run build",
+    "Browser inspect the catalog pages if browser tooling is available.",
+    "Confirm no write actions are exposed.",
+    "Confirm the UI surfaces paths and relationships rather than replacing them."
+  ]
+}
+

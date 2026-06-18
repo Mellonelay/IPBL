@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "ipbl.live-source-drift-check.v1",
+  "generatedAt": "2026-06-18T20:43:20Z",
+  "incident": {
+    "gameId": 1073505,
+    "matchup": "Bryansk vs Izhevsk",
+    "staleScore": "81:76",
+    "summary": "A stale live row appeared and was later corrected by the live freshness merge and official-detail terminal reconciliation path."
+  },
+  "invariant": "Official-detail-vs-live-feed freshness must prefer the freshest verified matchup state and drop stale live rows from current live presentation.",
+  "apiVerificationProcedure": [
+    "Request /api/results/live with a timestamp query to avoid cache reuse.",
+    "Confirm read-only response headers and non-stale cache behavior.",
+    "Check that the stale 1073505 row is absent from the current live payload.",
+    "Repeat the request once to confirm stability."
+  ],
+  "browserVerificationProcedure": [
+    "Open the live tab in a read-only browser session.",
+    "Confirm the rendered live card uses the freshest row.",
+    "Confirm the stale Bryansk vs Izhevsk score does not reappear in the UI.",
+    "If browser tooling is unavailable, fall back to the API verification procedure and record the limitation."
+  ],
+  "cacheBustingProcedure": [
+    "Use cache: no-store in live fetches.",
+    "Append a timestamp query parameter when probing the live endpoint.",
+    "Clear local fetch caches before repeating the probe.",
+    "Avoid memoized reuse of stale insight.game objects."
+  ],
+  "vercelObservabilityProcedure": [
+    "Use vercel inspect in read-only mode when available.",
+    "Use vercel logs --limit 50 in read-only mode when available.",
+    "Match deployment evidence to branch, commit SHA, and deployment URL.",
+    "Treat CDN staleness and application staleness as separate failure modes."
+  ],
+  "expectedResult": "No stale 1073505 row appears as the current live row."
+}
+

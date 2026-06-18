@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "ipbl.evidence-supersession-index.v1",
+  "generatedAt": "2026-06-18T20:43:20Z",
+  "sourcesScanned": [
+    "docs/PHASE_FINAL_MASTER_LEDGER.md",
+    "docs/PHASE_MASTER_INDEX.md",
+    "docs/PHASE_MASTER_CHECKLIST.md",
+    "docs/GRAPHIFY_INTELLIGENCE_ROADMAP.md",
+    "docs/PHASE_4_5_EVIDENCE_MANIFEST.md",
+    "docs/PHASE_6_7_EVIDENCE_MANIFEST.md",
+    "docs/PHASE_10_11_EVIDENCE_MANIFEST.md",
+    "docs/H2H_CONTINUITY_REPAIR.md",
+    "docs/H2H_FRESHNESS_REPAIR.md",
+    "tests/live-feed-freshness.test.ts",
+    "scripts/validate-phase-master.sh",
+    "artifacts/graphify/god-node-ledger.json",
+    "artifacts/graphify/phase-roadmap.json",
+    "artifacts/team-statistics/team-statistics-reconciliation-latest.json",
+    "artifacts/phase-c9/pr23/row-reconciliation-latest.json",
+    "artifacts/phase-c9/pr23/eventsstat-reprobe-latest.json",
+    "artifacts/operator-intelligence/operator-intelligence.json",
+    "artifacts/visualization/visualization-catalog.json"
+  ],
+  "evidenceFamilies": [
+    {
+      "family": "phase_4_source_archaeology",
+      "canonicalArtifact": "artifacts/source-archaeology/source-archaeology-graph.json",
+      "status": "complete",
+      "supersedes": [
+        "docs/PHASE_4_5_EVIDENCE_MANIFEST.md"
+      ],
+      "evidence": [
+        "docs/PHASE_4_5_EVIDENCE_MANIFEST.md",
+        "tests/bookmaker-live.test.ts",
+        "tests/live-feed-freshness.test.ts"
+      ]
+    },
+    {
+      "family": "phase_5_evidence_graph",
+      "canonicalArtifact": "artifacts/evidence/evidence-supersession-index.json",
+      "status": "support_ready",
+      "supersedes": [
+        "docs/PHASE_4_5_EVIDENCE_MANIFEST.md"
+      ],
+      "evidence": [
+        "graphify-out/graph.json",
+        "graphify-out/GRAPH_REPORT.md",
+        "artifacts/graphify/god-node-ledger.json",
+        "artifacts/graphify/phase-roadmap.json"
+      ]
+    },
+    {
+      "family": "live_source_drift",
+      "canonicalArtifact": "artifacts/evidence/live-source-drift-check-latest.json",
+      "status": "complete_verified",
+      "supersedes": [
+        "docs/H2H_CONTINUITY_REPAIR.md",
+        "docs/H2H_FRESHNESS_REPAIR.md"
+      ],
+      "evidence": [
+        "tests/live-feed-freshness.test.ts",
+        "scripts/validate-phase-master.sh",
+        "docs/GRAPHIFY_INTELLIGENCE_ROADMAP.md"
+      ]
+    },
+    {
+      "family": "phase_10_workload_graph",
+      "canonicalArtifact": "artifacts/workload-graph/ipbl-workload-graph.json",
+      "status": "complete",
+      "supersedes": [
+        "docs/PHASE_10_11_EVIDENCE_MANIFEST.md"
+      ],
+      "evidence": [
+        "lib/server/ipbl-workload-graph.ts",
+        "tests/ipbl-workload-graph.test.ts",
+        "scripts/validate-phase-master.sh"
+      ]
+    },
+    {
+      "family": "phase_12_operator_intelligence",
+      "canonicalArtifact": "artifacts/operator-intelligence/operator-intelligence.json",
+      "status": "seeded_read_only",
+      "supersedes": [
+        "docs/OPERATOR_INTELLIGENCE_REFRESH_PLAN.md"
+      ],
+      "evidence": [
+        "lib/server/operator-intelligence.ts",
+        "tests/operator-intelligence.test.ts",
+        "src/operator/data.ts"
+      ]
+    },
+    {
+      "family": "phase_13_visualization",
+      "canonicalArtifact": "artifacts/visualization/visualization-catalog.json",
+      "status": "complete",
+      "supersedes": [
+        "docs/VISUALIZATION_DRILLDOWN_UPGRADE_PLAN.md"
+      ],
+      "evidence": [
+        "lib/server/visualization-catalog.ts",
+        "tests/visualization-catalog.test.ts",
+        "graphify-out/graph.json",
+        "graphify-out/obsidian/"
+      ]
+    }
+  ],
+  "staleLiveRowIncident": {
+    "gameId": 1073505,
+    "matchup": "Bryansk vs Izhevsk",
+    "staleScore": "81:76",
+    "latestVerification": {
+      "command": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-feed-freshness.test.ts",
+      "exitCode": 0,
+      "artifactPaths": [
+        "tests/live-feed-freshness.test.ts",
+        "scripts/validate-phase-master.sh",
+        "docs/GRAPHIFY_INTELLIGENCE_ROADMAP.md"
+      ]
+    }
+  },
+  "unresolvedGaps": [
+    "Browser-based live-tab proof was not run in this isolated workspace.",
+    "Graphify freshness reports are packaged here, but graph regeneration still depends on future repo changes."
+  ],
+  "validationCommands": [
+    "python -m json.tool artifacts/evidence/evidence-supersession-index.json",
+    "python -m json.tool artifacts/evidence/live-source-drift-check-latest.json",
+    "python -m json.tool artifacts/evidence/ipbl-phase-closure-upgrade-summary.json"
+  ]
+}
+
