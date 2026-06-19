@@ -212,7 +212,6 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
   const readFeed = deps.readRecordedLiveFeed ?? readRecordedLiveFeed;
   const fetchLive = deps.fetchLiveTag ?? fetchLiveTag;
   const fetchBookmaker = deps.fetchBookmakerLive ?? fetchBookmakerLive;
-  const reconcile = deps.reconcileLiveGamesWithOfficialDetail ?? reconcileLiveGamesWithOfficialDetail;
 
   const redis = getRedis();
   if (redis) {
