@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mergeBookmakerLiveResultsByGameId, parseBookmakerLivePayload, parseBookmakerLivePayloads, remainingClock } from "../lib/server/bookmaker-live.ts";
+import { mergeBookmakerLiveResultsByGameId, parseBookmakerLivePageHtml, parseBookmakerLivePayload, parseBookmakerLivePayloads, remainingClock } from "../lib/server/bookmaker-live.ts";
 
 const raw = {
   Success: true,
@@ -159,3 +159,43 @@ assert.equal(mergedMirrors.receivedEvents, 2);
 assert.equal(mergedMirrors.sourceFailures.length, 1);
 
 console.log("Bookmaker live adapter tests passed");
+
+const bookmakerPageFixture = `
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"SportsEvent","name":"Krasnodar - Tyumen","startDate":"2026-06-19T12:00:00Z","url":"https://melbet.com/en/live/basketball/2496666-ipbl-pro-division/730347660-krasnodar-tyumen"},
+  {"@context":"https://schema.org","@type":"SportsEvent","name":"Nalchik - Saratov","startDate":"2026-06-19T12:10:00Z","url":"https://melbet.com/en/live/basketball/2496666-ipbl-pro-division/730348653-nalchik-saratov"}
+]</script>
+<li class="dashboard-game--theme-gray-100 dashboard-game dashboard-champ__game">
+  <div class="dashboard-game-block">
+    <a href="/en/live/basketball/2496666-ipbl-pro-division/730347660-krasnodar-tyumen" class="dashboard-game-block__link">
+      <span class="ui-team-scores--size-m ui-team-scores--theme-gray-100 ui-team-scores dashboard-game-block__teams">
+        <span class="ui-team-scores__top">
+          <span class="ui-team-scores__teams ui-team-scores-teams">
+            <div class="dashboard-game-team-info dashboard-game-block__team"><div class="ui-team-score-name--nowrap ui-team-score-name"><span class="ui-caption--size-m ui-caption dashboard-game-team-info__name">Krasnodar</span></div></div>
+            <div class="dashboard-game-team-info dashboard-game-block__team"><div class="ui-team-score-name--nowrap ui-team-score-name"><span class="ui-caption--size-m ui-caption dashboard-game-team-info__name">Tyumen</span></div></div>
+          </span>
+          <div class="ui-scrollbar ui-team-scores__scores ui-team-scores-scores">
+            <span class="ui-game-scores--size-m ui-game-scores--theme-gray-100 ui-game-scores">
+              <span class="ui-game-scores__item ui-game-scores__item--total"><span class="ui-game-scores__num">82</span><span class="ui-game-scores__num">65</span></span>
+              <span class="ui-game-scores__item ui-game-scores__item--current"><span class="ui-game-scores__num">38</span><span class="ui-game-scores__num">21</span></span>
+              <span class="ui-game-scores__item"><span class="ui-game-scores__num">27</span><span class="ui-game-scores__num">28</span></span>
+              <span class="ui-game-scores__item"><span class="ui-game-scores__num">17</span><span class="ui-game-scores__num">16</span></span>
+            </span>
+          </div>
+        </span>
+      </span>
+    </a>
+  </div>
+</li>
+`;
+
+const bookmakerPageParsed = parseBookmakerLivePageHtml(bookmakerPageFixture, 2496666, "https://melbet.com");
+assert.equal(bookmakerPageParsed.games.length, 1);
+assert.equal(bookmakerPageParsed.unmatched.length, 0);
+assert.equal(bookmakerPageParsed.games[0].team1.shortName, "Krasnodar");
+assert.equal(bookmakerPageParsed.games[0].team2.shortName, "Tyumen");
+assert.equal(bookmakerPageParsed.games[0].scoreText, "82 : 65");
+assert.equal(bookmakerPageParsed.games[0].period, 3);
+assert.equal(bookmakerPageParsed.games[0].statusDisplay, "3rd quarter");
+
+console.log("Bookmaker page parsing tests passed");

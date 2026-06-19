@@ -238,13 +238,15 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
   const officialGames = [...byId.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
   const fallback = bookmakerSettled.ok ? bookmakerSettled.fallback : null;
   const bookmakerGames = fallback?.games ?? [];
-  const mergedCandidateGames = mergeLiveGamesByFreshness(officialGames, bookmakerGames);
-  const officialReconciliation = await reconcileLiveGamesWithOfficialDetail(mergedCandidateGames);
+  const liveCandidateGames = bookmakerGames.length > 0 ? bookmakerGames : mergeLiveGamesByFreshness(officialGames, bookmakerGames);
+  const officialReconciliation = await reconcileLiveGamesWithOfficialDetail(liveCandidateGames);
   const mergedGames = officialReconciliation.games;
 
   if (mergedGames.length > 0) {
-    const source = officialGames.length > 0 && bookmakerGames.length > 0
-      ? "official:api1.ipbl.pro+bookmaker:melbet.com+1xbet.com"
+    const bookmakerHealthy = !fallback || fallback.sourceFailures.length === 0;
+    const officialHealthy = failures.length === 0;
+    const source = bookmakerGames.length > 0
+      ? "bookmaker:melbet.com+1xbet.com"
       : officialGames.length > 0
         ? "official:api1.ipbl.pro"
         : "bookmaker:melbet.com+1xbet.com";
@@ -252,7 +254,9 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
       games: mergedGames,
       status: {
         lastSyncAt: new Date().toISOString(),
-        status: failures.length === 0 && (!fallback || (fallback.unmatched.length === 0 && fallback.sourceFailures.length === 0)) ? "OK" : "PARTIAL",
+        status: bookmakerGames.length > 0
+          ? bookmakerHealthy ? "OK" : "PARTIAL"
+          : officialHealthy && bookmakerHealthy ? "OK" : "PARTIAL",
         source,
         fallbackFrom: officialGames.length > 0 ? null : "official:api1.ipbl.pro",
         requestedDivisions: LIVE_TAGS.length,
