@@ -121,6 +121,37 @@ assert.equal(fallbackEnvelope.games[0].gameId, liveFallbackGame.gameId);
 
 console.log("Live envelope empty-recorder fallback test passed");
 
+const staleRecordedGame = game({
+  gameId: 730322521,
+  tag: "ipbl-66-w-pro-a",
+  team1: { teamId: 76022, shortName: "Magnitogorsk", name: "Magnitogorsk" },
+  team2: { teamId: 76023, shortName: "Izhevsk", name: "Izhevsk" },
+  score1: 60,
+  score2: 63,
+  scoreText: "60 : 63",
+  updatedAt: 1_500_000,
+});
+
+const liveWinsOverRecorderEnvelope = await buildLiveFeedEnvelope({
+  getResultsRedis: () => new EmptyRecorderRedis() as never,
+  readRecordedLiveFeed: async () => ({
+    games: [staleRecordedGame],
+    status: { source: "recorder", status: "OK" },
+  }) satisfies LiveFeedEnvelope,
+  fetchLiveTag: async () => ({
+    tag: liveFallbackGame.tag,
+    games: [liveFallbackGame],
+  }),
+  fetchBookmakerLive: async () => ({ games: [], unmatched: [], receivedEvents: 0, sourceLeagues: [], sourceFailures: [] }),
+  reconcileLiveGamesWithOfficialDetail: async (games) => ({ games, checked: 0, dropped: 0, updated: 0 }),
+});
+
+assert.equal(liveWinsOverRecorderEnvelope.games.length, 1);
+assert.equal(liveWinsOverRecorderEnvelope.games[0].gameId, liveFallbackGame.gameId);
+assert.equal(liveWinsOverRecorderEnvelope.games[0].team1.shortName, "Barnaul");
+
+console.log("Live envelope live-feed precedence over recorder tests passed");
+
 const bookmakerPreferredGame = game({
   gameId: 730347660,
   tag: "ipbl-66-m-pro-b",
