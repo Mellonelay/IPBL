@@ -18,12 +18,16 @@ const BOOKMAKER_IPBL_SOURCES: readonly BookmakerSourceConfig[] = [
   { name: "1xbet", baseUrl: "https://1xbet.com", partner: 25 },
 ] as const;
 
-function bookmakerIpblUrl(baseUrl: string, leagueId: number, partner: number): string {
-  return `${baseUrl}/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=${leagueId}&count=40&lng=en&gr=62&mode=4&country=169&partner=${partner}&getEmpty=true&virtualSports=true&noFilterBlockEvent=true`;
+function bookmakerPageSlug(leagueId: number): string {
+  return leagueId === 2496667 ? "ipbl-pro-division-women" : "ipbl-pro-division";
+}
+
+function bookmakerLivePageUrl(baseUrl: string, leagueId: number): string {
+  return `${baseUrl}/en/live/basketball/${leagueId}-${bookmakerPageSlug(leagueId)}`;
 }
 
 export const MELBET_IPBL_URLS = MELBET_IPBL_LEAGUES.map(({ leagueId }) =>
-  bookmakerIpblUrl(BOOKMAKER_IPBL_SOURCES[0].baseUrl, leagueId, BOOKMAKER_IPBL_SOURCES[0].partner)
+  bookmakerLivePageUrl(BOOKMAKER_IPBL_SOURCES[0].baseUrl, leagueId)
 );
 export const MELBET_IPBL_URL = MELBET_IPBL_URLS[0];
 
@@ -289,35 +293,213 @@ export function parseBookmakerLivePayload(raw: unknown): BookmakerLiveResult {
   return parseBookmakerLivePayloads([raw]);
 }
 
+type PageParsedBookmakerGame = {
+  leagueId: number;
+  gameId: number;
+  team1: string;
+  team2: string;
+  score1: number;
+  score2: number;
+  period: number | null;
+  fullScore: string | null;
+  statusDisplay: string;
+  scheduledTime: string | null;
+  pageUrl: string;
+};
+
+function stripHtmlComments(value: string): string {
+  return value.replace(/<!--[\s\S]*?-->/g, "");
+}
+
+function decodeHtmlText(value: string): string {
+  return stripHtmlComments(value)
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, "\"")
+    .replace(/&#39;/g, "'")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function quarterLabel(period: number | null): string {
+  if (period === null || period < 1) return "Live";
+  if (period === 1) return "1st quarter";
+  if (period === 2) return "2nd quarter";
+  if (period === 3) return "3rd quarter";
+  if (period === 4) return "4th quarter";
+  return `${period}th quarter`;
+}
+
+export function parseBookmakerLivePageHtml(html: string, leagueId: number, baseUrl: string): BookmakerLiveResult {
+  const jsonLdMatches = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  const startDates = new Map<string, string>();
+  for (const match of jsonLdMatches) {
+    try {
+      const parsed = JSON.parse(match[1]) as unknown;
+      const entries = Array.isArray(parsed) ? parsed : [parsed];
+      for (const entry of entries) {
+        if (!entry || typeof entry !== "object") continue;
+        const obj = entry as { ["@type"]?: string; url?: string; startDate?: string };
+        if (obj["@type"] === "SportsEvent" && typeof obj.url === "string" && typeof obj.startDate === "string") {
+          startDates.set(obj.url, obj.startDate);
+        }
+      }
+    } catch {
+      // Ignore malformed structured-data blocks and continue with visible DOM parsing.
+    }
+  }
+
+  const blocks = [...html.matchAll(/<a href="([^"]+\/(\d+)-[^"]+)" class="dashboard-game-block__link"[\s\S]*?<\/a>/g)];
+  const parsedGames: PageParsedBookmakerGame[] = [];
+  for (const blockMatch of blocks) {
+    const block = blockMatch[0];
+    const href = blockMatch[1];
+    const hrefParts = href.match(/\/en\/live\/basketball\/(\d+)-[^/]+\/(\d+)-[^"]+/);
+    if (!hrefParts) continue;
+    const blockLeagueId = Number(hrefParts[1]);
+    const gameId = Number(hrefParts[2]);
+    const pageUrl = href.startsWith("http") ? href : `${baseUrl}${href}`;
+    if (blockLeagueId !== leagueId) continue;
+
+    const cleaned = stripHtmlComments(block);
+    const teamNames = [...cleaned.matchAll(/dashboard-game-team-info__name"[^>]*>\s*([^<]+?)\s*</g)]
+      .map((match) => decodeHtmlText(match[1]))
+      .filter(Boolean);
+    const scoreNums = [...cleaned.matchAll(/ui-game-scores__num"[^>]*>(\d+)<\/span>/g)].map((match) => Number(match[1]));
+    if (teamNames.length < 2 || scoreNums.length < 2) continue;
+
+    const quarterPairs: string[] = [];
+    for (let index = 2; index + 1 < scoreNums.length; index += 2) {
+      quarterPairs.push(`${scoreNums[index]}:${scoreNums[index + 1]}`);
+    }
+
+    parsedGames.push({
+      leagueId: blockLeagueId,
+      gameId: gameId > 0 ? gameId : Number.NaN,
+      team1: teamNames[0],
+      team2: teamNames[1],
+      score1: scoreNums[0],
+      score2: scoreNums[1],
+      period: quarterPairs.length > 0 ? quarterPairs.length : null,
+      fullScore: quarterPairs.length > 0 ? quarterPairs.join(",") : null,
+      statusDisplay: quarterLabel(quarterPairs.length > 0 ? quarterPairs.length : null),
+      scheduledTime: startDates.get(pageUrl) ?? null,
+      pageUrl,
+    });
+  }
+
+  const games: ScheduleGame[] = [];
+  const unmatched: BookmakerLiveResult["unmatched"] = [];
+  for (const game of parsedGames.filter((item) => Number.isFinite(item.gameId))) {
+    const team1 = VERIFIED_TEAM_ALIASES[normalizeTeamName(game.team1)];
+    const team2 = VERIFIED_TEAM_ALIASES[normalizeTeamName(game.team2)];
+    if (!team1 || !team2) {
+      unmatched.push({
+        eventId: game.gameId,
+        leagueId,
+        sourceTeam1Id: null,
+        sourceTeam2Id: null,
+        team1: game.team1,
+        team2: game.team2,
+        reason: "unverified-team",
+        payloadState: "scored",
+      });
+      continue;
+    }
+    if (team1.tag !== team2.tag) {
+      unmatched.push({
+        eventId: game.gameId,
+        leagueId,
+        sourceTeam1Id: team1.teamId,
+        sourceTeam2Id: team2.teamId,
+        team1: game.team1,
+        team2: game.team2,
+        reason: "division-mismatch",
+        payloadState: "scored",
+      });
+      continue;
+    }
+    const display = game.scheduledTime ? formatMyanmar(Math.floor(new Date(game.scheduledTime).getTime() / 1000)) : formatMyanmar(null);
+    games.push({
+      gameId: game.gameId,
+      tag: team1.tag,
+      status: "Online",
+      statusDisplay: game.statusDisplay,
+      upstreamStatusId: "bookmaker-live-page",
+      score1: game.score1,
+      score2: game.score2,
+      scoreText: `${game.score1} : ${game.score2}`,
+      fullScore: game.fullScore,
+      localDate: display.date,
+      localTime: display.time,
+      scheduledTime: game.scheduledTime,
+      sourceLocalDate: null,
+      sourceLocalTime: null,
+      sourceTimeZone: "bookmaker-epoch",
+      displayTimeZone: "Asia/Yangon",
+      divisionLabel: team1.divisionLabel,
+      period: game.period,
+      timeToGo: null,
+      timeIsGo: 1,
+      isLive: true,
+      updatedAt: Date.now(),
+      team1: { teamId: team1.teamId, shortName: team1.shortName, name: team1.name },
+      team2: { teamId: team2.teamId, shortName: team2.shortName, name: team2.name },
+    });
+  }
+
+  return {
+    games,
+    unmatched,
+    receivedEvents: games.length + unmatched.length,
+    sourceLeagues: [leagueId],
+    sourceFailures: [],
+  };
+}
+
 async function fetchBookmakerSourceLive(source: BookmakerSourceConfig): Promise<BookmakerLiveResult> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15_000);
   try {
     const settled = await Promise.allSettled(MELBET_IPBL_LEAGUES.map(async ({ leagueId }) => {
-      const response = await fetch(bookmakerIpblUrl(source.baseUrl, leagueId, source.partner), {
+      const response = await fetch(bookmakerLivePageUrl(source.baseUrl, leagueId), {
         headers: {
-          Accept: "application/json",
+          Accept: "text/html,application/xhtml+xml",
           "User-Agent": `IPBL-Minimal-Viewer/1.0 (${source.name})`,
         },
         signal: controller.signal,
       });
       if (!response.ok) throw new Error(`${source.name} league ${leagueId} HTTP ${response.status}`);
-      return { leagueId, payload: await response.json() };
+      return { leagueId, payload: await response.text() };
     }));
 
-    const payloads: unknown[] = [];
     const sourceFailures: BookmakerLiveResult["sourceFailures"] = [];
+    const games: ScheduleGame[] = [];
+    const unmatched: BookmakerLiveResult["unmatched"] = [];
+    const sourceLeagues = new Set<number>();
     for (let index = 0; index < settled.length; index += 1) {
       const result = settled[index];
       const leagueId = MELBET_IPBL_LEAGUES[index].leagueId;
-      if (result.status === "fulfilled") payloads.push(result.value.payload);
-      else sourceFailures.push({ leagueId, error: result.reason instanceof Error ? result.reason.message : String(result.reason), source: source.name });
+      sourceLeagues.add(leagueId);
+      if (result.status === "rejected") {
+        sourceFailures.push({ leagueId, error: result.reason instanceof Error ? result.reason.message : String(result.reason), source: source.name });
+        continue;
+      }
+      const parsed = parseBookmakerLivePageHtml(result.value.payload, leagueId, source.baseUrl);
+      games.push(...parsed.games);
+      unmatched.push(...parsed.unmatched);
     }
-    if (payloads.length === 0) {
+    if (games.length === 0) {
       throw new Error(sourceFailures.map(({ leagueId, error }) => `${leagueId}: ${error}`).join("; ") || `${source.name} live sources failed`);
     }
-    const parsed = parseBookmakerLivePayloads(payloads);
-    return { ...parsed, sourceFailures };
+    return {
+      games,
+      unmatched,
+      receivedEvents: games.length + unmatched.length,
+      sourceLeagues: [...sourceLeagues].sort((a, b) => a - b),
+      sourceFailures,
+    };
   } finally {
     clearTimeout(timeout);
   }
