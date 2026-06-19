@@ -120,3 +120,48 @@ assert.equal(fallbackEnvelope.games.length, 1, "empty recorder state must not su
 assert.equal(fallbackEnvelope.games[0].gameId, liveFallbackGame.gameId);
 
 console.log("Live envelope empty-recorder fallback test passed");
+
+const bookmakerPreferredGame = game({
+  gameId: 730347660,
+  tag: "ipbl-66-m-pro-b",
+  team1: { teamId: 76050, shortName: "Krasnodar", name: "Krasnodar" },
+  team2: { teamId: 76052, shortName: "Tyumen", name: "Tyumen" },
+  score1: 82,
+  score2: 65,
+  scoreText: "82 : 65",
+  period: 3,
+  timeToGo: null,
+  updatedAt: 2_000_000,
+});
+
+const bookmakerPreferredEnvelope = await buildLiveFeedEnvelope({
+  getResultsRedis: () => new EmptyRecorderRedis() as never,
+  readRecordedLiveFeed: async () => ({ games: [], status: { source: "official:api1.ipbl.pro", status: "OK" } }) satisfies LiveFeedEnvelope,
+  fetchLiveTag: async () => ({
+    tag: bookmakerPreferredGame.tag,
+    games: [game({
+      gameId: 730323684,
+      tag: "ipbl-66-m-pro-b",
+      team1: { teamId: 76051, shortName: "Kazan", name: "Kazan" },
+      team2: { teamId: 76052, shortName: "Tyumen", name: "Tyumen" },
+      score1: 55,
+      score2: 64,
+      scoreText: "55 : 64",
+      updatedAt: 1_000_000,
+    })],
+  }),
+  fetchBookmakerLive: async () => ({
+    games: [bookmakerPreferredGame],
+    unmatched: [],
+    receivedEvents: 1,
+    sourceLeagues: [2496666],
+    sourceFailures: [],
+  }),
+  reconcileLiveGamesWithOfficialDetail: async (games) => ({ games, checked: 0, dropped: 0, updated: 0 }),
+});
+
+assert.equal(bookmakerPreferredEnvelope.games.length, 1);
+assert.equal(bookmakerPreferredEnvelope.games[0].gameId, bookmakerPreferredGame.gameId);
+assert.equal(bookmakerPreferredEnvelope.games[0].team1.shortName, "Krasnodar");
+
+console.log("Live envelope bookmaker-preferred source test passed");
