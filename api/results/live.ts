@@ -173,6 +173,14 @@ export type LiveFeedEnvelope = {
   status: Record<string, unknown>;
 };
 
+type LiveFeedDependencies = {
+  getResultsRedis?: typeof getResultsRedis;
+  readRecordedLiveFeed?: typeof readRecordedLiveFeed;
+  fetchLiveTag?: typeof fetchLiveTag;
+  fetchBookmakerLive?: typeof fetchBookmakerLive;
+  reconcileLiveGamesWithOfficialDetail?: typeof reconcileLiveGamesWithOfficialDetail;
+};
+
 function matchupKey(game: ScheduleGame): string {
   return [
     game.tag,
@@ -199,11 +207,20 @@ export function mergeLiveGamesByFreshness(
   return [...byMatchup.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
 }
 
-export async function buildLiveFeedEnvelope(): Promise<LiveFeedEnvelope> {
-  const redis = getResultsRedis();
+export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Promise<LiveFeedEnvelope> {
+  const getRedis = deps.getResultsRedis ?? getResultsRedis;
+  const readFeed = deps.readRecordedLiveFeed ?? readRecordedLiveFeed;
+  const fetchLive = deps.fetchLiveTag ?? fetchLiveTag;
+  const fetchBookmaker = deps.fetchBookmakerLive ?? fetchBookmakerLive;
+  const reconcile = deps.reconcileLiveGamesWithOfficialDetail ?? reconcileLiveGamesWithOfficialDetail;
+
+  const redis = getRedis();
   if (redis) {
     try {
-      return await reconcileLiveFeedEnvelope(await readRecordedLiveFeed(redis));
+      const recorded = await readFeed(redis);
+      if (recorded.games.length > 0) {
+        return await reconcileLiveFeedEnvelope(recorded);
+      }
     } catch {
       // Fall through to legacy fetch path only if recorder access fails.
     }
@@ -211,8 +228,8 @@ export async function buildLiveFeedEnvelope(): Promise<LiveFeedEnvelope> {
 
   const started = Date.now();
   const [batches, bookmakerSettled] = await Promise.all([
-    Promise.all(LIVE_TAGS.map(fetchLiveTag)),
-    fetchBookmakerLive()
+    Promise.all(LIVE_TAGS.map(fetchLive)),
+    fetchBookmaker()
       .then((fallback): { ok: true; fallback: BookmakerLiveResult } => ({ ok: true, fallback }))
       .catch((error): { ok: false; error: unknown } => ({ ok: false, error })),
   ]);

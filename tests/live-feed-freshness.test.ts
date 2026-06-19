@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { mergeLiveGamesByFreshness, officialGameDetailIsTerminal, reconcileLiveGamesWithOfficialDetail } from "../api/results/live.ts";
+import { buildLiveFeedEnvelope, mergeLiveGamesByFreshness, officialGameDetailIsTerminal, reconcileLiveGamesWithOfficialDetail } from "../api/results/live.ts";
+import type { LiveFeedEnvelope } from "../api/results/live.ts";
 import type { ScheduleGame } from "../lib/server/calendar-normalize.ts";
 
 function game(overrides: Partial<ScheduleGame>): ScheduleGame {
@@ -90,3 +91,32 @@ try {
 }
 
 console.log("Official-detail live reconciliation tests passed");
+
+class EmptyRecorderRedis {
+  async get() { return { sourceDetails: { source: "official:api1.ipbl.pro", status: "OK" }, activeGameKeys: [] }; }
+  async smembers() { return []; }
+}
+
+const liveFallbackGame = game({
+  gameId: 700,
+  tag: "ipbl-66-m-pro-a",
+  team1: { teamId: 76038, shortName: "Barnaul", name: "Barnaul" },
+  team2: { teamId: 76041, shortName: "Sochi", name: "Sochi" },
+  score1: 12,
+  score2: 9,
+  scoreText: "12 : 9",
+  updatedAt: 2_000_000,
+});
+
+const fallbackEnvelope = await buildLiveFeedEnvelope({
+  getResultsRedis: () => new EmptyRecorderRedis() as never,
+  readRecordedLiveFeed: async () => ({ games: [], status: { source: "official:api1.ipbl.pro", status: "OK" } }) satisfies LiveFeedEnvelope,
+  fetchLiveTag: async (tag: string) => tag === liveFallbackGame.tag ? { tag, games: [liveFallbackGame] } : { tag, games: [] },
+  fetchBookmakerLive: async () => ({ games: [], unmatched: [], receivedEvents: 0, sourceLeagues: [], sourceFailures: [] }),
+  reconcileLiveGamesWithOfficialDetail: async (games) => ({ games, checked: 0, dropped: 0, updated: 0 }),
+});
+
+assert.equal(fallbackEnvelope.games.length, 1, "empty recorder state must not suppress fresh live fetches");
+assert.equal(fallbackEnvelope.games[0].gameId, liveFallbackGame.gameId);
+
+console.log("Live envelope empty-recorder fallback test passed");
