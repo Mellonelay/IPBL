@@ -1,6 +1,6 @@
 import { LANG } from "../config/divisions";
 import { dedupeLiveGames, parseCalendarItems, parseTeamHistory } from "./normalize";
-import type { BoxScoreState, GameDetail, ScheduleGame, TeamHistoryGame } from "./types";
+import type { BoxScoreState, GameDetail, GameReplay, ScheduleGame, TeamHistoryGame } from "./types";
 
 const calCache = new Map<string, { at: number; rows: ScheduleGame[] }>();
 const teamCache = new Map<string, { at: number; rows: TeamHistoryGame[] }>();
@@ -26,6 +26,21 @@ async function getJson(path: string, search: string): Promise<unknown> {
     const timeout = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
     try {
         const r = await fetch(url, {
+            headers: { Accept: "application/json" },
+            signal: controller.signal,
+        });
+        if (!r.ok) throw new Error(`${r.status} ${path}`);
+        return r.json();
+    } finally {
+        window.clearTimeout(timeout);
+    }
+}
+
+async function getRootJson(path: string): Promise<unknown> {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    try {
+        const r = await fetch(path, {
             headers: { Accept: "application/json" },
             signal: controller.signal,
         });
@@ -84,6 +99,15 @@ export async function fetchBoxScore(gameId: number, tag: string): Promise<BoxSco
         return { raw, apiStatus: st, fetchedOk, fetchedAt: t };
     } catch {
         return { raw: null, apiStatus: null, fetchedOk: false, fetchedAt: t };
+    }
+}
+
+export async function fetchGameReplay(gameId: number): Promise<GameReplay | null> {
+    try {
+        const raw = await getRootJson(`/api/replay/game/${gameId}`);
+        return raw as GameReplay;
+    } catch {
+        return null;
     }
 }
 

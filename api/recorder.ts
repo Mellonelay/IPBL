@@ -1,9 +1,15 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getResultsRedis } from "../lib/server/results-redis.js";
 import { APPROVED_LIVE_TAGS, RECORDER_RETENTION, recorderKeys } from "../lib/server/live-recorder.js";
+import { buildGameReplay } from "../lib/server/replay-engine.js";
 import { evaluateRecorderHealth, SOURCE_HEALTH_POLICY } from "../lib/server/source-health.js";
 
 const approved = new Set<string>(APPROVED_LIVE_TAGS);
+
+type RecorderDependencies = {
+  getResultsRedis?: typeof getResultsRedis;
+  buildGameReplay?: typeof buildGameReplay;
+};
 
 function requestSearchParams(req: VercelRequest): URLSearchParams {
   const host = Array.isArray(req.headers.host) ? req.headers.host[0] : req.headers.host;
@@ -51,6 +57,21 @@ async function historyResponse(search: URLSearchParams, res: VercelResponse) {
   return res.status(200).json({ gameKey, newestFirst: true, count: snapshots.length, snapshots });
 }
 
+export async function replayResponse(search: URLSearchParams, res: VercelResponse, deps: RecorderDependencies = {}) {
+  const gameId = Number.parseInt(search.get("gameId") ?? "", 10);
+  if (!Number.isInteger(gameId) || gameId <= 0) return res.status(400).json({ error: "invalid_game_id" });
+  const getRedis = deps.getResultsRedis ?? getResultsRedis;
+  const buildReplay = deps.buildGameReplay ?? buildGameReplay;
+  const redis = getRedis();
+  if (!redis) return res.status(503).json({ error: "replay_storage_not_configured" });
+  const replay = await buildReplay(redis, gameId);
+  if (!replay.gameKey || replay.timeline.length === 0) return res.status(404).json({ error: "replay_not_found", gameId });
+  res.setHeader("Cache-Control", "no-store, max-age=0");
+  res.setHeader("CDN-Cache-Control", "no-store");
+  res.setHeader("Vercel-CDN-Cache-Control", "no-store");
+  return res.status(200).json(replay);
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") return res.status(405).json({ error: "method_not_allowed" });
   const search = requestSearchParams(req);
@@ -58,5 +79,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (mode === "status") return statusResponse(res);
   if (mode === "history") return historyResponse(search, res);
   if (mode === "health") return healthResponse(res);
+  if (mode === "replay") return replayResponse(search, res);
   return res.status(404).json({ error: "unknown_recorder_route" });
 }

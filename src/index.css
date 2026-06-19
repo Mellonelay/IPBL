@@ -623,6 +623,33 @@ button {
     margin-bottom: 0.35rem;
 }
 
+.replay-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.replay-item {
+    border-top: 1px solid var(--border);
+    padding-top: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.replay-item:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.replay-item-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+    font-size: 0.78rem;
+}
+
 .h2h-item {
     padding: 0.7rem 0;
     border-top: 1px solid var(--border);

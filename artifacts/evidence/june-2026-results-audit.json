@@ -1,0 +1,30 @@
+{
+  "scope": "June 2026 results audit",
+  "base_url": "https://ipbl-minimal-viewer.vercel.app",
+  "summary": {
+    "total_tags": 13,
+    "total_rows": 720,
+    "total_terminal_rows": 720,
+    "mismatch_count": 0,
+    "verified_through_date": "2026-06-19"
+  },
+  "per_tag": [
+    { "tag": "ipbl-66-m-pro-a", "accepted_rows": 90, "rows": 90, "terminal_rows": 90, "mismatch_count": 0 },
+    { "tag": "ipbl-66-m-pro-b", "accepted_rows": 86, "rows": 86, "terminal_rows": 86, "mismatch_count": 0 },
+    { "tag": "ipbl-66-m-pro-c", "accepted_rows": 62, "rows": 62, "terminal_rows": 62, "mismatch_count": 0 },
+    { "tag": "ipbl-66-m-pro-d", "accepted_rows": 90, "rows": 90, "terminal_rows": 90, "mismatch_count": 0 },
+    { "tag": "ipbl-66-m-pro-u", "accepted_rows": 48, "rows": 48, "terminal_rows": 48, "mismatch_count": 0 },
+    { "tag": "ipbl-66-m-pro-z", "accepted_rows": 24, "rows": 24, "terminal_rows": 24, "mismatch_count": 0 },
+    { "tag": "ipbl-66-m-pro-l", "accepted_rows": 24, "rows": 24, "terminal_rows": 24, "mismatch_count": 0 },
+    { "tag": "ipbl-66-w-pro-a", "accepted_rows": 80, "rows": 80, "terminal_rows": 80, "mismatch_count": 0 },
+    { "tag": "ipbl-66-w-pro-b", "accepted_rows": 84, "rows": 84, "terminal_rows": 84, "mismatch_count": 0 },
+    { "tag": "ipbl-66-w-pro-c", "accepted_rows": 52, "rows": 52, "terminal_rows": 52, "mismatch_count": 0 },
+    { "tag": "ipbl-66-w-pro-d", "accepted_rows": 30, "rows": 30, "terminal_rows": 30, "mismatch_count": 0 },
+    { "tag": "ipbl-66-w-pro-g", "accepted_rows": 20, "rows": 20, "terminal_rows": 20, "mismatch_count": 0 },
+    { "tag": "ipbl-66-w-pro-k", "accepted_rows": 30, "rows": 30, "terminal_rows": 30, "mismatch_count": 0 }
+  ],
+  "notes": [
+    "Results month rows matched official detail scores and quarter matrices after canonical colon normalization.",
+    "Replay route now has a local route test and frontend consumer, but production needs deployment to expose it live."
+  ]
+}
