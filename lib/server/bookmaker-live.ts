@@ -5,11 +5,26 @@ export const MELBET_IPBL_LEAGUES = [
   { leagueId: 2496667, label: "IPBL Pro Women" },
 ] as const;
 
-function melbetIpblUrl(leagueId: number): string {
-  return `https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=${leagueId}&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true`;
+type BookmakerSourceName = "melbet" | "1xbet";
+
+type BookmakerSourceConfig = {
+  name: BookmakerSourceName;
+  baseUrl: string;
+  partner: number;
+};
+
+const BOOKMAKER_IPBL_SOURCES: readonly BookmakerSourceConfig[] = [
+  { name: "melbet", baseUrl: "https://melbet.com", partner: 8 },
+  { name: "1xbet", baseUrl: "https://1xbet.com", partner: 25 },
+] as const;
+
+function bookmakerIpblUrl(baseUrl: string, leagueId: number, partner: number): string {
+  return `${baseUrl}/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=${leagueId}&count=40&lng=en&gr=62&mode=4&country=169&partner=${partner}&getEmpty=true&virtualSports=true&noFilterBlockEvent=true`;
 }
 
-export const MELBET_IPBL_URLS = MELBET_IPBL_LEAGUES.map(({ leagueId }) => melbetIpblUrl(leagueId));
+export const MELBET_IPBL_URLS = MELBET_IPBL_LEAGUES.map(({ leagueId }) =>
+  bookmakerIpblUrl(BOOKMAKER_IPBL_SOURCES[0].baseUrl, leagueId, BOOKMAKER_IPBL_SOURCES[0].partner)
+);
 export const MELBET_IPBL_URL = MELBET_IPBL_URLS[0];
 
 export type BookmakerSourceEvent = {
@@ -114,7 +129,7 @@ export type BookmakerLiveResult = {
   }>;
   receivedEvents: number;
   sourceLeagues: number[];
-  sourceFailures: Array<{ leagueId: number; error: string }>;
+  sourceFailures: Array<{ leagueId: number; error: string; source?: BookmakerSourceName }>;
 };
 
 export function normalizeTeamName(value: string): string {
@@ -274,19 +289,19 @@ export function parseBookmakerLivePayload(raw: unknown): BookmakerLiveResult {
   return parseBookmakerLivePayloads([raw]);
 }
 
-export async function fetchMelbetLive(): Promise<BookmakerLiveResult> {
+async function fetchBookmakerSourceLive(source: BookmakerSourceConfig): Promise<BookmakerLiveResult> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15_000);
   try {
     const settled = await Promise.allSettled(MELBET_IPBL_LEAGUES.map(async ({ leagueId }) => {
-      const response = await fetch(melbetIpblUrl(leagueId), {
+      const response = await fetch(bookmakerIpblUrl(source.baseUrl, leagueId, source.partner), {
         headers: {
           Accept: "application/json",
-          "User-Agent": "IPBL-Minimal-Viewer/1.0",
+          "User-Agent": `IPBL-Minimal-Viewer/1.0 (${source.name})`,
         },
         signal: controller.signal,
       });
-      if (!response.ok) throw new Error(`MelBet league ${leagueId} HTTP ${response.status}`);
+      if (!response.ok) throw new Error(`${source.name} league ${leagueId} HTTP ${response.status}`);
       return { leagueId, payload: await response.json() };
     }));
 
@@ -296,14 +311,70 @@ export async function fetchMelbetLive(): Promise<BookmakerLiveResult> {
       const result = settled[index];
       const leagueId = MELBET_IPBL_LEAGUES[index].leagueId;
       if (result.status === "fulfilled") payloads.push(result.value.payload);
-      else sourceFailures.push({ leagueId, error: result.reason instanceof Error ? result.reason.message : String(result.reason) });
+      else sourceFailures.push({ leagueId, error: result.reason instanceof Error ? result.reason.message : String(result.reason), source: source.name });
     }
     if (payloads.length === 0) {
-      throw new Error(sourceFailures.map(({ leagueId, error }) => `${leagueId}: ${error}`).join("; ") || "MelBet live sources failed");
+      throw new Error(sourceFailures.map(({ leagueId, error }) => `${leagueId}: ${error}`).join("; ") || `${source.name} live sources failed`);
     }
     const parsed = parseBookmakerLivePayloads(payloads);
     return { ...parsed, sourceFailures };
   } finally {
     clearTimeout(timeout);
   }
+}
+
+function timestampByGameId(game: ScheduleGame): number {
+  return typeof game.updatedAt === "number" && Number.isFinite(game.updatedAt) ? game.updatedAt : 0;
+}
+
+export function mergeBookmakerLiveResultsByGameId(results: BookmakerLiveResult[]): BookmakerLiveResult {
+  const byGameId = new Map<number, ScheduleGame>();
+  const unmatched: BookmakerLiveResult["unmatched"] = [];
+  const sourceLeagues = new Set<number>();
+  const sourceFailures: BookmakerLiveResult["sourceFailures"] = [];
+  let receivedEvents = 0;
+
+  for (const result of results) {
+    receivedEvents += result.receivedEvents;
+    for (const leagueId of result.sourceLeagues) sourceLeagues.add(leagueId);
+    unmatched.push(...result.unmatched);
+    sourceFailures.push(...result.sourceFailures);
+    for (const game of result.games) {
+      const existing = byGameId.get(game.gameId);
+      if (!existing || timestampByGameId(game) >= timestampByGameId(existing)) byGameId.set(game.gameId, game);
+    }
+  }
+
+  return {
+    games: [...byGameId.values()].sort((a, b) => a.localTime.localeCompare(b.localTime)),
+    unmatched,
+    receivedEvents,
+    sourceLeagues: [...sourceLeagues].sort((a, b) => a - b),
+    sourceFailures,
+  };
+}
+
+export async function fetchMelbetLive(): Promise<BookmakerLiveResult> {
+  return fetchBookmakerSourceLive(BOOKMAKER_IPBL_SOURCES[0]);
+}
+
+export async function fetch1xbetLive(): Promise<BookmakerLiveResult> {
+  return fetchBookmakerSourceLive(BOOKMAKER_IPBL_SOURCES[1]);
+}
+
+export async function fetchBookmakerLive(): Promise<BookmakerLiveResult> {
+  const settled = await Promise.allSettled([fetchMelbetLive(), fetch1xbetLive()]);
+  const successes = settled.filter((entry): entry is PromiseFulfilledResult<BookmakerLiveResult> => entry.status === "fulfilled").map((entry) => entry.value);
+  const failures = settled.flatMap((entry, index) => {
+    if (entry.status === "fulfilled") return [];
+    return [{ leagueId: -1, error: entry.reason instanceof Error ? entry.reason.message : String(entry.reason), source: BOOKMAKER_IPBL_SOURCES[index].name }];
+  });
+  if (successes.length === 0) {
+    throw new Error(failures.map(({ source, error }) => `${source ?? "bookmaker"}: ${error}`).join("; ") || "Bookmaker live sources failed");
+  }
+  const merged = mergeBookmakerLiveResultsByGameId(successes);
+  return {
+    ...merged,
+    sourceFailures: [...merged.sourceFailures, ...failures],
+  };
 }

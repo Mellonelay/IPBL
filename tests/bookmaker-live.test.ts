@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { parseBookmakerLivePayload, parseBookmakerLivePayloads, remainingClock } from "../lib/server/bookmaker-live.ts";
+import { mergeBookmakerLiveResultsByGameId, parseBookmakerLivePayload, parseBookmakerLivePayloads, remainingClock } from "../lib/server/bookmaker-live.ts";
 
 const raw = {
   Success: true,
@@ -137,5 +137,25 @@ assert.equal(kurskLive.divisionLabel, "Pro Women K");
 assert.equal(kurskLive.team1.teamId, 76018);
 assert.equal(kurskLive.team2.teamId, 76017);
 assert.equal(kurskLive.scoreText, "0 : 0");
+
+const melbetMirror = {
+  games: [{ ...omskLive, updatedAt: 1_000 }],
+  unmatched: [],
+  receivedEvents: 1,
+  sourceLeagues: [2496666],
+  sourceFailures: [],
+};
+const oneXBetMirror = {
+  games: [{ ...omskLive, score1: 6, score2: 5, scoreText: "6 : 5", updatedAt: 2_000 }],
+  unmatched: [],
+  receivedEvents: 1,
+  sourceLeagues: [2496666],
+  sourceFailures: [{ leagueId: 2496666, error: "mirror-ok", source: "1xbet" as const }],
+};
+const mergedMirrors = mergeBookmakerLiveResultsByGameId([melbetMirror, oneXBetMirror]);
+assert.equal(mergedMirrors.games.length, 1);
+assert.equal(mergedMirrors.games[0].scoreText, "6 : 5");
+assert.equal(mergedMirrors.receivedEvents, 2);
+assert.equal(mergedMirrors.sourceFailures.length, 1);
 
 console.log("Bookmaker live adapter tests passed");
