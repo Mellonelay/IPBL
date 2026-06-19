@@ -1,5 +1,5 @@
 import type { ScheduleGame } from "./calendar-normalize.js";
-import { fetchMelbetLive } from "./bookmaker-live.js";
+import { fetchBookmakerLive } from "./bookmaker-live.js";
 import { getResultsRedis } from "./results-redis.js";
 import {
   IPBL_API_BASE,
@@ -233,7 +233,7 @@ export async function loadStoredGames(tag: string, season: number): Promise<Sche
 
 async function resolveLiveGame(id: number, tag: string): Promise<ResolvedCompatGame | null> {
   try {
-    const live = await fetchMelbetLive();
+    const live = await fetchBookmakerLive();
     const game = live.games.find((candidate) => candidate.gameId === id && candidate.tag === tag);
     return game ? { game, source: "bookmaker-live" } : null;
   } catch {

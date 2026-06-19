@@ -3,7 +3,7 @@ import { parseCalendarItems, type ScheduleGame } from "../../lib/server/calendar
 import { fetchOfficialJson } from "../../lib/server/ipbl-compat.js";
 import { getResultsRedis } from "../../lib/server/results-redis.js";
 import { readRecordedLiveFeed } from "../../lib/server/live-recorder.js";
-import { fetchMelbetLive, normalizeTeamName, type BookmakerLiveResult } from "../../lib/server/bookmaker-live.js";
+import { fetchBookmakerLive, normalizeTeamName, type BookmakerLiveResult } from "../../lib/server/bookmaker-live.js";
 
 const PROXY_BASE = "https://worker.mloneslot99.com/ipbl-proxy";
 export const LIVE_TAGS = [
@@ -212,7 +212,7 @@ export async function buildLiveFeedEnvelope(): Promise<LiveFeedEnvelope> {
   const started = Date.now();
   const [batches, bookmakerSettled] = await Promise.all([
     Promise.all(LIVE_TAGS.map(fetchLiveTag)),
-    fetchMelbetLive()
+    fetchBookmakerLive()
       .then((fallback): { ok: true; fallback: BookmakerLiveResult } => ({ ok: true, fallback }))
       .catch((error): { ok: false; error: unknown } => ({ ok: false, error })),
   ]);
@@ -228,10 +228,10 @@ export async function buildLiveFeedEnvelope(): Promise<LiveFeedEnvelope> {
 
   if (mergedGames.length > 0) {
     const source = officialGames.length > 0 && bookmakerGames.length > 0
-      ? "official:api1.ipbl.pro+bookmaker:melbet.com"
+      ? "official:api1.ipbl.pro+bookmaker:melbet.com+1xbet.com"
       : officialGames.length > 0
         ? "official:api1.ipbl.pro"
-        : "bookmaker:melbet.com";
+        : "bookmaker:melbet.com+1xbet.com";
     return {
       games: mergedGames,
       status: {
@@ -268,7 +268,7 @@ export async function buildLiveFeedEnvelope(): Promise<LiveFeedEnvelope> {
       successfulDivisions: 0,
       failures: [
         ...failures,
-        ...(bookmakerSettled.ok ? bookmakerSettled.fallback.sourceFailures : [{ tag: "bookmaker:melbet.com", error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }]),
+        ...(bookmakerSettled.ok ? bookmakerSettled.fallback.sourceFailures : [{ tag: "bookmaker:melbet.com+1xbet.com", error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }]),
       ],
       bookmakerSourceLeagues: bookmakerSettled.ok ? bookmakerSettled.fallback.sourceLeagues : [],
       bookmakerSourceFailures: bookmakerSettled.ok ? bookmakerSettled.fallback.sourceFailures : [{ error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }],
