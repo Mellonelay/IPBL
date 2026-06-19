@@ -228,8 +228,8 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
 
   const started = Date.now();
   const [batches, bookmakerSettled] = await Promise.all([
-    Promise.all(LIVE_TAGS.map(fetchLive)),
-    fetchBookmaker()
+    Promise.all(LIVE_TAGS.map(fetchLiveTag)),
+    fetchBookmakerLive()
       .then((fallback): { ok: true; fallback: BookmakerLiveResult } => ({ ok: true, fallback }))
       .catch((error): { ok: false; error: unknown } => ({ ok: false, error })),
   ]);
