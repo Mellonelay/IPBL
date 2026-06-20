@@ -224,27 +224,33 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
   }
 
   const started = Date.now();
-  const [batches, bookmakerSettled] = await Promise.all([
-    Promise.all(LIVE_TAGS.map(fetchLive)),
-    fetchBookmaker()
-      .then((fallback): { ok: true; fallback: BookmakerLiveResult } => ({ ok: true, fallback }))
-      .catch((error): { ok: false; error: unknown } => ({ ok: false, error })),
-  ]);
+  const batches = await Promise.all(LIVE_TAGS.map(fetchLive));
   const failures = batches.filter((batch) => batch.error).map(({ tag, error }) => ({ tag, error }));
   const byId = new Map<string, ScheduleGame>();
   for (const batch of batches) for (const game of batch.games) byId.set(`${game.tag}:${game.gameId}`, game);
   const officialGames = [...byId.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
-  const fallback = bookmakerSettled.ok ? bookmakerSettled.fallback : null;
+  let bookmakerSettled:
+    | { ok: true; fallback: BookmakerLiveResult }
+    | { ok: false; error: unknown }
+    | null = null;
+  if (officialGames.length === 0) {
+    bookmakerSettled = await fetchBookmaker()
+      .then((fallback): { ok: true; fallback: BookmakerLiveResult } => ({ ok: true, fallback }))
+      .catch((error): { ok: false; error: unknown } => ({ ok: false, error }));
+  }
+  const fallback = bookmakerSettled?.ok ? bookmakerSettled.fallback : null;
   const bookmakerGames = fallback?.games ?? [];
-  const bookmakerFallbackFailures = bookmakerSettled.ok
-    ? fallback?.sourceFailures ?? []
-    : ((bookmakerSettled.error as Error & { sourceFailures?: BookmakerLiveResult["sourceFailures"] }).sourceFailures ?? [{ error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }]);
+  const bookmakerFallbackFailures = bookmakerSettled
+    ? bookmakerSettled.ok
+      ? fallback?.sourceFailures ?? []
+      : ((bookmakerSettled.error as Error & { sourceFailures?: BookmakerLiveResult["sourceFailures"] }).sourceFailures ?? [{ error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }])
+    : [];
   const liveCandidateGames = bookmakerGames.length > 0 ? bookmakerGames : mergeLiveGamesByFreshness(officialGames, bookmakerGames);
   const officialReconciliation = await reconcileLiveGamesWithOfficialDetail(liveCandidateGames);
   const mergedGames = officialReconciliation.games;
 
   if (mergedGames.length > 0) {
-    const bookmakerHealthy = !fallback || fallback.sourceFailures.length === 0;
+    const bookmakerHealthy = !bookmakerSettled || (bookmakerSettled.ok && (fallback?.sourceFailures.length ?? 0) === 0);
     const officialHealthy = failures.length === 0;
     const source = bookmakerGames.length > 0
       ? "bookmaker:melbet.com+1xbet.com"
@@ -286,7 +292,7 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
     games: [],
     status: {
       lastSyncAt: new Date().toISOString(),
-      status: bookmakerSettled.ok && bookmakerSettled.fallback.sourceFailures.length === 0 ? "IDLE" : "FAIL",
+      status: bookmakerSettled && bookmakerSettled.ok && bookmakerSettled.fallback.sourceFailures.length === 0 ? "IDLE" : "FAIL",
       source: "none",
       fallbackFrom: "official:api1.ipbl.pro",
       requestedDivisions: LIVE_TAGS.length,
@@ -295,10 +301,10 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
         ...failures,
         ...bookmakerFallbackFailures,
       ],
-      bookmakerSourceLeagues: bookmakerSettled.ok ? bookmakerSettled.fallback.sourceLeagues : [],
+      bookmakerSourceLeagues: bookmakerSettled?.ok ? bookmakerSettled.fallback.sourceLeagues : [],
       bookmakerSourceFailures: bookmakerFallbackFailures,
-      receivedBookmakerEvents: bookmakerSettled.ok ? bookmakerSettled.fallback.receivedEvents : 0,
-      unmatchedBookmakerEvents: bookmakerSettled.ok ? bookmakerSettled.fallback.unmatched : [],
+      receivedBookmakerEvents: bookmakerSettled?.ok ? bookmakerSettled.fallback.receivedEvents : 0,
+      unmatchedBookmakerEvents: bookmakerSettled?.ok ? bookmakerSettled.fallback.unmatched : [],
       officialReconciliation: typeof officialReconciliation === "undefined" ? { checked: 0, dropped: 0, updated: 0 } : {
         checked: officialReconciliation.checked,
         dropped: officialReconciliation.dropped,

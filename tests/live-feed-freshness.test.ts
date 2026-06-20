@@ -164,7 +164,8 @@ const bookmakerPreferredGame = game({
   updatedAt: 2_000_000,
 });
 
-const bookmakerPreferredEnvelope = await buildLiveFeedEnvelope({
+let skippedBookmakerCalls = 0;
+const bookmakerSkippedEnvelope = await buildLiveFeedEnvelope({
   getResultsRedis: () => new EmptyRecorderRedis() as never,
   readRecordedLiveFeed: async () => ({ games: [], status: { source: "official:api1.ipbl.pro", status: "OK" } }) satisfies LiveFeedEnvelope,
   fetchLiveTag: async () => ({
@@ -180,21 +181,48 @@ const bookmakerPreferredEnvelope = await buildLiveFeedEnvelope({
       updatedAt: 1_000_000,
     })],
   }),
-  fetchBookmakerLive: async () => ({
-    games: [bookmakerPreferredGame],
-    unmatched: [],
-    receivedEvents: 1,
-    sourceLeagues: [2496666],
-    sourceFailures: [],
-  }),
+  fetchBookmakerLive: async () => {
+    skippedBookmakerCalls += 1;
+    return {
+      games: [bookmakerPreferredGame],
+      unmatched: [],
+      receivedEvents: 1,
+      sourceLeagues: [2496666],
+      sourceFailures: [],
+    };
+  },
   reconcileLiveGamesWithOfficialDetail: async (games) => ({ games, checked: 0, dropped: 0, updated: 0 }),
 });
 
-assert.equal(bookmakerPreferredEnvelope.games.length, 1);
-assert.equal(bookmakerPreferredEnvelope.games[0].gameId, bookmakerPreferredGame.gameId);
-assert.equal(bookmakerPreferredEnvelope.games[0].team1.shortName, "Krasnodar");
+assert.equal(bookmakerSkippedEnvelope.games.length, 1);
+assert.equal(bookmakerSkippedEnvelope.games[0].gameId, 730323684);
+assert.equal(skippedBookmakerCalls, 0, "bookmaker fetch must not run when official live rows already exist");
 
-console.log("Live envelope bookmaker-preferred source test passed");
+console.log("Live envelope bookmaker skipped with official rows test passed");
+
+let fallbackBookmakerCalls = 0;
+const bookmakerFallbackEnvelope = await buildLiveFeedEnvelope({
+  getResultsRedis: () => new EmptyRecorderRedis() as never,
+  readRecordedLiveFeed: async () => ({ games: [], status: { source: "official:api1.ipbl.pro", status: "OK" } }) satisfies LiveFeedEnvelope,
+  fetchLiveTag: async () => ({ tag: bookmakerPreferredGame.tag, games: [] }),
+  fetchBookmakerLive: async () => {
+    fallbackBookmakerCalls += 1;
+    return {
+      games: [bookmakerPreferredGame],
+      unmatched: [],
+      receivedEvents: 1,
+      sourceLeagues: [2496666],
+      sourceFailures: [],
+    };
+  },
+  reconcileLiveGamesWithOfficialDetail: async (games) => ({ games, checked: 0, dropped: 0, updated: 0 }),
+});
+
+assert.equal(bookmakerFallbackEnvelope.games.length, 1);
+assert.equal(bookmakerFallbackEnvelope.games[0].gameId, bookmakerPreferredGame.gameId);
+assert.equal(fallbackBookmakerCalls, 1, "bookmaker fetch must run when official live rows are empty");
+
+console.log("Live envelope bookmaker fallback test passed");
 
 const bookmakerFailure = new Error("melbet:zero_approved_games: bookmaker source returned live rows, but none matched the approved team registry");
 (bookmakerFailure as Error & { sourceFailures?: unknown[] }).sourceFailures = [
@@ -204,7 +232,7 @@ const bookmakerFailure = new Error("melbet:zero_approved_games: bookmaker source
 const classifiedFailureEnvelope = await buildLiveFeedEnvelope({
   getResultsRedis: () => new EmptyRecorderRedis() as never,
   readRecordedLiveFeed: async () => ({ games: [], status: { source: "official:api1.ipbl.pro", status: "OK" } }) satisfies LiveFeedEnvelope,
-  fetchLiveTag: async (tag: string) => ({ tag, games: tag === "ipbl-66-m-pro-a" ? [liveFallbackGame] : [] }),
+  fetchLiveTag: async () => ({ tag: bookmakerPreferredGame.tag, games: [] }),
   fetchBookmakerLive: async () => { throw bookmakerFailure; },
   reconcileLiveGamesWithOfficialDetail: async (games) => ({ games, checked: 0, dropped: 0, updated: 0 }),
 });
