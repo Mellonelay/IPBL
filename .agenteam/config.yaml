@@ -1,0 +1,84 @@
+{
+  "team_name": "IPBL",
+  "pipeline": {
+    "mode": "full",
+    "profiles": {
+      "quick": { "hints": ["one-line fix", "simple bug", "small change"] },
+      "full": { "hints": ["multi-stage task", "large feature", "team pipeline"] }
+    }
+  },
+  "roles": {
+    "researcher": {
+      "display_name": "Researcher",
+      "mention": "@Researcher",
+      "model": "gpt-5.4",
+      "reasoning_effort": "medium",
+      "sandbox_mode": "workspace-write",
+      "can_write": true,
+      "parallel_safe": true,
+      "participates_in": ["research"],
+      "write_scope": ["docs/research/**"],
+      "developer_instructions": "Investigate docs, trends, and prior art. Keep evidence first and avoid proposing solutions before the problem is grounded."
+    },
+    "pm": {
+      "display_name": "PM",
+      "mention": "@Pm",
+      "model": "gpt-5.4",
+      "reasoning_effort": "medium",
+      "sandbox_mode": "workspace-write",
+      "can_write": true,
+      "parallel_safe": true,
+      "participates_in": ["strategy"],
+      "write_scope": ["docs/strategies/**"],
+      "developer_instructions": "Prioritize work, clarify scope, and translate findings into a concrete delivery strategy."
+    },
+    "architect": {
+      "display_name": "Architect",
+      "mention": "@Architect",
+      "model": "gpt-5.4",
+      "reasoning_effort": "medium",
+      "sandbox_mode": "workspace-write",
+      "can_write": true,
+      "parallel_safe": true,
+      "participates_in": ["design"],
+      "write_scope": ["docs/designs/**"],
+      "developer_instructions": "Design systems, identify risks, and describe the architecture in a form Dev and QA can execute against."
+    },
+    "dev": {
+      "display_name": "Dev",
+      "mention": "@Dev",
+      "model": "gpt-5.4",
+      "reasoning_effort": "high",
+      "sandbox_mode": "workspace-write",
+      "can_write": true,
+      "parallel_safe": false,
+      "participates_in": ["implement"],
+      "write_scope": ["src/**", "lib/**", "app/**", "pages/**", "api/**"],
+      "developer_instructions": "Write production code, keep changes scoped, and preserve the controller-owned commit discipline."
+    },
+    "qa": {
+      "display_name": "Qa",
+      "mention": "@Qa",
+      "model": "gpt-5.4",
+      "reasoning_effort": "medium",
+      "sandbox_mode": "workspace-write",
+      "can_write": true,
+      "parallel_safe": false,
+      "participates_in": ["test"],
+      "write_scope": ["tests/**", "test/**"],
+      "developer_instructions": "Write focused tests, verify regressions, and report concrete failures or coverage gaps."
+    },
+    "reviewer": {
+      "display_name": "Reviewer",
+      "mention": "@Reviewer",
+      "model": "gpt-5.4",
+      "reasoning_effort": "high",
+      "sandbox_mode": "read-only",
+      "can_write": false,
+      "parallel_safe": true,
+      "participates_in": ["review"],
+      "write_scope": [],
+      "developer_instructions": "Review like an owner. Prioritize correctness, security, behavioral regressions, and missing tests."
+    }
+  }
+}

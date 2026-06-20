@@ -14,6 +14,14 @@ This manifest is read-only. It maps existing repo evidence to the canonical Phas
 - Fully complete / materialized in the roadmap.
 - Source coverage and production proof are aggregated into a canonical source-proof bundle.
 
+### Canonical checkpoint
+
+- [artifacts/source-archaeology/source-archaeology-graph.json](/root/repos/IPBL/artifacts/source-archaeology/source-archaeology-graph.json)
+
+### Validation entrypoint
+
+- [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
+
 ### Existing evidence
 
 - Source and fallback behavior:
@@ -54,7 +62,6 @@ This manifest is read-only. It maps existing repo evidence to the canonical Phas
 ### Remaining gap
 
 - No runtime gap remains for Phase 4.
-- The canonical checkpoint is [artifacts/source-archaeology/source-archaeology-graph.json](/root/repos/IPBL/artifacts/source-archaeology/source-archaeology-graph.json).
 - Phase 5 remains partial until the evidence graph is normalized into a durable supersession-aware index.
 
 ## Phase 5 - Evidence Graph
@@ -63,6 +70,14 @@ This manifest is read-only. It maps existing repo evidence to the canonical Phas
 
 - Partial.
 - Evidence already exists, but it is not yet normalized into a durable supersession-aware evidence graph.
+
+### Canonical checkpoint
+
+- [artifacts/evidence/evidence-supersession-index.json](/root/repos/IPBL/artifacts/evidence/evidence-supersession-index.json)
+
+### Validation entrypoint
+
+- [scripts/validate-phase-master.sh](/root/repos/IPBL/scripts/validate-phase-master.sh)
 
 ### Existing evidence
 

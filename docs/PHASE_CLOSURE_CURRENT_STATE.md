@@ -18,6 +18,7 @@ Source of truth:
 
 This repository is in closure / upgrade mode, not phase-building mode.
 The remaining work is packaging, reconciliation, evidence normalization, and upgrade planning around already-completed phases.
+The support-ready phases are not open implementation phases; they are closure packaging and proof-boundary work.
 
 ## Closure table
 
@@ -61,3 +62,22 @@ The relevant incident was production gameId `1073505` for Bryansk vs Izhevsk wit
 - Prefer new packaging docs and evidence indexes over new runtime behavior.
 - Keep validation read-only unless a separate deployment gate is explicitly provided.
 
+## Verification Snapshot
+
+June 20, 2026:
+
+- `bash scripts/validate-phase-master.sh` ran through the phase gates successfully up to the production-read-only section. The repo checks, phase 4-5 evidence, phase 6-7 config checks, phase 9 runtime graph, phase 10-11 workload and C9 checks, phase 12 operator intelligence, and phase 13 visualization all passed.
+- The final Vercel CLI read-only step hit a transient DNS error to `sentry.io` in the local shell environment, so the production deployment was verified separately with `vercel inspect`.
+- `vercel inspect https://ipbl-minimal-viewer.vercel.app --format=json` reported production deployment `dpl_GVr8imfrpd2mmWqgxEDzkvCijYzH` as `READY`, with alias `ipbl-minimal-viewer.vercel.app`.
+- The live runtime contract remains synced: frontend calls `/api/results/live`, the production live API is healthy, and recorder endpoints remain available.
+- Phase 11 remains support-ready / proof-foundation partial because `activeMatchedEventsstatProven=false` and the repo still blocks odds deployment by policy.
+
+## Closure Status
+
+- Complete: 0, 1, 4, 8, 9, 10, 12, 13
+- Support-ready: 2, 3, 5, 6, 7, 11
+- Open: 0
+
+## PR Mirror
+
+The same closure summary was posted back to PR `#48` so the branch history and repo docs point at the same phase state.

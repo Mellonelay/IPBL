@@ -9,6 +9,8 @@ test -f artifacts/workload-graph/ipbl-workload-graph.json
 test -f docs/TEAM_STATISTICS_RECONCILIATION.md
 test -f docs/TEAM_STATISTICS_PHASE_E2.md
 test -f artifacts/team-statistics/team-statistics-reconciliation-latest.json
+grep -q "Canonical checkpoint" docs/PHASE_10_11_EVIDENCE_MANIFEST.md
+grep -q "scripts/validate-phase-10-11.sh" docs/PHASE_10_11_EVIDENCE_MANIFEST.md
 
 npm run test:ipbl-workload-graph
 npm run reconcile:team-statistics
@@ -22,6 +24,7 @@ test -f docs/phase-c9/C9_PR23_SOURCE_RECONCILIATION_AND_EVENTSSTAT_REPROBE.md
 test -f artifacts/phase-c9/pr23/row-reconciliation-latest.json
 test -f artifacts/phase-c9/pr23/reconciliation-summary.json
 test -f artifacts/phase-c9/pr23/eventsstat-reprobe-latest.json
+grep -q "Phase 11 stays partial" docs/PHASE_10_11_EVIDENCE_MANIFEST.md
 
 npm run reconcile:c9
 npm run reprobe:c9-eventsstat
