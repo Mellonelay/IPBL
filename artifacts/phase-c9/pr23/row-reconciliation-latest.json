@@ -1,19 +1,19 @@
 {
   "summary": {
-    "capturedAt": "2026-06-20T12:52:17.899Z",
+    "capturedAt": "2026-06-20T13:47:45.987Z",
     "endpoints": {
       "officialLivePage": {
         "url": "https://ipbl.pro/live",
-        "http": 200,
-        "ok": true,
-        "bytes": 81374,
-        "error": null,
-        "contentType": "text/html; charset=UTF-8"
+        "http": null,
+        "ok": false,
+        "bytes": null,
+        "error": "TypeError: fetch failed",
+        "contentType": null
       },
       "officialCalendar": {
         "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
-        "http": 200,
-        "ok": true,
+        "http": null,
+        "ok": false,
         "bytes": null,
         "error": null,
         "contentType": null,
@@ -21,142 +21,133 @@
           {
             "label": "officialCalendar-ipbl-66-m-pro-a",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 75,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-b",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 75,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-c",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 1864,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-d",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 1908,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-u",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 75,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-z",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-z&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 1816,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-l",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-l&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 75,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-a",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 1839,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-b",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 75,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-c",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 75,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-d",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 75,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-g",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 75,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-k",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
-            "http": 200,
-            "ok": true,
-            "bytes": 75,
-            "error": null
+            "http": null,
+            "ok": false,
+            "bytes": null,
+            "error": "TypeError: fetch failed"
           }
         ]
       },
       "productionLive": {
-        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781959916312",
-        "http": 200,
-        "ok": true,
-        "bytes": 400,
-        "error": null,
-        "contentType": "application/json; charset=utf-8"
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781963265851",
+        "http": null,
+        "ok": false,
+        "bytes": null,
+        "error": "TypeError: fetch failed",
+        "contentType": null
       },
       "recorderStatus": {
         "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
-        "http": 200,
-        "ok": true,
-        "bytes": 738,
-        "error": null,
-        "contentType": "application/json; charset=utf-8"
+        "http": null,
+        "ok": false,
+        "bytes": null,
+        "error": "TypeError: fetch failed",
+        "contentType": null
       },
       "recorderHistory": {
         "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
-        "http": 200,
-        "ok": true,
+        "http": null,
+        "ok": false,
         "bytes": null,
         "error": null,
         "contentType": null,
-        "components": [
-          {
-            "label": "recorderHistory-ipbl-66-w-pro-a-1073523",
-            "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-w-pro-a&gameId=1073523&limit=5",
-            "http": 200,
-            "ok": true,
-            "bytes": 5724,
-            "error": null
-          }
-        ]
+        "components": []
       },
       "melbetLiveDiscovery": {
         "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
@@ -186,9 +177,9 @@
       }
     },
     "rowCounts": {
-      "officialCalendar": 4,
+      "officialCalendar": 0,
       "productionLive": 0,
-      "recorderHistory": 5
+      "recorderHistory": 0
     },
     "activeProductionGameIds": [],
     "melbetLiveCandidateCount": 0,
@@ -209,10 +200,10 @@
       "blocksOddsImplementation": true
     },
     "reconciliation": {
-      "primarySource": "officialCalendar",
-      "matchCount": 4,
-      "missingCount": 7,
-      "mismatchCount": 1,
+      "primarySource": "productionLive",
+      "matchCount": 0,
+      "missingCount": 0,
+      "mismatchCount": 0,
       "classification": "PARTIAL"
     },
     "oddsDeploymentAllowed": false,
@@ -222,1781 +213,156 @@
     "officialLivePage": {
       "label": "officialLivePage",
       "url": "https://ipbl.pro/live",
-      "capturedAt": "2026-06-20T12:51:57.610Z",
-      "http": 200,
-      "ok": true,
-      "bytes": 81374,
-      "contentType": "text/html; charset=UTF-8",
-      "json": null,
-      "preview": "<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\" /> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /> <!--metatextblock--> <title>Прямые трансляции | IPBL</title> <meta property=\"og:url\" content=\"https://ipbl.pro/live\" /> <meta property=\"og:title\" content=\"Прямые трансляции | IPBL\" /> <meta property=\"og:description\" content=\"\" /> <meta property=\"og:type\" content=\"website\" /> <link rel=\"canonical\" href=\"https://ipbl.pro/live\"> <!--/metatextblock--> <meta name=\"format-detection\" content=\"telephone=no\" /> <meta http-equiv=\"x-dns-prefetch-control\" content=\"on\"> <link rel=\"dns-prefetch\" href=\"https://ws.tildacdn.com\"> <link rel=\"dns-prefetch\" href=\"https://static.tildacdn.com\"> <!--favicons--> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3638-3630-4735-b264-386461326231/logo_gray.svg\" media=\"(prefers-color-scheme: light)\"/> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3731-3163-4436-b066-393065323337/logo_white.svg\" media=\"(prefers-color-scheme: dark)\"/> <!--/favicons--> <!-- Assets --> <script src=\"https:"
+      "capturedAt": "2026-06-20T13:47:45.952Z",
+      "ok": false,
+      "error": "TypeError: fetch failed"
     },
     "officialCalendar": {
       "label": "officialCalendar",
       "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
-      "capturedAt": "2026-06-20T12:52:01.761Z",
-      "ok": true,
-      "http": 200,
+      "capturedAt": "2026-06-20T13:47:45.985Z",
+      "ok": false,
+      "http": null,
       "components": [
         {
           "label": "officialCalendar-ipbl-66-m-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
-          "capturedAt": "2026-06-20T12:51:57.726Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 75,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 0,
-              "items": []
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+          "capturedAt": "2026-06-20T13:47:45.953Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
-          "capturedAt": "2026-06-20T12:51:58.436Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 75,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 0,
-              "items": []
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+          "capturedAt": "2026-06-20T13:47:45.959Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
-          "capturedAt": "2026-06-20T12:51:58.748Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 1864,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 1,
-              "items": [
-                {
-                  "game": {
-                    "gameStatus": "Online",
-                    "showScore": true,
-                    "score1": 87,
-                    "score2": 76,
-                    "score": "87:76",
-                    "fullScore": null,
-                    "periods": 4,
-                    "attendance": 0,
-                    "number": "002",
-                    "finalTime": null,
-                    "startTime": null,
-                    "scheduledTime": "2026-02-09T22:00:00+05:00",
-                    "defaultZoneDateTime": "2026-02-09T20:00:00+03:00",
-                    "localDate": "09.02.2026",
-                    "localTime": "22:00",
-                    "defaultZoneTime": "20:00",
-                    "hasTime": true,
-                    "regionId": 8,
-                    "arenaId": 26097,
-                    "compTeam1Id": 557124,
-                    "compTeam2Id": 557125,
-                    "tv": null,
-                    "video": null,
-                    "videoId": null,
-                    "id": 1024850
-                  },
-                  "comp": {
-                    "id": 1301526,
-                    "compType": "OneGame",
-                    "name": "IPBL: PRO Division (МУЖЧИНЫ)",
-                    "abcName": "1/2-2",
-                    "level": 10,
-                    "season": 2026,
-                    "tag": null,
-                    "logo": "",
-                    "isActual": true
-                  },
-                  "league": {
-                    "id": 1262959,
-                    "compType": "League",
-                    "name": "Division C",
-                    "abcName": "IPBL",
-                    "level": 7,
-                    "season": 2026,
-                    "tag": "ipbl-66-m-pro-c",
-                    "logo": "",
-                    "isActual": true
-                  },
-                  "gender": 1,
-                  "status": {
-                    "icon": "fa-solid fa-play color-darkgreen ",
-                    "id": "Online",
-                    "displayName": "Онлайн"
-                  },
-                  "region": {
-                    "regionType": "RegionCapital",
-                    "timeZoneId": "Ekaterinburg Standard Time",
-                    "name": "Екатеринбург",
-                    "countryId": "RU",
-                    "id": 8
-                  },
-                  "arena": {
-                    "shortName": "БЦ \"Манеж\" Мужской Зал",
-                    "name": "БЦ \"Манеж\" Мужской Зал",
-                    "regionId": 8,
-                    "id": 26097
-                  },
-                  "team1": {
-                    "teamId": 76059,
-                    "start": 1,
-                    "label": "IPBL66",
-                    "abcName": "Vorone",
-                    "name": "Voronezh",
-                    "regionName": "Екатеринбург",
-                    "shortName": "Voronezh",
-                    "logo": "https://img.infobasket.su/logo/62413.png",
-                    "arenaId": null,
-                    "id": 557124
-                  },
-                  "team2": {
-                    "teamId": 76060,
-                    "start": 2,
-                    "label": "IPBL66",
-                    "abcName": "Plavsk",
-                    "name": "Plavsk",
-                    "regionName": "Екатеринбург",
-                    "shortName": "Plavsk",
-                    "logo": "https://img.infobasket.su/logo/62414.png",
-                    "arenaId": null,
-                    "id": 557125
-                  },
-                  "ot": "",
-                  "distanceIndex": -1,
-                  "period": null,
-                  "timeToGo": null,
-                  "timeIsGo": null,
-                  "hasCoefficients": false,
-                  "photoUrl": null,
-                  "division": "Pro Division"
-                }
-              ]
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"Online\",\"showScore\":true,\"score1\":87,\"score2\":76,\"score\":\"87:76\",\"fullScore\":null,\"periods\":4,\"attendance\":0,\"number\":\"002\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-02-09T22:00:00+05:00\",\"defaultZoneDateTime\":\"2026-02-09T20:00:00+03:00\",\"localDate\":\"09.02.2026\",\"localTime\":\"22:00\",\"defaultZoneTime\":\"20:00\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26097,\"compTeam1Id\":557124,\"compTeam2Id\":557125,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1024850},\"comp\":{\"id\":1301526,\"compType\":\"OneGame\",\"name\":\"IPBL: PRO Division (МУЖЧИНЫ)\",\"abcName\":\"1/2-2\",\"level\":10,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1262959,\"compType\":\"League\",\"name\":\"Division C\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-m-pro-c\",\"logo\":\"\",\"isActual\":true},\"gender\":1,\"status\":{\"icon\":\"fa-solid fa-play color-darkgreen \",\"id\":\"Online\",\"displayName\":\"Онлайн\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"name\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"regionId\":8,\"id"
+          "capturedAt": "2026-06-20T13:47:45.965Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
-          "capturedAt": "2026-06-20T12:51:59.058Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 1908,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 1,
-              "items": [
-                {
-                  "game": {
-                    "gameStatus": "ResultWaiting",
-                    "showScore": true,
-                    "score1": 132,
-                    "score2": 135,
-                    "score": "132:135",
-                    "fullScore": null,
-                    "periods": 4,
-                    "attendance": 0,
-                    "number": "020",
-                    "finalTime": null,
-                    "startTime": null,
-                    "scheduledTime": "2026-02-02T08:00:00+05:00",
-                    "defaultZoneDateTime": "2026-02-02T06:00:00+03:00",
-                    "localDate": "02.02.2026",
-                    "localTime": "08:00",
-                    "defaultZoneTime": "06:00",
-                    "hasTime": true,
-                    "regionId": 8,
-                    "arenaId": 26097,
-                    "compTeam1Id": 553363,
-                    "compTeam2Id": 553362,
-                    "tv": null,
-                    "video": null,
-                    "videoId": null,
-                    "id": 1022276
-                  },
-                  "comp": {
-                    "id": 1297670,
-                    "compType": "OneGame",
-                    "name": "Финал за 3 место",
-                    "abcName": "Ф3",
-                    "level": 11,
-                    "season": 2026,
-                    "tag": null,
-                    "logo": "",
-                    "isActual": true
-                  },
-                  "league": {
-                    "id": 1262990,
-                    "compType": "League",
-                    "name": "Division D",
-                    "abcName": "IPBL",
-                    "level": 7,
-                    "season": 2026,
-                    "tag": "ipbl-66-m-pro-d",
-                    "logo": "",
-                    "isActual": true
-                  },
-                  "gender": 1,
-                  "status": {
-                    "icon": "fa-solid fa-circle-play color-orange ",
-                    "id": "ResultWaiting",
-                    "displayName": "Завершена"
-                  },
-                  "region": {
-                    "regionType": "RegionCapital",
-                    "timeZoneId": "Ekaterinburg Standard Time",
-                    "name": "Екатеринбург",
-                    "countryId": "RU",
-                    "id": 8
-                  },
-                  "arena": {
-                    "shortName": "БЦ \"Манеж\" Мужской Зал",
-                    "name": "БЦ \"Манеж\" Мужской Зал",
-                    "regionId": 8,
-                    "id": 26097
-                  },
-                  "team1": {
-                    "teamId": 76068,
-                    "start": 1,
-                    "label": "IPBL66",
-                    "abcName": "Krasno",
-                    "name": "Krasnoyarsk",
-                    "regionName": "Екатеринбург",
-                    "shortName": "Krasnoyarsk",
-                    "logo": "https://img.infobasket.su/logo/62422.png",
-                    "arenaId": null,
-                    "id": 553363
-                  },
-                  "team2": {
-                    "teamId": 76067,
-                    "start": 2,
-                    "label": "IPBL66",
-                    "abcName": "Nizhni",
-                    "name": "NizhniyNovgorod",
-                    "regionName": "Екатеринбург",
-                    "shortName": "NizhniyNovgorod",
-                    "logo": "https://img.infobasket.su/logo/62421.png",
-                    "arenaId": null,
-                    "id": 553362
-                  },
-                  "ot": "",
-                  "distanceIndex": 138,
-                  "period": null,
-                  "timeToGo": null,
-                  "timeIsGo": null,
-                  "hasCoefficients": false,
-                  "photoUrl": null,
-                  "division": "Pro Division"
-                }
-              ]
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"ResultWaiting\",\"showScore\":true,\"score1\":132,\"score2\":135,\"score\":\"132:135\",\"fullScore\":null,\"periods\":4,\"attendance\":0,\"number\":\"020\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-02-02T08:00:00+05:00\",\"defaultZoneDateTime\":\"2026-02-02T06:00:00+03:00\",\"localDate\":\"02.02.2026\",\"localTime\":\"08:00\",\"defaultZoneTime\":\"06:00\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26097,\"compTeam1Id\":553363,\"compTeam2Id\":553362,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1022276},\"comp\":{\"id\":1297670,\"compType\":\"OneGame\",\"name\":\"Финал за 3 место\",\"abcName\":\"Ф3\",\"level\":11,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1262990,\"compType\":\"League\",\"name\":\"Division D\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-m-pro-d\",\"logo\":\"\",\"isActual\":true},\"gender\":1,\"status\":{\"icon\":\"fa-solid fa-circle-play color-orange \",\"id\":\"ResultWaiting\",\"displayName\":\"Завершена\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"name\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"regio"
+          "capturedAt": "2026-06-20T13:47:45.969Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-u",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
-          "capturedAt": "2026-06-20T12:51:59.431Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 75,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 0,
-              "items": []
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+          "capturedAt": "2026-06-20T13:47:45.972Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-z",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-z&lang=ru",
-          "capturedAt": "2026-06-20T12:51:59.726Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 1816,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 1,
-              "items": [
-                {
-                  "game": {
-                    "gameStatus": "Result",
-                    "showScore": false,
-                    "score1": 71,
-                    "score2": 87,
-                    "score": "71:87",
-                    "fullScore": null,
-                    "periods": 4,
-                    "attendance": 0,
-                    "number": "010",
-                    "finalTime": null,
-                    "startTime": null,
-                    "scheduledTime": "2026-06-20T17:00:00+05:00",
-                    "defaultZoneDateTime": "2026-06-20T15:00:00+03:00",
-                    "localDate": "20.06.2026",
-                    "localTime": "17:00",
-                    "defaultZoneTime": "15:00",
-                    "hasTime": true,
-                    "regionId": 8,
-                    "arenaId": 26097,
-                    "compTeam1Id": 618316,
-                    "compTeam2Id": 618315,
-                    "tv": null,
-                    "video": null,
-                    "videoId": null,
-                    "id": 1073739
-                  },
-                  "comp": {
-                    "id": 1351729,
-                    "compType": "RoundRobin",
-                    "name": "20.06.2026",
-                    "abcName": "IPBL",
-                    "level": 10,
-                    "season": 2026,
-                    "tag": null,
-                    "logo": "",
-                    "isActual": true
-                  },
-                  "league": {
-                    "id": 1333664,
-                    "compType": "League",
-                    "name": "Дивизион Z",
-                    "abcName": "IPBL",
-                    "level": 7,
-                    "season": 2026,
-                    "tag": "ipbl-66-m-pro-z",
-                    "logo": "",
-                    "isActual": true
-                  },
-                  "gender": 1,
-                  "status": {
-                    "icon": "fa-regular fa-check color-darkblue ",
-                    "id": "Result",
-                    "displayName": "Finished"
-                  },
-                  "region": {
-                    "regionType": "RegionCapital",
-                    "timeZoneId": "Ekaterinburg Standard Time",
-                    "name": "Екатеринбург",
-                    "countryId": "RU",
-                    "id": 8
-                  },
-                  "arena": {
-                    "shortName": "БЦ \"Манеж\" Мужской Зал",
-                    "name": "БЦ \"Манеж\" Мужской Зал",
-                    "regionId": 8,
-                    "id": 26097
-                  },
-                  "team1": {
-                    "teamId": 76054,
-                    "start": 4,
-                    "label": "IPBL66",
-                    "abcName": "Magada",
-                    "name": "Magadan",
-                    "regionName": "Пермь",
-                    "shortName": "Magadan",
-                    "logo": "https://img.infobasket.su/logo/62410.png",
-                    "arenaId": null,
-                    "id": 618316
-                  },
-                  "team2": {
-                    "teamId": 76056,
-                    "start": 3,
-                    "label": "IPBL66",
-                    "abcName": "Ufa",
-                    "name": "Ufa",
-                    "regionName": "Екатеринбург",
-                    "shortName": "Ufa",
-                    "logo": "https://img.infobasket.su/logo/62409.png",
-                    "arenaId": null,
-                    "id": 618315
-                  },
-                  "ot": "",
-                  "distanceIndex": -1,
-                  "period": 4,
-                  "timeToGo": "",
-                  "timeIsGo": -1,
-                  "hasCoefficients": false,
-                  "photoUrl": null,
-                  "division": "Pro Division"
-                }
-              ]
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"Result\",\"showScore\":false,\"score1\":71,\"score2\":87,\"score\":\"71:87\",\"fullScore\":null,\"periods\":4,\"attendance\":0,\"number\":\"010\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-06-20T17:00:00+05:00\",\"defaultZoneDateTime\":\"2026-06-20T15:00:00+03:00\",\"localDate\":\"20.06.2026\",\"localTime\":\"17:00\",\"defaultZoneTime\":\"15:00\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26097,\"compTeam1Id\":618316,\"compTeam2Id\":618315,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1073739},\"comp\":{\"id\":1351729,\"compType\":\"RoundRobin\",\"name\":\"20.06.2026\",\"abcName\":\"IPBL\",\"level\":10,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1333664,\"compType\":\"League\",\"name\":\"Дивизион Z\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-m-pro-z\",\"logo\":\"\",\"isActual\":true},\"gender\":1,\"status\":{\"icon\":\"fa-regular fa-check color-darkblue \",\"id\":\"Result\",\"displayName\":\"Finished\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"name\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"regionId\":8,\"id\":26097},\"t"
+          "capturedAt": "2026-06-20T13:47:45.974Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-l",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-l&lang=ru",
-          "capturedAt": "2026-06-20T12:51:59.989Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 75,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 0,
-              "items": []
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+          "capturedAt": "2026-06-20T13:47:45.976Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
-          "capturedAt": "2026-06-20T12:52:00.379Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 1839,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 1,
-              "items": [
-                {
-                  "game": {
-                    "gameStatus": "Result",
-                    "showScore": false,
-                    "score1": 94,
-                    "score2": 105,
-                    "score": "94:105",
-                    "fullScore": null,
-                    "periods": 5,
-                    "attendance": 0,
-                    "number": "004",
-                    "finalTime": null,
-                    "startTime": null,
-                    "scheduledTime": "2026-06-20T17:00:00+05:00",
-                    "defaultZoneDateTime": "2026-06-20T15:00:00+03:00",
-                    "localDate": "20.06.2026",
-                    "localTime": "17:00",
-                    "defaultZoneTime": "15:00",
-                    "hasTime": true,
-                    "regionId": 8,
-                    "arenaId": 26098,
-                    "compTeam1Id": 618064,
-                    "compTeam2Id": 618066,
-                    "tv": null,
-                    "video": null,
-                    "videoId": null,
-                    "id": 1073523
-                  },
-                  "comp": {
-                    "id": 1351554,
-                    "compType": "RoundRobin",
-                    "name": "20.06.2026",
-                    "abcName": "20.06.",
-                    "level": 10,
-                    "season": 2026,
-                    "tag": null,
-                    "logo": "",
-                    "isActual": true
-                  },
-                  "league": {
-                    "id": 1262774,
-                    "compType": "League",
-                    "name": "Division A",
-                    "abcName": "IPBL",
-                    "level": 7,
-                    "season": 2026,
-                    "tag": "ipbl-66-w-pro-a",
-                    "logo": "",
-                    "isActual": true
-                  },
-                  "gender": 2,
-                  "status": {
-                    "icon": "fa-regular fa-check color-darkblue ",
-                    "id": "Result",
-                    "displayName": "Finished"
-                  },
-                  "region": {
-                    "regionType": "RegionCapital",
-                    "timeZoneId": "Ekaterinburg Standard Time",
-                    "name": "Екатеринбург",
-                    "countryId": "RU",
-                    "id": 8
-                  },
-                  "arena": {
-                    "shortName": "БЦ \"Манеж\" Женский Зал",
-                    "name": "БЦ \"Манеж\" Женский Зал",
-                    "regionId": 8,
-                    "id": 26098
-                  },
-                  "team1": {
-                    "teamId": 76021,
-                    "start": 2,
-                    "label": "IPBL66",
-                    "abcName": "Bryans",
-                    "name": "Bryansk",
-                    "regionName": "Екатеринбург",
-                    "shortName": "Bryansk",
-                    "logo": "https://img.infobasket.su/logo/62456.png",
-                    "arenaId": null,
-                    "id": 618064
-                  },
-                  "team2": {
-                    "teamId": 76023,
-                    "start": 4,
-                    "label": "IPBL66",
-                    "abcName": "Izhevs",
-                    "name": "Izhevsk",
-                    "regionName": "Екатеринбург",
-                    "shortName": "Izhevsk",
-                    "logo": "https://img.infobasket.su/logo/62458.png",
-                    "arenaId": null,
-                    "id": 618066
-                  },
-                  "ot": "OT",
-                  "distanceIndex": -1,
-                  "period": 4,
-                  "timeToGo": "",
-                  "timeIsGo": -1,
-                  "hasCoefficients": false,
-                  "photoUrl": null,
-                  "division": "Pro Division"
-                }
-              ]
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"Result\",\"showScore\":false,\"score1\":94,\"score2\":105,\"score\":\"94:105\",\"fullScore\":null,\"periods\":5,\"attendance\":0,\"number\":\"004\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-06-20T17:00:00+05:00\",\"defaultZoneDateTime\":\"2026-06-20T15:00:00+03:00\",\"localDate\":\"20.06.2026\",\"localTime\":\"17:00\",\"defaultZoneTime\":\"15:00\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26098,\"compTeam1Id\":618064,\"compTeam2Id\":618066,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1073523},\"comp\":{\"id\":1351554,\"compType\":\"RoundRobin\",\"name\":\"20.06.2026\",\"abcName\":\"20.06.\",\"level\":10,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1262774,\"compType\":\"League\",\"name\":\"Division A\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-w-pro-a\",\"logo\":\"\",\"isActual\":true},\"gender\":2,\"status\":{\"icon\":\"fa-regular fa-check color-darkblue \",\"id\":\"Result\",\"displayName\":\"Finished\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Женский Зал\",\"name\":\"БЦ \\\"Манеж\\\" Женский Зал\",\"regionId\":8,\"id\":26098"
+          "capturedAt": "2026-06-20T13:47:45.978Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
-          "capturedAt": "2026-06-20T12:52:00.739Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 75,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 0,
-              "items": []
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+          "capturedAt": "2026-06-20T13:47:45.979Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
-          "capturedAt": "2026-06-20T12:52:01.001Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 75,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 0,
-              "items": []
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+          "capturedAt": "2026-06-20T13:47:45.980Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
-          "capturedAt": "2026-06-20T12:52:01.258Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 75,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 0,
-              "items": []
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+          "capturedAt": "2026-06-20T13:47:45.982Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-g",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
-          "capturedAt": "2026-06-20T12:52:01.517Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 75,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 0,
-              "items": []
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+          "capturedAt": "2026-06-20T13:47:45.984Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-k",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
-          "capturedAt": "2026-06-20T12:52:01.761Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 75,
-          "contentType": "application/json",
-          "json": {
-            "data": {
-              "index": 0,
-              "status": "Ok",
-              "message": null,
-              "totalCount": 0,
-              "items": []
-            }
-          },
-          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[]}}"
+          "capturedAt": "2026-06-20T13:47:45.985Z",
+          "ok": false,
+          "error": "TypeError: fetch failed"
         }
       ],
       "json": {
-        "games": [
-          {
-            "game": {
-              "gameStatus": "Online",
-              "showScore": true,
-              "score1": 87,
-              "score2": 76,
-              "score": "87:76",
-              "fullScore": null,
-              "periods": 4,
-              "attendance": 0,
-              "number": "002",
-              "finalTime": null,
-              "startTime": null,
-              "scheduledTime": "2026-02-09T22:00:00+05:00",
-              "defaultZoneDateTime": "2026-02-09T20:00:00+03:00",
-              "localDate": "09.02.2026",
-              "localTime": "22:00",
-              "defaultZoneTime": "20:00",
-              "hasTime": true,
-              "regionId": 8,
-              "arenaId": 26097,
-              "compTeam1Id": 557124,
-              "compTeam2Id": 557125,
-              "tv": null,
-              "video": null,
-              "videoId": null,
-              "id": 1024850
-            },
-            "comp": {
-              "id": 1301526,
-              "compType": "OneGame",
-              "name": "IPBL: PRO Division (МУЖЧИНЫ)",
-              "abcName": "1/2-2",
-              "level": 10,
-              "season": 2026,
-              "tag": null,
-              "logo": "",
-              "isActual": true
-            },
-            "league": {
-              "id": 1262959,
-              "compType": "League",
-              "name": "Division C",
-              "abcName": "IPBL",
-              "level": 7,
-              "season": 2026,
-              "tag": "ipbl-66-m-pro-c",
-              "logo": "",
-              "isActual": true
-            },
-            "gender": 1,
-            "status": {
-              "icon": "fa-solid fa-play color-darkgreen ",
-              "id": "Online",
-              "displayName": "Онлайн"
-            },
-            "region": {
-              "regionType": "RegionCapital",
-              "timeZoneId": "Ekaterinburg Standard Time",
-              "name": "Екатеринбург",
-              "countryId": "RU",
-              "id": 8
-            },
-            "arena": {
-              "shortName": "БЦ \"Манеж\" Мужской Зал",
-              "name": "БЦ \"Манеж\" Мужской Зал",
-              "regionId": 8,
-              "id": 26097
-            },
-            "team1": {
-              "teamId": 76059,
-              "start": 1,
-              "label": "IPBL66",
-              "abcName": "Vorone",
-              "name": "Voronezh",
-              "regionName": "Екатеринбург",
-              "shortName": "Voronezh",
-              "logo": "https://img.infobasket.su/logo/62413.png",
-              "arenaId": null,
-              "id": 557124
-            },
-            "team2": {
-              "teamId": 76060,
-              "start": 2,
-              "label": "IPBL66",
-              "abcName": "Plavsk",
-              "name": "Plavsk",
-              "regionName": "Екатеринбург",
-              "shortName": "Plavsk",
-              "logo": "https://img.infobasket.su/logo/62414.png",
-              "arenaId": null,
-              "id": 557125
-            },
-            "ot": "",
-            "distanceIndex": -1,
-            "period": null,
-            "timeToGo": null,
-            "timeIsGo": null,
-            "hasCoefficients": false,
-            "photoUrl": null,
-            "division": "Pro Division",
-            "tag": "ipbl-66-m-pro-c",
-            "divisionTag": "ipbl-66-m-pro-c"
-          },
-          {
-            "game": {
-              "gameStatus": "ResultWaiting",
-              "showScore": true,
-              "score1": 132,
-              "score2": 135,
-              "score": "132:135",
-              "fullScore": null,
-              "periods": 4,
-              "attendance": 0,
-              "number": "020",
-              "finalTime": null,
-              "startTime": null,
-              "scheduledTime": "2026-02-02T08:00:00+05:00",
-              "defaultZoneDateTime": "2026-02-02T06:00:00+03:00",
-              "localDate": "02.02.2026",
-              "localTime": "08:00",
-              "defaultZoneTime": "06:00",
-              "hasTime": true,
-              "regionId": 8,
-              "arenaId": 26097,
-              "compTeam1Id": 553363,
-              "compTeam2Id": 553362,
-              "tv": null,
-              "video": null,
-              "videoId": null,
-              "id": 1022276
-            },
-            "comp": {
-              "id": 1297670,
-              "compType": "OneGame",
-              "name": "Финал за 3 место",
-              "abcName": "Ф3",
-              "level": 11,
-              "season": 2026,
-              "tag": null,
-              "logo": "",
-              "isActual": true
-            },
-            "league": {
-              "id": 1262990,
-              "compType": "League",
-              "name": "Division D",
-              "abcName": "IPBL",
-              "level": 7,
-              "season": 2026,
-              "tag": "ipbl-66-m-pro-d",
-              "logo": "",
-              "isActual": true
-            },
-            "gender": 1,
-            "status": {
-              "icon": "fa-solid fa-circle-play color-orange ",
-              "id": "ResultWaiting",
-              "displayName": "Завершена"
-            },
-            "region": {
-              "regionType": "RegionCapital",
-              "timeZoneId": "Ekaterinburg Standard Time",
-              "name": "Екатеринбург",
-              "countryId": "RU",
-              "id": 8
-            },
-            "arena": {
-              "shortName": "БЦ \"Манеж\" Мужской Зал",
-              "name": "БЦ \"Манеж\" Мужской Зал",
-              "regionId": 8,
-              "id": 26097
-            },
-            "team1": {
-              "teamId": 76068,
-              "start": 1,
-              "label": "IPBL66",
-              "abcName": "Krasno",
-              "name": "Krasnoyarsk",
-              "regionName": "Екатеринбург",
-              "shortName": "Krasnoyarsk",
-              "logo": "https://img.infobasket.su/logo/62422.png",
-              "arenaId": null,
-              "id": 553363
-            },
-            "team2": {
-              "teamId": 76067,
-              "start": 2,
-              "label": "IPBL66",
-              "abcName": "Nizhni",
-              "name": "NizhniyNovgorod",
-              "regionName": "Екатеринбург",
-              "shortName": "NizhniyNovgorod",
-              "logo": "https://img.infobasket.su/logo/62421.png",
-              "arenaId": null,
-              "id": 553362
-            },
-            "ot": "",
-            "distanceIndex": 138,
-            "period": null,
-            "timeToGo": null,
-            "timeIsGo": null,
-            "hasCoefficients": false,
-            "photoUrl": null,
-            "division": "Pro Division",
-            "tag": "ipbl-66-m-pro-d",
-            "divisionTag": "ipbl-66-m-pro-d"
-          },
-          {
-            "game": {
-              "gameStatus": "Result",
-              "showScore": false,
-              "score1": 71,
-              "score2": 87,
-              "score": "71:87",
-              "fullScore": null,
-              "periods": 4,
-              "attendance": 0,
-              "number": "010",
-              "finalTime": null,
-              "startTime": null,
-              "scheduledTime": "2026-06-20T17:00:00+05:00",
-              "defaultZoneDateTime": "2026-06-20T15:00:00+03:00",
-              "localDate": "20.06.2026",
-              "localTime": "17:00",
-              "defaultZoneTime": "15:00",
-              "hasTime": true,
-              "regionId": 8,
-              "arenaId": 26097,
-              "compTeam1Id": 618316,
-              "compTeam2Id": 618315,
-              "tv": null,
-              "video": null,
-              "videoId": null,
-              "id": 1073739
-            },
-            "comp": {
-              "id": 1351729,
-              "compType": "RoundRobin",
-              "name": "20.06.2026",
-              "abcName": "IPBL",
-              "level": 10,
-              "season": 2026,
-              "tag": null,
-              "logo": "",
-              "isActual": true
-            },
-            "league": {
-              "id": 1333664,
-              "compType": "League",
-              "name": "Дивизион Z",
-              "abcName": "IPBL",
-              "level": 7,
-              "season": 2026,
-              "tag": "ipbl-66-m-pro-z",
-              "logo": "",
-              "isActual": true
-            },
-            "gender": 1,
-            "status": {
-              "icon": "fa-regular fa-check color-darkblue ",
-              "id": "Result",
-              "displayName": "Finished"
-            },
-            "region": {
-              "regionType": "RegionCapital",
-              "timeZoneId": "Ekaterinburg Standard Time",
-              "name": "Екатеринбург",
-              "countryId": "RU",
-              "id": 8
-            },
-            "arena": {
-              "shortName": "БЦ \"Манеж\" Мужской Зал",
-              "name": "БЦ \"Манеж\" Мужской Зал",
-              "regionId": 8,
-              "id": 26097
-            },
-            "team1": {
-              "teamId": 76054,
-              "start": 4,
-              "label": "IPBL66",
-              "abcName": "Magada",
-              "name": "Magadan",
-              "regionName": "Пермь",
-              "shortName": "Magadan",
-              "logo": "https://img.infobasket.su/logo/62410.png",
-              "arenaId": null,
-              "id": 618316
-            },
-            "team2": {
-              "teamId": 76056,
-              "start": 3,
-              "label": "IPBL66",
-              "abcName": "Ufa",
-              "name": "Ufa",
-              "regionName": "Екатеринбург",
-              "shortName": "Ufa",
-              "logo": "https://img.infobasket.su/logo/62409.png",
-              "arenaId": null,
-              "id": 618315
-            },
-            "ot": "",
-            "distanceIndex": -1,
-            "period": 4,
-            "timeToGo": "",
-            "timeIsGo": -1,
-            "hasCoefficients": false,
-            "photoUrl": null,
-            "division": "Pro Division",
-            "tag": "ipbl-66-m-pro-z",
-            "divisionTag": "ipbl-66-m-pro-z"
-          },
-          {
-            "game": {
-              "gameStatus": "Result",
-              "showScore": false,
-              "score1": 94,
-              "score2": 105,
-              "score": "94:105",
-              "fullScore": null,
-              "periods": 5,
-              "attendance": 0,
-              "number": "004",
-              "finalTime": null,
-              "startTime": null,
-              "scheduledTime": "2026-06-20T17:00:00+05:00",
-              "defaultZoneDateTime": "2026-06-20T15:00:00+03:00",
-              "localDate": "20.06.2026",
-              "localTime": "17:00",
-              "defaultZoneTime": "15:00",
-              "hasTime": true,
-              "regionId": 8,
-              "arenaId": 26098,
-              "compTeam1Id": 618064,
-              "compTeam2Id": 618066,
-              "tv": null,
-              "video": null,
-              "videoId": null,
-              "id": 1073523
-            },
-            "comp": {
-              "id": 1351554,
-              "compType": "RoundRobin",
-              "name": "20.06.2026",
-              "abcName": "20.06.",
-              "level": 10,
-              "season": 2026,
-              "tag": null,
-              "logo": "",
-              "isActual": true
-            },
-            "league": {
-              "id": 1262774,
-              "compType": "League",
-              "name": "Division A",
-              "abcName": "IPBL",
-              "level": 7,
-              "season": 2026,
-              "tag": "ipbl-66-w-pro-a",
-              "logo": "",
-              "isActual": true
-            },
-            "gender": 2,
-            "status": {
-              "icon": "fa-regular fa-check color-darkblue ",
-              "id": "Result",
-              "displayName": "Finished"
-            },
-            "region": {
-              "regionType": "RegionCapital",
-              "timeZoneId": "Ekaterinburg Standard Time",
-              "name": "Екатеринбург",
-              "countryId": "RU",
-              "id": 8
-            },
-            "arena": {
-              "shortName": "БЦ \"Манеж\" Женский Зал",
-              "name": "БЦ \"Манеж\" Женский Зал",
-              "regionId": 8,
-              "id": 26098
-            },
-            "team1": {
-              "teamId": 76021,
-              "start": 2,
-              "label": "IPBL66",
-              "abcName": "Bryans",
-              "name": "Bryansk",
-              "regionName": "Екатеринбург",
-              "shortName": "Bryansk",
-              "logo": "https://img.infobasket.su/logo/62456.png",
-              "arenaId": null,
-              "id": 618064
-            },
-            "team2": {
-              "teamId": 76023,
-              "start": 4,
-              "label": "IPBL66",
-              "abcName": "Izhevs",
-              "name": "Izhevsk",
-              "regionName": "Екатеринбург",
-              "shortName": "Izhevsk",
-              "logo": "https://img.infobasket.su/logo/62458.png",
-              "arenaId": null,
-              "id": 618066
-            },
-            "ot": "OT",
-            "distanceIndex": -1,
-            "period": 4,
-            "timeToGo": "",
-            "timeIsGo": -1,
-            "hasCoefficients": false,
-            "photoUrl": null,
-            "division": "Pro Division",
-            "tag": "ipbl-66-w-pro-a",
-            "divisionTag": "ipbl-66-w-pro-a"
-          }
-        ]
+        "games": []
       }
     },
     "productionLive": {
       "label": "productionLive",
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781959916312",
-      "capturedAt": "2026-06-20T12:51:59.513Z",
-      "http": 200,
-      "ok": true,
-      "bytes": 400,
-      "contentType": "application/json; charset=utf-8",
-      "json": {
-        "games": [],
-        "status": {
-          "lastSyncAt": "2026-06-20T12:49:09.785Z",
-          "status": "OK",
-          "source": "official:api1.ipbl.pro",
-          "requestedDivisions": 13,
-          "successfulDivisions": 2,
-          "failures": [],
-          "bookmakerSourceLeagues": [],
-          "bookmakerSourceFailures": [],
-          "receivedBookmakerEvents": 0,
-          "unmatchedBookmakerEvents": [],
-          "officialReconciliation": {
-            "checked": 1,
-            "dropped": 1,
-            "updated": 0
-          },
-          "latencyMs": 1821,
-          "displayTimeZone": "Asia/Yangon"
-        }
-      },
-      "preview": "{\"games\":[],\"status\":{\"lastSyncAt\":\"2026-06-20T12:49:09.785Z\",\"status\":\"OK\",\"source\":\"official:api1.ipbl.pro\",\"requestedDivisions\":13,\"successfulDivisions\":2,\"failures\":[],\"bookmakerSourceLeagues\":[],\"bookmakerSourceFailures\":[],\"receivedBookmakerEvents\":0,\"unmatchedBookmakerEvents\":[],\"officialReconciliation\":{\"checked\":1,\"dropped\":1,\"updated\":0},\"latencyMs\":1821,\"displayTimeZone\":\"Asia/Yangon\"}}"
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781963265851",
+      "capturedAt": "2026-06-20T13:47:45.955Z",
+      "ok": false,
+      "error": "TypeError: fetch failed"
     },
     "recorderStatus": {
       "label": "recorderStatus",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
-      "capturedAt": "2026-06-20T12:51:56.921Z",
-      "http": 200,
-      "ok": true,
-      "bytes": 738,
-      "contentType": "application/json; charset=utf-8",
-      "json": {
-        "status": {
-          "schemaVersion": 1,
-          "capturedAt": "2026-06-20T12:51:09.478Z",
-          "source": "official:api1.ipbl.pro",
-          "sourceStatus": "OK",
-          "receivedGames": 1,
-          "acceptedGames": 1,
-          "recordedSnapshots": 0,
-          "duplicateSnapshots": 1,
-          "rejectedGames": [],
-          "missingPreviouslyActive": [],
-          "activeGameKeys": [
-            "ipbl-66-w-pro-a:1073523"
-          ],
-          "sourceDetails": {
-            "lastSyncAt": "2026-06-20T12:49:09.785Z",
-            "status": "OK",
-            "source": "official:api1.ipbl.pro",
-            "requestedDivisions": 13,
-            "successfulDivisions": 2,
-            "failures": [],
-            "bookmakerSourceLeagues": [],
-            "bookmakerSourceFailures": [],
-            "receivedBookmakerEvents": 0,
-            "unmatchedBookmakerEvents": [],
-            "officialReconciliation": {
-              "checked": 1,
-              "dropped": 0,
-              "updated": 1
-            },
-            "latencyMs": 1821,
-            "displayTimeZone": "Asia/Yangon"
-          }
-        },
-        "activeGameKeys": [
-          "ipbl-66-w-pro-a:1073523"
-        ]
-      },
-      "preview": "{\"status\":{\"schemaVersion\":1,\"capturedAt\":\"2026-06-20T12:51:09.478Z\",\"source\":\"official:api1.ipbl.pro\",\"sourceStatus\":\"OK\",\"receivedGames\":1,\"acceptedGames\":1,\"recordedSnapshots\":0,\"duplicateSnapshots\":1,\"rejectedGames\":[],\"missingPreviouslyActive\":[],\"activeGameKeys\":[\"ipbl-66-w-pro-a:1073523\"],\"sourceDetails\":{\"lastSyncAt\":\"2026-06-20T12:49:09.785Z\",\"status\":\"OK\",\"source\":\"official:api1.ipbl.pro\",\"requestedDivisions\":13,\"successfulDivisions\":2,\"failures\":[],\"bookmakerSourceLeagues\":[],\"bookmakerSourceFailures\":[],\"receivedBookmakerEvents\":0,\"unmatchedBookmakerEvents\":[],\"officialReconciliation\":{\"checked\":1,\"dropped\":0,\"updated\":1},\"latencyMs\":1821,\"displayTimeZone\":\"Asia/Yangon\"}},\"activeGameKeys\":[\"ipbl-66-w-pro-a:1073523\"]}"
+      "capturedAt": "2026-06-20T13:47:45.956Z",
+      "ok": false,
+      "error": "TypeError: fetch failed"
     },
     "recorderHistory": {
       "label": "recorderHistory",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
-      "capturedAt": "2026-06-20T12:52:17.892Z",
-      "ok": true,
-      "http": 200,
-      "components": [
-        {
-          "label": "recorderHistory-ipbl-66-w-pro-a-1073523",
-          "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-w-pro-a&gameId=1073523&limit=5",
-          "capturedAt": "2026-06-20T12:52:17.892Z",
-          "http": 200,
-          "ok": true,
-          "bytes": 5724,
-          "contentType": "application/json; charset=utf-8",
-          "json": {
-            "gameKey": "ipbl-66-w-pro-a:1073523",
-            "newestFirst": true,
-            "count": 5,
-            "snapshots": [
-              {
-                "schemaVersion": 1,
-                "capturedAt": "2026-06-20T12:47:05.716Z",
-                "capturedAtMs": 1781959625716,
-                "gameKey": "ipbl-66-w-pro-a:1073523",
-                "gameId": 1073523,
-                "divisionTag": "ipbl-66-w-pro-a",
-                "division": "Pro Women A",
-                "divisionLabel": "Pro Women A",
-                "quarter": 4,
-                "timeRemaining": "3.02",
-                "score": "91 : 105",
-                "quarterScore": null,
-                "totalScore": "91 : 105",
-                "snapshotTime": "2026-06-20T12:47:05.716Z",
-                "team1": {
-                  "teamId": 76021,
-                  "shortName": "Bryansk",
-                  "name": "Bryansk"
-                },
-                "team2": {
-                  "teamId": 76023,
-                  "shortName": "Izhevsk",
-                  "name": "Izhevsk"
-                },
-                "score1": 91,
-                "score2": 105,
-                "scoreText": "91 : 105",
-                "fullScore": null,
-                "quarterScores": [],
-                "period": 4,
-                "timeToGo": "3.02",
-                "timeIsGo": 1,
-                "status": "Online",
-                "statusDisplay": "Онлайн",
-                "isLive": true,
-                "scheduledTime": "2026-06-20T17:00:00+05:00",
-                "localDate": "20.06.2026",
-                "localTime": "18:30",
-                "displayTimeZone": "Asia/Yangon",
-                "source": "official:api1.ipbl.pro",
-                "fallbackFrom": null,
-                "sourceStatus": "OK",
-                "sourceUpdatedAt": "2026-06-20T12:47:05.716Z",
-                "transition": {
-                  "previousCapturedAt": "2026-06-20T12:45:06.548Z",
-                  "scoreDelta1": 10,
-                  "scoreDelta2": 16,
-                  "scoreChanged": true,
-                  "periodChanged": false,
-                  "clockDeltaSeconds": null,
-                  "clockAnomaly": false,
-                  "sourceChanged": false
-                }
-              },
-              {
-                "schemaVersion": 1,
-                "capturedAt": "2026-06-20T12:45:06.548Z",
-                "capturedAtMs": 1781959506548,
-                "gameKey": "ipbl-66-w-pro-a:1073523",
-                "gameId": 1073523,
-                "divisionTag": "ipbl-66-w-pro-a",
-                "division": "Pro Women A",
-                "divisionLabel": "Pro Women A",
-                "quarter": 4,
-                "timeRemaining": "3.02",
-                "score": "81 : 89",
-                "quarterScore": null,
-                "totalScore": "81 : 89",
-                "snapshotTime": "2026-06-20T12:45:06.548Z",
-                "team1": {
-                  "teamId": 76021,
-                  "shortName": "Bryansk",
-                  "name": "Bryansk"
-                },
-                "team2": {
-                  "teamId": 76023,
-                  "shortName": "Izhevsk",
-                  "name": "Izhevsk"
-                },
-                "score1": 81,
-                "score2": 89,
-                "scoreText": "81 : 89",
-                "fullScore": null,
-                "quarterScores": [],
-                "period": 4,
-                "timeToGo": "3.02",
-                "timeIsGo": 1,
-                "status": "Online",
-                "statusDisplay": "Онлайн",
-                "isLive": true,
-                "scheduledTime": "2026-06-20T17:00:00+05:00",
-                "localDate": "20.06.2026",
-                "localTime": "18:30",
-                "displayTimeZone": "Asia/Yangon",
-                "source": "official:api1.ipbl.pro",
-                "fallbackFrom": null,
-                "sourceStatus": "OK",
-                "sourceUpdatedAt": "2026-06-20T12:45:06.548Z",
-                "transition": {
-                  "previousCapturedAt": "2026-06-20T12:42:06.910Z",
-                  "scoreDelta1": 0,
-                  "scoreDelta2": 0,
-                  "scoreChanged": false,
-                  "periodChanged": false,
-                  "clockDeltaSeconds": null,
-                  "clockAnomaly": false,
-                  "sourceChanged": false
-                }
-              },
-              {
-                "schemaVersion": 1,
-                "capturedAt": "2026-06-20T12:42:06.910Z",
-                "capturedAtMs": 1781959326910,
-                "gameKey": "ipbl-66-w-pro-a:1073523",
-                "gameId": 1073523,
-                "divisionTag": "ipbl-66-w-pro-a",
-                "division": "Pro Women A",
-                "divisionLabel": "Pro Women A",
-                "quarter": 4,
-                "timeRemaining": "7.47",
-                "score": "81 : 89",
-                "quarterScore": null,
-                "totalScore": "81 : 89",
-                "snapshotTime": "2026-06-20T12:42:06.910Z",
-                "team1": {
-                  "teamId": 76021,
-                  "shortName": "Bryansk",
-                  "name": "Bryansk"
-                },
-                "team2": {
-                  "teamId": 76023,
-                  "shortName": "Izhevsk",
-                  "name": "Izhevsk"
-                },
-                "score1": 81,
-                "score2": 89,
-                "scoreText": "81 : 89",
-                "fullScore": null,
-                "quarterScores": [],
-                "period": 4,
-                "timeToGo": "7.47",
-                "timeIsGo": 1,
-                "status": "Online",
-                "statusDisplay": "Онлайн",
-                "isLive": true,
-                "scheduledTime": "2026-06-20T17:00:00+05:00",
-                "localDate": "20.06.2026",
-                "localTime": "18:30",
-                "displayTimeZone": "Asia/Yangon",
-                "source": "official:api1.ipbl.pro",
-                "fallbackFrom": null,
-                "sourceStatus": "OK",
-                "sourceUpdatedAt": "2026-06-20T12:42:06.910Z",
-                "transition": {
-                  "previousCapturedAt": "2026-06-20T12:40:07.195Z",
-                  "scoreDelta1": 13,
-                  "scoreDelta2": 13,
-                  "scoreChanged": true,
-                  "periodChanged": false,
-                  "clockDeltaSeconds": null,
-                  "clockAnomaly": false,
-                  "sourceChanged": false
-                }
-              },
-              {
-                "schemaVersion": 1,
-                "capturedAt": "2026-06-20T12:40:07.195Z",
-                "capturedAtMs": 1781959207195,
-                "gameKey": "ipbl-66-w-pro-a:1073523",
-                "gameId": 1073523,
-                "divisionTag": "ipbl-66-w-pro-a",
-                "division": "Pro Women A",
-                "divisionLabel": "Pro Women A",
-                "quarter": 4,
-                "timeRemaining": "7.47",
-                "score": "68 : 76",
-                "quarterScore": null,
-                "totalScore": "68 : 76",
-                "snapshotTime": "2026-06-20T12:40:07.195Z",
-                "team1": {
-                  "teamId": 76021,
-                  "shortName": "Bryansk",
-                  "name": "Bryansk"
-                },
-                "team2": {
-                  "teamId": 76023,
-                  "shortName": "Izhevsk",
-                  "name": "Izhevsk"
-                },
-                "score1": 68,
-                "score2": 76,
-                "scoreText": "68 : 76",
-                "fullScore": null,
-                "quarterScores": [],
-                "period": 4,
-                "timeToGo": "7.47",
-                "timeIsGo": 1,
-                "status": "Online",
-                "statusDisplay": "Онлайн",
-                "isLive": true,
-                "scheduledTime": "2026-06-20T17:00:00+05:00",
-                "localDate": "20.06.2026",
-                "localTime": "18:30",
-                "displayTimeZone": "Asia/Yangon",
-                "source": "official:api1.ipbl.pro",
-                "fallbackFrom": null,
-                "sourceStatus": "OK",
-                "sourceUpdatedAt": "2026-06-20T12:40:07.194Z",
-                "transition": {
-                  "previousCapturedAt": "2026-06-20T12:36:10.074Z",
-                  "scoreDelta1": 0,
-                  "scoreDelta2": 0,
-                  "scoreChanged": false,
-                  "periodChanged": true,
-                  "clockDeltaSeconds": null,
-                  "clockAnomaly": false,
-                  "sourceChanged": false
-                }
-              },
-              {
-                "schemaVersion": 1,
-                "capturedAt": "2026-06-20T12:40:06.071Z",
-                "capturedAtMs": 1781959206071,
-                "gameKey": "ipbl-66-w-pro-a:1073523",
-                "gameId": 1073523,
-                "divisionTag": "ipbl-66-w-pro-a",
-                "division": "Pro Women A",
-                "divisionLabel": "Pro Women A",
-                "quarter": 4,
-                "timeRemaining": "7.47",
-                "score": "68 : 76",
-                "quarterScore": null,
-                "totalScore": "68 : 76",
-                "snapshotTime": "2026-06-20T12:40:06.071Z",
-                "team1": {
-                  "teamId": 76021,
-                  "shortName": "Bryansk",
-                  "name": "Bryansk"
-                },
-                "team2": {
-                  "teamId": 76023,
-                  "shortName": "Izhevsk",
-                  "name": "Izhevsk"
-                },
-                "score1": 68,
-                "score2": 76,
-                "scoreText": "68 : 76",
-                "fullScore": null,
-                "quarterScores": [],
-                "period": 4,
-                "timeToGo": "7.47",
-                "timeIsGo": 1,
-                "status": "Online",
-                "statusDisplay": "Онлайн",
-                "isLive": true,
-                "scheduledTime": "2026-06-20T17:00:00+05:00",
-                "localDate": "20.06.2026",
-                "localTime": "18:30",
-                "displayTimeZone": "Asia/Yangon",
-                "source": "official:api1.ipbl.pro",
-                "fallbackFrom": null,
-                "sourceStatus": "OK",
-                "sourceUpdatedAt": "2026-06-20T12:40:06.071Z",
-                "transition": {
-                  "previousCapturedAt": "2026-06-20T12:36:10.074Z",
-                  "scoreDelta1": 0,
-                  "scoreDelta2": 0,
-                  "scoreChanged": false,
-                  "periodChanged": true,
-                  "clockDeltaSeconds": null,
-                  "clockAnomaly": false,
-                  "sourceChanged": false
-                }
-              }
-            ]
-          },
-          "preview": "{\"gameKey\":\"ipbl-66-w-pro-a:1073523\",\"newestFirst\":true,\"count\":5,\"snapshots\":[{\"schemaVersion\":1,\"capturedAt\":\"2026-06-20T12:47:05.716Z\",\"capturedAtMs\":1781959625716,\"gameKey\":\"ipbl-66-w-pro-a:1073523\",\"gameId\":1073523,\"divisionTag\":\"ipbl-66-w-pro-a\",\"division\":\"Pro Women A\",\"divisionLabel\":\"Pro Women A\",\"quarter\":4,\"timeRemaining\":\"3.02\",\"score\":\"91 : 105\",\"quarterScore\":null,\"totalScore\":\"91 : 105\",\"snapshotTime\":\"2026-06-20T12:47:05.716Z\",\"team1\":{\"teamId\":76021,\"shortName\":\"Bryansk\",\"name\":\"Bryansk\"},\"team2\":{\"teamId\":76023,\"shortName\":\"Izhevsk\",\"name\":\"Izhevsk\"},\"score1\":91,\"score2\":105,\"scoreText\":\"91 : 105\",\"fullScore\":null,\"quarterScores\":[],\"period\":4,\"timeToGo\":\"3.02\",\"timeIsGo\":1,\"status\":\"Online\",\"statusDisplay\":\"Онлайн\",\"isLive\":true,\"scheduledTime\":\"2026-06-20T17:00:00+05:00\",\"localDate\":\"20.06.2026\",\"localTime\":\"18:30\",\"displayTimeZone\":\"Asia/Yangon\",\"source\":\"official:api1.ipbl.pro\",\"fallbackFrom\":null,\"sourceStatus\":\"OK\",\"sourceUpdatedAt\":\"2026-06-20T12:47:05.716Z\",\"transition\":{\"previousCapturedAt\":\"2026-06-20T12:45:06.548Z\",\"scoreDelta1\":10,\"scoreDelta2\":16,\"scoreChanged\":true,\"periodChanged\":false,\"clockDeltaSeconds\":null,\"clockAnomaly\":false,\"sourceChanged\":fa"
-        }
-      ],
+      "capturedAt": "2026-06-20T13:47:45.986Z",
+      "ok": false,
+      "http": null,
+      "components": [],
       "json": {
-        "snapshots": [
-          {
-            "schemaVersion": 1,
-            "capturedAt": "2026-06-20T12:47:05.716Z",
-            "capturedAtMs": 1781959625716,
-            "gameKey": "ipbl-66-w-pro-a:1073523",
-            "gameId": 1073523,
-            "divisionTag": "ipbl-66-w-pro-a",
-            "division": "Pro Women A",
-            "divisionLabel": "Pro Women A",
-            "quarter": 4,
-            "timeRemaining": "3.02",
-            "score": "91 : 105",
-            "quarterScore": null,
-            "totalScore": "91 : 105",
-            "snapshotTime": "2026-06-20T12:47:05.716Z",
-            "team1": {
-              "teamId": 76021,
-              "shortName": "Bryansk",
-              "name": "Bryansk"
-            },
-            "team2": {
-              "teamId": 76023,
-              "shortName": "Izhevsk",
-              "name": "Izhevsk"
-            },
-            "score1": 91,
-            "score2": 105,
-            "scoreText": "91 : 105",
-            "fullScore": null,
-            "quarterScores": [],
-            "period": 4,
-            "timeToGo": "3.02",
-            "timeIsGo": 1,
-            "status": "Online",
-            "statusDisplay": "Онлайн",
-            "isLive": true,
-            "scheduledTime": "2026-06-20T17:00:00+05:00",
-            "localDate": "20.06.2026",
-            "localTime": "18:30",
-            "displayTimeZone": "Asia/Yangon",
-            "source": "official:api1.ipbl.pro",
-            "fallbackFrom": null,
-            "sourceStatus": "OK",
-            "sourceUpdatedAt": "2026-06-20T12:47:05.716Z",
-            "transition": {
-              "previousCapturedAt": "2026-06-20T12:45:06.548Z",
-              "scoreDelta1": 10,
-              "scoreDelta2": 16,
-              "scoreChanged": true,
-              "periodChanged": false,
-              "clockDeltaSeconds": null,
-              "clockAnomaly": false,
-              "sourceChanged": false
-            }
-          },
-          {
-            "schemaVersion": 1,
-            "capturedAt": "2026-06-20T12:45:06.548Z",
-            "capturedAtMs": 1781959506548,
-            "gameKey": "ipbl-66-w-pro-a:1073523",
-            "gameId": 1073523,
-            "divisionTag": "ipbl-66-w-pro-a",
-            "division": "Pro Women A",
-            "divisionLabel": "Pro Women A",
-            "quarter": 4,
-            "timeRemaining": "3.02",
-            "score": "81 : 89",
-            "quarterScore": null,
-            "totalScore": "81 : 89",
-            "snapshotTime": "2026-06-20T12:45:06.548Z",
-            "team1": {
-              "teamId": 76021,
-              "shortName": "Bryansk",
-              "name": "Bryansk"
-            },
-            "team2": {
-              "teamId": 76023,
-              "shortName": "Izhevsk",
-              "name": "Izhevsk"
-            },
-            "score1": 81,
-            "score2": 89,
-            "scoreText": "81 : 89",
-            "fullScore": null,
-            "quarterScores": [],
-            "period": 4,
-            "timeToGo": "3.02",
-            "timeIsGo": 1,
-            "status": "Online",
-            "statusDisplay": "Онлайн",
-            "isLive": true,
-            "scheduledTime": "2026-06-20T17:00:00+05:00",
-            "localDate": "20.06.2026",
-            "localTime": "18:30",
-            "displayTimeZone": "Asia/Yangon",
-            "source": "official:api1.ipbl.pro",
-            "fallbackFrom": null,
-            "sourceStatus": "OK",
-            "sourceUpdatedAt": "2026-06-20T12:45:06.548Z",
-            "transition": {
-              "previousCapturedAt": "2026-06-20T12:42:06.910Z",
-              "scoreDelta1": 0,
-              "scoreDelta2": 0,
-              "scoreChanged": false,
-              "periodChanged": false,
-              "clockDeltaSeconds": null,
-              "clockAnomaly": false,
-              "sourceChanged": false
-            }
-          },
-          {
-            "schemaVersion": 1,
-            "capturedAt": "2026-06-20T12:42:06.910Z",
-            "capturedAtMs": 1781959326910,
-            "gameKey": "ipbl-66-w-pro-a:1073523",
-            "gameId": 1073523,
-            "divisionTag": "ipbl-66-w-pro-a",
-            "division": "Pro Women A",
-            "divisionLabel": "Pro Women A",
-            "quarter": 4,
-            "timeRemaining": "7.47",
-            "score": "81 : 89",
-            "quarterScore": null,
-            "totalScore": "81 : 89",
-            "snapshotTime": "2026-06-20T12:42:06.910Z",
-            "team1": {
-              "teamId": 76021,
-              "shortName": "Bryansk",
-              "name": "Bryansk"
-            },
-            "team2": {
-              "teamId": 76023,
-              "shortName": "Izhevsk",
-              "name": "Izhevsk"
-            },
-            "score1": 81,
-            "score2": 89,
-            "scoreText": "81 : 89",
-            "fullScore": null,
-            "quarterScores": [],
-            "period": 4,
-            "timeToGo": "7.47",
-            "timeIsGo": 1,
-            "status": "Online",
-            "statusDisplay": "Онлайн",
-            "isLive": true,
-            "scheduledTime": "2026-06-20T17:00:00+05:00",
-            "localDate": "20.06.2026",
-            "localTime": "18:30",
-            "displayTimeZone": "Asia/Yangon",
-            "source": "official:api1.ipbl.pro",
-            "fallbackFrom": null,
-            "sourceStatus": "OK",
-            "sourceUpdatedAt": "2026-06-20T12:42:06.910Z",
-            "transition": {
-              "previousCapturedAt": "2026-06-20T12:40:07.195Z",
-              "scoreDelta1": 13,
-              "scoreDelta2": 13,
-              "scoreChanged": true,
-              "periodChanged": false,
-              "clockDeltaSeconds": null,
-              "clockAnomaly": false,
-              "sourceChanged": false
-            }
-          },
-          {
-            "schemaVersion": 1,
-            "capturedAt": "2026-06-20T12:40:07.195Z",
-            "capturedAtMs": 1781959207195,
-            "gameKey": "ipbl-66-w-pro-a:1073523",
-            "gameId": 1073523,
-            "divisionTag": "ipbl-66-w-pro-a",
-            "division": "Pro Women A",
-            "divisionLabel": "Pro Women A",
-            "quarter": 4,
-            "timeRemaining": "7.47",
-            "score": "68 : 76",
-            "quarterScore": null,
-            "totalScore": "68 : 76",
-            "snapshotTime": "2026-06-20T12:40:07.195Z",
-            "team1": {
-              "teamId": 76021,
-              "shortName": "Bryansk",
-              "name": "Bryansk"
-            },
-            "team2": {
-              "teamId": 76023,
-              "shortName": "Izhevsk",
-              "name": "Izhevsk"
-            },
-            "score1": 68,
-            "score2": 76,
-            "scoreText": "68 : 76",
-            "fullScore": null,
-            "quarterScores": [],
-            "period": 4,
-            "timeToGo": "7.47",
-            "timeIsGo": 1,
-            "status": "Online",
-            "statusDisplay": "Онлайн",
-            "isLive": true,
-            "scheduledTime": "2026-06-20T17:00:00+05:00",
-            "localDate": "20.06.2026",
-            "localTime": "18:30",
-            "displayTimeZone": "Asia/Yangon",
-            "source": "official:api1.ipbl.pro",
-            "fallbackFrom": null,
-            "sourceStatus": "OK",
-            "sourceUpdatedAt": "2026-06-20T12:40:07.194Z",
-            "transition": {
-              "previousCapturedAt": "2026-06-20T12:36:10.074Z",
-              "scoreDelta1": 0,
-              "scoreDelta2": 0,
-              "scoreChanged": false,
-              "periodChanged": true,
-              "clockDeltaSeconds": null,
-              "clockAnomaly": false,
-              "sourceChanged": false
-            }
-          },
-          {
-            "schemaVersion": 1,
-            "capturedAt": "2026-06-20T12:40:06.071Z",
-            "capturedAtMs": 1781959206071,
-            "gameKey": "ipbl-66-w-pro-a:1073523",
-            "gameId": 1073523,
-            "divisionTag": "ipbl-66-w-pro-a",
-            "division": "Pro Women A",
-            "divisionLabel": "Pro Women A",
-            "quarter": 4,
-            "timeRemaining": "7.47",
-            "score": "68 : 76",
-            "quarterScore": null,
-            "totalScore": "68 : 76",
-            "snapshotTime": "2026-06-20T12:40:06.071Z",
-            "team1": {
-              "teamId": 76021,
-              "shortName": "Bryansk",
-              "name": "Bryansk"
-            },
-            "team2": {
-              "teamId": 76023,
-              "shortName": "Izhevsk",
-              "name": "Izhevsk"
-            },
-            "score1": 68,
-            "score2": 76,
-            "scoreText": "68 : 76",
-            "fullScore": null,
-            "quarterScores": [],
-            "period": 4,
-            "timeToGo": "7.47",
-            "timeIsGo": 1,
-            "status": "Online",
-            "statusDisplay": "Онлайн",
-            "isLive": true,
-            "scheduledTime": "2026-06-20T17:00:00+05:00",
-            "localDate": "20.06.2026",
-            "localTime": "18:30",
-            "displayTimeZone": "Asia/Yangon",
-            "source": "official:api1.ipbl.pro",
-            "fallbackFrom": null,
-            "sourceStatus": "OK",
-            "sourceUpdatedAt": "2026-06-20T12:40:06.071Z",
-            "transition": {
-              "previousCapturedAt": "2026-06-20T12:36:10.074Z",
-              "scoreDelta1": 0,
-              "scoreDelta2": 0,
-              "scoreChanged": false,
-              "periodChanged": true,
-              "clockDeltaSeconds": null,
-              "clockAnomaly": false,
-              "sourceChanged": false
-            }
-          }
-        ]
+        "snapshots": []
       }
     },
     "melbetLiveDiscovery": {
       "label": "melbetLiveDiscovery",
       "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
-      "capturedAt": "2026-06-20T12:52:17.379Z",
+      "capturedAt": "2026-06-20T13:47:45.963Z",
       "ok": false,
       "http": null,
       "components": [
         {
           "label": "melbetLive-2496666",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-20T12:52:06.879Z",
+          "capturedAt": "2026-06-20T13:47:45.956Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "melbetLive-2496667",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-20T12:52:17.379Z",
+          "capturedAt": "2026-06-20T13:47:45.963Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         }
@@ -2007,755 +373,15 @@
     }
   },
   "rowSets": {
-    "officialCalendar": [
-      {
-        "source": "officialCalendar",
-        "index": 0,
-        "rowKey": "voronezh v plavsk",
-        "gameId": null,
-        "divisionTag": "ipbl-66-m-pro-c",
-        "homeName": "Voronezh",
-        "awayName": "Plavsk",
-        "homeNorm": "voronezh",
-        "awayNorm": "plavsk",
-        "homeScore": 0,
-        "awayScore": 0,
-        "period": null,
-        "clock": null,
-        "status": {
-          "icon": "fa-solid fa-play color-darkgreen ",
-          "id": "Online",
-          "displayName": "Онлайн"
-        },
-        "rawShape": [
-          "game",
-          "comp",
-          "league",
-          "gender",
-          "status",
-          "region",
-          "arena",
-          "team1",
-          "team2",
-          "ot",
-          "distanceIndex",
-          "period",
-          "timeToGo",
-          "timeIsGo",
-          "hasCoefficients",
-          "photoUrl",
-          "division",
-          "tag",
-          "divisionTag"
-        ]
-      },
-      {
-        "source": "officialCalendar",
-        "index": 1,
-        "rowKey": "krasnoyarsk v nizhniynovgorod",
-        "gameId": null,
-        "divisionTag": "ipbl-66-m-pro-d",
-        "homeName": "Krasnoyarsk",
-        "awayName": "NizhniyNovgorod",
-        "homeNorm": "krasnoyarsk",
-        "awayNorm": "nizhniynovgorod",
-        "homeScore": 0,
-        "awayScore": 0,
-        "period": null,
-        "clock": null,
-        "status": {
-          "icon": "fa-solid fa-circle-play color-orange ",
-          "id": "ResultWaiting",
-          "displayName": "Завершена"
-        },
-        "rawShape": [
-          "game",
-          "comp",
-          "league",
-          "gender",
-          "status",
-          "region",
-          "arena",
-          "team1",
-          "team2",
-          "ot",
-          "distanceIndex",
-          "period",
-          "timeToGo",
-          "timeIsGo",
-          "hasCoefficients",
-          "photoUrl",
-          "division",
-          "tag",
-          "divisionTag"
-        ]
-      },
-      {
-        "source": "officialCalendar",
-        "index": 2,
-        "rowKey": "magadan v ufa",
-        "gameId": null,
-        "divisionTag": "ipbl-66-m-pro-z",
-        "homeName": "Magadan",
-        "awayName": "Ufa",
-        "homeNorm": "magadan",
-        "awayNorm": "ufa",
-        "homeScore": 0,
-        "awayScore": 0,
-        "period": 4,
-        "clock": null,
-        "status": {
-          "icon": "fa-regular fa-check color-darkblue ",
-          "id": "Result",
-          "displayName": "Finished"
-        },
-        "rawShape": [
-          "game",
-          "comp",
-          "league",
-          "gender",
-          "status",
-          "region",
-          "arena",
-          "team1",
-          "team2",
-          "ot",
-          "distanceIndex",
-          "period",
-          "timeToGo",
-          "timeIsGo",
-          "hasCoefficients",
-          "photoUrl",
-          "division",
-          "tag",
-          "divisionTag"
-        ]
-      },
-      {
-        "source": "officialCalendar",
-        "index": 3,
-        "rowKey": "bryansk v izhevsk",
-        "gameId": null,
-        "divisionTag": "ipbl-66-w-pro-a",
-        "homeName": "Bryansk",
-        "awayName": "Izhevsk",
-        "homeNorm": "bryansk",
-        "awayNorm": "izhevsk",
-        "homeScore": 0,
-        "awayScore": 0,
-        "period": 4,
-        "clock": null,
-        "status": {
-          "icon": "fa-regular fa-check color-darkblue ",
-          "id": "Result",
-          "displayName": "Finished"
-        },
-        "rawShape": [
-          "game",
-          "comp",
-          "league",
-          "gender",
-          "status",
-          "region",
-          "arena",
-          "team1",
-          "team2",
-          "ot",
-          "distanceIndex",
-          "period",
-          "timeToGo",
-          "timeIsGo",
-          "hasCoefficients",
-          "photoUrl",
-          "division",
-          "tag",
-          "divisionTag"
-        ]
-      }
-    ],
+    "officialCalendar": [],
     "productionLive": [],
-    "recorderHistory": [
-      {
-        "source": "recorderHistory",
-        "index": 0,
-        "rowKey": "1073523",
-        "gameId": "1073523",
-        "divisionTag": "ipbl-66-w-pro-a",
-        "homeName": "Bryansk",
-        "awayName": "Izhevsk",
-        "homeNorm": "bryansk",
-        "awayNorm": "izhevsk",
-        "homeScore": 91,
-        "awayScore": 105,
-        "period": 4,
-        "clock": "3.02",
-        "status": "Online",
-        "rawShape": [
-          "schemaVersion",
-          "capturedAt",
-          "capturedAtMs",
-          "gameKey",
-          "gameId",
-          "divisionTag",
-          "division",
-          "divisionLabel",
-          "quarter",
-          "timeRemaining",
-          "score",
-          "quarterScore",
-          "totalScore",
-          "snapshotTime",
-          "team1",
-          "team2",
-          "score1",
-          "score2",
-          "scoreText",
-          "fullScore",
-          "quarterScores",
-          "period",
-          "timeToGo",
-          "timeIsGo",
-          "status",
-          "statusDisplay",
-          "isLive",
-          "scheduledTime",
-          "localDate",
-          "localTime",
-          "displayTimeZone",
-          "source",
-          "fallbackFrom",
-          "sourceStatus",
-          "sourceUpdatedAt",
-          "transition"
-        ]
-      },
-      {
-        "source": "recorderHistory",
-        "index": 1,
-        "rowKey": "1073523",
-        "gameId": "1073523",
-        "divisionTag": "ipbl-66-w-pro-a",
-        "homeName": "Bryansk",
-        "awayName": "Izhevsk",
-        "homeNorm": "bryansk",
-        "awayNorm": "izhevsk",
-        "homeScore": 81,
-        "awayScore": 89,
-        "period": 4,
-        "clock": "3.02",
-        "status": "Online",
-        "rawShape": [
-          "schemaVersion",
-          "capturedAt",
-          "capturedAtMs",
-          "gameKey",
-          "gameId",
-          "divisionTag",
-          "division",
-          "divisionLabel",
-          "quarter",
-          "timeRemaining",
-          "score",
-          "quarterScore",
-          "totalScore",
-          "snapshotTime",
-          "team1",
-          "team2",
-          "score1",
-          "score2",
-          "scoreText",
-          "fullScore",
-          "quarterScores",
-          "period",
-          "timeToGo",
-          "timeIsGo",
-          "status",
-          "statusDisplay",
-          "isLive",
-          "scheduledTime",
-          "localDate",
-          "localTime",
-          "displayTimeZone",
-          "source",
-          "fallbackFrom",
-          "sourceStatus",
-          "sourceUpdatedAt",
-          "transition"
-        ]
-      },
-      {
-        "source": "recorderHistory",
-        "index": 2,
-        "rowKey": "1073523",
-        "gameId": "1073523",
-        "divisionTag": "ipbl-66-w-pro-a",
-        "homeName": "Bryansk",
-        "awayName": "Izhevsk",
-        "homeNorm": "bryansk",
-        "awayNorm": "izhevsk",
-        "homeScore": 81,
-        "awayScore": 89,
-        "period": 4,
-        "clock": "7.47",
-        "status": "Online",
-        "rawShape": [
-          "schemaVersion",
-          "capturedAt",
-          "capturedAtMs",
-          "gameKey",
-          "gameId",
-          "divisionTag",
-          "division",
-          "divisionLabel",
-          "quarter",
-          "timeRemaining",
-          "score",
-          "quarterScore",
-          "totalScore",
-          "snapshotTime",
-          "team1",
-          "team2",
-          "score1",
-          "score2",
-          "scoreText",
-          "fullScore",
-          "quarterScores",
-          "period",
-          "timeToGo",
-          "timeIsGo",
-          "status",
-          "statusDisplay",
-          "isLive",
-          "scheduledTime",
-          "localDate",
-          "localTime",
-          "displayTimeZone",
-          "source",
-          "fallbackFrom",
-          "sourceStatus",
-          "sourceUpdatedAt",
-          "transition"
-        ]
-      },
-      {
-        "source": "recorderHistory",
-        "index": 3,
-        "rowKey": "1073523",
-        "gameId": "1073523",
-        "divisionTag": "ipbl-66-w-pro-a",
-        "homeName": "Bryansk",
-        "awayName": "Izhevsk",
-        "homeNorm": "bryansk",
-        "awayNorm": "izhevsk",
-        "homeScore": 68,
-        "awayScore": 76,
-        "period": 4,
-        "clock": "7.47",
-        "status": "Online",
-        "rawShape": [
-          "schemaVersion",
-          "capturedAt",
-          "capturedAtMs",
-          "gameKey",
-          "gameId",
-          "divisionTag",
-          "division",
-          "divisionLabel",
-          "quarter",
-          "timeRemaining",
-          "score",
-          "quarterScore",
-          "totalScore",
-          "snapshotTime",
-          "team1",
-          "team2",
-          "score1",
-          "score2",
-          "scoreText",
-          "fullScore",
-          "quarterScores",
-          "period",
-          "timeToGo",
-          "timeIsGo",
-          "status",
-          "statusDisplay",
-          "isLive",
-          "scheduledTime",
-          "localDate",
-          "localTime",
-          "displayTimeZone",
-          "source",
-          "fallbackFrom",
-          "sourceStatus",
-          "sourceUpdatedAt",
-          "transition"
-        ]
-      },
-      {
-        "source": "recorderHistory",
-        "index": 4,
-        "rowKey": "1073523",
-        "gameId": "1073523",
-        "divisionTag": "ipbl-66-w-pro-a",
-        "homeName": "Bryansk",
-        "awayName": "Izhevsk",
-        "homeNorm": "bryansk",
-        "awayNorm": "izhevsk",
-        "homeScore": 68,
-        "awayScore": 76,
-        "period": 4,
-        "clock": "7.47",
-        "status": "Online",
-        "rawShape": [
-          "schemaVersion",
-          "capturedAt",
-          "capturedAtMs",
-          "gameKey",
-          "gameId",
-          "divisionTag",
-          "division",
-          "divisionLabel",
-          "quarter",
-          "timeRemaining",
-          "score",
-          "quarterScore",
-          "totalScore",
-          "snapshotTime",
-          "team1",
-          "team2",
-          "score1",
-          "score2",
-          "scoreText",
-          "fullScore",
-          "quarterScores",
-          "period",
-          "timeToGo",
-          "timeIsGo",
-          "status",
-          "statusDisplay",
-          "isLive",
-          "scheduledTime",
-          "localDate",
-          "localTime",
-          "displayTimeZone",
-          "source",
-          "fallbackFrom",
-          "sourceStatus",
-          "sourceUpdatedAt",
-          "transition"
-        ]
-      }
-    ]
+    "recorderHistory": []
   },
   "reconciliation": {
-    "primarySource": "officialCalendar",
-    "matches": [
-      {
-        "rowKey": "voronezh v plavsk",
-        "baseSource": "officialCalendar",
-        "base": {
-          "source": "officialCalendar",
-          "index": 0,
-          "rowKey": "voronezh v plavsk",
-          "gameId": null,
-          "divisionTag": "ipbl-66-m-pro-c",
-          "homeName": "Voronezh",
-          "awayName": "Plavsk",
-          "homeNorm": "voronezh",
-          "awayNorm": "plavsk",
-          "homeScore": 0,
-          "awayScore": 0,
-          "period": null,
-          "clock": null,
-          "status": {
-            "icon": "fa-solid fa-play color-darkgreen ",
-            "id": "Online",
-            "displayName": "Онлайн"
-          },
-          "rawShape": [
-            "game",
-            "comp",
-            "league",
-            "gender",
-            "status",
-            "region",
-            "arena",
-            "team1",
-            "team2",
-            "ot",
-            "distanceIndex",
-            "period",
-            "timeToGo",
-            "timeIsGo",
-            "hasCoefficients",
-            "photoUrl",
-            "division",
-            "tag",
-            "divisionTag"
-          ]
-        },
-        "matched": {}
-      },
-      {
-        "rowKey": "krasnoyarsk v nizhniynovgorod",
-        "baseSource": "officialCalendar",
-        "base": {
-          "source": "officialCalendar",
-          "index": 1,
-          "rowKey": "krasnoyarsk v nizhniynovgorod",
-          "gameId": null,
-          "divisionTag": "ipbl-66-m-pro-d",
-          "homeName": "Krasnoyarsk",
-          "awayName": "NizhniyNovgorod",
-          "homeNorm": "krasnoyarsk",
-          "awayNorm": "nizhniynovgorod",
-          "homeScore": 0,
-          "awayScore": 0,
-          "period": null,
-          "clock": null,
-          "status": {
-            "icon": "fa-solid fa-circle-play color-orange ",
-            "id": "ResultWaiting",
-            "displayName": "Завершена"
-          },
-          "rawShape": [
-            "game",
-            "comp",
-            "league",
-            "gender",
-            "status",
-            "region",
-            "arena",
-            "team1",
-            "team2",
-            "ot",
-            "distanceIndex",
-            "period",
-            "timeToGo",
-            "timeIsGo",
-            "hasCoefficients",
-            "photoUrl",
-            "division",
-            "tag",
-            "divisionTag"
-          ]
-        },
-        "matched": {}
-      },
-      {
-        "rowKey": "magadan v ufa",
-        "baseSource": "officialCalendar",
-        "base": {
-          "source": "officialCalendar",
-          "index": 2,
-          "rowKey": "magadan v ufa",
-          "gameId": null,
-          "divisionTag": "ipbl-66-m-pro-z",
-          "homeName": "Magadan",
-          "awayName": "Ufa",
-          "homeNorm": "magadan",
-          "awayNorm": "ufa",
-          "homeScore": 0,
-          "awayScore": 0,
-          "period": 4,
-          "clock": null,
-          "status": {
-            "icon": "fa-regular fa-check color-darkblue ",
-            "id": "Result",
-            "displayName": "Finished"
-          },
-          "rawShape": [
-            "game",
-            "comp",
-            "league",
-            "gender",
-            "status",
-            "region",
-            "arena",
-            "team1",
-            "team2",
-            "ot",
-            "distanceIndex",
-            "period",
-            "timeToGo",
-            "timeIsGo",
-            "hasCoefficients",
-            "photoUrl",
-            "division",
-            "tag",
-            "divisionTag"
-          ]
-        },
-        "matched": {}
-      },
-      {
-        "rowKey": "bryansk v izhevsk",
-        "baseSource": "officialCalendar",
-        "base": {
-          "source": "officialCalendar",
-          "index": 3,
-          "rowKey": "bryansk v izhevsk",
-          "gameId": null,
-          "divisionTag": "ipbl-66-w-pro-a",
-          "homeName": "Bryansk",
-          "awayName": "Izhevsk",
-          "homeNorm": "bryansk",
-          "awayNorm": "izhevsk",
-          "homeScore": 0,
-          "awayScore": 0,
-          "period": 4,
-          "clock": null,
-          "status": {
-            "icon": "fa-regular fa-check color-darkblue ",
-            "id": "Result",
-            "displayName": "Finished"
-          },
-          "rawShape": [
-            "game",
-            "comp",
-            "league",
-            "gender",
-            "status",
-            "region",
-            "arena",
-            "team1",
-            "team2",
-            "ot",
-            "distanceIndex",
-            "period",
-            "timeToGo",
-            "timeIsGo",
-            "hasCoefficients",
-            "photoUrl",
-            "division",
-            "tag",
-            "divisionTag"
-          ]
-        },
-        "matched": {
-          "recorderHistory": {
-            "source": "recorderHistory",
-            "index": 4,
-            "rowKey": "1073523",
-            "gameId": "1073523",
-            "divisionTag": "ipbl-66-w-pro-a",
-            "homeName": "Bryansk",
-            "awayName": "Izhevsk",
-            "homeNorm": "bryansk",
-            "awayNorm": "izhevsk",
-            "homeScore": 68,
-            "awayScore": 76,
-            "period": 4,
-            "clock": "7.47",
-            "status": "Online",
-            "rawShape": [
-              "schemaVersion",
-              "capturedAt",
-              "capturedAtMs",
-              "gameKey",
-              "gameId",
-              "divisionTag",
-              "division",
-              "divisionLabel",
-              "quarter",
-              "timeRemaining",
-              "score",
-              "quarterScore",
-              "totalScore",
-              "snapshotTime",
-              "team1",
-              "team2",
-              "score1",
-              "score2",
-              "scoreText",
-              "fullScore",
-              "quarterScores",
-              "period",
-              "timeToGo",
-              "timeIsGo",
-              "status",
-              "statusDisplay",
-              "isLive",
-              "scheduledTime",
-              "localDate",
-              "localTime",
-              "displayTimeZone",
-              "source",
-              "fallbackFrom",
-              "sourceStatus",
-              "sourceUpdatedAt",
-              "transition"
-            ]
-          }
-        }
-      }
-    ],
-    "missing": [
-      {
-        "rowKey": "voronezh v plavsk",
-        "missingSource": "productionLive",
-        "gameId": null,
-        "divisionTag": "ipbl-66-m-pro-c",
-        "teamPair": "voronezh|plavsk"
-      },
-      {
-        "rowKey": "voronezh v plavsk",
-        "missingSource": "recorderHistory",
-        "gameId": null,
-        "divisionTag": "ipbl-66-m-pro-c",
-        "teamPair": "voronezh|plavsk"
-      },
-      {
-        "rowKey": "krasnoyarsk v nizhniynovgorod",
-        "missingSource": "productionLive",
-        "gameId": null,
-        "divisionTag": "ipbl-66-m-pro-d",
-        "teamPair": "krasnoyarsk|nizhniynovgorod"
-      },
-      {
-        "rowKey": "krasnoyarsk v nizhniynovgorod",
-        "missingSource": "recorderHistory",
-        "gameId": null,
-        "divisionTag": "ipbl-66-m-pro-d",
-        "teamPair": "krasnoyarsk|nizhniynovgorod"
-      },
-      {
-        "rowKey": "magadan v ufa",
-        "missingSource": "productionLive",
-        "gameId": null,
-        "divisionTag": "ipbl-66-m-pro-z",
-        "teamPair": "magadan|ufa"
-      },
-      {
-        "rowKey": "magadan v ufa",
-        "missingSource": "recorderHistory",
-        "gameId": null,
-        "divisionTag": "ipbl-66-m-pro-z",
-        "teamPair": "magadan|ufa"
-      },
-      {
-        "rowKey": "bryansk v izhevsk",
-        "missingSource": "productionLive",
-        "gameId": null,
-        "divisionTag": "ipbl-66-w-pro-a",
-        "teamPair": "bryansk|izhevsk"
-      }
-    ],
-    "mismatches": [
-      {
-        "type": "score",
-        "rowKey": "bryansk v izhevsk",
-        "source": "recorderHistory",
-        "baseScore": [
-          0,
-          0
-        ],
-        "candidateScore": [
-          68,
-          76
-        ]
-      }
-    ]
+    "primarySource": "productionLive",
+    "matches": [],
+    "missing": [],
+    "mismatches": []
   },
   "eventsstat": []
 }
