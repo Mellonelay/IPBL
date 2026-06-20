@@ -1,6 +1,6 @@
 # IPBL Final Master Ledger
 
-This ledger mirrors [docs/PHASE_MASTER_CHECKLIST.md](/root/repos/IPBL/docs/PHASE_MASTER_CHECKLIST.md) exactly and provides a compact evidence-backed view of the current phase state.
+This ledger mirrors [docs/PHASE_MASTER_CHECKLIST.md](/root/repos/IPBL/docs/PHASE_MASTER_CHECKLIST.md) exactly and provides a compact evidence-backed view of the current phase state. The same complete/support-ready split applies here.
 
 ## Phase Ledger
 

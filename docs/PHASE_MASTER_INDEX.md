@@ -30,9 +30,10 @@ This index is the repo-wide navigation layer for the phases that are complete, m
   - [graphify-out/.graphify_analysis.json](/root/repos/IPBL/graphify-out/.graphify_analysis.json)
   - [graphify-out/.graphify_ast.json](/root/repos/IPBL/graphify-out/.graphify_ast.json)
 
-## Phase 2-3, 5, 6-7, 11: Validated Support-Ready Surfaces
+## Phase 2-3, 5, 6-7, 11: Support-Ready Surfaces
 
 These phases are backed by durable evidence and validation coverage, but they remain separate from the open roadmap phases.
+They are closure packaging surfaces, not open implementation targets.
 
 - Phase 2 - Graphify Skill Installation:
   - [docs/PHASE_MASTER_CHECKLIST.md](/root/repos/IPBL/docs/PHASE_MASTER_CHECKLIST.md)

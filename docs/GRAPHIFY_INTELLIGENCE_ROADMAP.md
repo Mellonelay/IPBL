@@ -129,6 +129,14 @@ Required skill families:
 - Evidence Graph Finalization Skill
 - GEN Layer Planning Skill
 
+Closure workflow names mirrored in the repo-local agent skills:
+
+- `graphify-source-archaeology`
+- `live-source-repair`
+- `vercel-verification`
+- `evidence-finalization`
+- `gen-planning`
+
 ### Layer 3 - agnix Configuration Validation
 
 agnix is the static configuration integrity layer.

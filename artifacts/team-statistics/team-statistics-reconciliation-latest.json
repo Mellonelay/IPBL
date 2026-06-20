@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-06-16T21:12:36.000Z",
+    "generatedAt": "2026-06-20T12:51:54.877Z",
     "base": "https://ipbl-minimal-viewer.vercel.app",
     "season": 2026,
     "timeoutMs": 45000,
@@ -97,168 +97,169 @@
         "label": "Pro Men A",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-m-pro-b",
         "label": "Pro Men B",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-m-pro-c",
         "label": "Pro Men C",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-m-pro-d",
         "label": "Pro Men D",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-m-pro-u",
         "label": "Pro Men U",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-m-pro-z",
         "label": "Pro Men Z",
         "expectedTeamCount": 2,
         "actualTeamCount": 2,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 2,
+        "teamsWithHistory": 2,
+        "teamsWithQuarterMatrix": 2,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-m-pro-l",
         "label": "Pro Men L",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-w-pro-a",
         "label": "Pro Women A",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-w-pro-b",
         "label": "Pro Women B",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv",
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-w-pro-c",
         "label": "Pro Women C",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-w-pro-d",
         "label": "Pro Women D",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-w-pro-g",
         "label": "Pro Women G",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       },
       {
         "tag": "ipbl-66-w-pro-k",
         "label": "Pro Women K",
         "expectedTeamCount": 4,
         "actualTeamCount": 4,
-        "okTeams": 0,
-        "teamsWithHistory": 0,
-        "teamsWithQuarterMatrix": 0,
-        "sources": []
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv+official-calendar"
+        ]
       }
     ],
     "totals": {
       "teamsChecked": 50,
-      "okTeams": 0,
-      "teamsWithHistory": 0,
-      "teamsWithQuarterMatrix": 0
+      "okTeams": 50,
+      "teamsWithHistory": 50,
+      "teamsWithQuarterMatrix": 50
     },
     "classification": "PARTIAL",
     "failures": [
       "division_count_not_12",
-      "team_count_not_46",
-      "history_fetch_failure:ipbl-66-m-pro-a",
-      "no_history:ipbl-66-m-pro-a",
-      "history_fetch_failure:ipbl-66-m-pro-b",
-      "no_history:ipbl-66-m-pro-b",
-      "history_fetch_failure:ipbl-66-m-pro-c",
-      "no_history:ipbl-66-m-pro-c",
-      "history_fetch_failure:ipbl-66-m-pro-d",
-      "no_history:ipbl-66-m-pro-d",
-      "history_fetch_failure:ipbl-66-m-pro-u",
-      "no_history:ipbl-66-m-pro-u",
-      "history_fetch_failure:ipbl-66-m-pro-z",
-      "no_history:ipbl-66-m-pro-z",
-      "history_fetch_failure:ipbl-66-m-pro-l",
-      "no_history:ipbl-66-m-pro-l",
-      "history_fetch_failure:ipbl-66-w-pro-a",
-      "no_history:ipbl-66-w-pro-a",
-      "history_fetch_failure:ipbl-66-w-pro-b",
-      "no_history:ipbl-66-w-pro-b",
-      "history_fetch_failure:ipbl-66-w-pro-c",
-      "no_history:ipbl-66-w-pro-c",
-      "history_fetch_failure:ipbl-66-w-pro-d",
-      "no_history:ipbl-66-w-pro-d",
-      "history_fetch_failure:ipbl-66-w-pro-g",
-      "no_history:ipbl-66-w-pro-g",
-      "history_fetch_failure:ipbl-66-w-pro-k",
-      "no_history:ipbl-66-w-pro-k"
+      "team_count_not_46"
     ],
     "policy": {
       "oddsDeploymentAllowed": false,
@@ -272,800 +273,4666 @@
       "name": "Barnaul",
       "divisionTag": "ipbl-66-m-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76038&tag=ipbl-66-m-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 178,
+      "completedCount": 178,
+      "quarterMatrixCount": 168,
+      "latest": {
+        "gameId": 1073675,
+        "localDate": "19.06.2026",
+        "localTime": "13:00",
+        "score": "114 : 112",
+        "fullScore": "20:22,33:30,25:30,36:30",
+        "team1": "Barnaul",
+        "team2": "Sochi"
+      }
     },
     {
       "teamId": 76040,
       "name": "Novosibirsk",
       "divisionTag": "ipbl-66-m-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76040&tag=ipbl-66-m-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 178,
+      "completedCount": 178,
+      "quarterMatrixCount": 169,
+      "latest": {
+        "gameId": 1073674,
+        "localDate": "19.06.2026",
+        "localTime": "12:00",
+        "score": "100 : 107",
+        "fullScore": "28:34,30:20,27:26,15:27",
+        "team1": "StPetersburg",
+        "team2": "Novosibirsk"
+      }
     },
     {
       "teamId": 76041,
       "name": "Sochi",
       "divisionTag": "ipbl-66-m-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76041&tag=ipbl-66-m-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 178,
+      "completedCount": 178,
+      "quarterMatrixCount": 170,
+      "latest": {
+        "gameId": 1073675,
+        "localDate": "19.06.2026",
+        "localTime": "13:00",
+        "score": "114 : 112",
+        "fullScore": "20:22,33:30,25:30,36:30",
+        "team1": "Barnaul",
+        "team2": "Sochi"
+      }
     },
     {
       "teamId": 76039,
       "name": "St. Petersburg",
       "divisionTag": "ipbl-66-m-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76039&tag=ipbl-66-m-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 178,
+      "completedCount": 178,
+      "quarterMatrixCount": 167,
+      "latest": {
+        "gameId": 1073674,
+        "localDate": "19.06.2026",
+        "localTime": "12:00",
+        "score": "100 : 107",
+        "fullScore": "28:34,30:20,27:26,15:27",
+        "team1": "StPetersburg",
+        "team2": "Novosibirsk"
+      }
     },
     {
       "teamId": 76051,
       "name": "Kazan",
       "divisionTag": "ipbl-66-m-pro-b",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76051&tag=ipbl-66-m-pro-b&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-b",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 178,
+      "completedCount": 178,
+      "quarterMatrixCount": 174,
+      "latest": {
+        "gameId": 1073735,
+        "localDate": "19.06.2026",
+        "localTime": "19:00",
+        "score": "98 : 83",
+        "fullScore": "19:34,31:19,26:15,22:15",
+        "team1": "Kazan",
+        "team2": "Krasnodar"
+      }
     },
     {
       "teamId": 76050,
       "name": "Krasnodar",
       "divisionTag": "ipbl-66-m-pro-b",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76050&tag=ipbl-66-m-pro-b&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-b",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 178,
+      "completedCount": 178,
+      "quarterMatrixCount": 175,
+      "latest": {
+        "gameId": 1073735,
+        "localDate": "19.06.2026",
+        "localTime": "19:00",
+        "score": "98 : 83",
+        "fullScore": "19:34,31:19,26:15,22:15",
+        "team1": "Kazan",
+        "team2": "Krasnodar"
+      }
     },
     {
       "teamId": 76049,
       "name": "Samara",
       "divisionTag": "ipbl-66-m-pro-b",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76049&tag=ipbl-66-m-pro-b&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-b",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 178,
+      "completedCount": 178,
+      "quarterMatrixCount": 177,
+      "latest": {
+        "gameId": 1073734,
+        "localDate": "19.06.2026",
+        "localTime": "18:00",
+        "score": "70 : 89",
+        "fullScore": "18:23,24:27,12:13,16:26",
+        "team1": "Samara",
+        "team2": "Tyumen"
+      }
     },
     {
       "teamId": 76052,
       "name": "Tyumen",
       "divisionTag": "ipbl-66-m-pro-b",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76052&tag=ipbl-66-m-pro-b&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-b",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 178,
+      "completedCount": 178,
+      "quarterMatrixCount": 176,
+      "latest": {
+        "gameId": 1073734,
+        "localDate": "19.06.2026",
+        "localTime": "18:00",
+        "score": "70 : 89",
+        "fullScore": "18:23,24:27,12:13,16:26",
+        "team1": "Samara",
+        "team2": "Tyumen"
+      }
     },
     {
       "teamId": 76057,
       "name": "Kaliningrad",
       "divisionTag": "ipbl-66-m-pro-c",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76057&tag=ipbl-66-m-pro-c&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-c",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 12,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 143,
+      "completedCount": 143,
+      "quarterMatrixCount": 141,
+      "latest": {
+        "gameId": 1073808,
+        "localDate": "20.06.2026",
+        "localTime": "00:00",
+        "score": "98 : 88",
+        "fullScore": "29:33,20:22,26:16,23:17",
+        "team1": "Kaliningrad",
+        "team2": "Plavsk"
+      }
     },
     {
       "teamId": 76058,
       "name": "Moscow",
       "divisionTag": "ipbl-66-m-pro-c",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76058&tag=ipbl-66-m-pro-c&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-c",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 12,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 143,
+      "completedCount": 143,
+      "quarterMatrixCount": 140,
+      "latest": {
+        "gameId": 1073809,
+        "localDate": "20.06.2026",
+        "localTime": "01:00",
+        "score": "72 : 89",
+        "fullScore": "20:23,15:22,18:19,19:25",
+        "team1": "Voronezh",
+        "team2": "Moskow"
+      }
     },
     {
       "teamId": 76060,
       "name": "Plavsk",
       "divisionTag": "ipbl-66-m-pro-c",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76060&tag=ipbl-66-m-pro-c&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-c",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 1,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 12,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 144,
+      "completedCount": 144,
+      "quarterMatrixCount": 140,
+      "latest": {
+        "gameId": 1073808,
+        "localDate": "20.06.2026",
+        "localTime": "00:00",
+        "score": "98 : 88",
+        "fullScore": "29:33,20:22,26:16,23:17",
+        "team1": "Kaliningrad",
+        "team2": "Plavsk"
+      }
     },
     {
       "teamId": 76059,
       "name": "Voronezh",
       "divisionTag": "ipbl-66-m-pro-c",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76059&tag=ipbl-66-m-pro-c&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-c",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 1,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 12,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 144,
+      "completedCount": 144,
+      "quarterMatrixCount": 141,
+      "latest": {
+        "gameId": 1073809,
+        "localDate": "20.06.2026",
+        "localTime": "01:00",
+        "score": "72 : 89",
+        "fullScore": "20:23,15:22,18:19,19:25",
+        "team1": "Voronezh",
+        "team2": "Moskow"
+      }
     },
     {
       "teamId": 76068,
       "name": "Krasnoyarsk",
       "divisionTag": "ipbl-66-m-pro-d",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76068&tag=ipbl-66-m-pro-d&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-d",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 1,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 298,
+      "completedCount": 298,
+      "quarterMatrixCount": 286,
+      "latest": {
+        "gameId": 1073705,
+        "localDate": "19.06.2026",
+        "localTime": "07:00",
+        "score": "101 : 87",
+        "fullScore": "22:22,26:19,26:25,27:21",
+        "team1": "Volgograd",
+        "team2": "Krasnoyarsk"
+      }
     },
     {
       "teamId": 76067,
       "name": "Nizhny Novgorod",
       "divisionTag": "ipbl-66-m-pro-d",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76067&tag=ipbl-66-m-pro-d&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-d",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 1,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 296,
+      "completedCount": 296,
+      "quarterMatrixCount": 287,
+      "latest": {
+        "gameId": 1073704,
+        "localDate": "19.06.2026",
+        "localTime": "06:00",
+        "score": "110 : 100",
+        "fullScore": "24:33,38:18,27:22,21:27",
+        "team1": "NizhniyNovgorod",
+        "team2": "Rostov-on-Don"
+      }
     },
     {
       "teamId": 76066,
       "name": "Rostov-on-Don",
       "divisionTag": "ipbl-66-m-pro-d",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76066&tag=ipbl-66-m-pro-d&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-d",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 295,
+      "completedCount": 295,
+      "quarterMatrixCount": 281,
+      "latest": {
+        "gameId": 1073704,
+        "localDate": "19.06.2026",
+        "localTime": "06:00",
+        "score": "110 : 100",
+        "fullScore": "24:33,38:18,27:22,21:27",
+        "team1": "NizhniyNovgorod",
+        "team2": "Rostov-on-Don"
+      }
     },
     {
       "teamId": 76065,
       "name": "Volgograd",
       "divisionTag": "ipbl-66-m-pro-d",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76065&tag=ipbl-66-m-pro-d&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-d",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 15,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 297,
+      "completedCount": 297,
+      "quarterMatrixCount": 286,
+      "latest": {
+        "gameId": 1073705,
+        "localDate": "19.06.2026",
+        "localTime": "07:00",
+        "score": "101 : 87",
+        "fullScore": "22:22,26:19,26:25,27:21",
+        "team1": "Volgograd",
+        "team2": "Krasnoyarsk"
+      }
     },
     {
       "teamId": 76061,
       "name": "Ryazan",
       "divisionTag": "ipbl-66-m-pro-u",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76061&tag=ipbl-66-m-pro-u&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-u",
+        "loadedMonths": [
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 7,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 33,
+      "completedCount": 33,
+      "quarterMatrixCount": 33,
+      "latest": {
+        "gameId": 1073826,
+        "localDate": "19.06.2026",
+        "localTime": "00:00",
+        "score": "97 : 92",
+        "fullScore": "17:30,33:18,24:25,23:19",
+        "team1": "Ryazan",
+        "team2": "Smolensk"
+      }
     },
     {
       "teamId": 76064,
       "name": "Salavat",
       "divisionTag": "ipbl-66-m-pro-u",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76064&tag=ipbl-66-m-pro-u&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-u",
+        "loadedMonths": [
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 7,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 33,
+      "completedCount": 33,
+      "quarterMatrixCount": 30,
+      "latest": {
+        "gameId": 1073827,
+        "localDate": "19.06.2026",
+        "localTime": "01:00",
+        "score": "96 : 95",
+        "fullScore": "24:32,20:23,23:19,29:21",
+        "team1": "Salavat",
+        "team2": "Serov"
+      }
     },
     {
       "teamId": 76062,
       "name": "Serov",
       "divisionTag": "ipbl-66-m-pro-u",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76062&tag=ipbl-66-m-pro-u&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-u",
+        "loadedMonths": [
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 7,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 33,
+      "completedCount": 33,
+      "quarterMatrixCount": 32,
+      "latest": {
+        "gameId": 1073827,
+        "localDate": "19.06.2026",
+        "localTime": "01:00",
+        "score": "96 : 95",
+        "fullScore": "24:32,20:23,23:19,29:21",
+        "team1": "Salavat",
+        "team2": "Serov"
+      }
     },
     {
       "teamId": 76063,
       "name": "Smolensk",
       "divisionTag": "ipbl-66-m-pro-u",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76063&tag=ipbl-66-m-pro-u&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-u",
+        "loadedMonths": [
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 7,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 33,
+      "completedCount": 33,
+      "quarterMatrixCount": 31,
+      "latest": {
+        "gameId": 1073826,
+        "localDate": "19.06.2026",
+        "localTime": "00:00",
+        "score": "97 : 92",
+        "fullScore": "17:30,33:18,24:25,23:19",
+        "team1": "Ryazan",
+        "team2": "Smolensk"
+      }
     },
     {
       "teamId": 76055,
       "name": "Anapa",
       "divisionTag": "ipbl-66-m-pro-z",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76055&tag=ipbl-66-m-pro-z&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-z",
+        "loadedMonths": [
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 5,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 14,
+      "completedCount": 14,
+      "quarterMatrixCount": 14,
+      "latest": {
+        "gameId": 1073738,
+        "localDate": "20.06.2026",
+        "localTime": "16:00",
+        "score": "91 : 87",
+        "fullScore": "21:25,17:22,32:15,21:25",
+        "team1": "Revda",
+        "team2": "Anapa"
+      }
     },
     {
       "teamId": 76054,
       "name": "Magadan",
       "divisionTag": "ipbl-66-m-pro-z",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76054&tag=ipbl-66-m-pro-z&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-z",
+        "loadedMonths": [
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 1,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 5,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 14,
+      "completedCount": 14,
+      "quarterMatrixCount": 13,
+      "latest": {
+        "gameId": 1073739,
+        "localDate": "20.06.2026",
+        "localTime": "17:00",
+        "score": "71 : 87",
+        "fullScore": null,
+        "team1": "Magadan",
+        "team2": "Ufa"
+      }
     },
     {
       "teamId": 76072,
       "name": "Adler",
       "divisionTag": "ipbl-66-m-pro-l",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76072&tag=ipbl-66-m-pro-l&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-l",
+        "loadedMonths": [
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 15,
+      "completedCount": 15,
+      "quarterMatrixCount": 15,
+      "latest": {
+        "gameId": 1073463,
+        "localDate": "20.06.2026",
+        "localTime": "07:00",
+        "score": "113 : 124",
+        "fullScore": "30:34,31:30,13:28,39:32",
+        "team1": "Kurgan",
+        "team2": "Adler"
+      }
     },
     {
       "teamId": 76069,
       "name": "Kurgan",
       "divisionTag": "ipbl-66-m-pro-l",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76069&tag=ipbl-66-m-pro-l&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-l",
+        "loadedMonths": [
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 15,
+      "completedCount": 15,
+      "quarterMatrixCount": 15,
+      "latest": {
+        "gameId": 1073463,
+        "localDate": "20.06.2026",
+        "localTime": "07:00",
+        "score": "113 : 124",
+        "fullScore": "30:34,31:30,13:28,39:32",
+        "team1": "Kurgan",
+        "team2": "Adler"
+      }
     },
     {
       "teamId": 76071,
       "name": "Surgut",
       "divisionTag": "ipbl-66-m-pro-l",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76071&tag=ipbl-66-m-pro-l&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-l",
+        "loadedMonths": [
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 15,
+      "completedCount": 15,
+      "quarterMatrixCount": 15,
+      "latest": {
+        "gameId": 1073462,
+        "localDate": "20.06.2026",
+        "localTime": "06:00",
+        "score": "110 : 103",
+        "fullScore": "30:34,27:20,27:25,26:24",
+        "team1": "Surgut",
+        "team2": "Yakutsk"
+      }
     },
     {
       "teamId": 76070,
       "name": "Yakutsk",
       "divisionTag": "ipbl-66-m-pro-l",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76070&tag=ipbl-66-m-pro-l&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-l",
+        "loadedMonths": [
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 15,
+      "completedCount": 15,
+      "quarterMatrixCount": 15,
+      "latest": {
+        "gameId": 1073462,
+        "localDate": "20.06.2026",
+        "localTime": "06:00",
+        "score": "110 : 103",
+        "fullScore": "30:34,27:20,27:25,26:24",
+        "team1": "Surgut",
+        "team2": "Yakutsk"
+      }
     },
     {
       "teamId": 76021,
       "name": "Bryansk",
       "divisionTag": "ipbl-66-w-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76021&tag=ipbl-66-w-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 1,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 5,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            }
+          ]
+        }
+      },
+      "totalCount": 233,
+      "completedCount": 233,
+      "quarterMatrixCount": 232,
+      "latest": {
+        "gameId": 1073523,
+        "localDate": "20.06.2026",
+        "localTime": "17:00",
+        "score": "94 : 105",
+        "fullScore": null,
+        "team1": "Bryansk",
+        "team2": "Izhevsk"
+      }
     },
     {
       "teamId": 76023,
       "name": "Izhevsk",
       "divisionTag": "ipbl-66-w-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76023&tag=ipbl-66-w-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 1,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 10,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 236,
+      "completedCount": 236,
+      "quarterMatrixCount": 235,
+      "latest": {
+        "gameId": 1073523,
+        "localDate": "20.06.2026",
+        "localTime": "17:00",
+        "score": "94 : 105",
+        "fullScore": null,
+        "team1": "Bryansk",
+        "team2": "Izhevsk"
+      }
     },
     {
       "teamId": 76022,
       "name": "Magnitogorsk",
       "divisionTag": "ipbl-66-w-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76022&tag=ipbl-66-w-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": false,
+          "itemCount": 0,
+          "error": "timeout after 8000ms"
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            }
+          ]
+        }
+      },
+      "totalCount": 234,
+      "completedCount": 234,
+      "quarterMatrixCount": 234,
+      "latest": {
+        "gameId": 1073518,
+        "localDate": "19.06.2026",
+        "localTime": "18:05",
+        "score": "123 : 95",
+        "fullScore": "26:22,33:23,36:27,28:23",
+        "team1": "Magnitogorsk",
+        "team2": "Bryansk"
+      }
     },
     {
       "teamId": 76020,
       "name": "Novokuznetsk",
       "divisionTag": "ipbl-66-w-pro-a",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76020&tag=ipbl-66-w-pro-a&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-a",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": false,
+          "itemCount": 0,
+          "error": "timeout after 8000ms"
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 3,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            }
+          ]
+        }
+      },
+      "totalCount": 232,
+      "completedCount": 232,
+      "quarterMatrixCount": 232,
+      "latest": {
+        "gameId": 1073514,
+        "localDate": "19.06.2026",
+        "localTime": "14:00",
+        "score": "98 : 99",
+        "fullScore": "21:20,35:29,20:21,22:29",
+        "team1": "Novokuznetsk",
+        "team2": "Bryansk"
+      }
     },
     {
       "teamId": 76012,
       "name": "Cheboksary",
       "divisionTag": "ipbl-66-w-pro-b",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76012&tag=ipbl-66-w-pro-b&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-b",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": false,
+          "itemCount": 0,
+          "error": "timeout after 8000ms"
+        },
+        "recentOfficialCalendar": {
+          "ok": false,
+          "itemCount": 0,
+          "error": "timeout after 8000ms; timeout after 8000ms; timeout after 8000ms; timeout after 8000ms; timeout after 8000ms; timeout after 8000ms; timeout after 8000ms",
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            }
+          ]
+        }
+      },
+      "totalCount": 237,
+      "completedCount": 237,
+      "quarterMatrixCount": 237,
+      "latest": {
+        "gameId": 1073549,
+        "localDate": "19.06.2026",
+        "localTime": "13:00",
+        "score": "96 : 90",
+        "fullScore": "20:18,32:19,18:24,26:29",
+        "team1": "Cheboksary",
+        "team2": "Tomsk"
+      }
     },
     {
       "teamId": 76014,
       "name": "Tambov",
       "divisionTag": "ipbl-66-w-pro-b",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76014&tag=ipbl-66-w-pro-b&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-b",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            }
+          ]
+        }
+      },
+      "totalCount": 237,
+      "completedCount": 237,
+      "quarterMatrixCount": 237,
+      "latest": {
+        "gameId": 1073548,
+        "localDate": "19.06.2026",
+        "localTime": "12:05",
+        "score": "82 : 85",
+        "fullScore": "19:23,29:25,18:13,16:24",
+        "team1": "Tambov",
+        "team2": "Yaroslavl"
+      }
     },
     {
       "teamId": 76015,
       "name": "Tomsk",
       "divisionTag": "ipbl-66-w-pro-b",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76015&tag=ipbl-66-w-pro-b&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-b",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": false,
+          "itemCount": 0,
+          "error": "timeout after 8000ms"
+        },
+        "recentOfficialCalendar": {
+          "ok": false,
+          "itemCount": 0,
+          "error": "timeout after 8000ms; timeout after 8000ms; timeout after 8000ms; timeout after 8000ms; timeout after 8000ms; timeout after 8000ms; timeout after 8000ms",
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            }
+          ]
+        }
+      },
+      "totalCount": 237,
+      "completedCount": 237,
+      "quarterMatrixCount": 237,
+      "latest": {
+        "gameId": 1073549,
+        "localDate": "19.06.2026",
+        "localTime": "13:00",
+        "score": "96 : 90",
+        "fullScore": "20:18,32:19,18:24,26:29",
+        "team1": "Cheboksary",
+        "team2": "Tomsk"
+      }
     },
     {
       "teamId": 76013,
       "name": "Yaroslavl",
       "divisionTag": "ipbl-66-w-pro-b",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76013&tag=ipbl-66-w-pro-b&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-b",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 3,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            }
+          ]
+        }
+      },
+      "totalCount": 237,
+      "completedCount": 237,
+      "quarterMatrixCount": 237,
+      "latest": {
+        "gameId": 1073548,
+        "localDate": "19.06.2026",
+        "localTime": "12:05",
+        "score": "82 : 85",
+        "fullScore": "19:23,29:25,18:13,16:24",
+        "team1": "Tambov",
+        "team2": "Yaroslavl"
+      }
     },
     {
       "teamId": 76029,
       "name": "Kaluga",
       "divisionTag": "ipbl-66-w-pro-c",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76029&tag=ipbl-66-w-pro-c&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-c",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 10,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 158,
+      "completedCount": 158,
+      "quarterMatrixCount": 158,
+      "latest": {
+        "gameId": 1073595,
+        "localDate": "19.06.2026",
+        "localTime": "23:00",
+        "score": "96 : 77",
+        "fullScore": "14:21,32:16,28:19,22:21",
+        "team1": "Kaluga",
+        "team2": "Murino"
+      }
     },
     {
       "teamId": 76030,
       "name": "Murino",
       "divisionTag": "ipbl-66-w-pro-c",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76030&tag=ipbl-66-w-pro-c&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-c",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 10,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": false,
+              "itemCount": 0,
+              "error": "timeout after 8000ms"
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 158,
+      "completedCount": 158,
+      "quarterMatrixCount": 158,
+      "latest": {
+        "gameId": 1073595,
+        "localDate": "19.06.2026",
+        "localTime": "23:00",
+        "score": "96 : 77",
+        "fullScore": "14:21,32:16,28:19,22:21",
+        "team1": "Kaluga",
+        "team2": "Murino"
+      }
     },
     {
       "teamId": 76031,
       "name": "Norilsk",
       "divisionTag": "ipbl-66-w-pro-c",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76031&tag=ipbl-66-w-pro-c&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-c",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": false,
+          "itemCount": 0,
+          "error": "timeout after 8000ms"
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 10,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 158,
+      "completedCount": 158,
+      "quarterMatrixCount": 158,
+      "latest": {
+        "gameId": 1073594,
+        "localDate": "19.06.2026",
+        "localTime": "22:05",
+        "score": "87 : 78",
+        "fullScore": "20:22,21:25,26:16,20:15",
+        "team1": "Vladivostok",
+        "team2": "Norilsk"
+      }
     },
     {
       "teamId": 76028,
       "name": "Vladivostok",
       "divisionTag": "ipbl-66-w-pro-c",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76028&tag=ipbl-66-w-pro-c&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-c",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 10,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 158,
+      "completedCount": 158,
+      "quarterMatrixCount": 158,
+      "latest": {
+        "gameId": 1073594,
+        "localDate": "19.06.2026",
+        "localTime": "22:05",
+        "score": "87 : 78",
+        "fullScore": "20:22,21:25,26:16,20:15",
+        "team1": "Vladivostok",
+        "team2": "Norilsk"
+      }
     },
     {
       "teamId": 76026,
       "name": "Berezniki",
       "divisionTag": "ipbl-66-w-pro-d",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76026&tag=ipbl-66-w-pro-d&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-d",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 69,
+      "completedCount": 69,
+      "quarterMatrixCount": 69,
+      "latest": {
+        "gameId": 1073560,
+        "localDate": "18.06.2026",
+        "localTime": "18:05",
+        "score": "101 : 89",
+        "fullScore": "30:27,34:23,19:25,18:14",
+        "team1": "Berezniki",
+        "team2": "Ekaterinburg"
+      }
     },
     {
       "teamId": 76025,
       "name": "Ekaterinburg",
       "divisionTag": "ipbl-66-w-pro-d",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76025&tag=ipbl-66-w-pro-d&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-d",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 69,
+      "completedCount": 69,
+      "quarterMatrixCount": 69,
+      "latest": {
+        "gameId": 1073560,
+        "localDate": "18.06.2026",
+        "localTime": "18:05",
+        "score": "101 : 89",
+        "fullScore": "30:27,34:23,19:25,18:14",
+        "team1": "Berezniki",
+        "team2": "Ekaterinburg"
+      }
     },
     {
       "teamId": 76027,
       "name": "Khimki",
       "divisionTag": "ipbl-66-w-pro-d",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76027&tag=ipbl-66-w-pro-d&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-d",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 69,
+      "completedCount": 69,
+      "quarterMatrixCount": 69,
+      "latest": {
+        "gameId": 1073561,
+        "localDate": "18.06.2026",
+        "localTime": "19:00",
+        "score": "101 : 103",
+        "fullScore": "23:27,26:27,23:26,29:23",
+        "team1": "Toliatti",
+        "team2": "Khimki"
+      }
     },
     {
       "teamId": 76024,
       "name": "Toliatti",
       "divisionTag": "ipbl-66-w-pro-d",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76024&tag=ipbl-66-w-pro-d&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-d",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 69,
+      "completedCount": 69,
+      "quarterMatrixCount": 69,
+      "latest": {
+        "gameId": 1073561,
+        "localDate": "18.06.2026",
+        "localTime": "19:00",
+        "score": "101 : 103",
+        "fullScore": "23:27,26:27,23:26,29:23",
+        "team1": "Toliatti",
+        "team2": "Khimki"
+      }
     },
     {
       "teamId": 76034,
       "name": "Ivanovo",
       "divisionTag": "ipbl-66-w-pro-g",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76034&tag=ipbl-66-w-pro-g&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-g",
+        "loadedMonths": [
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 2,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 28,
+      "completedCount": 28,
+      "quarterMatrixCount": 28,
+      "latest": {
+        "gameId": 1073606,
+        "localDate": "17.06.2026",
+        "localTime": "22:05",
+        "score": "92 : 70",
+        "fullScore": "24:11,25:17,23:23,20:19",
+        "team1": "Ivanovo",
+        "team2": "Stary Oskol"
+      }
     },
     {
       "teamId": 76032,
       "name": "Kostroma",
       "divisionTag": "ipbl-66-w-pro-g",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76032&tag=ipbl-66-w-pro-g&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-g",
+        "loadedMonths": [
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 2,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 28,
+      "completedCount": 28,
+      "quarterMatrixCount": 28,
+      "latest": {
+        "gameId": 1073607,
+        "localDate": "17.06.2026",
+        "localTime": "23:00",
+        "score": "82 : 78",
+        "fullScore": "20:16,17:16,26:22,19:24",
+        "team1": "Kostroma",
+        "team2": "Penza"
+      }
     },
     {
       "teamId": 76035,
       "name": "Penza",
       "divisionTag": "ipbl-66-w-pro-g",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76035&tag=ipbl-66-w-pro-g&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-g",
+        "loadedMonths": [
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 2,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 28,
+      "completedCount": 28,
+      "quarterMatrixCount": 28,
+      "latest": {
+        "gameId": 1073607,
+        "localDate": "17.06.2026",
+        "localTime": "23:00",
+        "score": "82 : 78",
+        "fullScore": "20:16,17:16,26:22,19:24",
+        "team1": "Kostroma",
+        "team2": "Penza"
+      }
     },
     {
       "teamId": 76036,
       "name": "Stary Oskol",
       "divisionTag": "ipbl-66-w-pro-g",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76036&tag=ipbl-66-w-pro-g&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-g",
+        "loadedMonths": [
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 2,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 28,
+      "completedCount": 28,
+      "quarterMatrixCount": 28,
+      "latest": {
+        "gameId": 1073606,
+        "localDate": "17.06.2026",
+        "localTime": "22:05",
+        "score": "92 : 70",
+        "fullScore": "24:11,25:17,23:23,20:19",
+        "team1": "Ivanovo",
+        "team2": "Stary Oskol"
+      }
     },
     {
       "teamId": 76018,
       "name": "Kursk",
       "divisionTag": "ipbl-66-w-pro-k",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76018&tag=ipbl-66-w-pro-k&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-k",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 69,
+      "completedCount": 69,
+      "quarterMatrixCount": 69,
+      "latest": {
+        "gameId": 1073572,
+        "localDate": "18.06.2026",
+        "localTime": "12:05",
+        "score": "79 : 83",
+        "fullScore": "20:20,12:24,24:13,23:26",
+        "team1": "Kursk",
+        "team2": "Orenburg"
+      }
     },
     {
       "teamId": 76017,
       "name": "Orenburg",
       "divisionTag": "ipbl-66-w-pro-k",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76017&tag=ipbl-66-w-pro-k&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-k",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 69,
+      "completedCount": 69,
+      "quarterMatrixCount": 69,
+      "latest": {
+        "gameId": 1073572,
+        "localDate": "18.06.2026",
+        "localTime": "12:05",
+        "score": "79 : 83",
+        "fullScore": "20:20,12:24,24:13,23:26",
+        "team1": "Kursk",
+        "team2": "Orenburg"
+      }
     },
     {
       "teamId": 76016,
       "name": "Severodvinsk",
       "divisionTag": "ipbl-66-w-pro-k",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76016&tag=ipbl-66-w-pro-k&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-k",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 69,
+      "completedCount": 69,
+      "quarterMatrixCount": 68,
+      "latest": {
+        "gameId": 1073573,
+        "localDate": "18.06.2026",
+        "localTime": "13:00",
+        "score": "73 : 76",
+        "fullScore": "18:18,15:18,17:19,23:21",
+        "team1": "Severodvinsk",
+        "team2": "Vologda"
+      }
     },
     {
       "teamId": 76019,
       "name": "Vologda",
       "divisionTag": "ipbl-66-w-pro-k",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76019&tag=ipbl-66-w-pro-k&season=2026&source=team-stats-reconciliation",
-      "http": null,
-      "ok": false,
-      "attempt": 3,
-      "error": "TypeError: fetch failed",
-      "source": null,
-      "coverage": null,
-      "totalCount": null,
-      "completedCount": 0,
-      "quarterMatrixCount": 0,
-      "latest": null
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv+official-calendar",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-w-pro-k",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 6,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-06-14",
+              "to": "2026-06-15",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-15",
+              "to": "2026-06-16",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-16",
+              "to": "2026-06-17",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-17",
+              "to": "2026-06-18",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-18",
+              "to": "2026-06-19",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-06-19",
+              "to": "2026-06-20",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-06-20",
+              "to": "2026-06-21",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 69,
+      "completedCount": 69,
+      "quarterMatrixCount": 68,
+      "latest": {
+        "gameId": 1073573,
+        "localDate": "18.06.2026",
+        "localTime": "13:00",
+        "score": "73 : 76",
+        "fullScore": "18:18,15:18,17:19,23:21",
+        "team1": "Severodvinsk",
+        "team2": "Vologda"
+      }
     }
   ]
 }

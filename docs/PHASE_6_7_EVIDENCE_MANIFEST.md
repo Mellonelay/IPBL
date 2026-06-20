@@ -34,6 +34,14 @@ This manifest is read-only. It maps the repo’s existing skill packaging and ag
 - The roadmap calls for narrower skill packaging, especially for Graphify source archaeology, live-source repair, Vercel verification, evidence finalization, and GEN planning.
 - The phase is therefore supported, but the packaging can still be split further if future work needs narrower skill boundaries.
 
+### Canonical workflow names
+
+- `graphify-source-archaeology`
+- `live-source-repair`
+- `vercel-verification`
+- `evidence-finalization`
+- `gen-planning`
+
 ## Phase 7 - agnix Integration
 
 ### Status
@@ -67,4 +75,3 @@ bash scripts/validate-phase-master.sh
 - No runtime behavior is added here.
 - No skill semantics are changed here.
 - This manifest only documents the existing Phase 6-7 evidence and validation surface.
-

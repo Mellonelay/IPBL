@@ -47,7 +47,11 @@ This skill teaches best practices and conventions for contributing to the IPBL r
 
 ## Workflows
 
-_No automated workflows detected in this repository._
+- `graphify-source-archaeology`: Graphify evidence, graph relationships, source archaeology, and durable proof bundles.
+- `live-source-repair`: live API behavior, bookmaker parsing, recorder freshness, and Vercel runtime verification.
+- `vercel-verification`: browser-side and production deployment proof for the live viewer and API routes.
+- `evidence-finalization`: phase manifests, supersession indexes, and closure packaging.
+- `gen-planning`: operator intelligence, roadmap closure, and read-only phase packaging.
 
 ## Testing Patterns
 

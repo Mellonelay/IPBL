@@ -16,6 +16,14 @@ This manifest is read-only. It maps existing workload and C9 evidence into the c
 
 - Complete / materialized.
 
+### Canonical checkpoint
+
+- [artifacts/workload-graph/ipbl-workload-graph.json](/root/repos/IPBL/artifacts/workload-graph/ipbl-workload-graph.json)
+
+### Validation entrypoint
+
+- [scripts/validate-phase-10-11.sh](/root/repos/IPBL/scripts/validate-phase-10-11.sh)
+
 ### Existing evidence
 
 - Workload and reconciliation docs:
@@ -49,6 +57,14 @@ This manifest is read-only. It maps existing workload and C9 evidence into the c
 
 - Proof-foundation partial.
 
+### Canonical checkpoint
+
+- [artifacts/phase-c9/pr23/reconciliation-summary.json](/root/repos/IPBL/artifacts/phase-c9/pr23/reconciliation-summary.json)
+
+### Validation entrypoint
+
+- [scripts/validate-phase-10-11.sh](/root/repos/IPBL/scripts/validate-phase-10-11.sh)
+
 ### Existing evidence
 
 - C9 docs:
@@ -71,6 +87,7 @@ This manifest is read-only. It maps existing workload and C9 evidence into the c
 
 - Market/selection mapping, score-history alignment, odds-vs-score divergence, recorder enrichment, and movement graph work remain open in the roadmap.
 - C9 evidence is strong enough to support reconciliation and contract validation, but not enough to claim production odds deployment.
+- Phase 11 stays partial until the repo either proves the remaining C9 boundaries or records a formal policy decision to keep it support-ready.
 
 ## Recommended validation
 

@@ -46,7 +46,6 @@
     ]
   },
   "risks": [
-    "Browser read-only proof may not be available in this environment.",
     "Graphify freshness can drift after future edits.",
     "Unrelated dirty files remain in the root checkout and were intentionally left untouched."
   ],
@@ -56,4 +55,3 @@
     "Record exit codes and unresolved gaps before deciding on commit or PR handling."
   ]
 }
-

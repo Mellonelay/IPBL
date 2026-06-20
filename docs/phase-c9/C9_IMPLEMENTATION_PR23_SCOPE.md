@@ -2,6 +2,11 @@
 
 PR #22 is the C9 proof foundation only. PR #23 is the implementation planning branch and must use Graphify/community/swarm findings before feature work.
 
+Current closure note:
+- The repo has proof-foundation evidence for C9, but Phase 11 remains support-ready / proof-foundation partial.
+- The remaining gap is market/selection mapping, score-history alignment, odds-vs-score divergence, recorder enrichment, and movement graph productization.
+- Do not promote Phase 11 to complete without either new proof or an explicit policy decision to keep it support-ready.
+
 ## Required implementation tracks
 
 1. Graphify-backed C9 implementation plan.
@@ -29,3 +34,4 @@ PR #22 is the C9 proof foundation only. PR #23 is the implementation planning br
 - No TLS weakening.
 - No unverified team mappings.
 - No production data deletion or secret rotation.
+- No claim that Phase 11 is complete until the proof boundary above is closed.

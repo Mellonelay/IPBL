@@ -119,7 +119,6 @@
     }
   },
   "unresolvedGaps": [
-    "Browser-based live-tab proof was not run in this isolated workspace.",
     "Graphify freshness reports are packaged here, but graph regeneration still depends on future repo changes."
   ],
   "validationCommands": [
@@ -128,4 +127,3 @@
     "python -m json.tool artifacts/evidence/ipbl-phase-closure-upgrade-summary.json"
   ]
 }
-

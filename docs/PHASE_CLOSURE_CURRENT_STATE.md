@@ -18,6 +18,7 @@ Source of truth:
 
 This repository is in closure / upgrade mode, not phase-building mode.
 The remaining work is packaging, reconciliation, evidence normalization, and upgrade planning around already-completed phases.
+The support-ready phases are not open implementation phases; they are closure packaging and proof-boundary work.
 
 ## Closure table
 
@@ -60,4 +61,3 @@ The relevant incident was production gameId `1073505` for Bryansk vs Izhevsk wit
 - Do not treat support-ready phases as open implementation phases.
 - Prefer new packaging docs and evidence indexes over new runtime behavior.
 - Keep validation read-only unless a separate deployment gate is explicitly provided.
-
