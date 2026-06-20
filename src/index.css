@@ -94,6 +94,18 @@ button {
     gap: 0.75rem;
 }
 
+.live-source-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 176, 32, 0.35);
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255, 176, 32, 0.12), rgba(18, 24, 54, 0.96));
+    color: var(--text);
+}
+
 .metric-box,
 .operator-card,
 .results-controls,
@@ -621,6 +633,33 @@ button {
 
 .reason-list li {
     margin-bottom: 0.35rem;
+}
+
+.replay-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.replay-item {
+    border-top: 1px solid var(--border);
+    padding-top: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.replay-item:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.replay-item-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+    font-size: 0.78rem;
 }
 
 .h2h-item {

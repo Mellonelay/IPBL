@@ -14,7 +14,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (!redis) return res.status(503).json({ error: "replay_storage_not_configured" });
 
   const replay = await buildGameReplay(redis, gameId);
-  if (!replay.gameKey) return res.status(404).json({ error: "replay_not_found", gameId });
+  if (!replay.gameKey || replay.timeline.length === 0) return res.status(404).json({ error: "replay_not_found", gameId });
 
   res.setHeader("Cache-Control", "no-store, max-age=0");
   return res.status(200).json(replay);

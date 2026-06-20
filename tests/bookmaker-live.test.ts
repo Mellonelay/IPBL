@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { fetchBookmakerLive, mergeBookmakerLiveResultsByGameId, parseBookmakerLivePageHtml, parseBookmakerLivePayload, parseBookmakerLivePayloads, remainingClock } from "../lib/server/bookmaker-live.ts";
+import { classifyBookmakerSourceFailure, fetchBookmakerLive, mergeBookmakerLiveResultsByGameId, parseBookmakerLivePageHtml, parseBookmakerLivePayload, parseBookmakerLivePayloads, remainingClock } from "../lib/server/bookmaker-live.ts";
 
 const raw = {
   Success: true,
@@ -197,6 +197,41 @@ assert.equal(bookmakerPageParsed.games[0].team2.shortName, "Tyumen");
 assert.equal(bookmakerPageParsed.games[0].scoreText, "82 : 65");
 assert.equal(bookmakerPageParsed.games[0].period, 3);
 assert.equal(bookmakerPageParsed.games[0].statusDisplay, "3rd quarter");
+
+const bookmakerSource = { name: "melbet", baseUrl: "https://melbet.com", partner: 8 };
+const rejectedHtml = `
+<li class="dashboard-game--theme-gray-100 dashboard-game dashboard-champ__game">
+  <div class="dashboard-game-block">
+    <a href="/en/live/basketball/2496666-ipbl-pro-division/730426124-ulan-ude-khabarovsk" class="dashboard-game-block__link">
+      <span class="ui-team-scores--size-m ui-team-scores--theme-gray-100 ui-team-scores dashboard-game-block__teams">
+        <span class="ui-team-scores__top">
+          <span class="ui-team-scores__teams ui-team-scores-teams">
+            <div class="dashboard-game-team-info dashboard-game-block__team"><div class="ui-team-score-name--nowrap ui-team-score-name"><span class="ui-caption--size-m ui-caption dashboard-game-team-info__name">Ulan-Ude</span></div></div>
+            <div class="dashboard-game-team-info dashboard-game-block__team"><div class="ui-team-score-name--nowrap ui-team-score-name"><span class="ui-caption--size-m ui-caption dashboard-game-team-info__name">Khabarovsk</span></div></div>
+          </span>
+          <div class="ui-scrollbar ui-team-scores__scores ui-team-scores-scores">
+            <span class="ui-game-scores--size-m ui-game-scores--theme-gray-100 ui-game-scores">
+              <span class="ui-game-scores__item ui-game-scores__item--total"><span class="ui-game-scores__num">77</span><span class="ui-game-scores__num">81</span></span>
+            </span>
+          </div>
+        </span>
+      </span>
+    </a>
+  </div>
+</li>
+`;
+const rejectedParsed = parseBookmakerLivePageHtml(rejectedHtml, 2496666, "https://melbet.com");
+const rejectedFailure = classifyBookmakerSourceFailure(bookmakerSource, 2496666, rejectedHtml, rejectedParsed, null);
+assert.equal(rejectedFailure.kind, "zero_approved_games");
+assert.equal(rejectedFailure.source, "melbet");
+
+const emptyParsed = parseBookmakerLivePageHtml("", 2496666, "https://melbet.com");
+const parseFailure = classifyBookmakerSourceFailure(bookmakerSource, 2496666, "", emptyParsed, null);
+assert.equal(parseFailure.kind, "parse_failed");
+
+const fetchFailure = classifyBookmakerSourceFailure(bookmakerSource, 2496666, null, null, new Error("HTTP 403"));
+assert.equal(fetchFailure.kind, "fetch_failed");
+assert.equal(fetchFailure.error, "HTTP 403");
 
 const originalFetch = globalThis.fetch;
 const requestedUrls: string[] = [];

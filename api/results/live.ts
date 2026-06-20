@@ -236,6 +236,9 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
   const officialGames = [...byId.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
   const fallback = bookmakerSettled.ok ? bookmakerSettled.fallback : null;
   const bookmakerGames = fallback?.games ?? [];
+  const bookmakerFallbackFailures = bookmakerSettled.ok
+    ? fallback?.sourceFailures ?? []
+    : ((bookmakerSettled.error as Error & { sourceFailures?: BookmakerLiveResult["sourceFailures"] }).sourceFailures ?? [{ error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }]);
   const liveCandidateGames = bookmakerGames.length > 0 ? bookmakerGames : mergeLiveGamesByFreshness(officialGames, bookmakerGames);
   const officialReconciliation = await reconcileLiveGamesWithOfficialDetail(liveCandidateGames);
   const mergedGames = officialReconciliation.games;
@@ -261,7 +264,7 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
         successfulDivisions: new Set(mergedGames.map((game) => game.tag)).size,
         failures,
         bookmakerSourceLeagues: fallback?.sourceLeagues ?? [],
-        bookmakerSourceFailures: fallback?.sourceFailures ?? (bookmakerSettled.ok ? [] : [{ error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }]),
+        bookmakerSourceFailures: bookmakerFallbackFailures,
         receivedBookmakerEvents: fallback?.receivedEvents ?? 0,
         unmatchedBookmakerEvents: fallback?.unmatched ?? [],
         officialReconciliation: {
@@ -290,10 +293,10 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
       successfulDivisions: 0,
       failures: [
         ...failures,
-        ...(bookmakerSettled.ok ? bookmakerSettled.fallback.sourceFailures : [{ tag: "bookmaker:melbet.com+1xbet.com", error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }]),
+        ...bookmakerFallbackFailures,
       ],
       bookmakerSourceLeagues: bookmakerSettled.ok ? bookmakerSettled.fallback.sourceLeagues : [],
-      bookmakerSourceFailures: bookmakerSettled.ok ? bookmakerSettled.fallback.sourceFailures : [{ error: bookmakerSettled.error instanceof Error ? bookmakerSettled.error.message : String(bookmakerSettled.error) }],
+      bookmakerSourceFailures: bookmakerFallbackFailures,
       receivedBookmakerEvents: bookmakerSettled.ok ? bookmakerSettled.fallback.receivedEvents : 0,
       unmatchedBookmakerEvents: bookmakerSettled.ok ? bookmakerSettled.fallback.unmatched : [],
       officialReconciliation: typeof officialReconciliation === "undefined" ? { checked: 0, dropped: 0, updated: 0 } : {

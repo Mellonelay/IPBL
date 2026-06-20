@@ -5,13 +5,15 @@ import {
   clearFetchCaches,
   fetchBoxScore,
   fetchGame,
+  fetchGameReplay,
   // fetchOnline,
   fetchTeamGames,
 } from "./api/client";
 import { computeH2H } from "./api/normalize";
-import type { BoxScoreState, H2HEntry, ScheduleGame } from "./api/types";
+import type { BoxScoreState, GameReplay, H2HEntry, ScheduleGame } from "./api/types";
 import { projectLiveClock } from "./live/clock";
 import { buildLiveDisplayInsights } from "./live/display";
+import { summarizeBookmakerFailures } from "./live/source-status";
 import ResultsCalendarGrid from "./components/ResultsCalendarGrid";
 import BettingRecord from "./components/BettingRecord";
 import TeamStatistics from "./components/TeamStatistics";
@@ -59,11 +61,14 @@ type DrawerState = {
   game: ScheduleGame;
   gameMeta: unknown | null;
   boxState: BoxScoreState | null;
+  replay: GameReplay | null;
   board: ScoreboardAnalysis;
   flow: QuarterFlowAnalysis | null;
   decision: OperatorDecision;
   h2h: H2HEntry[];
   histLoading: boolean;
+  replayLoading: boolean;
+  replayErr: string | null;
   detailErr: string | null;
 };
 
@@ -104,6 +109,29 @@ function currentOrNextQuarter(
   board: ScoreboardAnalysis
 ): QuarterKey | null {
   return flow?.nextQuarter ?? board.currentQuarter ?? null;
+}
+
+function formatReplayOdds(value: unknown): string {
+  return typeof value === "number" && Number.isFinite(value) ? value.toFixed(2) : "—";
+}
+
+function replayEventSummary(event: GameReplay["timeline"][number]): string {
+  if (event.kind === "odds") {
+    const line = typeof event.line === "number" && Number.isFinite(event.line) ? event.line.toFixed(1) : "—";
+    const over = formatReplayOdds(event.overOdds);
+    const under = formatReplayOdds(event.underOdds);
+    const bookmaker = typeof event.bookmaker === "string" && event.bookmaker ? event.bookmaker : "unknown";
+    const market = typeof event.marketStatus === "string" && event.marketStatus ? event.marketStatus : "unknown";
+    return `line ${line} · over ${over} · under ${under} · ${bookmaker} · ${market}`;
+  }
+  if (event.kind === "quarter") {
+    const scoreText = typeof event.scoreText === "string" && event.scoreText ? event.scoreText : "—";
+    const fullScore = typeof event.fullScore === "string" && event.fullScore ? event.fullScore : scoreText;
+    return `${scoreText} · ${fullScore}`;
+  }
+  const scoreText = typeof event.scoreText === "string" && event.scoreText ? event.scoreText : "Final";
+  const fullScore = typeof event.fullScore === "string" && event.fullScore ? event.fullScore : scoreText;
+  return `${scoreText} · ${fullScore}`;
 }
 
 function Metric({ label, value }: { label: string; value: string | number }) {
@@ -231,6 +259,7 @@ function App() {
   const [liveLoading, setLiveLoading] = useState(false);
   const [liveErr, setLiveErr] = useState<string | null>(null);
   const [liveInsights, setLiveInsights] = useState<Record<string, LiveInsight>>({});
+  const [liveSourceFailures, setLiveSourceFailures] = useState<Array<{ kind?: string; source?: string; leagueId?: number; error?: string }>>([]);
   const [selectedLiveDivisionTag, setSelectedLiveDivisionTag] = useState("");
 
   const [selectedResultsYear, setSelectedResultsYear] = useState<number>(RESULTS_START_YEAR);
@@ -404,10 +433,11 @@ function App() {
     try {
       const res = await fetch("/api/results/live");
       if (!res.ok) throw new Error(`Live API error: ${res.status}`);
-      const body = (await res.json()) as { games: ScheduleGame[]; status: any };
+      const body = (await res.json()) as { games: ScheduleGame[]; status: { bookmakerSourceFailures?: Array<{ kind?: string; source?: string; leagueId?: number; error?: string }> } };
       const games = body.games || [];
 
       setLiveGames(games);
+      setLiveSourceFailures(Array.isArray(body.status?.bookmakerSourceFailures) ? body.status.bookmakerSourceFailures : []);
 
       const insights = await Promise.all(
         (Array.isArray(games) ? games : []).map(async (game): Promise<[string, LiveInsight]> => {
@@ -459,6 +489,7 @@ function App() {
       const nextInsights = Object.fromEntries(insights);
       setLiveInsights(nextInsights);
     } catch (error) {
+      setLiveSourceFailures([]);
       setLiveErr(error instanceof Error ? error.message : "Live load failed");
     } finally {
       setLiveLoading(false);
@@ -548,20 +579,29 @@ function App() {
       game,
       gameMeta: preset?.gameMeta ?? null,
       boxState: preset?.boxState ?? null,
+      replay: null,
       board: presetBoard,
       flow: presetFlow,
       decision: presetDecision,
       h2h: [],
       histLoading: true,
+      replayLoading: true,
+      replayErr: null,
       detailErr: null,
     });
 
     try {
-      const [gameMeta, ha, hb, boxState] = await Promise.all([
+      let replayErr: string | null = null;
+      const replayPromise = fetchGameReplay(game.gameId).catch((error) => {
+        replayErr = error instanceof Error ? error.message : "Replay load failed";
+        return null;
+      });
+      const [gameMeta, ha, hb, boxState, replay] = await Promise.all([
         fetchGame(game.gameId, game.tag),
         fetchTeamGames(game.team1.teamId, game.tag, RESULTS_SEASON),
         fetchTeamGames(game.team2.teamId, game.tag, RESULTS_SEASON),
         fetchBoxScore(game.gameId, game.tag),
+        replayPromise,
       ]);
 
       const boxRaw = boxState.fetchedOk ? boxState.raw : null;
@@ -581,11 +621,14 @@ function App() {
         game,
         gameMeta: gameMeta.raw,
         boxState,
+        replay,
         board,
         flow,
         decision,
         h2h,
         histLoading: false,
+        replayLoading: false,
+        replayErr,
         detailErr: !gameMeta.fetchedOk ? "Could not load game metadata." : null,
       });
     } catch (error) {
@@ -594,6 +637,8 @@ function App() {
           ? {
             ...current,
             histLoading: false,
+            replayLoading: false,
+            replayErr: error instanceof Error ? error.message : "Replay load failed",
             detailErr: error instanceof Error ? error.message : "Detail load failed",
           }
           : current
@@ -663,6 +708,13 @@ function App() {
             <Metric label="Riskiest division" value={operatorSummary.worst_division.name} />
           </div>
 
+          {!liveLoading && summarizeBookmakerFailures(liveSourceFailures) && (
+            <div className="live-source-banner" role="status" aria-live="polite">
+              <span className="status-badge caution">Bookmaker source issue</span>
+              <span>{summarizeBookmakerFailures(liveSourceFailures)}</span>
+            </div>
+          )}
+
           {liveErr && <p className="err">{liveErr}</p>}
           {liveLoading && <p className="muted">Refreshing live operator cards...</p>}
 
@@ -684,7 +736,12 @@ function App() {
           </div>
 
           {!liveLoading && liveGames.length === 0 && displayLiveInsights.length === 0 && (
-            <p className="muted">No approved live games are active right now.</p>
+            <div className="muted">
+              <p>No approved live games are active right now.</p>
+              {summarizeBookmakerFailures(liveSourceFailures) && (
+                <p>{summarizeBookmakerFailures(liveSourceFailures)}</p>
+              )}
+            </div>
           )}
 
           {!liveLoading && liveGames.length > 0 && displayLiveInsights.length === 0 && (
@@ -862,6 +919,47 @@ function App() {
               <p className="muted">{operatorSummary.theory_call}</p>
             </section>
 
+            <section className="drawer-section" data-testid="odds-replay-section">
+              <h3>Odds movement</h3>
+              {drawer.replayLoading && <p className="muted" data-testid="odds-replay-loading">Loading odds replay...</p>}
+              {!drawer.replayLoading && drawer.replayErr && <p className="err" data-testid="odds-replay-error">{drawer.replayErr}</p>}
+              {!drawer.replayLoading && !drawer.replayErr && !drawer.replay && (
+                <p className="muted" data-testid="odds-replay-empty">No stored odds replay available for this game.</p>
+              )}
+              {!drawer.replayLoading && drawer.replay && (
+                <>
+                  <div className="quarter-grid" data-testid="odds-replay-summary">
+                    <Metric label="Replay events" value={drawer.replay.timeline.length} />
+                    <Metric
+                      label="Odds snapshots"
+                      value={drawer.replay.timeline.filter((event) => event.kind === "odds").length}
+                    />
+                    <Metric
+                      label="Quarter snapshots"
+                      value={drawer.replay.timeline.filter((event) => event.kind === "quarter").length}
+                    />
+                    <Metric
+                      label="Result snapshots"
+                      value={drawer.replay.timeline.filter((event) => event.kind === "result").length}
+                    />
+                  </div>
+                  <div className="replay-list" data-testid="odds-replay-list">
+                    {drawer.replay.timeline.map((event, index) => (
+                      <div key={`${event.kind}-${event.capturedAt}-${index}`} className="replay-item">
+                        <div className="replay-item-head">
+                          <strong>{event.kind === "odds" ? "Odds" : event.kind === "quarter" ? "Quarter" : "Result"}</strong>
+                          <span>{event.capturedAt}</span>
+                        </div>
+                        <div className="muted">
+                          {event.quarter === null ? "No quarter" : `Q${event.quarter}`} · {replayEventSummary(event)}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </section>
+
             <section className="drawer-section" data-testid="h2h-section">
               <h3>H2H block</h3>
               {drawer.histLoading && (
@@ -941,4 +1039,3 @@ function App() {
 }
 
 export default App;
-

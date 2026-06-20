@@ -67,11 +67,37 @@ export type GameDetail = {
     fetchedOk: boolean;
 };
 
+export type ReplayEvent = {
+    kind: "quarter" | "odds" | "result";
+    capturedAt: string;
+    quarter: number | null;
+    [key: string]: unknown;
+};
+
+export type GameReplay = {
+    gameId: number;
+    gameKey: string;
+    timeline: ReplayEvent[];
+};
+
 export type BoxScoreState = {
     raw: unknown | null;
     apiStatus: string | null;
     fetchedOk: boolean;
     fetchedAt: number;
+};
+
+export type ReplayEvent = {
+    kind: "quarter" | "odds" | "result" | string;
+    capturedAt: string;
+    quarter: number | null;
+    [key: string]: unknown;
+};
+
+export type GameReplay = {
+    gameId: number;
+    gameKey: string;
+    timeline: ReplayEvent[];
 };
 
 export type DivisionSection = {

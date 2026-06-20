@@ -151,7 +151,6 @@ assert.equal(liveWinsOverRecorderEnvelope.games[0].gameId, liveFallbackGame.game
 assert.equal(liveWinsOverRecorderEnvelope.games[0].team1.shortName, "Barnaul");
 
 console.log("Live envelope live-feed precedence over recorder tests passed");
-
 const bookmakerPreferredGame = game({
   gameId: 730347660,
   tag: "ipbl-66-m-pro-b",
@@ -196,3 +195,22 @@ assert.equal(bookmakerPreferredEnvelope.games[0].gameId, bookmakerPreferredGame.
 assert.equal(bookmakerPreferredEnvelope.games[0].team1.shortName, "Krasnodar");
 
 console.log("Live envelope bookmaker-preferred source test passed");
+
+const bookmakerFailure = new Error("melbet:zero_approved_games: bookmaker source returned live rows, but none matched the approved team registry");
+(bookmakerFailure as Error & { sourceFailures?: unknown[] }).sourceFailures = [
+  { leagueId: 2496666, error: "bookmaker source returned live rows, but none matched the approved team registry", source: "melbet", kind: "zero_approved_games" },
+  { leagueId: 2496667, error: "bookmaker source returned live rows, but none matched the approved team registry", source: "melbet", kind: "zero_approved_games" },
+];
+const classifiedFailureEnvelope = await buildLiveFeedEnvelope({
+  getResultsRedis: () => new EmptyRecorderRedis() as never,
+  readRecordedLiveFeed: async () => ({ games: [], status: { source: "official:api1.ipbl.pro", status: "OK" } }) satisfies LiveFeedEnvelope,
+  fetchLiveTag: async (tag: string) => ({ tag, games: tag === "ipbl-66-m-pro-a" ? [liveFallbackGame] : [] }),
+  fetchBookmakerLive: async () => { throw bookmakerFailure; },
+  reconcileLiveGamesWithOfficialDetail: async (games) => ({ games, checked: 0, dropped: 0, updated: 0 }),
+});
+
+assert.equal(classifiedFailureEnvelope.status.bookmakerSourceFailures[0].kind, "zero_approved_games");
+assert.equal(classifiedFailureEnvelope.status.bookmakerSourceFailures[0].source, "melbet");
+assert.equal(classifiedFailureEnvelope.status.bookmakerSourceFailures[0].leagueId, 2496666);
+
+console.log("Live envelope bookmaker failure classification test passed");
