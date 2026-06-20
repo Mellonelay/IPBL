@@ -77,3 +77,7 @@ June 20, 2026:
 - Complete: 0, 1, 4, 8, 9, 10, 12, 13
 - Support-ready: 2, 3, 5, 6, 7, 11
 - Open: 0
+
+## PR Mirror
+
+The same closure summary was posted back to PR `#48` so the branch history and repo docs point at the same phase state.
