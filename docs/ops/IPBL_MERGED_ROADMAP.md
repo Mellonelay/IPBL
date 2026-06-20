@@ -11,7 +11,7 @@ Live foundation
 Recorder baseline
 C8/C8.5 operational hardening
 C9 proof/reconciliation foundation
-Approved 12-division boundary
+Approved 13-division boundary
 H2H freshness and continuity
 ```
 
@@ -39,7 +39,7 @@ ipbl-66-w-pro-g
 ipbl-66-w-pro-k
 ```
 
-Total: 12 approved divisions.
+Total: 13 approved divisions.
 
 ## Partial / active
 

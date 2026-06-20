@@ -6,6 +6,7 @@ export const MELBET_IPBL_LEAGUES = [
 ] as const;
 
 type BookmakerSourceName = "melbet" | "1xbet";
+export type BookmakerSourceFailureKind = "fetch_failed" | "parse_failed" | "zero_approved_games";
 
 type BookmakerSourceConfig = {
   name: BookmakerSourceName;
@@ -133,7 +134,7 @@ export type BookmakerLiveResult = {
   }>;
   receivedEvents: number;
   sourceLeagues: number[];
-  sourceFailures: Array<{ leagueId: number; error: string; source?: BookmakerSourceName }>;
+  sourceFailures: Array<{ leagueId: number; error: string; source?: BookmakerSourceName; kind?: BookmakerSourceFailureKind }>;
 };
 
 export function normalizeTeamName(value: string): string {
@@ -242,6 +243,52 @@ function unmatchedEvent(event: BookmakerSourceEvent, team1: string, team2: strin
     sourceTeam1Id: finiteNumber(event.O1I), sourceTeam2Id: finiteNumber(event.O2I),
     team1, team2, reason, payloadState: payloadState(event),
   };
+}
+
+function bookmakerSourceFailure(
+  source: BookmakerSourceConfig,
+  leagueId: number,
+  kind: BookmakerSourceFailureKind,
+  error: string,
+): BookmakerLiveResult["sourceFailures"][number] {
+  return { leagueId, error, source: source.name, kind };
+}
+
+export function classifyBookmakerSourceFailure(
+  source: BookmakerSourceConfig,
+  leagueId: number,
+  payload: string | null,
+  parsed: BookmakerLiveResult | null,
+  error: unknown,
+): BookmakerLiveResult["sourceFailures"][number] {
+  if (error !== null) {
+    return bookmakerSourceFailure(
+      source,
+      leagueId,
+      "fetch_failed",
+      error instanceof Error ? error.message : String(error),
+    );
+  }
+  if (!parsed) {
+    return bookmakerSourceFailure(source, leagueId, "parse_failed", "bookmaker payload could not be parsed");
+  }
+  if (parsed.games.length === 0 && parsed.unmatched.length === 0) {
+    const appearsStructured = /dashboard-game-block__link|ui-game-scores__num|SportsEvent/.test(payload ?? "");
+    return bookmakerSourceFailure(
+      source,
+      leagueId,
+      appearsStructured ? "parse_failed" : "parse_failed",
+      appearsStructured
+        ? "bookmaker HTML changed shape before any approved or rejected games could be parsed"
+        : "bookmaker payload produced no parseable live games",
+    );
+  }
+  return bookmakerSourceFailure(
+    source,
+    leagueId,
+    "zero_approved_games",
+    "bookmaker source returned live rows, but none matched the approved team registry",
+  );
 }
 
 export function parseBookmakerLivePayloads(rawPayloads: unknown[]): BookmakerLiveResult {
@@ -458,12 +505,12 @@ export function parseBookmakerLivePageHtml(html: string, leagueId: number, baseU
   };
 }
 
-async function fetchBookmakerSourceLive(source: BookmakerSourceConfig): Promise<BookmakerLiveResult> {
+async function fetchBookmakerSourceLive(source: BookmakerSourceConfig, fetchImpl: typeof fetch = fetch): Promise<BookmakerLiveResult> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15_000);
   try {
     const settled = await Promise.allSettled(MELBET_IPBL_LEAGUES.map(async ({ leagueId }) => {
-      const response = await fetch(bookmakerLivePageUrl(source.baseUrl, leagueId), {
+      const response = await fetchImpl(bookmakerLivePageUrl(source.baseUrl, leagueId), {
         headers: {
           Accept: "text/html,application/xhtml+xml",
           "User-Agent": `IPBL-Minimal-Viewer/1.0 (${source.name})`,
@@ -483,12 +530,20 @@ async function fetchBookmakerSourceLive(source: BookmakerSourceConfig): Promise<
       const leagueId = MELBET_IPBL_LEAGUES[index].leagueId;
       sourceLeagues.add(leagueId);
       if (result.status === "rejected") {
-        sourceFailures.push({ leagueId, error: result.reason instanceof Error ? result.reason.message : String(result.reason), source: source.name });
+        sourceFailures.push(bookmakerSourceFailure(
+          source,
+          leagueId,
+          "fetch_failed",
+          result.reason instanceof Error ? result.reason.message : String(result.reason),
+        ));
         continue;
       }
       const parsed = parseBookmakerLivePageHtml(result.value.payload, leagueId, source.baseUrl);
       games.push(...parsed.games);
       unmatched.push(...parsed.unmatched);
+      if (parsed.games.length === 0) {
+        sourceFailures.push(classifyBookmakerSourceFailure(source, leagueId, result.value.payload, parsed, null));
+      }
     }
     if (games.length === 0) {
       throw new Error(sourceFailures.map(({ leagueId, error }) => `${leagueId}: ${error}`).join("; ") || `${source.name} live sources failed`);
@@ -549,10 +604,15 @@ export async function fetchBookmakerLive(): Promise<BookmakerLiveResult> {
   const successes = settled.filter((entry): entry is PromiseFulfilledResult<BookmakerLiveResult> => entry.status === "fulfilled").map((entry) => entry.value);
   const failures = settled.flatMap((entry, index) => {
     if (entry.status === "fulfilled") return [];
-    return [{ leagueId: -1, error: entry.reason instanceof Error ? entry.reason.message : String(entry.reason), source: BOOKMAKER_IPBL_SOURCES[index].name }];
+    const reason = entry.reason as { sourceFailures?: BookmakerLiveResult["sourceFailures"] } & Error;
+    const structured = Array.isArray(reason?.sourceFailures) ? reason.sourceFailures : [];
+    if (structured.length > 0) return structured;
+    return [{ leagueId: -1, error: entry.reason instanceof Error ? entry.reason.message : String(entry.reason), source: BOOKMAKER_IPBL_SOURCES[index].name, kind: "fetch_failed" as const }];
   });
   if (successes.length === 0) {
-    throw new Error(failures.map(({ source, error }) => `${source ?? "bookmaker"}: ${error}`).join("; ") || "Bookmaker live sources failed");
+    const error = new Error(failures.map(({ source, kind, error }) => `${source ?? "bookmaker"}${kind ? `:${kind}` : ""}: ${error}`).join("; ") || "Bookmaker live sources failed");
+    (error as Error & { sourceFailures?: BookmakerLiveResult["sourceFailures"] }).sourceFailures = failures;
+    throw error;
   }
   const merged = mergeBookmakerLiveResultsByGameId(successes);
   return {

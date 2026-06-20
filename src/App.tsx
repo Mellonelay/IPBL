@@ -13,6 +13,7 @@ import { computeH2H } from "./api/normalize";
 import type { BoxScoreState, GameReplay, H2HEntry, ScheduleGame } from "./api/types";
 import { projectLiveClock } from "./live/clock";
 import { buildLiveDisplayInsights } from "./live/display";
+import { summarizeBookmakerFailures } from "./live/source-status";
 import ResultsCalendarGrid from "./components/ResultsCalendarGrid";
 import BettingRecord from "./components/BettingRecord";
 import TeamStatistics from "./components/TeamStatistics";
@@ -258,6 +259,7 @@ function App() {
   const [liveLoading, setLiveLoading] = useState(false);
   const [liveErr, setLiveErr] = useState<string | null>(null);
   const [liveInsights, setLiveInsights] = useState<Record<string, LiveInsight>>({});
+  const [liveSourceFailures, setLiveSourceFailures] = useState<Array<{ kind?: string; source?: string; leagueId?: number; error?: string }>>([]);
   const [selectedLiveDivisionTag, setSelectedLiveDivisionTag] = useState("");
 
   const [selectedResultsYear, setSelectedResultsYear] = useState<number>(RESULTS_START_YEAR);
@@ -431,10 +433,11 @@ function App() {
     try {
       const res = await fetch("/api/results/live");
       if (!res.ok) throw new Error(`Live API error: ${res.status}`);
-      const body = (await res.json()) as { games: ScheduleGame[]; status: any };
+      const body = (await res.json()) as { games: ScheduleGame[]; status: { bookmakerSourceFailures?: Array<{ kind?: string; source?: string; leagueId?: number; error?: string }> } };
       const games = body.games || [];
 
       setLiveGames(games);
+      setLiveSourceFailures(Array.isArray(body.status?.bookmakerSourceFailures) ? body.status.bookmakerSourceFailures : []);
 
       const insights = await Promise.all(
         (Array.isArray(games) ? games : []).map(async (game): Promise<[string, LiveInsight]> => {
@@ -486,6 +489,7 @@ function App() {
       const nextInsights = Object.fromEntries(insights);
       setLiveInsights(nextInsights);
     } catch (error) {
+      setLiveSourceFailures([]);
       setLiveErr(error instanceof Error ? error.message : "Live load failed");
     } finally {
       setLiveLoading(false);
@@ -704,6 +708,13 @@ function App() {
             <Metric label="Riskiest division" value={operatorSummary.worst_division.name} />
           </div>
 
+          {!liveLoading && summarizeBookmakerFailures(liveSourceFailures) && (
+            <div className="live-source-banner" role="status" aria-live="polite">
+              <span className="status-badge caution">Bookmaker source issue</span>
+              <span>{summarizeBookmakerFailures(liveSourceFailures)}</span>
+            </div>
+          )}
+
           {liveErr && <p className="err">{liveErr}</p>}
           {liveLoading && <p className="muted">Refreshing live operator cards...</p>}
 
@@ -725,7 +736,12 @@ function App() {
           </div>
 
           {!liveLoading && liveGames.length === 0 && displayLiveInsights.length === 0 && (
-            <p className="muted">No approved live games are active right now.</p>
+            <div className="muted">
+              <p>No approved live games are active right now.</p>
+              {summarizeBookmakerFailures(liveSourceFailures) && (
+                <p>{summarizeBookmakerFailures(liveSourceFailures)}</p>
+              )}
+            </div>
           )}
 
           {!liveLoading && liveGames.length > 0 && displayLiveInsights.length === 0 && (

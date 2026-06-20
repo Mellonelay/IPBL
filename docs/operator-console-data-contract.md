@@ -11,11 +11,15 @@ The console supports **exactly** these divisions:
 - Pro Men B
 - Pro Men C
 - Pro Men D
-- Pro Men G
-- Pro Men J
+- Pro Men U
+- Pro Men Z
+- Pro Men L
 - Pro Women A
 - Pro Women B
 - Pro Women C
+- Pro Women D
+- Pro Women G
+- Pro Women K
 
 Any row outside this list must not render as a Live card or supported Results row.
 
@@ -32,11 +36,15 @@ Canonical mapping:
 | `ipbl-66-m-pro-b` | Pro Men B |
 | `ipbl-66-m-pro-c` | Pro Men C |
 | `ipbl-66-m-pro-d` | Pro Men D |
-| `ipbl-66-m-pro-g` | Pro Men G |
-| `ipbl-66-m-pro-j` | Pro Men J |
+| `ipbl-66-m-pro-u` | Pro Men U |
+| `ipbl-66-m-pro-z` | Pro Men Z |
+| `ipbl-66-m-pro-l` | Pro Men L |
 | `ipbl-66-w-pro-a` | Pro Women A |
 | `ipbl-66-w-pro-b` | Pro Women B |
 | `ipbl-66-w-pro-c` | Pro Women C |
+| `ipbl-66-w-pro-d` | Pro Women D |
+| `ipbl-66-w-pro-g` | Pro Women G |
+| `ipbl-66-w-pro-k` | Pro Women K |
 
 ## 3) Live contract
 
