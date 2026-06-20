@@ -397,10 +397,12 @@ export function parseBookmakerLivePageHtml(html: string, leagueId: number, baseU
     }
   }
 
-  const blocks = [...html.matchAll(/<a href="([^"]+\/(\d+)-[^"]+)" class="dashboard-game-block__link"[\s\S]*?<\/a>/g)];
+  const blocks = [...html.matchAll(/<a\b[^>]*href="([^"]+\/(\d+)-[^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];
   const parsedGames: PageParsedBookmakerGame[] = [];
   for (const blockMatch of blocks) {
     const block = blockMatch[0];
+    const openingTag = block.match(/^<a\b[^>]*>/)?.[0] ?? "";
+    if (!openingTag.includes("dashboard-game-block__link")) continue;
     const href = blockMatch[1];
     const hrefParts = href.match(/\/en\/live\/basketball\/(\d+)-[^/]+\/(\d+)-[^"]+/);
     if (!hrefParts) continue;
