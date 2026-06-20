@@ -532,6 +532,11 @@ async function fetchBookmakerSourceLive(source: BookmakerSourceConfig, fetchImpl
       const leagueId = MELBET_IPBL_LEAGUES[index].leagueId;
       sourceLeagues.add(leagueId);
       if (result.status === "rejected") {
+        console.warn("[bookmaker-live] fetch rejected", {
+          source: source.name,
+          leagueId,
+          error: result.reason instanceof Error ? result.reason.message : String(result.reason),
+        });
         sourceFailures.push(bookmakerSourceFailure(
           source,
           leagueId,
@@ -541,6 +546,15 @@ async function fetchBookmakerSourceLive(source: BookmakerSourceConfig, fetchImpl
         continue;
       }
       const parsed = parseBookmakerLivePageHtml(result.value.payload, leagueId, source.baseUrl);
+      if (parsed.games.length === 0) {
+        console.warn("[bookmaker-live] zero parsed games", {
+          source: source.name,
+          leagueId,
+          payloadLength: result.value.payload.length,
+          hasDashboardLinks: /dashboard-game-block__link/.test(result.value.payload),
+          payloadHead: result.value.payload.slice(0, 200).replace(/\s+/g, " "),
+        });
+      }
       games.push(...parsed.games);
       unmatched.push(...parsed.unmatched);
       if (parsed.games.length === 0) {
