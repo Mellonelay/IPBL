@@ -1,6 +1,6 @@
 {
   "summary": {
-    "capturedAt": "2026-06-20T13:47:48.046Z",
+    "capturedAt": "2026-06-20T14:22:46.188Z",
     "endpoints": {
       "officialLivePage": {
         "url": "https://ipbl.pro/live",
@@ -125,7 +125,7 @@
         ]
       },
       "productionLive": {
-        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781963267877",
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781965366037",
         "http": null,
         "ok": false,
         "bytes": null,
@@ -215,105 +215,105 @@
     "officialLivePage": {
       "label": "officialLivePage",
       "url": "https://ipbl.pro/live",
-      "capturedAt": "2026-06-20T13:47:47.996Z",
+      "capturedAt": "2026-06-20T14:22:46.149Z",
       "ok": false,
       "error": "TypeError: fetch failed"
     },
     "officialCalendar": {
       "label": "officialCalendar",
       "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
-      "capturedAt": "2026-06-20T13:47:48.039Z",
+      "capturedAt": "2026-06-20T14:22:46.184Z",
       "ok": false,
       "http": null,
       "components": [
         {
           "label": "officialCalendar-ipbl-66-m-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
-          "capturedAt": "2026-06-20T13:47:47.997Z",
+          "capturedAt": "2026-06-20T14:22:46.150Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.004Z",
+          "capturedAt": "2026-06-20T14:22:46.158Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.008Z",
+          "capturedAt": "2026-06-20T14:22:46.164Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.014Z",
+          "capturedAt": "2026-06-20T14:22:46.169Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-u",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.017Z",
+          "capturedAt": "2026-06-20T14:22:46.172Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-z",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-z&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.020Z",
+          "capturedAt": "2026-06-20T14:22:46.174Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-l",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-l&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.023Z",
+          "capturedAt": "2026-06-20T14:22:46.176Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.025Z",
+          "capturedAt": "2026-06-20T14:22:46.177Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.027Z",
+          "capturedAt": "2026-06-20T14:22:46.179Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.030Z",
+          "capturedAt": "2026-06-20T14:22:46.180Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.034Z",
+          "capturedAt": "2026-06-20T14:22:46.181Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-g",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.037Z",
+          "capturedAt": "2026-06-20T14:22:46.183Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-k",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
-          "capturedAt": "2026-06-20T13:47:48.039Z",
+          "capturedAt": "2026-06-20T14:22:46.184Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         }
@@ -324,22 +324,22 @@
     },
     "productionLive": {
       "label": "productionLive",
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781963267877",
-      "capturedAt": "2026-06-20T13:47:48.000Z",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781965366037",
+      "capturedAt": "2026-06-20T14:22:46.152Z",
       "ok": false,
       "error": "TypeError: fetch failed"
     },
     "recorderStatus": {
       "label": "recorderStatus",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
-      "capturedAt": "2026-06-20T13:47:48.000Z",
+      "capturedAt": "2026-06-20T14:22:46.153Z",
       "ok": false,
       "error": "TypeError: fetch failed"
     },
     "recorderHistory": {
       "label": "recorderHistory",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
-      "capturedAt": "2026-06-20T13:47:48.040Z",
+      "capturedAt": "2026-06-20T14:22:46.184Z",
       "ok": false,
       "http": null,
       "components": [],
@@ -350,21 +350,21 @@
     "melbetLiveDiscovery": {
       "label": "melbetLiveDiscovery",
       "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
-      "capturedAt": "2026-06-20T13:47:48.007Z",
+      "capturedAt": "2026-06-20T14:22:46.163Z",
       "ok": false,
       "http": null,
       "components": [
         {
           "label": "melbetLive-2496666",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-20T13:47:48.001Z",
+          "capturedAt": "2026-06-20T14:22:46.153Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         },
         {
           "label": "melbetLive-2496667",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-20T13:47:48.007Z",
+          "capturedAt": "2026-06-20T14:22:46.163Z",
           "ok": false,
           "error": "TypeError: fetch failed"
         }
