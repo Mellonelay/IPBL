@@ -198,6 +198,43 @@ assert.equal(bookmakerPageParsed.games[0].scoreText, "82 : 65");
 assert.equal(bookmakerPageParsed.games[0].period, 3);
 assert.equal(bookmakerPageParsed.games[0].statusDisplay, "3rd quarter");
 
+const productionLikeBookmakerPageFixture = `
+<li class="dashboard-game--theme-gray-100 dashboard-game dashboard-champ__game" data-v-18d75965>
+  <div class="dashboard-game-block dashboard-game__block" data-v-79d3b74c data-v-dd670c84>
+    <a href="/en/live/basketball/2496666-ipbl-pro-division/730347660-krasnodar-tyumen" class="dashboard-game-block__link" data-v-dd670c84 data-v-dd670c84>
+      <span class="ui-team-scores--size-m ui-team-scores--theme-gray-100 ui-team-scores dashboard-game-block__teams" data-v-dd670c84 data-v-1171709d>
+        <span class="ui-team-scores__top" data-v-1171709d>
+          <span class="ui-team-scores__teams ui-team-scores-teams" data-v-1171709d>
+            <div class="dashboard-game-team-info dashboard-game-block__team" data-v-dd670c84 data-v-f0ba8478>
+              <div class="ui-team-score-name--nowrap ui-team-score-name" data-v-f0ba8478 data-v-d307324d>
+                <span class="ui-caption--size-m ui-caption dashboard-game-team-info__name" style="" dir="auto" data-v-31099631 data-v-f0ba8478><!--[-->Krasnodar  <!----><!--]--></span>
+              </div>
+            </div>
+            <div class="dashboard-game-team-info dashboard-game-block__team" data-v-dd670c84 data-v-f0ba8478>
+              <div class="ui-team-score-name--nowrap ui-team-score-name" data-v-f0ba8478 data-v-d307324d>
+                <span class="ui-caption--size-m ui-caption dashboard-game-team-info__name" style="" dir="auto" data-v-31099631 data-v-f0ba8478><!--[-->Tyumen  <!----><!--]--></span>
+              </div>
+            </div>
+          </span>
+        </span>
+      </span>
+      <div class="ui-scrollbar ui-scrollbar--theme-gray ui-scrollbar--size-m ui-team-scores__scores ui-team-scores-scores" data-v-339e20b9 data-v-1171709d>
+        <span class="ui-game-scores--size-m ui-game-scores--theme-gray-100 ui-game-scores" data-v-dd670c84 data-v-e702c11c>
+          <span class="ui-game-scores__item ui-game-scores__item--total" data-v-e702c11c><span class="ui-game-scores__num" data-v-e702c11c>30</span><span class="ui-game-scores__num" data-v-e702c11c>35</span></span>
+          <span class="ui-game-scores__item--current ui-game-scores__item" data-v-e702c11c><span class="ui-game-scores__num" data-v-e702c11c>21</span><span class="ui-game-scores__num" data-v-e702c11c>25</span></span>
+          <span class="ui-game-scores__item" data-v-e702c11c><span class="ui-game-scores__num" data-v-e702c11c>9</span><span class="ui-game-scores__num" data-v-e702c11c>10</span></span>
+        </span>
+      </div>
+    </a>
+  </div>
+</li>
+`;
+const productionLikeBookmakerPageParsed = parseBookmakerLivePageHtml(productionLikeBookmakerPageFixture, 2496666, "https://melbet.com");
+assert.equal(productionLikeBookmakerPageParsed.games.length, 1);
+assert.equal(productionLikeBookmakerPageParsed.games[0].team1.shortName, "Krasnodar");
+assert.equal(productionLikeBookmakerPageParsed.games[0].team2.shortName, "Tyumen");
+assert.equal(productionLikeBookmakerPageParsed.games[0].scoreText, "30 : 35");
+
 const bookmakerSource = { name: "melbet", baseUrl: "https://melbet.com", partner: 8 };
 const rejectedHtml = `
 <li class="dashboard-game--theme-gray-100 dashboard-game dashboard-champ__game">
