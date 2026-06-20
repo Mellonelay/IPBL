@@ -213,15 +213,13 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
   const fetchLive = deps.fetchLiveTag ?? fetchLiveTag;
   const fetchBookmaker = deps.fetchBookmakerLive ?? fetchBookmakerLive;
 
+  let recordedEnvelope: LiveFeedEnvelope | null = null;
   const redis = getRedis();
   if (redis) {
     try {
-      const recorded = await readFeed(redis);
-      if (recorded.games.length > 0) {
-        return await reconcileLiveFeedEnvelope(recorded);
-      }
+      recordedEnvelope = await readFeed(redis);
     } catch {
-      // Fall through to legacy fetch path only if recorder access fails.
+      // Fall through to the live fetch path only if recorder access fails.
     }
   }
 
@@ -278,6 +276,10 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
         displayTimeZone: "Asia/Yangon",
       },
     };
+  }
+
+  if (recordedEnvelope?.games.length) {
+    return await reconcileLiveFeedEnvelope(recordedEnvelope);
   }
 
   return {

@@ -16,7 +16,7 @@ type BookmakerSourceConfig = {
 
 const BOOKMAKER_IPBL_SOURCES: readonly BookmakerSourceConfig[] = [
   { name: "melbet", baseUrl: "https://melbet.com", partner: 8 },
-  { name: "1xbet", baseUrl: "https://1xbet.com", partner: 25 },
+  { name: "1xbet", baseUrl: "https://1xlite-04954.pro", partner: 25 },
 ] as const;
 
 function bookmakerPageSlug(leagueId: number): string {

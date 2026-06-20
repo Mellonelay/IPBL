@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { classifyBookmakerSourceFailure, mergeBookmakerLiveResultsByGameId, parseBookmakerLivePageHtml, parseBookmakerLivePayload, parseBookmakerLivePayloads, remainingClock } from "../lib/server/bookmaker-live.ts";
+import { classifyBookmakerSourceFailure, fetchBookmakerLive, mergeBookmakerLiveResultsByGameId, parseBookmakerLivePageHtml, parseBookmakerLivePayload, parseBookmakerLivePayloads, remainingClock } from "../lib/server/bookmaker-live.ts";
 
 const raw = {
   Success: true,
@@ -198,8 +198,6 @@ assert.equal(bookmakerPageParsed.games[0].scoreText, "82 : 65");
 assert.equal(bookmakerPageParsed.games[0].period, 3);
 assert.equal(bookmakerPageParsed.games[0].statusDisplay, "3rd quarter");
 
-console.log("Bookmaker page parsing tests passed");
-
 const bookmakerSource = { name: "melbet", baseUrl: "https://melbet.com", partner: 8 };
 const rejectedHtml = `
 <li class="dashboard-game--theme-gray-100 dashboard-game dashboard-champ__game">
@@ -234,3 +232,22 @@ assert.equal(parseFailure.kind, "parse_failed");
 const fetchFailure = classifyBookmakerSourceFailure(bookmakerSource, 2496666, null, null, new Error("HTTP 403"));
 assert.equal(fetchFailure.kind, "fetch_failed");
 assert.equal(fetchFailure.error, "HTTP 403");
+
+const originalFetch = globalThis.fetch;
+const requestedUrls: string[] = [];
+globalThis.fetch = async (input: RequestInfo | URL) => {
+  requestedUrls.push(typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url);
+  return new Response(bookmakerPageFixture, {
+    status: 200,
+    headers: { "content-type": "text/html; charset=utf-8" },
+  });
+};
+try {
+  const bookmakerFetchResult = await fetchBookmakerLive();
+  assert.ok(requestedUrls.some((url) => url.includes("1xlite-04954.pro")), "1xbet mirror should use the 1xlite hostname");
+  assert.ok(bookmakerFetchResult.games.length >= 1);
+} finally {
+  globalThis.fetch = originalFetch;
+}
+
+console.log("Bookmaker page parsing tests passed");
