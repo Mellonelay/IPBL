@@ -1,8 +1,8 @@
-import type { ScheduleGame } from "../server/calendar-normalize.ts";
-import type { PredictionInput, PredictionOutput } from "../prediction/prediction-engine.ts";
-import type { CalibrationResult } from "../calibration/confidence-calibrator.ts";
-import type { AdaptiveScore } from "../self-learning/adaptive-scorer.ts";
-import type { DriftReport } from "../calibration/prediction-drift.ts";
+import type { ScheduleGame } from "../server/calendar-normalize.js";
+import type { PredictionInput, PredictionOutput } from "../prediction/prediction-engine.js";
+import type { CalibrationResult } from "../calibration/confidence-calibrator.js";
+import type { AdaptiveScore } from "../self-learning/adaptive-scorer.js";
+import type { DriftReport } from "../calibration/prediction-drift.js";
 
 export type PredictionLiveMatchup = {
   team1: string;

@@ -1,6 +1,6 @@
-import type { DriftState } from "../calibration/prediction-drift.ts";
-import type { LiveState } from "../prediction/live-state-detector.ts";
-import type { PredictionRuntimeRow } from "./prediction-mapper.ts";
+import type { DriftState } from "../calibration/prediction-drift.js";
+import type { LiveState } from "../prediction/live-state-detector.js";
+import type { PredictionRuntimeRow } from "./prediction-mapper.js";
 
 export type PredictionRuntimeSummary = {
   liveStates: Record<LiveState, number>;

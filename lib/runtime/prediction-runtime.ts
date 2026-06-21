@@ -1,14 +1,14 @@
-import { buildPrediction, type PredictionInput } from "../prediction/prediction-engine.ts";
-import { calibrateConfidence } from "../calibration/confidence-calibrator.ts";
-import { calculateSignalWeights } from "../calibration/signal-weighting.ts";
-import { detectPredictionDrift } from "../calibration/prediction-drift.ts";
-import { buildAdaptiveScore } from "../self-learning/adaptive-scorer.ts";
-import type { EvaluationResult } from "../backtesting/evaluator.ts";
-import type { ScheduleGame } from "../server/calendar-normalize.ts";
+import { buildPrediction, type PredictionInput } from "../prediction/prediction-engine.js";
+import { calibrateConfidence } from "../calibration/confidence-calibrator.js";
+import { calculateSignalWeights } from "../calibration/signal-weighting.js";
+import { detectPredictionDrift } from "../calibration/prediction-drift.js";
+import { buildAdaptiveScore } from "../self-learning/adaptive-scorer.js";
+import type { EvaluationResult } from "../backtesting/evaluator.js";
+import type { ScheduleGame } from "../server/calendar-normalize.js";
 import type { LiveFeedEnvelope } from "../server/live-feed.js";
-import type { PredictionRuntimeEnvelope } from "./prediction-response.ts";
-import { buildPredictionRuntimeEnvelope as buildRuntimeEnvelope, type PredictionRuntimeSummary } from "./prediction-response.ts";
-import { mapLiveGameToPredictionInput, mapPredictionRuntimeRow } from "./prediction-mapper.ts";
+import type { PredictionRuntimeEnvelope } from "./prediction-response.js";
+import { buildPredictionRuntimeEnvelope as buildRuntimeEnvelope, type PredictionRuntimeSummary } from "./prediction-response.js";
+import { mapLiveGameToPredictionInput, mapPredictionRuntimeRow } from "./prediction-mapper.js";
 
 export type PredictionRuntimeOptions = {
   generatedAt?: Date;
@@ -20,9 +20,9 @@ export function mapGameForPrediction(game: ScheduleGame): PredictionInput {
   return mapLiveGameToPredictionInput(game);
 }
 
-export { mapLiveGameToPredictionInput } from "./prediction-mapper.ts";
-export type { PredictionRuntimeRow } from "./prediction-mapper.ts";
-export type { PredictionRuntimeEnvelope, PredictionRuntimeSummary } from "./prediction-response.ts";
+export { mapLiveGameToPredictionInput } from "./prediction-mapper.js";
+export type { PredictionRuntimeRow } from "./prediction-mapper.js";
+export type { PredictionRuntimeEnvelope, PredictionRuntimeSummary } from "./prediction-response.js";
 
 export function buildPredictionRuntimeEnvelope(
   liveEnvelope: LiveFeedEnvelope,
