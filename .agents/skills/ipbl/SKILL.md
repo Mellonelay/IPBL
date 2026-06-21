@@ -77,3 +77,7 @@ This skill teaches best practices and conventions for contributing to the IPBL r
 | /run-tests | Run all test files matching `*.test.*` |
 | /new-component | Scaffold a new React component using camelCase file naming and named exports |
 ```
+
+## Mellonelay Fabric A-Team Execution
+
+When `.agenteam/execution-contract.yaml` is present, treat it as the execution boundary. Adopt the configured repository roles as logical sub-agents, create bounded role records with `createAgent`, and execute all shell, GitHub, Vercel, file, test, and build work through `vmRouter`. Do not use Codex CLI as the executor.
