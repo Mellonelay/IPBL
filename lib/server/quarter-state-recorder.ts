@@ -1,4 +1,4 @@
-import type { RecordedLiveSnapshot } from "./live-recorder.ts";
+import type { RecordedLiveSnapshot } from "./live-recorder.js";
 
 export type QuarterStateInput = {
   gameId: number;

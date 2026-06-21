@@ -1,5 +1,5 @@
 import { Redis } from "@upstash/redis";
-import { applyKvRestEnvAliases, isKvRestConfigured, trimEnv } from "./kv-env";
+import { applyKvRestEnvAliases, isKvRestConfigured, trimEnv } from "./kv-env.js";
 
 let cached: Redis | null | undefined = undefined;
 
