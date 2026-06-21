@@ -1,18 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { buildLiveFeedEnvelope } from "../results/live.ts";
 import { buildPredictionRuntimeEnvelope, type PredictionRuntimeOptions } from "../../lib/runtime/prediction-runtime.ts";
 
 export type PredictionLiveDependencies = PredictionRuntimeOptions & {
-  buildLiveFeedEnvelope?: () => Promise<Awaited<ReturnType<typeof loadLiveFeedEnvelope>>>;
+  buildLiveFeedEnvelope?: typeof buildLiveFeedEnvelope;
   now?: () => Date;
 };
 
-async function loadLiveFeedEnvelope() {
-  const liveModule = await import("../results/live.ts");
-  return liveModule.buildLiveFeedEnvelope();
-}
-
 export function createPredictionLiveHandler(deps: PredictionLiveDependencies = {}) {
-  const buildLiveFeed = deps.buildLiveFeedEnvelope ?? loadLiveFeedEnvelope;
+  const buildLiveFeed = deps.buildLiveFeedEnvelope ?? buildLiveFeedEnvelope;
 
   return async function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method !== "GET") return res.status(405).json({ error: "method_not_allowed" });
