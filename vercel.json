@@ -15,10 +15,6 @@
       "destination": "/api/admin/backfill-results.ts"
     },
     {
-      "source": "/api/backtest",
-      "destination": "/api/backtest.ts"
-    },
-    {
       "source": "/api/cron/sync-results",
       "destination": "/api/cron/cron-sync-results.ts"
     },
