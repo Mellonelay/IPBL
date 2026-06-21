@@ -81,7 +81,9 @@ def main() -> int:
     repo = Path(str(task.get("working_directory", ""))).resolve()
     if not (repo / ".git").exists() and not (repo / ".git").is_file():
         raise SystemExit(f"not a git worktree: {repo}")
-    config = load_json(repo / ".agenteam" / "config.yaml")
+    config = import yaml
+with open(repo / '.agenteam/config.yaml') as f:
+    config = yaml.safe_load(f)
     role_cfg = config.get("roles", {}).get(ns.role)
     if not isinstance(role_cfg, dict):
         raise SystemExit(f"role not configured: {ns.role}")
