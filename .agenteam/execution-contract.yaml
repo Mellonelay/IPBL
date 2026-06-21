@@ -1,0 +1,100 @@
+{
+  "schema": "mellonelay.agenteam.execution.v1",
+  "orchestrator": {
+    "type": "mellonelay-fabric-gpt",
+    "agent_creation": "createAgent",
+    "execution_router": "vmRouter",
+    "vm_command": "shell_exec",
+    "artifact_root": "/root/runtime-audits/agenteam",
+    "workflow_endpoint_fallback": "direct-router-calls"
+  },
+  "boundaries": {
+    "createAgent_is_execution": false,
+    "worker_is_shell_host": false,
+    "vm_job_ledger_required": true,
+    "result_record_required": true,
+    "secrets_may_be_printed": false
+  },
+  "workflow": [
+    "researcher",
+    "pm",
+    "architect",
+    "dev",
+    "qa",
+    "reviewer"
+  ],
+  "roles": {
+    "researcher": {
+      "phase": "research",
+      "mutation": "scoped",
+      "default_scope": [
+        "docs/research/**"
+      ]
+    },
+    "pm": {
+      "phase": "strategy",
+      "mutation": "scoped",
+      "default_scope": [
+        "docs/strategies/**"
+      ]
+    },
+    "architect": {
+      "phase": "design",
+      "mutation": "scoped",
+      "default_scope": [
+        "docs/designs/**"
+      ]
+    },
+    "dev": {
+      "phase": "implement",
+      "mutation": "scoped",
+      "default_scope": [
+        "src/**",
+        "lib/**",
+        "app/**",
+        "pages/**",
+        "api/**"
+      ]
+    },
+    "qa": {
+      "phase": "test",
+      "mutation": "scoped",
+      "default_scope": [
+        "tests/**",
+        "test/**"
+      ]
+    },
+    "reviewer": {
+      "phase": "review",
+      "mutation": "read-only",
+      "default_scope": []
+    }
+  },
+  "protected_actions": [
+    "force_push",
+    "direct_main_push",
+    "merge_protected_branch",
+    "production_promote",
+    "secret_rotation",
+    "secret_output",
+    "production_data_mutation",
+    "destructive_delete",
+    "access_control_change",
+    "billing_change"
+  ],
+  "success": {
+    "required": [
+      "terminal_vm_job",
+      "return_code",
+      "stdout_sha256",
+      "stderr_sha256",
+      "result_json"
+    ],
+    "release_requires": [
+      "qa_pass",
+      "reviewer_pass",
+      "github_checks",
+      "preview_verification"
+    ]
+  }
+}

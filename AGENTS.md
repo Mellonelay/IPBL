@@ -18,3 +18,14 @@ Rules:
 - `vercel-verification`: use when the task needs production deployment proof, browser-side verification, or live API checks.
 - `evidence-finalization`: use when phase manifests, supersession indexes, or durable proof bundles need to be normalized.
 - `gen-planning`: use when the task is about operator intelligence, roadmap closure, or phase packaging rather than runtime behavior.
+
+## Mellonelay Fabric A-Team
+
+- `.agenteam/config.yaml` defines the repository roles.
+- `.agenteam/execution-contract.yaml` defines Fabric routing and protected actions.
+- Mellonelay Fabric GPT is the orchestrator; `createAgent` creates logical role records only.
+- Runtime work must execute through `vmRouter` and the VM job ledger.
+- Use `scripts/mellonelay-agenteam <task.json>` for bounded sequential role execution.
+- Results under `/root/runtime-audits/agenteam` are the execution evidence.
+- QA and Reviewer must pass before release actions.
+- Merge, production promotion, force push, secrets, production-data mutation, and destructive deletion require explicit authorization.
