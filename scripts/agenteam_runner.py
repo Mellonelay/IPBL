@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse, datetime as dt, fnmatch, hashlib, json, os, re, subprocess, sys, uuid
 from pathlib import Path
 
+import yaml
+
 ROLES = {"researcher", "pm", "architect", "dev", "qa", "reviewer"}
 PROTECTED = [
     (r"\brm\s+-rf\s+/(?:\s|$)", "destructive root deletion"),
@@ -53,6 +55,15 @@ def load_json(path: Path) -> dict:
     return value
 
 
+def load_agenteam_config(repo: Path) -> dict:
+    config_path = repo / ".agenteam" / "config.yaml"
+    with config_path.open("r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+    if not isinstance(config, dict):
+        raise SystemExit(f"invalid agenteam config: {config_path}")
+    return config
+
+
 def self_test() -> int:
     assert ROLES == {"researcher", "pm", "architect", "dev", "qa", "reviewer"}
     assert any("force push" == label for _, label in PROTECTED)
@@ -81,9 +92,7 @@ def main() -> int:
     repo = Path(str(task.get("working_directory", ""))).resolve()
     if not (repo / ".git").exists() and not (repo / ".git").is_file():
         raise SystemExit(f"not a git worktree: {repo}")
-    config = import yaml
-with open(repo / '.agenteam/config.yaml') as f:
-    config = yaml.safe_load(f)
+    config = load_agenteam_config(repo)
     role_cfg = config.get("roles", {}).get(ns.role)
     if not isinstance(role_cfg, dict):
         raise SystemExit(f"role not configured: {ns.role}")
