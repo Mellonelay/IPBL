@@ -1,13 +1,13 @@
 import { buildPrediction, type PredictionInput } from "../prediction/prediction-engine.ts";
 import { calibrateConfidence } from "../calibration/confidence-calibrator.ts";
 import { calculateSignalWeights } from "../calibration/signal-weighting.ts";
-import { detectPredictionDrift, type DriftReport } from "../calibration/prediction-drift.ts";
+import { detectPredictionDrift } from "../calibration/prediction-drift.ts";
 import { buildAdaptiveScore } from "../self-learning/adaptive-scorer.ts";
 import type { EvaluationResult } from "../backtesting/evaluator.ts";
 import type { ScheduleGame } from "../server/calendar-normalize.ts";
 import type { PredictionRuntimeEnvelope } from "./prediction-response.ts";
 import { buildPredictionRuntimeEnvelope as buildRuntimeEnvelope, type PredictionRuntimeSummary } from "./prediction-response.ts";
-import { mapLiveGameToPredictionInput, mapPredictionRuntimeRow, type PredictionRuntimeRow } from "./prediction-mapper.ts";
+import { mapLiveGameToPredictionInput, mapPredictionRuntimeRow } from "./prediction-mapper.ts";
 import type { LiveFeedEnvelope } from "../../api/results/live.ts";
 
 export type PredictionRuntimeOptions = {
