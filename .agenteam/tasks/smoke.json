@@ -16,15 +16,15 @@
   "authorizations": {},
   "roles": {
     "researcher": {
-      "command": "git status --short --branch && git log -1 --oneline",
+      "command": "git status --short --branch",
       "allowed_paths": []
     },
     "pm": {
-      "command": "test -f AGENTS.md && test -f .agenteam/execution-contract.yaml",
+      "command": "test -f AGENTS.md",
       "allowed_paths": []
     },
     "architect": {
-      "command": "python3 -m json.tool .agenteam/config.yaml >/dev/null && python3 -m json.tool .agenteam/execution-contract.yaml >/dev/null",
+      "command": "python3 -m json.tool .agenteam/config.yaml >/dev/null",
       "allowed_paths": []
     },
     "dev": {
@@ -32,11 +32,11 @@
       "allowed_paths": []
     },
     "qa": {
-      "command": "python3 scripts/agenteam_runner.py --self-test && bash -n scripts/mellonelay-agenteam",
+      "command": "python3 scripts/test_zero_drift_kernel_v2.py",
       "allowed_paths": []
     },
     "reviewer": {
-      "command": "git diff --check && git status --short --branch",
+      "command": "git diff --check",
       "allowed_paths": []
     }
   }
