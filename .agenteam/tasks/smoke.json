@@ -1,0 +1,43 @@
+{
+  "schema": "mellonelay.agenteam.task.v1",
+  "task_id": "smoke-agenteam-runtime-v1",
+  "repository": "Mellonelay/IPBL",
+  "working_directory": "/root/repos/IPBL-worktrees/agenteam-fabric-runtime-v1",
+  "objective": "Verify the repository A-team execution runtime without changing application code.",
+  "workflow": [
+    "researcher",
+    "pm",
+    "architect",
+    "dev",
+    "qa",
+    "reviewer"
+  ],
+  "allow_dirty": false,
+  "authorizations": {},
+  "roles": {
+    "researcher": {
+      "command": "git status --short --branch && git log -1 --oneline",
+      "allowed_paths": []
+    },
+    "pm": {
+      "command": "test -f AGENTS.md && test -f .agenteam/execution-contract.yaml",
+      "allowed_paths": []
+    },
+    "architect": {
+      "command": "python3 -m json.tool .agenteam/config.yaml >/dev/null && python3 -m json.tool .agenteam/execution-contract.yaml >/dev/null",
+      "allowed_paths": []
+    },
+    "dev": {
+      "command": "python3 -m py_compile scripts/agenteam_runner.py scripts/agenteam_orchestrate.py",
+      "allowed_paths": []
+    },
+    "qa": {
+      "command": "python3 scripts/agenteam_runner.py --self-test && bash -n scripts/mellonelay-agenteam",
+      "allowed_paths": []
+    },
+    "reviewer": {
+      "command": "git diff --check && git status --short --branch",
+      "allowed_paths": []
+    }
+  }
+}

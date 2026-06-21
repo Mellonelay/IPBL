@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+REPO="${MELLONELAY_REPO:-/root/repos/IPBL}"
+exec python3 "$REPO/scripts/agenteam_orchestrate.py" "$@"

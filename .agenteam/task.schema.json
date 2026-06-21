@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mellonelay.agenteam.task.v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "task_id",
+    "repository",
+    "working_directory",
+    "objective",
+    "workflow",
+    "roles"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mellonelay.agenteam.task.v1"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "repository": {
+      "type": "string"
+    },
+    "working_directory": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "workflow": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "researcher",
+          "pm",
+          "architect",
+          "dev",
+          "qa",
+          "reviewer"
+        ]
+      }
+    },
+    "roles": {
+      "type": "object"
+    },
+    "authorizations": {
+      "type": "object"
+    },
+    "allow_dirty": {
+      "type": "boolean"
+    }
+  }
+}
