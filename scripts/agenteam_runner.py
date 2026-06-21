@@ -5,6 +5,15 @@ from pathlib import Path
 
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from lib.security.zero_drift_kernel_v2 import (
+    DriftScoringEngine,
+    ZeroDriftViolation,
+    enforce_vmrouter_create,
+    lock_agent_create_contract,
+)
+
 ROLES = {"researcher", "pm", "architect", "dev", "qa", "reviewer"}
 PROTECTED = [
     (r"\brm\s+-rf\s+/(?:\s|$)", "destructive root deletion"),
@@ -93,6 +102,11 @@ def main() -> int:
     if not (repo / ".git").exists() and not (repo / ".git").is_file():
         raise SystemExit(f"not a git worktree: {repo}")
     config = load_agenteam_config(repo)
+
+    agent_request = task.get("agent") if isinstance(task.get("agent"), dict) else task.get("agent_create")
+    if isinstance(agent_request, dict):
+        lock_agent_create_contract(agent_request)
+
     role_cfg = config.get("roles", {}).get(ns.role)
     if not isinstance(role_cfg, dict):
         raise SystemExit(f"role not configured: {ns.role}")
@@ -102,6 +116,16 @@ def main() -> int:
     command = role_task["command"].strip()
     if not command:
         raise SystemExit("empty command")
+
+    try:
+        vmrouter_payload = enforce_vmrouter_create({"vm_command": "shell_exec", "cmd": command})
+        command = vmrouter_payload["cmd"]
+        drift_engine = DriftScoringEngine()
+        drift_score = drift_engine.record(vm_success=True)
+    except ZeroDriftViolation as exc:
+        drift_engine = DriftScoringEngine(rejected_payloads=1)
+        drift_score = drift_engine.drift_score
+        raise SystemExit(f"zero-drift kernel rejected vmRouter create payload: {exc}")
 
     auth = task.get("authorizations", {}) if isinstance(task.get("authorizations", {}), dict) else {}
     for pattern, label in PROTECTED:
@@ -148,6 +172,8 @@ def main() -> int:
         "role": ns.role,
         "run_id": run_id,
         "status": status,
+        "drift_score": drift_score,
+        "drift_snapshot": drift_engine.snapshot(),
         "command": command,
         "return_code": cp.returncode,
         "started_at": started.isoformat(),
