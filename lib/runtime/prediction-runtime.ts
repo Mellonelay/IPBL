@@ -5,10 +5,10 @@ import { detectPredictionDrift } from "../calibration/prediction-drift.ts";
 import { buildAdaptiveScore } from "../self-learning/adaptive-scorer.ts";
 import type { EvaluationResult } from "../backtesting/evaluator.ts";
 import type { ScheduleGame } from "../server/calendar-normalize.ts";
+import type { LiveFeedEnvelope } from "../server/live-feed.js";
 import type { PredictionRuntimeEnvelope } from "./prediction-response.ts";
 import { buildPredictionRuntimeEnvelope as buildRuntimeEnvelope, type PredictionRuntimeSummary } from "./prediction-response.ts";
 import { mapLiveGameToPredictionInput, mapPredictionRuntimeRow } from "./prediction-mapper.ts";
-import type { LiveFeedEnvelope } from "../../api/results/live.ts";
 
 export type PredictionRuntimeOptions = {
   generatedAt?: Date;

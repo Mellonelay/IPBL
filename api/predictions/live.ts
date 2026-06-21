@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { buildLiveFeedEnvelope } from "../results/live.ts";
+import { buildLiveFeedEnvelope } from "../../lib/server/live-feed.js";
 import { buildPredictionRuntimeEnvelope, type PredictionRuntimeOptions } from "../../lib/runtime/prediction-runtime.ts";
 
 export type PredictionLiveDependencies = PredictionRuntimeOptions & {

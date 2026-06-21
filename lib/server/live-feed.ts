@@ -1,4 +1,3 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { parseCalendarItems, type ScheduleGame } from "../../lib/server/calendar-normalize.js";
 import { fetchOfficialJson } from "../../lib/server/ipbl-compat.js";
 import { getResultsRedis } from "../../lib/server/results-redis.js";
@@ -314,11 +313,4 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
       displayTimeZone: "Asia/Yangon",
     },
   };
-}
-
-export default async function handler(_req: VercelRequest, res: VercelResponse) {
-  res.setHeader("Cache-Control", "no-store, max-age=0");
-  res.setHeader("CDN-Cache-Control", "no-store");
-  res.setHeader("Vercel-CDN-Cache-Control", "no-store");
-  return res.status(200).json(await buildLiveFeedEnvelope());
 }

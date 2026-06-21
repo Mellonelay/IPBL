@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { requireResultsRedis } from "../../lib/server/results-redis.js";
+import { buildLiveFeedEnvelope } from "../../lib/server/live-feed.js";
 import { isAuthorizedCronRequest, recordLiveEnvelope } from "../../lib/server/live-recorder.js";
-import { buildLiveFeedEnvelope } from "../results/live.js";
 
 function sourceStatusText(status: unknown): string | null {
   if (!status || typeof status !== "object") return null;
