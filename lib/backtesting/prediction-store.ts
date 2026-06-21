@@ -1,4 +1,4 @@
-import type { PredictionOutput } from "../prediction/prediction-engine";
+import type { PredictionOutput } from "../prediction/prediction-engine.js";
 
 const predictions = new Map<string, PredictionOutput>();
 

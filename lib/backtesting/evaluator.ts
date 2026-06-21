@@ -1,6 +1,6 @@
-import type { PredictionOutput } from "../prediction/prediction-engine";
-import { computeAccuracy, type AccuracyResult } from "./accuracy";
-import type { MatchOutcome } from "./outcome-resolver";
+import type { PredictionOutput } from "../prediction/prediction-engine.js";
+import { computeAccuracy, type AccuracyResult } from "./accuracy.js";
+import type { MatchOutcome } from "./outcome-resolver.js";
 
 export interface EvaluationResult {
   total: number;

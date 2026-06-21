@@ -1,6 +1,6 @@
-import { getPredictions } from "./prediction-store";
-import { evaluate, type EvaluationResult } from "./evaluator";
-import { resolveOutcome, type FinalMatchState, type MatchOutcome } from "./outcome-resolver";
+import { getPredictions } from "./prediction-store.js";
+import { evaluate, type EvaluationResult } from "./evaluator.js";
+import { resolveOutcome, type FinalMatchState, type MatchOutcome } from "./outcome-resolver.js";
 
 export interface BacktestMatch extends FinalMatchState {
   gameId: string | number;

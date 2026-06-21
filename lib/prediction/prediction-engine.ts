@@ -1,7 +1,7 @@
-import { calculateMomentum, type MatchState, type MomentumState } from "./momentum";
-import { calculateMatchStrength } from "./match-strength";
-import { analyzeOdds, type OddsMovement } from "./odds-analyzer";
-import { detectLiveState, type LiveState } from "./live-state-detector";
+import { calculateMomentum, type MatchState, type MomentumState } from "./momentum.js";
+import { calculateMatchStrength } from "./match-strength.js";
+import { analyzeOdds, type OddsMovement } from "./odds-analyzer.js";
+import { detectLiveState, type LiveState } from "./live-state-detector.js";
 
 export interface PredictionInput extends MatchState {
   gameId: number | string;

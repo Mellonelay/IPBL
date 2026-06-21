@@ -1,5 +1,5 @@
-import type { EvaluationResult } from "../backtesting/evaluator";
-import type { DriftReport } from "../calibration/prediction-drift";
+import type { EvaluationResult } from "../backtesting/evaluator.js";
+import type { DriftReport } from "../calibration/prediction-drift.js";
 
 export interface PredictionFeedback {
   evaluation: EvaluationResult;

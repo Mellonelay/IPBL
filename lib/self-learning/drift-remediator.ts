@@ -1,4 +1,4 @@
-import type { DriftReport } from "../calibration/prediction-drift";
+import type { DriftReport } from "../calibration/prediction-drift.js";
 
 export type RemediationAction = "none" | "monitor" | "reduce_confidence" | "recalibrate_weights";
 

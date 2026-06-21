@@ -1,4 +1,4 @@
-import type { EvaluationResult } from "../backtesting/evaluator";
+import type { EvaluationResult } from "../backtesting/evaluator.js";
 
 export type DriftState = "stable" | "watch" | "drifting" | "insufficient_data";
 

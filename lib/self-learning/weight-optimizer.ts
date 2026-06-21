@@ -1,5 +1,5 @@
-import type { DriftReport } from "../calibration/prediction-drift";
-import type { SignalWeights } from "../calibration/signal-weighting";
+import type { DriftReport } from "../calibration/prediction-drift.js";
+import type { SignalWeights } from "../calibration/signal-weighting.js";
 
 export interface WeightOptimizationResult {
   weights: SignalWeights;

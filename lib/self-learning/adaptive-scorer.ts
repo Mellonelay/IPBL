@@ -1,8 +1,8 @@
-import type { PredictionOutput } from "../prediction/prediction-engine";
-import type { SignalWeights } from "../calibration/signal-weighting";
-import type { DriftReport } from "../calibration/prediction-drift";
-import { createDriftRemediationPlan } from "./drift-remediator";
-import { optimizeWeights } from "./weight-optimizer";
+import type { PredictionOutput } from "../prediction/prediction-engine.js";
+import type { SignalWeights } from "../calibration/signal-weighting.js";
+import type { DriftReport } from "../calibration/prediction-drift.js";
+import { createDriftRemediationPlan } from "./drift-remediator.js";
+import { optimizeWeights } from "./weight-optimizer.js";
 
 export interface AdaptiveScore {
   gameId: string | number;

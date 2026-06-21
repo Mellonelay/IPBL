@@ -1,5 +1,5 @@
-import type { EvaluationResult } from "../backtesting/evaluator";
-import { detectPredictionDrift, type DriftReport } from "./prediction-drift";
+import type { EvaluationResult } from "../backtesting/evaluator.js";
+import { detectPredictionDrift, type DriftReport } from "./prediction-drift.js";
 
 export interface PerformanceSnapshot {
   id: string;

@@ -1,5 +1,5 @@
-import type { EvaluationResult } from "../backtesting/evaluator";
-import type { PredictionOutput } from "../prediction/prediction-engine";
+import type { EvaluationResult } from "../backtesting/evaluator.js";
+import type { PredictionOutput } from "../prediction/prediction-engine.js";
 
 export interface CalibrationResult {
   gameId: string | number;

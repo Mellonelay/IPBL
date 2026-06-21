@@ -1,5 +1,5 @@
-import type { PredictionOutput } from "../prediction/prediction-engine";
-import type { MatchOutcome } from "./outcome-resolver";
+import type { PredictionOutput } from "../prediction/prediction-engine.js";
+import type { MatchOutcome } from "./outcome-resolver.js";
 
 export interface AccuracyResult {
   gameId: string | number;

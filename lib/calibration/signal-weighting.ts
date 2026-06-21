@@ -1,6 +1,6 @@
-import type { MomentumState } from "../prediction/momentum";
-import type { OddsMovement } from "../prediction/odds-analyzer";
-import type { LiveState } from "../prediction/live-state-detector";
+import type { MomentumState } from "../prediction/momentum.js";
+import type { OddsMovement } from "../prediction/odds-analyzer.js";
+import type { LiveState } from "../prediction/live-state-detector.js";
 
 export interface SignalWeights {
   momentum: number;
