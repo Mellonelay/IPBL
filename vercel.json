@@ -19,10 +19,6 @@
       "destination": "/api/backtest.ts"
     },
     {
-      "source": "/api/gen-analysis",
-      "destination": "/api/gen-analysis.ts"
-    },
-    {
       "source": "/api/cron/sync-results",
       "destination": "/api/cron/cron-sync-results.ts"
     },
