@@ -21,6 +21,7 @@ This manifest is read-only. It maps existing repo evidence to the canonical Phas
 ### Validation entrypoint
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
+- [scripts/validate-evidence-supersession-index.mjs](/root/repos/IPBL/scripts/validate-evidence-supersession-index.mjs)
 
 ### Existing evidence
 
@@ -69,7 +70,7 @@ This manifest is read-only. It maps existing repo evidence to the canonical Phas
 ### Status
 
 - Partial.
-- Evidence already exists, but it is not yet normalized into a durable supersession-aware evidence graph.
+- Evidence already exists, but it is not yet normalized into a durable supersession-aware `evidence-supersession-index.json` checkpoint.
 
 ### Canonical checkpoint
 
@@ -115,12 +116,9 @@ This manifest is read-only. It maps existing repo evidence to the canonical Phas
 
 ### Remaining gap
 
-- The evidence graph is still distributed across multiple artifact families.
-- There is no single manifest that declares:
-  - what evidence supersedes what
-  - which artifacts are canonical
-  - which tests are the proof gates for each checkpoint
-- Phase 5 therefore remains partial until the evidence is normalized into one durable index.
+- `artifacts/evidence/evidence-supersession-index.json` still needs coverage updates when new proof is added.
+- Keep `evidenceFamilies[*].canonicalArtifact`, `evidenceFamilies[*].supersedes`, `evidenceFamilies[*].evidence`, `evidenceFamilies[*].supersessionReason`, `evidenceFamilies[*].proofGateTests`, and `evidenceFamilies[*].evidenceLineage` aligned with the current repository evidence.
+- Future closure claims should rely on the explicit lineage and proof-gate fields in the index rather than narrative-only packaging.
 
 ## Recommended follow-up
 

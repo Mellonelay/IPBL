@@ -4,12 +4,19 @@ This policy defines how IPBL keeps evidence families, lineage, and supersession 
 
 Canonical machine-readable index:
 - [artifacts/evidence/evidence-supersession-index.json](/root/repos/IPBL/artifacts/evidence/evidence-supersession-index.json)
+- [scripts/validate-evidence-supersession-index.mjs](/root/repos/IPBL/scripts/validate-evidence-supersession-index.mjs)
 
 ## Policy
 
 - Every evidence family must have one canonical index entry.
 - If a newer artifact supersedes an older one, the older artifact stays referenced and is not deleted.
 - Supersession must be explicit, not implied by file naming.
+- Every evidence family entry must declare:
+  - canonicalArtifact
+  - supersedes
+  - supersessionReason
+  - proofGateTests
+  - evidenceLineage
 - Read-only proof artifacts remain immutable once published.
 - Evidence records must preserve the command, exit code, and artifact path used to validate them.
 - Secrets must never be printed into evidence output.
@@ -39,10 +46,11 @@ Canonical machine-readable index:
 - Record supersession edges for stale/live-row incidents, refreshed manifests, and replaced reports.
 - Keep unresolved gaps visible instead of collapsing them into success.
 - Use validation commands as evidence, not prose.
+- Validate the supersession index with `scripts/validate-evidence-supersession-index.mjs` before any phase-closure claim.
+- `proofGateTests` stores command declarations only. Capture executed evidence separately with explicit exit codes and artifact paths.
 
 ## No secret output rule
 
 - Do not emit tokens, passwords, private keys, or environment secrets.
 - Do not copy `.env` contents into evidence manifests.
 - Redaction is required before logs are attached to a summary.
-
