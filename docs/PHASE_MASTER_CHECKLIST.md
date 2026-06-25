@@ -22,7 +22,7 @@ Total phases: 14
 
 - [ ] Phase 2 - Graphify Skill Installation (`validated in source-discovery context, repo-local alignment documented`) - repo-local alignment is documented rather than expanded.
 - [ ] Phase 3 - Repo Archaeology / Code Review Graph (`materialized`) - keep the repo graph and `.code-review-graph/graph.db` current after changes.
-- [ ] Phase 5 - Evidence Graph (`validated / partial by roadmap`) - evidence manifests and validation coverage are present; supersession tracking remains documented.
+- [ ] Phase 5 - Evidence Graph (`validated / normalized by roadmap`) - the canonical supersession index is present, read-only validation is wired, and supersession tracking is explicit.
 - [ ] Phase 6 - Skill Forge Materialization (`validated / support-ready`) - skill packaging and validation contracts are present.
 - [ ] Phase 7 - agnix Integration (`validated / support-ready`) - Agnix is wired as a local and CI gate.
 - [ ] Phase 11 - C9 Intelligence (`validated / proof-foundation partial`) - reconciliation and smoke checks are present; productization remains blocked by the existing proof policy.

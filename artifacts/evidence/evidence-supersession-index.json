@@ -1,6 +1,6 @@
 {
   "schemaVersion": "ipbl.evidence-supersession-index.v1",
-  "generatedAt": "2026-06-18T20:43:20Z",
+  "generatedAt": "2026-06-24T00:00:00Z",
   "sourcesScanned": [
     "docs/PHASE_FINAL_MASTER_LEDGER.md",
     "docs/PHASE_MASTER_INDEX.md",
@@ -11,6 +11,7 @@
     "docs/PHASE_10_11_EVIDENCE_MANIFEST.md",
     "docs/H2H_CONTINUITY_REPAIR.md",
     "docs/H2H_FRESHNESS_REPAIR.md",
+    "docs/EVIDENCE_SUPERSESSION_POLICY.md",
     "tests/live-feed-freshness.test.ts",
     "scripts/validate-phase-master.sh",
     "artifacts/graphify/god-node-ledger.json",
@@ -29,6 +30,26 @@
       "supersedes": [
         "docs/PHASE_4_5_EVIDENCE_MANIFEST.md"
       ],
+      "supersessionReason": "Materializes the Phase 4 source archaeology graph as the canonical machine-readable checkpoint.",
+      "proofGateTests": [
+        "npm run test:ipbl-source",
+        "npm run test:bookmaker-live",
+        "npm run test:h2h-freshness",
+        "npm run test:h2h-continuity",
+        "npm run test:ipbl-compat"
+      ],
+      "evidenceLineage": [
+        {
+          "from": "docs/PHASE_4_5_EVIDENCE_MANIFEST.md",
+          "to": "artifacts/source-archaeology/source-archaeology-graph.json",
+          "relationship": "materializes"
+        },
+        {
+          "from": "tests/live-feed-freshness.test.ts",
+          "to": "artifacts/source-archaeology/source-archaeology-graph.json",
+          "relationship": "proves source freshness inputs"
+        }
+      ],
       "evidence": [
         "docs/PHASE_4_5_EVIDENCE_MANIFEST.md",
         "tests/bookmaker-live.test.ts",
@@ -42,7 +63,27 @@
       "supersedes": [
         "docs/PHASE_4_5_EVIDENCE_MANIFEST.md"
       ],
+      "supersessionReason": "Normalizes the distributed Phase 5 evidence graph into a durable supersession-aware index.",
+      "proofGateTests": [
+        "python -m json.tool artifacts/evidence/evidence-supersession-index.json",
+        "node scripts/validate-evidence-supersession-index.mjs",
+        "python -m json.tool artifacts/evidence/live-source-drift-check-latest.json",
+        "python -m json.tool artifacts/evidence/ipbl-phase-closure-upgrade-summary.json"
+      ],
+      "evidenceLineage": [
+        {
+          "from": "docs/PHASE_4_5_EVIDENCE_MANIFEST.md",
+          "to": "artifacts/evidence/evidence-supersession-index.json",
+          "relationship": "normalizes"
+        },
+        {
+          "from": "docs/EVIDENCE_SUPERSESSION_POLICY.md",
+          "to": "artifacts/evidence/evidence-supersession-index.json",
+          "relationship": "governs"
+        }
+      ],
       "evidence": [
+        "docs/EVIDENCE_SUPERSESSION_POLICY.md",
         "graphify-out/graph.json",
         "graphify-out/GRAPH_REPORT.md",
         "artifacts/graphify/god-node-ledger.json",
@@ -57,6 +98,23 @@
         "docs/H2H_CONTINUITY_REPAIR.md",
         "docs/H2H_FRESHNESS_REPAIR.md"
       ],
+      "supersessionReason": "Captures the stale/live-row reconciliation evidence that supersedes the earlier repair notes.",
+      "proofGateTests": [
+        "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-feed-freshness.test.ts",
+        "bash scripts/validate-phase-master.sh"
+      ],
+      "evidenceLineage": [
+        {
+          "from": "docs/H2H_CONTINUITY_REPAIR.md",
+          "to": "artifacts/evidence/live-source-drift-check-latest.json",
+          "relationship": "reconciles"
+        },
+        {
+          "from": "docs/H2H_FRESHNESS_REPAIR.md",
+          "to": "artifacts/evidence/live-source-drift-check-latest.json",
+          "relationship": "reconciles"
+        }
+      ],
       "evidence": [
         "tests/live-feed-freshness.test.ts",
         "scripts/validate-phase-master.sh",
@@ -69,6 +127,23 @@
       "status": "complete",
       "supersedes": [
         "docs/PHASE_10_11_EVIDENCE_MANIFEST.md"
+      ],
+      "supersessionReason": "Materializes the Phase 10 workload graph as the canonical repository-backed checkpoint.",
+      "proofGateTests": [
+        "npm run test:ipbl-workload-graph",
+        "bash scripts/validate-phase-master.sh"
+      ],
+      "evidenceLineage": [
+        {
+          "from": "docs/PHASE_10_11_EVIDENCE_MANIFEST.md",
+          "to": "artifacts/workload-graph/ipbl-workload-graph.json",
+          "relationship": "materializes"
+        },
+        {
+          "from": "tests/ipbl-workload-graph.test.ts",
+          "to": "artifacts/workload-graph/ipbl-workload-graph.json",
+          "relationship": "proves"
+        }
       ],
       "evidence": [
         "lib/server/ipbl-workload-graph.ts",
@@ -83,6 +158,23 @@
       "supersedes": [
         "docs/OPERATOR_INTELLIGENCE_REFRESH_PLAN.md"
       ],
+      "supersessionReason": "Seeds the operator-intelligence report as the canonical read-only evidence surface for Phase 12.",
+      "proofGateTests": [
+        "npm run test:operator-intelligence",
+        "bash scripts/validate-phase-master.sh"
+      ],
+      "evidenceLineage": [
+        {
+          "from": "docs/OPERATOR_INTELLIGENCE_REFRESH_PLAN.md",
+          "to": "artifacts/operator-intelligence/operator-intelligence.json",
+          "relationship": "seeds"
+        },
+        {
+          "from": "lib/server/operator-intelligence.ts",
+          "to": "artifacts/operator-intelligence/operator-intelligence.json",
+          "relationship": "materializes"
+        }
+      ],
       "evidence": [
         "lib/server/operator-intelligence.ts",
         "tests/operator-intelligence.test.ts",
@@ -95,6 +187,23 @@
       "status": "complete",
       "supersedes": [
         "docs/VISUALIZATION_DRILLDOWN_UPGRADE_PLAN.md"
+      ],
+      "supersessionReason": "Publishes the visualization catalog as the canonical read-only artifact for Phase 13.",
+      "proofGateTests": [
+        "npm run test:visualization-catalog",
+        "bash scripts/validate-phase-master.sh"
+      ],
+      "evidenceLineage": [
+        {
+          "from": "docs/VISUALIZATION_DRILLDOWN_UPGRADE_PLAN.md",
+          "to": "artifacts/visualization/visualization-catalog.json",
+          "relationship": "materializes"
+        },
+        {
+          "from": "graphify-out/graph.json",
+          "to": "artifacts/visualization/visualization-catalog.json",
+          "relationship": "feeds"
+        }
       ],
       "evidence": [
         "lib/server/visualization-catalog.ts",
@@ -123,6 +232,7 @@
   ],
   "validationCommands": [
     "python -m json.tool artifacts/evidence/evidence-supersession-index.json",
+    "node scripts/validate-evidence-supersession-index.mjs",
     "python -m json.tool artifacts/evidence/live-source-drift-check-latest.json",
     "python -m json.tool artifacts/evidence/ipbl-phase-closure-upgrade-summary.json"
   ]

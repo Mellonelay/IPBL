@@ -39,6 +39,8 @@ test -f .code-review-graph/graph.db
 
 echo "[STEP 2] PHASE 4 SOURCE ARCHAEOLOGY"
 bash scripts/validate-phase-4-5.sh
+echo "[STEP 2B] PHASE 5 SUPERSESSION INDEX"
+npm run validate:evidence-supersession-index
 
 echo "[STEP 3] PHASE 5 EVIDENCE GRAPH"
 test -f artifacts/screenshots/live-proof.png

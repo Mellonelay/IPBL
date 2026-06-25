@@ -101,6 +101,7 @@ They are closure packaging surfaces, not open implementation targets.
 ## Validation Entry Points
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
+- [scripts/validate-evidence-supersession-index.mjs](/root/repos/IPBL/scripts/validate-evidence-supersession-index.mjs)
 - [scripts/validate-phase-6-7.sh](/root/repos/IPBL/scripts/validate-phase-6-7.sh)
 - [scripts/validate-phase-10-11.sh](/root/repos/IPBL/scripts/validate-phase-10-11.sh)
 - [scripts/validate-phase-master.sh](/root/repos/IPBL/scripts/validate-phase-master.sh)
