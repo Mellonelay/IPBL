@@ -2,7 +2,7 @@
   "schema": "mellonelay.agenteam.task.v1",
   "task_id": "smoke-agenteam-runtime-v1",
   "repository": "Mellonelay/IPBL",
-  "working_directory": "/root/repos/IPBL-worktrees/agenteam-fabric-runtime-v1",
+  "working_directory": "/root/repos/IPBL-worktrees/agenteam-full-source-smoke",
   "objective": "Verify the repository A-team execution runtime without changing application code.",
   "workflow": [
     "researcher",
