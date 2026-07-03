@@ -10,84 +10,41 @@ import {
   fetchTeamGames,
 } from "./api/client";
 import { computeH2H } from "./api/normalize";
-import type { BoxScoreState, GameReplay, H2HEntry, ScheduleGame } from "./api/types";
-import { projectLiveClock } from "./live/clock";
+import type { ScheduleGame } from "./api/types";
 import { buildLiveDisplayInsights } from "./live/display";
 import { summarizeBookmakerFailures } from "./live/source-status";
-import ResultsCalendarGrid from "./components/ResultsCalendarGrid";
-import BettingRecord from "./components/BettingRecord";
-import TeamStatistics from "./components/TeamStatistics";
-import { canonicalDivisionLabel, LIVE_DIVISIONS, LIVE_DIVISION_TAGS } from "./config/divisions";
-import { operatorSummary } from "./operator/data";
+import { LIVE_DIVISION_TAGS } from "./config/divisions";
 import {
   analyzeQuarterFlow,
   evaluateOperatorDecision,
   getScoreboardAnalysis,
-  matchupKey,
-  parseH2HQuarterMatrix,
-  type OperatorDecision,
-  type QuarterFlowAnalysis,
-  type QuarterKey,
-  type ScoreboardAnalysis,
 } from "./operator/engine";
 import {
   clearResultsCalendarCache,
   createSkeletonResultsCalendarMap,
-  resultsDivisionsForMonth,
   fetchResultsMonthPayloadFromApi,
+  resultsDivisionsForMonth,
   RESULTS_DIVISION_TAGS,
   RESULTS_REFRESH_INTERVAL_MS,
   type CalendarGridMap,
   type ResultsMonthMetadata,
 } from "./results/calendar";
-
+import BettingTab from "./app/BettingTab";
+import GameDrawer from "./app/GameDrawer";
+import LiveTab from "./app/LiveTab";
+import ResultsTab from "./app/ResultsTab";
+import TeamsTab from "./app/TeamsTab";
+import type { DrawerState, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
+import { currentOrNextQuarter, gameDivision, liveKey } from "./app/shared";
 
 function safeSplit(value: unknown, delimiter: string): string[] {
-  return typeof value === 'string' ? value.split(delimiter) : [];
+  return typeof value === "string" ? value.split(delimiter) : [];
 }
-
-type TabKey = "live" | "results" | "teams" | "betting";
-
-type LiveInsight = {
-  game: ScheduleGame;
-  board: ScoreboardAnalysis;
-  flow: QuarterFlowAnalysis;
-  decision: OperatorDecision;
-  gameMeta: unknown | null;
-  boxState: BoxScoreState | null;
-};
-
-type DrawerState = {
-  game: ScheduleGame;
-  gameMeta: unknown | null;
-  boxState: BoxScoreState | null;
-  replay: GameReplay | null;
-  board: ScoreboardAnalysis;
-  flow: QuarterFlowAnalysis | null;
-  decision: OperatorDecision;
-  h2h: H2HEntry[];
-  histLoading: boolean;
-  replayLoading: boolean;
-  replayErr: string | null;
-  detailErr: string | null;
-};
 
 const RESULTS_SEASON = 2026;
 const RESULTS_START_YEAR = 2026;
 const RESULTS_START_MONTH_INDEX = 2; // March (0-based)
 const DEFAULT_RESULTS_DIVISION_TAG = "ipbl-66-m-pro-a";
-
-function liveKey(game: ScheduleGame): string {
-  return `${game.tag}:${game.gameId}`;
-}
-
-function formatCurrency(value: number): string {
-  return new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(value);
-}
-
-function formatPct(value: number): string {
-  return `${(value * 100).toFixed(1)}%`;
-}
 
 function devAssert(condition: unknown, message: string, detail?: unknown): void {
   if (!((import.meta as any).env as any).DEV) return;
@@ -96,170 +53,13 @@ function devAssert(condition: unknown, message: string, detail?: unknown): void 
   throw new Error(message);
 }
 
-function statusTone(value: "ALLOW" | "CAUTION" | "BLOCK"): string {
-  return value.toLowerCase();
-}
-
-function gameDivision(game: ScheduleGame): "Men" | "Women" {
-  return game.tag.includes("-w-") ? "Women" : "Men";
-}
-
-function currentOrNextQuarter(
-  flow: QuarterFlowAnalysis | null,
-  board: ScoreboardAnalysis
-): QuarterKey | null {
-  return flow?.nextQuarter ?? board.currentQuarter ?? null;
-}
-
-function formatReplayOdds(value: unknown): string {
-  return typeof value === "number" && Number.isFinite(value) ? value.toFixed(2) : "—";
-}
-
-function replayEventSummary(event: GameReplay["timeline"][number]): string {
-  if (event.kind === "odds") {
-    const line = typeof event.line === "number" && Number.isFinite(event.line) ? event.line.toFixed(1) : "—";
-    const over = formatReplayOdds(event.overOdds);
-    const under = formatReplayOdds(event.underOdds);
-    const bookmaker = typeof event.bookmaker === "string" && event.bookmaker ? event.bookmaker : "unknown";
-    const market = typeof event.marketStatus === "string" && event.marketStatus ? event.marketStatus : "unknown";
-    return `line ${line} · over ${over} · under ${under} · ${bookmaker} · ${market}`;
-  }
-  if (event.kind === "quarter") {
-    const scoreText = typeof event.scoreText === "string" && event.scoreText ? event.scoreText : "—";
-    const fullScore = typeof event.fullScore === "string" && event.fullScore ? event.fullScore : scoreText;
-    return `${scoreText} · ${fullScore}`;
-  }
-  const scoreText = typeof event.scoreText === "string" && event.scoreText ? event.scoreText : "Final";
-  const fullScore = typeof event.fullScore === "string" && event.fullScore ? event.fullScore : scoreText;
-  return `${scoreText} · ${fullScore}`;
-}
-
-function Metric({ label, value }: { label: string; value: string | number }) {
-
-  return (
-    <div className="metric-box">
-      <div className="metric-label">{label}</div>
-      <div className="metric-value">{value}</div>
-    </div>
-  );
-}
-
-function LiveGameClock({ game }: { game: ScheduleGame }) {
-  const [capturedAt, setCapturedAt] = useState(() => Date.now());
-  const [now, setNow] = useState(() => Date.now());
-
-  useEffect(() => {
-    const next = Date.now();
-    setCapturedAt(next);
-    setNow(next);
-  }, [game.gameId, game.period, game.timeToGo, game.timeIsGo]);
-
-  useEffect(() => {
-    if (game.timeIsGo !== 1) return;
-    const id = window.setInterval(() => setNow(Date.now()), 250);
-    return () => window.clearInterval(id);
-  }, [game.timeIsGo]);
-
-  const clock = projectLiveClock({
-    period: game.period,
-    timeToGo: game.timeToGo,
-    timeIsGo: game.timeIsGo,
-    elapsedMs: now - capturedAt,
-  });
-
-  return (
-    <div className="live-clock" data-testid="live-game-clock" data-running={clock.running ? "true" : "false"}>
-      <div className="live-clock-row">
-        <span className="live-clock-value" data-testid="live-clock-remaining">{clock.remainingText}</span>
-        <span>remaining</span>
-      </div>
-      <div className="live-clock-row live-clock-elapsed">
-        <span className="live-clock-value" data-testid="live-clock-elapsed">{clock.elapsedText}</span>
-        <span>elapsed</span>
-      </div>
-      {game.timeIsGo === 0 && clock.remainingSeconds !== null && <span className="live-clock-paused">paused</span>}
-    </div>
-  );
-}
-
-function LiveCard({
-  game,
-  insight,
-  onOpen,
-  onOpenH2H,
-}: {
-  game: ScheduleGame;
-  insight?: LiveInsight;
-  onOpen: (game: ScheduleGame, insight?: LiveInsight) => void;
-  onOpenH2H: (game: ScheduleGame, insight?: LiveInsight) => void;
-}) {
-  const currentQuarter = insight?.board.currentQuarter ?? (game.period ? `Q${game.period}` : "Live");
-  const currentQuarterTotal = insight?.board.currentQuarterTotal ?? "—";
-  const decision = insight?.decision;
-  const flow = insight?.flow;
-
-  return (
-    <div className="operator-card">
-      <button type="button" className="card-open-button" onClick={() => onOpen(game, insight)}>
-        <div className="card-head">
-          <div>
-            <div className="card-title">
-              {game.team1.shortName} vs {game.team2.shortName}
-            </div>
-            <div className="card-subtitle">
-              {canonicalDivisionLabel(game.tag) ?? game.divisionLabel ?? game.tag}
-            </div>
-          </div>
-          {decision && (
-            <span className={`decision-pill ${statusTone(decision.decision)}`}>{decision.decision}</span>
-          )}
-        </div>
-
-        <div className="score-row">
-          <div className="score-main">{game.scoreText || "0 : 0"}</div>
-          <div className="score-meta">
-            <div>{currentQuarter}</div>
-            <LiveGameClock game={game} />
-          </div>
-        </div>
-
-        <div className="quarter-grid">
-          <Metric label="Q1 total" value={insight?.board.quarterTotals.Q1 ?? "—"} />
-          <Metric label="Q2 total" value={insight?.board.quarterTotals.Q2 ?? "—"} />
-          <Metric label="Current quarter" value={currentQuarter} />
-          <Metric label="Current total" value={currentQuarterTotal} />
-        </div>
-
-        <div className="bias-line">
-          <strong>{decision?.suggestedBias ?? "Analyzing..."}</strong>
-          <span>{flow?.signal && flow.signal !== "NO_SIGNAL" ? flow.signal : "Detecting flow..."}</span>
-        </div>
-      </button>
-
-      <div className="card-actions">
-        <button
-          type="button"
-          className="mini-btn"
-          data-testid="live-card-h2h-button"
-          onClick={() => onOpenH2H(game, insight)}
-        >
-          H2H
-        </button>
-      </div>
-    </div>
-  );
-}
-
-
-
-
 function App() {
   const [activeTab, setActiveTab] = useState<TabKey>("results");
   const [liveGames, setLiveGames] = useState<ScheduleGame[]>([]);
   const [liveLoading, setLiveLoading] = useState(false);
   const [liveErr, setLiveErr] = useState<string | null>(null);
   const [liveInsights, setLiveInsights] = useState<Record<string, LiveInsight>>({});
-  const [liveSourceFailures, setLiveSourceFailures] = useState<Array<{ kind?: string; source?: string; leagueId?: number; error?: string }>>([]);
+  const [liveSourceFailures, setLiveSourceFailures] = useState<LiveSourceFailure[]>([]);
   const [selectedLiveDivisionTag, setSelectedLiveDivisionTag] = useState("");
 
   const [selectedResultsYear, setSelectedResultsYear] = useState<number>(RESULTS_START_YEAR);
@@ -285,8 +85,59 @@ function App() {
   const [drawer, setDrawer] = useState<DrawerState | null>(null);
   const [teamRefreshToken, setTeamRefreshToken] = useState(0);
 
+  const selectedMonthKey = `${selectedResultsYear}-${String(selectedResultsMonthIndex + 1).padStart(
+    2,
+    "0"
+  )}`;
+  const selectedResultsKey = `${selectedMonthKey}|${selectedResultsDivisionTag}`;
+
+  const activeTabLabel: Record<TabKey, string> = {
+    live: "Live",
+    results: "Results",
+    teams: "Teams",
+    betting: "Betting Record",
+  };
+
+  const activeTabDetail: Record<TabKey, string> = {
+    live: liveLoading
+      ? "Refreshing live operator cards."
+      : liveGames.length > 0
+        ? `${liveGames.length} live game${liveGames.length === 1 ? "" : "s"} loaded.`
+        : "No live games are currently active.",
+    results: resultsLoading
+      ? "Reloading stored results and calendar evidence."
+      : resultsMetadata?.status === "source_unavailable"
+        ? "Stored results are intact, but the source was unavailable during the latest sync."
+        : `Results month ${selectedMonthKey} is ready for drill-in.`,
+    teams: "Team statistics stays centered on verified histories and quarter movement.",
+    betting: "Betting record stays aligned to the date-scoped memory ledger.",
+  };
+
+  const liveSourceSummary = summarizeBookmakerFailures(liveSourceFailures);
+  const liveSourceLabel = liveErr
+    ? liveErr
+    : liveLoading
+      ? "Loading live feed"
+      : liveSourceSummary || "Live feed healthy";
+  const resultsLabel = resultsErr
+    ? resultsErr
+    : resultsLoading
+      ? "Refreshing results cache"
+      : resultsMetadata
+        ? resultsMetadata.status === "source_unavailable"
+          ? "Results cached with source gaps"
+          : "Results cache current"
+        : "Results cache warming";
+  const focusLabel =
+    activeTab === "live"
+      ? selectedLiveDivisionTag || "All live divisions"
+      : activeTab === "results"
+        ? selectedResultsDivisionTag
+        : activeTab === "teams"
+          ? "Team statistics"
+          : "Betting memory";
+
   const resultsMonthOptions = useMemo(() => {
-    // Extend by bumping `totalMonths`.
     const totalMonths = 12;
     const out: Array<{ value: string; label: string }> = [];
     let year = RESULTS_START_YEAR;
@@ -307,13 +158,6 @@ function App() {
     }
     return out;
   }, []);
-
-  const selectedMonthKey = `${selectedResultsYear}-${String(selectedResultsMonthIndex + 1).padStart(
-    2,
-    "0"
-  )}`;
-
-  const selectedResultsKey = `${selectedMonthKey}|${selectedResultsDivisionTag}`;
 
   const onSelectMonthKey = useCallback((value: string) => {
     const parts = safeSplit(value, "-").map((p) => Number.parseInt(p, 10));
@@ -336,27 +180,16 @@ function App() {
   }, []);
 
   const displayLiveInsights = useMemo(
-    () => {
-      return buildLiveDisplayInsights({
+    () =>
+      buildLiveDisplayInsights({
         games: liveGames,
         insights: liveInsights,
         selectedDivisionTag: selectedLiveDivisionTag,
         keyForGame: liveKey,
-      });
-    },
+      }),
     [liveGames, liveInsights, selectedLiveDivisionTag]
   );
 
-  const menLive = useMemo(
-    () => displayLiveInsights.filter((insight) => gameDivision(insight.game) === "Men"),
-    [displayLiveInsights]
-  );
-  const womenLive = useMemo(
-    () => displayLiveInsights.filter((insight) => gameDivision(insight.game) === "Women"),
-    [displayLiveInsights]
-  );
-
-  // Dev-only acceptance checks (data contract).
   useEffect(() => {
     if (!((import.meta as any).env as any).DEV) return;
     if (liveLoading) return;
@@ -433,7 +266,10 @@ function App() {
     try {
       const res = await fetch("/api/results/live");
       if (!res.ok) throw new Error(`Live API error: ${res.status}`);
-      const body = (await res.json()) as { games: ScheduleGame[]; status: { bookmakerSourceFailures?: Array<{ kind?: string; source?: string; leagueId?: number; error?: string }> } };
+      const body = (await res.json()) as {
+        games: ScheduleGame[];
+        status: { bookmakerSourceFailures?: LiveSourceFailure[] };
+      };
       const games = body.games || [];
 
       setLiveGames(games);
@@ -469,25 +305,45 @@ function App() {
                 boxState,
               },
             ];
-          } catch (e) {
+          } catch {
             const board = getScoreboardAnalysis(game, null, null);
             return [
               liveKey(game),
               {
                 game,
                 board,
-                flow: { signal: "NO_SIGNAL", q1Points: null, q2Points: null, paceTrend: "UNKNOWN", q1Pace: null, q2Pace: null, suggestedBias: null, liveAdjustment: 0, nextQuarter: null },
-                decision: { decision: "CAUTION", reasons: ["Insight fetch failed"], suggestedBias: null, score: 0, quarterContext: null, divisionContext: null, oddsContext: null, matchupFlag: null, teamFlags: [], flow: null },
+                flow: {
+                  signal: "NO_SIGNAL",
+                  q1Points: null,
+                  q2Points: null,
+                  paceTrend: "UNKNOWN",
+                  q1Pace: null,
+                  q2Pace: null,
+                  suggestedBias: null,
+                  liveAdjustment: 0,
+                  nextQuarter: null,
+                },
+                decision: {
+                  decision: "CAUTION",
+                  reasons: ["Insight fetch failed"],
+                  suggestedBias: null,
+                  score: 0,
+                  quarterContext: null,
+                  divisionContext: null,
+                  oddsContext: null,
+                  matchupFlag: null,
+                  teamFlags: [],
+                  flow: null,
+                },
                 gameMeta: null,
                 boxState: null,
-              }
+              },
             ];
           }
         })
       );
 
-      const nextInsights = Object.fromEntries(insights);
-      setLiveInsights(nextInsights);
+      setLiveInsights(Object.fromEntries(insights));
     } catch (error) {
       setLiveSourceFailures([]);
       setLiveErr(error instanceof Error ? error.message : "Live load failed");
@@ -496,39 +352,42 @@ function App() {
     }
   }, []);
 
-  const loadResults = useCallback(async (options: { silent?: boolean; force?: boolean } = {}) => {
-    const gen = (resultsLoadGenRef.current += 1);
-    if (!options.silent) {
-      setCalendarMap(
-        createSkeletonResultsCalendarMap(selectedResultsYear, selectedResultsMonthIndex, [
-          selectedResultsDivisionTag,
-        ])
-      );
-      setResultsMetadata(null);
-      setResultsLoading(true);
-    }
-    setResultsErr(null);
-    try {
-      const payload = await fetchResultsMonthPayloadFromApi({
-        year: selectedResultsYear,
-        monthIndex: selectedResultsMonthIndex,
-        divisionTag: selectedResultsDivisionTag,
-        force: options.force,
-      });
-      if (resultsLoadGenRef.current !== gen) return;
-      setCalendarMap(payload.calendar);
-      setResultsMetadata(payload.meta);
-      setLoadedResultsKey(`${selectedMonthKey}|${selectedResultsDivisionTag}`);
-    } catch (error) {
-      if (resultsLoadGenRef.current === gen) {
-        setResultsErr(error instanceof Error ? error.message : "Results load failed");
+  const loadResults = useCallback(
+    async (options: { silent?: boolean; force?: boolean } = {}) => {
+      const gen = (resultsLoadGenRef.current += 1);
+      if (!options.silent) {
+        setCalendarMap(
+          createSkeletonResultsCalendarMap(RESULTS_START_YEAR, RESULTS_START_MONTH_INDEX, [
+            DEFAULT_RESULTS_DIVISION_TAG,
+          ])
+        );
+        setResultsMetadata(null);
+        setResultsLoading(true);
       }
-    } finally {
-      if (!options.silent && resultsLoadGenRef.current === gen) {
-        setResultsLoading(false);
+      setResultsErr(null);
+      try {
+        const payload = await fetchResultsMonthPayloadFromApi({
+          year: selectedResultsYear,
+          monthIndex: selectedResultsMonthIndex,
+          divisionTag: selectedResultsDivisionTag,
+          force: options.force,
+        });
+        if (resultsLoadGenRef.current !== gen) return;
+        setCalendarMap(payload.calendar);
+        setResultsMetadata(payload.meta);
+        setLoadedResultsKey(`${selectedMonthKey}|${selectedResultsDivisionTag}`);
+      } catch (error) {
+        if (resultsLoadGenRef.current === gen) {
+          setResultsErr(error instanceof Error ? error.message : "Results load failed");
+        }
+      } finally {
+        if (!options.silent && resultsLoadGenRef.current === gen) {
+          setResultsLoading(false);
+        }
       }
-    }
-  }, [selectedResultsYear, selectedResultsMonthIndex, selectedResultsDivisionTag, selectedMonthKey]);
+    },
+    [selectedResultsYear, selectedResultsMonthIndex, selectedResultsDivisionTag, selectedMonthKey]
+  );
 
   useEffect(() => {
     if (activeTab !== "live") return;
@@ -551,7 +410,6 @@ function App() {
     }
   }, [selectedResultsYear, selectedResultsMonthIndex, selectedResultsDivisionTag]);
 
-  // Keep jump date inside the selected month.
   useEffect(() => {
     const mm = String(selectedResultsMonthIndex + 1).padStart(2, "0");
     const day = safeSplit(jumpDate, "-")[2] ? Number.parseInt(safeSplit(jumpDate, "-")[2], 10) : 1;
@@ -635,12 +493,12 @@ function App() {
       setDrawer((current) =>
         current
           ? {
-            ...current,
-            histLoading: false,
-            replayLoading: false,
-            replayErr: error instanceof Error ? error.message : "Replay load failed",
-            detailErr: error instanceof Error ? error.message : "Detail load failed",
-          }
+              ...current,
+              histLoading: false,
+              replayLoading: false,
+              replayErr: error instanceof Error ? error.message : "Replay load failed",
+              detailErr: error instanceof Error ? error.message : "Detail load failed",
+            }
           : current
       );
     }
@@ -649,391 +507,106 @@ function App() {
   return (
     <div className="console-shell">
       <header className="console-header">
-        <div>
-          <h1>IPBL Operator Console</h1>
-          <p>Quarter-first live decisions, historical results, H2H, and team statistics.</p>
+        <div className="console-hero-copy">
+          <p className="console-eyebrow">IPBL operator console</p>
+          <h1>Quarter-first live decisions, historical evidence, and betting memory in one place.</h1>
+          <p>
+            The live feed remains the center of gravity. Results, teams, and betting memory stay available as
+            supporting surfaces instead of competing with the operator flow.
+          </p>
         </div>
-        <button
-          type="button"
-          className="refresh-btn"
-          onClick={() => {
-            clearFetchCaches();
-            clearResultsCalendarCache();
-            if (activeTab === "live") void loadLive();
-            if (activeTab === "results") void loadResults({ force: true });
-            if (activeTab === "teams") setTeamRefreshToken((value) => value + 1);
-          }}
-        >
-          Refresh
-        </button>
+        <div className="console-hero-actions">
+          <div className="console-focus-chip">Focus: {focusLabel}</div>
+          <button
+            type="button"
+            className="refresh-btn"
+            onClick={() => {
+              clearFetchCaches();
+              clearResultsCalendarCache();
+              if (activeTab === "live") void loadLive();
+              if (activeTab === "results") void loadResults({ force: true });
+              if (activeTab === "teams") setTeamRefreshToken((value) => value + 1);
+            }}
+          >
+            Refresh
+          </button>
+        </div>
       </header>
 
-      <div className="tab-row">
-        <button
-          type="button"
-          className={`tab-btn ${activeTab === "live" ? "active" : ""}`}
-          onClick={() => setActiveTab("live")}
-        >
+      <section className="console-status-grid" aria-label="system status">
+        <article className="status-card status-card-live">
+          <span className="status-card-label">Live feed</span>
+          <strong>{liveGames.length > 0 ? `${liveGames.length} active game${liveGames.length === 1 ? "" : "s"}` : "Idle"}</strong>
+          <span>{liveSourceLabel}</span>
+        </article>
+        <article className="status-card status-card-results">
+          <span className="status-card-label">Results cache</span>
+          <strong>{selectedMonthKey}</strong>
+          <span>{resultsLabel}</span>
+        </article>
+        <article className="status-card status-card-scope">
+          <span className="status-card-label">Active view</span>
+          <strong>{activeTabLabel[activeTab]}</strong>
+          <span>{activeTabDetail[activeTab]}</span>
+        </article>
+      </section>
+
+      <nav className="tab-row" aria-label="Primary tabs">
+        <button type="button" className={`tab-btn ${activeTab === "live" ? "active" : ""}`} onClick={() => setActiveTab("live")}>
           Live
         </button>
-        <button
-          type="button"
-          className={`tab-btn ${activeTab === "results" ? "active" : ""}`}
-          onClick={() => setActiveTab("results")}
-        >
+        <button type="button" className={`tab-btn ${activeTab === "results" ? "active" : ""}`} onClick={() => setActiveTab("results")}>
           Results
         </button>
-        <button
-          type="button"
-          className={`tab-btn ${activeTab === "teams" ? "active" : ""}`}
-          onClick={() => setActiveTab("teams")}
-        >
+        <button type="button" className={`tab-btn ${activeTab === "teams" ? "active" : ""}`} onClick={() => setActiveTab("teams")}>
           Teams
         </button>
-        <button
-          type="button"
-          className={`tab-btn ${activeTab === "betting" ? "active" : ""}`}
-          onClick={() => setActiveTab("betting")}
-        >
+        <button type="button" className={`tab-btn ${activeTab === "betting" ? "active" : ""}`} onClick={() => setActiveTab("betting")}>
           Betting Record
         </button>
-      </div>
+      </nav>
 
-      {activeTab === "live" && (
-        <section className="tab-panel">
-          <div className="summary-strip">
-            <Metric label="Win rate" value={formatPct(operatorSummary.overall.win_rate)} />
-            <Metric label="Best quarter" value={operatorSummary.best_quarter.name} />
-            <Metric label="Worst quarter" value={operatorSummary.worst_quarter.name} />
-            <Metric label="Riskiest division" value={operatorSummary.worst_division.name} />
-          </div>
+      <main className="console-stage">
+        {activeTab === "live" && (
+          <LiveTab
+            liveGames={liveGames}
+            liveInsights={liveInsights}
+            liveLoading={liveLoading}
+            liveErr={liveErr}
+            liveSourceFailures={liveSourceFailures}
+            selectedLiveDivisionTag={selectedLiveDivisionTag}
+            onSelectDivisionTag={setSelectedLiveDivisionTag}
+            onOpenGame={(game, insight) => void openDrawer(game, insight)}
+            onOpenH2H={(game, insight) => void openDrawer(game, insight)}
+          />
+        )}
 
-          {!liveLoading && summarizeBookmakerFailures(liveSourceFailures) && (
-            <div className="live-source-banner" role="status" aria-live="polite">
-              <span className="status-badge caution">Bookmaker source issue</span>
-              <span>{summarizeBookmakerFailures(liveSourceFailures)}</span>
-            </div>
-          )}
+        {activeTab === "results" && (
+          <ResultsTab
+            calendarMap={calendarMap}
+            selectedDivisionTag={selectedResultsDivisionTag}
+            selectedMonthKey={selectedMonthKey}
+            onSelectMonthKey={onSelectMonthKey}
+            monthOptions={resultsMonthOptions}
+            jumpDate={jumpDate}
+            loading={resultsLoading}
+            error={resultsErr}
+            metadata={resultsMetadata}
+            onJumpDateChange={onJumpDateChange}
+            onSelectDivision={setSelectedResultsDivisionTag}
+            onOpenMatch={(game) => void openDrawer(game)}
+            onOpenH2H={(game) => void openDrawer(game)}
+          />
+        )}
 
-          {liveErr && <p className="err">{liveErr}</p>}
-          {liveLoading && <p className="muted">Refreshing live operator cards...</p>}
+        {activeTab === "teams" && (
+          <TeamsTab season={RESULTS_SEASON} refreshToken={teamRefreshToken} onOpenGame={(game) => void openDrawer(game)} />
+        )}
 
-          <div className="live-controls">
-            <label>
-              Live division
-              <select
-                value={selectedLiveDivisionTag}
-                onChange={(e) => setSelectedLiveDivisionTag(e.target.value)}
-              >
-                <option value="">All live divisions</option>
-                {LIVE_DIVISIONS.map((division) => (
-                  <option key={division.tag} value={division.tag}>
-                    {division.label}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
+        {activeTab === "betting" && <BettingTab />}
+      </main>
 
-          {!liveLoading && liveGames.length === 0 && displayLiveInsights.length === 0 && (
-            <div className="muted">
-              <p>No approved live games are active right now.</p>
-              {summarizeBookmakerFailures(liveSourceFailures) && (
-                <p>{summarizeBookmakerFailures(liveSourceFailures)}</p>
-              )}
-            </div>
-          )}
-
-          {!liveLoading && liveGames.length > 0 && displayLiveInsights.length === 0 && (
-            <p className="muted">No live games match the selected division filters.</p>
-          )}
-
-          {menLive.length > 0 && (
-            <section className="live-section-group">
-              <h3 className="live-section-title">Men</h3>
-              <div className="live-card-grid">
-                {menLive.map((insight) => (
-                  <LiveCard
-                    key={liveKey(insight.game)}
-                    game={insight.game} insight={insight}
-                    onOpen={() => void openDrawer(insight.game, insight)}
-                    onOpenH2H={() => void openDrawer(insight.game, insight)}
-                  />
-                ))}
-              </div>
-            </section>
-          )}
-
-          {womenLive.length > 0 && (
-            <section className="live-section-group">
-              <h3 className="live-section-title">Women</h3>
-              <div className="live-card-grid">
-                {womenLive.map((insight) => (
-                  <LiveCard
-                    key={liveKey(insight.game)}
-                    game={insight.game} insight={insight}
-                    onOpen={() => void openDrawer(insight.game, insight)}
-                    onOpenH2H={() => void openDrawer(insight.game, insight)}
-                  />
-                ))}
-              </div>
-            </section>
-          )}
-
-        </section>
-      )}
-
-      {activeTab === "results" && (
-        <ResultsCalendarGrid
-          calendarMap={calendarMap}
-          selectedDivisionTag={selectedResultsDivisionTag}
-          selectedMonthKey={selectedMonthKey}
-          onSelectMonthKey={onSelectMonthKey}
-          monthOptions={resultsMonthOptions}
-          jumpDate={jumpDate}
-          loading={resultsLoading}
-          error={resultsErr}
-          metadata={resultsMetadata}
-          onJumpDateChange={onJumpDateChange}
-          onSelectDivision={setSelectedResultsDivisionTag}
-          onOpenMatch={(game) => void openDrawer(game)}
-          onOpenH2H={(game) => void openDrawer(game)}
-        />
-      )}
-
-      {activeTab === "teams" && (
-        <TeamStatistics
-          season={RESULTS_SEASON}
-          refreshToken={teamRefreshToken}
-          onOpenGame={(game) => void openDrawer(game)}
-        />
-      )}
-
-      {activeTab === "betting" && <BettingRecord />}
-
-      {drawer && (
-        <div className="drawer-backdrop" onClick={() => setDrawer(null)} role="presentation">
-          <aside
-            className="drawer"
-            data-testid="game-drawer"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button type="button" className="close-btn" onClick={() => setDrawer(null)}>
-              Close
-            </button>
-
-            <section className="drawer-section">
-              <div className="drawer-head">
-                <div>
-                  <h2>
-                    {drawer.game.team1.shortName} vs {drawer.game.team2.shortName}
-                  </h2>
-                  <div className="muted">
-                    {canonicalDivisionLabel(drawer.game.tag) ??
-                      drawer.game.divisionLabel ??
-                      drawer.game.tag}{" "}
-                     ·  {drawer.game.localDate} {drawer.game.localTime} Myanmar
-                  </div>
-                </div>
-                <span
-                  className={`status-badge ${drawer.game.isLive ? "status-online" : "status-finished"
-                    }`}
-                >
-                  {drawer.game.statusDisplay}
-                </span>
-              </div>
-            </section>
-
-            <section className="drawer-section">
-              <h3>Score block</h3>
-              <div className="score-hero">{drawer.game.scoreText}</div>
-              <div className="quarter-grid">
-                <Metric label="Q1" value={drawer.board.quarterTotals.Q1 ?? "—"} />
-                <Metric label="Q2" value={drawer.board.quarterTotals.Q2 ?? "—"} />
-                <Metric label="Q3" value={drawer.board.quarterTotals.Q3 ?? "—"} />
-                <Metric label="Q4" value={drawer.board.quarterTotals.Q4 ?? "—"} />
-                <Metric label="1H" value={drawer.board.firstHalfTotal ?? "—"} />
-                <Metric label="2H" value={drawer.board.secondHalfTotal ?? "—"} />
-              </div>
-            </section>
-
-            <section className="drawer-section" data-testid="player-stats-availability">
-              <h3>Player statistics</h3>
-              <p className="muted">
-                Player-level box-score statistics are unavailable in the verified stored Results data.
-                Only confirmed game scores and period totals are shown.
-              </p>
-            </section>
-
-            <section className="drawer-section">
-              <h3>Live decision block</h3>
-              <div className={`decision-banner ${statusTone(drawer.decision.decision)}`}>
-                {drawer.decision.decision}
-              </div>
-              <div className="decision-meta">
-                <Metric label="Suggested bias" value={drawer.decision.suggestedBias ?? "No bias"} />
-                <Metric label="Pace trend" value={drawer.flow?.paceTrend ?? "UNKNOWN"} />
-                <Metric label="Q1 points" value={drawer.flow?.q1Points ?? "—"} />
-                <Metric label="Q2 points" value={drawer.flow?.q2Points ?? "—"} />
-              </div>
-              <p className="muted strong-line">
-                Flow signal: {drawer.flow?.signal ?? "No live quarter signal"}
-              </p>
-              <ul className="reason-list">
-                {drawer.decision.reasons.map((reason) => (
-                  <li key={reason}>{reason}</li>
-                ))}
-              </ul>
-            </section>
-
-            <section className="drawer-section">
-              <h3>Historical risk block</h3>
-              <div className="quarter-grid">
-                <Metric
-                  label={`Quarter ${currentOrNextQuarter(drawer.flow, drawer.board) ?? "—"}`}
-                  value={
-                    drawer.decision.quarterContext
-                      ? `${formatPct(drawer.decision.quarterContext.win_rate)} / ${formatCurrency(
-                        drawer.decision.quarterContext.net_profit
-                      )}`
-                      : "No quarter context"
-                  }
-                />
-                <Metric
-                  label={`${gameDivision(drawer.game)} context`}
-                  value={`${formatPct(drawer.decision.divisionContext?.win_rate ?? 0)} / ${formatCurrency(
-                    drawer.decision.divisionContext?.net_profit ?? 0
-                  )}`}
-                />
-                <Metric
-                  label="Odds band"
-                  value={
-                    drawer.decision.oddsContext
-                      ? `${formatPct(drawer.decision.oddsContext.win_rate)} / ${formatCurrency(
-                        drawer.decision.oddsContext.net_profit
-                      )}`
-                      : "No odds context"
-                  }
-                />
-              </div>
-              <p className="muted">{operatorSummary.theory_call}</p>
-            </section>
-
-            <section className="drawer-section" data-testid="odds-replay-section">
-              <h3>Odds movement</h3>
-              {drawer.replayLoading && <p className="muted" data-testid="odds-replay-loading">Loading odds replay...</p>}
-              {!drawer.replayLoading && drawer.replayErr && <p className="err" data-testid="odds-replay-error">{drawer.replayErr}</p>}
-              {!drawer.replayLoading && !drawer.replayErr && !drawer.replay && (
-                <p className="muted" data-testid="odds-replay-empty">No stored odds replay available for this game.</p>
-              )}
-              {!drawer.replayLoading && drawer.replay && (
-                <>
-                  <div className="quarter-grid" data-testid="odds-replay-summary">
-                    <Metric label="Replay events" value={drawer.replay.timeline.length} />
-                    <Metric
-                      label="Odds snapshots"
-                      value={drawer.replay.timeline.filter((event) => event.kind === "odds").length}
-                    />
-                    <Metric
-                      label="Quarter snapshots"
-                      value={drawer.replay.timeline.filter((event) => event.kind === "quarter").length}
-                    />
-                    <Metric
-                      label="Result snapshots"
-                      value={drawer.replay.timeline.filter((event) => event.kind === "result").length}
-                    />
-                  </div>
-                  <div className="replay-list" data-testid="odds-replay-list">
-                    {drawer.replay.timeline.map((event, index) => (
-                      <div key={`${event.kind}-${event.capturedAt}-${index}`} className="replay-item">
-                        <div className="replay-item-head">
-                          <strong>{event.kind === "odds" ? "Odds" : event.kind === "quarter" ? "Quarter" : "Result"}</strong>
-                          <span>{event.capturedAt}</span>
-                        </div>
-                        <div className="muted">
-                          {event.quarter === null ? "No quarter" : `Q${event.quarter}`} · {replayEventSummary(event)}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
-            </section>
-
-            <section className="drawer-section" data-testid="h2h-section">
-              <h3>H2H block</h3>
-              {drawer.histLoading && (
-                <p className="muted" data-testid="h2h-loading">
-                  Loading history...
-                </p>
-              )}
-              {!drawer.histLoading && drawer.h2h.length === 0 && (
-                <p className="muted">
-                  <span data-testid="no-prior-meetings-label">No prior meetings</span> in loaded team histories.
-                </p>
-              )}
-              <div className="h2h-list" data-testid="h2h-list">
-                {drawer.h2h.map((entry) => {
-                  const matrix = parseH2HQuarterMatrix(entry.fullScore);
-                  return (
-                    <div key={entry.gameId} className="h2h-item" data-testid="h2h-item">
-                      <div>
-                        {entry.date} {entry.time}  ·  {entry.scoreText}
-                      </div>
-                      <div className="muted">
-                        {matrix.length > 0
-                          ? matrix.map((value, index) => `Q${index + 1} ${value}`).join("  ·  ")
-                          : entry.fullScore || "No quarter matrix"}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </section>
-
-            <section className="drawer-section">
-              <h3>Team risk block</h3>
-              {drawer.decision.teamFlags.length === 0 && (
-                <p className="muted">Neither team is on the strongest or weakest watchlists.</p>
-              )}
-              {drawer.decision.teamFlags.map((flag) => {
-                const tone = operatorSummary.team_risk.worst_teams.some(
-                  (entry) => entry.team === flag.team
-                )
-                  ? "bad"
-                  : "good";
-                return (
-                  <div key={flag.team} className={`risk-row ${tone}`}>
-                    <strong>{flag.team}</strong>
-                    <span>
-                      {formatPct(flag.win_rate)} win rate  ·  {formatCurrency(flag.net_profit)}
-                    </span>
-                  </div>
-                );
-              })}
-            </section>
-
-            <section className="drawer-section">
-              <h3>Matchup risk block</h3>
-              {drawer.decision.matchupFlag ? (
-                <div className="risk-row bad">
-                  <strong>{drawer.decision.matchupFlag.matchup}</strong>
-                  <span>
-                    {formatPct(drawer.decision.matchupFlag.win_rate)} win rate  · {" "}
-                    {formatCurrency(drawer.decision.matchupFlag.net_profit)}
-                  </span>
-                </div>
-              ) : (
-                <div className="risk-row neutral">
-                  <strong>{matchupKey(drawer.game.team1.shortName, drawer.game.team2.shortName)}</strong>
-                  <span>No flagged matchup risk in imported history.</span>
-                </div>
-              )}
-              {drawer.detailErr && <p className="err">{drawer.detailErr}</p>}
-            </section>
-          </aside>
-        </div>
-      )}
+      {drawer && <GameDrawer drawer={drawer} onClose={() => setDrawer(null)} />}
     </div>
   );
 }

@@ -73,7 +73,7 @@ Backtesting
 Team Statistics reconciliation
 ```
 
-Reason: H2H now merges Results KV, official online rows, and recent official daily calendar windows. Team Statistics must be reconciled against that same 12-division source model before deeper odds/operator features.
+Reason: H2H now merges Results KV, official online rows, and recent official daily calendar windows. Team Statistics must be reconciled against that same 13-division source model before deeper odds/operator features.
 
 ## Git History Map
 

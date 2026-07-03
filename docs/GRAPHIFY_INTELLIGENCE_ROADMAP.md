@@ -506,13 +506,12 @@ Existing work includes row reconciliation, EventsStat contracts, score-history p
 
 Open work:
 
-- full EG market ID mapping
-- selection ID mapping
-- score-history timestamp alignment
 - odds-vs-score divergence feature design
 - recorder enrichment write budget
 - UI/API movement graph
 - Results KV and Team Statistics reconciliation
+
+Contract outputs now include deterministic market timeline keys and score-history alignment points, but those are still evidence surfaces rather than production odds features.
 
 ### Phase 12 - GEN / Operator Intelligence
 

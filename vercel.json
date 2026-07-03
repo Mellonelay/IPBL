@@ -3,12 +3,24 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/api/live",
+      "destination": "/api/results/live.ts?compat=1"
+    },
+    {
       "source": "/api/results/live",
       "destination": "/api/results/live.ts"
     },
     {
       "source": "/api/results",
       "destination": "/api/results.ts"
+    },
+    {
+      "source": "/api/predictions/live",
+      "destination": "/api/predictions/live.ts"
+    },
+    {
+      "source": "/api/gen-analysis",
+      "destination": "/api/gen-analysis.ts"
     },
     {
       "source": "/api/admin/backfill-results",
@@ -37,6 +49,10 @@
     {
       "source": "/api/ipbl/team/games",
       "destination": "/api/ipbl/team/games.ts"
+    },
+    {
+      "source": "/api/recorder",
+      "destination": "/api/recorder.ts"
     },
     {
       "source": "/api/recorder/status",

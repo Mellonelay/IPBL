@@ -18,6 +18,7 @@
     "test:live-clock": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-clock.test.ts",
     "test:h2h-order": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/h2h-order.test.ts",
     "test:bookmaker-live": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/bookmaker-live.test.ts",
+    "test:live-reconciliation": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-reconciliation.test.ts",
     "test:ipbl-compat": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-compat.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-compat.test.ts",
     "test:client-timeout": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/client-timeout.test.ts",
     "test:teams": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-registry.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-statistics.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-results.test.ts",

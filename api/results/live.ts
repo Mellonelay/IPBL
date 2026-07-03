@@ -10,9 +10,22 @@ export {
   reconcileLiveGamesWithOfficialDetail,
 } from "../../lib/server/live-feed.js";
 
-export default async function handler(_req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Cache-Control", "no-store, max-age=0");
   res.setHeader("CDN-Cache-Control", "no-store");
   res.setHeader("Vercel-CDN-Cache-Control", "no-store");
-  return res.status(200).json(await buildLiveFeedEnvelope());
+  const payload = await buildLiveFeedEnvelope();
+  const compat = req.query.compat;
+  const compatEnabled = compat === "1" || compat === "true";
+  return res
+    .status(200)
+    .json(
+      compatEnabled
+        ? {
+            ...payload,
+            compatibilityEndpoint: "/api/live",
+            source: "api/results/live",
+          }
+        : payload,
+    );
 }

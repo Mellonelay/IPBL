@@ -2,6 +2,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseEventsStatHistoryGraph } from '../lib/server/eventsstat-contracts.ts';
 
 const APPROVED_LIVE_TAGS = [
   'ipbl-66-m-pro-a', 'ipbl-66-m-pro-b', 'ipbl-66-m-pro-c', 'ipbl-66-m-pro-d', 'ipbl-66-m-pro-u', 'ipbl-66-m-pro-z', 'ipbl-66-m-pro-l',
@@ -54,10 +55,10 @@ function row(source, g, i) {
   const divisionTag = first(g?.divisionTag, g?.tag, g?.division, g?.leagueTag);
   return { source, index:i, rowKey:id || `${homeNorm} v ${awayNorm}` || `${source}:${i}`, gameId:id || null, divisionTag: divisionTag || null, homeName:homeName||null, awayName:awayName||null, homeNorm, awayNorm, homeScore:score(g,'home'), awayScore:score(g,'away'), period:first(g?.period,g?.Period,g?.quarter,g?.Quarter,g?.Q), clock:first(g?.clock,g?.Clock,g?.timeToGo,g?.time,g?.Time,g?.remaining), status:first(g?.status,g?.Status,g?.state,g?.State), rawShape:Object.keys(g||{}).slice(0,80) };
 }
-async function fetchJson(label, url, timeoutMs=35000) {
+async function fetchJson(label, url, timeoutMs=35000, fetchImpl = fetch) {
   const ac = new AbortController(); const t = setTimeout(()=>ac.abort(), timeoutMs);
   try {
-    const r = await fetch(url, { signal: ac.signal, headers:{'user-agent':'ExecutionFabric-IPBL-PR23-Reconciliation/1.1', accept:'application/json,text/plain,*/*', 'cache-control':'no-cache'} });
+    const r = await fetchImpl(url, { signal: ac.signal, headers:{'user-agent':'ExecutionFabric-IPBL-PR23-Reconciliation/1.1', accept:'application/json,text/plain,*/*', 'cache-control':'no-cache'} });
     const text = await r.text(); let json=null; try { json=JSON.parse(text); } catch {}
     return { label, url, capturedAt:iso(), http:r.status, ok:r.ok, bytes:Buffer.byteLength(text), contentType:r.headers.get('content-type'), json, preview:text.slice(0,1200) };
   } catch (e) { return { label, url, capturedAt:iso(), ok:false, error:`${e.name}: ${e.message}` }; }
@@ -81,12 +82,12 @@ function reconcile(rowSets) {
   }
   return { primarySource:primary, matches, missing, mismatches };
 }
-async function fetchOfficialCalendar(proxyBase) {
+async function fetchOfficialCalendar(proxyBase, fetchImpl = fetch) {
   const components = [];
   const games = [];
   for (const tag of APPROVED_LIVE_TAGS) {
     const url = `${proxyBase}/calendar/online?${new URLSearchParams({ tag, lang: 'ru' })}`;
-    const result = await fetchJson(`officialCalendar-${tag}`, url);
+    const result = await fetchJson(`officialCalendar-${tag}`, url, 35000, fetchImpl);
     components.push(result);
     if (result.ok) for (const game of extract(result.json)) games.push({ ...game, tag, divisionTag: game?.divisionTag ?? game?.tag ?? tag });
   }
@@ -101,13 +102,13 @@ function activeRowsForRecorder(productionRows, recorderStatusJson) {
   }
   return rows.filter((r) => r.divisionTag && r.gameId);
 }
-async function fetchRecorderHistory(prod, productionRows, recorderStatus, historyLimit) {
+async function fetchRecorderHistory(prod, productionRows, recorderStatus, historyLimit, fetchImpl = fetch) {
   const targets = activeRowsForRecorder(productionRows, recorderStatus.json);
   const components = [];
   const snapshots = [];
   for (const target of targets.slice(0, 10)) {
     const url = `${prod}/api/recorder/history?${new URLSearchParams({ division: target.divisionTag, gameId: target.gameId, limit: String(historyLimit) })}`;
-    const result = await fetchJson(`recorderHistory-${target.divisionTag}-${target.gameId}`, url);
+    const result = await fetchJson(`recorderHistory-${target.divisionTag}-${target.gameId}`, url, 35000, fetchImpl);
     components.push(result);
     if (result.ok) for (const snapshot of extract(result.json)) snapshots.push(snapshot);
   }
@@ -124,10 +125,10 @@ function melbetEventRow(event, leagueId, index) {
   const awayName = first(event?.O2, event?.team2, event?.awayName);
   return { source:'melbetLive', index, rowKey:String(id ?? `${norm(homeName)} v ${norm(awayName)}`), gameId:id ? String(id) : null, leagueId, divisionTag:null, homeName:homeName||null, awayName:awayName||null, homeNorm:norm(homeName), awayNorm:norm(awayName), homeScore:num(event?.SC?.FS?.S1), awayScore:num(event?.SC?.FS?.S2), period:first(event?.SC?.CP), clock:null, status:first(event?.SC?.CPS,event?.SC?.SLS), rawShape:Object.keys(event||{}).slice(0,80) };
 }
-async function fetchMelbetLiveCandidates() {
+async function fetchMelbetLiveCandidates(fetchImpl = fetch) {
   const components=[]; const rows=[];
   for (const leagueId of MELBET_IPBL_LEAGUES) {
-    const result = await fetchJson(`melbetLive-${leagueId}`, melbetIpblUrl(leagueId), 30000);
+    const result = await fetchJson(`melbetLive-${leagueId}`, melbetIpblUrl(leagueId), 30000, fetchImpl);
     components.push(result);
     const events = Array.isArray(result.json?.Value) ? result.json.Value : [];
     for (const [index,event] of events.entries()) {
@@ -165,12 +166,59 @@ function collectEventsStatIds(productionRows, productionJson, fallbackIds) {
   for (const id of fallbackIds) ids.add(String(id));
   return [...ids];
 }
-async function eventsstat(gameIds) {
+async function eventsstat(gameIds, fetchImpl = fetch) {
   const out=[];
   for (const id of gameIds.slice(0,8)) for (const partner of [8,25]) {
     const url=`https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=${encodeURIComponent(id)}&coefView=3&lng=en&partner=${partner}`;
-    const r=await fetchJson(`eventsstat-${id}-${partner}`,url,30000); const v=r.json?.Value||{}; const eg=Array.isArray(v.EG)?v.EG:[]; const sh=Array.isArray(v.SH)?v.SH:[];
-    out.push({ gameId:id, partner, url, http:r.http??null, ok:r.ok, bytes:r.bytes??null, success:r.json?.Success??null, rootKeys:r.json?Object.keys(r.json):[], valueKeys:v&&typeof v==='object'?Object.keys(v):[], hasEG:eg.length>0, egCount:eg.length, hasSH:sh.length>0, shCount:sh.length, hasDS:v.DS!==undefined&&v.DS!==null, dsType:v.DS===null?'null':typeof v.DS, firstSH:sh[0]??null, lastSH:sh.at(-1)??null, firstEGKeys:eg[0]&&typeof eg[0]==='object'?Object.keys(eg[0]):[], marketSample:eg.flatMap(e=>Array.isArray(e?.C)?e.C.slice(0,12):[]).slice(0,30), error:r.error??null });
+    const r=await fetchJson(`eventsstat-${id}-${partner}`,url,30000,fetchImpl); const v=r.json?.Value||{}; const eg=Array.isArray(v.EG)?v.EG:[]; const sh=Array.isArray(v.SH)?v.SH:[];
+    const parsed = r.ok ? (() => { try { return parseEventsStatHistoryGraph(r.json); } catch { return null; } })() : null;
+    out.push({
+      gameId:id,
+      partner,
+      url,
+      http:r.http??null,
+      ok:r.ok,
+      bytes:r.bytes??null,
+      success:r.json?.Success??null,
+      rootKeys:r.json?Object.keys(r.json):[],
+      valueKeys:v&&typeof v==='object'?Object.keys(v):[],
+      hasEG:eg.length>0,
+      egCount:eg.length,
+      hasSH:sh.length>0,
+      shCount:sh.length,
+      hasDS:v.DS!==undefined&&v.DS!==null,
+      dsType:v.DS===null?'null':typeof v.DS,
+      firstSH:sh[0]??null,
+      lastSH:sh.at(-1)??null,
+      firstEGKeys:eg[0]&&typeof eg[0]==='object'?Object.keys(eg[0]):[],
+      marketSample:eg.flatMap(e=>Array.isArray(e?.C)?e.C.slice(0,12):[]).slice(0,30),
+      marketSeriesCount: parsed?.markets.length ?? 0,
+      marketSelectionCount: parsed?.marketSelections.length ?? 0,
+      scoreHistoryCount: parsed?.scoreHistory.length ?? 0,
+      scoreAlignmentCount: parsed?.scoreAlignment.length ?? 0,
+      marketSeriesSample: parsed?.markets.slice(0,3).map((market)=>({
+        marketKey: market.marketKey,
+        marketType: market.marketType,
+        marketGroup: market.marketGroup,
+        marketSubgroup: market.marketSubgroup,
+        pointCount: market.prices.length,
+        firstPrice: market.prices[0] ?? null,
+        lastPrice: market.prices.at(-1) ?? null,
+      })) ?? [],
+      scoreAlignmentSample: parsed?.scoreAlignment.slice(0,8).map((point)=>({
+        index: point.index,
+        capturedAt: point.capturedAt,
+        period: point.period,
+        periodName: point.periodName,
+        score1: point.score1,
+        score2: point.score2,
+        deltaScore1: point.deltaScore1,
+        deltaScore2: point.deltaScore2,
+        elapsedMsSincePrevious: point.elapsedMsSincePrevious,
+        isPeriodTransition: point.isPeriodTransition,
+      })) ?? [],
+      error:r.error??null
+    });
   }
   return out;
 }
@@ -179,18 +227,19 @@ export async function runPhaseC9RowReconciliation(options = {}) {
   const prod = String(options.productionBase ?? arg('--production-base','https://ipbl-minimal-viewer.vercel.app')).replace(/\/$/,'');
   const proxyBase = String(options.officialProxyBase ?? arg('--official-proxy-base','https://worker.mloneslot99.com/ipbl-proxy')).replace(/\/$/,'');
   const historyLimit = Number(options.historyLimit ?? arg('--history-limit','5')) || 5;
+  const fetchImpl = options.fetchImpl ?? fetch;
   const allowFallbackGameIds = Boolean(options.allowFallbackGameIds ?? has('--allow-fallback-game-ids'));
   const fallbackIds = (options.fallbackGameIds ?? String(arg('--fallback-game-ids','')).split(',').map(s=>s.trim()).filter(Boolean)).map(String);
   const endpoints = { officialLivePage: String(arg('--official-live-url','https://ipbl.pro/live')), productionLive: `${prod}/api/results/live?reconcile=${Date.now()}`, recorderStatus:`${prod}/api/recorder/status` };
   const [officialLivePage, officialCalendar, productionLive, recorderStatus, melbetLiveDiscovery] = await Promise.all([
-    fetchJson('officialLivePage', endpoints.officialLivePage),
-    fetchOfficialCalendar(proxyBase),
-    fetchJson('productionLive', endpoints.productionLive, 45000),
-    fetchJson('recorderStatus', endpoints.recorderStatus),
-    fetchMelbetLiveCandidates(),
+    fetchJson('officialLivePage', endpoints.officialLivePage, 35000, fetchImpl),
+    fetchOfficialCalendar(proxyBase, fetchImpl),
+    fetchJson('productionLive', endpoints.productionLive, 45000, fetchImpl),
+    fetchJson('recorderStatus', endpoints.recorderStatus, 35000, fetchImpl),
+    fetchMelbetLiveCandidates(fetchImpl),
   ]);
   const productionRows = extract(productionLive.json).map((g,i)=>row('productionLive',g,i));
-  const recorderHistory = await fetchRecorderHistory(prod, productionRows, recorderStatus, historyLimit);
+  const recorderHistory = await fetchRecorderHistory(prod, productionRows, recorderStatus, historyLimit, fetchImpl);
   const fetched = { officialLivePage, officialCalendar, productionLive, recorderStatus, recorderHistory, melbetLiveDiscovery };
   const rowSets = { officialCalendar:extract(officialCalendar.json).map((g,i)=>row('officialCalendar',g,i)), productionLive:productionRows, recorderHistory:extract(recorderHistory.json).map((g,i)=>row('recorderHistory',g,i)) };
   const activeIds = rowSets.productionLive.map(r=>r.gameId).filter(Boolean);
@@ -198,7 +247,7 @@ export async function runPhaseC9RowReconciliation(options = {}) {
   const melbetMatch = melbetIdsForActiveProduction(productionRows, melbetRows);
   const melbetCandidateIds = melbetRows.map((r)=>r.gameId).filter(Boolean);
   const ids = activeIds.length ? [...new Set([...collectEventsStatIds(productionRows, productionLive.json, []), ...melbetCandidateIds, ...(allowFallbackGameIds ? fallbackIds : [])])] : (allowFallbackGameIds ? fallbackIds : []);
-  const ev = await eventsstat(ids); const rec = reconcile(rowSets);
+  const ev = await eventsstat(ids, fetchImpl); const rec = reconcile(rowSets);
   const provenIds = new Set(ev.filter((r)=>r.hasEG&&r.hasSH&&r.hasDS).map((r)=>String(r.gameId)));
   const matchedProven = melbetMatch.matches.filter((m)=>provenIds.has(String(m.melbetGameId)));
   const deterministicTeamPairEvidence = melbetMatch.matches.map((m)=>({ ...m, eventsstatProven: provenIds.has(String(m.melbetGameId)), requiredForOddsGate: true }));

@@ -6,9 +6,18 @@ const fixture = JSON.parse(await readFile(new URL("./fixtures/phase-c9/eventssta
 const parsed = parseEventsStatHistoryGraph(fixture);
 assert.ok(parsed.markets.length > 0, "expected EG market series");
 assert.ok(parsed.odds.length > 0, "expected odds movement points");
+assert.ok(parsed.marketSelections.length > 0, "expected selection timeline points");
 assert.ok(parsed.scoreHistory.length > 0, "expected SH score history points");
+assert.ok(parsed.scoreAlignment.length > 0, "expected aligned score history points");
 assert.ok(parsed.markets.some((market) => market.marketType !== null || market.marketGroup !== null), "expected market metadata");
 assert.ok(parsed.odds.every((point) => Number.isFinite(point.price)), "expected finite odds prices");
+assert.ok(parsed.markets.every((market) => market.marketKey.includes(":")), "expected stable market keys");
+assert.ok(parsed.markets.every((market) => market.timestamps.length === market.prices.length), "expected timestamp parity");
+assert.equal(parsed.scoreAlignment[0].deltaScore1, null);
+assert.equal(parsed.scoreAlignment[0].deltaScore2, null);
+assert.equal(parsed.scoreAlignment[1].deltaScore1, 0);
+assert.equal(parsed.scoreAlignment[1].deltaScore2, 3);
+assert.ok(parsed.scoreAlignment.some((point) => point.isPeriodTransition), "expected period transition markers");
 await assert.rejects(async () => parseEventsStatHistoryGraph({ Success: false }), /eventsstat_history_graph_unsuccessful/);
 await assert.rejects(async () => parseEventsStatHistoryGraph({ Success: true, Value: { EG: [], SH: [] } }), /eventsstat_history_graph_empty/);
 console.log("EventsStat history graph contract tests passed");

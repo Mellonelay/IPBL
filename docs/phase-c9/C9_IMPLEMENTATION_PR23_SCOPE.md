@@ -4,7 +4,7 @@ PR #22 is the C9 proof foundation only. PR #23 is the implementation planning br
 
 Current closure note:
 - The repo has proof-foundation evidence for C9, but Phase 11 remains support-ready / proof-foundation partial.
-- The remaining gap is market/selection mapping, score-history alignment, odds-vs-score divergence, recorder enrichment, and movement graph productization.
+- The remaining gap is odds-vs-score divergence, recorder enrichment, and movement graph productization. Market/selection timeline parsing and score-history alignment are now deterministic contract outputs, but they are still evidence surfaces rather than production features.
 - Do not promote Phase 11 to complete without either new proof or an explicit policy decision to keep it support-ready.
 
 ## Required implementation tracks
@@ -12,11 +12,9 @@ Current closure note:
 1. Graphify-backed C9 implementation plan.
 2. Official source reconciliation: official source vs Results KV vs Recorder vs fallback source.
 3. EventsStat live EG/SH/DS reprobe and fixture refresh.
-4. Market and selection ID mapping.
-5. Score-history timestamp alignment.
-6. Odds movement recorder design with retention/write budget.
-7. Operator-facing odds/score divergence features.
-8. No production odds deployment until parser tests, source policy, and evidence review pass.
+4. Odds movement recorder design with retention/write budget.
+5. Operator-facing odds/score divergence features.
+6. No production odds deployment until parser tests, source policy, and evidence review pass.
 
 ## Required evidence gates
 

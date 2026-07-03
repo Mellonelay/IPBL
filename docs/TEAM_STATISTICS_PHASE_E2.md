@@ -2,7 +2,7 @@
 
 ## Status
 
-Reconciled for the 12 approved IPBL live divisions and 46 verified current teams.
+Reconciled for the 13 approved IPBL live divisions and 50 verified current teams.
 
 ## Canonical architecture
 
@@ -18,10 +18,10 @@ Monthly Results remain the historical score backbone. Team Statistics does not m
 
 ## Active divisions
 
-- Pro Men A, B, C, D, U, Z
+- Pro Men A, B, C, D, U, Z, L
 - Pro Women A, B, C, D, G, K
 
-The bootstrap team registry contains four verified current teams for each mature division and two currently verified teams for the new Pro Men Z boundary. Runtime match and statistics truth comes from `/api/teams/history` using stable official team IDs.
+The bootstrap team registry contains four verified current teams for each mature division and two currently verified teams for the Pro Men Z boundary. Runtime match and statistics truth comes from `/api/teams/history` using stable official team IDs.
 
 ## Teams tab
 
@@ -67,4 +67,4 @@ Graphify is not yet the runtime betting-intelligence calculator. Graph-driven ma
 
 ## Phase E2 reconciliation status
 
-The reconciliation command is `npm run reconcile:team-statistics`. It verifies the 12-division registry, 46 verified teams, per-division team counts, production history endpoint status, history sample counts, quarter-matrix availability, and the shared no-odds policy.
+The reconciliation command is `npm run reconcile:team-statistics`. It verifies the 13-division registry, 50 verified teams, per-division team counts, production history endpoint status, history sample counts, quarter-matrix availability, and the shared no-odds policy.

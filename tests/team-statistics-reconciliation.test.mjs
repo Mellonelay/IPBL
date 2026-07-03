@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { ACTIVE_TEAMS, TEAM_STATISTICS_DIVISIONS, teamsForDivision } from '../src/config/teams.ts';
 import { LIVE_DIVISION_TAGS } from '../src/config/divisions.ts';
 import { buildTeamProfile } from '../src/teams/statistics.ts';
+import { buildTeamStatisticsRegistry, buildTeamStatisticsReconciliation } from '../lib/server/team-statistics-reconciliation.ts';
 
 assert.equal(TEAM_STATISTICS_DIVISIONS.length, LIVE_DIVISION_TAGS.length);
 assert.deepEqual(TEAM_STATISTICS_DIVISIONS.map((division) => division.tag), [...LIVE_DIVISION_TAGS]);
@@ -25,4 +26,54 @@ assert.equal(profile.losses, 2);
 assert.equal(profile.quarterAverages[0] !== null, true);
 assert.equal(profile.transitions.length, 3);
 assert.equal(profile.transitions[0].samples, 3);
+
+const liveRegistry = buildTeamStatisticsRegistry();
+assert.equal(liveRegistry.divisionCount, 13);
+assert.equal(liveRegistry.liveDivisionCount, 13);
+assert.equal(liveRegistry.teamCount, 50);
+assert.equal(liveRegistry.uniqueTeamCount, 50);
+
+const syntheticTeams = liveRegistry.divisions.flatMap((division, divisionIndex) =>
+  Array.from({ length: division.expectedTeamCount }, (_, teamIndex) => {
+    const teamId = divisionIndex * 10 + teamIndex + 1;
+    return {
+      teamId,
+      name: `Team ${teamId}`,
+      divisionTag: division.tag,
+      url: `https://example.com/${division.tag}/${teamId}`,
+      http: 200,
+      ok: true,
+      attempt: 1,
+      error: null,
+      source: 'official',
+      coverage: { rows: 1 },
+      totalCount: 1,
+      completedCount: 1,
+      quarterMatrixCount: 1,
+      latest: {
+        gameId: teamId,
+        localDate: '01.06.2026',
+        localTime: '10:00',
+        score: '80 : 76',
+        fullScore: '20:18,20:20,20:18,20:20',
+        team1: `Team ${teamId}`,
+        team2: `Opponent ${teamId}`,
+      },
+    };
+  }),
+);
+
+const syntheticReconciliation = buildTeamStatisticsReconciliation(syntheticTeams, {
+  base: 'https://example.com',
+  season: 2026,
+  timeoutMs: 1234,
+  retries: 1,
+  generatedAt: '2026-07-03T00:00:00.000Z',
+  registry: liveRegistry,
+});
+
+assert.equal(syntheticReconciliation.summary.classification, 'RECONCILED');
+assert.equal(syntheticReconciliation.summary.failures.length, 0);
+assert.equal(syntheticReconciliation.summary.divisionSummary[0].okTeams, 4);
+
 console.log('Team Statistics reconciliation tests passed');
