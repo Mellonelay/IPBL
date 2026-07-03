@@ -1,18 +1,30 @@
-export default async function handler(req, res) {
-  try {
-    const baseUrl = process.env.PUBLIC_BASE_URL || 'http://localhost:3000';
-    const r = await fetch(`${baseUrl}/api/results/live`);
-    const data = await r.json();
+import { buildLiveFeedEnvelope } from "../lib/server/live-feed.js";
 
-    return res.status(200).json({
-      ...data,
-      compatibilityEndpoint: '/api/live',
-      source: 'api/results/live'
-    });
-  } catch (e) {
-    return res.status(500).json({
-      error: 'live-compat-failed',
-      compatibilityEndpoint: '/api/live'
-    });
-  }
+export type LiveCompatDependencies = {
+  buildLiveFeedEnvelope?: typeof buildLiveFeedEnvelope;
+};
+
+export function createLiveCompatHandler(deps: LiveCompatDependencies = {}) {
+  const buildLiveFeed = deps.buildLiveFeedEnvelope ?? buildLiveFeedEnvelope;
+
+  return async function handler(_req, res) {
+    try {
+      const data = await buildLiveFeed();
+      res.setHeader("Cache-Control", "no-store, max-age=0");
+      res.setHeader("CDN-Cache-Control", "no-store");
+      res.setHeader("Vercel-CDN-Cache-Control", "no-store");
+      return res.status(200).json({
+        ...data,
+        compatibilityEndpoint: "/api/live",
+        source: "api/results/live",
+      });
+    } catch (_error) {
+      return res.status(500).json({
+        error: "live-compat-failed",
+        compatibilityEndpoint: "/api/live",
+      });
+    }
+  };
 }
+
+export default createLiveCompatHandler();

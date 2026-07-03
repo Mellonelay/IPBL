@@ -2,6 +2,14 @@
 
 This repository is orchestrated by Mellonelay Fabric GPT. The GPT creates bounded logical agent records with `createAgent`; execution occurs only through `vmRouter` jobs.
 
+## Verified Runtime Baseline
+
+The current verified A-Team runtime baseline is recorded in:
+
+- `docs/operator/AGENTEAM_RUNTIME_VERIFIED_BASELINE.md`
+
+That baseline records the VM-backed smoke run, `vmRouter` job evidence, QA/Reviewer gates, and runtime audit artifact paths. It is documentary evidence of the verified smoke, not a substitute for fresh runtime verification when claiming current production state.
+
 ## Roles
 
 The authoritative role configuration is `.agenteam/config.yaml`. The execution order is Researcher -> PM -> Architect -> Dev -> QA -> Reviewer.

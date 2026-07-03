@@ -101,7 +101,7 @@ function statusTone(value: "ALLOW" | "CAUTION" | "BLOCK"): string {
 }
 
 function gameDivision(game: ScheduleGame): "Men" | "Women" {
-  return game.tag.includes("-w-") || game.team1.name.includes("(Women)") ? "Women" : "Men";
+  return game.tag.includes("-w-") ? "Women" : "Men";
 }
 
 function currentOrNextQuarter(
@@ -720,7 +720,7 @@ function App() {
 
           <div className="live-controls">
             <label>
-              Division
+              Live division
               <select
                 value={selectedLiveDivisionTag}
                 onChange={(e) => setSelectedLiveDivisionTag(e.target.value)}
