@@ -3,6 +3,10 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/api/live",
+      "destination": "/api/results/live.ts?compat=1"
+    },
+    {
       "source": "/api/results/live",
       "destination": "/api/results/live.ts"
     },
