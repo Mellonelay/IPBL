@@ -1,3 +1,4 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { buildLiveFeedEnvelope } from "../lib/server/live-feed.js";
 
 export type LiveCompatDependencies = {
@@ -7,7 +8,7 @@ export type LiveCompatDependencies = {
 export function createLiveCompatHandler(deps: LiveCompatDependencies = {}) {
   const buildLiveFeed = deps.buildLiveFeedEnvelope ?? buildLiveFeedEnvelope;
 
-  return async function handler(_req, res) {
+  return async function handler(_req: VercelRequest, res: VercelResponse) {
     try {
       const data = await buildLiveFeed();
       res.setHeader("Cache-Control", "no-store, max-age=0");
