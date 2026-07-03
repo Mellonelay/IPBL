@@ -83,7 +83,7 @@ export default function TeamStatistics({
     <section className="tab-panel team-statistics" data-testid="team-statistics-page">
       <div className="results-controls team-controls">
         <label>
-          Division
+          Team statistics division
           <select
             data-testid="team-division-select"
             value={divisionTag}

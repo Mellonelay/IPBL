@@ -73,7 +73,7 @@ export function ResultsCalendarGrid({
           <input type="date" value={jumpDate} onChange={(e) => onJumpDateChange(e.target.value)} />
         </label>
         <label>
-          Division
+          Results division
           <select value={selectedDivisionTag} onChange={(e) => onSelectDivision(e.target.value)}>
             {divisionOptions.map((division) => (
               <option key={division.tag} value={division.tag}>{division.label}</option>

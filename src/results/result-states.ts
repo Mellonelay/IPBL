@@ -87,7 +87,7 @@ export function describeResultState<TMatch>(state: DivisionDayResultState<TMatch
     case "loaded": return `${state.matches.length} matches loaded`;
     case "confirmed_empty": return "No matches today";
     case "source_unavailable": return "Source unavailable — results not yet verified";
-    case "division_inactive": return "Division not currently listed";
+    case "division_inactive": return "Selected division is not currently listed";
     case "historical_unverified":
     case "pending_backfill": return "Results not yet verified";
     case "unverified": return "Results not yet verified";
