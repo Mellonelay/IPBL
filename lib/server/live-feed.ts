@@ -98,23 +98,21 @@ export async function buildLiveFeedEnvelope(deps: LiveFeedDependencies = {}): Pr
   }
 
   const started = Date.now();
+  const bookmakerSettledPromise: Promise<
+    | { ok: true; fallback: BookmakerLiveResult }
+    | { ok: false; error: unknown }
+  > = fetchBookmaker()
+    .then((fallback): { ok: true; fallback: BookmakerLiveResult } => ({ ok: true, fallback }))
+    .catch((error): { ok: false; error: unknown } => ({ ok: false, error }));
   const batches = await Promise.all(LIVE_TAGS.map(fetchLive));
   const failures = batches.filter((batch) => batch.error).map(({ tag, error }) => ({ tag, error }));
   const byId = new Map<string, ScheduleGame>();
   for (const batch of batches) for (const game of batch.games) byId.set(`${game.tag}:${game.gameId}`, game);
   const officialGames = [...byId.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
-  let bookmakerSettled:
-    | { ok: true; fallback: BookmakerLiveResult }
-    | { ok: false; error: unknown }
-    | null = null;
-  if (officialGames.length === 0) {
-    bookmakerSettled = await fetchBookmaker()
-      .then((fallback): { ok: true; fallback: BookmakerLiveResult } => ({ ok: true, fallback }))
-      .catch((error): { ok: false; error: unknown } => ({ ok: false, error }));
-  }
+  const bookmakerSettled = await bookmakerSettledPromise;
   const fallback = bookmakerSettled?.ok ? bookmakerSettled.fallback : null;
   const bookmakerGames = fallback?.games ?? [];
-  const liveCandidateGames = bookmakerGames.length > 0 ? bookmakerGames : mergeLiveGamesByFreshness(officialGames, bookmakerGames);
+  const liveCandidateGames = mergeLiveGamesByFreshness(officialGames, bookmakerGames);
   const officialReconciliation = await reconcileLiveGamesWithOfficialDetail(liveCandidateGames);
   const mergedGames = officialReconciliation.games;
 

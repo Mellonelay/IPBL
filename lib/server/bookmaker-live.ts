@@ -16,7 +16,7 @@ type BookmakerSourceConfig = {
 
 const BOOKMAKER_IPBL_SOURCES: readonly BookmakerSourceConfig[] = [
   { name: "melbet", baseUrl: "https://melbet.com", partner: 8 },
-  { name: "1xbet", baseUrl: "https://1xlite-04954.pro", partner: 25 },
+  { name: "1xbet", baseUrl: "https://1xlite-85316.pro", partner: 25 },
 ] as const;
 
 function bookmakerPageSlug(leagueId: number): string {
@@ -25,6 +25,22 @@ function bookmakerPageSlug(leagueId: number): string {
 
 function bookmakerLivePageUrl(baseUrl: string, leagueId: number): string {
   return `${baseUrl}/en/live/basketball/${leagueId}-${bookmakerPageSlug(leagueId)}`;
+}
+
+function bookmakerLiveApiUrl(baseUrl: string, leagueId: number, partner: number): string {
+  return `${baseUrl}/service-api/LiveFeed/Get1x2_VZip?${new URLSearchParams({
+    sports: "3",
+    champs: String(leagueId),
+    count: "40",
+    lng: "en",
+    gr: "62",
+    mode: "4",
+    country: "169",
+    partner: String(partner),
+    getEmpty: "true",
+    virtualSports: "true",
+    noFilterBlockEvent: "true",
+  })}`;
 }
 
 export const MELBET_IPBL_URLS = MELBET_IPBL_LEAGUES.map(({ leagueId }) =>
@@ -98,6 +114,8 @@ const VERIFIED_TEAM_ALIASES: Record<string, VerifiedTeam> = Object.fromEntries(
   "Surgut": { teamId: 76071, shortName: "Surgut", name: "Surgut", tag: "ipbl-66-m-pro-l", divisionLabel: "Pro Men L" },
   "Yakutsk": { teamId: 76070, shortName: "Yakutsk", name: "Yakutsk", tag: "ipbl-66-m-pro-l", divisionLabel: "Pro Men L" },
   "Omsk": { teamId: 134, shortName: "Omsk", name: "Omsk", tag: "ipbl-66-m-pro-a", divisionLabel: "Pro Men A" },
+  "Ukhta": { teamId: 159, shortName: "Ukhta", name: "Ukhta", tag: "ipbl-66-m-pro-a", divisionLabel: "Pro Men A" },
+  "Syktyvkar": { teamId: 152, shortName: "Syktyvkar", name: "Syktyvkar", tag: "ipbl-66-m-pro-a", divisionLabel: "Pro Men A" },
   "Vorkuta": { teamId: 163, shortName: "Vorkuta", name: "Vorkuta", tag: "ipbl-66-m-pro-a", divisionLabel: "Pro Men A" },
   "Bryansk": { teamId: 76021, shortName: "Bryansk", name: "Bryansk", tag: "ipbl-66-w-pro-a", divisionLabel: "Pro Women A" },
   "Izhevsk": { teamId: 76023, shortName: "Izhevsk", name: "Izhevsk", tag: "ipbl-66-w-pro-a", divisionLabel: "Pro Women A" },
@@ -512,9 +530,9 @@ async function fetchBookmakerSourceLive(source: BookmakerSourceConfig, fetchImpl
   const timeout = setTimeout(() => controller.abort(), 15_000);
   try {
     const settled = await Promise.allSettled(MELBET_IPBL_LEAGUES.map(async ({ leagueId }) => {
-      const response = await fetchImpl(bookmakerLivePageUrl(source.baseUrl, leagueId), {
+      const response = await fetchImpl(bookmakerLiveApiUrl(source.baseUrl, leagueId, source.partner), {
         headers: {
-          Accept: "text/html,application/xhtml+xml",
+          Accept: "application/json,text/plain,*/*",
           "User-Agent": `IPBL-Minimal-Viewer/1.0 (${source.name})`,
         },
         signal: controller.signal,
@@ -545,7 +563,19 @@ async function fetchBookmakerSourceLive(source: BookmakerSourceConfig, fetchImpl
         ));
         continue;
       }
-      const parsed = parseBookmakerLivePageHtml(result.value.payload, leagueId, source.baseUrl);
+      let parsed: BookmakerLiveResult | null = null;
+      try {
+        const raw = JSON.parse(result.value.payload) as unknown;
+        parsed = parseBookmakerLivePayload(raw);
+      } catch {
+        if (/dashboard-game-block__link|ui-game-scores__num|SportsEvent/.test(result.value.payload)) {
+          parsed = parseBookmakerLivePageHtml(result.value.payload, leagueId, source.baseUrl);
+        }
+      }
+      if (!parsed) {
+        sourceFailures.push(classifyBookmakerSourceFailure(source, leagueId, result.value.payload, null, null));
+        continue;
+      }
       if (parsed.games.length === 0) {
         console.warn("[bookmaker-live] zero parsed games", {
           source: source.name,

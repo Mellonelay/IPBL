@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { requireResultsRedis } from "../../lib/server/results-redis.js";
 import { buildLiveFeedEnvelope } from "../../lib/server/live-feed.js";
+import { runMirrorProbe } from "../../lib/server/bookmaker-mirror-health.js";
 import { isAuthorizedCronRequest, recordLiveEnvelope } from "../../lib/server/live-recorder.js";
 
 function sourceStatusText(status: unknown): string | null {
@@ -20,8 +21,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const envelope = await buildLiveFeedEnvelope();
     const run = await recordLiveEnvelope(requireResultsRedis(), envelope);
+    const mirrorProbe = await runMirrorProbe();
     const sourceStatus = sourceStatusText(envelope.status);
-    return res.status(200).json({ ok: sourceStatus !== "FAIL", run, sourceStatus });
+    return res.status(200).json({ ok: sourceStatus !== "FAIL", run, sourceStatus, mirrorProbe });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     return res.status(500).json({ ok: false, error: message });

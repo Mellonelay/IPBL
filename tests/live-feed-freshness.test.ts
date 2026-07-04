@@ -3,6 +3,7 @@ import { buildLiveFeedEnvelope, mergeLiveGamesByFreshness, officialGameDetailIsT
 import type { LiveFeedEnvelope } from "../api/results/live.ts";
 import type { ScheduleGame } from "../lib/server/calendar-normalize.ts";
 
+void (async () => {
 function game(overrides: Partial<ScheduleGame>): ScheduleGame {
   return {
     gameId: 100,
@@ -151,11 +152,24 @@ assert.equal(liveWinsOverRecorderEnvelope.games[0].gameId, liveFallbackGame.game
 assert.equal(liveWinsOverRecorderEnvelope.games[0].team1.shortName, "Barnaul");
 
 console.log("Live envelope live-feed precedence over recorder tests passed");
+const officialLiveGame = game({
+  gameId: 730323684,
+  tag: "ipbl-66-m-pro-b",
+  team1: { teamId: 76051, shortName: "Kazan", name: "Kazan" },
+  team2: { teamId: 76052, shortName: "Tyumen", name: "Tyumen" },
+  score1: 55,
+  score2: 64,
+  scoreText: "55 : 64",
+  period: 2,
+  timeToGo: "04:10",
+  updatedAt: 1_000_000,
+});
+
 const bookmakerPreferredGame = game({
   gameId: 730347660,
-  tag: "ipbl-66-m-pro-b",
-  team1: { teamId: 76050, shortName: "Krasnodar", name: "Krasnodar" },
-  team2: { teamId: 76052, shortName: "Tyumen", name: "Tyumen" },
+  tag: "ipbl-66-w-pro-b",
+  team1: { teamId: 76012, shortName: "Cheboksary", name: "Cheboksary" },
+  team2: { teamId: 76013, shortName: "Yaroslavl", name: "Yaroslavl" },
   score1: 82,
   score2: 65,
   scoreText: "82 : 65",
@@ -164,41 +178,30 @@ const bookmakerPreferredGame = game({
   updatedAt: 2_000_000,
 });
 
-let skippedBookmakerCalls = 0;
-const bookmakerSkippedEnvelope = await buildLiveFeedEnvelope({
+let mergedBookmakerCalls = 0;
+const mergedOfficialAndBookmakerEnvelope = await buildLiveFeedEnvelope({
   getResultsRedis: () => new EmptyRecorderRedis() as never,
   readRecordedLiveFeed: async () => ({ games: [], status: { source: "official:api1.ipbl.pro", status: "OK" } }) satisfies LiveFeedEnvelope,
-  fetchLiveTag: async () => ({
-    tag: bookmakerPreferredGame.tag,
-    games: [game({
-      gameId: 730323684,
-      tag: "ipbl-66-m-pro-b",
-      team1: { teamId: 76051, shortName: "Kazan", name: "Kazan" },
-      team2: { teamId: 76052, shortName: "Tyumen", name: "Tyumen" },
-      score1: 55,
-      score2: 64,
-      scoreText: "55 : 64",
-      updatedAt: 1_000_000,
-    })],
-  }),
+  fetchLiveTag: async (tag: string) => tag === officialLiveGame.tag ? { tag, games: [officialLiveGame] } : { tag, games: [] },
   fetchBookmakerLive: async () => {
-    skippedBookmakerCalls += 1;
+    mergedBookmakerCalls += 1;
     return {
       games: [bookmakerPreferredGame],
       unmatched: [],
       receivedEvents: 1,
-      sourceLeagues: [2496666],
+      sourceLeagues: [2496666, 2496667],
       sourceFailures: [],
     };
   },
   reconcileLiveGamesWithOfficialDetail: async (games) => ({ games, checked: 0, dropped: 0, updated: 0 }),
 });
 
-assert.equal(bookmakerSkippedEnvelope.games.length, 1);
-assert.equal(bookmakerSkippedEnvelope.games[0].gameId, 730323684);
-assert.equal(skippedBookmakerCalls, 0, "bookmaker fetch must not run when official live rows already exist");
+assert.equal(mergedOfficialAndBookmakerEnvelope.games.length, 2);
+assert.equal(mergedOfficialAndBookmakerEnvelope.games.some((game) => game.gameId === officialLiveGame.gameId), true);
+assert.equal(mergedOfficialAndBookmakerEnvelope.games.some((game) => game.gameId === bookmakerPreferredGame.gameId), true);
+assert.equal(mergedBookmakerCalls, 1, "bookmaker fetch must run even when official live rows already exist");
 
-console.log("Live envelope bookmaker skipped with official rows test passed");
+console.log("Live envelope official+bookmaker merge test passed");
 
 let fallbackBookmakerCalls = 0;
 const bookmakerFallbackEnvelope = await buildLiveFeedEnvelope({
@@ -242,3 +245,7 @@ assert.equal(classifiedFailureEnvelope.status.bookmakerSourceFailures[0].source,
 assert.equal(classifiedFailureEnvelope.status.bookmakerSourceFailures[0].leagueId, 2496666);
 
 console.log("Live envelope bookmaker failure classification test passed");
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

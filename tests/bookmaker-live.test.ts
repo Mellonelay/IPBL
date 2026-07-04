@@ -43,7 +43,7 @@ const currentMenRaw = {
   Value: [
     {
       I: 2496666001, LI: 2496666, L: "IPBL. Pro Division",
-      O1: "Omsk", O2: "Vorkuta", O1I: 111001, O2I: 111002,
+      O1: "Omsk", O2: "Ukhta", O1I: 111001, O2I: 111002,
       S: 1781176200, U: 1781176647,
       SC: { FS: { S1: 5, S2: 4 }, PS: [{ Key: 1, Value: { S1: 5, S2: 4 } }], CP: 1, CPS: "1st quarter", TS: 123, TR: -1 },
     },
@@ -58,6 +58,18 @@ const currentWomenRaw = {
       O1: "Kursk (Women)", O2: "Orenburg (Women)", O1I: 222001, O2I: 222002,
       S: 1781176200, U: 1781176647,
       SC: { FS: { S1: 0, S2: 0 }, PS: [{ Key: 1, Value: { S1: 0, S2: 0 } }], CP: 1, CPS: "1st quarter", TS: 60, TR: -1 },
+    },
+  ],
+};
+
+const currentSyktyvkarRaw = {
+  Success: true,
+  Value: [
+    {
+      I: 733879359, LI: 2496666, L: "IPBL. Pro Division",
+      O1: "Syktyvkar", O2: "Vorkuta", O1I: 9830019, O2I: 9830021,
+      S: 1783137424, U: 1783137444,
+      SC: { FS: { S1: 24, S2: 20 }, PS: [{ Key: 1, Value: { S1: 24, S2: 20 } }], CP: 1, CPS: "1st quarter", TS: 241, TR: -1 },
     },
   ],
 };
@@ -123,12 +135,12 @@ assert.equal(womenB.period, 4);
 const currentCombined = parseBookmakerLivePayloads([currentMenRaw, currentWomenRaw]);
 assert.equal(currentCombined.receivedEvents, 2);
 assert.equal(currentCombined.unmatched.length, 0);
-const omskLive = currentCombined.games.find((game) => game.team1.shortName === "Omsk" && game.team2.shortName === "Vorkuta")!;
-assert.ok(omskLive, "current IPBL Pro Division Omsk vs Vorkuta must render as a live card");
+const omskLive = currentCombined.games.find((game) => game.team1.shortName === "Omsk" && game.team2.shortName === "Ukhta")!;
+assert.ok(omskLive, "current IPBL Pro Division Omsk vs Ukhta must render as a live card");
 assert.equal(omskLive.tag, "ipbl-66-m-pro-a");
 assert.equal(omskLive.divisionLabel, "Pro Men A");
 assert.equal(omskLive.team1.teamId, 134);
-assert.equal(omskLive.team2.teamId, 163);
+assert.equal(omskLive.team2.teamId, 159);
 assert.equal(omskLive.scoreText, "5 : 4");
 const kurskLive = currentCombined.games.find((game) => game.team1.shortName === "Kursk" && game.team2.shortName === "Orenburg")!;
 assert.ok(kurskLive, "current IPBL Pro Division Women Kursk vs Orenburg must render as a live card");
@@ -137,6 +149,11 @@ assert.equal(kurskLive.divisionLabel, "Pro Women K");
 assert.equal(kurskLive.team1.teamId, 76018);
 assert.equal(kurskLive.team2.teamId, 76017);
 assert.equal(kurskLive.scoreText, "0 : 0");
+
+const currentWithSyktyvkar = parseBookmakerLivePayloads([currentMenRaw, currentWomenRaw, currentSyktyvkarRaw]);
+assert.equal(currentWithSyktyvkar.receivedEvents, 3);
+assert.equal(currentWithSyktyvkar.unmatched.length, 0);
+assert.equal(currentWithSyktyvkar.games.some((game) => game.team1.shortName === "Syktyvkar" && game.team2.shortName === "Vorkuta"), true);
 
 const melbetMirror = {
   games: [{ ...omskLive, updatedAt: 1_000 }],
@@ -235,6 +252,36 @@ assert.equal(productionLikeBookmakerPageParsed.games[0].team1.shortName, "Krasno
 assert.equal(productionLikeBookmakerPageParsed.games[0].team2.shortName, "Tyumen");
 assert.equal(productionLikeBookmakerPageParsed.games[0].scoreText, "30 : 35");
 
+const currentMenBookmakerPageFixture = `
+<li class="dashboard-game--theme-gray-100 dashboard-game dashboard-champ__game">
+  <div class="dashboard-game-block">
+    <a href="/en/live/basketball/2496666-ipbl-pro-division/730347661-omsk-ukhta" class="dashboard-game-block__link">
+      <span class="ui-team-scores--size-m ui-team-scores--theme-gray-100 ui-team-scores dashboard-game-block__teams">
+        <span class="ui-team-scores__top">
+          <span class="ui-team-scores__teams ui-team-scores-teams">
+            <div class="dashboard-game-team-info dashboard-game-block__team"><div class="ui-team-score-name--nowrap ui-team-score-name"><span class="ui-caption--size-m ui-caption dashboard-game-team-info__name">Omsk</span></div></div>
+            <div class="dashboard-game-team-info dashboard-game-block__team"><div class="ui-team-score-name--nowrap ui-team-score-name"><span class="ui-caption--size-m ui-caption dashboard-game-team-info__name">Ukhta</span></div></div>
+          </span>
+          <div class="ui-scrollbar ui-team-scores__scores ui-team-scores-scores">
+            <span class="ui-game-scores--size-m ui-game-scores--theme-gray-100 ui-game-scores">
+              <span class="ui-game-scores__item ui-game-scores__item--total"><span class="ui-game-scores__num">11</span><span class="ui-game-scores__num">9</span></span>
+              <span class="ui-game-scores__item--current ui-game-scores__item"><span class="ui-game-scores__num">11</span><span class="ui-game-scores__num">9</span></span>
+              <span class="ui-game-scores__item"><span class="ui-game-scores__num">11</span><span class="ui-game-scores__num">9</span></span>
+            </span>
+          </div>
+        </span>
+      </span>
+    </a>
+  </div>
+</li>
+`;
+const currentMenBookmakerPageParsed = parseBookmakerLivePageHtml(currentMenBookmakerPageFixture, 2496666, "https://melbet.com");
+assert.equal(currentMenBookmakerPageParsed.games.length, 1);
+assert.equal(currentMenBookmakerPageParsed.unmatched.length, 0);
+assert.equal(currentMenBookmakerPageParsed.games[0].team1.shortName, "Omsk");
+assert.equal(currentMenBookmakerPageParsed.games[0].team2.shortName, "Ukhta");
+assert.equal(currentMenBookmakerPageParsed.games[0].scoreText, "11 : 9");
+
 const bookmakerSource = { name: "melbet", baseUrl: "https://melbet.com", partner: 8 };
 const rejectedHtml = `
 <li class="dashboard-game--theme-gray-100 dashboard-game dashboard-champ__game">
@@ -281,7 +328,7 @@ globalThis.fetch = async (input: RequestInfo | URL) => {
 };
 try {
   const bookmakerFetchResult = await fetchBookmakerLive();
-  assert.ok(requestedUrls.some((url) => url.includes("1xlite-04954.pro")), "1xbet mirror should use the 1xlite hostname");
+  assert.ok(requestedUrls.some((url) => url.includes("1xlite-85316.pro")), "1xbet mirror should use the working 1xlite hostname");
   assert.ok(bookmakerFetchResult.games.length >= 1);
 } finally {
   globalThis.fetch = originalFetch;
