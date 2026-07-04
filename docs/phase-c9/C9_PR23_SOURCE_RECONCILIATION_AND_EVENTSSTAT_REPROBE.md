@@ -54,7 +54,7 @@ Official source remains `PARTIAL` until row-level reconciliation is implemented 
 
 ## Next implementation tasks
 
-1. Build deterministic reconciliation script for official/live/recorder/result rows.
-2. Add market/selection ID extraction from `eventsstat-live-reprobe.json`.
-3. Add timestamp alignment checks for score-history `SH` versus production game clock.
+1. Keep the deterministic reconciliation runner wired to official/live/recorder/result rows.
+2. Add odds-vs-score divergence features using the parsed market timeline plus the aligned score history.
+3. Add recorder enrichment and retention/write-budget policy before any live odds surface.
 4. Keep odds display/automation disabled until source policy and tests are complete.

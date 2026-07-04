@@ -1,13 +1,14 @@
 :root {
-    --bg: #0a0e27;
-    --surface: #121836;
-    --surface-2: #182043;
-    --text: #eef1ff;
-    --muted: #97a2c7;
-    --border: #2a3358;
-    --accent: #00c076;
-    --warn: #ffb020;
-    --danger: #ff4d4f;
+    --bg: #07111f;
+    --surface: rgba(14, 21, 36, 0.9);
+    --surface-2: rgba(20, 29, 48, 0.95);
+    --surface-3: rgba(27, 38, 61, 0.98);
+    --text: #edf3ff;
+    --muted: #97a5c2;
+    --border: rgba(145, 171, 223, 0.18);
+    --accent: #1fe3a8;
+    --warn: #ffbf47;
+    --danger: #ff6270;
 }
 
 * {
@@ -16,9 +17,24 @@
 
 body {
     margin: 0;
-    background: var(--bg);
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(31, 227, 168, 0.14), transparent 34%),
+        radial-gradient(circle at top right, rgba(79, 108, 255, 0.14), transparent 28%),
+        linear-gradient(180deg, #050913 0%, var(--bg) 36%, #06101c 100%);
     color: var(--text);
-    font-family: system-ui, "Segoe UI", sans-serif;
+    font-family: Inter, "Segoe UI", system-ui, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 18%),
+        radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.08), transparent 42%);
+    opacity: 0.9;
 }
 
 button,
@@ -32,58 +48,251 @@ button {
 }
 
 .console-shell {
-    max-width: 1220px;
+    position: relative;
+    z-index: 1;
+    max-width: 1480px;
     margin: 0 auto;
-    padding: 1rem;
-    padding-bottom: 4rem;
+    padding: 1.25rem clamp(1rem, 2vw, 1.5rem) 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .console-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
     gap: 1rem;
-    align-items: center;
-    margin-bottom: 1rem;
+    align-items: end;
+    padding: 1.2rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(16, 24, 42, 0.92), rgba(9, 16, 28, 0.84));
+    backdrop-filter: blur(18px);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.console-hero-copy {
+    max-width: 72ch;
+}
+
+.console-eyebrow {
+    margin: 0 0 0.45rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.7rem;
+    font-weight: 800;
 }
 
 .console-header h1 {
     margin: 0;
-    font-size: 1.35rem;
+    max-width: 16ch;
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
 }
 
 .console-header p {
-    margin: 0.25rem 0 0;
+    margin: 0.85rem 0 0;
+    max-width: 68ch;
     color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-.refresh-btn,
-.tab-btn,
-.league-toggle button,
-.day-header,
-.close-btn {
-    border: 1px solid var(--border);
-    background: var(--surface);
+.console-hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.console-focus-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    border: 1px solid rgba(31, 227, 168, 0.25);
+    border-radius: 999px;
+    padding: 0.55rem 0.8rem;
+    background: rgba(31, 227, 168, 0.08);
     color: var(--text);
-    border-radius: 10px;
-    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.console-status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.status-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1rem 1rem 0.95rem;
+    background: linear-gradient(180deg, rgba(18, 26, 42, 0.92), rgba(11, 17, 30, 0.96));
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    box-shadow: 0 18px 56px rgba(0, 0, 0, 0.24);
+}
+
+.status-card::before {
+    content: "";
+    height: 4px;
+    width: 100%;
+    border-radius: 999px;
+    margin-bottom: 0.35rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+}
+
+.status-card-live::before {
+    background: linear-gradient(90deg, rgba(31, 227, 168, 0.92), rgba(31, 227, 168, 0.15));
+}
+
+.status-card-results::before {
+    background: linear-gradient(90deg, rgba(255, 191, 71, 0.92), rgba(255, 191, 71, 0.15));
+}
+
+.status-card-scope::before {
+    background: linear-gradient(90deg, rgba(104, 145, 255, 0.92), rgba(104, 145, 255, 0.15));
+}
+
+.status-card-label {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.68rem;
+    font-weight: 800;
+}
+
+.status-card strong {
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+}
+
+.status-card span:last-child {
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.45;
 }
 
 .tab-row {
+    position: sticky;
+    top: 0.75rem;
+    z-index: 4;
     display: flex;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
+    gap: 0.65rem;
+    padding: 0.8rem;
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(8, 13, 22, 0.78);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+}
+
+.tab-btn {
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 0.8rem 1rem;
+    min-height: 44px;
+    white-space: nowrap;
+    transition:
+        background-color 160ms ease,
+        color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+}
+
+.tab-btn:hover {
+    color: var(--text);
+    border-color: rgba(145, 171, 223, 0.24);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .tab-btn.active,
 .league-toggle button.active {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: rgba(31, 227, 168, 0.3);
+    color: var(--text);
+    background: rgba(31, 227, 168, 0.12);
+}
+
+.tab-btn:active,
+.refresh-btn:active,
+.mini-btn:active,
+.calendar-match-open:active,
+.team-history-open:active,
+.card-open-button:active {
+    transform: translateY(1px);
+}
+
+.console-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.console-stage > .tab-panel {
+    padding: 0;
+}
+
+.refresh-btn,
+.league-toggle button,
+.day-header,
+.close-btn {
+    border: 1px solid var(--border);
+    background: rgba(21, 29, 46, 0.95);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 0.72rem 1rem;
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        background-color 160ms ease;
+}
+
+.refresh-btn {
+    min-width: 110px;
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(31, 227, 168, 0.16), rgba(21, 29, 46, 0.96));
+    border-color: rgba(31, 227, 168, 0.24);
+}
+
+.refresh-btn:hover,
+.tab-btn:hover,
+.mini-btn:hover {
+    border-color: rgba(145, 171, 223, 0.34);
+}
+
+.console-header h1,
+.console-header p,
+.console-eyebrow {
+    text-wrap: balance;
+}
+
+.console-shell::after {
+    content: "";
+    position: fixed;
+    inset: auto 0 0;
+    height: 180px;
+    background: linear-gradient(180deg, transparent, rgba(6, 10, 18, 0.94));
+    pointer-events: none;
+    z-index: 0;
 }
 
 .tab-panel {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding: 0.25rem 0 0;
 }
 
 .summary-strip,
@@ -100,9 +309,9 @@ button {
     align-items: center;
     gap: 0.75rem;
     padding: 0.85rem 1rem;
-    border: 1px solid rgba(255, 176, 32, 0.35);
-    border-radius: 14px;
-    background: linear-gradient(135deg, rgba(255, 176, 32, 0.12), rgba(18, 24, 54, 0.96));
+    border: 1px solid rgba(255, 191, 71, 0.28);
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255, 191, 71, 0.12), rgba(18, 24, 54, 0.94));
     color: var(--text);
 }
 
@@ -113,7 +322,7 @@ button {
 .drawer-section {
     border: 1px solid var(--border);
     background: var(--surface);
-    border-radius: 14px;
+    border-radius: 18px;
 }
 
 .metric-box {
@@ -141,6 +350,23 @@ button {
     padding: 1rem;
     text-align: left;
     color: var(--text);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        background-color 160ms ease;
+}
+
+.operator-card:hover,
+.betting-match:hover,
+.day-block:hover,
+.team-profile-header:hover,
+.team-section-card:hover {
+    border-color: rgba(31, 227, 168, 0.24);
+}
+
+.operator-card:hover {
+    transform: translateY(-2px);
 }
 
 .card-open-button,
@@ -161,8 +387,8 @@ button {
 }
 
 .mini-btn {
-    border: 1px solid var(--border);
-    background: var(--surface-2);
+    border: 1px solid rgba(145, 171, 223, 0.16);
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text);
     border-radius: 999px;
     padding: 0.35rem 0.7rem;
@@ -286,7 +512,7 @@ button {
 .results-controls input,
 .results-controls select {
     border: 1px solid var(--border);
-    background: var(--surface-2);
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text);
     border-radius: 8px;
     padding: 0.6rem 0.75rem;
@@ -328,7 +554,7 @@ button {
 
 .calendar-toolbar input {
     border: 1px solid var(--border);
-    background: var(--surface-2);
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text);
     border-radius: 8px;
     padding: 0.65rem 0.75rem;
@@ -337,7 +563,7 @@ button {
 .calendar-toolbar select,
 .live-controls select {
     border: 1px solid var(--border);
-    background: var(--surface-2);
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text);
     border-radius: 8px;
     padding: 0.65rem 0.75rem;
@@ -367,7 +593,7 @@ button {
 .day-block {
     border: 1px solid var(--border);
     background: var(--surface);
-    border-radius: 14px;
+    border-radius: 18px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -380,7 +606,7 @@ button {
     font-size: 1rem;
     position: sticky;
     top: 0;
-    background: var(--surface);
+    background: linear-gradient(180deg, rgba(14, 21, 36, 0.98), rgba(14, 21, 36, 0.78));
     padding-bottom: 0.25rem;
 }
 
@@ -409,7 +635,7 @@ button {
 
 .calendar-match-row {
     border: 1px solid var(--border);
-    background: var(--surface-2);
+    background: rgba(255, 255, 255, 0.03);
     color: var(--text);
     border-radius: 10px;
     padding: 0.75rem;
@@ -463,7 +689,7 @@ button {
 
 .betting-controls input {
     border: 1px solid var(--border);
-    background: var(--surface-2);
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text);
     border-radius: 8px;
     padding: 0.65rem 0.75rem;
@@ -473,7 +699,7 @@ button {
 .betting-match {
     border: 1px solid var(--border);
     background: var(--surface);
-    border-radius: 14px;
+    border-radius: 18px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -501,7 +727,7 @@ button {
 
 .betting-bet-row {
     border: 1px solid var(--border);
-    background: var(--surface-2);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
     padding: 0.65rem 0.75rem;
     display: grid;
@@ -593,7 +819,8 @@ button {
 .drawer-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(4, 8, 15, 0.72);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: flex-end;
     z-index: 50;
@@ -603,7 +830,7 @@ button {
     width: min(480px, 100%);
     height: 100%;
     overflow-y: auto;
-    background: var(--surface-2);
+    background: linear-gradient(180deg, rgba(14, 21, 36, 0.98), rgba(10, 16, 28, 0.98));
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -616,6 +843,7 @@ button {
 
 .drawer-section {
     padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .drawer-section h3 {
@@ -698,8 +926,19 @@ button {
 }
 
 @media (max-width: 780px) {
-
     .console-header,
+    .console-status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .console-header {
+        align-items: start;
+    }
+
+    .console-hero-actions {
+        align-items: flex-start;
+    }
+
     .card-head,
     .score-row,
     .drawer-head,
@@ -716,6 +955,10 @@ button {
     .result-meta,
     .score-meta {
         text-align: left;
+    }
+
+    .tab-row {
+        position: static;
     }
 }
 .live-clock {

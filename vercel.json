@@ -15,6 +15,14 @@
       "destination": "/api/results.ts"
     },
     {
+      "source": "/api/predictions/live",
+      "destination": "/api/predictions/live.ts"
+    },
+    {
+      "source": "/api/gen-analysis",
+      "destination": "/api/gen-analysis.ts"
+    },
+    {
       "source": "/api/admin/backfill-results",
       "destination": "/api/admin/backfill-results.ts"
     },
@@ -41,6 +49,10 @@
     {
       "source": "/api/ipbl/team/games",
       "destination": "/api/ipbl/team/games.ts"
+    },
+    {
+      "source": "/api/recorder",
+      "destination": "/api/recorder.ts"
     },
     {
       "source": "/api/recorder/status",

@@ -28,7 +28,7 @@ https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=<gameId>&coefV
 The response envelope contains `Value.EG` and `Value.SH`:
 
 - `EG`: odds/event graph series. Each series includes market metadata under `E` and odds prices under `C`.
-- `SH`: score history series. Exact score timestamp semantics require deeper schema extraction before production ingestion.
+- `SH`: score history series. The repo now extracts deterministic timestamp-aligned score points from `DtUpdate` plus period/score deltas, but this remains an evidence contract rather than a live odds feature.
 
 ## Initial C9 types
 
@@ -36,6 +36,8 @@ The response envelope contains `Value.EG` and `Value.SH`:
 - `ScoreHistoryPoint`
 - `MarketSeries`
 - `SelectionSeries` (planned)
+- `MarketSelectionPoint`
+- `ScoreHistoryAlignmentPoint`
 - `ScoreDeltaEvent` (planned)
 - `LeadChangeEvent` (planned)
 - `QuarterRunEvent` (planned)

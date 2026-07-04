@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { ACTIVE_TEAMS, TEAM_STATISTICS_DIVISIONS, teamsForDivision } from '../src/config/teams.ts';
-import { LIVE_DIVISION_TAGS } from '../src/config/divisions.ts';
+import { ACTIVE_TEAMS } from '../src/config/teams.ts';
+import { buildTeamStatisticsReconciliation } from '../lib/server/team-statistics-reconciliation.ts';
 
 const args = new Map();
 for (let i = 2; i < process.argv.length; i += 1) {
@@ -68,19 +68,6 @@ function quarterCount(fullScore) {
   return String(fullScore ?? '').split(/[,;|]/).map((p) => scorePair(p)).filter(Boolean).slice(0, 4).length;
 }
 
-const registry = {
-  divisionCount: TEAM_STATISTICS_DIVISIONS.length,
-  liveDivisionCount: LIVE_DIVISION_TAGS.length,
-  teamCount: ACTIVE_TEAMS.length,
-  uniqueTeamCount: new Set(ACTIVE_TEAMS.map((team) => team.teamId)).size,
-  divisions: TEAM_STATISTICS_DIVISIONS.map((division) => ({
-    tag: division.tag,
-    label: division.label,
-    expectedTeamCount: division.tag === 'ipbl-66-m-pro-z' ? 2 : 4,
-    actualTeamCount: teamsForDivision(division.tag).length,
-  })),
-};
-
 const teamResults = await mapLimit(ACTIVE_TEAMS, 6, async (team) => {
   const url = `${base}/api/teams/history?${new URLSearchParams({ teamId: String(team.teamId), tag: team.divisionTag, season: String(season), source: 'team-stats-reconciliation' })}`;
   const result = await fetchJson(url);
@@ -114,50 +101,14 @@ const teamResults = await mapLimit(ACTIVE_TEAMS, 6, async (team) => {
   };
 });
 
-const divisionSummary = registry.divisions.map((division) => {
-  const teams = teamResults.filter((team) => team.divisionTag === division.tag);
-  return {
-    ...division,
-    okTeams: teams.filter((team) => team.ok).length,
-    teamsWithHistory: teams.filter((team) => Number(team.completedCount) > 0).length,
-    teamsWithQuarterMatrix: teams.filter((team) => Number(team.quarterMatrixCount) > 0).length,
-    sources: [...new Set(teams.map((team) => team.source).filter(Boolean))],
-  };
-});
-
-const failures = [];
-if (registry.divisionCount !== 12 || registry.liveDivisionCount !== 12) failures.push('division_count_not_12');
-if (registry.teamCount !== 46 || registry.uniqueTeamCount !== 46) failures.push('team_count_not_46');
-for (const division of divisionSummary) {
-  if (division.actualTeamCount !== division.expectedTeamCount) failures.push(`team_count_mismatch:${division.tag}`);
-  if (division.okTeams !== division.actualTeamCount) failures.push(`history_fetch_failure:${division.tag}`);
-  if (division.teamsWithHistory === 0) failures.push(`no_history:${division.tag}`);
-}
-
-const summary = {
-  generatedAt: new Date().toISOString(),
+const { summary } = buildTeamStatisticsReconciliation(teamResults, {
   base,
   season,
   timeoutMs,
   retries,
-  registry,
-  divisionSummary,
-  totals: {
-    teamsChecked: teamResults.length,
-    okTeams: teamResults.filter((team) => team.ok).length,
-    teamsWithHistory: teamResults.filter((team) => Number(team.completedCount) > 0).length,
-    teamsWithQuarterMatrix: teamResults.filter((team) => Number(team.quarterMatrixCount) > 0).length,
-  },
-  classification: failures.length === 0 ? 'RECONCILED' : 'PARTIAL',
-  failures,
-  policy: {
-    oddsDeploymentAllowed: false,
-    productionMutation: false,
-    sourceModel: 'Results KV + official online + recent official daily calendar windows',
-  },
-};
+});
 
 await fs.mkdir(path.dirname(outPath), { recursive: true });
 await fs.writeFile(outPath, JSON.stringify({ summary, teams: teamResults }, null, 2) + '\n');
 console.log(JSON.stringify(summary, null, 2));
-if (failures.length > 0 && args.get('--strict') === true) process.exit(2);
+if (summary.failures.length > 0 && args.get('--strict') === true) process.exit(2);

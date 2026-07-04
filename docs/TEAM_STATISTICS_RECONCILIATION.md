@@ -13,8 +13,8 @@ Results KV historical months
 
 ## Boundary
 
-- 12 approved live divisions.
-- 46 verified current teams.
+- 13 approved live divisions.
+- 50 verified current teams.
 - Pro Men Z currently has the two verified official teams Anapa and Magadan.
 - Historical Pro Men G may remain in Results storage code for old months only; it is not part of the current live Team Statistics boundary.
 
