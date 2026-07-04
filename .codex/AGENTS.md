@@ -5,13 +5,17 @@ This supplements the root `AGENTS.md` with a repo-local ECC baseline.
 ## Repo Skill
 
 - Repo-generated Codex skill: `.agents/skills/ipbl/SKILL.md`
-- Claude-facing companion skill: `.claude/skills/ipbl/SKILL.md`
-- Keep user-specific credentials and private MCPs in `~/.codex/config.toml`, not in this repo.
+- Claude-facing companion skill: the repo's Claude workspace companion skill, if present
+- Keep user-specific credentials and private MCPs in the user Codex config, not in this repo.
 
 ## MCP Baseline
 
 Treat `.codex/config.toml` as the default ECC-safe baseline for work in this repository.
 The generated baseline enables GitHub, Context7, Exa, Memory, Playwright, and Sequential Thinking.
+
+## Precedence
+
+This file is subordinate to the repository root `AGENTS.md` and only narrows guidance for the `.codex/` subtree.
 
 ## Closure Workflows
 

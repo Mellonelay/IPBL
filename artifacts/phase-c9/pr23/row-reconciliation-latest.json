@@ -1,19 +1,19 @@
 {
   "summary": {
-    "capturedAt": "2026-06-20T14:22:44.229Z",
+    "capturedAt": "2026-07-04T05:54:12.207Z",
     "endpoints": {
       "officialLivePage": {
         "url": "https://ipbl.pro/live",
-        "http": null,
-        "ok": false,
-        "bytes": null,
-        "error": "TypeError: fetch failed",
-        "contentType": null
+        "http": 200,
+        "ok": true,
+        "bytes": 79534,
+        "error": null,
+        "contentType": "text/html; charset=UTF-8"
       },
       "officialCalendar": {
         "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
-        "http": null,
-        "ok": false,
+        "http": 200,
+        "ok": true,
         "bytes": null,
         "error": null,
         "contentType": null,
@@ -21,138 +21,147 @@
           {
             "label": "officialCalendar-ipbl-66-m-pro-a",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-b",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-c",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 2027,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-d",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 2071,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-u",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-z",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-z&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-m-pro-l",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-l&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-a",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-b",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 2002,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-c",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-d",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-g",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           },
           {
             "label": "officialCalendar-ipbl-66-w-pro-k",
             "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 238,
+            "error": null
           }
         ]
       },
       "productionLive": {
-        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781965364053",
-        "http": null,
-        "ok": false,
-        "bytes": null,
-        "error": "TypeError: fetch failed",
-        "contentType": null
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1783144437263",
+        "http": 200,
+        "ok": true,
+        "bytes": 1779,
+        "error": null,
+        "contentType": "application/json; charset=utf-8"
       },
       "recorderStatus": {
         "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
-        "http": null,
-        "ok": false,
-        "bytes": null,
-        "error": "TypeError: fetch failed",
-        "contentType": null
+        "http": 200,
+        "ok": true,
+        "bytes": 1479,
+        "error": null,
+        "contentType": "application/json; charset=utf-8"
       },
       "recorderHistory": {
         "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
-        "http": null,
-        "ok": false,
+        "http": 200,
+        "ok": true,
         "bytes": null,
         "error": null,
         "contentType": null,
-        "components": []
+        "components": [
+          {
+            "label": "recorderHistory-ipbl-66-w-pro-b-733887284",
+            "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-w-pro-b&gameId=733887284&limit=5",
+            "http": 200,
+            "ok": true,
+            "bytes": 6625,
+            "error": null
+          }
+        ]
       },
       "melbetLiveDiscovery": {
         "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
-        "http": null,
-        "ok": false,
+        "http": 200,
+        "ok": true,
         "bytes": null,
         "error": null,
         "contentType": null,
@@ -160,228 +169,4072 @@
           {
             "label": "melbetLive-2496666",
             "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 1599,
+            "error": null
           },
           {
             "label": "melbetLive-2496667",
             "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-            "http": null,
-            "ok": false,
-            "bytes": null,
-            "error": "TypeError: fetch failed"
+            "http": 200,
+            "ok": true,
+            "bytes": 1660,
+            "error": null
           }
         ]
       }
     },
     "rowCounts": {
-      "officialCalendar": 0,
-      "productionLive": 0,
-      "recorderHistory": 0
+      "officialCalendar": 3,
+      "productionLive": 1,
+      "recorderHistory": 5
     },
-    "activeProductionGameIds": [],
-    "melbetLiveCandidateCount": 0,
-    "melbetCandidateIds": [],
-    "melbetMatchedActiveProduction": [],
-    "deterministicTeamPairEvidence": [],
-    "eventsstatProbeMode": "skipped-no-active-production-games",
-    "eventsstatProbeIds": [],
-    "eventsstatProven": false,
-    "activeMatchedEventsstatProven": false,
-    "activeMatchedEventsstatProofs": [],
-    "partner8Proven": false,
-    "partner25Proven": false,
+    "activeProductionGameIds": [
+      "733887284"
+    ],
+    "melbetLiveCandidateCount": 2,
+    "melbetCandidateIds": [
+      "733888321",
+      "733887284"
+    ],
+    "melbetMatchedActiveProduction": [
+      {
+        "productionGameId": "733887284",
+        "productionDivisionTag": "ipbl-66-w-pro-b",
+        "melbetGameId": "733887284",
+        "productionTeams": [
+          "Cheboksary",
+          "Tambov"
+        ],
+        "melbetTeams": [
+          "Cheboksary (Women)",
+          "Tambov (Women)"
+        ],
+        "matchMode": "direct-team-pair"
+      }
+    ],
+    "deterministicTeamPairEvidence": [
+      {
+        "productionGameId": "733887284",
+        "productionDivisionTag": "ipbl-66-w-pro-b",
+        "melbetGameId": "733887284",
+        "productionTeams": [
+          "Cheboksary",
+          "Tambov"
+        ],
+        "melbetTeams": [
+          "Cheboksary (Women)",
+          "Tambov (Women)"
+        ],
+        "matchMode": "direct-team-pair",
+        "eventsstatProven": true,
+        "requiredForOddsGate": true
+      }
+    ],
+    "eventsstatProbeMode": "active-production-games-with-melbet-live-discovery",
+    "eventsstatProbeIds": [
+      "733887284",
+      "733888321"
+    ],
+    "eventsstatProven": true,
+    "activeMatchedEventsstatProven": true,
+    "activeMatchedEventsstatProofs": [
+      {
+        "productionGameId": "733887284",
+        "productionDivisionTag": "ipbl-66-w-pro-b",
+        "melbetGameId": "733887284",
+        "productionTeams": [
+          "Cheboksary",
+          "Tambov"
+        ],
+        "melbetTeams": [
+          "Cheboksary (Women)",
+          "Tambov (Women)"
+        ],
+        "matchMode": "direct-team-pair"
+      }
+    ],
+    "partner8Proven": true,
+    "partner25Proven": true,
     "oddsImplementationGate": {
       "requiresActiveMatchedEventsstatProven": true,
-      "activeMatchedEventsstatProven": false,
-      "passed": false,
-      "blocksOddsImplementation": true
+      "activeMatchedEventsstatProven": true,
+      "passed": true,
+      "blocksOddsImplementation": false
     },
     "reconciliation": {
       "primarySource": "productionLive",
-      "matchCount": 0,
+      "matchCount": 1,
       "missingCount": 0,
-      "mismatchCount": 0,
+      "mismatchCount": 2,
       "classification": "PARTIAL"
     },
     "oddsDeploymentAllowed": false,
-    "oddsDeploymentBlockReason": "PR23 is reconciliation/proof only; live odds deployment requires activeMatchedEventsstatProven=true, row-level reconciliation, source policy, and tests."
+    "oddsDeploymentBlockReason": "PR23 proves active matched EG/SH/DS but remains reconciliation/proof only; odds implementation still requires separate approved scope, parser policy, tests, and review."
   },
   "fetched": {
     "officialLivePage": {
       "label": "officialLivePage",
       "url": "https://ipbl.pro/live",
-      "capturedAt": "2026-06-20T14:22:44.183Z",
-      "ok": false,
-      "error": "TypeError: fetch failed"
+      "capturedAt": "2026-07-04T05:53:57.867Z",
+      "http": 200,
+      "ok": true,
+      "bytes": 79534,
+      "contentType": "text/html; charset=UTF-8",
+      "json": null,
+      "preview": "<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\" /> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /> <!--metatextblock--> <title>Прямые трансляции | IPBL</title> <meta property=\"og:url\" content=\"https://ipbl.pro/live\" /> <meta property=\"og:title\" content=\"Прямые трансляции | IPBL\" /> <meta property=\"og:description\" content=\"\" /> <meta property=\"og:type\" content=\"website\" /> <link rel=\"canonical\" href=\"https://ipbl.pro/live\"> <!--/metatextblock--> <meta name=\"format-detection\" content=\"telephone=no\" /> <meta http-equiv=\"x-dns-prefetch-control\" content=\"on\"> <link rel=\"dns-prefetch\" href=\"https://ws.tildacdn.com\"> <link rel=\"dns-prefetch\" href=\"https://static.tildacdn.com\"> <!--favicons--> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3638-3630-4735-b264-386461326231/logo_gray.svg\" media=\"(prefers-color-scheme: light)\"/> <link rel=\"icon\" type=\"image/x-icon\" sizes=\"32x32\" href=\"https://static.tildacdn.com/tild3731-3163-4436-b066-393065323337/logo_white.svg\" media=\"(prefers-color-scheme: dark)\"/> <!--/favicons--> <!-- Assets --> <script src=\"https:"
     },
     "officialCalendar": {
       "label": "officialCalendar",
       "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
-      "capturedAt": "2026-06-20T14:22:44.227Z",
-      "ok": false,
-      "http": null,
+      "capturedAt": "2026-07-04T05:54:10.389Z",
+      "ok": true,
+      "http": 200,
       "components": [
         {
           "label": "officialCalendar-ipbl-66-m-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.184Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:53:58.562Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-a&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-a&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.192Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:53:59.463Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-b&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-b&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.199Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:00.966Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 2027,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 1,
+              "items": [
+                {
+                  "game": {
+                    "gameStatus": "Online",
+                    "showScore": true,
+                    "score1": 87,
+                    "score2": 76,
+                    "score": "87:76",
+                    "fullScore": null,
+                    "periods": 4,
+                    "attendance": 0,
+                    "number": "002",
+                    "finalTime": null,
+                    "startTime": null,
+                    "scheduledTime": "2026-02-09T22:00:00+05:00",
+                    "defaultZoneDateTime": "2026-02-09T20:00:00+03:00",
+                    "localDate": "09.02.2026",
+                    "localTime": "22:00",
+                    "defaultZoneTime": "20:00",
+                    "hasTime": true,
+                    "regionId": 8,
+                    "arenaId": 26097,
+                    "compTeam1Id": 557124,
+                    "compTeam2Id": 557125,
+                    "tv": null,
+                    "video": null,
+                    "videoId": null,
+                    "id": 1024850
+                  },
+                  "comp": {
+                    "id": 1301526,
+                    "compType": "OneGame",
+                    "name": "IPBL: PRO Division (МУЖЧИНЫ)",
+                    "abcName": "1/2-2",
+                    "level": 10,
+                    "season": 2026,
+                    "tag": null,
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "league": {
+                    "id": 1262959,
+                    "compType": "League",
+                    "name": "Division C",
+                    "abcName": "IPBL",
+                    "level": 7,
+                    "season": 2026,
+                    "tag": "ipbl-66-m-pro-c",
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "gender": 1,
+                  "status": {
+                    "icon": "fa-solid fa-play color-darkgreen ",
+                    "id": "Online",
+                    "displayName": "Онлайн"
+                  },
+                  "region": {
+                    "regionType": "RegionCapital",
+                    "timeZoneId": "Ekaterinburg Standard Time",
+                    "name": "Екатеринбург",
+                    "countryId": "RU",
+                    "id": 8
+                  },
+                  "arena": {
+                    "shortName": "БЦ \"Манеж\" Мужской Зал",
+                    "name": "БЦ \"Манеж\" Мужской Зал",
+                    "regionId": 8,
+                    "id": 26097
+                  },
+                  "team1": {
+                    "teamId": 76059,
+                    "start": 1,
+                    "label": "IPBL66",
+                    "abcName": "Vorone",
+                    "name": "Voronezh",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Voronezh",
+                    "logo": "https://img.infobasket.su/logo/62413.png",
+                    "arenaId": null,
+                    "id": 557124
+                  },
+                  "team2": {
+                    "teamId": 76060,
+                    "start": 2,
+                    "label": "IPBL66",
+                    "abcName": "Plavsk",
+                    "name": "Plavsk",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Plavsk",
+                    "logo": "https://img.infobasket.su/logo/62414.png",
+                    "arenaId": null,
+                    "id": 557125
+                  },
+                  "ot": "",
+                  "distanceIndex": -1,
+                  "period": null,
+                  "timeToGo": null,
+                  "timeIsGo": null,
+                  "hasCoefficients": false,
+                  "photoUrl": null,
+                  "division": "Pro Division"
+                }
+              ],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-c&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"Online\",\"showScore\":true,\"score1\":87,\"score2\":76,\"score\":\"87:76\",\"fullScore\":null,\"periods\":4,\"attendance\":0,\"number\":\"002\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-02-09T22:00:00+05:00\",\"defaultZoneDateTime\":\"2026-02-09T20:00:00+03:00\",\"localDate\":\"09.02.2026\",\"localTime\":\"22:00\",\"defaultZoneTime\":\"20:00\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26097,\"compTeam1Id\":557124,\"compTeam2Id\":557125,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1024850},\"comp\":{\"id\":1301526,\"compType\":\"OneGame\",\"name\":\"IPBL: PRO Division (МУЖЧИНЫ)\",\"abcName\":\"1/2-2\",\"level\":10,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1262959,\"compType\":\"League\",\"name\":\"Division C\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-m-pro-c\",\"logo\":\"\",\"isActual\":true},\"gender\":1,\"status\":{\"icon\":\"fa-solid fa-play color-darkgreen \",\"id\":\"Online\",\"displayName\":\"Онлайн\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"name\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"regionId\":8,\"id"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.205Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:01.931Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 2071,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 1,
+              "items": [
+                {
+                  "game": {
+                    "gameStatus": "ResultWaiting",
+                    "showScore": true,
+                    "score1": 132,
+                    "score2": 135,
+                    "score": "132:135",
+                    "fullScore": null,
+                    "periods": 4,
+                    "attendance": 0,
+                    "number": "020",
+                    "finalTime": null,
+                    "startTime": null,
+                    "scheduledTime": "2026-02-02T08:00:00+05:00",
+                    "defaultZoneDateTime": "2026-02-02T06:00:00+03:00",
+                    "localDate": "02.02.2026",
+                    "localTime": "08:00",
+                    "defaultZoneTime": "06:00",
+                    "hasTime": true,
+                    "regionId": 8,
+                    "arenaId": 26097,
+                    "compTeam1Id": 553363,
+                    "compTeam2Id": 553362,
+                    "tv": null,
+                    "video": null,
+                    "videoId": null,
+                    "id": 1022276
+                  },
+                  "comp": {
+                    "id": 1297670,
+                    "compType": "OneGame",
+                    "name": "Финал за 3 место",
+                    "abcName": "Ф3",
+                    "level": 11,
+                    "season": 2026,
+                    "tag": null,
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "league": {
+                    "id": 1262990,
+                    "compType": "League",
+                    "name": "Division D",
+                    "abcName": "IPBL",
+                    "level": 7,
+                    "season": 2026,
+                    "tag": "ipbl-66-m-pro-d",
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "gender": 1,
+                  "status": {
+                    "icon": "fa-solid fa-circle-play color-orange ",
+                    "id": "ResultWaiting",
+                    "displayName": "Завершена"
+                  },
+                  "region": {
+                    "regionType": "RegionCapital",
+                    "timeZoneId": "Ekaterinburg Standard Time",
+                    "name": "Екатеринбург",
+                    "countryId": "RU",
+                    "id": 8
+                  },
+                  "arena": {
+                    "shortName": "БЦ \"Манеж\" Мужской Зал",
+                    "name": "БЦ \"Манеж\" Мужской Зал",
+                    "regionId": 8,
+                    "id": 26097
+                  },
+                  "team1": {
+                    "teamId": 76068,
+                    "start": 1,
+                    "label": "IPBL66",
+                    "abcName": "Krasno",
+                    "name": "Krasnoyarsk",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Krasnoyarsk",
+                    "logo": "https://img.infobasket.su/logo/62422.png",
+                    "arenaId": null,
+                    "id": 553363
+                  },
+                  "team2": {
+                    "teamId": 76067,
+                    "start": 2,
+                    "label": "IPBL66",
+                    "abcName": "Nizhni",
+                    "name": "NizhniyNovgorod",
+                    "regionName": "Екатеринбург",
+                    "shortName": "NizhniyNovgorod",
+                    "logo": "https://img.infobasket.su/logo/62421.png",
+                    "arenaId": null,
+                    "id": 553362
+                  },
+                  "ot": "",
+                  "distanceIndex": 152,
+                  "period": null,
+                  "timeToGo": null,
+                  "timeIsGo": null,
+                  "hasCoefficients": false,
+                  "photoUrl": null,
+                  "division": "Pro Division"
+                }
+              ],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-d&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"ResultWaiting\",\"showScore\":true,\"score1\":132,\"score2\":135,\"score\":\"132:135\",\"fullScore\":null,\"periods\":4,\"attendance\":0,\"number\":\"020\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-02-02T08:00:00+05:00\",\"defaultZoneDateTime\":\"2026-02-02T06:00:00+03:00\",\"localDate\":\"02.02.2026\",\"localTime\":\"08:00\",\"defaultZoneTime\":\"06:00\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26097,\"compTeam1Id\":553363,\"compTeam2Id\":553362,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1022276},\"comp\":{\"id\":1297670,\"compType\":\"OneGame\",\"name\":\"Финал за 3 место\",\"abcName\":\"Ф3\",\"level\":11,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1262990,\"compType\":\"League\",\"name\":\"Division D\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-m-pro-d\",\"logo\":\"\",\"isActual\":true},\"gender\":1,\"status\":{\"icon\":\"fa-solid fa-circle-play color-orange \",\"id\":\"ResultWaiting\",\"displayName\":\"Завершена\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"name\":\"БЦ \\\"Манеж\\\" Мужской Зал\",\"regio"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-u",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.209Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:02.588Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-u&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-u&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-z",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-z&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.211Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:03.505Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-z&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-z&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         },
         {
           "label": "officialCalendar-ipbl-66-m-pro-l",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-l&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.213Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:04.412Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-l&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-m-pro-l&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.215Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:05.127Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-a&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-a&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.218Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:06.082Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 2002,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 1,
+              "items": [
+                {
+                  "game": {
+                    "gameStatus": "Online",
+                    "showScore": false,
+                    "score1": 85,
+                    "score2": 84,
+                    "score": "85:84",
+                    "fullScore": null,
+                    "periods": 4,
+                    "attendance": null,
+                    "number": "003",
+                    "finalTime": null,
+                    "startTime": null,
+                    "scheduledTime": "2026-07-04T10:05:00+05:00",
+                    "defaultZoneDateTime": "2026-07-04T08:05:00+03:00",
+                    "localDate": "04.07.2026",
+                    "localTime": "10:05",
+                    "defaultZoneTime": "08:05",
+                    "hasTime": true,
+                    "regionId": 8,
+                    "arenaId": 26098,
+                    "compTeam1Id": 620358,
+                    "compTeam2Id": 620360,
+                    "tv": null,
+                    "video": null,
+                    "videoId": null,
+                    "id": 1075495
+                  },
+                  "comp": {
+                    "id": 1401161,
+                    "compType": "RoundRobin",
+                    "name": "04.07.2026",
+                    "abcName": "04.07.",
+                    "level": 10,
+                    "season": 2026,
+                    "tag": null,
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "league": {
+                    "id": 1262773,
+                    "compType": "League",
+                    "name": "Division B",
+                    "abcName": "IPBL",
+                    "level": 7,
+                    "season": 2026,
+                    "tag": "ipbl-66-w-pro-b",
+                    "logo": "",
+                    "isActual": true
+                  },
+                  "gender": 2,
+                  "status": {
+                    "icon": "fa-solid fa-play color-darkgreen ",
+                    "id": "Online",
+                    "displayName": "Live"
+                  },
+                  "region": {
+                    "regionType": "RegionCapital",
+                    "timeZoneId": "Ekaterinburg Standard Time",
+                    "name": "Екатеринбург",
+                    "countryId": "RU",
+                    "id": 8
+                  },
+                  "arena": {
+                    "shortName": "БЦ \"Манеж\" Женский Зал",
+                    "name": "БЦ \"Манеж\" Женский Зал",
+                    "regionId": 8,
+                    "id": 26098
+                  },
+                  "team1": {
+                    "teamId": 76012,
+                    "start": 1,
+                    "label": "IPBL66",
+                    "abcName": "Chebok",
+                    "name": "Cheboksary",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Cheboksary",
+                    "logo": "https://img.infobasket.su/logo/62463.png",
+                    "arenaId": null,
+                    "id": 620358
+                  },
+                  "team2": {
+                    "teamId": 76014,
+                    "start": 3,
+                    "label": "IPBL66",
+                    "abcName": "Tambov",
+                    "name": "Tambov",
+                    "regionName": "Екатеринбург",
+                    "shortName": "Tambov",
+                    "logo": "https://img.infobasket.su/logo/62465.png",
+                    "arenaId": null,
+                    "id": 620360
+                  },
+                  "ot": "",
+                  "distanceIndex": -1,
+                  "period": 4,
+                  "timeToGo": "1.47",
+                  "timeIsGo": 1,
+                  "hasCoefficients": false,
+                  "photoUrl": null,
+                  "division": "Pro Division"
+                }
+              ],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-b&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":1,\"items\":[{\"game\":{\"gameStatus\":\"Online\",\"showScore\":false,\"score1\":85,\"score2\":84,\"score\":\"85:84\",\"fullScore\":null,\"periods\":4,\"attendance\":null,\"number\":\"003\",\"finalTime\":null,\"startTime\":null,\"scheduledTime\":\"2026-07-04T10:05:00+05:00\",\"defaultZoneDateTime\":\"2026-07-04T08:05:00+03:00\",\"localDate\":\"04.07.2026\",\"localTime\":\"10:05\",\"defaultZoneTime\":\"08:05\",\"hasTime\":true,\"regionId\":8,\"arenaId\":26098,\"compTeam1Id\":620358,\"compTeam2Id\":620360,\"tv\":null,\"video\":null,\"videoId\":null,\"id\":1075495},\"comp\":{\"id\":1401161,\"compType\":\"RoundRobin\",\"name\":\"04.07.2026\",\"abcName\":\"04.07.\",\"level\":10,\"season\":2026,\"tag\":null,\"logo\":\"\",\"isActual\":true},\"league\":{\"id\":1262773,\"compType\":\"League\",\"name\":\"Division B\",\"abcName\":\"IPBL\",\"level\":7,\"season\":2026,\"tag\":\"ipbl-66-w-pro-b\",\"logo\":\"\",\"isActual\":true},\"gender\":2,\"status\":{\"icon\":\"fa-solid fa-play color-darkgreen \",\"id\":\"Online\",\"displayName\":\"Live\"},\"region\":{\"regionType\":\"RegionCapital\",\"timeZoneId\":\"Ekaterinburg Standard Time\",\"name\":\"Екатеринбург\",\"countryId\":\"RU\",\"id\":8},\"arena\":{\"shortName\":\"БЦ \\\"Манеж\\\" Женский Зал\",\"name\":\"БЦ \\\"Манеж\\\" Женский Зал\",\"regionId\":8,\"id\":26098},\"te"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.220Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:07.036Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-c&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-c&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.223Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:07.925Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-d&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-d&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-g",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.225Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:09.643Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-g&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-g&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         },
         {
           "label": "officialCalendar-ipbl-66-w-pro-k",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
-          "capturedAt": "2026-06-20T14:22:44.227Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:54:10.389Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "contentType": "application/json",
+          "json": {
+            "data": {
+              "index": 0,
+              "status": "Ok",
+              "message": null,
+              "totalCount": 0,
+              "items": [],
+              "url": "https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-k&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026"
+            }
+          },
+          "preview": "{\"data\":{\"index\":0,\"status\":\"Ok\",\"message\":null,\"totalCount\":0,\"items\":[],\"url\":\"https://ipbl.sportoteka.org/api/abc/comps/calendar?tag=ipbl-66-w-pro-k&lang=ru&CalendarType=2&Sorting=game.scheduledTime+asc&MaxResultCount=10&Season=2026\"}}"
         }
       ],
       "json": {
-        "games": []
+        "games": [
+          {
+            "game": {
+              "gameStatus": "Online",
+              "showScore": true,
+              "score1": 87,
+              "score2": 76,
+              "score": "87:76",
+              "fullScore": null,
+              "periods": 4,
+              "attendance": 0,
+              "number": "002",
+              "finalTime": null,
+              "startTime": null,
+              "scheduledTime": "2026-02-09T22:00:00+05:00",
+              "defaultZoneDateTime": "2026-02-09T20:00:00+03:00",
+              "localDate": "09.02.2026",
+              "localTime": "22:00",
+              "defaultZoneTime": "20:00",
+              "hasTime": true,
+              "regionId": 8,
+              "arenaId": 26097,
+              "compTeam1Id": 557124,
+              "compTeam2Id": 557125,
+              "tv": null,
+              "video": null,
+              "videoId": null,
+              "id": 1024850
+            },
+            "comp": {
+              "id": 1301526,
+              "compType": "OneGame",
+              "name": "IPBL: PRO Division (МУЖЧИНЫ)",
+              "abcName": "1/2-2",
+              "level": 10,
+              "season": 2026,
+              "tag": null,
+              "logo": "",
+              "isActual": true
+            },
+            "league": {
+              "id": 1262959,
+              "compType": "League",
+              "name": "Division C",
+              "abcName": "IPBL",
+              "level": 7,
+              "season": 2026,
+              "tag": "ipbl-66-m-pro-c",
+              "logo": "",
+              "isActual": true
+            },
+            "gender": 1,
+            "status": {
+              "icon": "fa-solid fa-play color-darkgreen ",
+              "id": "Online",
+              "displayName": "Онлайн"
+            },
+            "region": {
+              "regionType": "RegionCapital",
+              "timeZoneId": "Ekaterinburg Standard Time",
+              "name": "Екатеринбург",
+              "countryId": "RU",
+              "id": 8
+            },
+            "arena": {
+              "shortName": "БЦ \"Манеж\" Мужской Зал",
+              "name": "БЦ \"Манеж\" Мужской Зал",
+              "regionId": 8,
+              "id": 26097
+            },
+            "team1": {
+              "teamId": 76059,
+              "start": 1,
+              "label": "IPBL66",
+              "abcName": "Vorone",
+              "name": "Voronezh",
+              "regionName": "Екатеринбург",
+              "shortName": "Voronezh",
+              "logo": "https://img.infobasket.su/logo/62413.png",
+              "arenaId": null,
+              "id": 557124
+            },
+            "team2": {
+              "teamId": 76060,
+              "start": 2,
+              "label": "IPBL66",
+              "abcName": "Plavsk",
+              "name": "Plavsk",
+              "regionName": "Екатеринбург",
+              "shortName": "Plavsk",
+              "logo": "https://img.infobasket.su/logo/62414.png",
+              "arenaId": null,
+              "id": 557125
+            },
+            "ot": "",
+            "distanceIndex": -1,
+            "period": null,
+            "timeToGo": null,
+            "timeIsGo": null,
+            "hasCoefficients": false,
+            "photoUrl": null,
+            "division": "Pro Division",
+            "tag": "ipbl-66-m-pro-c",
+            "divisionTag": "ipbl-66-m-pro-c"
+          },
+          {
+            "game": {
+              "gameStatus": "ResultWaiting",
+              "showScore": true,
+              "score1": 132,
+              "score2": 135,
+              "score": "132:135",
+              "fullScore": null,
+              "periods": 4,
+              "attendance": 0,
+              "number": "020",
+              "finalTime": null,
+              "startTime": null,
+              "scheduledTime": "2026-02-02T08:00:00+05:00",
+              "defaultZoneDateTime": "2026-02-02T06:00:00+03:00",
+              "localDate": "02.02.2026",
+              "localTime": "08:00",
+              "defaultZoneTime": "06:00",
+              "hasTime": true,
+              "regionId": 8,
+              "arenaId": 26097,
+              "compTeam1Id": 553363,
+              "compTeam2Id": 553362,
+              "tv": null,
+              "video": null,
+              "videoId": null,
+              "id": 1022276
+            },
+            "comp": {
+              "id": 1297670,
+              "compType": "OneGame",
+              "name": "Финал за 3 место",
+              "abcName": "Ф3",
+              "level": 11,
+              "season": 2026,
+              "tag": null,
+              "logo": "",
+              "isActual": true
+            },
+            "league": {
+              "id": 1262990,
+              "compType": "League",
+              "name": "Division D",
+              "abcName": "IPBL",
+              "level": 7,
+              "season": 2026,
+              "tag": "ipbl-66-m-pro-d",
+              "logo": "",
+              "isActual": true
+            },
+            "gender": 1,
+            "status": {
+              "icon": "fa-solid fa-circle-play color-orange ",
+              "id": "ResultWaiting",
+              "displayName": "Завершена"
+            },
+            "region": {
+              "regionType": "RegionCapital",
+              "timeZoneId": "Ekaterinburg Standard Time",
+              "name": "Екатеринбург",
+              "countryId": "RU",
+              "id": 8
+            },
+            "arena": {
+              "shortName": "БЦ \"Манеж\" Мужской Зал",
+              "name": "БЦ \"Манеж\" Мужской Зал",
+              "regionId": 8,
+              "id": 26097
+            },
+            "team1": {
+              "teamId": 76068,
+              "start": 1,
+              "label": "IPBL66",
+              "abcName": "Krasno",
+              "name": "Krasnoyarsk",
+              "regionName": "Екатеринбург",
+              "shortName": "Krasnoyarsk",
+              "logo": "https://img.infobasket.su/logo/62422.png",
+              "arenaId": null,
+              "id": 553363
+            },
+            "team2": {
+              "teamId": 76067,
+              "start": 2,
+              "label": "IPBL66",
+              "abcName": "Nizhni",
+              "name": "NizhniyNovgorod",
+              "regionName": "Екатеринбург",
+              "shortName": "NizhniyNovgorod",
+              "logo": "https://img.infobasket.su/logo/62421.png",
+              "arenaId": null,
+              "id": 553362
+            },
+            "ot": "",
+            "distanceIndex": 152,
+            "period": null,
+            "timeToGo": null,
+            "timeIsGo": null,
+            "hasCoefficients": false,
+            "photoUrl": null,
+            "division": "Pro Division",
+            "tag": "ipbl-66-m-pro-d",
+            "divisionTag": "ipbl-66-m-pro-d"
+          },
+          {
+            "game": {
+              "gameStatus": "Online",
+              "showScore": false,
+              "score1": 85,
+              "score2": 84,
+              "score": "85:84",
+              "fullScore": null,
+              "periods": 4,
+              "attendance": null,
+              "number": "003",
+              "finalTime": null,
+              "startTime": null,
+              "scheduledTime": "2026-07-04T10:05:00+05:00",
+              "defaultZoneDateTime": "2026-07-04T08:05:00+03:00",
+              "localDate": "04.07.2026",
+              "localTime": "10:05",
+              "defaultZoneTime": "08:05",
+              "hasTime": true,
+              "regionId": 8,
+              "arenaId": 26098,
+              "compTeam1Id": 620358,
+              "compTeam2Id": 620360,
+              "tv": null,
+              "video": null,
+              "videoId": null,
+              "id": 1075495
+            },
+            "comp": {
+              "id": 1401161,
+              "compType": "RoundRobin",
+              "name": "04.07.2026",
+              "abcName": "04.07.",
+              "level": 10,
+              "season": 2026,
+              "tag": null,
+              "logo": "",
+              "isActual": true
+            },
+            "league": {
+              "id": 1262773,
+              "compType": "League",
+              "name": "Division B",
+              "abcName": "IPBL",
+              "level": 7,
+              "season": 2026,
+              "tag": "ipbl-66-w-pro-b",
+              "logo": "",
+              "isActual": true
+            },
+            "gender": 2,
+            "status": {
+              "icon": "fa-solid fa-play color-darkgreen ",
+              "id": "Online",
+              "displayName": "Live"
+            },
+            "region": {
+              "regionType": "RegionCapital",
+              "timeZoneId": "Ekaterinburg Standard Time",
+              "name": "Екатеринбург",
+              "countryId": "RU",
+              "id": 8
+            },
+            "arena": {
+              "shortName": "БЦ \"Манеж\" Женский Зал",
+              "name": "БЦ \"Манеж\" Женский Зал",
+              "regionId": 8,
+              "id": 26098
+            },
+            "team1": {
+              "teamId": 76012,
+              "start": 1,
+              "label": "IPBL66",
+              "abcName": "Chebok",
+              "name": "Cheboksary",
+              "regionName": "Екатеринбург",
+              "shortName": "Cheboksary",
+              "logo": "https://img.infobasket.su/logo/62463.png",
+              "arenaId": null,
+              "id": 620358
+            },
+            "team2": {
+              "teamId": 76014,
+              "start": 3,
+              "label": "IPBL66",
+              "abcName": "Tambov",
+              "name": "Tambov",
+              "regionName": "Екатеринбург",
+              "shortName": "Tambov",
+              "logo": "https://img.infobasket.su/logo/62465.png",
+              "arenaId": null,
+              "id": 620360
+            },
+            "ot": "",
+            "distanceIndex": -1,
+            "period": 4,
+            "timeToGo": "1.47",
+            "timeIsGo": 1,
+            "hasCoefficients": false,
+            "photoUrl": null,
+            "division": "Pro Division",
+            "tag": "ipbl-66-w-pro-b",
+            "divisionTag": "ipbl-66-w-pro-b"
+          }
+        ]
       }
     },
     "productionLive": {
       "label": "productionLive",
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1781965364053",
-      "capturedAt": "2026-06-20T14:22:44.188Z",
-      "ok": false,
-      "error": "TypeError: fetch failed"
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1783144437263",
+      "capturedAt": "2026-07-04T05:53:59.550Z",
+      "http": 200,
+      "ok": true,
+      "bytes": 1779,
+      "contentType": "application/json; charset=utf-8",
+      "json": {
+        "games": [
+          {
+            "gameId": 733887284,
+            "tag": "ipbl-66-w-pro-b",
+            "status": "Online",
+            "statusDisplay": "4th quarter",
+            "upstreamStatusId": "melbet-live",
+            "score1": 87,
+            "score2": 92,
+            "scoreText": "87 : 92",
+            "fullScore": "22:26,20:17,27:24,18:25",
+            "localDate": "04.07.2026",
+            "localTime": "11:35",
+            "scheduledTime": "2026-07-04T05:05:00.000Z",
+            "sourceLocalDate": null,
+            "sourceLocalTime": null,
+            "sourceTimeZone": "bookmaker-epoch",
+            "displayTimeZone": "Asia/Yangon",
+            "divisionLabel": "Pro Women B",
+            "period": 4,
+            "timeToGo": "00:02",
+            "timeIsGo": 1,
+            "isLive": true,
+            "updatedAt": 1783144436000,
+            "team1": {
+              "teamId": 76012,
+              "shortName": "Cheboksary",
+              "name": "Cheboksary"
+            },
+            "team2": {
+              "teamId": 76014,
+              "shortName": "Tambov",
+              "name": "Tambov"
+            }
+          }
+        ],
+        "status": {
+          "lastSyncAt": "2026-07-04T05:53:59.431Z",
+          "status": "PARTIAL",
+          "source": "bookmaker:melbet.com+1xbet.com",
+          "fallbackFrom": null,
+          "requestedDivisions": 13,
+          "successfulDivisions": 1,
+          "failures": [],
+          "bookmakerSourceLeagues": [
+            2496666,
+            2496667
+          ],
+          "bookmakerSourceFailures": [
+            {
+              "leagueId": 2496666,
+              "error": "bookmaker source returned live rows, but none matched the approved team registry",
+              "source": "melbet",
+              "kind": "zero_approved_games"
+            },
+            {
+              "leagueId": 2496666,
+              "error": "bookmaker source returned live rows, but none matched the approved team registry",
+              "source": "1xbet",
+              "kind": "zero_approved_games"
+            }
+          ],
+          "receivedBookmakerEvents": 4,
+          "unmatchedBookmakerEvents": [
+            {
+              "eventId": 733888321,
+              "leagueId": 2496666,
+              "sourceTeam1Id": 8630599,
+              "sourceTeam2Id": 9949229,
+              "team1": "Stavropol",
+              "team2": "Sevastopol",
+              "reason": "unverified-team",
+              "payloadState": "scored"
+            },
+            {
+              "eventId": 733888321,
+              "leagueId": 2496666,
+              "sourceTeam1Id": 8630599,
+              "sourceTeam2Id": 9949229,
+              "team1": "Stavropol",
+              "team2": "Sevastopol",
+              "reason": "unverified-team",
+              "payloadState": "scored"
+            }
+          ],
+          "officialReconciliation": {
+            "checked": 1,
+            "dropped": 0,
+            "updated": 0
+          },
+          "latencyMs": 890,
+          "displayTimeZone": "Asia/Yangon"
+        }
+      },
+      "preview": "{\"games\":[{\"gameId\":733887284,\"tag\":\"ipbl-66-w-pro-b\",\"status\":\"Online\",\"statusDisplay\":\"4th quarter\",\"upstreamStatusId\":\"melbet-live\",\"score1\":87,\"score2\":92,\"scoreText\":\"87 : 92\",\"fullScore\":\"22:26,20:17,27:24,18:25\",\"localDate\":\"04.07.2026\",\"localTime\":\"11:35\",\"scheduledTime\":\"2026-07-04T05:05:00.000Z\",\"sourceLocalDate\":null,\"sourceLocalTime\":null,\"sourceTimeZone\":\"bookmaker-epoch\",\"displayTimeZone\":\"Asia/Yangon\",\"divisionLabel\":\"Pro Women B\",\"period\":4,\"timeToGo\":\"00:02\",\"timeIsGo\":1,\"isLive\":true,\"updatedAt\":1783144436000,\"team1\":{\"teamId\":76012,\"shortName\":\"Cheboksary\",\"name\":\"Cheboksary\"},\"team2\":{\"teamId\":76014,\"shortName\":\"Tambov\",\"name\":\"Tambov\"}}],\"status\":{\"lastSyncAt\":\"2026-07-04T05:53:59.431Z\",\"status\":\"PARTIAL\",\"source\":\"bookmaker:melbet.com+1xbet.com\",\"fallbackFrom\":null,\"requestedDivisions\":13,\"successfulDivisions\":1,\"failures\":[],\"bookmakerSourceLeagues\":[2496666,2496667],\"bookmakerSourceFailures\":[{\"leagueId\":2496666,\"error\":\"bookmaker source returned live rows, but none matched the approved team registry\",\"source\":\"melbet\",\"kind\":\"zero_approved_games\"},{\"leagueId\":2496666,\"error\":\"bookmaker source returned live rows, but none matched the approved team registry\","
     },
     "recorderStatus": {
       "label": "recorderStatus",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
-      "capturedAt": "2026-06-20T14:22:44.188Z",
-      "ok": false,
-      "error": "TypeError: fetch failed"
+      "capturedAt": "2026-07-04T05:53:57.938Z",
+      "http": 200,
+      "ok": true,
+      "bytes": 1479,
+      "contentType": "application/json; charset=utf-8",
+      "json": {
+        "status": {
+          "schemaVersion": 1,
+          "capturedAt": "2026-07-04T05:53:03.478Z",
+          "source": "bookmaker:melbet.com+1xbet.com",
+          "sourceStatus": "PARTIAL",
+          "receivedGames": 1,
+          "acceptedGames": 1,
+          "recordedSnapshots": 1,
+          "duplicateSnapshots": 0,
+          "rejectedGames": [],
+          "missingPreviouslyActive": [],
+          "activeGameKeys": [
+            "ipbl-66-w-pro-b:733887284"
+          ],
+          "sourceDetails": {
+            "lastSyncAt": "2026-07-04T05:53:03.478Z",
+            "status": "PARTIAL",
+            "source": "bookmaker:melbet.com+1xbet.com",
+            "fallbackFrom": null,
+            "requestedDivisions": 13,
+            "successfulDivisions": 1,
+            "failures": [],
+            "bookmakerSourceLeagues": [
+              2496666,
+              2496667
+            ],
+            "bookmakerSourceFailures": [
+              {
+                "leagueId": 2496666,
+                "error": "bookmaker source returned live rows, but none matched the approved team registry",
+                "source": "melbet",
+                "kind": "zero_approved_games"
+              },
+              {
+                "leagueId": 2496666,
+                "error": "bookmaker source returned live rows, but none matched the approved team registry",
+                "source": "1xbet",
+                "kind": "zero_approved_games"
+              }
+            ],
+            "receivedBookmakerEvents": 4,
+            "unmatchedBookmakerEvents": [
+              {
+                "eventId": 733888321,
+                "leagueId": 2496666,
+                "sourceTeam1Id": 8630599,
+                "sourceTeam2Id": 9949229,
+                "team1": "Stavropol",
+                "team2": "Sevastopol",
+                "reason": "unverified-team",
+                "payloadState": "scored"
+              },
+              {
+                "eventId": 733888321,
+                "leagueId": 2496666,
+                "sourceTeam1Id": 8630599,
+                "sourceTeam2Id": 9949229,
+                "team1": "Stavropol",
+                "team2": "Sevastopol",
+                "reason": "unverified-team",
+                "payloadState": "scored"
+              }
+            ],
+            "officialReconciliation": {
+              "checked": 1,
+              "dropped": 0,
+              "updated": 0
+            },
+            "latencyMs": 653,
+            "displayTimeZone": "Asia/Yangon"
+          }
+        },
+        "activeGameKeys": [
+          "ipbl-66-w-pro-b:733887284"
+        ]
+      },
+      "preview": "{\"status\":{\"schemaVersion\":1,\"capturedAt\":\"2026-07-04T05:53:03.478Z\",\"source\":\"bookmaker:melbet.com+1xbet.com\",\"sourceStatus\":\"PARTIAL\",\"receivedGames\":1,\"acceptedGames\":1,\"recordedSnapshots\":1,\"duplicateSnapshots\":0,\"rejectedGames\":[],\"missingPreviouslyActive\":[],\"activeGameKeys\":[\"ipbl-66-w-pro-b:733887284\"],\"sourceDetails\":{\"lastSyncAt\":\"2026-07-04T05:53:03.478Z\",\"status\":\"PARTIAL\",\"source\":\"bookmaker:melbet.com+1xbet.com\",\"fallbackFrom\":null,\"requestedDivisions\":13,\"successfulDivisions\":1,\"failures\":[],\"bookmakerSourceLeagues\":[2496666,2496667],\"bookmakerSourceFailures\":[{\"leagueId\":2496666,\"error\":\"bookmaker source returned live rows, but none matched the approved team registry\",\"source\":\"melbet\",\"kind\":\"zero_approved_games\"},{\"leagueId\":2496666,\"error\":\"bookmaker source returned live rows, but none matched the approved team registry\",\"source\":\"1xbet\",\"kind\":\"zero_approved_games\"}],\"receivedBookmakerEvents\":4,\"unmatchedBookmakerEvents\":[{\"eventId\":733888321,\"leagueId\":2496666,\"sourceTeam1Id\":8630599,\"sourceTeam2Id\":9949229,\"team1\":\"Stavropol\",\"team2\":\"Sevastopol\",\"reason\":\"unverified-team\",\"payloadState\":\"scored\"},{\"eventId\":733888321,\"leagueId\":2496666,\"sourceTeam1Id\":8630599"
     },
     "recorderHistory": {
       "label": "recorderHistory",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
-      "capturedAt": "2026-06-20T14:22:44.228Z",
-      "ok": false,
-      "http": null,
-      "components": [],
+      "capturedAt": "2026-07-04T05:54:10.904Z",
+      "ok": true,
+      "http": 200,
+      "components": [
+        {
+          "label": "recorderHistory-ipbl-66-w-pro-b-733887284",
+          "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-w-pro-b&gameId=733887284&limit=5",
+          "capturedAt": "2026-07-04T05:54:10.904Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 6625,
+          "contentType": "application/json; charset=utf-8",
+          "json": {
+            "gameKey": "ipbl-66-w-pro-b:733887284",
+            "newestFirst": true,
+            "count": 5,
+            "snapshots": [
+              {
+                "schemaVersion": 1,
+                "capturedAt": "2026-07-04T05:54:07.144Z",
+                "capturedAtMs": 1783144447144,
+                "gameKey": "ipbl-66-w-pro-b:733887284",
+                "gameId": 733887284,
+                "divisionTag": "ipbl-66-w-pro-b",
+                "division": "Pro Women B",
+                "divisionLabel": "Pro Women B",
+                "quarter": 4,
+                "timeRemaining": "00:02",
+                "score": "87 : 92",
+                "quarterScore": "18:25",
+                "totalScore": "87 : 92",
+                "snapshotTime": "2026-07-04T05:54:07.144Z",
+                "team1": {
+                  "teamId": 76012,
+                  "shortName": "Cheboksary",
+                  "name": "Cheboksary"
+                },
+                "team2": {
+                  "teamId": 76014,
+                  "shortName": "Tambov",
+                  "name": "Tambov"
+                },
+                "score1": 87,
+                "score2": 92,
+                "scoreText": "87 : 92",
+                "fullScore": "22:26,20:17,27:24,18:25",
+                "quarterScores": [
+                  {
+                    "period": 1,
+                    "team1": 22,
+                    "team2": 26
+                  },
+                  {
+                    "period": 2,
+                    "team1": 20,
+                    "team2": 17
+                  },
+                  {
+                    "period": 3,
+                    "team1": 27,
+                    "team2": 24
+                  },
+                  {
+                    "period": 4,
+                    "team1": 18,
+                    "team2": 25
+                  }
+                ],
+                "period": 4,
+                "timeToGo": "00:02",
+                "timeIsGo": 1,
+                "status": "Online",
+                "statusDisplay": "4th quarter",
+                "isLive": true,
+                "scheduledTime": "2026-07-04T05:05:00.000Z",
+                "localDate": "04.07.2026",
+                "localTime": "11:35",
+                "displayTimeZone": "Asia/Yangon",
+                "source": "bookmaker:melbet.com+1xbet.com",
+                "fallbackFrom": null,
+                "sourceStatus": "PARTIAL",
+                "sourceUpdatedAt": "2026-07-04T05:54:07.144Z",
+                "transition": {
+                  "previousCapturedAt": "2026-07-04T05:53:03.478Z",
+                  "scoreDelta1": 0,
+                  "scoreDelta2": 1,
+                  "scoreChanged": true,
+                  "periodChanged": false,
+                  "clockDeltaSeconds": 5,
+                  "clockAnomaly": false,
+                  "sourceChanged": false
+                }
+              },
+              {
+                "schemaVersion": 1,
+                "capturedAt": "2026-07-04T05:53:03.478Z",
+                "capturedAtMs": 1783144383478,
+                "gameKey": "ipbl-66-w-pro-b:733887284",
+                "gameId": 733887284,
+                "divisionTag": "ipbl-66-w-pro-b",
+                "division": "Pro Women B",
+                "divisionLabel": "Pro Women B",
+                "quarter": 4,
+                "timeRemaining": "00:07",
+                "score": "87 : 91",
+                "quarterScore": "18:24",
+                "totalScore": "87 : 91",
+                "snapshotTime": "2026-07-04T05:53:03.478Z",
+                "team1": {
+                  "teamId": 76012,
+                  "shortName": "Cheboksary",
+                  "name": "Cheboksary"
+                },
+                "team2": {
+                  "teamId": 76014,
+                  "shortName": "Tambov",
+                  "name": "Tambov"
+                },
+                "score1": 87,
+                "score2": 91,
+                "scoreText": "87 : 91",
+                "fullScore": "22:26,20:17,27:24,18:24",
+                "quarterScores": [
+                  {
+                    "period": 1,
+                    "team1": 22,
+                    "team2": 26
+                  },
+                  {
+                    "period": 2,
+                    "team1": 20,
+                    "team2": 17
+                  },
+                  {
+                    "period": 3,
+                    "team1": 27,
+                    "team2": 24
+                  },
+                  {
+                    "period": 4,
+                    "team1": 18,
+                    "team2": 24
+                  }
+                ],
+                "period": 4,
+                "timeToGo": "00:07",
+                "timeIsGo": 1,
+                "status": "Online",
+                "statusDisplay": "4th quarter",
+                "isLive": true,
+                "scheduledTime": "2026-07-04T05:05:00.000Z",
+                "localDate": "04.07.2026",
+                "localTime": "11:35",
+                "displayTimeZone": "Asia/Yangon",
+                "source": "bookmaker:melbet.com+1xbet.com",
+                "fallbackFrom": null,
+                "sourceStatus": "PARTIAL",
+                "sourceUpdatedAt": "2026-07-04T05:53:03.478Z",
+                "transition": {
+                  "previousCapturedAt": "2026-07-04T05:52:06.719Z",
+                  "scoreDelta1": 0,
+                  "scoreDelta2": 1,
+                  "scoreChanged": true,
+                  "periodChanged": false,
+                  "clockDeltaSeconds": 5,
+                  "clockAnomaly": false,
+                  "sourceChanged": false
+                }
+              },
+              {
+                "schemaVersion": 1,
+                "capturedAt": "2026-07-04T05:52:06.719Z",
+                "capturedAtMs": 1783144326719,
+                "gameKey": "ipbl-66-w-pro-b:733887284",
+                "gameId": 733887284,
+                "divisionTag": "ipbl-66-w-pro-b",
+                "division": "Pro Women B",
+                "divisionLabel": "Pro Women B",
+                "quarter": 4,
+                "timeRemaining": "00:12",
+                "score": "87 : 90",
+                "quarterScore": "18:23",
+                "totalScore": "87 : 90",
+                "snapshotTime": "2026-07-04T05:52:06.719Z",
+                "team1": {
+                  "teamId": 76012,
+                  "shortName": "Cheboksary",
+                  "name": "Cheboksary"
+                },
+                "team2": {
+                  "teamId": 76014,
+                  "shortName": "Tambov",
+                  "name": "Tambov"
+                },
+                "score1": 87,
+                "score2": 90,
+                "scoreText": "87 : 90",
+                "fullScore": "22:26,20:17,27:24,18:23",
+                "quarterScores": [
+                  {
+                    "period": 1,
+                    "team1": 22,
+                    "team2": 26
+                  },
+                  {
+                    "period": 2,
+                    "team1": 20,
+                    "team2": 17
+                  },
+                  {
+                    "period": 3,
+                    "team1": 27,
+                    "team2": 24
+                  },
+                  {
+                    "period": 4,
+                    "team1": 18,
+                    "team2": 23
+                  }
+                ],
+                "period": 4,
+                "timeToGo": "00:12",
+                "timeIsGo": 1,
+                "status": "Online",
+                "statusDisplay": "4th quarter",
+                "isLive": true,
+                "scheduledTime": "2026-07-04T05:05:00.000Z",
+                "localDate": "04.07.2026",
+                "localTime": "11:35",
+                "displayTimeZone": "Asia/Yangon",
+                "source": "bookmaker:melbet.com+1xbet.com",
+                "fallbackFrom": null,
+                "sourceStatus": "PARTIAL",
+                "sourceUpdatedAt": "2026-07-04T05:52:06.719Z",
+                "transition": {
+                  "previousCapturedAt": "2026-07-04T05:51:07.715Z",
+                  "scoreDelta1": 0,
+                  "scoreDelta2": 2,
+                  "scoreChanged": true,
+                  "periodChanged": false,
+                  "clockDeltaSeconds": 26,
+                  "clockAnomaly": false,
+                  "sourceChanged": false
+                }
+              },
+              {
+                "schemaVersion": 1,
+                "capturedAt": "2026-07-04T05:51:07.715Z",
+                "capturedAtMs": 1783144267715,
+                "gameKey": "ipbl-66-w-pro-b:733887284",
+                "gameId": 733887284,
+                "divisionTag": "ipbl-66-w-pro-b",
+                "division": "Pro Women B",
+                "divisionLabel": "Pro Women B",
+                "quarter": 4,
+                "timeRemaining": "00:38",
+                "score": "87 : 88",
+                "quarterScore": "18:21",
+                "totalScore": "87 : 88",
+                "snapshotTime": "2026-07-04T05:51:07.715Z",
+                "team1": {
+                  "teamId": 76012,
+                  "shortName": "Cheboksary",
+                  "name": "Cheboksary"
+                },
+                "team2": {
+                  "teamId": 76014,
+                  "shortName": "Tambov",
+                  "name": "Tambov"
+                },
+                "score1": 87,
+                "score2": 88,
+                "scoreText": "87 : 88",
+                "fullScore": "22:26,20:17,27:24,18:21",
+                "quarterScores": [
+                  {
+                    "period": 1,
+                    "team1": 22,
+                    "team2": 26
+                  },
+                  {
+                    "period": 2,
+                    "team1": 20,
+                    "team2": 17
+                  },
+                  {
+                    "period": 3,
+                    "team1": 27,
+                    "team2": 24
+                  },
+                  {
+                    "period": 4,
+                    "team1": 18,
+                    "team2": 21
+                  }
+                ],
+                "period": 4,
+                "timeToGo": "00:38",
+                "timeIsGo": 1,
+                "status": "Online",
+                "statusDisplay": "4th quarter",
+                "isLive": true,
+                "scheduledTime": "2026-07-04T05:05:00.000Z",
+                "localDate": "04.07.2026",
+                "localTime": "11:35",
+                "displayTimeZone": "Asia/Yangon",
+                "source": "bookmaker:melbet.com+1xbet.com",
+                "fallbackFrom": null,
+                "sourceStatus": "PARTIAL",
+                "sourceUpdatedAt": "2026-07-04T05:51:07.715Z",
+                "transition": {
+                  "previousCapturedAt": "2026-07-04T05:50:08.490Z",
+                  "scoreDelta1": 2,
+                  "scoreDelta2": 4,
+                  "scoreChanged": true,
+                  "periodChanged": false,
+                  "clockDeltaSeconds": 50,
+                  "clockAnomaly": false,
+                  "sourceChanged": false
+                }
+              },
+              {
+                "schemaVersion": 1,
+                "capturedAt": "2026-07-04T05:50:08.490Z",
+                "capturedAtMs": 1783144208490,
+                "gameKey": "ipbl-66-w-pro-b:733887284",
+                "gameId": 733887284,
+                "divisionTag": "ipbl-66-w-pro-b",
+                "division": "Pro Women B",
+                "divisionLabel": "Pro Women B",
+                "quarter": 4,
+                "timeRemaining": "01:28",
+                "score": "85 : 84",
+                "quarterScore": "16:17",
+                "totalScore": "85 : 84",
+                "snapshotTime": "2026-07-04T05:50:08.490Z",
+                "team1": {
+                  "teamId": 76012,
+                  "shortName": "Cheboksary",
+                  "name": "Cheboksary"
+                },
+                "team2": {
+                  "teamId": 76014,
+                  "shortName": "Tambov",
+                  "name": "Tambov"
+                },
+                "score1": 85,
+                "score2": 84,
+                "scoreText": "85 : 84",
+                "fullScore": "22:26,20:17,27:24,16:17",
+                "quarterScores": [
+                  {
+                    "period": 1,
+                    "team1": 22,
+                    "team2": 26
+                  },
+                  {
+                    "period": 2,
+                    "team1": 20,
+                    "team2": 17
+                  },
+                  {
+                    "period": 3,
+                    "team1": 27,
+                    "team2": 24
+                  },
+                  {
+                    "period": 4,
+                    "team1": 16,
+                    "team2": 17
+                  }
+                ],
+                "period": 4,
+                "timeToGo": "01:28",
+                "timeIsGo": 1,
+                "status": "Online",
+                "statusDisplay": "4th quarter",
+                "isLive": true,
+                "scheduledTime": "2026-07-04T05:05:00.000Z",
+                "localDate": "04.07.2026",
+                "localTime": "11:35",
+                "displayTimeZone": "Asia/Yangon",
+                "source": "bookmaker:melbet.com+1xbet.com",
+                "fallbackFrom": null,
+                "sourceStatus": "PARTIAL",
+                "sourceUpdatedAt": "2026-07-04T05:50:08.490Z",
+                "transition": {
+                  "previousCapturedAt": "2026-07-04T05:49:06.098Z",
+                  "scoreDelta1": 2,
+                  "scoreDelta2": 2,
+                  "scoreChanged": true,
+                  "periodChanged": false,
+                  "clockDeltaSeconds": 62,
+                  "clockAnomaly": false,
+                  "sourceChanged": false
+                }
+              }
+            ]
+          },
+          "preview": "{\"gameKey\":\"ipbl-66-w-pro-b:733887284\",\"newestFirst\":true,\"count\":5,\"snapshots\":[{\"schemaVersion\":1,\"capturedAt\":\"2026-07-04T05:54:07.144Z\",\"capturedAtMs\":1783144447144,\"gameKey\":\"ipbl-66-w-pro-b:733887284\",\"gameId\":733887284,\"divisionTag\":\"ipbl-66-w-pro-b\",\"division\":\"Pro Women B\",\"divisionLabel\":\"Pro Women B\",\"quarter\":4,\"timeRemaining\":\"00:02\",\"score\":\"87 : 92\",\"quarterScore\":\"18:25\",\"totalScore\":\"87 : 92\",\"snapshotTime\":\"2026-07-04T05:54:07.144Z\",\"team1\":{\"teamId\":76012,\"shortName\":\"Cheboksary\",\"name\":\"Cheboksary\"},\"team2\":{\"teamId\":76014,\"shortName\":\"Tambov\",\"name\":\"Tambov\"},\"score1\":87,\"score2\":92,\"scoreText\":\"87 : 92\",\"fullScore\":\"22:26,20:17,27:24,18:25\",\"quarterScores\":[{\"period\":1,\"team1\":22,\"team2\":26},{\"period\":2,\"team1\":20,\"team2\":17},{\"period\":3,\"team1\":27,\"team2\":24},{\"period\":4,\"team1\":18,\"team2\":25}],\"period\":4,\"timeToGo\":\"00:02\",\"timeIsGo\":1,\"status\":\"Online\",\"statusDisplay\":\"4th quarter\",\"isLive\":true,\"scheduledTime\":\"2026-07-04T05:05:00.000Z\",\"localDate\":\"04.07.2026\",\"localTime\":\"11:35\",\"displayTimeZone\":\"Asia/Yangon\",\"source\":\"bookmaker:melbet.com+1xbet.com\",\"fallbackFrom\":null,\"sourceStatus\":\"PARTIAL\",\"sourceUpdatedAt\":\"2026-07-04T05:54:07.144Z\",\"transition\":{"
+        }
+      ],
       "json": {
-        "snapshots": []
+        "snapshots": [
+          {
+            "schemaVersion": 1,
+            "capturedAt": "2026-07-04T05:54:07.144Z",
+            "capturedAtMs": 1783144447144,
+            "gameKey": "ipbl-66-w-pro-b:733887284",
+            "gameId": 733887284,
+            "divisionTag": "ipbl-66-w-pro-b",
+            "division": "Pro Women B",
+            "divisionLabel": "Pro Women B",
+            "quarter": 4,
+            "timeRemaining": "00:02",
+            "score": "87 : 92",
+            "quarterScore": "18:25",
+            "totalScore": "87 : 92",
+            "snapshotTime": "2026-07-04T05:54:07.144Z",
+            "team1": {
+              "teamId": 76012,
+              "shortName": "Cheboksary",
+              "name": "Cheboksary"
+            },
+            "team2": {
+              "teamId": 76014,
+              "shortName": "Tambov",
+              "name": "Tambov"
+            },
+            "score1": 87,
+            "score2": 92,
+            "scoreText": "87 : 92",
+            "fullScore": "22:26,20:17,27:24,18:25",
+            "quarterScores": [
+              {
+                "period": 1,
+                "team1": 22,
+                "team2": 26
+              },
+              {
+                "period": 2,
+                "team1": 20,
+                "team2": 17
+              },
+              {
+                "period": 3,
+                "team1": 27,
+                "team2": 24
+              },
+              {
+                "period": 4,
+                "team1": 18,
+                "team2": 25
+              }
+            ],
+            "period": 4,
+            "timeToGo": "00:02",
+            "timeIsGo": 1,
+            "status": "Online",
+            "statusDisplay": "4th quarter",
+            "isLive": true,
+            "scheduledTime": "2026-07-04T05:05:00.000Z",
+            "localDate": "04.07.2026",
+            "localTime": "11:35",
+            "displayTimeZone": "Asia/Yangon",
+            "source": "bookmaker:melbet.com+1xbet.com",
+            "fallbackFrom": null,
+            "sourceStatus": "PARTIAL",
+            "sourceUpdatedAt": "2026-07-04T05:54:07.144Z",
+            "transition": {
+              "previousCapturedAt": "2026-07-04T05:53:03.478Z",
+              "scoreDelta1": 0,
+              "scoreDelta2": 1,
+              "scoreChanged": true,
+              "periodChanged": false,
+              "clockDeltaSeconds": 5,
+              "clockAnomaly": false,
+              "sourceChanged": false
+            }
+          },
+          {
+            "schemaVersion": 1,
+            "capturedAt": "2026-07-04T05:53:03.478Z",
+            "capturedAtMs": 1783144383478,
+            "gameKey": "ipbl-66-w-pro-b:733887284",
+            "gameId": 733887284,
+            "divisionTag": "ipbl-66-w-pro-b",
+            "division": "Pro Women B",
+            "divisionLabel": "Pro Women B",
+            "quarter": 4,
+            "timeRemaining": "00:07",
+            "score": "87 : 91",
+            "quarterScore": "18:24",
+            "totalScore": "87 : 91",
+            "snapshotTime": "2026-07-04T05:53:03.478Z",
+            "team1": {
+              "teamId": 76012,
+              "shortName": "Cheboksary",
+              "name": "Cheboksary"
+            },
+            "team2": {
+              "teamId": 76014,
+              "shortName": "Tambov",
+              "name": "Tambov"
+            },
+            "score1": 87,
+            "score2": 91,
+            "scoreText": "87 : 91",
+            "fullScore": "22:26,20:17,27:24,18:24",
+            "quarterScores": [
+              {
+                "period": 1,
+                "team1": 22,
+                "team2": 26
+              },
+              {
+                "period": 2,
+                "team1": 20,
+                "team2": 17
+              },
+              {
+                "period": 3,
+                "team1": 27,
+                "team2": 24
+              },
+              {
+                "period": 4,
+                "team1": 18,
+                "team2": 24
+              }
+            ],
+            "period": 4,
+            "timeToGo": "00:07",
+            "timeIsGo": 1,
+            "status": "Online",
+            "statusDisplay": "4th quarter",
+            "isLive": true,
+            "scheduledTime": "2026-07-04T05:05:00.000Z",
+            "localDate": "04.07.2026",
+            "localTime": "11:35",
+            "displayTimeZone": "Asia/Yangon",
+            "source": "bookmaker:melbet.com+1xbet.com",
+            "fallbackFrom": null,
+            "sourceStatus": "PARTIAL",
+            "sourceUpdatedAt": "2026-07-04T05:53:03.478Z",
+            "transition": {
+              "previousCapturedAt": "2026-07-04T05:52:06.719Z",
+              "scoreDelta1": 0,
+              "scoreDelta2": 1,
+              "scoreChanged": true,
+              "periodChanged": false,
+              "clockDeltaSeconds": 5,
+              "clockAnomaly": false,
+              "sourceChanged": false
+            }
+          },
+          {
+            "schemaVersion": 1,
+            "capturedAt": "2026-07-04T05:52:06.719Z",
+            "capturedAtMs": 1783144326719,
+            "gameKey": "ipbl-66-w-pro-b:733887284",
+            "gameId": 733887284,
+            "divisionTag": "ipbl-66-w-pro-b",
+            "division": "Pro Women B",
+            "divisionLabel": "Pro Women B",
+            "quarter": 4,
+            "timeRemaining": "00:12",
+            "score": "87 : 90",
+            "quarterScore": "18:23",
+            "totalScore": "87 : 90",
+            "snapshotTime": "2026-07-04T05:52:06.719Z",
+            "team1": {
+              "teamId": 76012,
+              "shortName": "Cheboksary",
+              "name": "Cheboksary"
+            },
+            "team2": {
+              "teamId": 76014,
+              "shortName": "Tambov",
+              "name": "Tambov"
+            },
+            "score1": 87,
+            "score2": 90,
+            "scoreText": "87 : 90",
+            "fullScore": "22:26,20:17,27:24,18:23",
+            "quarterScores": [
+              {
+                "period": 1,
+                "team1": 22,
+                "team2": 26
+              },
+              {
+                "period": 2,
+                "team1": 20,
+                "team2": 17
+              },
+              {
+                "period": 3,
+                "team1": 27,
+                "team2": 24
+              },
+              {
+                "period": 4,
+                "team1": 18,
+                "team2": 23
+              }
+            ],
+            "period": 4,
+            "timeToGo": "00:12",
+            "timeIsGo": 1,
+            "status": "Online",
+            "statusDisplay": "4th quarter",
+            "isLive": true,
+            "scheduledTime": "2026-07-04T05:05:00.000Z",
+            "localDate": "04.07.2026",
+            "localTime": "11:35",
+            "displayTimeZone": "Asia/Yangon",
+            "source": "bookmaker:melbet.com+1xbet.com",
+            "fallbackFrom": null,
+            "sourceStatus": "PARTIAL",
+            "sourceUpdatedAt": "2026-07-04T05:52:06.719Z",
+            "transition": {
+              "previousCapturedAt": "2026-07-04T05:51:07.715Z",
+              "scoreDelta1": 0,
+              "scoreDelta2": 2,
+              "scoreChanged": true,
+              "periodChanged": false,
+              "clockDeltaSeconds": 26,
+              "clockAnomaly": false,
+              "sourceChanged": false
+            }
+          },
+          {
+            "schemaVersion": 1,
+            "capturedAt": "2026-07-04T05:51:07.715Z",
+            "capturedAtMs": 1783144267715,
+            "gameKey": "ipbl-66-w-pro-b:733887284",
+            "gameId": 733887284,
+            "divisionTag": "ipbl-66-w-pro-b",
+            "division": "Pro Women B",
+            "divisionLabel": "Pro Women B",
+            "quarter": 4,
+            "timeRemaining": "00:38",
+            "score": "87 : 88",
+            "quarterScore": "18:21",
+            "totalScore": "87 : 88",
+            "snapshotTime": "2026-07-04T05:51:07.715Z",
+            "team1": {
+              "teamId": 76012,
+              "shortName": "Cheboksary",
+              "name": "Cheboksary"
+            },
+            "team2": {
+              "teamId": 76014,
+              "shortName": "Tambov",
+              "name": "Tambov"
+            },
+            "score1": 87,
+            "score2": 88,
+            "scoreText": "87 : 88",
+            "fullScore": "22:26,20:17,27:24,18:21",
+            "quarterScores": [
+              {
+                "period": 1,
+                "team1": 22,
+                "team2": 26
+              },
+              {
+                "period": 2,
+                "team1": 20,
+                "team2": 17
+              },
+              {
+                "period": 3,
+                "team1": 27,
+                "team2": 24
+              },
+              {
+                "period": 4,
+                "team1": 18,
+                "team2": 21
+              }
+            ],
+            "period": 4,
+            "timeToGo": "00:38",
+            "timeIsGo": 1,
+            "status": "Online",
+            "statusDisplay": "4th quarter",
+            "isLive": true,
+            "scheduledTime": "2026-07-04T05:05:00.000Z",
+            "localDate": "04.07.2026",
+            "localTime": "11:35",
+            "displayTimeZone": "Asia/Yangon",
+            "source": "bookmaker:melbet.com+1xbet.com",
+            "fallbackFrom": null,
+            "sourceStatus": "PARTIAL",
+            "sourceUpdatedAt": "2026-07-04T05:51:07.715Z",
+            "transition": {
+              "previousCapturedAt": "2026-07-04T05:50:08.490Z",
+              "scoreDelta1": 2,
+              "scoreDelta2": 4,
+              "scoreChanged": true,
+              "periodChanged": false,
+              "clockDeltaSeconds": 50,
+              "clockAnomaly": false,
+              "sourceChanged": false
+            }
+          },
+          {
+            "schemaVersion": 1,
+            "capturedAt": "2026-07-04T05:50:08.490Z",
+            "capturedAtMs": 1783144208490,
+            "gameKey": "ipbl-66-w-pro-b:733887284",
+            "gameId": 733887284,
+            "divisionTag": "ipbl-66-w-pro-b",
+            "division": "Pro Women B",
+            "divisionLabel": "Pro Women B",
+            "quarter": 4,
+            "timeRemaining": "01:28",
+            "score": "85 : 84",
+            "quarterScore": "16:17",
+            "totalScore": "85 : 84",
+            "snapshotTime": "2026-07-04T05:50:08.490Z",
+            "team1": {
+              "teamId": 76012,
+              "shortName": "Cheboksary",
+              "name": "Cheboksary"
+            },
+            "team2": {
+              "teamId": 76014,
+              "shortName": "Tambov",
+              "name": "Tambov"
+            },
+            "score1": 85,
+            "score2": 84,
+            "scoreText": "85 : 84",
+            "fullScore": "22:26,20:17,27:24,16:17",
+            "quarterScores": [
+              {
+                "period": 1,
+                "team1": 22,
+                "team2": 26
+              },
+              {
+                "period": 2,
+                "team1": 20,
+                "team2": 17
+              },
+              {
+                "period": 3,
+                "team1": 27,
+                "team2": 24
+              },
+              {
+                "period": 4,
+                "team1": 16,
+                "team2": 17
+              }
+            ],
+            "period": 4,
+            "timeToGo": "01:28",
+            "timeIsGo": 1,
+            "status": "Online",
+            "statusDisplay": "4th quarter",
+            "isLive": true,
+            "scheduledTime": "2026-07-04T05:05:00.000Z",
+            "localDate": "04.07.2026",
+            "localTime": "11:35",
+            "displayTimeZone": "Asia/Yangon",
+            "source": "bookmaker:melbet.com+1xbet.com",
+            "fallbackFrom": null,
+            "sourceStatus": "PARTIAL",
+            "sourceUpdatedAt": "2026-07-04T05:50:08.490Z",
+            "transition": {
+              "previousCapturedAt": "2026-07-04T05:49:06.098Z",
+              "scoreDelta1": 2,
+              "scoreDelta2": 2,
+              "scoreChanged": true,
+              "periodChanged": false,
+              "clockDeltaSeconds": 62,
+              "clockAnomaly": false,
+              "sourceChanged": false
+            }
+          }
+        ]
       }
     },
     "melbetLiveDiscovery": {
       "label": "melbetLiveDiscovery",
       "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
-      "capturedAt": "2026-06-20T14:22:44.199Z",
-      "ok": false,
-      "http": null,
+      "capturedAt": "2026-07-04T05:53:58.253Z",
+      "ok": true,
+      "http": 200,
       "components": [
         {
           "label": "melbetLive-2496666",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-20T14:22:44.188Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:53:58.072Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 1599,
+          "contentType": "application/json; charset=utf-8",
+          "json": {
+            "Id": 0,
+            "Success": true,
+            "Error": "",
+            "ErrorCode": 0,
+            "Guid": "",
+            "Value": [
+              {
+                "R": 99,
+                "SC": {
+                  "FS": {
+                    "S1": 118,
+                    "S2": 112
+                  },
+                  "PS": [
+                    {
+                      "Key": 1,
+                      "Value": {
+                        "S1": 32,
+                        "S2": 27,
+                        "NF": "1st quarter"
+                      }
+                    },
+                    {
+                      "Key": 2,
+                      "Value": {
+                        "S1": 26,
+                        "S2": 32,
+                        "NF": "2nd quarter"
+                      }
+                    },
+                    {
+                      "Key": 3,
+                      "Value": {
+                        "S1": 31,
+                        "S2": 23,
+                        "NF": "3rd quarter"
+                      }
+                    },
+                    {
+                      "Key": 4,
+                      "Value": {
+                        "S1": 29,
+                        "S2": 30,
+                        "NF": "4th quarter"
+                      }
+                    }
+                  ],
+                  "CP": 4,
+                  "CPS": "4th quarter",
+                  "TS": 2355,
+                  "TR": -1,
+                  "I": "",
+                  "ST": [
+                    {
+                      "Key": 0,
+                      "Value": [
+                        {
+                          "ID": 53,
+                          "S1": "0",
+                          "S2": "0",
+                          "N": "Fouls"
+                        },
+                        {
+                          "ID": 49,
+                          "S1": "20",
+                          "S2": "30",
+                          "N": "2-pointers"
+                        },
+                        {
+                          "ID": 48,
+                          "S1": "24",
+                          "S2": "13",
+                          "N": "3-pointers"
+                        },
+                        {
+                          "ID": 50,
+                          "S1": "6",
+                          "S2": "13",
+                          "N": "Free throws"
+                        }
+                      ]
+                    }
+                  ],
+                  "SLS": "39 minutes"
+                },
+                "VI": "19577708",
+                "VA": 1,
+                "ZP": 4665635,
+                "HMH": 1,
+                "U": 1783144436,
+                "OuR": true,
+                "SVoAP": true,
+                "I": 733888321,
+                "N": 168330,
+                "T": 99,
+                "CO": 50,
+                "E": [],
+                "AE": [],
+                "EC": 2,
+                "TG": "",
+                "V": "Including Overtime",
+                "VE": "Including Overtime",
+                "PN": "",
+                "TN": "Quarter",
+                "DI": "",
+                "SS": 3,
+                "STI": "695888e76d807ed026780f0e",
+                "S": 1783141800,
+                "CHIMG": "95b77fbaa64b9c1f5877579e5ed4349e.png",
+                "O1": "Stavropol",
+                "O2": "Sevastopol",
+                "O1I": 8630599,
+                "O2I": 9949229,
+                "O1IS": [
+                  8630599
+                ],
+                "O2IS": [
+                  9949229
+                ],
+                "O1C": 225,
+                "O2C": 225,
+                "O1IMG": [
+                  "fe66885c432d3492da26966b152a8124.png"
+                ],
+                "O2IMG": [
+                  "9e3df897e99debb2e6aa2ec6758dbb71.png"
+                ],
+                "O1R": "Stavropol",
+                "O2R": "Sevastopol",
+                "O1E": "Stavropol",
+                "O2E": "Sevastopol",
+                "MIS": [
+                  {
+                    "K": 3,
+                    "V": "4x10"
+                  },
+                  {
+                    "K": 11,
+                    "V": "Russia"
+                  }
+                ],
+                "MIO": {
+                  "MaF": "4x10"
+                },
+                "SI": 3,
+                "SN": "Basketball",
+                "SR": "Баскетбол",
+                "SE": "Basketball",
+                "L": "IPBL. Pro Division",
+                "LR": "IPBL. Pro Division",
+                "LE": "IPBL. Pro Division",
+                "LI": 2496666,
+                "CN": "Russia",
+                "COI": 1,
+                "MS": [
+                  0
+                ],
+                "SGI": "6a4896035e99bd05c647f2d5",
+                "KI": 1,
+                "CID": 1,
+                "IV": 12,
+                "HHTHS": true,
+                "TNS": "Quarters",
+                "SUBA": true
+              }
+            ]
+          },
+          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":118,\"S2\":112},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":32,\"S2\":27,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":26,\"S2\":32,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":31,\"S2\":23,\"NF\":\"3rd quarter\"}},{\"Key\":4,\"Value\":{\"S1\":29,\"S2\":30,\"NF\":\"4th quarter\"}}],\"CP\":4,\"CPS\":\"4th quarter\",\"TS\":2355,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"20\",\"S2\":\"30\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"24\",\"S2\":\"13\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"6\",\"S2\":\"13\",\"N\":\"Free throws\"}]}],\"SLS\":\"39 minutes\"},\"VI\":\"19577708\",\"VA\":1,\"ZP\":4665635,\"HMH\":1,\"U\":1783144436,\"OuR\":true,\"SVoAP\":true,\"I\":733888321,\"N\":168330,\"T\":99,\"CO\":50,\"E\":[],\"AE\":[],\"EC\":2,\"TG\":\"\",\"V\":\"Including Overtime\",\"VE\":\"Including Overtime\",\"PN\":\"\",\"TN\":\"Quarter\",\"DI\":\"\",\"SS\":3,\"STI\":\"695888e76d807ed026780f0e\",\"S\":1783141800,\"CHIMG\":\"95b77fbaa64b9c1f5877579e5ed4349e.png\",\"O1\":\"Stavropol\",\"O2\":\"Sevastopol\",\"O1I\":8630599,\"O2I\":9949229,\"O1IS\":[8630599],\"O2IS\":[9949229],\"O1C\":225,\"O2C\":225,\"O1IMG\":[\"fe66885c432d3492da26966b152a8124.png\"],\"O2IMG\":[\"9e3df897e99debb2e6aa2ec6758dbb71.png\"],\"O1R\":\"Stavropol\",\"O2R\":\"Sevastopol"
         },
         {
           "label": "melbetLive-2496667",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-06-20T14:22:44.198Z",
-          "ok": false,
-          "error": "TypeError: fetch failed"
+          "capturedAt": "2026-07-04T05:53:58.252Z",
+          "http": 200,
+          "ok": true,
+          "bytes": 1660,
+          "contentType": "application/json; charset=utf-8",
+          "json": {
+            "Id": 0,
+            "Success": true,
+            "Error": "",
+            "ErrorCode": 0,
+            "Guid": "",
+            "Value": [
+              {
+                "R": 99,
+                "SC": {
+                  "FS": {
+                    "S1": 87,
+                    "S2": 92
+                  },
+                  "PS": [
+                    {
+                      "Key": 1,
+                      "Value": {
+                        "S1": 22,
+                        "S2": 26,
+                        "NF": "1st quarter"
+                      }
+                    },
+                    {
+                      "Key": 2,
+                      "Value": {
+                        "S1": 20,
+                        "S2": 17,
+                        "NF": "2nd quarter"
+                      }
+                    },
+                    {
+                      "Key": 3,
+                      "Value": {
+                        "S1": 27,
+                        "S2": 24,
+                        "NF": "3rd quarter"
+                      }
+                    },
+                    {
+                      "Key": 4,
+                      "Value": {
+                        "S1": 18,
+                        "S2": 25,
+                        "NF": "4th quarter"
+                      }
+                    }
+                  ],
+                  "CP": 4,
+                  "CPS": "4th quarter",
+                  "TS": 2398,
+                  "TR": -1,
+                  "I": "",
+                  "ST": [
+                    {
+                      "Key": 0,
+                      "Value": [
+                        {
+                          "ID": 53,
+                          "S1": "0",
+                          "S2": "0",
+                          "N": "Fouls"
+                        },
+                        {
+                          "ID": 49,
+                          "S1": "24",
+                          "S2": "24",
+                          "N": "2-pointers"
+                        },
+                        {
+                          "ID": 48,
+                          "S1": "12",
+                          "S2": "12",
+                          "N": "3-pointers"
+                        },
+                        {
+                          "ID": 50,
+                          "S1": "3",
+                          "S2": "8",
+                          "N": "Free throws"
+                        }
+                      ]
+                    }
+                  ],
+                  "SLS": "39 minutes"
+                },
+                "VI": "19577647",
+                "VA": 1,
+                "ZP": 4665770,
+                "HMH": 1,
+                "U": 1783144435,
+                "OuR": true,
+                "SVoAP": true,
+                "I": 733887284,
+                "N": 163852,
+                "T": 99,
+                "CO": 50,
+                "E": [],
+                "AE": [],
+                "TG": "",
+                "V": "Including Overtime",
+                "VE": "Including Overtime",
+                "PN": "",
+                "TN": "Quarter",
+                "DI": "",
+                "SS": 3,
+                "STI": "6958868c6d807ed02613e14b",
+                "S": 1783141500,
+                "CHIMG": "5d6624680637e0dddc3cc0fe2d38b77c.png",
+                "O1": "Cheboksary (Women)",
+                "O2": "Tambov (Women)",
+                "O1I": 9814545,
+                "O2I": 9814561,
+                "O1IS": [
+                  9814545
+                ],
+                "O2IS": [
+                  9814561
+                ],
+                "O1C": 225,
+                "O2C": 225,
+                "O1IMG": [
+                  "b431acbc09cea4cf585911880c2a1f1b.png"
+                ],
+                "O2IMG": [
+                  "a148cf73d1eba67400b26a72428a9bb3.png"
+                ],
+                "O1R": "Cheboksary (жен)",
+                "O2R": "Tambov (жен)",
+                "O1E": "Cheboksary (Women)",
+                "O2E": "Tambov (Women)",
+                "MIS": [
+                  {
+                    "K": 3,
+                    "V": "4x10"
+                  },
+                  {
+                    "K": 11,
+                    "V": "Russia"
+                  }
+                ],
+                "MIO": {
+                  "MaF": "4x10"
+                },
+                "SI": 3,
+                "SN": "Basketball",
+                "SR": "Баскетбол",
+                "SE": "Basketball",
+                "L": "IPBL. Pro Division. Women",
+                "LR": "IPBL. Pro Division. Женщины",
+                "LE": "IPBL. Pro Division. Women",
+                "LI": 2496667,
+                "CN": "Russia",
+                "COI": 1,
+                "MS": [
+                  0
+                ],
+                "SGI": "6a48949b5e99bd05c647f26f",
+                "KI": 1,
+                "CID": 1,
+                "IV": 12,
+                "HHTHS": true,
+                "TNS": "Quarters",
+                "SUBA": true
+              }
+            ]
+          },
+          "preview": "{\"Id\":0,\"Success\":true,\"Error\":\"\",\"ErrorCode\":0,\"Guid\":\"\",\"Value\":[{\"R\":99,\"SC\":{\"FS\":{\"S1\":87,\"S2\":92},\"PS\":[{\"Key\":1,\"Value\":{\"S1\":22,\"S2\":26,\"NF\":\"1st quarter\"}},{\"Key\":2,\"Value\":{\"S1\":20,\"S2\":17,\"NF\":\"2nd quarter\"}},{\"Key\":3,\"Value\":{\"S1\":27,\"S2\":24,\"NF\":\"3rd quarter\"}},{\"Key\":4,\"Value\":{\"S1\":18,\"S2\":25,\"NF\":\"4th quarter\"}}],\"CP\":4,\"CPS\":\"4th quarter\",\"TS\":2398,\"TR\":-1,\"I\":\"\",\"ST\":[{\"Key\":0,\"Value\":[{\"ID\":53,\"S1\":\"0\",\"S2\":\"0\",\"N\":\"Fouls\"},{\"ID\":49,\"S1\":\"24\",\"S2\":\"24\",\"N\":\"2-pointers\"},{\"ID\":48,\"S1\":\"12\",\"S2\":\"12\",\"N\":\"3-pointers\"},{\"ID\":50,\"S1\":\"3\",\"S2\":\"8\",\"N\":\"Free throws\"}]}],\"SLS\":\"39 minutes\"},\"VI\":\"19577647\",\"VA\":1,\"ZP\":4665770,\"HMH\":1,\"U\":1783144435,\"OuR\":true,\"SVoAP\":true,\"I\":733887284,\"N\":163852,\"T\":99,\"CO\":50,\"E\":[],\"AE\":[],\"TG\":\"\",\"V\":\"Including Overtime\",\"VE\":\"Including Overtime\",\"PN\":\"\",\"TN\":\"Quarter\",\"DI\":\"\",\"SS\":3,\"STI\":\"6958868c6d807ed02613e14b\",\"S\":1783141500,\"CHIMG\":\"5d6624680637e0dddc3cc0fe2d38b77c.png\",\"O1\":\"Cheboksary (Women)\",\"O2\":\"Tambov (Women)\",\"O1I\":9814545,\"O2I\":9814561,\"O1IS\":[9814545],\"O2IS\":[9814561],\"O1C\":225,\"O2C\":225,\"O1IMG\":[\"b431acbc09cea4cf585911880c2a1f1b.png\"],\"O2IMG\":[\"a148cf73d1eba67400b26a72428a9bb3.png\"],\"O1R\":\"Cheboksary (жен)\",\"O2R\":\""
         }
       ],
       "json": {
-        "games": []
+        "games": [
+          {
+            "source": "melbetLive",
+            "index": 0,
+            "rowKey": "733888321",
+            "gameId": "733888321",
+            "leagueId": 2496666,
+            "divisionTag": null,
+            "homeName": "Stavropol",
+            "awayName": "Sevastopol",
+            "homeNorm": "stavropol",
+            "awayNorm": "sevastopol",
+            "homeScore": 118,
+            "awayScore": 112,
+            "period": 4,
+            "clock": null,
+            "status": "4th quarter",
+            "rawShape": [
+              "R",
+              "SC",
+              "VI",
+              "VA",
+              "ZP",
+              "HMH",
+              "U",
+              "OuR",
+              "SVoAP",
+              "I",
+              "N",
+              "T",
+              "CO",
+              "E",
+              "AE",
+              "EC",
+              "TG",
+              "V",
+              "VE",
+              "PN",
+              "TN",
+              "DI",
+              "SS",
+              "STI",
+              "S",
+              "CHIMG",
+              "O1",
+              "O2",
+              "O1I",
+              "O2I",
+              "O1IS",
+              "O2IS",
+              "O1C",
+              "O2C",
+              "O1IMG",
+              "O2IMG",
+              "O1R",
+              "O2R",
+              "O1E",
+              "O2E",
+              "MIS",
+              "MIO",
+              "SI",
+              "SN",
+              "SR",
+              "SE",
+              "L",
+              "LR",
+              "LE",
+              "LI",
+              "CN",
+              "COI",
+              "MS",
+              "SGI",
+              "KI",
+              "CID",
+              "IV",
+              "HHTHS",
+              "TNS",
+              "SUBA"
+            ]
+          },
+          {
+            "source": "melbetLive",
+            "index": 0,
+            "rowKey": "733887284",
+            "gameId": "733887284",
+            "leagueId": 2496667,
+            "divisionTag": null,
+            "homeName": "Cheboksary (Women)",
+            "awayName": "Tambov (Women)",
+            "homeNorm": "cheboksary",
+            "awayNorm": "tambov",
+            "homeScore": 87,
+            "awayScore": 92,
+            "period": 4,
+            "clock": null,
+            "status": "4th quarter",
+            "rawShape": [
+              "R",
+              "SC",
+              "VI",
+              "VA",
+              "ZP",
+              "HMH",
+              "U",
+              "OuR",
+              "SVoAP",
+              "I",
+              "N",
+              "T",
+              "CO",
+              "E",
+              "AE",
+              "TG",
+              "V",
+              "VE",
+              "PN",
+              "TN",
+              "DI",
+              "SS",
+              "STI",
+              "S",
+              "CHIMG",
+              "O1",
+              "O2",
+              "O1I",
+              "O2I",
+              "O1IS",
+              "O2IS",
+              "O1C",
+              "O2C",
+              "O1IMG",
+              "O2IMG",
+              "O1R",
+              "O2R",
+              "O1E",
+              "O2E",
+              "MIS",
+              "MIO",
+              "SI",
+              "SN",
+              "SR",
+              "SE",
+              "L",
+              "LR",
+              "LE",
+              "LI",
+              "CN",
+              "COI",
+              "MS",
+              "SGI",
+              "KI",
+              "CID",
+              "IV",
+              "HHTHS",
+              "TNS",
+              "SUBA"
+            ]
+          }
+        ]
       }
     }
   },
   "rowSets": {
-    "officialCalendar": [],
-    "productionLive": [],
-    "recorderHistory": []
+    "officialCalendar": [
+      {
+        "source": "officialCalendar",
+        "index": 0,
+        "rowKey": "voronezh v plavsk",
+        "gameId": null,
+        "divisionTag": "ipbl-66-m-pro-c",
+        "homeName": "Voronezh",
+        "awayName": "Plavsk",
+        "homeNorm": "voronezh",
+        "awayNorm": "plavsk",
+        "homeScore": 0,
+        "awayScore": 0,
+        "period": null,
+        "clock": null,
+        "status": {
+          "icon": "fa-solid fa-play color-darkgreen ",
+          "id": "Online",
+          "displayName": "Онлайн"
+        },
+        "rawShape": [
+          "game",
+          "comp",
+          "league",
+          "gender",
+          "status",
+          "region",
+          "arena",
+          "team1",
+          "team2",
+          "ot",
+          "distanceIndex",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "hasCoefficients",
+          "photoUrl",
+          "division",
+          "tag",
+          "divisionTag"
+        ]
+      },
+      {
+        "source": "officialCalendar",
+        "index": 1,
+        "rowKey": "krasnoyarsk v nizhniynovgorod",
+        "gameId": null,
+        "divisionTag": "ipbl-66-m-pro-d",
+        "homeName": "Krasnoyarsk",
+        "awayName": "NizhniyNovgorod",
+        "homeNorm": "krasnoyarsk",
+        "awayNorm": "nizhniynovgorod",
+        "homeScore": 0,
+        "awayScore": 0,
+        "period": null,
+        "clock": null,
+        "status": {
+          "icon": "fa-solid fa-circle-play color-orange ",
+          "id": "ResultWaiting",
+          "displayName": "Завершена"
+        },
+        "rawShape": [
+          "game",
+          "comp",
+          "league",
+          "gender",
+          "status",
+          "region",
+          "arena",
+          "team1",
+          "team2",
+          "ot",
+          "distanceIndex",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "hasCoefficients",
+          "photoUrl",
+          "division",
+          "tag",
+          "divisionTag"
+        ]
+      },
+      {
+        "source": "officialCalendar",
+        "index": 2,
+        "rowKey": "cheboksary v tambov",
+        "gameId": null,
+        "divisionTag": "ipbl-66-w-pro-b",
+        "homeName": "Cheboksary",
+        "awayName": "Tambov",
+        "homeNorm": "cheboksary",
+        "awayNorm": "tambov",
+        "homeScore": 0,
+        "awayScore": 0,
+        "period": 4,
+        "clock": "1.47",
+        "status": {
+          "icon": "fa-solid fa-play color-darkgreen ",
+          "id": "Online",
+          "displayName": "Live"
+        },
+        "rawShape": [
+          "game",
+          "comp",
+          "league",
+          "gender",
+          "status",
+          "region",
+          "arena",
+          "team1",
+          "team2",
+          "ot",
+          "distanceIndex",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "hasCoefficients",
+          "photoUrl",
+          "division",
+          "tag",
+          "divisionTag"
+        ]
+      }
+    ],
+    "productionLive": [
+      {
+        "source": "productionLive",
+        "index": 0,
+        "rowKey": "733887284",
+        "gameId": "733887284",
+        "divisionTag": "ipbl-66-w-pro-b",
+        "homeName": "Cheboksary",
+        "awayName": "Tambov",
+        "homeNorm": "cheboksary",
+        "awayNorm": "tambov",
+        "homeScore": 87,
+        "awayScore": 92,
+        "period": 4,
+        "clock": "00:02",
+        "status": "Online",
+        "rawShape": [
+          "gameId",
+          "tag",
+          "status",
+          "statusDisplay",
+          "upstreamStatusId",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "localDate",
+          "localTime",
+          "scheduledTime",
+          "sourceLocalDate",
+          "sourceLocalTime",
+          "sourceTimeZone",
+          "displayTimeZone",
+          "divisionLabel",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "isLive",
+          "updatedAt",
+          "team1",
+          "team2"
+        ]
+      }
+    ],
+    "recorderHistory": [
+      {
+        "source": "recorderHistory",
+        "index": 0,
+        "rowKey": "733887284",
+        "gameId": "733887284",
+        "divisionTag": "ipbl-66-w-pro-b",
+        "homeName": "Cheboksary",
+        "awayName": "Tambov",
+        "homeNorm": "cheboksary",
+        "awayNorm": "tambov",
+        "homeScore": 87,
+        "awayScore": 92,
+        "period": 4,
+        "clock": "00:02",
+        "status": "Online",
+        "rawShape": [
+          "schemaVersion",
+          "capturedAt",
+          "capturedAtMs",
+          "gameKey",
+          "gameId",
+          "divisionTag",
+          "division",
+          "divisionLabel",
+          "quarter",
+          "timeRemaining",
+          "score",
+          "quarterScore",
+          "totalScore",
+          "snapshotTime",
+          "team1",
+          "team2",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "quarterScores",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "status",
+          "statusDisplay",
+          "isLive",
+          "scheduledTime",
+          "localDate",
+          "localTime",
+          "displayTimeZone",
+          "source",
+          "fallbackFrom",
+          "sourceStatus",
+          "sourceUpdatedAt",
+          "transition"
+        ]
+      },
+      {
+        "source": "recorderHistory",
+        "index": 1,
+        "rowKey": "733887284",
+        "gameId": "733887284",
+        "divisionTag": "ipbl-66-w-pro-b",
+        "homeName": "Cheboksary",
+        "awayName": "Tambov",
+        "homeNorm": "cheboksary",
+        "awayNorm": "tambov",
+        "homeScore": 87,
+        "awayScore": 91,
+        "period": 4,
+        "clock": "00:07",
+        "status": "Online",
+        "rawShape": [
+          "schemaVersion",
+          "capturedAt",
+          "capturedAtMs",
+          "gameKey",
+          "gameId",
+          "divisionTag",
+          "division",
+          "divisionLabel",
+          "quarter",
+          "timeRemaining",
+          "score",
+          "quarterScore",
+          "totalScore",
+          "snapshotTime",
+          "team1",
+          "team2",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "quarterScores",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "status",
+          "statusDisplay",
+          "isLive",
+          "scheduledTime",
+          "localDate",
+          "localTime",
+          "displayTimeZone",
+          "source",
+          "fallbackFrom",
+          "sourceStatus",
+          "sourceUpdatedAt",
+          "transition"
+        ]
+      },
+      {
+        "source": "recorderHistory",
+        "index": 2,
+        "rowKey": "733887284",
+        "gameId": "733887284",
+        "divisionTag": "ipbl-66-w-pro-b",
+        "homeName": "Cheboksary",
+        "awayName": "Tambov",
+        "homeNorm": "cheboksary",
+        "awayNorm": "tambov",
+        "homeScore": 87,
+        "awayScore": 90,
+        "period": 4,
+        "clock": "00:12",
+        "status": "Online",
+        "rawShape": [
+          "schemaVersion",
+          "capturedAt",
+          "capturedAtMs",
+          "gameKey",
+          "gameId",
+          "divisionTag",
+          "division",
+          "divisionLabel",
+          "quarter",
+          "timeRemaining",
+          "score",
+          "quarterScore",
+          "totalScore",
+          "snapshotTime",
+          "team1",
+          "team2",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "quarterScores",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "status",
+          "statusDisplay",
+          "isLive",
+          "scheduledTime",
+          "localDate",
+          "localTime",
+          "displayTimeZone",
+          "source",
+          "fallbackFrom",
+          "sourceStatus",
+          "sourceUpdatedAt",
+          "transition"
+        ]
+      },
+      {
+        "source": "recorderHistory",
+        "index": 3,
+        "rowKey": "733887284",
+        "gameId": "733887284",
+        "divisionTag": "ipbl-66-w-pro-b",
+        "homeName": "Cheboksary",
+        "awayName": "Tambov",
+        "homeNorm": "cheboksary",
+        "awayNorm": "tambov",
+        "homeScore": 87,
+        "awayScore": 88,
+        "period": 4,
+        "clock": "00:38",
+        "status": "Online",
+        "rawShape": [
+          "schemaVersion",
+          "capturedAt",
+          "capturedAtMs",
+          "gameKey",
+          "gameId",
+          "divisionTag",
+          "division",
+          "divisionLabel",
+          "quarter",
+          "timeRemaining",
+          "score",
+          "quarterScore",
+          "totalScore",
+          "snapshotTime",
+          "team1",
+          "team2",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "quarterScores",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "status",
+          "statusDisplay",
+          "isLive",
+          "scheduledTime",
+          "localDate",
+          "localTime",
+          "displayTimeZone",
+          "source",
+          "fallbackFrom",
+          "sourceStatus",
+          "sourceUpdatedAt",
+          "transition"
+        ]
+      },
+      {
+        "source": "recorderHistory",
+        "index": 4,
+        "rowKey": "733887284",
+        "gameId": "733887284",
+        "divisionTag": "ipbl-66-w-pro-b",
+        "homeName": "Cheboksary",
+        "awayName": "Tambov",
+        "homeNorm": "cheboksary",
+        "awayNorm": "tambov",
+        "homeScore": 85,
+        "awayScore": 84,
+        "period": 4,
+        "clock": "01:28",
+        "status": "Online",
+        "rawShape": [
+          "schemaVersion",
+          "capturedAt",
+          "capturedAtMs",
+          "gameKey",
+          "gameId",
+          "divisionTag",
+          "division",
+          "divisionLabel",
+          "quarter",
+          "timeRemaining",
+          "score",
+          "quarterScore",
+          "totalScore",
+          "snapshotTime",
+          "team1",
+          "team2",
+          "score1",
+          "score2",
+          "scoreText",
+          "fullScore",
+          "quarterScores",
+          "period",
+          "timeToGo",
+          "timeIsGo",
+          "status",
+          "statusDisplay",
+          "isLive",
+          "scheduledTime",
+          "localDate",
+          "localTime",
+          "displayTimeZone",
+          "source",
+          "fallbackFrom",
+          "sourceStatus",
+          "sourceUpdatedAt",
+          "transition"
+        ]
+      }
+    ]
   },
   "reconciliation": {
     "primarySource": "productionLive",
-    "matches": [],
+    "matches": [
+      {
+        "rowKey": "733887284",
+        "baseSource": "productionLive",
+        "base": {
+          "source": "productionLive",
+          "index": 0,
+          "rowKey": "733887284",
+          "gameId": "733887284",
+          "divisionTag": "ipbl-66-w-pro-b",
+          "homeName": "Cheboksary",
+          "awayName": "Tambov",
+          "homeNorm": "cheboksary",
+          "awayNorm": "tambov",
+          "homeScore": 87,
+          "awayScore": 92,
+          "period": 4,
+          "clock": "00:02",
+          "status": "Online",
+          "rawShape": [
+            "gameId",
+            "tag",
+            "status",
+            "statusDisplay",
+            "upstreamStatusId",
+            "score1",
+            "score2",
+            "scoreText",
+            "fullScore",
+            "localDate",
+            "localTime",
+            "scheduledTime",
+            "sourceLocalDate",
+            "sourceLocalTime",
+            "sourceTimeZone",
+            "displayTimeZone",
+            "divisionLabel",
+            "period",
+            "timeToGo",
+            "timeIsGo",
+            "isLive",
+            "updatedAt",
+            "team1",
+            "team2"
+          ]
+        },
+        "matched": {
+          "officialCalendar": {
+            "source": "officialCalendar",
+            "index": 2,
+            "rowKey": "cheboksary v tambov",
+            "gameId": null,
+            "divisionTag": "ipbl-66-w-pro-b",
+            "homeName": "Cheboksary",
+            "awayName": "Tambov",
+            "homeNorm": "cheboksary",
+            "awayNorm": "tambov",
+            "homeScore": 0,
+            "awayScore": 0,
+            "period": 4,
+            "clock": "1.47",
+            "status": {
+              "icon": "fa-solid fa-play color-darkgreen ",
+              "id": "Online",
+              "displayName": "Live"
+            },
+            "rawShape": [
+              "game",
+              "comp",
+              "league",
+              "gender",
+              "status",
+              "region",
+              "arena",
+              "team1",
+              "team2",
+              "ot",
+              "distanceIndex",
+              "period",
+              "timeToGo",
+              "timeIsGo",
+              "hasCoefficients",
+              "photoUrl",
+              "division",
+              "tag",
+              "divisionTag"
+            ]
+          },
+          "recorderHistory": {
+            "source": "recorderHistory",
+            "index": 4,
+            "rowKey": "733887284",
+            "gameId": "733887284",
+            "divisionTag": "ipbl-66-w-pro-b",
+            "homeName": "Cheboksary",
+            "awayName": "Tambov",
+            "homeNorm": "cheboksary",
+            "awayNorm": "tambov",
+            "homeScore": 85,
+            "awayScore": 84,
+            "period": 4,
+            "clock": "01:28",
+            "status": "Online",
+            "rawShape": [
+              "schemaVersion",
+              "capturedAt",
+              "capturedAtMs",
+              "gameKey",
+              "gameId",
+              "divisionTag",
+              "division",
+              "divisionLabel",
+              "quarter",
+              "timeRemaining",
+              "score",
+              "quarterScore",
+              "totalScore",
+              "snapshotTime",
+              "team1",
+              "team2",
+              "score1",
+              "score2",
+              "scoreText",
+              "fullScore",
+              "quarterScores",
+              "period",
+              "timeToGo",
+              "timeIsGo",
+              "status",
+              "statusDisplay",
+              "isLive",
+              "scheduledTime",
+              "localDate",
+              "localTime",
+              "displayTimeZone",
+              "source",
+              "fallbackFrom",
+              "sourceStatus",
+              "sourceUpdatedAt",
+              "transition"
+            ]
+          }
+        }
+      }
+    ],
     "missing": [],
-    "mismatches": []
+    "mismatches": [
+      {
+        "type": "score",
+        "rowKey": "733887284",
+        "source": "officialCalendar",
+        "baseScore": [
+          87,
+          92
+        ],
+        "candidateScore": [
+          0,
+          0
+        ]
+      },
+      {
+        "type": "score",
+        "rowKey": "733887284",
+        "source": "recorderHistory",
+        "baseScore": [
+          87,
+          92
+        ],
+        "candidateScore": [
+          85,
+          84
+        ]
+      }
+    ]
   },
-  "eventsstat": []
+  "eventsstat": [
+    {
+      "gameId": "733887284",
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=733887284&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "ok": true,
+      "bytes": 34067,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 87,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1783140773955)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1783144429126)/",
+        "Period": 4,
+        "PeriodName": "4th quarter",
+        "FullScore": {
+          "S1": 87,
+          "S2": 92
+        },
+        "PeriodScore": {
+          "S1": 18,
+          "S2": 25
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        2.425,
+        2.205,
+        2.325,
+        2.088,
+        2.085,
+        2.375,
+        2.856,
+        2.86,
+        3.275,
+        3.79,
+        4.44,
+        3.68,
+        1.464,
+        1.56,
+        1.504,
+        1.625,
+        1.485,
+        1.344,
+        1.265,
+        1.205,
+        1.15,
+        1.216,
+        1.28,
+        1.205,
+        2.54,
+        2.3,
+        2.432,
+        2.43,
+        2.175,
+        2.17
+      ],
+      "marketSeriesCount": 5,
+      "marketSelectionCount": 517,
+      "scoreHistoryCount": 87,
+      "scoreAlignmentCount": 87,
+      "marketSeriesSample": [
+        {
+          "marketKey": "401:101:38",
+          "marketType": 401,
+          "marketGroup": 101,
+          "marketSubgroup": 38,
+          "pointCount": 139,
+          "firstPrice": 2.425,
+          "lastPrice": 2.58
+        },
+        {
+          "marketKey": "402:101:38",
+          "marketType": 402,
+          "marketGroup": 101,
+          "marketSubgroup": 38,
+          "pointCount": 106,
+          "firstPrice": 1.464,
+          "lastPrice": 1.408
+        },
+        {
+          "marketKey": "3653:2766:939",
+          "marketType": 3653,
+          "marketGroup": 2766,
+          "marketSubgroup": 939,
+          "pointCount": 136,
+          "firstPrice": 2.54,
+          "lastPrice": 1.525
+        }
+      ],
+      "scoreAlignmentSample": [
+        {
+          "index": 0,
+          "capturedAt": "2026-07-04T04:52:53.955Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 0,
+          "score2": 0,
+          "deltaScore1": null,
+          "deltaScore2": null,
+          "elapsedMsSincePrevious": null,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 1,
+          "capturedAt": "2026-07-04T05:05:46.614Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 2,
+          "score2": 0,
+          "deltaScore1": 2,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 772659,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 2,
+          "capturedAt": "2026-07-04T05:06:15.673Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 2,
+          "score2": 1,
+          "deltaScore1": 0,
+          "deltaScore2": 1,
+          "elapsedMsSincePrevious": 29059,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 3,
+          "capturedAt": "2026-07-04T05:06:51.852Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 1,
+          "deltaScore1": 2,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 36179,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 4,
+          "capturedAt": "2026-07-04T05:07:46.024Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 4,
+          "deltaScore1": 0,
+          "deltaScore2": 3,
+          "elapsedMsSincePrevious": 54172,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 5,
+          "capturedAt": "2026-07-04T05:08:02.692Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 7,
+          "deltaScore1": 0,
+          "deltaScore2": 3,
+          "elapsedMsSincePrevious": 16668,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 6,
+          "capturedAt": "2026-07-04T05:08:34.393Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 9,
+          "deltaScore1": 0,
+          "deltaScore2": 2,
+          "elapsedMsSincePrevious": 31701,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 7,
+          "capturedAt": "2026-07-04T05:08:52.009Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 11,
+          "deltaScore1": 0,
+          "deltaScore2": 2,
+          "elapsedMsSincePrevious": 17616,
+          "isPeriodTransition": false
+        }
+      ],
+      "error": null
+    },
+    {
+      "gameId": "733887284",
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=733887284&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "ok": true,
+      "bytes": 34067,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 87,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1783140773955)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1783144429126)/",
+        "Period": 4,
+        "PeriodName": "4th quarter",
+        "FullScore": {
+          "S1": 87,
+          "S2": 92
+        },
+        "PeriodScore": {
+          "S1": 18,
+          "S2": 25
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        2.425,
+        2.205,
+        2.325,
+        2.088,
+        2.085,
+        2.375,
+        2.856,
+        2.86,
+        3.275,
+        3.79,
+        4.44,
+        3.68,
+        1.464,
+        1.56,
+        1.504,
+        1.625,
+        1.485,
+        1.344,
+        1.265,
+        1.205,
+        1.15,
+        1.216,
+        1.28,
+        1.205,
+        2.54,
+        2.3,
+        2.432,
+        2.43,
+        2.175,
+        2.17
+      ],
+      "marketSeriesCount": 5,
+      "marketSelectionCount": 517,
+      "scoreHistoryCount": 87,
+      "scoreAlignmentCount": 87,
+      "marketSeriesSample": [
+        {
+          "marketKey": "401:101:38",
+          "marketType": 401,
+          "marketGroup": 101,
+          "marketSubgroup": 38,
+          "pointCount": 139,
+          "firstPrice": 2.425,
+          "lastPrice": 2.58
+        },
+        {
+          "marketKey": "402:101:38",
+          "marketType": 402,
+          "marketGroup": 101,
+          "marketSubgroup": 38,
+          "pointCount": 106,
+          "firstPrice": 1.464,
+          "lastPrice": 1.408
+        },
+        {
+          "marketKey": "3653:2766:939",
+          "marketType": 3653,
+          "marketGroup": 2766,
+          "marketSubgroup": 939,
+          "pointCount": 136,
+          "firstPrice": 2.54,
+          "lastPrice": 1.525
+        }
+      ],
+      "scoreAlignmentSample": [
+        {
+          "index": 0,
+          "capturedAt": "2026-07-04T04:52:53.955Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 0,
+          "score2": 0,
+          "deltaScore1": null,
+          "deltaScore2": null,
+          "elapsedMsSincePrevious": null,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 1,
+          "capturedAt": "2026-07-04T05:05:46.614Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 2,
+          "score2": 0,
+          "deltaScore1": 2,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 772659,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 2,
+          "capturedAt": "2026-07-04T05:06:15.673Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 2,
+          "score2": 1,
+          "deltaScore1": 0,
+          "deltaScore2": 1,
+          "elapsedMsSincePrevious": 29059,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 3,
+          "capturedAt": "2026-07-04T05:06:51.852Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 1,
+          "deltaScore1": 2,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 36179,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 4,
+          "capturedAt": "2026-07-04T05:07:46.024Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 4,
+          "deltaScore1": 0,
+          "deltaScore2": 3,
+          "elapsedMsSincePrevious": 54172,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 5,
+          "capturedAt": "2026-07-04T05:08:02.692Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 7,
+          "deltaScore1": 0,
+          "deltaScore2": 3,
+          "elapsedMsSincePrevious": 16668,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 6,
+          "capturedAt": "2026-07-04T05:08:34.393Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 9,
+          "deltaScore1": 0,
+          "deltaScore2": 2,
+          "elapsedMsSincePrevious": 31701,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 7,
+          "capturedAt": "2026-07-04T05:08:52.009Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 11,
+          "deltaScore1": 0,
+          "deltaScore2": 2,
+          "elapsedMsSincePrevious": 17616,
+          "isPeriodTransition": false
+        }
+      ],
+      "error": null
+    },
+    {
+      "gameId": "733888321",
+      "partner": 8,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=733888321&coefView=3&lng=en&partner=8",
+      "http": 200,
+      "ok": true,
+      "bytes": 37358,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 110,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1783141155952)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1783144433348)/",
+        "Period": 4,
+        "PeriodName": "4th quarter",
+        "FullScore": {
+          "S1": 118,
+          "S2": 112
+        },
+        "PeriodScore": {
+          "S1": 29,
+          "S2": 30
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        1.536,
+        1.555,
+        1.42,
+        1.375,
+        1.3,
+        1.35,
+        1.485,
+        1.595,
+        1.66,
+        1.58,
+        1.47,
+        1.6,
+        2.256,
+        2.215,
+        2.21,
+        2.56,
+        2.555,
+        2.56,
+        2.72,
+        3.075,
+        3.08,
+        2.832,
+        2.84,
+        2.375,
+        1.584,
+        1.608,
+        1.46,
+        1.464,
+        1.46,
+        1.416
+      ],
+      "marketSeriesCount": 5,
+      "marketSelectionCount": 499,
+      "scoreHistoryCount": 110,
+      "scoreAlignmentCount": 110,
+      "marketSeriesSample": [
+        {
+          "marketKey": "401:101:38",
+          "marketType": 401,
+          "marketGroup": 101,
+          "marketSubgroup": 38,
+          "pointCount": 111,
+          "firstPrice": 1.536,
+          "lastPrice": 1.14
+        },
+        {
+          "marketKey": "402:101:38",
+          "marketType": 402,
+          "marketGroup": 101,
+          "marketSubgroup": 38,
+          "pointCount": 132,
+          "firstPrice": 2.256,
+          "lastPrice": 4.59
+        },
+        {
+          "marketKey": "3653:2766:939",
+          "marketType": 3653,
+          "marketGroup": 2766,
+          "marketSubgroup": 939,
+          "pointCount": 116,
+          "firstPrice": 1.584,
+          "lastPrice": 1.03
+        }
+      ],
+      "scoreAlignmentSample": [
+        {
+          "index": 0,
+          "capturedAt": "2026-07-04T04:59:15.952Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 0,
+          "score2": 0,
+          "deltaScore1": null,
+          "deltaScore2": null,
+          "elapsedMsSincePrevious": null,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 1,
+          "capturedAt": "2026-07-04T05:11:33.106Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 3,
+          "score2": 0,
+          "deltaScore1": 3,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 737154,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 2,
+          "capturedAt": "2026-07-04T05:12:18.125Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 0,
+          "deltaScore1": 1,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 45019,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 3,
+          "capturedAt": "2026-07-04T05:12:26.258Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 0,
+          "deltaScore1": 2,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 8133,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 4,
+          "capturedAt": "2026-07-04T05:12:58.204Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 2,
+          "deltaScore1": 0,
+          "deltaScore2": 2,
+          "elapsedMsSincePrevious": 31946,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 5,
+          "capturedAt": "2026-07-04T05:13:14.584Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 5,
+          "deltaScore1": 0,
+          "deltaScore2": 3,
+          "elapsedMsSincePrevious": 16380,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 6,
+          "capturedAt": "2026-07-04T05:13:31.268Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 7,
+          "deltaScore1": 0,
+          "deltaScore2": 2,
+          "elapsedMsSincePrevious": 16684,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 7,
+          "capturedAt": "2026-07-04T05:13:43.150Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 8,
+          "deltaScore1": 0,
+          "deltaScore2": 1,
+          "elapsedMsSincePrevious": 11882,
+          "isPeriodTransition": false
+        }
+      ],
+      "error": null
+    },
+    {
+      "gameId": "733888321",
+      "partner": 25,
+      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=733888321&coefView=3&lng=en&partner=25",
+      "http": 200,
+      "ok": true,
+      "bytes": 37358,
+      "success": true,
+      "rootKeys": [
+        "Id",
+        "Success",
+        "Error",
+        "ErrorCode",
+        "Guid",
+        "Value"
+      ],
+      "valueKeys": [
+        "EG",
+        "SH",
+        "DS"
+      ],
+      "hasEG": true,
+      "egCount": 5,
+      "hasSH": true,
+      "shCount": 110,
+      "hasDS": true,
+      "dsType": "string",
+      "firstSH": {
+        "DtUpdate": "/Date(1783141155952)/",
+        "Period": 1,
+        "PeriodName": "1st quarter",
+        "FullScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "PeriodScore": {
+          "S1": 0,
+          "S2": 0
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "lastSH": {
+        "DtUpdate": "/Date(1783144433348)/",
+        "Period": 4,
+        "PeriodName": "4th quarter",
+        "FullScore": {
+          "S1": 118,
+          "S2": 112
+        },
+        "PeriodScore": {
+          "S1": 29,
+          "S2": 30
+        },
+        "SubScore": {
+          "S1": null,
+          "S2": null
+        }
+      },
+      "firstEGKeys": [
+        "E",
+        "C",
+        "CWV",
+        "S"
+      ],
+      "marketSample": [
+        1.536,
+        1.555,
+        1.42,
+        1.375,
+        1.3,
+        1.35,
+        1.485,
+        1.595,
+        1.66,
+        1.58,
+        1.47,
+        1.6,
+        2.256,
+        2.215,
+        2.21,
+        2.56,
+        2.555,
+        2.56,
+        2.72,
+        3.075,
+        3.08,
+        2.832,
+        2.84,
+        2.375,
+        1.584,
+        1.608,
+        1.46,
+        1.464,
+        1.46,
+        1.416
+      ],
+      "marketSeriesCount": 5,
+      "marketSelectionCount": 499,
+      "scoreHistoryCount": 110,
+      "scoreAlignmentCount": 110,
+      "marketSeriesSample": [
+        {
+          "marketKey": "401:101:38",
+          "marketType": 401,
+          "marketGroup": 101,
+          "marketSubgroup": 38,
+          "pointCount": 111,
+          "firstPrice": 1.536,
+          "lastPrice": 1.14
+        },
+        {
+          "marketKey": "402:101:38",
+          "marketType": 402,
+          "marketGroup": 101,
+          "marketSubgroup": 38,
+          "pointCount": 132,
+          "firstPrice": 2.256,
+          "lastPrice": 4.59
+        },
+        {
+          "marketKey": "3653:2766:939",
+          "marketType": 3653,
+          "marketGroup": 2766,
+          "marketSubgroup": 939,
+          "pointCount": 116,
+          "firstPrice": 1.584,
+          "lastPrice": 1.03
+        }
+      ],
+      "scoreAlignmentSample": [
+        {
+          "index": 0,
+          "capturedAt": "2026-07-04T04:59:15.952Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 0,
+          "score2": 0,
+          "deltaScore1": null,
+          "deltaScore2": null,
+          "elapsedMsSincePrevious": null,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 1,
+          "capturedAt": "2026-07-04T05:11:33.106Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 3,
+          "score2": 0,
+          "deltaScore1": 3,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 737154,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 2,
+          "capturedAt": "2026-07-04T05:12:18.125Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 4,
+          "score2": 0,
+          "deltaScore1": 1,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 45019,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 3,
+          "capturedAt": "2026-07-04T05:12:26.258Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 0,
+          "deltaScore1": 2,
+          "deltaScore2": 0,
+          "elapsedMsSincePrevious": 8133,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 4,
+          "capturedAt": "2026-07-04T05:12:58.204Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 2,
+          "deltaScore1": 0,
+          "deltaScore2": 2,
+          "elapsedMsSincePrevious": 31946,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 5,
+          "capturedAt": "2026-07-04T05:13:14.584Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 5,
+          "deltaScore1": 0,
+          "deltaScore2": 3,
+          "elapsedMsSincePrevious": 16380,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 6,
+          "capturedAt": "2026-07-04T05:13:31.268Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 7,
+          "deltaScore1": 0,
+          "deltaScore2": 2,
+          "elapsedMsSincePrevious": 16684,
+          "isPeriodTransition": false
+        },
+        {
+          "index": 7,
+          "capturedAt": "2026-07-04T05:13:43.150Z",
+          "period": 1,
+          "periodName": "1st quarter",
+          "score1": 6,
+          "score2": 8,
+          "deltaScore1": 0,
+          "deltaScore2": 1,
+          "elapsedMsSincePrevious": 11882,
+          "isPeriodTransition": false
+        }
+      ],
+      "error": null
+    }
+  ]
 }

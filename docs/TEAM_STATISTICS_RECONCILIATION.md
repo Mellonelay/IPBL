@@ -36,7 +36,7 @@ It checks:
 - team count and uniqueness;
 - expected teams per division;
 - production `/api/teams/history` status per team;
-- source coverage metadata;
+- source coverage metadata, including current official online coverage and recent official calendar coverage;
 - latest history row;
 - quarter matrix availability;
 - no odds deployment policy.
