@@ -27,7 +27,7 @@
     "test:recorder": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-recorder.test.ts && bash tests/recorder-trigger.test.sh",
     "test:phase-c-contracts": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/melbet-contracts.test.ts",
     "dry-run:phase-c": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs scripts/phase-c-recorder-dry-run.ts",
-    "test:phase-c8-contracts": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/source-health.test.ts && bash tests/recorder-monitor.test.sh",
+    "test:phase-c8-contracts": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/source-health.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/recorder-health-snapshot.test.ts && bash tests/recorder-monitor.test.sh",
     "test:c9-contracts": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/eventsstat-contracts.test.ts",
     "reconcile:c9": "node scripts/phase-c9-row-reconciliation.mjs --out artifacts/phase-c9/pr23/row-reconciliation-latest.json",
     "reprobe:c9-eventsstat": "node scripts/phase-c9-row-reconciliation.mjs --out artifacts/phase-c9/pr23/eventsstat-reprobe-latest.json --allow-fallback-game-ids --fallback-game-ids 728820121,728819144,728819200",

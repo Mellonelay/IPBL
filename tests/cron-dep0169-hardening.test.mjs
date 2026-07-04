@@ -7,9 +7,12 @@ const teamHistory = readFileSync("api/teams/history.ts", "utf8");
 const recorder = readFileSync("api/recorder.ts", "utf8");
 
 assert.match(cron, /buildLiveFeedEnvelope/);
+assert.match(cron, /buildRecorderHealthSnapshot/);
+assert.match(cron, /mirrorProbe/);
+assert.match(cron, /health:\s*healthSnapshot\.health/);
 assert.doesNotMatch(cron, /\/api\/results\/live\?recorder/);
 assert.doesNotMatch(cron, /fetch\(liveUrl/);
-assert.match(live, /export async function buildLiveFeedEnvelope/);
+assert.match(live, /export \{ buildLiveFeedEnvelope \} from "\.\.\/\.\.\/lib\/server\/live-feed\.js";/);
 assert.match(teamHistory, /new URL\(req\.url/);
 assert.doesNotMatch(teamHistory, /req\.query/);
 assert.match(recorder, /new URL\(req\.url/);

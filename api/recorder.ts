@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getResultsRedis } from "../lib/server/results-redis.js";
 import { APPROVED_LIVE_TAGS, RECORDER_RETENTION, recorderKeys } from "../lib/server/live-recorder.js";
 import { buildGameReplay } from "../lib/server/replay-engine.js";
-import { evaluateRecorderHealth, SOURCE_HEALTH_POLICY } from "../lib/server/source-health.js";
+import { buildRecorderHealthSnapshot } from "../lib/server/recorder-health-snapshot.js";
 
 const approved = new Set<string>(APPROVED_LIVE_TAGS);
 
@@ -30,13 +30,8 @@ async function statusResponse(res: VercelResponse) {
 async function healthResponse(res: VercelResponse) {
   const redis = getResultsRedis();
   if (!redis) return res.status(503).json({ error: "recorder_storage_not_configured" });
-  const [status, activeGameKeys, runRows] = await Promise.all([
-    redis.get(recorderKeys.status),
-    redis.smembers(recorderKeys.active),
-    redis.lrange(recorderKeys.runs, 0, SOURCE_HEALTH_POLICY.recentRunWindow - 1),
-  ]);
-  const health = evaluateRecorderHealth(status, runRows, Date.now(), activeGameKeys);
-  return res.status(200).json({ health, activeGameKeys });
+  const snapshot = await buildRecorderHealthSnapshot(redis);
+  return res.status(200).json({ health: snapshot.health, activeGameKeys: snapshot.activeGameKeys });
 }
 
 async function historyResponse(search: URLSearchParams, res: VercelResponse) {
