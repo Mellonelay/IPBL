@@ -16,20 +16,9 @@ type CalendarScriptEntry = {
 
 export type ResultsCalendarMap = Record<string, CalendarScriptEntry[]>;
 
-const BACKFILL_START = new Date("2026-05-01T00:00:00Z");
-const BACKFILL_END = new Date("2026-06-01T00:00:00Z");
-const INCLUDED_TAGS = new Set([
-    "ipbl-66-m-pro-a",
-    "ipbl-66-m-pro-b",
-    "ipbl-66-m-pro-c",
-    "ipbl-66-m-pro-d",
-    "ipbl-66-m-pro-g",
-    "ipbl-66-w-pro-a",
-    "ipbl-66-w-pro-b",
-    "ipbl-66-w-pro-c",
-    "ipbl-66-w-pro-g",
-    "ipbl-66-w-pro-k",
-]);
+const BACKFILL_START = new Date("2026-06-01T00:00:00Z");
+const BACKFILL_END = new Date();
+const INCLUDED_TAGS = new Set(DIVISIONS.map((division) => division.tag));
 
 function formatApiDate(day: Date): string {
     const dd = String(day.getUTCDate()).padStart(2, "0");

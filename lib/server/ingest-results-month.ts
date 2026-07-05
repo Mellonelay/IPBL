@@ -94,8 +94,17 @@ function createEmptyMonthMap(
   return map;
 }
 
-async function fetchCalendarDay(tag: string, day: Date, signal: AbortSignal): Promise<ScheduleGame[]> {
-  const dayStr = formatApiDate(day);
+function formatApiDateFromIso(isoDate: string): string {
+  const match = isoDate.trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) {
+    throw new Error(`Invalid ISO date: ${isoDate}`);
+  }
+  const [, yyyy, mm, dd] = match;
+  return `${dd}.${mm}.${yyyy}`;
+}
+
+async function fetchCalendarDay(tag: string, isoDate: string, signal: AbortSignal): Promise<ScheduleGame[]> {
+  const dayStr = formatApiDateFromIso(isoDate);
   const params = new URLSearchParams({
     tag,
     from: dayStr,
@@ -126,6 +135,21 @@ async function fetchCalendarDay(tag: string, day: Date, signal: AbortSignal): Pr
   throw new Error(`calendar failed ${dayStr}`);
 }
 
+export async function fetchScheduleGamesForDay(
+  divisionTag: string,
+  isoDate: string,
+  opts: { timeoutMs?: number } = {}
+): Promise<ScheduleGame[]> {
+  const timeoutMs = opts.timeoutMs ?? 120_000;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetchCalendarDay(divisionTag, isoDate, controller.signal);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 /**
  * Fetch all calendar rows for one division in [year, monthIndex] (inclusive month).
  */
@@ -135,26 +159,12 @@ export async function fetchScheduleGamesForMonth(
   monthIndex: number,
   opts: { timeoutMs?: number } = {}
 ): Promise<ScheduleGame[]> {
-  const timeoutMs = opts.timeoutMs ?? 120_000;
-  const start = startOfLocalDay(new Date(year, monthIndex, 1));
-  const endExclusive = startOfLocalDay(new Date(year, monthIndex + 1, 1));
-  const days: Date[] = [];
-  for (let c = new Date(start); c < endExclusive; c.setDate(c.getDate() + 1)) {
-    days.push(new Date(c));
-  }
-
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
   const all: ScheduleGame[] = [];
-  try {
-    for (const day of days) {
-      const batch = await fetchCalendarDay(divisionTag, day, controller.signal);
-      all.push(...batch);
-    }
-    return all;
-  } finally {
-    clearTimeout(timer);
+  for (const day of monthDayKeys(year, monthIndex)) {
+    const batch = await fetchScheduleGamesForDay(divisionTag, day, { timeoutMs: opts.timeoutMs });
+    all.push(...batch);
   }
+  return all;
 }
 
 export function buildStoredMonthMap(

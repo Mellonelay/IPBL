@@ -451,6 +451,47 @@ export function latestPopulatedDate(map: StoredResultsMonthMap): string | null {
   return populated.at(-1) ?? null;
 }
 
+export function parseIsoDate(value: string): { year: number; month: number; day: number } | null {
+  const match = value.trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return null;
+  const year = Number.parseInt(match[1], 10);
+  const month = Number.parseInt(match[2], 10);
+  const day = Number.parseInt(match[3], 10);
+  if (!Number.isInteger(year) || year < 1 || year > 9999) return null;
+  if (!Number.isInteger(month) || month < 1 || month > 12) return null;
+  const maxDay = new Date(Date.UTC(year, month, 0)).getUTCDate();
+  if (!Number.isInteger(day) || day < 1 || day > maxDay) return null;
+  return { year, month, day };
+}
+
+export function buildIsoDateRange(fromIso: string, toIso: string): string[] {
+  const from = parseIsoDate(fromIso);
+  const to = parseIsoDate(toIso);
+  if (!from) throw new Error(`Invalid ISO start date: ${fromIso}`);
+  if (!to) throw new Error(`Invalid ISO end date: ${toIso}`);
+  const start = Date.UTC(from.year, from.month - 1, from.day);
+  const end = Date.UTC(to.year, to.month - 1, to.day);
+  if (start > end) throw new Error(`Invalid ISO date range: ${fromIso}..${toIso}`);
+  const out: string[] = [];
+  for (let cursor = start; cursor <= end; cursor += 24 * 60 * 60 * 1000) {
+    const d = new Date(cursor);
+    out.push(`${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`);
+  }
+  return out;
+}
+
+export function isoDateTodayInTimeZone(now = new Date(), timeZone = "Asia/Yangon"): string {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(now).map((part) => [part.type, part.value])
+  );
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
 export function verifiedThroughDateForMonth(year: number, month: number, now = new Date()): string | null {
   const parts = Object.fromEntries(
     new Intl.DateTimeFormat("en-CA", {

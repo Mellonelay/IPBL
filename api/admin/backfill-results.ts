@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { runOfficialBackfillRange } from "../../lib/server/results-official-backfill.js";
 import { resultsSyncTagsForMonth } from "../../lib/server/results-sync-constants.js";
 
 export const config = { maxDuration: 300 };
@@ -25,7 +26,21 @@ async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
   }
 
   try {
-    const { year, month, division, allApprovedDivisions } = req.body;
+    const { year, month, from, to, division, allApprovedDivisions } = req.body;
+
+    const useRangeMode = Boolean(from || to || !Number.isFinite(year) || !Number.isFinite(month));
+    if (useRangeMode) {
+      const result = await runOfficialBackfillRange(
+        {
+          from,
+          to,
+          divisionTags: allApprovedDivisions || !division ? undefined : [division],
+        },
+        { now: () => new Date() }
+      );
+      res.status(200).json({ ok: true, ...result });
+      return;
+    }
 
     if (allApprovedDivisions) {
       console.log(`Starting bulk backfill for ${year}-${month}`);

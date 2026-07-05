@@ -36,6 +36,7 @@ import ResultsTab from "./app/ResultsTab";
 import TeamsTab from "./app/TeamsTab";
 import type { DrawerState, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
 import { currentOrNextQuarter, gameDivision, liveKey } from "./app/shared";
+import { currentMyanmarResultsSelection } from "./results/month-default";
 
 function safeSplit(value: unknown, delimiter: string): string[] {
   return typeof value === "string" ? value.split(delimiter) : [];
@@ -54,6 +55,7 @@ function devAssert(condition: unknown, message: string, detail?: unknown): void 
 }
 
 function App() {
+  const initialResultsSelection = useMemo(() => currentMyanmarResultsSelection(), []);
   const [activeTab, setActiveTab] = useState<TabKey>("results");
   const [liveGames, setLiveGames] = useState<ScheduleGame[]>([]);
   const [liveLoading, setLiveLoading] = useState(false);
@@ -62,17 +64,17 @@ function App() {
   const [liveSourceFailures, setLiveSourceFailures] = useState<LiveSourceFailure[]>([]);
   const [selectedLiveDivisionTag, setSelectedLiveDivisionTag] = useState("");
 
-  const [selectedResultsYear, setSelectedResultsYear] = useState<number>(RESULTS_START_YEAR);
-  const [selectedResultsMonthIndex, setSelectedResultsMonthIndex] = useState<number>(
-    RESULTS_START_MONTH_INDEX
-  );
+  const [selectedResultsYear, setSelectedResultsYear] = useState<number>(initialResultsSelection.year);
+  const [selectedResultsMonthIndex, setSelectedResultsMonthIndex] = useState<number>(initialResultsSelection.monthIndex);
   const [selectedResultsDivisionTag, setSelectedResultsDivisionTag] = useState(
     DEFAULT_RESULTS_DIVISION_TAG
   );
-  const [jumpDate, setJumpDate] = useState<string>(() => `${RESULTS_START_YEAR}-03-01`);
+  const [jumpDate, setJumpDate] = useState<string>(
+    () => `${initialResultsSelection.year}-${String(initialResultsSelection.monthIndex + 1).padStart(2, "0")}-01`
+  );
 
   const [calendarMap, setCalendarMap] = useState<CalendarGridMap>(() =>
-    createSkeletonResultsCalendarMap(RESULTS_START_YEAR, RESULTS_START_MONTH_INDEX, [
+    createSkeletonResultsCalendarMap(initialResultsSelection.year, initialResultsSelection.monthIndex, [
       DEFAULT_RESULTS_DIVISION_TAG,
     ])
   );
@@ -357,9 +359,7 @@ function App() {
       const gen = (resultsLoadGenRef.current += 1);
       if (!options.silent) {
         setCalendarMap(
-          createSkeletonResultsCalendarMap(RESULTS_START_YEAR, RESULTS_START_MONTH_INDEX, [
-            DEFAULT_RESULTS_DIVISION_TAG,
-          ])
+          createSkeletonResultsCalendarMap(selectedResultsYear, selectedResultsMonthIndex, [selectedResultsDivisionTag])
         );
         setResultsMetadata(null);
         setResultsLoading(true);
@@ -402,6 +402,14 @@ function App() {
     const id = window.setInterval(() => void loadResults({ silent: true, force: true }), RESULTS_REFRESH_INTERVAL_MS);
     return () => window.clearInterval(id);
   }, [loadResults, activeTab]);
+
+  const openResultsTab = useCallback(() => {
+    const current = currentMyanmarResultsSelection();
+    setSelectedResultsYear(current.year);
+    setSelectedResultsMonthIndex(current.monthIndex);
+    setJumpDate(`${current.year}-${String(current.monthIndex + 1).padStart(2, "0")}-01`);
+    setActiveTab("results");
+  }, []);
 
   useEffect(() => {
     const valid = resultsDivisionsForMonth(selectedResultsYear, selectedResultsMonthIndex);
@@ -555,7 +563,7 @@ function App() {
         <button type="button" className={`tab-btn ${activeTab === "live" ? "active" : ""}`} onClick={() => setActiveTab("live")}>
           Live
         </button>
-        <button type="button" className={`tab-btn ${activeTab === "results" ? "active" : ""}`} onClick={() => setActiveTab("results")}>
+        <button type="button" className={`tab-btn ${activeTab === "results" ? "active" : ""}`} onClick={openResultsTab}>
           Results
         </button>
         <button type="button" className={`tab-btn ${activeTab === "teams" ? "active" : ""}`} onClick={() => setActiveTab("teams")}>
