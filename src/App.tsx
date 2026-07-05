@@ -31,10 +31,12 @@ import {
 } from "./results/calendar";
 import BettingTab from "./app/BettingTab";
 import GameDrawer from "./app/GameDrawer";
+import IntelligenceTab from "./app/IntelligenceTab";
 import LiveTab from "./app/LiveTab";
 import ResultsTab from "./app/ResultsTab";
 import TeamsTab from "./app/TeamsTab";
 import type { DrawerState, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
+import { loadIntelligenceSurface, type IntelligenceSurfaceSnapshot } from "./app/intelligence-client";
 import { currentOrNextQuarter, gameDivision, liveKey } from "./app/shared";
 import { currentMyanmarResultsSelection } from "./results/month-default";
 
@@ -83,6 +85,9 @@ function App() {
   const [resultsMetadata, setResultsMetadata] = useState<ResultsMonthMetadata | null>(null);
   const [loadedResultsKey, setLoadedResultsKey] = useState<string | null>(null);
   const resultsLoadGenRef = useRef(0);
+  const [intelligenceSnapshot, setIntelligenceSnapshot] = useState<IntelligenceSurfaceSnapshot | null>(null);
+  const [intelligenceLoading, setIntelligenceLoading] = useState(false);
+  const [intelligenceErr, setIntelligenceErr] = useState<string | null>(null);
 
   const [drawer, setDrawer] = useState<DrawerState | null>(null);
   const [teamRefreshToken, setTeamRefreshToken] = useState(0);
@@ -96,6 +101,7 @@ function App() {
   const activeTabLabel: Record<TabKey, string> = {
     live: "Live",
     results: "Results",
+    intelligence: "Intelligence",
     teams: "Teams",
     betting: "Betting Record",
   };
@@ -111,6 +117,11 @@ function App() {
       : resultsMetadata?.status === "source_unavailable"
         ? "Stored results are intact, but the source was unavailable during the latest sync."
         : `Results month ${selectedMonthKey} is ready for drill-in.`,
+    intelligence: intelligenceLoading
+      ? "Refreshing Graphify synthesis, runtime, recorder, and phase coverage."
+      : intelligenceSnapshot
+        ? "Graphify synthesis, runtime, recorder, and phase coverage are loaded."
+        : "Intelligence surface is waiting for its first snapshot.",
     teams: "Team statistics stays centered on verified histories and quarter movement.",
     betting: "Betting record stays aligned to the date-scoped memory ledger.",
   };
@@ -135,6 +146,8 @@ function App() {
       ? selectedLiveDivisionTag || "All live divisions"
       : activeTab === "results"
         ? selectedResultsDivisionTag
+        : activeTab === "intelligence"
+          ? "Intelligence surface"
         : activeTab === "teams"
           ? "Team statistics"
           : "Betting memory";
@@ -248,7 +261,9 @@ function App() {
     const tab = params.get("tab");
     const date = params.get("date");
     const division = params.get("division");
-    if (tab === "results" || tab === "live" || tab === "teams" || tab === "betting") setActiveTab(tab);
+    if (tab === "results" || tab === "live" || tab === "intelligence" || tab === "teams" || tab === "betting") {
+      setActiveTab(tab);
+    }
     if (date) {
       setJumpDate(date);
       const parts = safeSplit(date, "-").map((p) => Number.parseInt(p, 10));
@@ -403,6 +418,25 @@ function App() {
     return () => window.clearInterval(id);
   }, [loadResults, activeTab]);
 
+  const loadIntelligence = useCallback(async () => {
+    setIntelligenceLoading(true);
+    setIntelligenceErr(null);
+    try {
+      setIntelligenceSnapshot(await loadIntelligenceSurface());
+    } catch (error) {
+      setIntelligenceErr(error instanceof Error ? error.message : "Intelligence load failed");
+    } finally {
+      setIntelligenceLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (activeTab !== "intelligence") return;
+    void loadIntelligence();
+    const id = window.setInterval(() => void loadIntelligence(), 30_000);
+    return () => window.clearInterval(id);
+  }, [activeTab, loadIntelligence]);
+
   const openResultsTab = useCallback(() => {
     const current = currentMyanmarResultsSelection();
     setSelectedResultsYear(current.year);
@@ -533,6 +567,7 @@ function App() {
               clearResultsCalendarCache();
               if (activeTab === "live") void loadLive();
               if (activeTab === "results") void loadResults({ force: true });
+              if (activeTab === "intelligence") void loadIntelligence();
               if (activeTab === "teams") setTeamRefreshToken((value) => value + 1);
             }}
           >
@@ -565,6 +600,13 @@ function App() {
         </button>
         <button type="button" className={`tab-btn ${activeTab === "results" ? "active" : ""}`} onClick={openResultsTab}>
           Results
+        </button>
+        <button
+          type="button"
+          className={`tab-btn ${activeTab === "intelligence" ? "active" : ""}`}
+          onClick={() => setActiveTab("intelligence")}
+        >
+          Intelligence
         </button>
         <button type="button" className={`tab-btn ${activeTab === "teams" ? "active" : ""}`} onClick={() => setActiveTab("teams")}>
           Teams
@@ -605,6 +647,10 @@ function App() {
             onOpenMatch={(game) => void openDrawer(game)}
             onOpenH2H={(game) => void openDrawer(game)}
           />
+        )}
+
+        {activeTab === "intelligence" && (
+          <IntelligenceTab snapshot={intelligenceSnapshot} loading={intelligenceLoading} error={intelligenceErr} />
         )}
 
         {activeTab === "teams" && (

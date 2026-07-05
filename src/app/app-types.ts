@@ -1,7 +1,7 @@
 import type { BoxScoreState, GameReplay, H2HEntry, ScheduleGame } from "../api/types";
 import type { OperatorDecision, QuarterFlowAnalysis, ScoreboardAnalysis } from "../operator/engine";
 
-export type TabKey = "live" | "results" | "teams" | "betting";
+export type TabKey = "live" | "results" | "intelligence" | "teams" | "betting";
 
 export type LiveSourceFailure = {
   kind?: string;
