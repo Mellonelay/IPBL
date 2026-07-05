@@ -3,6 +3,7 @@ import type { PredictionInput, PredictionOutput } from "../prediction/prediction
 import type { CalibrationResult } from "../calibration/confidence-calibrator.js";
 import type { AdaptiveScore } from "../self-learning/adaptive-scorer.js";
 import type { DriftReport } from "../calibration/prediction-drift.js";
+import type { LiveQuarterPattern } from "../server/live-pattern-discovery.js";
 
 export type PredictionLiveMatchup = {
   team1: string;
@@ -29,6 +30,7 @@ export type PredictionRuntimeRow = {
   calibration: CalibrationResult;
   adaptive: AdaptiveScore;
   drift: DriftReport;
+  liveSignal: LiveQuarterPattern | null;
 };
 
 export function mapLiveGameToPredictionInput(game: ScheduleGame): PredictionInput {
@@ -49,6 +51,7 @@ export function mapPredictionRuntimeRow(
   calibration: CalibrationResult,
   adaptive: AdaptiveScore,
   drift: DriftReport,
+  liveSignal: LiveQuarterPattern | null = null,
 ): PredictionRuntimeRow {
   return {
     gameId: game.gameId,
@@ -71,5 +74,6 @@ export function mapPredictionRuntimeRow(
     calibration,
     adaptive,
     drift,
+    liveSignal,
   };
 }

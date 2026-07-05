@@ -18,6 +18,7 @@ export function createPredictionLiveHandler(deps: PredictionLiveDependencies = {
       generatedAt: deps.now?.() ?? new Date(),
       baselineEvaluation: deps.baselineEvaluation ?? null,
       recentEvaluation: deps.recentEvaluation ?? null,
+      livePatterns: deps.livePatterns ?? undefined,
     });
 
     res.setHeader("Cache-Control", "no-store, max-age=0");
