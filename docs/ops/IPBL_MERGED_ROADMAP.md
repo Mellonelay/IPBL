@@ -11,7 +11,7 @@ Live foundation
 Recorder baseline
 C8/C8.5 operational hardening
 C9 proof/reconciliation foundation
-Approved 13-division boundary
+Approved 14-division boundary
 H2H freshness and continuity
 ```
 
@@ -39,7 +39,7 @@ ipbl-66-w-pro-g
 ipbl-66-w-pro-k
 ```
 
-Total: 13 approved divisions.
+Total: 14 approved divisions.
 
 ## Partial / active
 
@@ -73,7 +73,7 @@ Backtesting
 Team Statistics reconciliation
 ```
 
-Reason: H2H now merges Results KV, official online rows, and recent official daily calendar windows. Team Statistics must be reconciled against that same 13-division source model before deeper odds/operator features.
+Reason: H2H now merges Results KV, official online rows, and recent official daily calendar windows. Team Statistics must be reconciled against that same 14-division source model before deeper odds/operator features.
 
 ## Git History Map
 

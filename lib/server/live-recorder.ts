@@ -6,7 +6,7 @@ export const RECORDER_TTL_SECONDS = 30 * 24 * 60 * 60;
 export const RECORDER_PREFIX = "ipbl:recorder:v1";
 
 export const APPROVED_LIVE_TAGS = [
-  "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-u", "ipbl-66-m-pro-z", "ipbl-66-m-pro-l",
+  "ipbl-66-m-pro-a", "ipbl-66-m-pro-b", "ipbl-66-m-pro-c", "ipbl-66-m-pro-d", "ipbl-66-m-pro-g", "ipbl-66-m-pro-u", "ipbl-66-m-pro-z", "ipbl-66-m-pro-l",
   "ipbl-66-w-pro-a", "ipbl-66-w-pro-b", "ipbl-66-w-pro-c", "ipbl-66-w-pro-d", "ipbl-66-w-pro-g", "ipbl-66-w-pro-k",
 ] as const;
 
@@ -372,7 +372,7 @@ export async function readRecordedLiveFeed(redis: RecorderRedis): Promise<LiveFe
       source: typeof summary.source === "string" ? summary.source : sourceDetails.source ?? "recorder",
       status: typeof summary.sourceStatus === "string" ? summary.sourceStatus : sourceDetails.status ?? "OK",
       fallbackFrom: sourceDetails.fallbackFrom ?? undefined,
-      requestedDivisions: Number(sourceDetails.requestedDivisions ?? activeGameKeys.length ?? 13),
+      requestedDivisions: Number(sourceDetails.requestedDivisions ?? activeGameKeys.length ?? 14),
       successfulDivisions: Number(sourceDetails.successfulDivisions ?? new Set(games.map((game) => game.tag)).size),
       failures: Array.isArray(sourceDetails.failures) ? sourceDetails.failures : [],
       bookmakerSourceLeagues: Array.isArray(sourceDetails.bookmakerSourceLeagues) ? sourceDetails.bookmakerSourceLeagues : [],

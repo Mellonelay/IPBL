@@ -37,7 +37,7 @@ const status = {
     source: "bookmaker:melbet.com+1xbet.com",
     status: "PARTIAL",
     fallbackFrom: "official:api1.ipbl.pro",
-    requestedDivisions: 13,
+    requestedDivisions: 14,
     successfulDivisions: 2,
     bookmakerSourceLeagues: [2496666, 2496667],
     bookmakerSourceFailures: [],
@@ -57,7 +57,7 @@ const snapshot = await buildRecorderHealthSnapshot(redis, now);
 
 assert.equal(snapshot.health.level, "DEGRADED");
 assert.equal(snapshot.health.source.reportedStatus, "PARTIAL");
-assert.equal(snapshot.health.source.coverageRatio, 2 / 13);
+assert.equal(snapshot.health.source.coverageRatio, 2 / 14);
 assert.equal(snapshot.health.source.unmatchedEventCount, 1);
 assert.equal(snapshot.health.source.bookmakerFailureCount, 0);
 assert.equal(snapshot.health.alert.code, "source_degraded");

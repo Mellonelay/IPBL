@@ -35,7 +35,7 @@
 
 - [ ] **Step 1: Write the failing tests**
 
-Add assertions that make the current 13-tag state fail:
+Add assertions that make the old 13-tag state fail and lock in the 14-tag boundary:
 
 ```ts
 assert.equal(TEAM_STATISTICS_DIVISIONS.length, 14);

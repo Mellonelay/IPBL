@@ -31,6 +31,11 @@ export const ACTIVE_TEAMS: ActiveTeamConfig[] = [
   { teamId: 76066, name: "Rostov-on-Don", divisionTag: "ipbl-66-m-pro-d" },
   { teamId: 76065, name: "Volgograd", divisionTag: "ipbl-66-m-pro-d" },
 
+  { teamId: 76073, name: "Astrakhan", divisionTag: "ipbl-66-m-pro-g" },
+  { teamId: 76074, name: "Gelendzhik", divisionTag: "ipbl-66-m-pro-g" },
+  { teamId: 76075, name: "Kachkanar", divisionTag: "ipbl-66-m-pro-g" },
+  { teamId: 76076, name: "Tver", divisionTag: "ipbl-66-m-pro-g" },
+
   { teamId: 76061, name: "Ryazan", divisionTag: "ipbl-66-m-pro-u" },
   { teamId: 76064, name: "Salavat", divisionTag: "ipbl-66-m-pro-u" },
   { teamId: 76062, name: "Serov", divisionTag: "ipbl-66-m-pro-u" },

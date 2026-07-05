@@ -41,13 +41,13 @@ const redis = new MemoryRedis();
 const checkedDate = `2026-06-${String(LIVE_DIVISION_TAGS.length).padStart(2, "0")}`;
 const checkedAt = (time: string) => new Date(`${checkedDate}T${time}Z`);
 
-await assert.rejects(
-  writeResultsMonthToKv(
-    { year: 2026, month: 6, divisionTag: "ipbl-66-m-pro-g" },
-    { redis, fetchMonth: async () => [], now: () => checkedAt("00:00:00") }
-  ),
-  /disallowed division tag/
+const approvedMenG = await writeResultsMonthToKv(
+  { year: 2026, month: 6, divisionTag: "ipbl-66-m-pro-g" },
+  { redis, fetchMonth: async () => [game(1, { tag: "ipbl-66-m-pro-g", divisionLabel: "Pro Men G" })], now: () => checkedAt("00:00:00") }
 );
+assert.equal(approvedMenG.divisionTag, "ipbl-66-m-pro-g");
+assert.equal(approvedMenG.gamesAccepted, 1);
+assert.equal(approvedMenG.metadata.status, "ok");
 const first = await writeResultsMonthToKv(
   { year: 2026, month: 6, divisionTag: "ipbl-66-m-pro-a" },
   { redis, fetchMonth: async () => [game(1), game(2)], now: () => checkedAt("00:00:00") }
@@ -81,7 +81,7 @@ assert.equal(failureMeta.verifiedThroughDate, checkedDate);
 const slots = resultsSyncSlots(checkedAt("00:00:00"));
 assert.equal(slots.filter((slot) => slot.year === 2026 && slot.month === 6).length, LIVE_DIVISION_TAGS.length);
 assert.equal(slots.filter((slot) => slot.year === 2026 && slot.month === 5).length, resultsSyncTagsForMonth(2026, 5).length);
-assert.equal(slots.some((slot) => slot.month === 6 && slot.tag === "ipbl-66-m-pro-g"), false);
+assert.equal(slots.some((slot) => slot.month === 6 && slot.tag === "ipbl-66-m-pro-g"), true);
 assert.equal(slots.some((slot) => slot.month === 5 && slot.tag === "ipbl-66-m-pro-g"), true);
 
 console.log("Phase A Results writer fixture tests passed");

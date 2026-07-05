@@ -49,7 +49,7 @@ await recordLiveEnvelope(redis, {
     source: "bookmaker:melbet.com",
     fallbackFrom: "official:api1.ipbl.pro",
     status: "PARTIAL",
-    requestedDivisions: 13,
+    requestedDivisions: 14,
     successfulDivisions: 1,
   },
 }, 1000);
@@ -59,7 +59,7 @@ assert.equal(feed.games.length, 1);
 assert.equal(feed.games[0].gameId, game.gameId);
 assert.equal(feed.games[0].scoreText, "32 : 34");
 assert.equal(feed.status.source, "bookmaker:melbet.com");
-assert.equal(feed.status.requestedDivisions, 13);
+assert.equal(feed.status.requestedDivisions, 14);
 assert.equal(feed.status.successfulDivisions, 1);
 assert.equal(feed.status.fallbackFrom, "official:api1.ipbl.pro");
 assert.equal(feed.games[0].team1.teamId, 76013);

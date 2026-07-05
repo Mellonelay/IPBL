@@ -8,6 +8,7 @@ This is the current approved boundary for Live, Recorder, Results current-month 
 - `ipbl-66-m-pro-b`
 - `ipbl-66-m-pro-c`
 - `ipbl-66-m-pro-d`
+- `ipbl-66-m-pro-g`
 - `ipbl-66-m-pro-u`
 - `ipbl-66-m-pro-z`
 - `ipbl-66-m-pro-l`
@@ -24,12 +25,12 @@ This is the current approved boundary for Live, Recorder, Results current-month 
 ## Total
 
 ```text
-13 approved divisions
+14 approved divisions
 ```
 
 ## Notes
 
-`ipbl-66-m-pro-g` may remain in historical Results sync/storage code for old months only. It is not part of the current Live approved boundary.
+`ipbl-66-m-pro-g` is part of the current approved boundary and remains supported across Live, Recorder, Team Statistics, and Results sync/storage code.
 
 ## Change record
 
