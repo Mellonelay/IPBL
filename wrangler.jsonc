@@ -5,6 +5,7 @@
   "observability": {
     "enabled": true
   },
+  // Dedicated Graphify intelligence worker config lives in workers/graphify-intelligence/wrangler.jsonc.
   "assets": {
     "not_found_handling": "single-page-application"
   },
