@@ -53,6 +53,27 @@ function replaySort(a: ReplayEvent, b: ReplayEvent): number {
   return Number(a.quarter ?? 0) - Number(b.quarter ?? 0);
 }
 
+function numeric(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function totalFromScoreText(scoreText: unknown): number | null {
+  if (typeof scoreText !== "string") return null;
+  const match = scoreText.match(/(\d+)\s*[:\-]\s*(\d+)(?:\s*,\s*(\d+)\s*[:\-]\s*(\d+))?/);
+  if (!match) return null;
+  const left = Number.parseInt(match[1], 10);
+  const right = Number.parseInt(match[2], 10);
+  if (!Number.isFinite(left) || !Number.isFinite(right)) return null;
+  return left + right;
+}
+
+export function replayEventTotal(event: ReplayEvent): number | null {
+  const score1 = numeric((event as Record<string, unknown>).score1);
+  const score2 = numeric((event as Record<string, unknown>).score2);
+  if (score1 !== null && score2 !== null) return score1 + score2;
+  return totalFromScoreText((event as Record<string, unknown>).scoreText);
+}
+
 function resultFromQuarter(snapshot: RecordedLiveSnapshot): ReplayEvent {
   return {
     kind: "result",
