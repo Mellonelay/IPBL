@@ -10,8 +10,8 @@
  *   BASE_URL          default http://127.0.0.1:4873
  *   H2H_TIMEOUT_MS    default 45000
  *   OPEN_LIVE_H2H     default 1 — click first live card H2H; fall back to a deterministic Results game
- *   H2H_RESULTS_DATE  default 2026-06-01
- *   H2H_RESULTS_DIVISION default ipbl-66-m-pro-a
+ *   H2H_RESULTS_DATE  default 2026-06-02
+ *   H2H_RESULTS_DIVISION default ipbl-66-w-pro-d
  */
 import { chromium } from "playwright";
 
@@ -19,8 +19,8 @@ const BASE_URL = (process.env.BASE_URL || "http://127.0.0.1:4873").replace(/\/$/
 const H2H_TIMEOUT_MS = Number(process.env.H2H_TIMEOUT_MS || 45_000);
 const NAV_TIMEOUT = 60_000;
 const OPEN_LIVE_H2H = process.env.OPEN_LIVE_H2H !== "0";
-const H2H_RESULTS_DATE = process.env.H2H_RESULTS_DATE || "2026-06-01";
-const H2H_RESULTS_DIVISION = process.env.H2H_RESULTS_DIVISION || "ipbl-66-m-pro-a";
+const H2H_RESULTS_DATE = process.env.H2H_RESULTS_DATE || "2026-06-02";
+const H2H_RESULTS_DIVISION = process.env.H2H_RESULTS_DIVISION || "ipbl-66-w-pro-d";
 
 function snapshotH2h(page) {
     return page.evaluate(() => {
