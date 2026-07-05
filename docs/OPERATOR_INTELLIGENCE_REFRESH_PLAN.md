@@ -44,6 +44,8 @@ Phase 12 remains complete, but its evidence should be refreshed whenever upstrea
 - Recorder alignment and live division coverage.
 - H2H freshness repair and continuity repair.
 - Odds movement and quarter-based backtest evidence.
+- Live quarter-flow evidence from the recorder/replay timeline and live pattern layer.
+- Graphify-backed live signal synthesis from the worker orchestrator.
 - C9 row reconciliation and EventsStat contracts.
 - Workload graph evidence that binds the surface together.
 
@@ -60,4 +62,4 @@ Phase 12 remains complete, but its evidence should be refreshed whenever upstrea
 2. Run the operator-intelligence test.
 3. Confirm the artifact matches `buildOperatorIntelligenceReport()`.
 4. Re-run the supporting workload and reconciliation tests when upstream evidence changes.
-
+5. Re-run the live quarter-flow and Graphify intelligence tests when the betting evidence model changes.

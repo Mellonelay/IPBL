@@ -549,11 +549,36 @@ The backend analysis engine is where the Graphify community skills are placed in
 
 - `graphify-intent` for rationale, decisions, constraints, and tradeoffs.
 - `graphify-temporal` for ordering evidence over time and tracing supersession.
-- `code-review-graph` for patch-risk and blast-radius analysis.
+- `code-review-graph` remains available for maintenance analysis, but not for the live betting runtime path.
 
 This layer stays behind live ingestion and consumes repository-backed evidence from C9, operator intelligence, and the graph ledgers.
 
 Canonical artifact: `artifacts/analysis-engine/ipbl-analysis-engine.json`.
+
+### Live Betting Intelligence Orchestration
+
+IPBL's live betting path is a separate orchestration layer that sits on top of the backend analysis boundary:
+
+- live recorder and replay evidence feed the quarter-flow pattern layer;
+- odds movement is folded into the live pattern layer as confirmation, not as a substitute for recorder evidence;
+- `graphify-intent` and `graphify-temporal` provide the reasoning substrate for betting rules and time ordering;
+- Worker AI synthesizes live signals into operator-facing summaries;
+- `agnix` validates the agent/config wiring around that path.
+
+Canonical worker surface:
+
+- `workers/graphify-intelligence/src/index.ts`
+- `workers/graphify-intelligence/src/orchestrator.ts`
+- `workers/graphify-intelligence/src/worker-ai.ts`
+- `workers/graphify-intelligence/src/state.ts`
+
+Canonical runtime tests:
+
+- `tests/live-pattern-discovery.test.ts`
+- `tests/predictions-live-runtime.test.ts`
+- `tests/graphify-intelligence-worker.test.ts`
+- `tests/graphify-contract.test.ts`
+- `tests/agnix-graphify-contract.test.ts`
 
 ## Mandatory Change Workflow
 

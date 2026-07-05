@@ -55,9 +55,16 @@ Frontend must not own source truth.
 - Preserve export fidelity and path stability.
 - Keep the visualization layer read-only with no truth ownership.
 
+## Live Betting Intelligence
+
+- Maintain the live quarter-flow pattern layer as a backend evidence consumer.
+- Keep live signal synthesis on the worker side, not in the frontend.
+- Preserve the boundary between recorder evidence, Graphify reasoning, and Worker AI summaries.
+- Validate the agent/config wiring with agnix before enabling live intelligence changes.
+- Keep `code-review-graph` out of the production betting runtime path.
+
 ## Frontend boundary
 
 - Frontend may render summaries, charts, drill-downs, and navigation.
 - Frontend may not decide canonical truth, reconcile source conflicts, or supersede evidence.
 - Frontend may not mutate source-of-truth artifacts.
-

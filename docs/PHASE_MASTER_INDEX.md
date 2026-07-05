@@ -107,6 +107,15 @@ They are closure packaging surfaces, not open implementation targets.
   - Docs contract test at [tests/analysis-engine-docs.test.ts](/root/repos/IPBL/tests/analysis-engine-docs.test.ts)
   - Implementation module at [lib/server/analysis-engine.ts](/root/repos/IPBL/lib/server/analysis-engine.ts)
 
+## Live Betting Intelligence Orchestration
+
+- Canonical live signal layer at [lib/server/live-pattern-discovery.ts](/root/repos/IPBL/lib/server/live-pattern-discovery.ts)
+- Prediction runtime wiring at [lib/runtime/live-intelligence-client.ts](/root/repos/IPBL/lib/runtime/live-intelligence-client.ts) and [lib/runtime/prediction-runtime.ts](/root/repos/IPBL/lib/runtime/prediction-runtime.ts)
+- Worker orchestration surface at [workers/graphify-intelligence/src/index.ts](/root/repos/IPBL/workers/graphify-intelligence/src/index.ts)
+- Worker packet contract tests at [tests/graphify-intelligence-worker.test.ts](/root/repos/IPBL/tests/graphify-intelligence-worker.test.ts) and [tests/graphify-contract.test.ts](/root/repos/IPBL/tests/graphify-contract.test.ts)
+- agnix wiring contract at [tests/agnix-graphify-contract.test.ts](/root/repos/IPBL/tests/agnix-graphify-contract.test.ts)
+- Supporting docs at [docs/LIVE_QUARTER_FLOW_INTELLIGENCE.md](/root/repos/IPBL/docs/LIVE_QUARTER_FLOW_INTELLIGENCE.md) and [docs/GRAPHIFY_UPGRADE_AUDIT.md](/root/repos/IPBL/docs/GRAPHIFY_UPGRADE_AUDIT.md)
+
 ## Validation Entry Points
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
