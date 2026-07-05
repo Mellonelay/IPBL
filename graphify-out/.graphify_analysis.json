@@ -1,0 +1,722 @@
+{
+  "communities": {
+    "0": [
+      "operator_engine_analyzequarterflow",
+      "operator_engine_asnumber",
+      "operator_engine_asrecord",
+      "operator_engine_deepfind",
+      "operator_engine_evaluateoperatordecision",
+      "operator_engine_gethistoricalcontext",
+      "operator_engine_getperiodminutes",
+      "operator_engine_getscoreboardanalysis",
+      "operator_engine_matchupkey",
+      "operator_engine_normalizeteam",
+      "operator_engine_oddsband",
+      "operator_engine_parseh2hquartermatrix",
+      "operator_engine_teamflags",
+      "operator_mock_buildinsight",
+      "operator_mock_makelivegame",
+      "operator_mock_makeresultgame",
+      "src_operator_engine_ts",
+      "src_operator_mock_ts"
+    ],
+    "1": [
+      "api_admin_server_lib_ingest_results_month_ts",
+      "config_divisions_canonicaldivisionlabel",
+      "lib_results_constants_isapprovedresultstag",
+      "lib_results_constants_resultskvkey",
+      "lib_results_constants_ts",
+      "server_lib_ingest_results_month_buildstoredmonthmap",
+      "server_lib_ingest_results_month_createemptymonthmap",
+      "server_lib_ingest_results_month_fetchcalendarday",
+      "server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "server_lib_ingest_results_month_formatapidate",
+      "server_lib_ingest_results_month_monthdaykeys",
+      "server_lib_ingest_results_month_normalizecalendardate",
+      "server_lib_ingest_results_month_normalizecalendargame",
+      "server_lib_ingest_results_month_parsequartertotals",
+      "server_lib_ingest_results_month_startoflocalday",
+      "server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "src_config_divisions_ts"
+    ],
+    "2": [
+      "data_operatorrules",
+      "data_operatorsummary",
+      "engine_analyzequarterflow",
+      "engine_asrecord",
+      "engine_deepfind",
+      "engine_evaluateoperatordecision",
+      "engine_gethistoricalcontext",
+      "engine_getperiodminutes",
+      "engine_getscoreboardanalysis",
+      "engine_matchupkey",
+      "engine_normalizeteam",
+      "engine_oddsband",
+      "engine_teamflags",
+      "mock_buildinsight",
+      "mock_demoliveinsight",
+      "mock_demoresultinsight"
+    ],
+    "3": [
+      "api_admin_server_lib_kv_rest_env_aliases_ts",
+      "api_admin_server_lib_results_redis_ts",
+      "api_admin_server_lib_results_sync_constants_ts",
+      "api_admin_server_lib_write_results_month_kv_ts",
+      "api_results_handler",
+      "api_results_ts",
+      "server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "server_lib_kv_rest_env_aliases_trimenv",
+      "server_lib_results_redis_requireresultsredis",
+      "server_lib_results_sync_constants_canonicaldivisionlabel",
+      "server_lib_results_sync_constants_isapprovedresultstag",
+      "server_lib_results_sync_constants_resultskvkey"
+    ],
+    "4": [
+      "api_client_base",
+      "api_client_clearfetchcaches",
+      "api_client_fetchboxscore",
+      "api_client_fetchgame",
+      "api_client_fetchonline",
+      "api_client_fetchschedule",
+      "api_client_fetchteamgames",
+      "api_client_formatapidate",
+      "api_client_getjson",
+      "api_client_q",
+      "api_client_seasonfromdate",
+      "src_api_client_ts"
+    ],
+    "5": [
+      "api_normalize_computeh2h",
+      "api_normalize_dedupelivegames",
+      "api_normalize_getscoretext",
+      "api_normalize_istrulyliverow",
+      "api_normalize_normalizecalendarrow",
+      "api_normalize_numberornull",
+      "api_normalize_parsecalendaritems",
+      "api_normalize_parseteamhistory",
+      "api_normalize_teamref",
+      "api_normalize_text",
+      "api_normalize_tolivegame",
+      "src_api_normalize_ts"
+    ],
+    "6": [
+      "src_app_currentornextquarter",
+      "src_app_devassert",
+      "src_app_devlog",
+      "src_app_formatcurrency",
+      "src_app_formatpct",
+      "src_app_gamedivision",
+      "src_app_livecard",
+      "src_app_livekey",
+      "src_app_metric",
+      "src_app_statustone",
+      "src_app_tsx"
+    ],
+    "7": [
+      "results_calendar_builddivisionconfigs",
+      "results_calendar_clearresultscalendarcache",
+      "results_calendar_clonecalendarmap",
+      "results_calendar_createemptymonthmap",
+      "results_calendar_createskeletonresultscalendarmap",
+      "results_calendar_fetchresultsmonthfromapi",
+      "results_calendar_iscalendarmapcompleteformonth",
+      "results_calendar_isodate",
+      "results_calendar_monthdaykeys",
+      "results_calendar_sessionkey",
+      "src_results_calendar_ts"
+    ],
+    "8": [
+      "calendar_normalize_lib",
+      "cron_sync_results_handler",
+      "ingest_results_month_lib",
+      "kv_rest_env_aliases_lib",
+      "record_live_handler",
+      "results_api_handler",
+      "results_redis_api_lib",
+      "results_sync_constants_api",
+      "write_results_month_kv_lib"
+    ],
+    "9": [
+      "app_app",
+      "app_livecard",
+      "client_fetchonline",
+      "fetch_results_calendar_fetchresultscalendar",
+      "normalize_computeh2h",
+      "normalize_parsecalendaritems",
+      "resultscalendargrid_resultscalendargrid",
+      "usebettingmemory_usebettingmemory",
+      "verify_h2h_drawer_main"
+    ],
+    "10": [
+      "api_admin_server_lib_calendar_normalize_ts",
+      "server_lib_calendar_normalize_getscoretext",
+      "server_lib_calendar_normalize_istrulyliverow",
+      "server_lib_calendar_normalize_normalizecalendarrow",
+      "server_lib_calendar_normalize_numberornull",
+      "server_lib_calendar_normalize_parsecalendaritems",
+      "server_lib_calendar_normalize_teamref",
+      "server_lib_calendar_normalize_text"
+    ],
+    "11": [
+      "lib_kv_env_applykvrestenvaliases",
+      "lib_kv_env_iskvrestconfigured",
+      "lib_kv_env_trimenv",
+      "lib_kv_env_ts",
+      "lib_results_redis_getresultsredis",
+      "lib_results_redis_requireresultsredis",
+      "lib_results_redis_ts",
+      "server_lib_results_redis_getresultsredis"
+    ],
+    "12": [
+      "calendar_builddivisionconfigs",
+      "calendar_createemptymonthmap",
+      "calendar_createskeletonresultscalendarmap",
+      "calendar_iscalendarmapcompleteformonth",
+      "calendar_isodate",
+      "calendar_monthdaykeys"
+    ],
+    "13": [
+      "scripts_fetch_results_calendar_fetchresultscalendar",
+      "scripts_fetch_results_calendar_formatapidate",
+      "scripts_fetch_results_calendar_formatisodate",
+      "scripts_fetch_results_calendar_quartertotals",
+      "scripts_fetch_results_calendar_ts"
+    ],
+    "14": [
+      "scripts_backfill_results_mjs",
+      "scripts_backfill_results_parseargs",
+      "scripts_load_env_local_loadenvlocal",
+      "scripts_load_env_local_mjs"
+    ],
+    "15": [
+      "scripts_verify_h2h_drawer_main",
+      "scripts_verify_h2h_drawer_mjs",
+      "scripts_verify_h2h_drawer_sleep",
+      "scripts_verify_h2h_drawer_snapshoth2h"
+    ],
+    "16": [
+      "components_bettingrecord_formatcurrencymmk",
+      "components_bettingrecord_formattimehhmm",
+      "components_bettingrecord_isodateonly",
+      "src_components_bettingrecord_tsx"
+    ],
+    "17": [
+      "api_cron_cron_sync_results_ts",
+      "cron_cron_sync_results_handler",
+      "cron_cron_sync_results_run"
+    ],
+    "18": [
+      "analyze_performance_script",
+      "audit_teams_script",
+      "bet_history_clean_data"
+    ],
+    "19": [
+      "calendar_clonecalendarmap",
+      "calendar_fetchresultsmonthfromapi",
+      "calendar_sessionkey"
+    ],
+    "20": [
+      "api_cron_record_live_ts",
+      "cron_record_live_handler"
+    ],
+    "21": [
+      "api_results_live_ts",
+      "results_live_handler"
+    ],
+    "22": [
+      "scripts_analyze_performance_calculateperformance",
+      "scripts_analyze_performance_mjs"
+    ],
+    "23": [
+      "scripts_audit_teams_generatecanonicalreport",
+      "scripts_audit_teams_mjs"
+    ],
+    "24": [
+      "scripts_build_bet_memory_buildindex",
+      "scripts_build_bet_memory_mjs"
+    ],
+    "25": [
+      "scripts_fetch_all_march_mjs",
+      "scripts_fetch_all_march_normdate"
+    ],
+    "26": [
+      "scripts_swarm_commander_mjs",
+      "scripts_swarm_commander_runautonomouscycle"
+    ],
+    "27": [
+      "lib_auth_validator_validatesession",
+      "scripts_lib_auth_validator_mjs"
+    ],
+    "28": [
+      "components_resultscalendargrid_formatheader",
+      "src_components_resultscalendargrid_tsx"
+    ],
+    "29": [
+      "hooks_usebettingmemory_usebettingmemory",
+      "src_hooks_usebettingmemory_ts"
+    ],
+    "30": [
+      "ipbl_pro_api",
+      "live_proxy_handler"
+    ],
+    "31": [
+      "backfill_results_main",
+      "load_env_local_loadenvlocal"
+    ],
+    "32": [
+      "hydrate_final_ps1"
+    ],
+    "33": [
+      "hydrate_hybrid_ps1"
+    ],
+    "34": [
+      "hydrate_master_ps1"
+    ],
+    "35": [
+      "vite_config_ts"
+    ],
+    "36": [
+      "scripts_analyze_calendar_sample_mjs"
+    ],
+    "37": [
+      "scripts_peek_dates_mjs"
+    ],
+    "38": [
+      "scripts_test_cal_page_mjs"
+    ],
+    "39": [
+      "src_main_tsx"
+    ],
+    "40": [
+      "src_api_types_ts"
+    ],
+    "41": [
+      "src_components_bettingmemorydrawersection_tsx"
+    ],
+    "42": [
+      "src_operator_data_ts"
+    ],
+    "43": [
+      "src_operator_ipbl_ts"
+    ],
+    "44": [
+      "hydrate_final_script"
+    ],
+    "45": [
+      "hydrate_hybrid_script"
+    ],
+    "46": [
+      "hydrate_master_script"
+    ],
+    "47": [
+      "vite_config"
+    ],
+    "48": [
+      "kv_env_lib"
+    ],
+    "49": [
+      "results_constants_lib"
+    ],
+    "50": [
+      "results_redis_lib"
+    ],
+    "51": [
+      "analyze_calendar_sample_script"
+    ],
+    "52": [
+      "build_bet_memory_buildindex"
+    ],
+    "53": [
+      "swarm_commander_runautonomouscycle"
+    ],
+    "54": [
+      "auth_validator_validatesession"
+    ],
+    "55": [
+      "client_fetchboxscore"
+    ],
+    "56": [
+      "bettingmemorydrawersection_bettingmemorydrawersection"
+    ],
+    "57": [
+      "bettingrecord_bettingrecord"
+    ],
+    "58": [
+      "divisions_live_divisions"
+    ],
+    "59": [
+      "data_metricsummary"
+    ],
+    "60": [
+      "data_riskentry"
+    ],
+    "61": [
+      "engine_quarterkey"
+    ],
+    "62": [
+      "engine_scoreboardanalysis"
+    ],
+    "63": [
+      "engine_quarterflowanalysis"
+    ],
+    "64": [
+      "engine_operatordecision"
+    ],
+    "65": [
+      "engine_evaluateinput"
+    ],
+    "66": [
+      "engine_asnumber"
+    ],
+    "67": [
+      "engine_parseh2hquartermatrix"
+    ],
+    "68": [
+      "ipbl_barrel"
+    ],
+    "69": [
+      "mock_mockinsight"
+    ],
+    "70": [
+      "mock_demogamemeta"
+    ],
+    "71": [
+      "mock_demoboxraw"
+    ],
+    "72": [
+      "mock_makelivegame"
+    ],
+    "73": [
+      "mock_makeresultgame"
+    ],
+    "74": [
+      "mock_livedemogame"
+    ],
+    "75": [
+      "mock_resultdemogame"
+    ],
+    "76": [
+      "mock_demoh2h"
+    ],
+    "77": [
+      "calendar_calendargridgame"
+    ],
+    "78": [
+      "calendar_calendargriddivision"
+    ],
+    "79": [
+      "calendar_calendargridmap"
+    ],
+    "80": [
+      "calendar_results_division_tags"
+    ],
+    "81": [
+      "calendar_results_divisions"
+    ],
+    "82": [
+      "calendar_sessioncache"
+    ],
+    "83": [
+      "calendar_inflight"
+    ],
+    "84": [
+      "calendar_clearresultscalendarcache"
+    ],
+    "85": [
+      "agents_architecture_first"
+    ],
+    "86": [
+      "agents_ui_reads_jobs_write"
+    ],
+    "87": [
+      "agents_node_esm"
+    ],
+    "88": [
+      "agents_cross_platform"
+    ],
+    "89": [
+      "index_root"
+    ],
+    "90": [
+      "index_main_tsx"
+    ],
+    "91": [
+      "readme_ipbl_minimal_score_viewer"
+    ],
+    "92": [
+      "readme_api_routing"
+    ],
+    "93": [
+      "arm64_purity_report_node"
+    ],
+    "94": [
+      "arm64_purity_report_python"
+    ],
+    "95": [
+      "arm64_purity_report_cl"
+    ],
+    "96": [
+      "debug_ui_plan"
+    ],
+    "97": [
+      "debug_ui_betting_memory"
+    ],
+    "98": [
+      "operator_console_data_contract_doc"
+    ],
+    "99": [
+      "operator_console_data_contract_canonical_tag_map"
+    ],
+    "100": [
+      "operator_console_data_contract_live_contract"
+    ],
+    "101": [
+      "operator_console_data_contract_results_contract"
+    ],
+    "102": [
+      "live_proof_png"
+    ]
+  },
+  "cohesion": {
+    "0": 0.19,
+    "1": 0.19,
+    "2": 0.15,
+    "3": 0.21,
+    "4": 0.35,
+    "5": 0.32,
+    "6": 0.18,
+    "7": 0.33,
+    "8": 0.22,
+    "9": 0.22,
+    "10": 0.57,
+    "11": 0.54,
+    "12": 0.4,
+    "13": 0.6,
+    "14": 0.5,
+    "15": 0.83,
+    "16": 0.5,
+    "17": 1.0,
+    "18": 0.67,
+    "19": 0.67,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0
+  },
+  "gods": [
+    {
+      "id": "server_lib_calendar_normalize_normalizecalendarrow",
+      "label": "normalizeCalendarRow()",
+      "degree": 7
+    },
+    {
+      "id": "api_client_getjson",
+      "label": "getJson()",
+      "degree": 7
+    },
+    {
+      "id": "api_normalize_normalizecalendarrow",
+      "label": "normalizeCalendarRow()",
+      "degree": 7
+    },
+    {
+      "id": "server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "label": "writeResultsMonthToKv()",
+      "degree": 6
+    },
+    {
+      "id": "api_client_q",
+      "label": "q()",
+      "degree": 6
+    },
+    {
+      "id": "app_app",
+      "label": "App Component",
+      "degree": 6
+    },
+    {
+      "id": "engine_evaluateoperatordecision",
+      "label": "evaluateOperatorDecision",
+      "degree": 6
+    },
+    {
+      "id": "server_lib_ingest_results_month_buildstoredmonthmap",
+      "label": "buildStoredMonthMap()",
+      "degree": 5
+    },
+    {
+      "id": "server_lib_results_redis_getresultsredis",
+      "label": "getResultsRedis()",
+      "degree": 5
+    },
+    {
+      "id": "lib_kv_env_trimenv",
+      "label": "trimEnv()",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "H2H Verification Test",
+      "target": "App Component",
+      "source_files": [
+        "scripts/verify-h2h-drawer.mjs",
+        "src/App.tsx"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `H2H Verification Test` unexpectedly reaches hub `App Component`"
+    },
+    {
+      "source": "fetchOnline()",
+      "target": "dedupeLiveGames()",
+      "source_files": [
+        "src\\api\\client.ts",
+        "src\\api\\normalize.ts"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `dedupeLiveGames()` unexpectedly reaches hub `fetchOnline()`"
+    },
+    {
+      "source": "fetchCalendarDay()",
+      "target": "parseCalendarItems()",
+      "source_files": [
+        "api\\admin\\server-lib\\ingest-results-month.ts",
+        "src\\api\\normalize.ts"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "writeResultsMonthToKv()",
+      "target": "isApprovedResultsTag()",
+      "source_files": [
+        "api\\admin\\server-lib\\write-results-month-kv.ts",
+        "lib\\results-constants.ts"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `isApprovedResultsTag()` unexpectedly reaches hub `writeResultsMonthToKv()`"
+    },
+    {
+      "source": "writeResultsMonthToKv()",
+      "target": "resultsKvKey()",
+      "source_files": [
+        "api\\admin\\server-lib\\write-results-month-kv.ts",
+        "lib\\results-constants.ts"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `resultsKvKey()` unexpectedly reaches hub `writeResultsMonthToKv()`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `parseCalendarItems()` connect `Community 5` to `Community 1`, `Community 4`?",
+      "why": "High betweenness centrality (0.031) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `fetchCalendarDay()` connect `Community 1` to `Community 5`?",
+      "why": "High betweenness centrality (0.030) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `writeResultsMonthToKv()` connect `Community 1` to `Community 11`, `Community 3`?",
+      "why": "High betweenness centrality (0.012) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 5 inferred relationships involving `writeResultsMonthToKv()` (e.g. with `isApprovedResultsTag()` and `fetchScheduleGamesForMonth()`) actually correct?",
+      "why": "`writeResultsMonthToKv()` has 5 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Hydrate Final Script`, `Hydrate Hybrid Script`, `Hydrate Master Script` to the rest of the system?",
+      "why": "81 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

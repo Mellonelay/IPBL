@@ -1,0 +1,3673 @@
+{
+  "nodes": [
+    {
+      "id": "hydrate_final_ps1",
+      "label": "hydrate_final.ps1",
+      "file_type": "code",
+      "source_file": "hydrate_final.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "hydrate_hybrid_ps1",
+      "label": "hydrate_hybrid.ps1",
+      "file_type": "code",
+      "source_file": "hydrate_hybrid.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "hydrate_master_ps1",
+      "label": "hydrate_master.ps1",
+      "file_type": "code",
+      "source_file": "hydrate_master.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "vite_config_ts",
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "vite.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_results_ts",
+      "label": "results.ts",
+      "file_type": "code",
+      "source_file": "api\\results.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_results_handler",
+      "label": "handler()",
+      "file_type": "code",
+      "source_file": "api\\results.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "api_admin_server_lib_calendar_normalize_ts",
+      "label": "calendar-normalize.ts",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_lib_calendar_normalize_teamref",
+      "label": "teamRef()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "server_lib_calendar_normalize_text",
+      "label": "text()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L61"
+    },
+    {
+      "id": "server_lib_calendar_normalize_numberornull",
+      "label": "numberOrNull()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L65"
+    },
+    {
+      "id": "server_lib_calendar_normalize_istrulyliverow",
+      "label": "isTrulyLiveRow()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L69"
+    },
+    {
+      "id": "server_lib_calendar_normalize_getscoretext",
+      "label": "getScoreText()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L174"
+    },
+    {
+      "id": "server_lib_calendar_normalize_normalizecalendarrow",
+      "label": "normalizeCalendarRow()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L183"
+    },
+    {
+      "id": "server_lib_calendar_normalize_parsecalendaritems",
+      "label": "parseCalendarItems()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L212"
+    },
+    {
+      "id": "api_admin_server_lib_ingest_results_month_ts",
+      "label": "ingest-results-month.ts",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_lib_ingest_results_month_formatapidate",
+      "label": "formatApiDate()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "server_lib_ingest_results_month_startoflocalday",
+      "label": "startOfLocalDay()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "server_lib_ingest_results_month_monthdaykeys",
+      "label": "monthDayKeys()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "server_lib_ingest_results_month_normalizecalendardate",
+      "label": "normalizeCalendarDate()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "server_lib_ingest_results_month_parsequartertotals",
+      "label": "parseQuarterTotals()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L57"
+    },
+    {
+      "id": "server_lib_ingest_results_month_normalizecalendargame",
+      "label": "normalizeCalendarGame()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L74"
+    },
+    {
+      "id": "server_lib_ingest_results_month_createemptymonthmap",
+      "label": "createEmptyMonthMap()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L87"
+    },
+    {
+      "id": "server_lib_ingest_results_month_fetchcalendarday",
+      "label": "fetchCalendarDay()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L107"
+    },
+    {
+      "id": "server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "label": "fetchScheduleGamesForMonth()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L142"
+    },
+    {
+      "id": "server_lib_ingest_results_month_buildstoredmonthmap",
+      "label": "buildStoredMonthMap()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L170"
+    },
+    {
+      "id": "api_admin_server_lib_kv_rest_env_aliases_ts",
+      "label": "kv-rest-env-aliases.ts",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_lib_kv_rest_env_aliases_trimenv",
+      "label": "trimEnv()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "label": "applyKvRestEnvAliases()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "label": "isKvRestConfigured()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L25"
+    },
+    {
+      "id": "api_admin_server_lib_results_redis_ts",
+      "label": "results-redis.ts",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_lib_results_redis_getresultsredis",
+      "label": "getResultsRedis()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "server_lib_results_redis_requireresultsredis",
+      "label": "requireResultsRedis()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "api_admin_server_lib_results_sync_constants_ts",
+      "label": "results-sync-constants.ts",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\results-sync-constants.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_lib_results_sync_constants_isapprovedresultstag",
+      "label": "isApprovedResultsTag()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\results-sync-constants.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "server_lib_results_sync_constants_resultskvkey",
+      "label": "resultsKvKey()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\results-sync-constants.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "server_lib_results_sync_constants_canonicaldivisionlabel",
+      "label": "canonicalDivisionLabel()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\results-sync-constants.ts",
+      "source_location": "L50"
+    },
+    {
+      "id": "api_admin_server_lib_write_results_month_kv_ts",
+      "label": "write-results-month-kv.ts",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "label": "writeResultsMonthToKv()",
+      "file_type": "code",
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "api_cron_cron_sync_results_ts",
+      "label": "cron-sync-results.ts",
+      "file_type": "code",
+      "source_file": "api\\cron\\cron-sync-results.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "cron_cron_sync_results_run",
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "api\\cron\\cron-sync-results.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "cron_cron_sync_results_handler",
+      "label": "handler()",
+      "file_type": "code",
+      "source_file": "api\\cron\\cron-sync-results.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "api_cron_record_live_ts",
+      "label": "record-live.ts",
+      "file_type": "code",
+      "source_file": "api\\cron\\record-live.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "cron_record_live_handler",
+      "label": "handler()",
+      "file_type": "code",
+      "source_file": "api\\cron\\record-live.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "api_results_live_ts",
+      "label": "live.ts",
+      "file_type": "code",
+      "source_file": "api\\results\\live.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "results_live_handler",
+      "label": "handler()",
+      "file_type": "code",
+      "source_file": "api\\results\\live.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "lib_kv_env_ts",
+      "label": "kv-env.ts",
+      "file_type": "code",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_kv_env_trimenv",
+      "label": "trimEnv()",
+      "file_type": "code",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "lib_kv_env_applykvrestenvaliases",
+      "label": "applyKvRestEnvAliases()",
+      "file_type": "code",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "lib_kv_env_iskvrestconfigured",
+      "label": "isKvRestConfigured()",
+      "file_type": "code",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L25"
+    },
+    {
+      "id": "lib_results_constants_ts",
+      "label": "results-constants.ts",
+      "file_type": "code",
+      "source_file": "lib\\results-constants.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_results_constants_isapprovedresultstag",
+      "label": "isApprovedResultsTag()",
+      "file_type": "code",
+      "source_file": "lib\\results-constants.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "lib_results_constants_resultskvkey",
+      "label": "resultsKvKey()",
+      "file_type": "code",
+      "source_file": "lib\\results-constants.ts",
+      "source_location": "L25"
+    },
+    {
+      "id": "lib_results_redis_ts",
+      "label": "results-redis.ts",
+      "file_type": "code",
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_results_redis_getresultsredis",
+      "label": "getResultsRedis()",
+      "file_type": "code",
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "lib_results_redis_requireresultsredis",
+      "label": "requireResultsRedis()",
+      "file_type": "code",
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "scripts_analyze_calendar_sample_mjs",
+      "label": "analyze-calendar-sample.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\analyze-calendar-sample.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_analyze_performance_mjs",
+      "label": "analyze-performance.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\analyze-performance.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_analyze_performance_calculateperformance",
+      "label": "calculatePerformance()",
+      "file_type": "code",
+      "source_file": "scripts\\analyze-performance.mjs",
+      "source_location": "L5"
+    },
+    {
+      "id": "scripts_audit_teams_mjs",
+      "label": "audit-teams.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\audit-teams.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_audit_teams_generatecanonicalreport",
+      "label": "generateCanonicalReport()",
+      "file_type": "code",
+      "source_file": "scripts\\audit-teams.mjs",
+      "source_location": "L6"
+    },
+    {
+      "id": "scripts_backfill_results_mjs",
+      "label": "backfill-results.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\backfill-results.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_backfill_results_parseargs",
+      "label": "parseArgs()",
+      "file_type": "code",
+      "source_file": "scripts\\backfill-results.mjs",
+      "source_location": "L18"
+    },
+    {
+      "id": "scripts_build_bet_memory_mjs",
+      "label": "build-bet-memory.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\build-bet-memory.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_build_bet_memory_buildindex",
+      "label": "buildIndex()",
+      "file_type": "code",
+      "source_file": "scripts\\build-bet-memory.mjs",
+      "source_location": "L5"
+    },
+    {
+      "id": "scripts_fetch_all_march_mjs",
+      "label": "fetch-all-march.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\fetch-all-march.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_fetch_all_march_normdate",
+      "label": "normDate()",
+      "file_type": "code",
+      "source_file": "scripts\\fetch-all-march.mjs",
+      "source_location": "L15"
+    },
+    {
+      "id": "scripts_fetch_results_calendar_ts",
+      "label": "fetch-results-calendar.ts",
+      "file_type": "code",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_fetch_results_calendar_formatapidate",
+      "label": "formatApiDate()",
+      "file_type": "code",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "scripts_fetch_results_calendar_formatisodate",
+      "label": "formatIsoDate()",
+      "file_type": "code",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "scripts_fetch_results_calendar_quartertotals",
+      "label": "quarterTotals()",
+      "file_type": "code",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L47"
+    },
+    {
+      "id": "scripts_fetch_results_calendar_fetchresultscalendar",
+      "label": "fetchResultsCalendar()",
+      "file_type": "code",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L64"
+    },
+    {
+      "id": "scripts_load_env_local_mjs",
+      "label": "load-env-local.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\load-env-local.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_load_env_local_loadenvlocal",
+      "label": "loadEnvLocal()",
+      "file_type": "code",
+      "source_file": "scripts\\load-env-local.mjs",
+      "source_location": "L11"
+    },
+    {
+      "id": "scripts_peek_dates_mjs",
+      "label": "peek-dates.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\peek-dates.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_swarm_commander_mjs",
+      "label": "swarm-commander.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\swarm-commander.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_swarm_commander_runautonomouscycle",
+      "label": "runAutonomousCycle()",
+      "file_type": "code",
+      "source_file": "scripts\\swarm-commander.mjs",
+      "source_location": "L9"
+    },
+    {
+      "id": "scripts_test_cal_page_mjs",
+      "label": "test-cal-page.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\test-cal-page.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_verify_h2h_drawer_mjs",
+      "label": "verify-h2h-drawer.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_verify_h2h_drawer_snapshoth2h",
+      "label": "snapshotH2h()",
+      "file_type": "code",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L21"
+    },
+    {
+      "id": "scripts_verify_h2h_drawer_sleep",
+      "label": "sleep()",
+      "file_type": "code",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L73"
+    },
+    {
+      "id": "scripts_verify_h2h_drawer_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L77"
+    },
+    {
+      "id": "scripts_lib_auth_validator_mjs",
+      "label": "auth-validator.mjs",
+      "file_type": "code",
+      "source_file": "scripts\\lib\\auth-validator.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_auth_validator_validatesession",
+      "label": "validateSession()",
+      "file_type": "code",
+      "source_file": "scripts\\lib\\auth-validator.mjs",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_app_tsx",
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_livekey",
+      "label": "liveKey()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L64"
+    },
+    {
+      "id": "src_app_formatcurrency",
+      "label": "formatCurrency()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L68"
+    },
+    {
+      "id": "src_app_formatpct",
+      "label": "formatPct()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L72"
+    },
+    {
+      "id": "src_app_devlog",
+      "label": "devLog()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L76"
+    },
+    {
+      "id": "src_app_devassert",
+      "label": "devAssert()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L81"
+    },
+    {
+      "id": "src_app_statustone",
+      "label": "statusTone()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L88"
+    },
+    {
+      "id": "src_app_gamedivision",
+      "label": "gameDivision()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L92"
+    },
+    {
+      "id": "src_app_currentornextquarter",
+      "label": "currentOrNextQuarter()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L96"
+    },
+    {
+      "id": "src_app_metric",
+      "label": "Metric()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L103"
+    },
+    {
+      "id": "src_app_livecard",
+      "label": "LiveCard()",
+      "file_type": "code",
+      "source_file": "src\\App.tsx",
+      "source_location": "L112"
+    },
+    {
+      "id": "src_main_tsx",
+      "label": "main.tsx",
+      "file_type": "code",
+      "source_file": "src\\main.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_api_client_ts",
+      "label": "client.ts",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_client_base",
+      "label": "base()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "api_client_q",
+      "label": "q()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "api_client_getjson",
+      "label": "getJson()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "api_client_formatapidate",
+      "label": "formatApiDate()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "api_client_seasonfromdate",
+      "label": "seasonFromDate()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "api_client_fetchschedule",
+      "label": "fetchSchedule()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "api_client_fetchonline",
+      "label": "fetchOnline()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L61"
+    },
+    {
+      "id": "api_client_fetchgame",
+      "label": "fetchGame()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "api_client_fetchboxscore",
+      "label": "fetchBoxScore()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L76"
+    },
+    {
+      "id": "api_client_fetchteamgames",
+      "label": "fetchTeamGames()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L89"
+    },
+    {
+      "id": "api_client_clearfetchcaches",
+      "label": "clearFetchCaches()",
+      "file_type": "code",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L104"
+    },
+    {
+      "id": "src_api_normalize_ts",
+      "label": "normalize.ts",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_normalize_teamref",
+      "label": "teamRef()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "api_normalize_text",
+      "label": "text()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "api_normalize_numberornull",
+      "label": "numberOrNull()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "api_normalize_istrulyliverow",
+      "label": "isTrulyLiveRow()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L39"
+    },
+    {
+      "id": "api_normalize_getscoretext",
+      "label": "getScoreText()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L170"
+    },
+    {
+      "id": "api_normalize_normalizecalendarrow",
+      "label": "normalizeCalendarRow()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L179"
+    },
+    {
+      "id": "api_normalize_parsecalendaritems",
+      "label": "parseCalendarItems()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L211"
+    },
+    {
+      "id": "api_normalize_dedupelivegames",
+      "label": "dedupeLiveGames()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L223"
+    },
+    {
+      "id": "api_normalize_tolivegame",
+      "label": "toLiveGame()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L248"
+    },
+    {
+      "id": "api_normalize_parseteamhistory",
+      "label": "parseTeamHistory()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L252"
+    },
+    {
+      "id": "api_normalize_computeh2h",
+      "label": "computeH2H()",
+      "file_type": "code",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L278"
+    },
+    {
+      "id": "src_api_types_ts",
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "src\\api\\types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_bettingmemorydrawersection_tsx",
+      "label": "BettingMemoryDrawerSection.tsx",
+      "file_type": "code",
+      "source_file": "src\\components\\BettingMemoryDrawerSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_bettingrecord_tsx",
+      "label": "BettingRecord.tsx",
+      "file_type": "code",
+      "source_file": "src\\components\\BettingRecord.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_bettingrecord_isodateonly",
+      "label": "isoDateOnly()",
+      "file_type": "code",
+      "source_file": "src\\components\\BettingRecord.tsx",
+      "source_location": "L24"
+    },
+    {
+      "id": "components_bettingrecord_formattimehhmm",
+      "label": "formatTimeHHMM()",
+      "file_type": "code",
+      "source_file": "src\\components\\BettingRecord.tsx",
+      "source_location": "L29"
+    },
+    {
+      "id": "components_bettingrecord_formatcurrencymmk",
+      "label": "formatCurrencyMMK()",
+      "file_type": "code",
+      "source_file": "src\\components\\BettingRecord.tsx",
+      "source_location": "L34"
+    },
+    {
+      "id": "src_components_resultscalendargrid_tsx",
+      "label": "ResultsCalendarGrid.tsx",
+      "file_type": "code",
+      "source_file": "src\\components\\ResultsCalendarGrid.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_resultscalendargrid_formatheader",
+      "label": "formatHeader()",
+      "file_type": "code",
+      "source_file": "src\\components\\ResultsCalendarGrid.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_config_divisions_ts",
+      "label": "divisions.ts",
+      "file_type": "code",
+      "source_file": "src\\config\\divisions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "config_divisions_canonicaldivisionlabel",
+      "label": "canonicalDivisionLabel()",
+      "file_type": "code",
+      "source_file": "src\\config\\divisions.ts",
+      "source_location": "L37"
+    },
+    {
+      "id": "src_hooks_usebettingmemory_ts",
+      "label": "useBettingMemory.ts",
+      "file_type": "code",
+      "source_file": "src\\hooks\\useBettingMemory.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "hooks_usebettingmemory_usebettingmemory",
+      "label": "useBettingMemory()",
+      "file_type": "code",
+      "source_file": "src\\hooks\\useBettingMemory.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_operator_data_ts",
+      "label": "data.ts",
+      "file_type": "code",
+      "source_file": "src\\operator\\data.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_operator_engine_ts",
+      "label": "engine.ts",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "operator_engine_normalizeteam",
+      "label": "normalizeTeam()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L51"
+    },
+    {
+      "id": "operator_engine_matchupkey",
+      "label": "matchupKey()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L55"
+    },
+    {
+      "id": "operator_engine_asrecord",
+      "label": "asRecord()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L59"
+    },
+    {
+      "id": "operator_engine_asnumber",
+      "label": "asNumber()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L63"
+    },
+    {
+      "id": "operator_engine_deepfind",
+      "label": "deepFind()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "operator_engine_getperiodminutes",
+      "label": "getPeriodMinutes()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L87"
+    },
+    {
+      "id": "operator_engine_getscoreboardanalysis",
+      "label": "getScoreboardAnalysis()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L96"
+    },
+    {
+      "id": "operator_engine_analyzequarterflow",
+      "label": "analyzeQuarterFlow()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L171"
+    },
+    {
+      "id": "operator_engine_oddsband",
+      "label": "oddsBand()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L237"
+    },
+    {
+      "id": "operator_engine_teamflags",
+      "label": "teamFlags()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L245"
+    },
+    {
+      "id": "operator_engine_evaluateoperatordecision",
+      "label": "evaluateOperatorDecision()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L254"
+    },
+    {
+      "id": "operator_engine_gethistoricalcontext",
+      "label": "getHistoricalContext()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L344"
+    },
+    {
+      "id": "operator_engine_parseh2hquartermatrix",
+      "label": "parseH2HQuarterMatrix()",
+      "file_type": "code",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L352"
+    },
+    {
+      "id": "src_operator_ipbl_ts",
+      "label": "ipbl.ts",
+      "file_type": "code",
+      "source_file": "src\\operator\\ipbl.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_operator_mock_ts",
+      "label": "mock.ts",
+      "file_type": "code",
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "operator_mock_makelivegame",
+      "label": "makeLiveGame()",
+      "file_type": "code",
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L39"
+    },
+    {
+      "id": "operator_mock_makeresultgame",
+      "label": "makeResultGame()",
+      "file_type": "code",
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L58"
+    },
+    {
+      "id": "operator_mock_buildinsight",
+      "label": "buildInsight()",
+      "file_type": "code",
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L105"
+    },
+    {
+      "id": "src_results_calendar_ts",
+      "label": "calendar.ts",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "results_calendar_isodate",
+      "label": "isoDate()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "results_calendar_monthdaykeys",
+      "label": "monthDayKeys()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L41"
+    },
+    {
+      "id": "results_calendar_sessionkey",
+      "label": "sessionKey()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L50"
+    },
+    {
+      "id": "results_calendar_clonecalendarmap",
+      "label": "cloneCalendarMap()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "results_calendar_builddivisionconfigs",
+      "label": "buildDivisionConfigs()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L66"
+    },
+    {
+      "id": "results_calendar_createemptymonthmap",
+      "label": "createEmptyMonthMap()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L71"
+    },
+    {
+      "id": "results_calendar_iscalendarmapcompleteformonth",
+      "label": "isCalendarMapCompleteForMonth()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L90"
+    },
+    {
+      "id": "results_calendar_createskeletonresultscalendarmap",
+      "label": "createSkeletonResultsCalendarMap()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L115"
+    },
+    {
+      "id": "results_calendar_clearresultscalendarcache",
+      "label": "clearResultsCalendarCache()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L125"
+    },
+    {
+      "id": "results_calendar_fetchresultsmonthfromapi",
+      "label": "fetchResultsMonthFromApi()",
+      "file_type": "code",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L133"
+    }
+  ],
+  "edges": [
+    {
+      "source": "vite_config_ts",
+      "target": "vite",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "vite_config_ts",
+      "target": "plugin_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "api_results_ts",
+      "target": "node",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\results.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_results_ts",
+      "target": "api_admin_server_lib_results_redis_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\results.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "api_results_ts",
+      "target": "api_admin_server_lib_results_sync_constants_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\results.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "api_results_ts",
+      "target": "api_results_handler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\results.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_calendar_normalize_ts",
+      "target": "server_lib_calendar_normalize_teamref",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_calendar_normalize_ts",
+      "target": "server_lib_calendar_normalize_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_calendar_normalize_ts",
+      "target": "server_lib_calendar_normalize_numberornull",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_calendar_normalize_ts",
+      "target": "server_lib_calendar_normalize_istrulyliverow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_calendar_normalize_ts",
+      "target": "server_lib_calendar_normalize_getscoretext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_calendar_normalize_ts",
+      "target": "server_lib_calendar_normalize_normalizecalendarrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_calendar_normalize_ts",
+      "target": "server_lib_calendar_normalize_parsecalendaritems",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_calendar_normalize_istrulyliverow",
+      "target": "server_lib_calendar_normalize_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_calendar_normalize_istrulyliverow",
+      "target": "server_lib_calendar_normalize_numberornull",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_calendar_normalize_getscoretext",
+      "target": "server_lib_calendar_normalize_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_calendar_normalize_normalizecalendarrow",
+      "target": "server_lib_calendar_normalize_teamref",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_calendar_normalize_normalizecalendarrow",
+      "target": "server_lib_calendar_normalize_istrulyliverow",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_calendar_normalize_normalizecalendarrow",
+      "target": "server_lib_calendar_normalize_getscoretext",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_calendar_normalize_normalizecalendarrow",
+      "target": "server_lib_calendar_normalize_numberornull",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_calendar_normalize_normalizecalendarrow",
+      "target": "server_lib_calendar_normalize_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_calendar_normalize_parsecalendaritems",
+      "target": "server_lib_calendar_normalize_normalizecalendarrow",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\calendar-normalize.ts",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "api_admin_server_lib_calendar_normalize_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "api_admin_server_lib_results_sync_constants_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_formatapidate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_startoflocalday",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_monthdaykeys",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_normalizecalendardate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_parsequartertotals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_normalizecalendargame",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_createemptymonthmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_fetchcalendarday",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_ingest_results_month_ts",
+      "target": "server_lib_ingest_results_month_buildstoredmonthmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_normalizecalendargame",
+      "target": "server_lib_ingest_results_month_parsequartertotals",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_createemptymonthmap",
+      "target": "server_lib_ingest_results_month_monthdaykeys",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_fetchcalendarday",
+      "target": "server_lib_ingest_results_month_formatapidate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "target": "server_lib_ingest_results_month_startoflocalday",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "target": "server_lib_ingest_results_month_fetchcalendarday",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_buildstoredmonthmap",
+      "target": "server_lib_ingest_results_month_createemptymonthmap",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_buildstoredmonthmap",
+      "target": "server_lib_ingest_results_month_normalizecalendardate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_buildstoredmonthmap",
+      "target": "server_lib_ingest_results_month_normalizecalendargame",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_kv_rest_env_aliases_ts",
+      "target": "server_lib_kv_rest_env_aliases_trimenv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_kv_rest_env_aliases_ts",
+      "target": "server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_kv_rest_env_aliases_ts",
+      "target": "server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "target": "server_lib_kv_rest_env_aliases_trimenv",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "target": "server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "target": "server_lib_kv_rest_env_aliases_trimenv",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\kv-rest-env-aliases.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_results_redis_ts",
+      "target": "redis",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_results_redis_ts",
+      "target": "api_admin_server_lib_kv_rest_env_aliases_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_results_redis_ts",
+      "target": "server_lib_results_redis_getresultsredis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_results_redis_ts",
+      "target": "server_lib_results_redis_requireresultsredis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_results_redis_requireresultsredis",
+      "target": "server_lib_results_redis_getresultsredis",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_results_sync_constants_ts",
+      "target": "server_lib_results_sync_constants_isapprovedresultstag",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\results-sync-constants.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_results_sync_constants_ts",
+      "target": "server_lib_results_sync_constants_resultskvkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\results-sync-constants.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_results_sync_constants_ts",
+      "target": "server_lib_results_sync_constants_canonicaldivisionlabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\results-sync-constants.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_write_results_month_kv_ts",
+      "target": "api_admin_server_lib_ingest_results_month_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_write_results_month_kv_ts",
+      "target": "api_admin_server_lib_results_sync_constants_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_write_results_month_kv_ts",
+      "target": "api_admin_server_lib_results_redis_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "api_admin_server_lib_write_results_month_kv_ts",
+      "target": "server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "api_cron_cron_sync_results_ts",
+      "target": "node",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\cron\\cron-sync-results.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_cron_cron_sync_results_ts",
+      "target": "cron_cron_sync_results_run",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\cron\\cron-sync-results.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "api_cron_cron_sync_results_ts",
+      "target": "cron_cron_sync_results_handler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\cron\\cron-sync-results.ts",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "cron_cron_sync_results_handler",
+      "target": "cron_cron_sync_results_run",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\cron\\cron-sync-results.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "api_cron_record_live_ts",
+      "target": "node",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\cron\\record-live.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_cron_record_live_ts",
+      "target": "redis",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\cron\\record-live.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "api_cron_record_live_ts",
+      "target": "cron_record_live_handler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\cron\\record-live.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "api_results_live_ts",
+      "target": "node",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\results\\live.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_results_live_ts",
+      "target": "results_live_handler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api\\results\\live.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_kv_env_ts",
+      "target": "lib_kv_env_trimenv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_kv_env_ts",
+      "target": "lib_kv_env_applykvrestenvaliases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_kv_env_ts",
+      "target": "lib_kv_env_iskvrestconfigured",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_kv_env_applykvrestenvaliases",
+      "target": "lib_kv_env_trimenv",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_kv_env_iskvrestconfigured",
+      "target": "lib_kv_env_applykvrestenvaliases",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_kv_env_iskvrestconfigured",
+      "target": "lib_kv_env_trimenv",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\kv-env.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_constants_ts",
+      "target": "lib_results_constants_isapprovedresultstag",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\results-constants.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_constants_ts",
+      "target": "lib_results_constants_resultskvkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\results-constants.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_redis_ts",
+      "target": "redis",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_redis_ts",
+      "target": "c_all_work_project_ipbl_lib_kv_env",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_redis_ts",
+      "target": "lib_results_redis_getresultsredis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_redis_ts",
+      "target": "lib_results_redis_requireresultsredis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_redis_requireresultsredis",
+      "target": "lib_results_redis_getresultsredis",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_analyze_calendar_sample_mjs",
+      "target": "node_fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\analyze-calendar-sample.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_analyze_performance_mjs",
+      "target": "fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\analyze-performance.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_analyze_performance_mjs",
+      "target": "scripts_analyze_performance_calculateperformance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\analyze-performance.mjs",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_audit_teams_mjs",
+      "target": "fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\audit-teams.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_audit_teams_mjs",
+      "target": "path",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\audit-teams.mjs",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_audit_teams_mjs",
+      "target": "scripts_audit_teams_generatecanonicalreport",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\audit-teams.mjs",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_backfill_results_mjs",
+      "target": "scripts_load_env_local_mjs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\backfill-results.mjs",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_backfill_results_mjs",
+      "target": "scripts_backfill_results_parseargs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\backfill-results.mjs",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_bet_memory_mjs",
+      "target": "fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\build-bet-memory.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_bet_memory_mjs",
+      "target": "scripts_build_bet_memory_buildindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\build-bet-memory.mjs",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_all_march_mjs",
+      "target": "node_fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-all-march.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_all_march_mjs",
+      "target": "scripts_fetch_all_march_normdate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-all-march.mjs",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_results_calendar_ts",
+      "target": "c_all_work_project_ipbl_src_api_normalize",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_results_calendar_ts",
+      "target": "c_all_work_project_ipbl_src_config_divisions",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_results_calendar_ts",
+      "target": "scripts_fetch_results_calendar_formatapidate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_results_calendar_ts",
+      "target": "scripts_fetch_results_calendar_formatisodate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_results_calendar_ts",
+      "target": "scripts_fetch_results_calendar_quartertotals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_results_calendar_ts",
+      "target": "scripts_fetch_results_calendar_fetchresultscalendar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_results_calendar_fetchresultscalendar",
+      "target": "scripts_fetch_results_calendar_formatisodate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_fetch_results_calendar_fetchresultscalendar",
+      "target": "scripts_fetch_results_calendar_formatapidate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\fetch-results-calendar.ts",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_load_env_local_mjs",
+      "target": "node_fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\load-env-local.mjs",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_load_env_local_mjs",
+      "target": "node_path",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\load-env-local.mjs",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_load_env_local_mjs",
+      "target": "node_url",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\load-env-local.mjs",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_load_env_local_mjs",
+      "target": "scripts_load_env_local_loadenvlocal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\load-env-local.mjs",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_peek_dates_mjs",
+      "target": "node_fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\peek-dates.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_swarm_commander_mjs",
+      "target": "child_process",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\swarm-commander.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_swarm_commander_mjs",
+      "target": "fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\swarm-commander.mjs",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_swarm_commander_mjs",
+      "target": "path",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\swarm-commander.mjs",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_swarm_commander_mjs",
+      "target": "scripts_swarm_commander_runautonomouscycle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\swarm-commander.mjs",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_verify_h2h_drawer_mjs",
+      "target": "playwright",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_verify_h2h_drawer_mjs",
+      "target": "scripts_verify_h2h_drawer_snapshoth2h",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_verify_h2h_drawer_mjs",
+      "target": "scripts_verify_h2h_drawer_sleep",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_verify_h2h_drawer_mjs",
+      "target": "scripts_verify_h2h_drawer_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_verify_h2h_drawer_main",
+      "target": "scripts_verify_h2h_drawer_snapshoth2h",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_verify_h2h_drawer_main",
+      "target": "scripts_verify_h2h_drawer_sleep",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\verify-h2h-drawer.mjs",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_lib_auth_validator_mjs",
+      "target": "node_fetch",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\lib\\auth-validator.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_lib_auth_validator_mjs",
+      "target": "lib_auth_validator_validatesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\lib\\auth-validator.mjs",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_hooks_usebettingmemory",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_components_bettingmemorydrawersection",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_api_client",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_api_normalize",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_api_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_components_resultscalendargrid",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_components_bettingrecord",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_config_divisions",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_operator_data",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_operator_engine",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "c_all_work_project_ipbl_src_results_calendar",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_livekey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_formatcurrency",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_formatpct",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_devlog",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_devassert",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_statustone",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_gamedivision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_currentornextquarter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_metric",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_tsx",
+      "target": "src_app_livecard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.tsx",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_tsx",
+      "target": "swr",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_tsx",
+      "target": "swr",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_tsx",
+      "target": "client",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_tsx",
+      "target": "c_all_work_project_ipbl_src_app",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_tsx",
+      "target": "c_all_work_project_ipbl_src_index_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "c_all_work_project_ipbl_src_config_divisions",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "c_all_work_project_ipbl_src_api_normalize",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "c_all_work_project_ipbl_src_api_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_base",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_q",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_getjson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_formatapidate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_seasonfromdate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_fetchschedule",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_fetchonline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_fetchgame",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_fetchboxscore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_fetchteamgames",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_client_ts",
+      "target": "api_client_clearfetchcaches",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_getjson",
+      "target": "api_client_base",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchschedule",
+      "target": "api_client_formatapidate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchschedule",
+      "target": "api_client_getjson",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchschedule",
+      "target": "api_client_q",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchonline",
+      "target": "api_client_getjson",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchonline",
+      "target": "api_client_q",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchgame",
+      "target": "api_client_getjson",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchgame",
+      "target": "api_client_q",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchboxscore",
+      "target": "api_client_getjson",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchboxscore",
+      "target": "api_client_q",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchteamgames",
+      "target": "api_client_getjson",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchteamgames",
+      "target": "api_client_q",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "c_all_work_project_ipbl_src_api_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_teamref",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_numberornull",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_istrulyliverow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_getscoretext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_normalizecalendarrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_parsecalendaritems",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_dedupelivegames",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L223",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_tolivegame",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L248",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_parseteamhistory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_normalize_ts",
+      "target": "api_normalize_computeh2h",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L278",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_istrulyliverow",
+      "target": "api_normalize_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_istrulyliverow",
+      "target": "api_normalize_numberornull",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_getscoretext",
+      "target": "api_normalize_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_normalizecalendarrow",
+      "target": "api_normalize_teamref",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_normalizecalendarrow",
+      "target": "api_normalize_istrulyliverow",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_normalizecalendarrow",
+      "target": "api_normalize_getscoretext",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_normalizecalendarrow",
+      "target": "api_normalize_numberornull",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_normalizecalendarrow",
+      "target": "api_normalize_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_parsecalendaritems",
+      "target": "api_normalize_normalizecalendarrow",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "api_normalize_parseteamhistory",
+      "target": "api_normalize_teamref",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\normalize.ts",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "src_api_types_ts",
+      "target": "c_all_work_project_ipbl_src_config_divisions",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\api\\types.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_bettingmemorydrawersection_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\BettingMemoryDrawerSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_bettingrecord_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\BettingRecord.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_bettingrecord_tsx",
+      "target": "components_bettingrecord_isodateonly",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\BettingRecord.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_bettingrecord_tsx",
+      "target": "components_bettingrecord_formattimehhmm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\BettingRecord.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_bettingrecord_tsx",
+      "target": "components_bettingrecord_formatcurrencymmk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\BettingRecord.tsx",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_resultscalendargrid_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\ResultsCalendarGrid.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_resultscalendargrid_tsx",
+      "target": "c_all_work_project_ipbl_src_api_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\ResultsCalendarGrid.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_resultscalendargrid_tsx",
+      "target": "c_all_work_project_ipbl_src_results_calendar",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\ResultsCalendarGrid.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_resultscalendargrid_tsx",
+      "target": "components_resultscalendargrid_formatheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\ResultsCalendarGrid.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_config_divisions_ts",
+      "target": "config_divisions_canonicaldivisionlabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\config\\divisions.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebettingmemory_ts",
+      "target": "swr",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\hooks\\useBettingMemory.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebettingmemory_ts",
+      "target": "hooks_usebettingmemory_usebettingmemory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\hooks\\useBettingMemory.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "c_all_work_project_ipbl_src_api_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "c_all_work_project_ipbl_src_operator_data",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_normalizeteam",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_matchupkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_asrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_asnumber",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_deepfind",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_getperiodminutes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_getscoreboardanalysis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_analyzequarterflow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_oddsband",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_teamflags",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_evaluateoperatordecision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L254",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_gethistoricalcontext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L344",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_engine_ts",
+      "target": "operator_engine_parseh2hquartermatrix",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L352",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_matchupkey",
+      "target": "operator_engine_normalizeteam",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_getperiodminutes",
+      "target": "operator_engine_asrecord",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_getscoreboardanalysis",
+      "target": "operator_engine_asrecord",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_getscoreboardanalysis",
+      "target": "operator_engine_deepfind",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_analyzequarterflow",
+      "target": "operator_engine_getscoreboardanalysis",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_analyzequarterflow",
+      "target": "operator_engine_getperiodminutes",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_teamflags",
+      "target": "operator_engine_normalizeteam",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L246",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_evaluateoperatordecision",
+      "target": "operator_engine_oddsband",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L275",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_evaluateoperatordecision",
+      "target": "operator_engine_teamflags",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L299",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_engine_gethistoricalcontext",
+      "target": "operator_engine_oddsband",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\engine.ts",
+      "source_location": "L348",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_mock_ts",
+      "target": "c_all_work_project_ipbl_src_api_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_mock_ts",
+      "target": "c_all_work_project_ipbl_src_operator_engine",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_mock_ts",
+      "target": "operator_mock_makelivegame",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_mock_ts",
+      "target": "operator_mock_makeresultgame",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "src_operator_mock_ts",
+      "target": "operator_mock_buildinsight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "c_all_work_project_ipbl_src_api_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "c_all_work_project_ipbl_src_config_divisions",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "c_all_work_project_ipbl_lib_results_constants",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_isodate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_monthdaykeys",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_sessionkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_clonecalendarmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_builddivisionconfigs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_createemptymonthmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_iscalendarmapcompleteformonth",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_createskeletonresultscalendarmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_clearresultscalendarcache",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "src_results_calendar_ts",
+      "target": "results_calendar_fetchresultsmonthfromapi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "results_calendar_monthdaykeys",
+      "target": "results_calendar_isodate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "results_calendar_createemptymonthmap",
+      "target": "results_calendar_monthdaykeys",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "results_calendar_iscalendarmapcompleteformonth",
+      "target": "results_calendar_monthdaykeys",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "results_calendar_iscalendarmapcompleteformonth",
+      "target": "results_calendar_builddivisionconfigs",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "results_calendar_createskeletonresultscalendarmap",
+      "target": "results_calendar_builddivisionconfigs",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "results_calendar_createskeletonresultscalendarmap",
+      "target": "results_calendar_createemptymonthmap",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "results_calendar_fetchresultsmonthfromapi",
+      "target": "results_calendar_sessionkey",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "results_calendar_fetchresultsmonthfromapi",
+      "target": "results_calendar_clonecalendarmap",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\results\\calendar.ts",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_normalizecalendargame",
+      "target": "config_divisions_canonicaldivisionlabel",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_ingest_results_month_fetchcalendarday",
+      "target": "api_normalize_parsecalendaritems",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\ingest-results-month.ts",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_results_redis_getresultsredis",
+      "target": "lib_kv_env_applykvrestenvaliases",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_results_redis_getresultsredis",
+      "target": "lib_kv_env_iskvrestconfigured",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_results_redis_getresultsredis",
+      "target": "lib_kv_env_trimenv",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\results-redis.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "target": "lib_results_constants_isapprovedresultstag",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "target": "server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "target": "server_lib_ingest_results_month_buildstoredmonthmap",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "target": "lib_results_constants_resultskvkey",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "target": "lib_results_redis_requireresultsredis",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api\\admin\\server-lib\\write-results-month-kv.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_redis_getresultsredis",
+      "target": "lib_kv_env_applykvrestenvaliases",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_redis_getresultsredis",
+      "target": "lib_kv_env_iskvrestconfigured",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_results_redis_getresultsredis",
+      "target": "lib_kv_env_trimenv",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib\\results-redis.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchschedule",
+      "target": "api_normalize_parsecalendaritems",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchonline",
+      "target": "api_normalize_dedupelivegames",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchonline",
+      "target": "api_normalize_parsecalendaritems",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client_fetchteamgames",
+      "target": "api_normalize_parseteamhistory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\api\\client.ts",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_mock_buildinsight",
+      "target": "operator_engine_getscoreboardanalysis",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_mock_buildinsight",
+      "target": "operator_engine_analyzequarterflow",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_mock_buildinsight",
+      "target": "operator_engine_evaluateoperatordecision",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\operator\\mock.ts",
+      "source_location": "L114",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

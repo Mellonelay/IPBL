@@ -1,0 +1,1489 @@
+{
+  "nodes": [
+    {
+      "id": "hydrate_final_script",
+      "label": "Hydrate Final Script",
+      "file_type": "code",
+      "source_file": "hydrate_final.ps1"
+    },
+    {
+      "id": "hydrate_hybrid_script",
+      "label": "Hydrate Hybrid Script",
+      "file_type": "code",
+      "source_file": "hydrate_hybrid.ps1"
+    },
+    {
+      "id": "hydrate_master_script",
+      "label": "Hydrate Master Script",
+      "file_type": "code",
+      "source_file": "hydrate_master.ps1"
+    },
+    {
+      "id": "vite_config",
+      "label": "Vite Configuration",
+      "file_type": "code",
+      "source_file": "vite.config.ts"
+    },
+    {
+      "id": "results_api_handler",
+      "label": "Results API Handler",
+      "file_type": "code",
+      "source_file": "api/results.ts"
+    },
+    {
+      "id": "calendar_normalize_lib",
+      "label": "Calendar Normalization Library",
+      "file_type": "code",
+      "source_file": "api/admin/server-lib/calendar-normalize.ts",
+      "rationale": "Duplicated from src/api/normalize.ts to prevent Vercel functions from importing src/*, which breaks invocation graph."
+    },
+    {
+      "id": "ingest_results_month_lib",
+      "label": "Ingest Results Month Library",
+      "file_type": "code",
+      "source_file": "api/admin/server-lib/ingest-results-month.ts"
+    },
+    {
+      "id": "kv_rest_env_aliases_lib",
+      "label": "KV REST Env Aliases Library",
+      "file_type": "code",
+      "source_file": "api/admin/server-lib/kv-rest-env-aliases.ts",
+      "rationale": "Maps Upstash environment variables to KV_REST_* for consistent client configuration."
+    },
+    {
+      "id": "results_redis_api_lib",
+      "label": "Results Redis API Library",
+      "file_type": "code",
+      "source_file": "api/admin/server-lib/results-redis.ts"
+    },
+    {
+      "id": "results_sync_constants_api",
+      "label": "Results Sync Constants (API)",
+      "file_type": "code",
+      "source_file": "api/admin/server-lib/results-sync-constants.ts",
+      "rationale": "Duplicated from lib/results-constants.ts for serverless_graph isolation."
+    },
+    {
+      "id": "write_results_month_kv_lib",
+      "label": "Write Results Month to KV Library",
+      "file_type": "code",
+      "source_file": "api/admin/server-lib/write-results-month-kv.ts"
+    },
+    {
+      "id": "cron_sync_results_handler",
+      "label": "Cron Sync Results Handler",
+      "file_type": "code",
+      "source_file": "api/cron/cron-sync-results.ts"
+    },
+    {
+      "id": "record_live_handler",
+      "label": "Record Live Handler",
+      "file_type": "code",
+      "source_file": "api/cron/record-live.ts"
+    },
+    {
+      "id": "live_proxy_handler",
+      "label": "Live Proxy Handler",
+      "file_type": "code",
+      "source_file": "api/results/live.ts"
+    },
+    {
+      "id": "kv_env_lib",
+      "label": "KV Env Library",
+      "file_type": "code",
+      "source_file": "lib/kv-env.ts"
+    },
+    {
+      "id": "results_constants_lib",
+      "label": "Results Constants Library",
+      "file_type": "code",
+      "source_file": "lib/results-constants.ts"
+    },
+    {
+      "id": "results_redis_lib",
+      "label": "Results Redis Library",
+      "file_type": "code",
+      "source_file": "lib/results-redis.ts"
+    },
+    {
+      "id": "analyze_calendar_sample_script",
+      "label": "Analyze Calendar Sample Script",
+      "file_type": "code",
+      "source_file": "scripts/analyze-calendar-sample.mjs"
+    },
+    {
+      "id": "analyze_performance_script",
+      "label": "Analyze Performance Script",
+      "file_type": "code",
+      "source_file": "scripts/analyze-performance.mjs"
+    },
+    {
+      "id": "audit_teams_script",
+      "label": "Audit Teams Script",
+      "file_type": "code",
+      "source_file": "scripts/audit-teams.mjs"
+    },
+    {
+      "id": "bet_history_clean_data",
+      "label": "Bet History Clean Data",
+      "file_type": "document",
+      "source_file": "public/bet_history_clean.json"
+    },
+    {
+      "id": "ipbl_pro_api",
+      "label": "IPBL Pro API",
+      "file_type": "document",
+      "source_url": "https://api.ipbl.pro"
+    },
+    {
+      "id": "backfill_results_main",
+      "label": "Backfill Results Script",
+      "file_type": "code",
+      "source_file": "scripts/backfill-results.mjs"
+    },
+    {
+      "id": "build_bet_memory_buildindex",
+      "label": "buildIndex",
+      "file_type": "code",
+      "source_file": "scripts/build-bet-memory.mjs"
+    },
+    {
+      "id": "fetch_results_calendar_fetchresultscalendar",
+      "label": "fetchResultsCalendar",
+      "file_type": "code",
+      "source_file": "scripts/fetch-results-calendar.ts"
+    },
+    {
+      "id": "load_env_local_loadenvlocal",
+      "label": "loadEnvLocal",
+      "file_type": "code",
+      "source_file": "scripts/load-env-local.mjs"
+    },
+    {
+      "id": "swarm_commander_runautonomouscycle",
+      "label": "runAutonomousCycle",
+      "file_type": "code",
+      "source_file": "scripts/swarm-commander.mjs"
+    },
+    {
+      "id": "verify_h2h_drawer_main",
+      "label": "H2H Verification Test",
+      "file_type": "code",
+      "source_file": "scripts/verify-h2h-drawer.mjs"
+    },
+    {
+      "id": "auth_validator_validatesession",
+      "label": "validateSession",
+      "file_type": "code",
+      "source_file": "scripts/lib/auth-validator.mjs"
+    },
+    {
+      "id": "app_app",
+      "label": "App Component",
+      "file_type": "code",
+      "source_file": "src/App.tsx"
+    },
+    {
+      "id": "app_livecard",
+      "label": "LiveCard Component",
+      "file_type": "code",
+      "source_file": "src/App.tsx"
+    },
+    {
+      "id": "client_fetchonline",
+      "label": "fetchOnline",
+      "file_type": "code",
+      "source_file": "src/api/client.ts"
+    },
+    {
+      "id": "client_fetchboxscore",
+      "label": "fetchBoxScore",
+      "file_type": "code",
+      "source_file": "src/api/client.ts"
+    },
+    {
+      "id": "normalize_parsecalendaritems",
+      "label": "parseCalendarItems",
+      "file_type": "code",
+      "source_file": "src/api/normalize.ts"
+    },
+    {
+      "id": "normalize_computeh2h",
+      "label": "computeH2H",
+      "file_type": "code",
+      "source_file": "src/api/normalize.ts"
+    },
+    {
+      "id": "bettingmemorydrawersection_bettingmemorydrawersection",
+      "label": "BettingMemoryDrawerSection",
+      "file_type": "code",
+      "source_file": "src/components/BettingMemoryDrawerSection.tsx"
+    },
+    {
+      "id": "bettingrecord_bettingrecord",
+      "label": "BettingRecord Component",
+      "file_type": "code",
+      "source_file": "src/components/BettingRecord.tsx"
+    },
+    {
+      "id": "resultscalendargrid_resultscalendargrid",
+      "label": "ResultsCalendarGrid",
+      "file_type": "code",
+      "source_file": "src/components/ResultsCalendarGrid.tsx"
+    },
+    {
+      "id": "divisions_live_divisions",
+      "label": "LIVE_DIVISIONS",
+      "file_type": "code",
+      "source_file": "src/config/divisions.ts"
+    },
+    {
+      "id": "usebettingmemory_usebettingmemory",
+      "label": "useBettingMemory",
+      "file_type": "code",
+      "source_file": "src/hooks/useBettingMemory.ts"
+    },
+    {
+      "id": "data_metricsummary",
+      "label": "MetricSummary",
+      "file_type": "code",
+      "source_file": "src/operator/data.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "data_riskentry",
+      "label": "RiskEntry",
+      "file_type": "code",
+      "source_file": "src/operator/data.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "data_operatorsummary",
+      "label": "operatorSummary",
+      "file_type": "code",
+      "source_file": "src/operator/data.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "data_operatorrules",
+      "label": "operatorRules",
+      "file_type": "code",
+      "source_file": "src/operator/data.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_quarterkey",
+      "label": "QuarterKey",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_scoreboardanalysis",
+      "label": "ScoreboardAnalysis",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_quarterflowanalysis",
+      "label": "QuarterFlowAnalysis",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_operatordecision",
+      "label": "OperatorDecision",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_evaluateinput",
+      "label": "EvaluateInput",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_normalizeteam",
+      "label": "normalizeTeam",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_matchupkey",
+      "label": "matchupKey",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_asrecord",
+      "label": "asRecord",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_asnumber",
+      "label": "asNumber",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_deepfind",
+      "label": "deepFind",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_getperiodminutes",
+      "label": "getPeriodMinutes",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_getscoreboardanalysis",
+      "label": "getScoreboardAnalysis",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_analyzequarterflow",
+      "label": "analyzeQuarterFlow",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_oddsband",
+      "label": "oddsBand",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_teamflags",
+      "label": "teamFlags",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_evaluateoperatordecision",
+      "label": "evaluateOperatorDecision",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_gethistoricalcontext",
+      "label": "getHistoricalContext",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "engine_parseh2hquartermatrix",
+      "label": "parseH2HQuarterMatrix",
+      "file_type": "code",
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ipbl_barrel",
+      "label": "IPBL Barrel",
+      "file_type": "code",
+      "source_file": "src/operator/ipbl.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_mockinsight",
+      "label": "MockInsight",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_demogamemeta",
+      "label": "demoGameMeta",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_demoboxraw",
+      "label": "demoBoxRaw",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_makelivegame",
+      "label": "makeLiveGame",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_makeresultgame",
+      "label": "makeResultGame",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_livedemogame",
+      "label": "liveDemoGame",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_resultdemogame",
+      "label": "resultDemoGame",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_demoh2h",
+      "label": "demoH2H",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_buildinsight",
+      "label": "buildInsight",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_demoliveinsight",
+      "label": "demoLiveInsight",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mock_demoresultinsight",
+      "label": "demoResultInsight",
+      "file_type": "code",
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_calendargridgame",
+      "label": "CalendarGridGame",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_calendargriddivision",
+      "label": "CalendarGridDivision",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_calendargridmap",
+      "label": "CalendarGridMap",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_results_division_tags",
+      "label": "RESULTS_DIVISION_TAGS",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_results_divisions",
+      "label": "RESULTS_DIVISIONS",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_sessioncache",
+      "label": "sessionCache",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_inflight",
+      "label": "inflight",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_isodate",
+      "label": "isoDate",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_monthdaykeys",
+      "label": "monthDayKeys",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_sessionkey",
+      "label": "sessionKey",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_clonecalendarmap",
+      "label": "cloneCalendarMap",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_builddivisionconfigs",
+      "label": "buildDivisionConfigs",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_createemptymonthmap",
+      "label": "createEmptyMonthMap",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_iscalendarmapcompleteformonth",
+      "label": "isCalendarMapCompleteForMonth",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_createskeletonresultscalendarmap",
+      "label": "createSkeletonResultsCalendarMap",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_clearresultscalendarcache",
+      "label": "clearResultsCalendarCache",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "calendar_fetchresultsmonthfromapi",
+      "label": "fetchResultsMonthFromApi",
+      "file_type": "code",
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agents_architecture_first",
+      "label": "Architecture-First",
+      "file_type": "document",
+      "source_file": "agents.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agents_ui_reads_jobs_write",
+      "label": "UI Reads, Jobs Write",
+      "file_type": "document",
+      "source_file": "agents.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agents_node_esm",
+      "label": "Node ESM",
+      "file_type": "document",
+      "source_file": "agents.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agents_cross_platform",
+      "label": "Cross-Platform Compatibility",
+      "file_type": "document",
+      "source_file": "agents.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "index_root",
+      "label": "root element",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "index_main_tsx",
+      "label": "main.tsx script",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_ipbl_minimal_score_viewer",
+      "label": "IPBL minimal score viewer",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_api_routing",
+      "label": "API routing",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "arm64_purity_report_node",
+      "label": "node.exe",
+      "file_type": "document",
+      "source_file": "artifacts/arm64-purity-report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "arm64_purity_report_python",
+      "label": "python.exe",
+      "file_type": "document",
+      "source_file": "artifacts/arm64-purity-report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "arm64_purity_report_cl",
+      "label": "cl.exe",
+      "file_type": "document",
+      "source_file": "artifacts/arm64-purity-report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "debug_ui_plan",
+      "label": "UI Stabilization & Debugging Plan",
+      "file_type": "document",
+      "source_file": "artifacts/debug-ui.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "debug_ui_betting_memory",
+      "label": "Betting Memory Index",
+      "file_type": "document",
+      "source_file": "artifacts/debug-ui.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "operator_console_data_contract_doc",
+      "label": "IPBL Operator Console Data Contracts",
+      "file_type": "document",
+      "source_file": "docs/operator-console-data-contract.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "operator_console_data_contract_canonical_tag_map",
+      "label": "Canonical division tag map",
+      "file_type": "document",
+      "source_file": "docs/operator-console-data-contract.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "operator_console_data_contract_live_contract",
+      "label": "Live contract",
+      "file_type": "document",
+      "source_file": "docs/operator-console-data-contract.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "operator_console_data_contract_results_contract",
+      "label": "Results contract",
+      "file_type": "document",
+      "source_file": "docs/operator-console-data-contract.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "live_proof_png",
+      "label": "Live Proof Screenshot",
+      "file_type": "image",
+      "source_file": "artifacts/screenshots/live-proof.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "cron_sync_results_handler",
+      "target": "write_results_month_kv_lib",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api/cron/cron-sync-results.ts"
+    },
+    {
+      "source": "write_results_month_kv_lib",
+      "target": "ingest_results_month_lib",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api/admin/server-lib/write-results-month-kv.ts"
+    },
+    {
+      "source": "ingest_results_month_lib",
+      "target": "calendar_normalize_lib",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api/admin/server-lib/ingest-results-month.ts"
+    },
+    {
+      "source": "results_api_handler",
+      "target": "results_redis_api_lib",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api/results.ts"
+    },
+    {
+      "source": "results_api_handler",
+      "target": "results_sync_constants_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api/results.ts"
+    },
+    {
+      "source": "record_live_handler",
+      "target": "kv_rest_env_aliases_lib",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "source_file": "api/cron/record-live.ts"
+    },
+    {
+      "source": "calendar_normalize_lib",
+      "target": "results_sync_constants_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api/admin/server-lib/calendar-normalize.ts"
+    },
+    {
+      "source": "results_redis_api_lib",
+      "target": "kv_rest_env_aliases_lib",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "api/admin/server-lib/results-redis.ts"
+    },
+    {
+      "source": "analyze_performance_script",
+      "target": "bet_history_clean_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/analyze-performance.mjs"
+    },
+    {
+      "source": "audit_teams_script",
+      "target": "bet_history_clean_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-teams.mjs"
+    },
+    {
+      "source": "live_proxy_handler",
+      "target": "ipbl_pro_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "api/results/live.ts"
+    },
+    {
+      "source": "backfill_results_main",
+      "target": "load_env_local_loadenvlocal",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/backfill-results.mjs"
+    },
+    {
+      "source": "fetch_results_calendar_fetchresultscalendar",
+      "target": "normalize_parsecalendaritems",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/fetch-results-calendar.ts"
+    },
+    {
+      "source": "app_app",
+      "target": "client_fetchonline",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "app_app",
+      "target": "usebettingmemory_usebettingmemory",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "app_app",
+      "target": "normalize_computeh2h",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "app_app",
+      "target": "app_livecard",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "app_app",
+      "target": "resultscalendargrid_resultscalendargrid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.tsx"
+    },
+    {
+      "source": "client_fetchonline",
+      "target": "normalize_parsecalendaritems",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/api/client.ts"
+    },
+    {
+      "source": "build_bet_memory_buildindex",
+      "target": "public_betting_memory_index_json",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "scripts/build-bet-memory.mjs"
+    },
+    {
+      "source": "usebettingmemory_usebettingmemory",
+      "target": "public_betting_memory_index_json",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/useBettingMemory.ts"
+    },
+    {
+      "source": "verify_h2h_drawer_main",
+      "target": "app_app",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scripts/verify-h2h-drawer.mjs",
+      "rationale": "Verifies UI components rendered by App.tsx (drawer, H2H list)"
+    },
+    {
+      "source": "engine_getscoreboardanalysis",
+      "target": "engine_deepfind",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_getscoreboardanalysis",
+      "target": "engine_asrecord",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_analyzequarterflow",
+      "target": "engine_getscoreboardanalysis",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_analyzequarterflow",
+      "target": "engine_getperiodminutes",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_teamflags",
+      "target": "engine_normalizeteam",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_matchupkey",
+      "target": "engine_normalizeteam",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_evaluateoperatordecision",
+      "target": "engine_oddsband",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_evaluateoperatordecision",
+      "target": "engine_teamflags",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_evaluateoperatordecision",
+      "target": "engine_matchupkey",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_evaluateoperatordecision",
+      "target": "data_operatorrules",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_evaluateoperatordecision",
+      "target": "data_operatorsummary",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_gethistoricalcontext",
+      "target": "engine_oddsband",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "engine_gethistoricalcontext",
+      "target": "data_operatorsummary",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/engine.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mock_buildinsight",
+      "target": "engine_getscoreboardanalysis",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mock_buildinsight",
+      "target": "engine_analyzequarterflow",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mock_buildinsight",
+      "target": "engine_evaluateoperatordecision",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mock_demoliveinsight",
+      "target": "mock_buildinsight",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mock_demoresultinsight",
+      "target": "mock_buildinsight",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/operator/mock.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "calendar_monthdaykeys",
+      "target": "calendar_isodate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "calendar_createemptymonthmap",
+      "target": "calendar_monthdaykeys",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "calendar_iscalendarmapcompleteformonth",
+      "target": "calendar_monthdaykeys",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "calendar_iscalendarmapcompleteformonth",
+      "target": "calendar_builddivisionconfigs",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "calendar_createskeletonresultscalendarmap",
+      "target": "calendar_builddivisionconfigs",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "calendar_createskeletonresultscalendarmap",
+      "target": "calendar_createemptymonthmap",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "calendar_fetchresultsmonthfromapi",
+      "target": "calendar_sessionkey",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "calendar_fetchresultsmonthfromapi",
+      "target": "calendar_clonecalendarmap",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/results/calendar.ts",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hydration_process",
+      "label": "Hydration Process",
+      "nodes": [
+        "hydrate_final_script",
+        "hydrate_hybrid_script",
+        "hydrate_master_script"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "source_file": "hydrate_final.ps1"
+    },
+    {
+      "id": "results_sync_pipeline",
+      "label": "Results Sync Pipeline",
+      "nodes": [
+        "cron_sync_results_handler",
+        "write_results_month_kv_lib",
+        "ingest_results_month_lib",
+        "calendar_normalize_lib"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "source_file": "api/cron/cron-sync-results.ts"
+    },
+    {
+      "id": "kv_isolation_pattern",
+      "label": "KV Isolation Pattern",
+      "nodes": [
+        "calendar_normalize_lib",
+        "results_sync_constants_api",
+        "results_redis_api_lib",
+        "kv_rest_env_aliases_lib"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "source_file": "api/admin/server-lib/results-sync-constants.ts"
+    },
+    {
+      "id": "betting_memory_system",
+      "label": "Betting Memory System",
+      "nodes": [
+        "build_bet_memory_buildindex",
+        "usebettingmemory_usebettingmemory",
+        "bettingmemorydrawersection_bettingmemorydrawersection"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/hooks/useBettingMemory.ts"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

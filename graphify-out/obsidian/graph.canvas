@@ -1,0 +1,4675 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Core Logic & Operator Analysis",
+      "x": 0,
+      "y": 0,
+      "width": 1100,
+      "height": 720,
+      "color": "1"
+    },
+    {
+      "id": "n_operator_engine_analyzequarterflow",
+      "type": "file",
+      "file": "analyzeQuarterFlow().md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_asnumber",
+      "type": "file",
+      "file": "asNumber().md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_asrecord",
+      "type": "file",
+      "file": "asRecord().md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_mock_buildinsight",
+      "type": "file",
+      "file": "buildInsight().md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_deepfind",
+      "type": "file",
+      "file": "deepFind().md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_operator_engine_ts",
+      "type": "file",
+      "file": "engine.ts.md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_evaluateoperatordecision",
+      "type": "file",
+      "file": "evaluateOperatorDecision().md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_gethistoricalcontext",
+      "type": "file",
+      "file": "getHistoricalContext().md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_getperiodminutes",
+      "type": "file",
+      "file": "getPeriodMinutes().md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_getscoreboardanalysis",
+      "type": "file",
+      "file": "getScoreboardAnalysis().md",
+      "x": 20,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_mock_makelivegame",
+      "type": "file",
+      "file": "makeLiveGame().md",
+      "x": 220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_mock_makeresultgame",
+      "type": "file",
+      "file": "makeResultGame().md",
+      "x": 420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_matchupkey",
+      "type": "file",
+      "file": "matchupKey().md",
+      "x": 20,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_operator_mock_ts",
+      "type": "file",
+      "file": "mock.ts.md",
+      "x": 220,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_normalizeteam",
+      "type": "file",
+      "file": "normalizeTeam().md",
+      "x": 420,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_oddsband",
+      "type": "file",
+      "file": "oddsBand().md",
+      "x": 20,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_parseh2hquartermatrix",
+      "type": "file",
+      "file": "parseH2HQuarterMatrix().md",
+      "x": 220,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_operator_engine_teamflags",
+      "type": "file",
+      "file": "teamFlags().md",
+      "x": 420,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Result Ingestion Constants",
+      "x": 1180,
+      "y": 0,
+      "width": 1100,
+      "height": 720,
+      "color": "2"
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_buildstoredmonthmap",
+      "type": "file",
+      "file": "buildStoredMonthMap().md",
+      "x": 1200,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_config_divisions_canonicaldivisionlabel",
+      "type": "file",
+      "file": "canonicalDivisionLabel()_1.md",
+      "x": 1400,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_createemptymonthmap",
+      "type": "file",
+      "file": "createEmptyMonthMap().md",
+      "x": 1600,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_config_divisions_ts",
+      "type": "file",
+      "file": "divisions.ts.md",
+      "x": 1200,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_fetchcalendarday",
+      "type": "file",
+      "file": "fetchCalendarDay().md",
+      "x": 1400,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "type": "file",
+      "file": "fetchScheduleGamesForMonth().md",
+      "x": 1600,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_formatapidate",
+      "type": "file",
+      "file": "formatApiDate().md",
+      "x": 1200,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_admin_server_lib_ingest_results_month_ts",
+      "type": "file",
+      "file": "ingest-results-month.ts.md",
+      "x": 1400,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_results_constants_isapprovedresultstag",
+      "type": "file",
+      "file": "isApprovedResultsTag()_1.md",
+      "x": 1600,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_monthdaykeys",
+      "type": "file",
+      "file": "monthDayKeys().md",
+      "x": 1200,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_normalizecalendardate",
+      "type": "file",
+      "file": "normalizeCalendarDate().md",
+      "x": 1400,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_normalizecalendargame",
+      "type": "file",
+      "file": "normalizeCalendarGame().md",
+      "x": 1600,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_parsequartertotals",
+      "type": "file",
+      "file": "parseQuarterTotals().md",
+      "x": 1200,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_results_constants_ts",
+      "type": "file",
+      "file": "results-constants.ts.md",
+      "x": 1400,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_results_constants_resultskvkey",
+      "type": "file",
+      "file": "resultsKvKey()_1.md",
+      "x": 1600,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_ingest_results_month_startoflocalday",
+      "type": "file",
+      "file": "startOfLocalDay().md",
+      "x": 1200,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "type": "file",
+      "file": "writeResultsMonthToKv().md",
+      "x": 1400,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Operator Rule Engine",
+      "x": 2360,
+      "y": 0,
+      "width": 880,
+      "height": 720,
+      "color": "3"
+    },
+    {
+      "id": "n_engine_analyzequarterflow",
+      "type": "file",
+      "file": "analyzeQuarterFlow.md",
+      "x": 2380,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_asrecord",
+      "type": "file",
+      "file": "asRecord.md",
+      "x": 2580,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mock_buildinsight",
+      "type": "file",
+      "file": "buildInsight.md",
+      "x": 2780,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_deepfind",
+      "type": "file",
+      "file": "deepFind.md",
+      "x": 2380,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mock_demoliveinsight",
+      "type": "file",
+      "file": "demoLiveInsight.md",
+      "x": 2580,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mock_demoresultinsight",
+      "type": "file",
+      "file": "demoResultInsight.md",
+      "x": 2780,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_evaluateoperatordecision",
+      "type": "file",
+      "file": "evaluateOperatorDecision.md",
+      "x": 2380,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_gethistoricalcontext",
+      "type": "file",
+      "file": "getHistoricalContext.md",
+      "x": 2580,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_getperiodminutes",
+      "type": "file",
+      "file": "getPeriodMinutes.md",
+      "x": 2780,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_getscoreboardanalysis",
+      "type": "file",
+      "file": "getScoreboardAnalysis.md",
+      "x": 2380,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_matchupkey",
+      "type": "file",
+      "file": "matchupKey.md",
+      "x": 2580,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_normalizeteam",
+      "type": "file",
+      "file": "normalizeTeam.md",
+      "x": 2780,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_oddsband",
+      "type": "file",
+      "file": "oddsBand.md",
+      "x": 2380,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_data_operatorrules",
+      "type": "file",
+      "file": "operatorRules.md",
+      "x": 2580,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_data_operatorsummary",
+      "type": "file",
+      "file": "operatorSummary.md",
+      "x": 2780,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_engine_teamflags",
+      "type": "file",
+      "file": "teamFlags.md",
+      "x": 2380,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "KV Sync Pipeline",
+      "x": 3320,
+      "y": 0,
+      "width": 880,
+      "height": 620,
+      "color": "4"
+    },
+    {
+      "id": "n_server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "type": "file",
+      "file": "applyKvRestEnvAliases().md",
+      "x": 3340,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_results_sync_constants_canonicaldivisionlabel",
+      "type": "file",
+      "file": "canonicalDivisionLabel().md",
+      "x": 3540,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_results_handler",
+      "type": "file",
+      "file": "handler().md",
+      "x": 3740,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_results_sync_constants_isapprovedresultstag",
+      "type": "file",
+      "file": "isApprovedResultsTag().md",
+      "x": 3340,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "type": "file",
+      "file": "isKvRestConfigured().md",
+      "x": 3540,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_admin_server_lib_kv_rest_env_aliases_ts",
+      "type": "file",
+      "file": "kv-rest-env-aliases.ts.md",
+      "x": 3740,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_results_redis_requireresultsredis",
+      "type": "file",
+      "file": "requireResultsRedis().md",
+      "x": 3340,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_admin_server_lib_results_redis_ts",
+      "type": "file",
+      "file": "results-redis.ts.md",
+      "x": 3540,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_admin_server_lib_results_sync_constants_ts",
+      "type": "file",
+      "file": "results-sync-constants.ts.md",
+      "x": 3740,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_results_ts",
+      "type": "file",
+      "file": "results.ts.md",
+      "x": 3340,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_results_sync_constants_resultskvkey",
+      "type": "file",
+      "file": "resultsKvKey().md",
+      "x": 3540,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_kv_rest_env_aliases_trimenv",
+      "type": "file",
+      "file": "trimEnv().md",
+      "x": 3740,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_admin_server_lib_write_results_month_kv_ts",
+      "type": "file",
+      "file": "write-results-month-kv.ts.md",
+      "x": 3340,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Data Fetching Clients",
+      "x": 4280,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "5"
+    },
+    {
+      "id": "n_api_client_base",
+      "type": "file",
+      "file": "base().md",
+      "x": 4300,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_clearfetchcaches",
+      "type": "file",
+      "file": "clearFetchCaches().md",
+      "x": 4500,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_api_client_ts",
+      "type": "file",
+      "file": "client.ts.md",
+      "x": 4700,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_fetchboxscore",
+      "type": "file",
+      "file": "fetchBoxScore().md",
+      "x": 4300,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_fetchgame",
+      "type": "file",
+      "file": "fetchGame().md",
+      "x": 4500,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_fetchonline",
+      "type": "file",
+      "file": "fetchOnline().md",
+      "x": 4700,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_fetchschedule",
+      "type": "file",
+      "file": "fetchSchedule().md",
+      "x": 4300,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_fetchteamgames",
+      "type": "file",
+      "file": "fetchTeamGames().md",
+      "x": 4500,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_formatapidate",
+      "type": "file",
+      "file": "formatApiDate()_2.md",
+      "x": 4700,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_getjson",
+      "type": "file",
+      "file": "getJson().md",
+      "x": 4300,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_q",
+      "type": "file",
+      "file": "q().md",
+      "x": 4500,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client_seasonfromdate",
+      "type": "file",
+      "file": "seasonFromDate().md",
+      "x": 4700,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "Score Normalization Flow",
+      "x": 5240,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "6"
+    },
+    {
+      "id": "n_api_normalize_computeh2h",
+      "type": "file",
+      "file": "computeH2H().md",
+      "x": 5260,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_dedupelivegames",
+      "type": "file",
+      "file": "dedupeLiveGames().md",
+      "x": 5460,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_getscoretext",
+      "type": "file",
+      "file": "getScoreText()_1.md",
+      "x": 5660,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_istrulyliverow",
+      "type": "file",
+      "file": "isTrulyLiveRow()_1.md",
+      "x": 5260,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_api_normalize_ts",
+      "type": "file",
+      "file": "normalize.ts.md",
+      "x": 5460,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_normalizecalendarrow",
+      "type": "file",
+      "file": "normalizeCalendarRow()_1.md",
+      "x": 5660,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_numberornull",
+      "type": "file",
+      "file": "numberOrNull()_1.md",
+      "x": 5260,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_parsecalendaritems",
+      "type": "file",
+      "file": "parseCalendarItems()_1.md",
+      "x": 5460,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_parseteamhistory",
+      "type": "file",
+      "file": "parseTeamHistory().md",
+      "x": 5660,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_teamref",
+      "type": "file",
+      "file": "teamRef()_1.md",
+      "x": 5260,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_text",
+      "type": "file",
+      "file": "text()_1.md",
+      "x": 5460,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_normalize_tolivegame",
+      "type": "file",
+      "file": "toLiveGame().md",
+      "x": 5660,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "UI Formatting Helpers",
+      "x": 6200,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "1"
+    },
+    {
+      "id": "n_src_app_tsx",
+      "type": "file",
+      "file": "App.tsx.md",
+      "x": 6220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_livecard",
+      "type": "file",
+      "file": "LiveCard().md",
+      "x": 6420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_metric",
+      "type": "file",
+      "file": "Metric().md",
+      "x": 6620,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_currentornextquarter",
+      "type": "file",
+      "file": "currentOrNextQuarter().md",
+      "x": 6220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_devassert",
+      "type": "file",
+      "file": "devAssert().md",
+      "x": 6420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_devlog",
+      "type": "file",
+      "file": "devLog().md",
+      "x": 6620,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_formatcurrency",
+      "type": "file",
+      "file": "formatCurrency().md",
+      "x": 6220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_formatpct",
+      "type": "file",
+      "file": "formatPct().md",
+      "x": 6420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_gamedivision",
+      "type": "file",
+      "file": "gameDivision().md",
+      "x": 6620,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_livekey",
+      "type": "file",
+      "file": "liveKey().md",
+      "x": 6220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_statustone",
+      "type": "file",
+      "file": "statusTone().md",
+      "x": 6420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "Calendar State Management",
+      "x": 7160,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "2"
+    },
+    {
+      "id": "n_results_calendar_builddivisionconfigs",
+      "type": "file",
+      "file": "buildDivisionConfigs().md",
+      "x": 7180,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_results_calendar_ts",
+      "type": "file",
+      "file": "calendar.ts.md",
+      "x": 7380,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_calendar_clearresultscalendarcache",
+      "type": "file",
+      "file": "clearResultsCalendarCache().md",
+      "x": 7580,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_calendar_clonecalendarmap",
+      "type": "file",
+      "file": "cloneCalendarMap().md",
+      "x": 7180,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_calendar_createemptymonthmap",
+      "type": "file",
+      "file": "createEmptyMonthMap()_1.md",
+      "x": 7380,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_calendar_createskeletonresultscalendarmap",
+      "type": "file",
+      "file": "createSkeletonResultsCalendarMap().md",
+      "x": 7580,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_calendar_fetchresultsmonthfromapi",
+      "type": "file",
+      "file": "fetchResultsMonthFromApi().md",
+      "x": 7180,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_calendar_iscalendarmapcompleteformonth",
+      "type": "file",
+      "file": "isCalendarMapCompleteForMonth().md",
+      "x": 7380,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_calendar_isodate",
+      "type": "file",
+      "file": "isoDate().md",
+      "x": 7580,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_calendar_monthdaykeys",
+      "type": "file",
+      "file": "monthDayKeys()_1.md",
+      "x": 7180,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_calendar_sessionkey",
+      "type": "file",
+      "file": "sessionKey().md",
+      "x": 7380,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Serverless API Handlers",
+      "x": 8120,
+      "y": 0,
+      "width": 660,
+      "height": 420,
+      "color": "3"
+    },
+    {
+      "id": "n_calendar_normalize_lib",
+      "type": "file",
+      "file": "Calendar Normalization Library.md",
+      "x": 8140,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cron_sync_results_handler",
+      "type": "file",
+      "file": "Cron Sync Results Handler.md",
+      "x": 8340,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ingest_results_month_lib",
+      "type": "file",
+      "file": "Ingest Results Month Library.md",
+      "x": 8540,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_kv_rest_env_aliases_lib",
+      "type": "file",
+      "file": "KV REST Env Aliases Library.md",
+      "x": 8140,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_record_live_handler",
+      "type": "file",
+      "file": "Record Live Handler.md",
+      "x": 8340,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_api_handler",
+      "type": "file",
+      "file": "Results API Handler.md",
+      "x": 8540,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_redis_api_lib",
+      "type": "file",
+      "file": "Results Redis API Library.md",
+      "x": 8140,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_results_sync_constants_api",
+      "type": "file",
+      "file": "Results Sync Constants (API).md",
+      "x": 8340,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_write_results_month_kv_lib",
+      "type": "file",
+      "file": "Write Results Month to KV Library.md",
+      "x": 8540,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "Frontend React Components",
+      "x": 8860,
+      "y": 0,
+      "width": 660,
+      "height": 420,
+      "color": "4"
+    },
+    {
+      "id": "n_app_app",
+      "type": "file",
+      "file": "App Component.md",
+      "x": 8880,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_verify_h2h_drawer_main",
+      "type": "file",
+      "file": "H2H Verification Test.md",
+      "x": 9080,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_livecard",
+      "type": "file",
+      "file": "LiveCard Component.md",
+      "x": 9280,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_resultscalendargrid_resultscalendargrid",
+      "type": "file",
+      "file": "ResultsCalendarGrid.md",
+      "x": 8880,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_normalize_computeh2h",
+      "type": "file",
+      "file": "computeH2H.md",
+      "x": 9080,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_client_fetchonline",
+      "type": "file",
+      "file": "fetchOnline.md",
+      "x": 9280,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_fetch_results_calendar_fetchresultscalendar",
+      "type": "file",
+      "file": "fetchResultsCalendar.md",
+      "x": 8880,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_normalize_parsecalendaritems",
+      "type": "file",
+      "file": "parseCalendarItems.md",
+      "x": 9080,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_usebettingmemory_usebettingmemory",
+      "type": "file",
+      "file": "useBettingMemory.md",
+      "x": 9280,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g10",
+      "type": "group",
+      "label": "Legacy Normalization Lib",
+      "x": 9600,
+      "y": 0,
+      "width": 660,
+      "height": 420,
+      "color": "5"
+    },
+    {
+      "id": "n_api_admin_server_lib_calendar_normalize_ts",
+      "type": "file",
+      "file": "calendar-normalize.ts.md",
+      "x": 9620,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_calendar_normalize_getscoretext",
+      "type": "file",
+      "file": "getScoreText().md",
+      "x": 9820,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_calendar_normalize_istrulyliverow",
+      "type": "file",
+      "file": "isTrulyLiveRow().md",
+      "x": 10020,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_calendar_normalize_normalizecalendarrow",
+      "type": "file",
+      "file": "normalizeCalendarRow().md",
+      "x": 9620,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_calendar_normalize_numberornull",
+      "type": "file",
+      "file": "numberOrNull().md",
+      "x": 9820,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_calendar_normalize_parsecalendaritems",
+      "type": "file",
+      "file": "parseCalendarItems().md",
+      "x": 10020,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_calendar_normalize_teamref",
+      "type": "file",
+      "file": "teamRef().md",
+      "x": 9620,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_calendar_normalize_text",
+      "type": "file",
+      "file": "text().md",
+      "x": 9820,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g11",
+      "type": "group",
+      "label": "Upstash KV Client Configuration",
+      "x": 0,
+      "y": 800,
+      "width": 660,
+      "height": 420,
+      "color": "6"
+    },
+    {
+      "id": "n_lib_kv_env_applykvrestenvaliases",
+      "type": "file",
+      "file": "applyKvRestEnvAliases()_1.md",
+      "x": 20,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_results_redis_getresultsredis",
+      "type": "file",
+      "file": "getResultsRedis()_1.md",
+      "x": 220,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_lib_results_redis_getresultsredis",
+      "type": "file",
+      "file": "getResultsRedis().md",
+      "x": 420,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_kv_env_iskvrestconfigured",
+      "type": "file",
+      "file": "isKvRestConfigured()_1.md",
+      "x": 20,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_kv_env_ts",
+      "type": "file",
+      "file": "kv-env.ts.md",
+      "x": 220,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_results_redis_requireresultsredis",
+      "type": "file",
+      "file": "requireResultsRedis()_1.md",
+      "x": 420,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_results_redis_ts",
+      "type": "file",
+      "file": "results-redis.ts_1.md",
+      "x": 20,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_kv_env_trimenv",
+      "type": "file",
+      "file": "trimEnv()_1.md",
+      "x": 220,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g12",
+      "type": "group",
+      "label": "Calendar Utils",
+      "x": 1180,
+      "y": 800,
+      "width": 660,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_calendar_builddivisionconfigs",
+      "type": "file",
+      "file": "buildDivisionConfigs.md",
+      "x": 1200,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_calendar_createemptymonthmap",
+      "type": "file",
+      "file": "createEmptyMonthMap.md",
+      "x": 1400,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_calendar_createskeletonresultscalendarmap",
+      "type": "file",
+      "file": "createSkeletonResultsCalendarMap.md",
+      "x": 1600,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_calendar_iscalendarmapcompleteformonth",
+      "type": "file",
+      "file": "isCalendarMapCompleteForMonth.md",
+      "x": 1200,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_calendar_isodate",
+      "type": "file",
+      "file": "isoDate.md",
+      "x": 1400,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_calendar_monthdaykeys",
+      "type": "file",
+      "file": "monthDayKeys.md",
+      "x": 1600,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g13",
+      "type": "group",
+      "label": "Historical Results Fetching",
+      "x": 2360,
+      "y": 800,
+      "width": 660,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_scripts_fetch_results_calendar_ts",
+      "type": "file",
+      "file": "fetch-results-calendar.ts.md",
+      "x": 2380,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_fetch_results_calendar_fetchresultscalendar",
+      "type": "file",
+      "file": "fetchResultsCalendar().md",
+      "x": 2580,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_fetch_results_calendar_formatapidate",
+      "type": "file",
+      "file": "formatApiDate()_1.md",
+      "x": 2780,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_fetch_results_calendar_formatisodate",
+      "type": "file",
+      "file": "formatIsoDate().md",
+      "x": 2380,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_fetch_results_calendar_quartertotals",
+      "type": "file",
+      "file": "quarterTotals().md",
+      "x": 2580,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g14",
+      "type": "group",
+      "label": "CLI Environment Loading",
+      "x": 3320,
+      "y": 800,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_scripts_backfill_results_mjs",
+      "type": "file",
+      "file": "backfill-results.mjs.md",
+      "x": 3340,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_load_env_local_mjs",
+      "type": "file",
+      "file": "load-env-local.mjs.md",
+      "x": 3540,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_load_env_local_loadenvlocal",
+      "type": "file",
+      "file": "loadEnvLocal().md",
+      "x": 3740,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_backfill_results_parseargs",
+      "type": "file",
+      "file": "parseArgs().md",
+      "x": 3340,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g15",
+      "type": "group",
+      "label": "Community 15",
+      "x": 4280,
+      "y": 800,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_scripts_verify_h2h_drawer_main",
+      "type": "file",
+      "file": "main().md",
+      "x": 4300,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_verify_h2h_drawer_sleep",
+      "type": "file",
+      "file": "sleep().md",
+      "x": 4500,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_verify_h2h_drawer_snapshoth2h",
+      "type": "file",
+      "file": "snapshotH2h().md",
+      "x": 4700,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_verify_h2h_drawer_mjs",
+      "type": "file",
+      "file": "verify-h2h-drawer.mjs.md",
+      "x": 4300,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g16",
+      "type": "group",
+      "label": "Community 16",
+      "x": 5240,
+      "y": 800,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_src_components_bettingrecord_tsx",
+      "type": "file",
+      "file": "BettingRecord.tsx.md",
+      "x": 5260,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_bettingrecord_formatcurrencymmk",
+      "type": "file",
+      "file": "formatCurrencyMMK().md",
+      "x": 5460,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_bettingrecord_formattimehhmm",
+      "type": "file",
+      "file": "formatTimeHHMM().md",
+      "x": 5660,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_bettingrecord_isodateonly",
+      "type": "file",
+      "file": "isoDateOnly().md",
+      "x": 5260,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g17",
+      "type": "group",
+      "label": "Community 17",
+      "x": 6200,
+      "y": 800,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_api_cron_cron_sync_results_ts",
+      "type": "file",
+      "file": "cron-sync-results.ts.md",
+      "x": 6220,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cron_cron_sync_results_handler",
+      "type": "file",
+      "file": "handler()_1.md",
+      "x": 6420,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cron_cron_sync_results_run",
+      "type": "file",
+      "file": "run().md",
+      "x": 6620,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g18",
+      "type": "group",
+      "label": "Audit & Performance Scripts",
+      "x": 7160,
+      "y": 800,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_analyze_performance_script",
+      "type": "file",
+      "file": "Analyze Performance Script.md",
+      "x": 7180,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_audit_teams_script",
+      "type": "file",
+      "file": "Audit Teams Script.md",
+      "x": 7380,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_bet_history_clean_data",
+      "type": "file",
+      "file": "Bet History Clean Data.md",
+      "x": 7580,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g19",
+      "type": "group",
+      "label": "Community 19",
+      "x": 8120,
+      "y": 800,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_calendar_clonecalendarmap",
+      "type": "file",
+      "file": "cloneCalendarMap.md",
+      "x": 8140,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_calendar_fetchresultsmonthfromapi",
+      "type": "file",
+      "file": "fetchResultsMonthFromApi.md",
+      "x": 8340,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_calendar_sessionkey",
+      "type": "file",
+      "file": "sessionKey.md",
+      "x": 8540,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g20",
+      "type": "group",
+      "label": "Community 20",
+      "x": 8860,
+      "y": 800,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_cron_record_live_handler",
+      "type": "file",
+      "file": "handler()_2.md",
+      "x": 8880,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_cron_record_live_ts",
+      "type": "file",
+      "file": "record-live.ts.md",
+      "x": 9080,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g21",
+      "type": "group",
+      "label": "Community 21",
+      "x": 9600,
+      "y": 800,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_results_live_handler",
+      "type": "file",
+      "file": "handler()_3.md",
+      "x": 9620,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_results_live_ts",
+      "type": "file",
+      "file": "live.ts.md",
+      "x": 9820,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g22",
+      "type": "group",
+      "label": "Community 22",
+      "x": 0,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_scripts_analyze_performance_mjs",
+      "type": "file",
+      "file": "analyze-performance.mjs.md",
+      "x": 20,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_analyze_performance_calculateperformance",
+      "type": "file",
+      "file": "calculatePerformance().md",
+      "x": 220,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g23",
+      "type": "group",
+      "label": "Community 23",
+      "x": 1180,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_scripts_audit_teams_mjs",
+      "type": "file",
+      "file": "audit-teams.mjs.md",
+      "x": 1200,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_audit_teams_generatecanonicalreport",
+      "type": "file",
+      "file": "generateCanonicalReport().md",
+      "x": 1400,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g24",
+      "type": "group",
+      "label": "Betting Memory Indexer",
+      "x": 2360,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_scripts_build_bet_memory_mjs",
+      "type": "file",
+      "file": "build-bet-memory.mjs.md",
+      "x": 2380,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_build_bet_memory_buildindex",
+      "type": "file",
+      "file": "buildIndex().md",
+      "x": 2580,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g25",
+      "type": "group",
+      "label": "Community 25",
+      "x": 3320,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_scripts_fetch_all_march_mjs",
+      "type": "file",
+      "file": "fetch-all-march.mjs.md",
+      "x": 3340,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_fetch_all_march_normdate",
+      "type": "file",
+      "file": "normDate().md",
+      "x": 3540,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g26",
+      "type": "group",
+      "label": "Swarm Coordination",
+      "x": 4280,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_scripts_swarm_commander_runautonomouscycle",
+      "type": "file",
+      "file": "runAutonomousCycle().md",
+      "x": 4300,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_swarm_commander_mjs",
+      "type": "file",
+      "file": "swarm-commander.mjs.md",
+      "x": 4500,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g27",
+      "type": "group",
+      "label": "Community 27",
+      "x": 5240,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_scripts_lib_auth_validator_mjs",
+      "type": "file",
+      "file": "auth-validator.mjs.md",
+      "x": 5260,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_auth_validator_validatesession",
+      "type": "file",
+      "file": "validateSession().md",
+      "x": 5460,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g28",
+      "type": "group",
+      "label": "Community 28",
+      "x": 6200,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_src_components_resultscalendargrid_tsx",
+      "type": "file",
+      "file": "ResultsCalendarGrid.tsx.md",
+      "x": 6220,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_resultscalendargrid_formatheader",
+      "type": "file",
+      "file": "formatHeader().md",
+      "x": 6420,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g29",
+      "type": "group",
+      "label": "Community 29",
+      "x": 7160,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_hooks_usebettingmemory_usebettingmemory",
+      "type": "file",
+      "file": "useBettingMemory().md",
+      "x": 7180,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_hooks_usebettingmemory_ts",
+      "type": "file",
+      "file": "useBettingMemory.ts.md",
+      "x": 7380,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g30",
+      "type": "group",
+      "label": "API Proxy Layer",
+      "x": 8120,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_ipbl_pro_api",
+      "type": "file",
+      "file": "IPBL Pro API.md",
+      "x": 8140,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_live_proxy_handler",
+      "type": "file",
+      "file": "Live Proxy Handler.md",
+      "x": 8340,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g31",
+      "type": "group",
+      "label": "Community 31",
+      "x": 8860,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_backfill_results_main",
+      "type": "file",
+      "file": "Backfill Results Script.md",
+      "x": 8880,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_load_env_local_loadenvlocal",
+      "type": "file",
+      "file": "loadEnvLocal.md",
+      "x": 9080,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g32",
+      "type": "group",
+      "label": "Hydration Scripts",
+      "x": 9600,
+      "y": 1300,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_hydrate_final_ps1",
+      "type": "file",
+      "file": "hydrate_final.ps1.md",
+      "x": 9620,
+      "y": 1380,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g33",
+      "type": "group",
+      "label": "Community 33",
+      "x": 0,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_hydrate_hybrid_ps1",
+      "type": "file",
+      "file": "hydrate_hybrid.ps1.md",
+      "x": 20,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g34",
+      "type": "group",
+      "label": "Community 34",
+      "x": 1180,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_hydrate_master_ps1",
+      "type": "file",
+      "file": "hydrate_master.ps1.md",
+      "x": 1200,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g35",
+      "type": "group",
+      "label": "Community 35",
+      "x": 2360,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_vite_config_ts",
+      "type": "file",
+      "file": "vite.config.ts.md",
+      "x": 2380,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g36",
+      "type": "group",
+      "label": "Community 36",
+      "x": 3320,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_scripts_analyze_calendar_sample_mjs",
+      "type": "file",
+      "file": "analyze-calendar-sample.mjs.md",
+      "x": 3340,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g37",
+      "type": "group",
+      "label": "Community 37",
+      "x": 4280,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_scripts_peek_dates_mjs",
+      "type": "file",
+      "file": "peek-dates.mjs.md",
+      "x": 4300,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g38",
+      "type": "group",
+      "label": "Community 38",
+      "x": 5240,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_scripts_test_cal_page_mjs",
+      "type": "file",
+      "file": "test-cal-page.mjs.md",
+      "x": 5260,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g39",
+      "type": "group",
+      "label": "Community 39",
+      "x": 6200,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_src_main_tsx",
+      "type": "file",
+      "file": "main.tsx.md",
+      "x": 6220,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g40",
+      "type": "group",
+      "label": "Community 40",
+      "x": 7160,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_src_api_types_ts",
+      "type": "file",
+      "file": "types.ts.md",
+      "x": 7180,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g41",
+      "type": "group",
+      "label": "Community 41",
+      "x": 8120,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_src_components_bettingmemorydrawersection_tsx",
+      "type": "file",
+      "file": "BettingMemoryDrawerSection.tsx.md",
+      "x": 8140,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g42",
+      "type": "group",
+      "label": "Community 42",
+      "x": 8860,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_src_operator_data_ts",
+      "type": "file",
+      "file": "data.ts.md",
+      "x": 8880,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g43",
+      "type": "group",
+      "label": "Community 43",
+      "x": 9600,
+      "y": 1780,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_src_operator_ipbl_ts",
+      "type": "file",
+      "file": "ipbl.ts.md",
+      "x": 9620,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g44",
+      "type": "group",
+      "label": "Community 44",
+      "x": 0,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_hydrate_final_script",
+      "type": "file",
+      "file": "Hydrate Final Script.md",
+      "x": 20,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g45",
+      "type": "group",
+      "label": "Community 45",
+      "x": 1180,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_hydrate_hybrid_script",
+      "type": "file",
+      "file": "Hydrate Hybrid Script.md",
+      "x": 1200,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g46",
+      "type": "group",
+      "label": "Community 46",
+      "x": 2360,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_hydrate_master_script",
+      "type": "file",
+      "file": "Hydrate Master Script.md",
+      "x": 2380,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g47",
+      "type": "group",
+      "label": "Community 47",
+      "x": 3320,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_vite_config",
+      "type": "file",
+      "file": "Vite Configuration.md",
+      "x": 3340,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g48",
+      "type": "group",
+      "label": "Community 48",
+      "x": 4280,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_kv_env_lib",
+      "type": "file",
+      "file": "KV Env Library.md",
+      "x": 4300,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g49",
+      "type": "group",
+      "label": "Community 49",
+      "x": 5240,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_results_constants_lib",
+      "type": "file",
+      "file": "Results Constants Library.md",
+      "x": 5260,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g50",
+      "type": "group",
+      "label": "Community 50",
+      "x": 6200,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_results_redis_lib",
+      "type": "file",
+      "file": "Results Redis Library.md",
+      "x": 6220,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g51",
+      "type": "group",
+      "label": "Community 51",
+      "x": 7160,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_analyze_calendar_sample_script",
+      "type": "file",
+      "file": "Analyze Calendar Sample Script.md",
+      "x": 7180,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g52",
+      "type": "group",
+      "label": "Community 52",
+      "x": 8120,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_build_bet_memory_buildindex",
+      "type": "file",
+      "file": "buildIndex.md",
+      "x": 8140,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g53",
+      "type": "group",
+      "label": "Community 53",
+      "x": 8860,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_swarm_commander_runautonomouscycle",
+      "type": "file",
+      "file": "runAutonomousCycle.md",
+      "x": 8880,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g54",
+      "type": "group",
+      "label": "Community 54",
+      "x": 9600,
+      "y": 2260,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_auth_validator_validatesession",
+      "type": "file",
+      "file": "validateSession.md",
+      "x": 9620,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g55",
+      "type": "group",
+      "label": "Community 55",
+      "x": 0,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_client_fetchboxscore",
+      "type": "file",
+      "file": "fetchBoxScore.md",
+      "x": 20,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g56",
+      "type": "group",
+      "label": "Community 56",
+      "x": 1180,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_bettingmemorydrawersection_bettingmemorydrawersection",
+      "type": "file",
+      "file": "BettingMemoryDrawerSection.md",
+      "x": 1200,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g57",
+      "type": "group",
+      "label": "Community 57",
+      "x": 2360,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_bettingrecord_bettingrecord",
+      "type": "file",
+      "file": "BettingRecord Component.md",
+      "x": 2380,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g58",
+      "type": "group",
+      "label": "Community 58",
+      "x": 3320,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_divisions_live_divisions",
+      "type": "file",
+      "file": "LIVE_DIVISIONS.md",
+      "x": 3340,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g59",
+      "type": "group",
+      "label": "Community 59",
+      "x": 4280,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_data_metricsummary",
+      "type": "file",
+      "file": "MetricSummary.md",
+      "x": 4300,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g60",
+      "type": "group",
+      "label": "Community 60",
+      "x": 5240,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_data_riskentry",
+      "type": "file",
+      "file": "RiskEntry.md",
+      "x": 5260,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g61",
+      "type": "group",
+      "label": "Community 61",
+      "x": 6200,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_engine_quarterkey",
+      "type": "file",
+      "file": "QuarterKey.md",
+      "x": 6220,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g62",
+      "type": "group",
+      "label": "Community 62",
+      "x": 7160,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_engine_scoreboardanalysis",
+      "type": "file",
+      "file": "ScoreboardAnalysis.md",
+      "x": 7180,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g63",
+      "type": "group",
+      "label": "Community 63",
+      "x": 8120,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_engine_quarterflowanalysis",
+      "type": "file",
+      "file": "QuarterFlowAnalysis.md",
+      "x": 8140,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g64",
+      "type": "group",
+      "label": "Community 64",
+      "x": 8860,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_engine_operatordecision",
+      "type": "file",
+      "file": "OperatorDecision.md",
+      "x": 8880,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g65",
+      "type": "group",
+      "label": "Community 65",
+      "x": 9600,
+      "y": 2740,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_engine_evaluateinput",
+      "type": "file",
+      "file": "EvaluateInput.md",
+      "x": 9620,
+      "y": 2820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g66",
+      "type": "group",
+      "label": "Community 66",
+      "x": 0,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_engine_asnumber",
+      "type": "file",
+      "file": "asNumber.md",
+      "x": 20,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g67",
+      "type": "group",
+      "label": "Community 67",
+      "x": 1180,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_engine_parseh2hquartermatrix",
+      "type": "file",
+      "file": "parseH2HQuarterMatrix.md",
+      "x": 1200,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g68",
+      "type": "group",
+      "label": "Community 68",
+      "x": 2360,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_ipbl_barrel",
+      "type": "file",
+      "file": "IPBL Barrel.md",
+      "x": 2380,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g69",
+      "type": "group",
+      "label": "Community 69",
+      "x": 3320,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_mock_mockinsight",
+      "type": "file",
+      "file": "MockInsight.md",
+      "x": 3340,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g70",
+      "type": "group",
+      "label": "Community 70",
+      "x": 4280,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_mock_demogamemeta",
+      "type": "file",
+      "file": "demoGameMeta.md",
+      "x": 4300,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g71",
+      "type": "group",
+      "label": "Community 71",
+      "x": 5240,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_mock_demoboxraw",
+      "type": "file",
+      "file": "demoBoxRaw.md",
+      "x": 5260,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g72",
+      "type": "group",
+      "label": "Community 72",
+      "x": 6200,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_mock_makelivegame",
+      "type": "file",
+      "file": "makeLiveGame.md",
+      "x": 6220,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g73",
+      "type": "group",
+      "label": "Community 73",
+      "x": 7160,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_mock_makeresultgame",
+      "type": "file",
+      "file": "makeResultGame.md",
+      "x": 7180,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g74",
+      "type": "group",
+      "label": "Community 74",
+      "x": 8120,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_mock_livedemogame",
+      "type": "file",
+      "file": "liveDemoGame.md",
+      "x": 8140,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g75",
+      "type": "group",
+      "label": "Community 75",
+      "x": 8860,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_mock_resultdemogame",
+      "type": "file",
+      "file": "resultDemoGame.md",
+      "x": 8880,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g76",
+      "type": "group",
+      "label": "Community 76",
+      "x": 9600,
+      "y": 3220,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_mock_demoh2h",
+      "type": "file",
+      "file": "demoH2H.md",
+      "x": 9620,
+      "y": 3300,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g77",
+      "type": "group",
+      "label": "Community 77",
+      "x": 0,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_calendar_calendargridgame",
+      "type": "file",
+      "file": "CalendarGridGame.md",
+      "x": 20,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g78",
+      "type": "group",
+      "label": "Community 78",
+      "x": 1180,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_calendar_calendargriddivision",
+      "type": "file",
+      "file": "CalendarGridDivision.md",
+      "x": 1200,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g79",
+      "type": "group",
+      "label": "Community 79",
+      "x": 2360,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_calendar_calendargridmap",
+      "type": "file",
+      "file": "CalendarGridMap.md",
+      "x": 2380,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g80",
+      "type": "group",
+      "label": "Community 80",
+      "x": 3320,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_calendar_results_division_tags",
+      "type": "file",
+      "file": "RESULTS_DIVISION_TAGS.md",
+      "x": 3340,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g81",
+      "type": "group",
+      "label": "Community 81",
+      "x": 4280,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_calendar_results_divisions",
+      "type": "file",
+      "file": "RESULTS_DIVISIONS.md",
+      "x": 4300,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g82",
+      "type": "group",
+      "label": "Community 82",
+      "x": 5240,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_calendar_sessioncache",
+      "type": "file",
+      "file": "sessionCache.md",
+      "x": 5260,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g83",
+      "type": "group",
+      "label": "Community 83",
+      "x": 6200,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_calendar_inflight",
+      "type": "file",
+      "file": "inflight.md",
+      "x": 6220,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g84",
+      "type": "group",
+      "label": "Community 84",
+      "x": 7160,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_calendar_clearresultscalendarcache",
+      "type": "file",
+      "file": "clearResultsCalendarCache.md",
+      "x": 7180,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g85",
+      "type": "group",
+      "label": "Community 85",
+      "x": 8120,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_agents_architecture_first",
+      "type": "file",
+      "file": "Architecture-First.md",
+      "x": 8140,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g86",
+      "type": "group",
+      "label": "Community 86",
+      "x": 8860,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_agents_ui_reads_jobs_write",
+      "type": "file",
+      "file": "UI Reads, Jobs Write.md",
+      "x": 8880,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g87",
+      "type": "group",
+      "label": "Community 87",
+      "x": 9600,
+      "y": 3700,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_agents_node_esm",
+      "type": "file",
+      "file": "Node ESM.md",
+      "x": 9620,
+      "y": 3780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g88",
+      "type": "group",
+      "label": "Community 88",
+      "x": 0,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_agents_cross_platform",
+      "type": "file",
+      "file": "Cross-Platform Compatibility.md",
+      "x": 20,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g89",
+      "type": "group",
+      "label": "Community 89",
+      "x": 1180,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_index_root",
+      "type": "file",
+      "file": "root element.md",
+      "x": 1200,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g90",
+      "type": "group",
+      "label": "Community 90",
+      "x": 2360,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_index_main_tsx",
+      "type": "file",
+      "file": "main.tsx script.md",
+      "x": 2380,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g91",
+      "type": "group",
+      "label": "Community 91",
+      "x": 3320,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_readme_ipbl_minimal_score_viewer",
+      "type": "file",
+      "file": "IPBL minimal score viewer.md",
+      "x": 3340,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g92",
+      "type": "group",
+      "label": "Community 92",
+      "x": 4280,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_readme_api_routing",
+      "type": "file",
+      "file": "API routing.md",
+      "x": 4300,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g93",
+      "type": "group",
+      "label": "Community 93",
+      "x": 5240,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_arm64_purity_report_node",
+      "type": "file",
+      "file": "node.exe.md",
+      "x": 5260,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g94",
+      "type": "group",
+      "label": "Community 94",
+      "x": 6200,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_arm64_purity_report_python",
+      "type": "file",
+      "file": "python.exe.md",
+      "x": 6220,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g95",
+      "type": "group",
+      "label": "Community 95",
+      "x": 7160,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_arm64_purity_report_cl",
+      "type": "file",
+      "file": "cl.exe.md",
+      "x": 7180,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g96",
+      "type": "group",
+      "label": "Community 96",
+      "x": 8120,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_debug_ui_plan",
+      "type": "file",
+      "file": "UI Stabilization & Debugging Plan.md",
+      "x": 8140,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g97",
+      "type": "group",
+      "label": "Community 97",
+      "x": 8860,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_debug_ui_betting_memory",
+      "type": "file",
+      "file": "Betting Memory Index.md",
+      "x": 8880,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g98",
+      "type": "group",
+      "label": "Community 98",
+      "x": 9600,
+      "y": 4180,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_operator_console_data_contract_doc",
+      "type": "file",
+      "file": "IPBL Operator Console Data Contracts.md",
+      "x": 9620,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g99",
+      "type": "group",
+      "label": "Community 99",
+      "x": 0,
+      "y": 4660,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_operator_console_data_contract_canonical_tag_map",
+      "type": "file",
+      "file": "Canonical division tag map.md",
+      "x": 20,
+      "y": 4740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g100",
+      "type": "group",
+      "label": "Community 100",
+      "x": 1180,
+      "y": 4660,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_operator_console_data_contract_live_contract",
+      "type": "file",
+      "file": "Live contract.md",
+      "x": 1200,
+      "y": 4740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g101",
+      "type": "group",
+      "label": "Community 101",
+      "x": 2360,
+      "y": 4660,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_operator_console_data_contract_results_contract",
+      "type": "file",
+      "file": "Results contract.md",
+      "x": 2380,
+      "y": 4740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g102",
+      "type": "group",
+      "label": "Community 102",
+      "x": 3320,
+      "y": 4660,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_live_proof_png",
+      "type": "file",
+      "file": "Live Proof Screenshot.md",
+      "x": 3340,
+      "y": 4740,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_api_results_ts_api_admin_server_lib_results_redis_ts",
+      "fromNode": "n_api_results_ts",
+      "toNode": "n_api_admin_server_lib_results_redis_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_api_results_ts_api_admin_server_lib_results_sync_constants_ts",
+      "fromNode": "n_api_results_ts",
+      "toNode": "n_api_admin_server_lib_results_sync_constants_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_api_results_ts_api_results_handler",
+      "fromNode": "n_api_results_ts",
+      "toNode": "n_api_results_handler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_calendar_normalize_ts_server_lib_calendar_normalize_teamref",
+      "fromNode": "n_api_admin_server_lib_calendar_normalize_ts",
+      "toNode": "n_server_lib_calendar_normalize_teamref",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_calendar_normalize_ts_server_lib_calendar_normalize_text",
+      "fromNode": "n_api_admin_server_lib_calendar_normalize_ts",
+      "toNode": "n_server_lib_calendar_normalize_text",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_calendar_normalize_ts_server_lib_calendar_normalize_numberornull",
+      "fromNode": "n_api_admin_server_lib_calendar_normalize_ts",
+      "toNode": "n_server_lib_calendar_normalize_numberornull",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_calendar_normalize_ts_server_lib_calendar_normalize_istrulyliverow",
+      "fromNode": "n_api_admin_server_lib_calendar_normalize_ts",
+      "toNode": "n_server_lib_calendar_normalize_istrulyliverow",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_calendar_normalize_ts_server_lib_calendar_normalize_getscoretext",
+      "fromNode": "n_api_admin_server_lib_calendar_normalize_ts",
+      "toNode": "n_server_lib_calendar_normalize_getscoretext",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_calendar_normalize_ts_server_lib_calendar_normalize_normalizecalendarrow",
+      "fromNode": "n_api_admin_server_lib_calendar_normalize_ts",
+      "toNode": "n_server_lib_calendar_normalize_normalizecalendarrow",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_calendar_normalize_ts_server_lib_calendar_normalize_parsecalendaritems",
+      "fromNode": "n_api_admin_server_lib_calendar_normalize_ts",
+      "toNode": "n_server_lib_calendar_normalize_parsecalendaritems",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_calendar_normalize_ts_api_admin_server_lib_ingest_results_month_ts",
+      "fromNode": "n_api_admin_server_lib_calendar_normalize_ts",
+      "toNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_calendar_normalize_teamref_server_lib_calendar_normalize_normalizecalendarrow",
+      "fromNode": "n_server_lib_calendar_normalize_teamref",
+      "toNode": "n_server_lib_calendar_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_calendar_normalize_text_server_lib_calendar_normalize_istrulyliverow",
+      "fromNode": "n_server_lib_calendar_normalize_text",
+      "toNode": "n_server_lib_calendar_normalize_istrulyliverow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_calendar_normalize_text_server_lib_calendar_normalize_getscoretext",
+      "fromNode": "n_server_lib_calendar_normalize_text",
+      "toNode": "n_server_lib_calendar_normalize_getscoretext",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_calendar_normalize_text_server_lib_calendar_normalize_normalizecalendarrow",
+      "fromNode": "n_server_lib_calendar_normalize_text",
+      "toNode": "n_server_lib_calendar_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_calendar_normalize_numberornull_server_lib_calendar_normalize_istrulyliverow",
+      "fromNode": "n_server_lib_calendar_normalize_numberornull",
+      "toNode": "n_server_lib_calendar_normalize_istrulyliverow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_calendar_normalize_numberornull_server_lib_calendar_normalize_normalizecalendarrow",
+      "fromNode": "n_server_lib_calendar_normalize_numberornull",
+      "toNode": "n_server_lib_calendar_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_calendar_normalize_istrulyliverow_server_lib_calendar_normalize_normalizecalendarrow",
+      "fromNode": "n_server_lib_calendar_normalize_istrulyliverow",
+      "toNode": "n_server_lib_calendar_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_calendar_normalize_getscoretext_server_lib_calendar_normalize_normalizecalendarrow",
+      "fromNode": "n_server_lib_calendar_normalize_getscoretext",
+      "toNode": "n_server_lib_calendar_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_calendar_normalize_normalizecalendarrow_server_lib_calendar_normalize_parsecalendaritems",
+      "fromNode": "n_server_lib_calendar_normalize_normalizecalendarrow",
+      "toNode": "n_server_lib_calendar_normalize_parsecalendaritems",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_api_admin_server_lib_results_sync_constants_ts",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_api_admin_server_lib_results_sync_constants_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_formatapidate",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_formatapidate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_startoflocalday",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_startoflocalday",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_monthdaykeys",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_monthdaykeys",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_normalizecalendardate",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_normalizecalendardate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_parsequartertotals",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_parsequartertotals",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_normalizecalendargame",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_normalizecalendargame",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_createemptymonthmap",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_createemptymonthmap",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_fetchcalendarday",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_fetchcalendarday",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_server_lib_ingest_results_month_buildstoredmonthmap",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_server_lib_ingest_results_month_buildstoredmonthmap",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_ingest_results_month_ts_api_admin_server_lib_write_results_month_kv_ts",
+      "fromNode": "n_api_admin_server_lib_ingest_results_month_ts",
+      "toNode": "n_api_admin_server_lib_write_results_month_kv_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_formatapidate_server_lib_ingest_results_month_fetchcalendarday",
+      "fromNode": "n_server_lib_ingest_results_month_formatapidate",
+      "toNode": "n_server_lib_ingest_results_month_fetchcalendarday",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_startoflocalday_server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "fromNode": "n_server_lib_ingest_results_month_startoflocalday",
+      "toNode": "n_server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_monthdaykeys_server_lib_ingest_results_month_createemptymonthmap",
+      "fromNode": "n_server_lib_ingest_results_month_monthdaykeys",
+      "toNode": "n_server_lib_ingest_results_month_createemptymonthmap",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_normalizecalendardate_server_lib_ingest_results_month_buildstoredmonthmap",
+      "fromNode": "n_server_lib_ingest_results_month_normalizecalendardate",
+      "toNode": "n_server_lib_ingest_results_month_buildstoredmonthmap",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_parsequartertotals_server_lib_ingest_results_month_normalizecalendargame",
+      "fromNode": "n_server_lib_ingest_results_month_parsequartertotals",
+      "toNode": "n_server_lib_ingest_results_month_normalizecalendargame",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_normalizecalendargame_server_lib_ingest_results_month_buildstoredmonthmap",
+      "fromNode": "n_server_lib_ingest_results_month_normalizecalendargame",
+      "toNode": "n_server_lib_ingest_results_month_buildstoredmonthmap",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_normalizecalendargame_config_divisions_canonicaldivisionlabel",
+      "fromNode": "n_server_lib_ingest_results_month_normalizecalendargame",
+      "toNode": "n_config_divisions_canonicaldivisionlabel",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_createemptymonthmap_server_lib_ingest_results_month_buildstoredmonthmap",
+      "fromNode": "n_server_lib_ingest_results_month_createemptymonthmap",
+      "toNode": "n_server_lib_ingest_results_month_buildstoredmonthmap",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_fetchcalendarday_server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "fromNode": "n_server_lib_ingest_results_month_fetchcalendarday",
+      "toNode": "n_server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_fetchcalendarday_api_normalize_parsecalendaritems",
+      "fromNode": "n_server_lib_ingest_results_month_fetchcalendarday",
+      "toNode": "n_api_normalize_parsecalendaritems",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_fetchschedulegamesformonth_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "fromNode": "n_server_lib_ingest_results_month_fetchschedulegamesformonth",
+      "toNode": "n_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_server_lib_ingest_results_month_buildstoredmonthmap_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "fromNode": "n_server_lib_ingest_results_month_buildstoredmonthmap",
+      "toNode": "n_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_kv_rest_env_aliases_ts_server_lib_kv_rest_env_aliases_trimenv",
+      "fromNode": "n_api_admin_server_lib_kv_rest_env_aliases_ts",
+      "toNode": "n_server_lib_kv_rest_env_aliases_trimenv",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_kv_rest_env_aliases_ts_server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "fromNode": "n_api_admin_server_lib_kv_rest_env_aliases_ts",
+      "toNode": "n_server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_kv_rest_env_aliases_ts_server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "fromNode": "n_api_admin_server_lib_kv_rest_env_aliases_ts",
+      "toNode": "n_server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_kv_rest_env_aliases_ts_api_admin_server_lib_results_redis_ts",
+      "fromNode": "n_api_admin_server_lib_kv_rest_env_aliases_ts",
+      "toNode": "n_api_admin_server_lib_results_redis_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_kv_rest_env_aliases_trimenv_server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "fromNode": "n_server_lib_kv_rest_env_aliases_trimenv",
+      "toNode": "n_server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_kv_rest_env_aliases_trimenv_server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "fromNode": "n_server_lib_kv_rest_env_aliases_trimenv",
+      "toNode": "n_server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_kv_rest_env_aliases_applykvrestenvaliases_server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "fromNode": "n_server_lib_kv_rest_env_aliases_applykvrestenvaliases",
+      "toNode": "n_server_lib_kv_rest_env_aliases_iskvrestconfigured",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_results_redis_ts_server_lib_results_redis_getresultsredis",
+      "fromNode": "n_api_admin_server_lib_results_redis_ts",
+      "toNode": "n_server_lib_results_redis_getresultsredis",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_results_redis_ts_server_lib_results_redis_requireresultsredis",
+      "fromNode": "n_api_admin_server_lib_results_redis_ts",
+      "toNode": "n_server_lib_results_redis_requireresultsredis",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_results_redis_ts_api_admin_server_lib_write_results_month_kv_ts",
+      "fromNode": "n_api_admin_server_lib_results_redis_ts",
+      "toNode": "n_api_admin_server_lib_write_results_month_kv_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_results_redis_getresultsredis_server_lib_results_redis_requireresultsredis",
+      "fromNode": "n_server_lib_results_redis_getresultsredis",
+      "toNode": "n_server_lib_results_redis_requireresultsredis",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_results_redis_getresultsredis_lib_kv_env_applykvrestenvaliases",
+      "fromNode": "n_server_lib_results_redis_getresultsredis",
+      "toNode": "n_lib_kv_env_applykvrestenvaliases",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_server_lib_results_redis_getresultsredis_lib_kv_env_iskvrestconfigured",
+      "fromNode": "n_server_lib_results_redis_getresultsredis",
+      "toNode": "n_lib_kv_env_iskvrestconfigured",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_server_lib_results_redis_getresultsredis_lib_kv_env_trimenv",
+      "fromNode": "n_server_lib_results_redis_getresultsredis",
+      "toNode": "n_lib_kv_env_trimenv",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_results_sync_constants_ts_server_lib_results_sync_constants_isapprovedresultstag",
+      "fromNode": "n_api_admin_server_lib_results_sync_constants_ts",
+      "toNode": "n_server_lib_results_sync_constants_isapprovedresultstag",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_results_sync_constants_ts_server_lib_results_sync_constants_resultskvkey",
+      "fromNode": "n_api_admin_server_lib_results_sync_constants_ts",
+      "toNode": "n_server_lib_results_sync_constants_resultskvkey",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_results_sync_constants_ts_server_lib_results_sync_constants_canonicaldivisionlabel",
+      "fromNode": "n_api_admin_server_lib_results_sync_constants_ts",
+      "toNode": "n_server_lib_results_sync_constants_canonicaldivisionlabel",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_results_sync_constants_ts_api_admin_server_lib_write_results_month_kv_ts",
+      "fromNode": "n_api_admin_server_lib_results_sync_constants_ts",
+      "toNode": "n_api_admin_server_lib_write_results_month_kv_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_api_admin_server_lib_write_results_month_kv_ts_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "fromNode": "n_api_admin_server_lib_write_results_month_kv_ts",
+      "toNode": "n_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_lib_write_results_month_kv_writeresultsmonthtokv_lib_results_constants_isapprovedresultstag",
+      "fromNode": "n_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "toNode": "n_lib_results_constants_isapprovedresultstag",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_server_lib_write_results_month_kv_writeresultsmonthtokv_lib_results_constants_resultskvkey",
+      "fromNode": "n_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "toNode": "n_lib_results_constants_resultskvkey",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_server_lib_write_results_month_kv_writeresultsmonthtokv_lib_results_redis_requireresultsredis",
+      "fromNode": "n_server_lib_write_results_month_kv_writeresultsmonthtokv",
+      "toNode": "n_lib_results_redis_requireresultsredis",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_api_cron_cron_sync_results_ts_cron_cron_sync_results_run",
+      "fromNode": "n_api_cron_cron_sync_results_ts",
+      "toNode": "n_cron_cron_sync_results_run",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_cron_cron_sync_results_ts_cron_cron_sync_results_handler",
+      "fromNode": "n_api_cron_cron_sync_results_ts",
+      "toNode": "n_cron_cron_sync_results_handler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_cron_cron_sync_results_run_cron_cron_sync_results_handler",
+      "fromNode": "n_cron_cron_sync_results_run",
+      "toNode": "n_cron_cron_sync_results_handler",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_cron_record_live_ts_cron_record_live_handler",
+      "fromNode": "n_api_cron_record_live_ts",
+      "toNode": "n_cron_record_live_handler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_results_live_ts_results_live_handler",
+      "fromNode": "n_api_results_live_ts",
+      "toNode": "n_results_live_handler",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_kv_env_ts_lib_kv_env_trimenv",
+      "fromNode": "n_lib_kv_env_ts",
+      "toNode": "n_lib_kv_env_trimenv",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_kv_env_ts_lib_kv_env_applykvrestenvaliases",
+      "fromNode": "n_lib_kv_env_ts",
+      "toNode": "n_lib_kv_env_applykvrestenvaliases",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_kv_env_ts_lib_kv_env_iskvrestconfigured",
+      "fromNode": "n_lib_kv_env_ts",
+      "toNode": "n_lib_kv_env_iskvrestconfigured",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_kv_env_trimenv_lib_kv_env_applykvrestenvaliases",
+      "fromNode": "n_lib_kv_env_trimenv",
+      "toNode": "n_lib_kv_env_applykvrestenvaliases",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_kv_env_trimenv_lib_kv_env_iskvrestconfigured",
+      "fromNode": "n_lib_kv_env_trimenv",
+      "toNode": "n_lib_kv_env_iskvrestconfigured",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_kv_env_trimenv_lib_results_redis_getresultsredis",
+      "fromNode": "n_lib_kv_env_trimenv",
+      "toNode": "n_lib_results_redis_getresultsredis",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_lib_kv_env_applykvrestenvaliases_lib_kv_env_iskvrestconfigured",
+      "fromNode": "n_lib_kv_env_applykvrestenvaliases",
+      "toNode": "n_lib_kv_env_iskvrestconfigured",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_kv_env_applykvrestenvaliases_lib_results_redis_getresultsredis",
+      "fromNode": "n_lib_kv_env_applykvrestenvaliases",
+      "toNode": "n_lib_results_redis_getresultsredis",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_lib_kv_env_iskvrestconfigured_lib_results_redis_getresultsredis",
+      "fromNode": "n_lib_kv_env_iskvrestconfigured",
+      "toNode": "n_lib_results_redis_getresultsredis",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_lib_results_constants_ts_lib_results_constants_isapprovedresultstag",
+      "fromNode": "n_lib_results_constants_ts",
+      "toNode": "n_lib_results_constants_isapprovedresultstag",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_results_constants_ts_lib_results_constants_resultskvkey",
+      "fromNode": "n_lib_results_constants_ts",
+      "toNode": "n_lib_results_constants_resultskvkey",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_results_redis_ts_lib_results_redis_getresultsredis",
+      "fromNode": "n_lib_results_redis_ts",
+      "toNode": "n_lib_results_redis_getresultsredis",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_results_redis_ts_lib_results_redis_requireresultsredis",
+      "fromNode": "n_lib_results_redis_ts",
+      "toNode": "n_lib_results_redis_requireresultsredis",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_lib_results_redis_getresultsredis_lib_results_redis_requireresultsredis",
+      "fromNode": "n_lib_results_redis_getresultsredis",
+      "toNode": "n_lib_results_redis_requireresultsredis",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_analyze_performance_mjs_scripts_analyze_performance_calculateperformance",
+      "fromNode": "n_scripts_analyze_performance_mjs",
+      "toNode": "n_scripts_analyze_performance_calculateperformance",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_audit_teams_mjs_scripts_audit_teams_generatecanonicalreport",
+      "fromNode": "n_scripts_audit_teams_mjs",
+      "toNode": "n_scripts_audit_teams_generatecanonicalreport",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_backfill_results_mjs_scripts_load_env_local_mjs",
+      "fromNode": "n_scripts_backfill_results_mjs",
+      "toNode": "n_scripts_load_env_local_mjs",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_backfill_results_mjs_scripts_backfill_results_parseargs",
+      "fromNode": "n_scripts_backfill_results_mjs",
+      "toNode": "n_scripts_backfill_results_parseargs",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_build_bet_memory_mjs_scripts_build_bet_memory_buildindex",
+      "fromNode": "n_scripts_build_bet_memory_mjs",
+      "toNode": "n_scripts_build_bet_memory_buildindex",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_fetch_all_march_mjs_scripts_fetch_all_march_normdate",
+      "fromNode": "n_scripts_fetch_all_march_mjs",
+      "toNode": "n_scripts_fetch_all_march_normdate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_fetch_results_calendar_ts_scripts_fetch_results_calendar_formatapidate",
+      "fromNode": "n_scripts_fetch_results_calendar_ts",
+      "toNode": "n_scripts_fetch_results_calendar_formatapidate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_fetch_results_calendar_ts_scripts_fetch_results_calendar_formatisodate",
+      "fromNode": "n_scripts_fetch_results_calendar_ts",
+      "toNode": "n_scripts_fetch_results_calendar_formatisodate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_fetch_results_calendar_ts_scripts_fetch_results_calendar_quartertotals",
+      "fromNode": "n_scripts_fetch_results_calendar_ts",
+      "toNode": "n_scripts_fetch_results_calendar_quartertotals",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_fetch_results_calendar_ts_scripts_fetch_results_calendar_fetchresultscalendar",
+      "fromNode": "n_scripts_fetch_results_calendar_ts",
+      "toNode": "n_scripts_fetch_results_calendar_fetchresultscalendar",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_fetch_results_calendar_formatapidate_scripts_fetch_results_calendar_fetchresultscalendar",
+      "fromNode": "n_scripts_fetch_results_calendar_formatapidate",
+      "toNode": "n_scripts_fetch_results_calendar_fetchresultscalendar",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_fetch_results_calendar_formatisodate_scripts_fetch_results_calendar_fetchresultscalendar",
+      "fromNode": "n_scripts_fetch_results_calendar_formatisodate",
+      "toNode": "n_scripts_fetch_results_calendar_fetchresultscalendar",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_load_env_local_mjs_scripts_load_env_local_loadenvlocal",
+      "fromNode": "n_scripts_load_env_local_mjs",
+      "toNode": "n_scripts_load_env_local_loadenvlocal",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_swarm_commander_mjs_scripts_swarm_commander_runautonomouscycle",
+      "fromNode": "n_scripts_swarm_commander_mjs",
+      "toNode": "n_scripts_swarm_commander_runautonomouscycle",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_verify_h2h_drawer_mjs_scripts_verify_h2h_drawer_snapshoth2h",
+      "fromNode": "n_scripts_verify_h2h_drawer_mjs",
+      "toNode": "n_scripts_verify_h2h_drawer_snapshoth2h",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_verify_h2h_drawer_mjs_scripts_verify_h2h_drawer_sleep",
+      "fromNode": "n_scripts_verify_h2h_drawer_mjs",
+      "toNode": "n_scripts_verify_h2h_drawer_sleep",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_verify_h2h_drawer_mjs_scripts_verify_h2h_drawer_main",
+      "fromNode": "n_scripts_verify_h2h_drawer_mjs",
+      "toNode": "n_scripts_verify_h2h_drawer_main",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_verify_h2h_drawer_snapshoth2h_scripts_verify_h2h_drawer_main",
+      "fromNode": "n_scripts_verify_h2h_drawer_snapshoth2h",
+      "toNode": "n_scripts_verify_h2h_drawer_main",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_verify_h2h_drawer_sleep_scripts_verify_h2h_drawer_main",
+      "fromNode": "n_scripts_verify_h2h_drawer_sleep",
+      "toNode": "n_scripts_verify_h2h_drawer_main",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_scripts_lib_auth_validator_mjs_lib_auth_validator_validatesession",
+      "fromNode": "n_scripts_lib_auth_validator_mjs",
+      "toNode": "n_lib_auth_validator_validatesession",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_livekey",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_livekey",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_formatcurrency",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_formatcurrency",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_formatpct",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_formatpct",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_devlog",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_devlog",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_devassert",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_devassert",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_statustone",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_statustone",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_gamedivision",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_gamedivision",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_currentornextquarter",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_currentornextquarter",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_metric",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_metric",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_tsx_src_app_livecard",
+      "fromNode": "n_src_app_tsx",
+      "toNode": "n_src_app_livecard",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_base",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_base",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_q",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_q",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_getjson",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_getjson",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_formatapidate",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_formatapidate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_seasonfromdate",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_seasonfromdate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_fetchschedule",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_fetchschedule",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_fetchonline",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_fetchonline",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_fetchgame",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_fetchgame",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_fetchboxscore",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_fetchboxscore",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_fetchteamgames",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_fetchteamgames",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_client_ts_api_client_clearfetchcaches",
+      "fromNode": "n_src_api_client_ts",
+      "toNode": "n_api_client_clearfetchcaches",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_base_api_client_getjson",
+      "fromNode": "n_api_client_base",
+      "toNode": "n_api_client_getjson",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_q_api_client_fetchschedule",
+      "fromNode": "n_api_client_q",
+      "toNode": "n_api_client_fetchschedule",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_q_api_client_fetchonline",
+      "fromNode": "n_api_client_q",
+      "toNode": "n_api_client_fetchonline",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_q_api_client_fetchgame",
+      "fromNode": "n_api_client_q",
+      "toNode": "n_api_client_fetchgame",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_q_api_client_fetchboxscore",
+      "fromNode": "n_api_client_q",
+      "toNode": "n_api_client_fetchboxscore",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_q_api_client_fetchteamgames",
+      "fromNode": "n_api_client_q",
+      "toNode": "n_api_client_fetchteamgames",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_getjson_api_client_fetchschedule",
+      "fromNode": "n_api_client_getjson",
+      "toNode": "n_api_client_fetchschedule",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_getjson_api_client_fetchonline",
+      "fromNode": "n_api_client_getjson",
+      "toNode": "n_api_client_fetchonline",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_getjson_api_client_fetchgame",
+      "fromNode": "n_api_client_getjson",
+      "toNode": "n_api_client_fetchgame",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_getjson_api_client_fetchboxscore",
+      "fromNode": "n_api_client_getjson",
+      "toNode": "n_api_client_fetchboxscore",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_getjson_api_client_fetchteamgames",
+      "fromNode": "n_api_client_getjson",
+      "toNode": "n_api_client_fetchteamgames",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_formatapidate_api_client_fetchschedule",
+      "fromNode": "n_api_client_formatapidate",
+      "toNode": "n_api_client_fetchschedule",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_client_fetchschedule_api_normalize_parsecalendaritems",
+      "fromNode": "n_api_client_fetchschedule",
+      "toNode": "n_api_normalize_parsecalendaritems",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_api_client_fetchonline_api_normalize_dedupelivegames",
+      "fromNode": "n_api_client_fetchonline",
+      "toNode": "n_api_normalize_dedupelivegames",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_api_client_fetchonline_api_normalize_parsecalendaritems",
+      "fromNode": "n_api_client_fetchonline",
+      "toNode": "n_api_normalize_parsecalendaritems",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_api_client_fetchteamgames_api_normalize_parseteamhistory",
+      "fromNode": "n_api_client_fetchteamgames",
+      "toNode": "n_api_normalize_parseteamhistory",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_teamref",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_teamref",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_text",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_text",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_numberornull",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_numberornull",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_istrulyliverow",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_istrulyliverow",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_getscoretext",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_getscoretext",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_normalizecalendarrow",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_normalizecalendarrow",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_parsecalendaritems",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_parsecalendaritems",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_dedupelivegames",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_dedupelivegames",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_tolivegame",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_tolivegame",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_parseteamhistory",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_parseteamhistory",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_api_normalize_ts_api_normalize_computeh2h",
+      "fromNode": "n_src_api_normalize_ts",
+      "toNode": "n_api_normalize_computeh2h",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_teamref_api_normalize_normalizecalendarrow",
+      "fromNode": "n_api_normalize_teamref",
+      "toNode": "n_api_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_teamref_api_normalize_parseteamhistory",
+      "fromNode": "n_api_normalize_teamref",
+      "toNode": "n_api_normalize_parseteamhistory",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_text_api_normalize_istrulyliverow",
+      "fromNode": "n_api_normalize_text",
+      "toNode": "n_api_normalize_istrulyliverow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_text_api_normalize_getscoretext",
+      "fromNode": "n_api_normalize_text",
+      "toNode": "n_api_normalize_getscoretext",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_text_api_normalize_normalizecalendarrow",
+      "fromNode": "n_api_normalize_text",
+      "toNode": "n_api_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_numberornull_api_normalize_istrulyliverow",
+      "fromNode": "n_api_normalize_numberornull",
+      "toNode": "n_api_normalize_istrulyliverow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_numberornull_api_normalize_normalizecalendarrow",
+      "fromNode": "n_api_normalize_numberornull",
+      "toNode": "n_api_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_istrulyliverow_api_normalize_normalizecalendarrow",
+      "fromNode": "n_api_normalize_istrulyliverow",
+      "toNode": "n_api_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_getscoretext_api_normalize_normalizecalendarrow",
+      "fromNode": "n_api_normalize_getscoretext",
+      "toNode": "n_api_normalize_normalizecalendarrow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_api_normalize_normalizecalendarrow_api_normalize_parsecalendaritems",
+      "fromNode": "n_api_normalize_normalizecalendarrow",
+      "toNode": "n_api_normalize_parsecalendaritems",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_components_bettingrecord_tsx_components_bettingrecord_isodateonly",
+      "fromNode": "n_src_components_bettingrecord_tsx",
+      "toNode": "n_components_bettingrecord_isodateonly",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_components_bettingrecord_tsx_components_bettingrecord_formattimehhmm",
+      "fromNode": "n_src_components_bettingrecord_tsx",
+      "toNode": "n_components_bettingrecord_formattimehhmm",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_components_bettingrecord_tsx_components_bettingrecord_formatcurrencymmk",
+      "fromNode": "n_src_components_bettingrecord_tsx",
+      "toNode": "n_components_bettingrecord_formatcurrencymmk",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_components_resultscalendargrid_tsx_components_resultscalendargrid_formatheader",
+      "fromNode": "n_src_components_resultscalendargrid_tsx",
+      "toNode": "n_components_resultscalendargrid_formatheader",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_config_divisions_ts_config_divisions_canonicaldivisionlabel",
+      "fromNode": "n_src_config_divisions_ts",
+      "toNode": "n_config_divisions_canonicaldivisionlabel",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_hooks_usebettingmemory_ts_hooks_usebettingmemory_usebettingmemory",
+      "fromNode": "n_src_hooks_usebettingmemory_ts",
+      "toNode": "n_hooks_usebettingmemory_usebettingmemory",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_normalizeteam",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_normalizeteam",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_matchupkey",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_matchupkey",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_asrecord",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_asrecord",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_asnumber",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_asnumber",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_deepfind",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_deepfind",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_getperiodminutes",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_getperiodminutes",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_getscoreboardanalysis",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_getscoreboardanalysis",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_analyzequarterflow",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_analyzequarterflow",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_oddsband",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_oddsband",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_teamflags",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_teamflags",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_evaluateoperatordecision",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_evaluateoperatordecision",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_gethistoricalcontext",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_gethistoricalcontext",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_engine_ts_operator_engine_parseh2hquartermatrix",
+      "fromNode": "n_src_operator_engine_ts",
+      "toNode": "n_operator_engine_parseh2hquartermatrix",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_normalizeteam_operator_engine_matchupkey",
+      "fromNode": "n_operator_engine_normalizeteam",
+      "toNode": "n_operator_engine_matchupkey",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_normalizeteam_operator_engine_teamflags",
+      "fromNode": "n_operator_engine_normalizeteam",
+      "toNode": "n_operator_engine_teamflags",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_asrecord_operator_engine_getperiodminutes",
+      "fromNode": "n_operator_engine_asrecord",
+      "toNode": "n_operator_engine_getperiodminutes",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_asrecord_operator_engine_getscoreboardanalysis",
+      "fromNode": "n_operator_engine_asrecord",
+      "toNode": "n_operator_engine_getscoreboardanalysis",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_deepfind_operator_engine_getscoreboardanalysis",
+      "fromNode": "n_operator_engine_deepfind",
+      "toNode": "n_operator_engine_getscoreboardanalysis",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_getperiodminutes_operator_engine_analyzequarterflow",
+      "fromNode": "n_operator_engine_getperiodminutes",
+      "toNode": "n_operator_engine_analyzequarterflow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_getscoreboardanalysis_operator_engine_analyzequarterflow",
+      "fromNode": "n_operator_engine_getscoreboardanalysis",
+      "toNode": "n_operator_engine_analyzequarterflow",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_getscoreboardanalysis_operator_mock_buildinsight",
+      "fromNode": "n_operator_engine_getscoreboardanalysis",
+      "toNode": "n_operator_mock_buildinsight",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_operator_engine_analyzequarterflow_operator_mock_buildinsight",
+      "fromNode": "n_operator_engine_analyzequarterflow",
+      "toNode": "n_operator_mock_buildinsight",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_operator_engine_oddsband_operator_engine_evaluateoperatordecision",
+      "fromNode": "n_operator_engine_oddsband",
+      "toNode": "n_operator_engine_evaluateoperatordecision",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_oddsband_operator_engine_gethistoricalcontext",
+      "fromNode": "n_operator_engine_oddsband",
+      "toNode": "n_operator_engine_gethistoricalcontext",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_teamflags_operator_engine_evaluateoperatordecision",
+      "fromNode": "n_operator_engine_teamflags",
+      "toNode": "n_operator_engine_evaluateoperatordecision",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_operator_engine_evaluateoperatordecision_operator_mock_buildinsight",
+      "fromNode": "n_operator_engine_evaluateoperatordecision",
+      "toNode": "n_operator_mock_buildinsight",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_src_operator_mock_ts_operator_mock_makelivegame",
+      "fromNode": "n_src_operator_mock_ts",
+      "toNode": "n_operator_mock_makelivegame",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_mock_ts_operator_mock_makeresultgame",
+      "fromNode": "n_src_operator_mock_ts",
+      "toNode": "n_operator_mock_makeresultgame",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_operator_mock_ts_operator_mock_buildinsight",
+      "fromNode": "n_src_operator_mock_ts",
+      "toNode": "n_operator_mock_buildinsight",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_results_calendar_ts_results_calendar_isodate",
+      "fromNode": "n_src_results_calendar_ts",
+      "toNode": "n_results_calendar_isodate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_results_calendar_ts_results_calendar_monthdaykeys",
+      "fromNode": "n_src_results_calendar_ts",
+      "toNode": "n_results_calendar_monthdaykeys",
+      "label": "contains [EXTRACTED]"
+    }
+  ]
+}
