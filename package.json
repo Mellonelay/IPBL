@@ -41,6 +41,7 @@
     "test:runtime-agent-graph": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/runtime-agent-graph.test.ts",
     "test:operator-intelligence": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/operator-intelligence.test.ts",
     "test:visualization-catalog": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/visualization-catalog.test.ts",
+    "test:analysis-engine": "node --no-warnings --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/analysis-engine.test.ts && node --no-warnings --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/analysis-engine-docs.test.ts",
     "ops:vercel-preflight": "node scripts/ops/vercel-release-preflight.mjs",
     "reconcile:team-statistics": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs scripts/team-statistics-reconciliation.mjs",
     "test:team-statistics-reconciliation": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-statistics-reconciliation.test.mjs",

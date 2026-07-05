@@ -20,10 +20,11 @@ This ledger mirrors [docs/PHASE_MASTER_CHECKLIST.md](/root/repos/IPBL/docs/PHASE
 | 11 | validated / proof-foundation partial | [docs/PHASE_10_11_EVIDENCE_MANIFEST.md](/root/repos/IPBL/docs/PHASE_10_11_EVIDENCE_MANIFEST.md), [artifacts/phase-c9/pr23/test-active-matched-gate.json](/root/repos/IPBL/artifacts/phase-c9/pr23/test-active-matched-gate.json) |
 | 12 | fully complete | [artifacts/operator-intelligence/operator-intelligence.json](/root/repos/IPBL/artifacts/operator-intelligence/operator-intelligence.json), [tests/operator-intelligence.test.ts](/root/repos/IPBL/tests/operator-intelligence.test.ts), [lib/server/operator-intelligence.ts](/root/repos/IPBL/lib/server/operator-intelligence.ts) |
 | 13 | fully complete | [artifacts/visualization/visualization-catalog.json](/root/repos/IPBL/artifacts/visualization/visualization-catalog.json), [tests/visualization-catalog.test.ts](/root/repos/IPBL/tests/visualization-catalog.test.ts), [lib/server/visualization-catalog.ts](/root/repos/IPBL/lib/server/visualization-catalog.ts) |
+| 14 | fully complete | [artifacts/analysis-engine/ipbl-analysis-engine.json](/root/repos/IPBL/artifacts/analysis-engine/ipbl-analysis-engine.json), [tests/analysis-engine.test.ts](/root/repos/IPBL/tests/analysis-engine.test.ts), [tests/analysis-engine-docs.test.ts](/root/repos/IPBL/tests/analysis-engine-docs.test.ts), [lib/server/analysis-engine.ts](/root/repos/IPBL/lib/server/analysis-engine.ts) |
 
 ## Current status split
 
-- Clearly complete: 8
+- Clearly complete: 9
 - Validated / support-ready: 6
 - Open: 0
 

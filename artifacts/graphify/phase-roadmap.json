@@ -1,6 +1,6 @@
 {
   "schema": "ipbl.graphify.phase-roadmap.v1",
-  "updatedAt": "2026-06-16",
+  "updatedAt": "2026-07-05",
   "status": "canonical_seed",
   "phases": [
     {
@@ -86,6 +86,12 @@
       "name": "Visualization",
       "state": "complete_materialized_read_only",
       "summary": "Read-only visualization catalog materialized over Graphify, Obsidian, and code-review graph exports."
+    },
+    {
+      "id": "phase_14_backend_analysis_engine",
+      "name": "Backend Analysis Engine",
+      "state": "complete_materialized_read_only",
+      "summary": "Read-only backend analysis boundary that places Graphify community skills behind IPBL live ingestion; canonical artifact at artifacts/analysis-engine/ipbl-analysis-engine.json."
     }
   ],
   "productionCheckpoints": [

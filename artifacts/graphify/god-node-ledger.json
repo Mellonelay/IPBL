@@ -1,6 +1,6 @@
 {
   "schema": "ipbl.graphify.god-node-ledger.v1",
-  "updatedAt": "2026-06-15",
+  "updatedAt": "2026-07-05",
   "status": "canonical_seed",
   "sourceDocs": [
     "docs/GRAPHIFY_INTELLIGENCE_ROADMAP.md",
@@ -79,6 +79,13 @@
       "status": "materialized_read_only",
       "role": "Graph-grounded recommendations over quarter flow, odds bands, H2H, team form, and data-quality evidence",
       "children": ["quarter_flow", "odds_band", "h2h_matrix", "score_divergence", "backtests"]
+    },
+    {
+      "id": "god_analysis_engine",
+      "name": "Backend Analysis Engine",
+      "status": "materialized_read_only",
+      "role": "Read-only backend analysis boundary that places Graphify community skills behind live ingestion; canonical artifact at artifacts/analysis-engine/ipbl-analysis-engine.json",
+      "children": ["graphify_intent", "graphify_temporal", "code_review_graph", "c9_intelligence", "operator_intelligence"]
     },
     {
       "id": "god_vercel_release",

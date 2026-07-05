@@ -98,6 +98,15 @@ They are closure packaging surfaces, not open implementation targets.
   - Implementation module at [lib/server/visualization-catalog.ts](/root/repos/IPBL/lib/server/visualization-catalog.ts)
   - Phase validator hook in [scripts/validate-phase-master.sh](/root/repos/IPBL/scripts/validate-phase-master.sh)
 
+## Phase 14: Fully Complete
+
+- Phase 14 - Backend Analysis Engine:
+  - Canonical read-only analysis engine at [artifacts/analysis-engine/ipbl-analysis-engine.json](/root/repos/IPBL/artifacts/analysis-engine/ipbl-analysis-engine.json)
+  - Repository-backed placement for `graphify-intent`, `graphify-temporal`, and `code-review-graph` behind the backend analysis boundary
+  - Dedicated contract test at [tests/analysis-engine.test.ts](/root/repos/IPBL/tests/analysis-engine.test.ts)
+  - Docs contract test at [tests/analysis-engine-docs.test.ts](/root/repos/IPBL/tests/analysis-engine-docs.test.ts)
+  - Implementation module at [lib/server/analysis-engine.ts](/root/repos/IPBL/lib/server/analysis-engine.ts)
+
 ## Validation Entry Points
 
 - [scripts/validate-phase-4-5.sh](/root/repos/IPBL/scripts/validate-phase-4-5.sh)
@@ -115,6 +124,7 @@ npm run validate:phase-6-7
 npm run validate:phase-10-11
 npm run test:operator-intelligence
 npm run test:visualization-catalog
+npm run test:analysis-engine
 npx agnix@0.32.0 .
 bash scripts/validate-phase-4-5.sh
 npm run test:approved-divisions

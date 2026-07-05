@@ -11,9 +11,9 @@ Source of truth:
 
 ## Current closure state
 
-- Total phases: 14
+- Total phases: 15
 - Open phases: 0
-- Complete phases: 0, 1, 4, 8, 9, 10, 12, 13
+- Complete phases: 0, 1, 4, 8, 9, 10, 12, 13, 14
 - Support-ready phases: 2, 3, 5, 6, 7, 11
 
 This repository is in closure / upgrade mode, not phase-building mode.
@@ -38,6 +38,7 @@ The support-ready phases are not open implementation phases; they are closure pa
 | 11 | support-ready | C9 intelligence is proof-foundation partial and remains gated. |
 | 12 | complete | GEN / operator intelligence is complete as a read-only seeded report. |
 | 13 | complete | Visualization catalog is complete as a read-only surface. |
+| 14 | complete | Backend analysis engine is materialized as a read-only boundary for Graphify community skills and backend evidence analysis; canonical artifact at `artifacts/analysis-engine/ipbl-analysis-engine.json`. |
 
 ## Latest stale-row verification
 
@@ -74,7 +75,7 @@ June 20, 2026:
 
 ## Closure Status
 
-- Complete: 0, 1, 4, 8, 9, 10, 12, 13
+- Complete: 0, 1, 4, 8, 9, 10, 12, 13, 14
 - Support-ready: 2, 3, 5, 6, 7, 11
 - Open: 0
 

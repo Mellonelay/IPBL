@@ -2,7 +2,7 @@
 
 Version: 2.0  
 Status: canonical repo artifact updated from Execution Fabric audit context on 2026-06-15  
-Scope: Graphify, Skill Forge, agnix, Execution Fabric, IPBL, C9, GEN/operator intelligence
+Scope: Graphify, Skill Forge, agnix, Execution Fabric, IPBL, C9, GEN/operator intelligence, backend analysis engine
 
 ## Correction
 
@@ -540,6 +540,20 @@ Preferred outputs:
 - optional Neo4j/Kuzu-backed inspection
 
 Canonical artifact: `artifacts/visualization/visualization-catalog.json`.
+
+### Phase 14 - Backend Analysis Engine
+
+Status: complete / materialized / read-only boundary.
+
+The backend analysis engine is where the Graphify community skills are placed in IPBL:
+
+- `graphify-intent` for rationale, decisions, constraints, and tradeoffs.
+- `graphify-temporal` for ordering evidence over time and tracing supersession.
+- `code-review-graph` for patch-risk and blast-radius analysis.
+
+This layer stays behind live ingestion and consumes repository-backed evidence from C9, operator intelligence, and the graph ledgers.
+
+Canonical artifact: `artifacts/analysis-engine/ipbl-analysis-engine.json`.
 
 ## Mandatory Change Workflow
 
