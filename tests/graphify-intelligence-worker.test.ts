@@ -1,7 +1,14 @@
 import assert from "node:assert/strict";
 
+import { handleGraphifyIntelligenceRequest } from "../workers/graphify-intelligence/src/index.ts";
 import { buildGraphifyIntelligencePacket } from "../workers/graphify-intelligence/src/orchestrator.ts";
 import { buildDeterministicSynthesis } from "../workers/graphify-intelligence/src/worker-ai.ts";
+
+const getResponse = await handleGraphifyIntelligenceRequest(new Request("https://example.com", { method: "GET" }), {});
+assert.equal(getResponse.status, 200);
+const getPayload = await getResponse.json() as { ok?: boolean; snapshot?: unknown };
+assert.equal(getPayload.ok, true);
+assert.equal(getPayload.snapshot, null);
 
 const packet = buildGraphifyIntelligencePacket({
   generatedAt: "2026-07-05T14:22:00.000Z",

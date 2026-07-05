@@ -19,7 +19,7 @@ export { GraphifyIntelligenceState };
 
 export async function handleGraphifyIntelligenceRequest(request: Request, env: GraphifyIntelligenceEnv): Promise<Response> {
   if (request.method === "GET") {
-    const snapshot = state.read();
+    const snapshot = singletonState.read();
     return Response.json(snapshot ?? { ok: true, snapshot: null });
   }
 
