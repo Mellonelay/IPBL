@@ -12,11 +12,11 @@ export type GraphifyIntelligenceSynthesis = {
 
 export function buildGraphifyIntelligencePrompt(packet: GraphifyIntelligencePacket): { model: string; messages: Array<{ role: "system" | "user"; content: string }> } {
   return {
-    model: "@cf/meta/llama-3.1-8b-instruct",
+    model: "@cf/meta/llama-3.2-3b-instruct",
     messages: [
       {
         role: "system",
-        content: "Summarize betting intelligence from graph evidence only. Do not invent data.",
+        content: "Summarize betting intelligence from graph evidence and betting record context only. Do not invent data.",
       },
       {
         role: "user",
@@ -28,11 +28,15 @@ export function buildGraphifyIntelligencePrompt(packet: GraphifyIntelligencePack
 
 export function buildDeterministicSynthesis(packet: GraphifyIntelligencePacket): GraphifyIntelligenceSynthesis {
   const topSignal = [...packet.signals].sort((left, right) => right.confidence - left.confidence)[0] ?? null;
+  const bettingRecord = packet.bettingRecord;
   const label = topSignal
     ? `${topSignal.patternId}:${topSignal.suggestedBias ?? "MONITOR"}:${topSignal.confidence.toFixed(2)}`
     : "no-live-signals";
+  const recordLabel = bettingRecord
+    ? `${bettingRecord.totalBets} bets, ${bettingRecord.results.winRate.toFixed(1)}% win rate, recent ${bettingRecord.recentWindow.size} bets at ${bettingRecord.recentWindow.winRate.toFixed(1)}%`
+    : "no-betting-record";
   return {
-    summary: `Graphify betting intelligence: ${packet.summary.signalCount} signals, ${packet.summary.strongSignals} strong. Top signal ${label}.`,
+    summary: `Graphify betting intelligence: ${packet.summary.signalCount} signals, ${packet.summary.strongSignals} strong. Top signal ${label}. Betting record: ${recordLabel}.`,
     fallback: true,
     nextAction: packet.summary.recommendedBias === "OVER" || packet.summary.recommendedBias === "UNDER" ? "replay" : "monitor",
   };

@@ -1,6 +1,7 @@
 import { buildGraphifyIntelligencePacket, type GraphifyIntelligenceSignal } from "./orchestrator.js";
 import { GraphifyIntelligenceState } from "./state.js";
 import { buildDeterministicSynthesis, synthesizeGraphifyIntelligence, type WorkersAIAdapter } from "./worker-ai.js";
+import type { BettingRecordSummary } from "../../../lib/server/betting-record-summary.js";
 
 export type GraphifyIntelligenceEnv = {
   AI?: WorkersAIAdapter;
@@ -8,12 +9,15 @@ export type GraphifyIntelligenceEnv = {
 
 export type GraphifyIntelligenceRequestBody = {
   generatedAt?: string;
+  bettingRecord?: BettingRecordSummary | null;
   signals?: readonly GraphifyIntelligenceSignal[];
 };
 
 const singletonState = new GraphifyIntelligenceState();
 
-export async function handleGraphifyIntelligenceRequest(request: Request, env: GraphifyIntelligenceEnv, state = singletonState): Promise<Response> {
+export { GraphifyIntelligenceState };
+
+export async function handleGraphifyIntelligenceRequest(request: Request, env: GraphifyIntelligenceEnv): Promise<Response> {
   if (request.method === "GET") {
     const snapshot = state.read();
     return Response.json(snapshot ?? { ok: true, snapshot: null });
@@ -26,10 +30,11 @@ export async function handleGraphifyIntelligenceRequest(request: Request, env: G
   const body = await request.json().catch(() => ({})) as GraphifyIntelligenceRequestBody;
   const packet = buildGraphifyIntelligencePacket({
     generatedAt: body.generatedAt ?? new Date().toISOString(),
+    bettingRecord: body.bettingRecord ?? null,
     signals: body.signals ?? [],
   });
   const synthesis = env.AI ? await synthesizeGraphifyIntelligence(packet, env.AI) : buildDeterministicSynthesis(packet);
-  const snapshot = state.write({
+  const snapshot = singletonState.write({
     packet,
     synthesis,
     storedAt: new Date().toISOString(),

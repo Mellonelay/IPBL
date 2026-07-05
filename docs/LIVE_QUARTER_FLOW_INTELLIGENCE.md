@@ -24,7 +24,8 @@ The live path is not repo code analysis. It is a betting evidence pipeline.
    - `q1-under-q2-over`
 4. The prediction runtime attaches the strongest live signal to each live row.
 5. The Graphify worker packages those signals with the repository evidence layer.
-6. Workers AI turns the packet into a concise operator-facing summary.
+6. The packet can also include a betting-record summary so the AI can compare live signals against recent betting history.
+7. Workers AI turns the packet into a concise operator-facing summary.
 
 ## Graphify Role
 

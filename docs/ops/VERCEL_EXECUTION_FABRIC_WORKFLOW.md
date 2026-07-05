@@ -66,6 +66,22 @@ Secret-bearing commands must never print values.
 15. record promotion evidence, runtime audit, and SHA
 ```
 
+## GitHub Actions deploy workflow
+
+This repository also ships `.github/workflows/deploy.yml` for release automation.
+
+### Required secrets
+
+- `VERCEL_TOKEN`
+- `CLOUDFLARE_API_TOKEN`
+
+### Behavior
+
+- `push` to `main` runs the shared verification job first.
+- The Vercel app deploy job uses `npx vercel deploy --prod --yes`.
+- The Cloudflare worker deploy job uses `npx wrangler deploy --config workers/graphify-intelligence/wrangler.jsonc`.
+- `workflow_dispatch` can run the same release path manually after the secrets are configured.
+
 ## Commands not to run casually
 
 ```text

@@ -1,4 +1,5 @@
 import { buildAnalysisEngineFromRepository } from "../../../lib/server/analysis-engine.js";
+import type { BettingRecordSummary } from "../../../lib/server/betting-record-summary.js";
 
 export type GraphifySkillName = "graphify-intent" | "graphify-temporal";
 
@@ -16,6 +17,7 @@ export type GraphifyIntelligencePacket = {
   generatedAt: string;
   analysisEngineContract: string;
   skills: readonly GraphifySkillName[];
+  bettingRecord: BettingRecordSummary | null;
   signals: readonly GraphifyIntelligenceSignal[];
   summary: {
     signalCount: number;
@@ -26,6 +28,7 @@ export type GraphifyIntelligencePacket = {
 
 export type BuildGraphifyIntelligencePacketInput = {
   generatedAt: string;
+  bettingRecord?: BettingRecordSummary | null;
   signals: readonly GraphifyIntelligenceSignal[];
 };
 
@@ -42,6 +45,7 @@ export function buildGraphifyIntelligencePacket(input: BuildGraphifyIntelligence
     generatedAt: input.generatedAt,
     analysisEngineContract: analysisEngine.outputs.contract,
     skills,
+    bettingRecord: input.bettingRecord ?? null,
     signals: [...input.signals],
     summary: {
       signalCount: input.signals.length,

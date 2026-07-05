@@ -16,6 +16,7 @@ assert.ok(analysisSkills.includes("graphify-temporal"));
 assert.ok(analysisSkills.includes("code-review-graph"));
 assert.deepEqual(packet.skills, ["graphify-intent", "graphify-temporal"]);
 assert.equal(packet.skills.includes("code-review-graph" as never), false);
+assert.equal(packet.bettingRecord, null);
 
 const analysisArtifact = JSON.parse(fs.readFileSync("graphify-out/.graphify_analysis.json", "utf8")) as Record<string, unknown>;
 assert.ok("communities" in analysisArtifact);
