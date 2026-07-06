@@ -6,6 +6,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import ts from "typescript";
 import { loadIntelligenceSurface } from "../src/app/intelligence-client.ts";
 
+const approvedLiveDivisionCount = 14;
+
 const snapshot = await loadIntelligenceSurface(async (url) => {
   if (url.endsWith("/api/gen-analysis")) {
     return new Response(JSON.stringify({
@@ -40,18 +42,18 @@ const snapshot = await loadIntelligenceSurface(async (url) => {
       status: {
         capturedAt: "2026-07-05T12:00:20.000Z",
         source: "ipbl-live-source",
-        sourceStatus: "PARTIAL",
+        sourceStatus: "OK",
       },
-      activeGameKeys: ["game:1", "game:2"],
+      activeGameKeys: Array.from({ length: approvedLiveDivisionCount }, (_, index) => `game:${index + 1}`),
       runRows: [
         { capturedAt: "2026-07-05T11:58:20.000Z", sourceStatus: "OK" },
-        { capturedAt: "2026-07-05T11:59:20.000Z", sourceStatus: "PARTIAL" },
+        { capturedAt: "2026-07-05T11:59:20.000Z", sourceStatus: "OK" },
       ],
       health: {
         schemaVersion: 1,
         evaluatedAt: "2026-07-05T12:00:30.000Z",
-        level: "DEGRADED",
-        reasons: ["source_reported_partial", "division_coverage_partial"],
+        level: "HEALTHY",
+        reasons: ["canonical_division_coverage"],
         freshness: {
           lastCapturedAt: "2026-07-05T12:00:20.000Z",
           ageSeconds: 10,
@@ -61,19 +63,19 @@ const snapshot = await loadIntelligenceSurface(async (url) => {
         },
         source: {
           name: "ipbl-live-source",
-          reportedStatus: "PARTIAL",
+          reportedStatus: "OK",
           fallbackActive: false,
           fallbackFrom: null,
-          requestedDivisions: 4,
-          successfulDivisions: 3,
-          coverageRatio: 0.75,
-          upstreamFailureCount: 1,
-          upstreamHttpStatuses: [502],
-          bookmakerFailureCount: 1,
-          unmatchedEventCount: 2,
-          unmatchedByReason: { team_name_mismatch: 2 },
-          receivedBookmakerEvents: 7,
-          latencyMs: 480,
+          requestedDivisions: approvedLiveDivisionCount,
+          successfulDivisions: approvedLiveDivisionCount,
+          coverageRatio: 1,
+          upstreamFailureCount: 0,
+          upstreamHttpStatuses: [],
+          bookmakerFailureCount: 0,
+          unmatchedEventCount: 0,
+          unmatchedByReason: {},
+          receivedBookmakerEvents: 14,
+          latencyMs: 420,
         },
         scheduler: {
           cadenceSeconds: 60,
@@ -81,20 +83,20 @@ const snapshot = await loadIntelligenceSurface(async (url) => {
           firstRunAt: "2026-07-05T11:58:20.000Z",
           lastRunAt: "2026-07-05T11:59:20.000Z",
           maxObservedGapSeconds: 60,
-          okRuns: 1,
-          partialRuns: 1,
+          okRuns: 2,
+          partialRuns: 0,
           failedRuns: 0,
           consecutiveFailedRuns: 0,
-          consecutivePartialRuns: 1,
+          consecutivePartialRuns: 0,
           consecutiveNonFailedRuns: 2,
         },
         alert: {
-          severity: "WARNING",
-          shouldNotify: true,
-          code: "source_degraded",
+          severity: "NONE",
+          shouldNotify: false,
+          code: "none",
           incidentStartedAt: null,
           thresholdRuns: null,
-          recommendedAction: "continue_bounded_monitoring",
+          recommendedAction: "continue_monitoring",
         },
         recovery: {
           state: "STABLE",
@@ -105,8 +107,8 @@ const snapshot = await loadIntelligenceSurface(async (url) => {
         continuity: {
           policy: "retain_last_known_active_set_on_source_fail",
           activeSetMutationSuppressedOnSourceFail: true,
-          preservedActiveGameCount: 2,
-          preservedActiveGameKeys: ["game:1", "game:2"],
+          preservedActiveGameCount: approvedLiveDivisionCount,
+          preservedActiveGameKeys: Array.from({ length: approvedLiveDivisionCount }, (_, index) => `game:${index + 1}`),
         },
         storage: {
           prefix: "ipbl:recorder:v1",
@@ -125,17 +127,17 @@ const snapshot = await loadIntelligenceSurface(async (url) => {
   if (url.endsWith("/api/analysis-engine")) {
     return new Response(JSON.stringify({
       schema: "ipbl.analysis-engine.v1",
-      status: "ready",
-      skills: [{ name: "graphify" }, { name: "operator-intelligence" }],
+      status: "materialized",
+      skills: [{ name: "graphify-intent" }, { name: "graphify-temporal" }],
     }));
   }
   if (url.endsWith("/api/operator-intelligence")) {
     return new Response(JSON.stringify({
       schema: "ipbl.operator-intelligence.v1",
-      phase: 4,
-      status: "monitoring",
+      phase: 12,
+      status: "seeded",
       evidence: {
-        recorder: { coverage: "3/4 divisions" },
+        recorder: { coverage: "14/14 divisions" },
         h2h: { coverage: "complete" },
         odds: { coverage: "partial" },
       },
@@ -152,20 +154,21 @@ assert.equal(snapshot.predictionRuntime.count, 3);
 assert.equal(snapshot.predictionRuntime.summary?.driftState, "stable");
 assert.equal(snapshot.predictionRuntime.summary?.liveStates?.late, 1);
 
-assert.equal(snapshot.recorderHealth.health?.level, "DEGRADED");
-assert.equal(snapshot.recorderHealth.health?.source?.reportedStatus, "PARTIAL");
-assert.equal(snapshot.recorderHealth.health?.source?.coverageRatio, 0.75);
-assert.equal(snapshot.recorderHealth.health?.alert?.code, "source_degraded");
-assert.equal(snapshot.recorderHealth.health?.continuity?.preservedActiveGameCount, 2);
-assert.equal(snapshot.recorderHealth.activeGameKeys?.length, 2);
+assert.equal(snapshot.recorderHealth.health?.level, "HEALTHY");
+assert.equal(snapshot.recorderHealth.health?.source?.reportedStatus, "OK");
+assert.equal(snapshot.recorderHealth.health?.source?.coverageRatio, 1);
+assert.equal(snapshot.recorderHealth.health?.alert?.code, "none");
+assert.equal(snapshot.recorderHealth.health?.continuity?.preservedActiveGameCount, approvedLiveDivisionCount);
+assert.equal(snapshot.recorderHealth.activeGameKeys?.length, approvedLiveDivisionCount);
 
 assert.equal(snapshot.analysisEngine.schema, "ipbl.analysis-engine.v1");
-assert.equal(snapshot.analysisEngine.status, "ready");
+assert.equal(snapshot.analysisEngine.status, "materialized");
 assert.equal(snapshot.analysisEngine.skills?.length, 2);
+assert.deepEqual(snapshot.analysisEngine.skills?.map((skill) => skill.name), ["graphify-intent", "graphify-temporal"]);
 
 assert.equal(snapshot.operatorIntelligence.schema, "ipbl.operator-intelligence.v1");
-assert.equal(snapshot.operatorIntelligence.phase, 4);
-assert.equal(snapshot.operatorIntelligence.evidence?.recorder?.coverage, "3/4 divisions");
+assert.equal(snapshot.operatorIntelligence.phase, 12);
+assert.equal(snapshot.operatorIntelligence.evidence?.recorder?.coverage, "14/14 divisions");
 assert.equal(snapshot.operatorIntelligence.evidence?.odds?.coverage, "partial");
 
 const tempDir = await fs.mkdtemp(path.join(process.cwd(), ".tmp-intelligence-tab-"));
@@ -205,3 +208,8 @@ assert.match(markup, /Prediction runtime/);
 assert.match(markup, /Recorder health/);
 assert.match(markup, /Phase coverage/);
 assert.match(markup, /Graphify recommends monitoring late-market movement\./);
+assert.match(markup, /14/);
+assert.match(markup, /64\.0%/);
+assert.match(markup, /HEALTHY/);
+assert.match(markup, /100\.0%/);
+assert.match(markup, /14\/14 divisions/);
