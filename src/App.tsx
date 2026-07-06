@@ -5,11 +5,8 @@ import {
   clearFetchCaches,
   fetchBoxScore,
   fetchGame,
-  fetchGameReplay,
   // fetchOnline,
-  fetchTeamGames,
 } from "./api/client";
-import { computeH2H } from "./api/normalize";
 import type { ScheduleGame } from "./api/types";
 import { buildLiveDisplayInsights } from "./live/display";
 import { summarizeBookmakerFailures } from "./live/source-status";
@@ -445,6 +442,11 @@ function App() {
     setActiveTab("results");
   }, []);
 
+  const openIntelligenceTab = useCallback(() => {
+    setDrawer(null);
+    setActiveTab("intelligence");
+  }, []);
+
   useEffect(() => {
     const valid = resultsDivisionsForMonth(selectedResultsYear, selectedResultsMonthIndex);
     if (!valid.some((division) => division.tag === selectedResultsDivisionTag) && valid[0]) {
@@ -479,29 +481,15 @@ function App() {
       game,
       gameMeta: preset?.gameMeta ?? null,
       boxState: preset?.boxState ?? null,
-      replay: null,
       board: presetBoard,
       flow: presetFlow,
       decision: presetDecision,
-      h2h: [],
-      histLoading: true,
-      replayLoading: true,
-      replayErr: null,
-      detailErr: null,
     });
 
     try {
-      let replayErr: string | null = null;
-      const replayPromise = fetchGameReplay(game.gameId).catch((error) => {
-        replayErr = error instanceof Error ? error.message : "Replay load failed";
-        return null;
-      });
-      const [gameMeta, ha, hb, boxState, replay] = await Promise.all([
+      const [gameMeta, boxState] = await Promise.all([
         fetchGame(game.gameId, game.tag),
-        fetchTeamGames(game.team1.teamId, game.tag, RESULTS_SEASON),
-        fetchTeamGames(game.team2.teamId, game.tag, RESULTS_SEASON),
         fetchBoxScore(game.gameId, game.tag),
-        replayPromise,
       ]);
 
       const boxRaw = boxState.fetchedOk ? boxState.raw : null;
@@ -515,34 +503,17 @@ function App() {
         team2: game.team2.shortName,
         flow,
       });
-      const h2h = computeH2H(ha, hb, game.team1.teamId, game.team2.teamId, 15);
 
       setDrawer({
         game,
         gameMeta: gameMeta.raw,
         boxState,
-        replay,
         board,
         flow,
         decision,
-        h2h,
-        histLoading: false,
-        replayLoading: false,
-        replayErr,
-        detailErr: !gameMeta.fetchedOk ? "Could not load game metadata." : null,
       });
-    } catch (error) {
-      setDrawer((current) =>
-        current
-          ? {
-              ...current,
-              histLoading: false,
-              replayLoading: false,
-              replayErr: error instanceof Error ? error.message : "Replay load failed",
-              detailErr: error instanceof Error ? error.message : "Detail load failed",
-            }
-          : current
-      );
+    } catch {
+      // Preserve the lightweight preset drawer state if detail fetches fail.
     }
   }, []);
 
@@ -628,6 +599,7 @@ function App() {
             onSelectDivisionTag={setSelectedLiveDivisionTag}
             onOpenGame={(game, insight) => void openDrawer(game, insight)}
             onOpenH2H={(game, insight) => void openDrawer(game, insight)}
+            onOpenIntelligence={openIntelligenceTab}
           />
         )}
 
@@ -660,7 +632,7 @@ function App() {
         {activeTab === "betting" && <BettingTab />}
       </main>
 
-      {drawer && <GameDrawer drawer={drawer} onClose={() => setDrawer(null)} />}
+      {drawer && <GameDrawer drawer={drawer} onClose={() => setDrawer(null)} onOpenIntelligence={openIntelligenceTab} />}
     </div>
   );
 }

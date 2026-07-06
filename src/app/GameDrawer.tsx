@@ -1,5 +1,4 @@
 import { canonicalDivisionLabel } from "../config/divisions";
-import { matchupKey, parseH2HQuarterMatrix } from "../operator/engine";
 import { operatorSummary } from "../operator/data";
 import type { DrawerState } from "./app-types";
 import {
@@ -8,16 +7,16 @@ import {
   formatCurrency,
   formatPct,
   gameDivision,
-  replayEventSummary,
   statusTone,
 } from "./shared";
 
 export type GameDrawerProps = {
   drawer: DrawerState;
   onClose: () => void;
+  onOpenIntelligence: () => void;
 };
 
-export default function GameDrawer({ drawer, onClose }: GameDrawerProps) {
+export default function GameDrawer({ drawer, onClose, onOpenIntelligence }: GameDrawerProps) {
   return (
     <div className="drawer-backdrop" onClick={onClose} role="presentation">
       <aside className="drawer" data-testid="game-drawer" onClick={(e) => e.stopPropagation()}>
@@ -80,7 +79,10 @@ export default function GameDrawer({ drawer, onClose }: GameDrawerProps) {
         </section>
 
         <section className="drawer-section">
-          <h3>Historical risk block</h3>
+          <div className="drawer-section-head">
+            <h3>Historical risk summary</h3>
+            <span className="status-badge">Compact</span>
+          </div>
           <div className="quarter-grid">
             <Metric
               label={`Quarter ${currentOrNextQuarter(drawer.flow, drawer.board) ?? "—"}`}
@@ -112,124 +114,17 @@ export default function GameDrawer({ drawer, onClose }: GameDrawerProps) {
           <p className="muted">{operatorSummary.theory_call}</p>
         </section>
 
-        <section className="drawer-section" data-testid="odds-replay-section">
-          <h3>Odds movement</h3>
-          {drawer.replayLoading && (
-            <p className="muted" data-testid="odds-replay-loading">
-              Loading odds replay...
-            </p>
-          )}
-          {!drawer.replayLoading && drawer.replayErr && (
-            <p className="err" data-testid="odds-replay-error">
-              {drawer.replayErr}
-            </p>
-          )}
-          {!drawer.replayLoading && !drawer.replayErr && !drawer.replay && (
-            <p className="muted" data-testid="odds-replay-empty">
-              No stored odds replay available for this game.
-            </p>
-          )}
-          {!drawer.replayLoading && drawer.replay && (
-            <>
-              <div className="quarter-grid" data-testid="odds-replay-summary">
-                <Metric label="Replay events" value={drawer.replay.timeline.length} />
-                <Metric
-                  label="Odds snapshots"
-                  value={drawer.replay.timeline.filter((event) => event.kind === "odds").length}
-                />
-                <Metric
-                  label="Quarter snapshots"
-                  value={drawer.replay.timeline.filter((event) => event.kind === "quarter").length}
-                />
-                <Metric
-                  label="Result snapshots"
-                  value={drawer.replay.timeline.filter((event) => event.kind === "result").length}
-                />
-              </div>
-              <div className="replay-list" data-testid="odds-replay-list">
-                {drawer.replay.timeline.map((event, index) => (
-                  <div key={`${event.kind}-${event.capturedAt}-${index}`} className="replay-item">
-                    <div className="replay-item-head">
-                      <strong>{event.kind === "odds" ? "Odds" : event.kind === "quarter" ? "Quarter" : "Result"}</strong>
-                      <span>{event.capturedAt}</span>
-                    </div>
-                    <div className="muted">
-                      {event.quarter === null ? "No quarter" : `Q${event.quarter}`} · {replayEventSummary(event)}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-        </section>
-
-        <section className="drawer-section" data-testid="h2h-section">
-          <h3>H2H block</h3>
-          {drawer.histLoading && (
-            <p className="muted" data-testid="h2h-loading">
-              Loading history...
-            </p>
-          )}
-          {!drawer.histLoading && drawer.h2h.length === 0 && (
-            <p className="muted">
-              <span data-testid="no-prior-meetings-label">No prior meetings</span> in loaded team histories.
-            </p>
-          )}
-          <div className="h2h-list" data-testid="h2h-list">
-            {drawer.h2h.map((entry) => {
-              const matrix = parseH2HQuarterMatrix(entry.fullScore);
-              return (
-                <div key={entry.gameId} className="h2h-item" data-testid="h2h-item">
-                  <div>
-                    {entry.date} {entry.time} · {entry.scoreText}
-                  </div>
-                  <div className="muted">
-                    {matrix.length > 0
-                      ? matrix.map((value, index) => `Q${index + 1} ${value}`).join(" · ")
-                      : entry.fullScore || "No quarter matrix"}
-                  </div>
-                </div>
-              );
-            })}
+        <section className="drawer-section drawer-handoff">
+          <div className="drawer-section-head">
+            <h3>Intelligence handoff</h3>
+            <span className="status-badge">Detail</span>
           </div>
-        </section>
-
-        <section className="drawer-section">
-          <h3>Team risk block</h3>
-          {drawer.decision.teamFlags.length === 0 && (
-            <p className="muted">Neither team is on the strongest or weakest watchlists.</p>
-          )}
-          {drawer.decision.teamFlags.map((flag) => {
-            const tone = operatorSummary.team_risk.worst_teams.some((entry) => entry.team === flag.team)
-              ? "bad"
-              : "good";
-            return (
-              <div key={flag.team} className={`risk-row ${tone}`}>
-                <strong>{flag.team}</strong>
-                <span>
-                  {formatPct(flag.win_rate)} win rate · {formatCurrency(flag.net_profit)}
-                </span>
-              </div>
-            );
-          })}
-        </section>
-
-        <section className="drawer-section">
-          <h3>Matchup risk block</h3>
-          {drawer.decision.matchupFlag ? (
-            <div className="risk-row bad">
-              <strong>{drawer.decision.matchupFlag.matchup}</strong>
-              <span>
-                {formatPct(drawer.decision.matchupFlag.win_rate)} win rate · {formatCurrency(drawer.decision.matchupFlag.net_profit)}
-              </span>
-            </div>
-          ) : (
-            <div className="risk-row neutral">
-              <strong>{matchupKey(drawer.game.team1.shortName, drawer.game.team2.shortName)}</strong>
-              <span>No flagged matchup risk in imported history.</span>
-            </div>
-          )}
-          {drawer.detailErr && <p className="err">{drawer.detailErr}</p>}
+          <p className="muted">
+            Detailed replay, H2H, team-risk, and matchup-risk review now lives in the Intelligence tab.
+          </p>
+          <button type="button" className="mini-btn" onClick={onOpenIntelligence}>
+            Open Intelligence
+          </button>
         </section>
       </aside>
     </div>

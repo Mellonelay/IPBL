@@ -51,11 +51,13 @@ function LiveCard({
   insight,
   onOpen,
   onOpenH2H,
+  onOpenIntelligence,
 }: {
   game: ScheduleGame;
   insight?: LiveInsight;
   onOpen: (game: ScheduleGame, insight?: LiveInsight) => void;
   onOpenH2H: (game: ScheduleGame, insight?: LiveInsight) => void;
+  onOpenIntelligence: () => void;
 }) {
   const currentQuarter = insight?.board.currentQuarter ?? (game.period ? `Q${game.period}` : "Live");
   const currentQuarterTotal = insight?.board.currentQuarterTotal ?? "—";
@@ -104,6 +106,9 @@ function LiveCard({
         <button type="button" className="mini-btn" data-testid="live-card-h2h-button" onClick={() => onOpenH2H(game, insight)}>
           H2H
         </button>
+        <button type="button" className="mini-btn" onClick={onOpenIntelligence}>
+          Intelligence
+        </button>
       </div>
     </div>
   );
@@ -119,6 +124,7 @@ export type LiveTabProps = {
   onSelectDivisionTag: (tag: string) => void;
   onOpenGame: (game: ScheduleGame, insight?: LiveInsight) => void;
   onOpenH2H: (game: ScheduleGame, insight?: LiveInsight) => void;
+  onOpenIntelligence: () => void;
 };
 
 export default function LiveTab({
@@ -131,6 +137,7 @@ export default function LiveTab({
   onSelectDivisionTag,
   onOpenGame,
   onOpenH2H,
+  onOpenIntelligence,
 }: LiveTabProps) {
   const displayLiveInsights = buildLiveDisplayInsights({
     games: liveGames,
@@ -173,6 +180,12 @@ export default function LiveTab({
             ))}
           </select>
         </label>
+        <div className="live-intelligence-handoff">
+          <span className="muted">Need replay, H2H, and deeper risk detail?</span>
+          <button type="button" className="mini-btn" onClick={onOpenIntelligence}>
+            Open Intelligence
+          </button>
+        </div>
       </div>
 
       {!liveLoading && liveGames.length === 0 && displayLiveInsights.length === 0 && (
@@ -197,6 +210,7 @@ export default function LiveTab({
                 insight={insight}
                 onOpen={onOpenGame}
                 onOpenH2H={onOpenH2H}
+                onOpenIntelligence={onOpenIntelligence}
               />
             ))}
           </div>
@@ -214,6 +228,7 @@ export default function LiveTab({
                 insight={insight}
                 onOpen={onOpenGame}
                 onOpenH2H={onOpenH2H}
+                onOpenIntelligence={onOpenIntelligence}
               />
             ))}
           </div>
