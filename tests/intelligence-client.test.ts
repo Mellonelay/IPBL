@@ -157,8 +157,13 @@ assert.equal(snapshot.predictionRuntime.summary?.liveStates?.late, 1);
 assert.equal(snapshot.recorderHealth.health?.level, "HEALTHY");
 assert.equal(snapshot.recorderHealth.health?.source?.reportedStatus, "OK");
 assert.equal(snapshot.recorderHealth.health?.source?.coverageRatio, 1);
+assert.equal(snapshot.recorderHealth.health?.source?.requestedDivisions, approvedLiveDivisionCount);
+assert.equal(snapshot.recorderHealth.health?.source?.successfulDivisions, approvedLiveDivisionCount);
 assert.equal(snapshot.recorderHealth.health?.alert?.code, "none");
+assert.equal(snapshot.recorderHealth.health?.alert?.severity, "NONE");
+assert.equal(snapshot.recorderHealth.health?.alert?.shouldNotify, false);
 assert.equal(snapshot.recorderHealth.health?.continuity?.preservedActiveGameCount, approvedLiveDivisionCount);
+assert.equal(snapshot.recorderHealth.health?.continuity?.preservedActiveGameKeys?.length, approvedLiveDivisionCount);
 assert.equal(snapshot.recorderHealth.activeGameKeys?.length, approvedLiveDivisionCount);
 
 assert.equal(snapshot.analysisEngine.schema, "ipbl.analysis-engine.v1");
@@ -169,7 +174,28 @@ assert.deepEqual(snapshot.analysisEngine.skills?.map((skill) => skill.name), ["g
 assert.equal(snapshot.operatorIntelligence.schema, "ipbl.operator-intelligence.v1");
 assert.equal(snapshot.operatorIntelligence.phase, 12);
 assert.equal(snapshot.operatorIntelligence.evidence?.recorder?.coverage, "14/14 divisions");
+assert.equal(snapshot.operatorIntelligence.evidence?.h2h?.coverage, "complete");
 assert.equal(snapshot.operatorIntelligence.evidence?.odds?.coverage, "partial");
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function extractCard(markupText: string, title: string): string {
+  const pattern = new RegExp(
+    `<article class="operator-card">[\\s\\S]*?<div class="card-title">${escapeRegExp(title)}<\\/div>[\\s\\S]*?<\\/article>`
+  );
+  const match = markupText.match(pattern);
+  assert(match, `missing "${title}" card`);
+  return match[0];
+}
+
+function assertMetric(cardMarkup: string, label: string, value: string) {
+  const pattern = new RegExp(
+    `<div class="metric-box">[\\s\\S]*?<div class="metric-label">${escapeRegExp(label)}<\\/div>[\\s\\S]*?<div class="metric-value">${escapeRegExp(value)}<\\/div>[\\s\\S]*?<\\/div>`
+  );
+  assert.match(cardMarkup, pattern, `expected ${label} = ${value}`);
+}
 
 const tempDir = await fs.mkdtemp(path.join(process.cwd(), ".tmp-intelligence-tab-"));
 const sharedSource = await fs.readFile(new URL("../src/app/shared.tsx", import.meta.url), "utf8");
@@ -203,13 +229,28 @@ try {
   await fs.rm(tempDir, { recursive: true, force: true });
 }
 
-assert.match(markup, /Graphify synthesis/);
-assert.match(markup, /Prediction runtime/);
-assert.match(markup, /Recorder health/);
-assert.match(markup, /Phase coverage/);
 assert.match(markup, /Graphify recommends monitoring late-market movement\./);
-assert.match(markup, /14/);
-assert.match(markup, /64\.0%/);
-assert.match(markup, /HEALTHY/);
-assert.match(markup, /100\.0%/);
-assert.match(markup, /14\/14 divisions/);
+
+const synthesisCard = extractCard(markup, "Graphify synthesis");
+assertMetric(synthesisCard, "Fallback", "No");
+assertMetric(synthesisCard, "Next action", "Review quarter-state drift before lock.");
+assertMetric(synthesisCard, "Stored at", "2026-07-05T12:00:05.000Z");
+assertMetric(synthesisCard, "Bets", "14");
+
+const predictionCard = extractCard(markup, "Prediction runtime");
+assertMetric(predictionCard, "Average confidence", "64.0%");
+assertMetric(predictionCard, "Calibrated confidence", "59.0%");
+assertMetric(predictionCard, "Late games", "1");
+assertMetric(predictionCard, "Runtime source", "api/predictions/live");
+
+const recorderCard = extractCard(markup, "Recorder health");
+assertMetric(recorderCard, "Coverage", "100.0%");
+assertMetric(recorderCard, "Unmatched events", "0");
+assertMetric(recorderCard, "Active games", "14");
+assertMetric(recorderCard, "Alert", "none");
+
+const phaseCard = extractCard(markup, "Phase coverage");
+assertMetric(phaseCard, "Analysis status", "materialized");
+assertMetric(phaseCard, "Skills", "2");
+assertMetric(phaseCard, "Recorder coverage", "14/14 divisions");
+assertMetric(phaseCard, "H2H / odds", "complete / partial");
