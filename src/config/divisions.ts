@@ -8,12 +8,13 @@ export type DivisionConfig = {
     validTo?: string;   // YYYY-MM-DD, inclusive
 };
 
-/** Current official Live divisions. Historical-only Men G is intentionally excluded. */
+/** Canonical approved Live divisions. */
 export const LIVE_DIVISION_TAGS = [
     "ipbl-66-m-pro-a",
     "ipbl-66-m-pro-b",
     "ipbl-66-m-pro-c",
     "ipbl-66-m-pro-d",
+    "ipbl-66-m-pro-g",
     "ipbl-66-m-pro-u",
     "ipbl-66-m-pro-z",
     "ipbl-66-m-pro-l",
@@ -27,14 +28,13 @@ export const LIVE_DIVISION_TAGS = [
 
 /**
  * Historical + current registry. Validity dates come from saved official daily fixtures.
- * May 2026 intentionally exposes both Men G and Men U because the format changed mid-month.
  */
 export const DIVISIONS: DivisionConfig[] = [
     { label: "Pro Men A", tag: "ipbl-66-m-pro-a", group: "men" },
     { label: "Pro Men B", tag: "ipbl-66-m-pro-b", group: "men" },
     { label: "Pro Men C", tag: "ipbl-66-m-pro-c", group: "men" },
     { label: "Pro Men D", tag: "ipbl-66-m-pro-d", group: "men" },
-    { label: "Pro Men G", tag: "ipbl-66-m-pro-g", group: "men", validTo: "2026-05-19" },
+    { label: "Pro Men G", tag: "ipbl-66-m-pro-g", group: "men" },
     { label: "Pro Men U", tag: "ipbl-66-m-pro-u", group: "men", validFrom: "2026-05-26" },
     { label: "Pro Men Z", tag: "ipbl-66-m-pro-z", group: "men", validFrom: "2026-06-13" },
     { label: "Pro Men L", tag: "ipbl-66-m-pro-l", group: "men", validFrom: "2026-06-14" },

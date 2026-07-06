@@ -11,13 +11,16 @@ loadEnvLocal();
  *   CRON_SECRET — same as Vercel
  *
  * Examples:
- *   node scripts/backfill-results.mjs --year 2026 --month 3 --all
- *   node scripts/backfill-results.mjs --year 2026 --month 4 --division ipbl-66-m-pro-a
+ *   node scripts/backfill-results.mjs --all
+ *   node scripts/backfill-results.mjs --from 2026-06-01 --to 2026-07-05 --all
+ *   node scripts/backfill-results.mjs --year 2026 --month 6 --division ipbl-66-m-pro-a
  */
 
 function parseArgs(argv) {
     let year;
     let month;
+    let from;
+    let to;
     let division;
     let all = false;
     let url;
@@ -25,19 +28,16 @@ function parseArgs(argv) {
         const a = argv[i];
         if (a === "--year") year = Number(argv[++i]);
         else if (a === "--month") month = Number(argv[++i]);
+        else if (a === "--from") from = argv[++i];
+        else if (a === "--to") to = argv[++i];
         else if (a === "--division") division = argv[++i];
         else if (a === "--all") all = true;
         else if (a === "--url") url = argv[++i];
     }
-    return { year, month, division, all, url };
+    return { year, month, from, to, division, all, url };
 }
 
-const { year, month, division, all, url: urlFlag } = parseArgs(process.argv.slice(2));
-
-if (!Number.isFinite(year) || !Number.isFinite(month)) {
-    console.error("Usage: node scripts/backfill-results.mjs --year YYYY --month M [--division TAG | --all] [--url https://...]");
-    process.exit(1);
-}
+const { year, month, from, to, division, all, url: urlFlag } = parseArgs(process.argv.slice(2));
 
 if (!all && !division) {
     console.error("Provide --division TAG or --all");
@@ -65,9 +65,12 @@ if (!secret) {
 }
 
 const target = `${base}/api/admin/backfill-results`;
-const body = all
-    ? { year, month, allApprovedDivisions: true }
-    : { year, month, division };
+const body = {
+    ...(Number.isFinite(year) && Number.isFinite(month) ? { year, month } : {}),
+    ...(from ? { from } : {}),
+    ...(to ? { to } : {}),
+    ...(all ? { allApprovedDivisions: true } : { division }),
+};
 
 const res = await fetch(target, {
     method: "POST",

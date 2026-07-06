@@ -39,7 +39,20 @@ assert.equal(mapped.currentOdds, null);
 
 const runtime = buildPredictionRuntimeEnvelope(
   { games: [sampleGame], status: { status: "OK", source: "bookmaker:melbet.com+1xbet.com" } },
-  { generatedAt: new Date("2026-06-21T00:00:00Z") },
+  {
+    generatedAt: new Date("2026-06-21T00:00:00Z"),
+    livePatterns: {
+      [sampleGame.gameId]: [
+        {
+          patternId: "q1-slow-q2-fast",
+          description: "Q1 started slow and Q2 accelerated.",
+          confidence: 0.84,
+          evidence: ["quarter:1:first:15@2026-06-19T12:00:00Z"],
+          suggestedBias: "OVER",
+        },
+      ],
+    },
+  },
 );
 
 assert.equal(runtime.count, 1);
@@ -47,6 +60,7 @@ assert.equal(runtime.source, "api/results/live");
 assert.equal(runtime.predictions[0].gameId, sampleGame.gameId);
 assert.equal(runtime.predictions[0].calibration.reason, "insufficient_history");
 assert.equal(runtime.predictions[0].adaptive.remediation.action, "monitor");
+assert.equal(runtime.predictions[0].liveSignal?.patternId, "q1-slow-q2-fast");
 assert.equal(runtime.summary.liveStates.late, 1);
 
 const handler = createPredictionLiveHandler({
@@ -55,6 +69,17 @@ const handler = createPredictionLiveHandler({
     status: { status: "OK", source: "bookmaker:melbet.com+1xbet.com" },
   }),
   now: () => new Date("2026-06-21T00:00:00Z"),
+  livePatterns: {
+    [sampleGame.gameId]: [
+      {
+        patternId: "q1-under-q2-over",
+        description: "Quarter 1 under, quarter 2 over.",
+        confidence: 0.9,
+        evidence: ["quarter:1:first:15@2026-06-19T12:00:00Z"],
+        suggestedBias: "MONITOR",
+      },
+    ],
+  },
 });
 
 const headers: Record<string, string> = {};
@@ -83,5 +108,6 @@ assert.equal(headers["Cache-Control"], "no-store, max-age=0");
 assert.equal(headers["Vercel-CDN-Cache-Control"], "no-store");
 assert.equal((payload as { count?: number }).count, 1);
 assert.equal((payload as { predictions?: Array<{ gameId: number }> }).predictions?.[0].gameId, sampleGame.gameId);
+assert.equal((payload as { predictions?: Array<{ liveSignal?: { patternId?: string } }> }).predictions?.[0].liveSignal?.patternId, "q1-under-q2-over");
 
 console.log("prediction live runtime tests passed");

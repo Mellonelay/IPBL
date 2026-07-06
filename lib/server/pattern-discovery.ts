@@ -197,3 +197,5 @@ export function discoverPatterns(bets: BetRow[], memoryIndex: Record<string, unk
 
   return patterns;
 }
+
+export { buildLiveQuarterPatterns, type LiveQuarterPattern, type LiveQuarterPatternSummary } from "./live-pattern-discovery.js";

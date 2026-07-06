@@ -6,14 +6,17 @@ import { buildAdaptiveScore } from "../self-learning/adaptive-scorer.js";
 import type { EvaluationResult } from "../backtesting/evaluator.js";
 import type { ScheduleGame } from "../server/calendar-normalize.js";
 import type { LiveFeedEnvelope } from "../server/live-feed.js";
+import type { LiveQuarterPattern } from "../server/live-pattern-discovery.js";
 import type { PredictionRuntimeEnvelope } from "./prediction-response.js";
 import { buildPredictionRuntimeEnvelope as buildRuntimeEnvelope, type PredictionRuntimeSummary } from "./prediction-response.js";
 import { mapLiveGameToPredictionInput, mapPredictionRuntimeRow } from "./prediction-mapper.js";
+import { selectLiveSignal, normalizeLiveIntelligenceIndex } from "./live-intelligence-client.js";
 
 export type PredictionRuntimeOptions = {
   generatedAt?: Date;
   baselineEvaluation?: EvaluationResult | null;
   recentEvaluation?: EvaluationResult | null;
+  livePatterns?: Record<number, readonly LiveQuarterPattern[]>;
 };
 
 export function mapGameForPrediction(game: ScheduleGame): PredictionInput {
@@ -29,6 +32,7 @@ export function buildPredictionRuntimeEnvelope(
   options: PredictionRuntimeOptions = {},
 ): PredictionRuntimeEnvelope {
   const drift = detectPredictionDrift(options.baselineEvaluation ?? null, options.recentEvaluation ?? null);
+  const livePatterns = normalizeLiveIntelligenceIndex(options.livePatterns);
   const predictions = liveEnvelope.games.map((game) => {
     const prediction = buildPrediction(mapLiveGameToPredictionInput(game));
     const calibration = calibrateConfidence(prediction, options.recentEvaluation ?? null);
@@ -38,7 +42,7 @@ export function buildPredictionRuntimeEnvelope(
       odds: prediction.odds,
     });
     const adaptive = buildAdaptiveScore(prediction, weights, drift);
-    return mapPredictionRuntimeRow(game, prediction, calibration, adaptive, drift);
+    return mapPredictionRuntimeRow(game, prediction, calibration, adaptive, drift, selectLiveSignal(livePatterns[game.gameId]));
   });
 
   return buildRuntimeEnvelope(predictions, liveEnvelope.status, options.generatedAt, drift.state);

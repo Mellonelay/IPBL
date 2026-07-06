@@ -2,7 +2,7 @@
 
 Version: 2.0  
 Status: canonical repo artifact updated from Execution Fabric audit context on 2026-06-15  
-Scope: Graphify, Skill Forge, agnix, Execution Fabric, IPBL, C9, GEN/operator intelligence
+Scope: Graphify, Skill Forge, agnix, Execution Fabric, IPBL, C9, GEN/operator intelligence, backend analysis engine
 
 ## Correction
 
@@ -201,9 +201,9 @@ Core subsystems:
 - betting record and memory
 - future operator intelligence
 
-Current approved live division boundary is 13 divisions:
+Current approved live division boundary is 14 divisions:
 
-- Men: A, B, C, D, U, Z, L
+- Men: A, B, C, D, L, U, X, Z
 - Women: A, B, C, D, G, K
 
 Historical Results may include additional legacy divisions such as Men G. Do not collapse historical server registry and current live registry into one concept.
@@ -500,7 +500,7 @@ Canonical artifact: `artifacts/workload-graph/ipbl-workload-graph.json`.
 
 ### Phase 11 - C9 Intelligence
 
-Status: proof-foundation partial.
+Status: reconciled / proof-foundation complete.
 
 Existing work includes row reconciliation, EventsStat contracts, score-history proof, and active-matched gates.
 
@@ -541,6 +541,57 @@ Preferred outputs:
 
 Canonical artifact: `artifacts/visualization/visualization-catalog.json`.
 
+### Phase 14 - Backend Analysis Engine
+
+Status: complete / materialized / read-only boundary.
+
+The backend analysis engine is where the Graphify community skills are placed in IPBL:
+
+- `graphify-intent` for rationale, decisions, constraints, and tradeoffs.
+- `graphify-temporal` for ordering evidence over time and tracing supersession.
+- `code-review-graph` remains available for maintenance analysis, but not for the live betting runtime path.
+
+This layer stays behind live ingestion and consumes repository-backed evidence from C9, operator intelligence, and the graph ledgers.
+
+Canonical artifact: `artifacts/analysis-engine/ipbl-analysis-engine.json`.
+
+### Live Betting Intelligence Orchestration
+
+IPBL's live betting path is a separate orchestration layer that sits on top of the backend analysis boundary:
+
+- live recorder and replay evidence feed the quarter-flow pattern layer;
+- odds movement is folded into the live pattern layer as confirmation, not as a substitute for recorder evidence;
+- `graphify-intent` and `graphify-temporal` provide the reasoning substrate for betting rules and time ordering;
+- Worker AI synthesizes live signals into operator-facing summaries;
+- `agnix` validates the agent/config wiring around that path.
+
+Frontend exposure map:
+
+- Live tab: score, quarter flow, compact decision block, and a handoff into Intelligence.
+- Intelligence tab: Graphify synthesis, recorder/history health, phase coverage, analysis-engine summary, and operator-intelligence summary.
+- Backend-only: raw Graphify internals, agnix config details, full replay lists, and deep H2H dumps.
+
+Read-only summary routes used by the surface:
+
+- `GET /api/analysis-engine`
+- `GET /api/operator-intelligence`
+- `GET /api/gen-analysis`
+
+Canonical worker surface:
+
+- `workers/graphify-intelligence/src/index.ts`
+- `workers/graphify-intelligence/src/orchestrator.ts`
+- `workers/graphify-intelligence/src/worker-ai.ts`
+- `workers/graphify-intelligence/src/state.ts`
+
+Canonical runtime tests:
+
+- `tests/live-pattern-discovery.test.ts`
+- `tests/predictions-live-runtime.test.ts`
+- `tests/graphify-intelligence-worker.test.ts`
+- `tests/graphify-contract.test.ts`
+- `tests/agnix-graphify-contract.test.ts`
+
 ## Mandatory Change Workflow
 
 Every non-trivial IPBL or Execution Fabric patch should follow:
@@ -563,7 +614,7 @@ Every non-trivial IPBL or Execution Fabric patch should follow:
 
 - PR #37 Women K live-card production browser proof exists; Omsk/Vorkuta Men A exact-pair production proof still requires an active match or fixture harness.
 - Team Statistics data population is not proven complete.
-- C9 intelligence is proof-foundation partial, not fully deployed.
+- C9 intelligence reconciliation is complete; odds deployment remains policy-gated and the productization work continues on the roadmap.
 - GEN/operator intelligence is not production-ready.
 - Recorder captures live state snapshots, but the future odds timeline, market close/open state, and quarter replay UI are not yet built.
 - God Node ledger and phase roadmap now exist in repo but should be refreshed after Graphify reruns.

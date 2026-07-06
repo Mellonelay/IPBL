@@ -2,7 +2,7 @@
 
 ## Status
 
-Reconciled for the 13 approved IPBL live divisions and 50 verified current teams.
+Reconciled for the 14 approved IPBL live divisions and 54 verified current teams.
 
 ## Canonical architecture
 
@@ -67,4 +67,4 @@ Graphify is not yet the runtime betting-intelligence calculator. Graph-driven ma
 
 ## Phase E2 reconciliation status
 
-The reconciliation command is `npm run reconcile:team-statistics`. It verifies the 13-division registry, 50 verified teams, per-division team counts, production history endpoint status, history sample counts, quarter-matrix availability, and the shared no-odds policy.
+The reconciliation command is `npm run reconcile:team-statistics`. It verifies the 14-division registry, 54 verified teams, per-division team counts, production history endpoint status, history sample counts, quarter-matrix availability, and the shared no-odds policy.

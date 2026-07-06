@@ -5,9 +5,9 @@ import { LIVE_DIVISION_TAGS } from "../src/config/divisions.ts";
 import type { StoredResultsMonthMap } from "../lib/server/results-types.ts";
 
 assert.equal(resultsMetadataKey(2026, 6, "ipbl-66-m-pro-a"), "ipbl:results:2026:06:ipbl-66-m-pro-a:meta");
-assert.equal(resultsSyncTagsForMonth(2026, 5).length, RESULTS_SYNC_TAGS.length);
-assert.equal(resultsSyncTagsForMonth(2026, 6).length, LIVE_DIVISION_TAGS.length);
-assert.equal(resultsSyncTagsForMonth(2026, 6).includes("ipbl-66-m-pro-g"), false);
+assert.equal(resultsSyncTagsForMonth(2026, 5).length, 14);
+assert.equal(resultsSyncTagsForMonth(2026, 6).length, 14);
+assert.equal(resultsSyncTagsForMonth(2026, 6).includes("ipbl-66-m-pro-g"), true);
 
 const slots = resultsSyncSlots(new Date("2026-06-12T00:00:00Z"));
 assert.deepEqual([...new Set(slots.map((slot) => `${slot.year}-${slot.month}`))], ["2026-6", "2026-5"]);

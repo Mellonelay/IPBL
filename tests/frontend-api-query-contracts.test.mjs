@@ -27,6 +27,9 @@ for (const tag of LIVE_DIVISION_TAGS) {
   const resolved = resolveResultsQuery({ division: tag, meta: '1' }, now);
   assert.equal(resolved.ok, true, `${tag} should resolve for current month metadata query`);
 }
+const menGResults = resolveResultsQuery({ division: 'ipbl-66-m-pro-g', meta: '1' }, now);
+assert.equal(menGResults.ok, true);
+assert.equal(menGResults.divisionTag, 'ipbl-66-m-pro-g');
 
 const exactTeamHistory = resolveTeamHistoryQuery(new URLSearchParams('teamId=76038&tag=ipbl-66-m-pro-a&range=30'), now);
 assert.equal(exactTeamHistory.ok, true);
@@ -45,6 +48,14 @@ assert.equal(aliasTeamHistory.defaultedSeason, true);
 const womenTeamHistory = resolveTeamHistoryQuery(new URLSearchParams('teamId=76016&tag=ipbl-66-w-pro-k&range=30'), now);
 assert.equal(womenTeamHistory.ok, true);
 assert.equal(womenTeamHistory.tag, 'ipbl-66-w-pro-k');
+
+const menGTeamHistory = resolveTeamHistoryQuery(new URLSearchParams('teamId=76073&tag=ipbl-66-m-pro-g&range=30'), now);
+assert.equal(menGTeamHistory.ok, true);
+assert.equal(menGTeamHistory.tag, 'ipbl-66-m-pro-g');
+assert.equal(menGTeamHistory.teamId, 76073);
+
+const menGSelection = resolveTeamSelectionFromParams(new URLSearchParams('tab=teams&division=ipbl-66-m-pro-g&team=76073&range=30'));
+assert.deepEqual(menGSelection, { divisionTag: 'ipbl-66-m-pro-g', teamId: 76073, range: 30 });
 
 const badRange = resolveTeamHistoryQuery(new URLSearchParams('teamId=76038&tag=ipbl-66-m-pro-a&range=999'), now);
 assert.equal(badRange.ok, false);

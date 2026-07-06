@@ -5,7 +5,7 @@ Source of truth:
 - [artifacts/graphify/phase-roadmap.json](/root/repos/IPBL/artifacts/graphify/phase-roadmap.json)
 - [docs/ops/IPBL_MERGED_ROADMAP.md](/root/repos/IPBL/docs/ops/IPBL_MERGED_ROADMAP.md)
 
-Total phases: 14
+Total phases: 15
 
 ## Complete
 
@@ -17,6 +17,7 @@ Total phases: 14
 - [x] Phase 10 - IPBL Workload Graph (`fully complete`) - canonical read-only workload graph snapshot, repository-derived subgraph index, and validation coverage across team statistics, H2H, recorder, release, evidence, and operator intelligence surfaces.
 - [x] Phase 12 - GEN / Operator Intelligence (`fully complete`) - read-only operator intelligence report, backtest evidence, and repository-backed rule/data-quality foundations.
 - [x] Phase 13 - Visualization (`fully complete`) - read-only visualization catalog over Graphify, Obsidian, and code-review graph exports; Graphistry/Gephi remain planned targets.
+- [x] Phase 14 - Backend Analysis Engine (`fully complete`) - read-only backend analysis boundary that places Graphify community skills behind IPBL's live ingestion path; canonical artifact at `artifacts/analysis-engine/ipbl-analysis-engine.json`.
 
 ## Support-Ready
 
@@ -29,6 +30,6 @@ Total phases: 14
 
 ## Summary
 
-- Clearly complete: 8
+- Clearly complete: 9
 - Validated / support-ready: 6
 - Open: 0

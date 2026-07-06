@@ -5,11 +5,8 @@ import {
   clearFetchCaches,
   fetchBoxScore,
   fetchGame,
-  fetchGameReplay,
   // fetchOnline,
-  fetchTeamGames,
 } from "./api/client";
-import { computeH2H } from "./api/normalize";
 import type { ScheduleGame } from "./api/types";
 import { buildLiveDisplayInsights } from "./live/display";
 import { summarizeBookmakerFailures } from "./live/source-status";
@@ -31,11 +28,14 @@ import {
 } from "./results/calendar";
 import BettingTab from "./app/BettingTab";
 import GameDrawer from "./app/GameDrawer";
+import IntelligenceTab from "./app/IntelligenceTab";
 import LiveTab from "./app/LiveTab";
 import ResultsTab from "./app/ResultsTab";
 import TeamsTab from "./app/TeamsTab";
 import type { DrawerState, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
+import { loadIntelligenceSurface, type IntelligenceSurfaceSnapshot } from "./app/intelligence-client";
 import { currentOrNextQuarter, gameDivision, liveKey } from "./app/shared";
+import { currentMyanmarResultsSelection } from "./results/month-default";
 
 function safeSplit(value: unknown, delimiter: string): string[] {
   return typeof value === "string" ? value.split(delimiter) : [];
@@ -54,6 +54,7 @@ function devAssert(condition: unknown, message: string, detail?: unknown): void 
 }
 
 function App() {
+  const initialResultsSelection = useMemo(() => currentMyanmarResultsSelection(), []);
   const [activeTab, setActiveTab] = useState<TabKey>("results");
   const [liveGames, setLiveGames] = useState<ScheduleGame[]>([]);
   const [liveLoading, setLiveLoading] = useState(false);
@@ -62,17 +63,17 @@ function App() {
   const [liveSourceFailures, setLiveSourceFailures] = useState<LiveSourceFailure[]>([]);
   const [selectedLiveDivisionTag, setSelectedLiveDivisionTag] = useState("");
 
-  const [selectedResultsYear, setSelectedResultsYear] = useState<number>(RESULTS_START_YEAR);
-  const [selectedResultsMonthIndex, setSelectedResultsMonthIndex] = useState<number>(
-    RESULTS_START_MONTH_INDEX
-  );
+  const [selectedResultsYear, setSelectedResultsYear] = useState<number>(initialResultsSelection.year);
+  const [selectedResultsMonthIndex, setSelectedResultsMonthIndex] = useState<number>(initialResultsSelection.monthIndex);
   const [selectedResultsDivisionTag, setSelectedResultsDivisionTag] = useState(
     DEFAULT_RESULTS_DIVISION_TAG
   );
-  const [jumpDate, setJumpDate] = useState<string>(() => `${RESULTS_START_YEAR}-03-01`);
+  const [jumpDate, setJumpDate] = useState<string>(
+    () => `${initialResultsSelection.year}-${String(initialResultsSelection.monthIndex + 1).padStart(2, "0")}-01`
+  );
 
   const [calendarMap, setCalendarMap] = useState<CalendarGridMap>(() =>
-    createSkeletonResultsCalendarMap(RESULTS_START_YEAR, RESULTS_START_MONTH_INDEX, [
+    createSkeletonResultsCalendarMap(initialResultsSelection.year, initialResultsSelection.monthIndex, [
       DEFAULT_RESULTS_DIVISION_TAG,
     ])
   );
@@ -81,6 +82,9 @@ function App() {
   const [resultsMetadata, setResultsMetadata] = useState<ResultsMonthMetadata | null>(null);
   const [loadedResultsKey, setLoadedResultsKey] = useState<string | null>(null);
   const resultsLoadGenRef = useRef(0);
+  const [intelligenceSnapshot, setIntelligenceSnapshot] = useState<IntelligenceSurfaceSnapshot | null>(null);
+  const [intelligenceLoading, setIntelligenceLoading] = useState(false);
+  const [intelligenceErr, setIntelligenceErr] = useState<string | null>(null);
 
   const [drawer, setDrawer] = useState<DrawerState | null>(null);
   const [teamRefreshToken, setTeamRefreshToken] = useState(0);
@@ -94,6 +98,7 @@ function App() {
   const activeTabLabel: Record<TabKey, string> = {
     live: "Live",
     results: "Results",
+    intelligence: "Intelligence",
     teams: "Teams",
     betting: "Betting Record",
   };
@@ -109,6 +114,11 @@ function App() {
       : resultsMetadata?.status === "source_unavailable"
         ? "Stored results are intact, but the source was unavailable during the latest sync."
         : `Results month ${selectedMonthKey} is ready for drill-in.`,
+    intelligence: intelligenceLoading
+      ? "Refreshing Graphify synthesis, runtime, recorder, and phase coverage."
+      : intelligenceSnapshot
+        ? "Graphify synthesis, runtime, recorder, and phase coverage are loaded."
+        : "Intelligence surface is waiting for its first snapshot.",
     teams: "Team statistics stays centered on verified histories and quarter movement.",
     betting: "Betting record stays aligned to the date-scoped memory ledger.",
   };
@@ -133,6 +143,8 @@ function App() {
       ? selectedLiveDivisionTag || "All live divisions"
       : activeTab === "results"
         ? selectedResultsDivisionTag
+        : activeTab === "intelligence"
+          ? "Intelligence surface"
         : activeTab === "teams"
           ? "Team statistics"
           : "Betting memory";
@@ -246,7 +258,9 @@ function App() {
     const tab = params.get("tab");
     const date = params.get("date");
     const division = params.get("division");
-    if (tab === "results" || tab === "live" || tab === "teams" || tab === "betting") setActiveTab(tab);
+    if (tab === "results" || tab === "live" || tab === "intelligence" || tab === "teams" || tab === "betting") {
+      setActiveTab(tab);
+    }
     if (date) {
       setJumpDate(date);
       const parts = safeSplit(date, "-").map((p) => Number.parseInt(p, 10));
@@ -357,9 +371,7 @@ function App() {
       const gen = (resultsLoadGenRef.current += 1);
       if (!options.silent) {
         setCalendarMap(
-          createSkeletonResultsCalendarMap(RESULTS_START_YEAR, RESULTS_START_MONTH_INDEX, [
-            DEFAULT_RESULTS_DIVISION_TAG,
-          ])
+          createSkeletonResultsCalendarMap(selectedResultsYear, selectedResultsMonthIndex, [selectedResultsDivisionTag])
         );
         setResultsMetadata(null);
         setResultsLoading(true);
@@ -403,6 +415,38 @@ function App() {
     return () => window.clearInterval(id);
   }, [loadResults, activeTab]);
 
+  const loadIntelligence = useCallback(async () => {
+    setIntelligenceLoading(true);
+    setIntelligenceErr(null);
+    try {
+      setIntelligenceSnapshot(await loadIntelligenceSurface());
+    } catch (error) {
+      setIntelligenceErr(error instanceof Error ? error.message : "Intelligence load failed");
+    } finally {
+      setIntelligenceLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (activeTab !== "intelligence") return;
+    void loadIntelligence();
+    const id = window.setInterval(() => void loadIntelligence(), 30_000);
+    return () => window.clearInterval(id);
+  }, [activeTab, loadIntelligence]);
+
+  const openResultsTab = useCallback(() => {
+    const current = currentMyanmarResultsSelection();
+    setSelectedResultsYear(current.year);
+    setSelectedResultsMonthIndex(current.monthIndex);
+    setJumpDate(`${current.year}-${String(current.monthIndex + 1).padStart(2, "0")}-01`);
+    setActiveTab("results");
+  }, []);
+
+  const openIntelligenceTab = useCallback(() => {
+    setDrawer(null);
+    setActiveTab("intelligence");
+  }, []);
+
   useEffect(() => {
     const valid = resultsDivisionsForMonth(selectedResultsYear, selectedResultsMonthIndex);
     if (!valid.some((division) => division.tag === selectedResultsDivisionTag) && valid[0]) {
@@ -437,29 +481,15 @@ function App() {
       game,
       gameMeta: preset?.gameMeta ?? null,
       boxState: preset?.boxState ?? null,
-      replay: null,
       board: presetBoard,
       flow: presetFlow,
       decision: presetDecision,
-      h2h: [],
-      histLoading: true,
-      replayLoading: true,
-      replayErr: null,
-      detailErr: null,
     });
 
     try {
-      let replayErr: string | null = null;
-      const replayPromise = fetchGameReplay(game.gameId).catch((error) => {
-        replayErr = error instanceof Error ? error.message : "Replay load failed";
-        return null;
-      });
-      const [gameMeta, ha, hb, boxState, replay] = await Promise.all([
+      const [gameMeta, boxState] = await Promise.all([
         fetchGame(game.gameId, game.tag),
-        fetchTeamGames(game.team1.teamId, game.tag, RESULTS_SEASON),
-        fetchTeamGames(game.team2.teamId, game.tag, RESULTS_SEASON),
         fetchBoxScore(game.gameId, game.tag),
-        replayPromise,
       ]);
 
       const boxRaw = boxState.fetchedOk ? boxState.raw : null;
@@ -473,34 +503,17 @@ function App() {
         team2: game.team2.shortName,
         flow,
       });
-      const h2h = computeH2H(ha, hb, game.team1.teamId, game.team2.teamId, 15);
 
       setDrawer({
         game,
         gameMeta: gameMeta.raw,
         boxState,
-        replay,
         board,
         flow,
         decision,
-        h2h,
-        histLoading: false,
-        replayLoading: false,
-        replayErr,
-        detailErr: !gameMeta.fetchedOk ? "Could not load game metadata." : null,
       });
-    } catch (error) {
-      setDrawer((current) =>
-        current
-          ? {
-              ...current,
-              histLoading: false,
-              replayLoading: false,
-              replayErr: error instanceof Error ? error.message : "Replay load failed",
-              detailErr: error instanceof Error ? error.message : "Detail load failed",
-            }
-          : current
-      );
+    } catch {
+      // Preserve the lightweight preset drawer state if detail fetches fail.
     }
   }, []);
 
@@ -525,6 +538,7 @@ function App() {
               clearResultsCalendarCache();
               if (activeTab === "live") void loadLive();
               if (activeTab === "results") void loadResults({ force: true });
+              if (activeTab === "intelligence") void loadIntelligence();
               if (activeTab === "teams") setTeamRefreshToken((value) => value + 1);
             }}
           >
@@ -555,8 +569,15 @@ function App() {
         <button type="button" className={`tab-btn ${activeTab === "live" ? "active" : ""}`} onClick={() => setActiveTab("live")}>
           Live
         </button>
-        <button type="button" className={`tab-btn ${activeTab === "results" ? "active" : ""}`} onClick={() => setActiveTab("results")}>
+        <button type="button" className={`tab-btn ${activeTab === "results" ? "active" : ""}`} onClick={openResultsTab}>
           Results
+        </button>
+        <button
+          type="button"
+          className={`tab-btn ${activeTab === "intelligence" ? "active" : ""}`}
+          onClick={() => setActiveTab("intelligence")}
+        >
+          Intelligence
         </button>
         <button type="button" className={`tab-btn ${activeTab === "teams" ? "active" : ""}`} onClick={() => setActiveTab("teams")}>
           Teams
@@ -578,6 +599,7 @@ function App() {
             onSelectDivisionTag={setSelectedLiveDivisionTag}
             onOpenGame={(game, insight) => void openDrawer(game, insight)}
             onOpenH2H={(game, insight) => void openDrawer(game, insight)}
+            onOpenIntelligence={openIntelligenceTab}
           />
         )}
 
@@ -599,6 +621,10 @@ function App() {
           />
         )}
 
+        {activeTab === "intelligence" && (
+          <IntelligenceTab snapshot={intelligenceSnapshot} loading={intelligenceLoading} error={intelligenceErr} />
+        )}
+
         {activeTab === "teams" && (
           <TeamsTab season={RESULTS_SEASON} refreshToken={teamRefreshToken} onOpenGame={(game) => void openDrawer(game)} />
         )}
@@ -606,7 +632,7 @@ function App() {
         {activeTab === "betting" && <BettingTab />}
       </main>
 
-      {drawer && <GameDrawer drawer={drawer} onClose={() => setDrawer(null)} />}
+      {drawer && <GameDrawer drawer={drawer} onClose={() => setDrawer(null)} onOpenIntelligence={openIntelligenceTab} />}
     </div>
   );
 }

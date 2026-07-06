@@ -1,0 +1,26 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "ipbl-graphify-intelligence",
+  "compatibility_date": "2026-07-05",
+  "main": "src/index.ts",
+  "observability": {
+    "enabled": true
+  },
+  "ai": {
+    "binding": "AI"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "GRAPHIFY_INTELLIGENCE_STATE",
+        "class_name": "GraphifyIntelligenceState"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["GraphifyIntelligenceState"]
+    }
+  ]
+}

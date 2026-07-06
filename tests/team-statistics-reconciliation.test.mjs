@@ -28,10 +28,10 @@ assert.equal(profile.transitions.length, 3);
 assert.equal(profile.transitions[0].samples, 3);
 
 const liveRegistry = buildTeamStatisticsRegistry();
-assert.equal(liveRegistry.divisionCount, 13);
-assert.equal(liveRegistry.liveDivisionCount, 13);
-assert.equal(liveRegistry.teamCount, 50);
-assert.equal(liveRegistry.uniqueTeamCount, 50);
+assert.equal(liveRegistry.divisionCount, 14);
+assert.equal(liveRegistry.liveDivisionCount, 14);
+assert.equal(liveRegistry.teamCount, 54);
+assert.equal(liveRegistry.uniqueTeamCount, 54);
 
 const reusableCoverage = {
   season: 2026,

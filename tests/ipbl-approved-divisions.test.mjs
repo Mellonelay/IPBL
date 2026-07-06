@@ -10,12 +10,21 @@ import { RESULTS_SYNC_TAGS as SERVER_RESULTS_SYNC_TAGS, canonicalDivisionLabel }
 
 const currentMen = ['ipbl-66-m-pro-a', 'ipbl-66-m-pro-b', 'ipbl-66-m-pro-c', 'ipbl-66-m-pro-d', 'ipbl-66-m-pro-u', 'ipbl-66-m-pro-z', 'ipbl-66-m-pro-l'];
 const currentWomen = ['ipbl-66-w-pro-a', 'ipbl-66-w-pro-b', 'ipbl-66-w-pro-c', 'ipbl-66-w-pro-d', 'ipbl-66-w-pro-g', 'ipbl-66-w-pro-k'];
-const current = [...currentMen, ...currentWomen];
+const current = ['ipbl-66-m-pro-a', 'ipbl-66-m-pro-b', 'ipbl-66-m-pro-c', 'ipbl-66-m-pro-d', 'ipbl-66-m-pro-g', 'ipbl-66-m-pro-u', 'ipbl-66-m-pro-z', 'ipbl-66-m-pro-l', ...currentWomen];
 
 assert.deepEqual([...LIVE_DIVISION_TAGS], current);
 assert.deepEqual([...API_LIVE_TAGS], current);
 assert.deepEqual([...RECORDER_LIVE_TAGS], current);
-assert.equal(LIVE_DIVISIONS.length, 13);
+assert.equal(LIVE_DIVISIONS.length, 14);
+assert.ok(DIVISIONS.some((division) => division.tag === 'ipbl-66-m-pro-g' && division.label === 'Pro Men G'));
+assert.ok(CLIENT_RESULTS_SYNC_TAGS.includes('ipbl-66-m-pro-g'));
+assert.ok(SERVER_RESULTS_SYNC_TAGS.includes('ipbl-66-m-pro-g'));
+assert.equal(canonicalDivisionLabel('ipbl-66-m-pro-g'), 'Pro Men G');
+assert.deepEqual(teamsForDivision('ipbl-66-m-pro-g').map((team) => team.name), ['Astrakhan', 'Gelendzhik', 'Kachkanar', 'Tver']);
+assert.ok(ACTIVE_TEAMS.some((team) => team.teamId === 76073 && team.divisionTag === 'ipbl-66-m-pro-g'));
+assert.ok(ACTIVE_TEAMS.some((team) => team.teamId === 76074 && team.divisionTag === 'ipbl-66-m-pro-g'));
+assert.ok(ACTIVE_TEAMS.some((team) => team.teamId === 76075 && team.divisionTag === 'ipbl-66-m-pro-g'));
+assert.ok(ACTIVE_TEAMS.some((team) => team.teamId === 76076 && team.divisionTag === 'ipbl-66-m-pro-g'));
 assert.ok(DIVISIONS.some((division) => division.tag === 'ipbl-66-m-pro-z' && division.label === 'Pro Men Z'));
 assert.ok(CLIENT_RESULTS_SYNC_TAGS.includes('ipbl-66-m-pro-z'));
 assert.ok(SERVER_RESULTS_SYNC_TAGS.includes('ipbl-66-m-pro-z'));
