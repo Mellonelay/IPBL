@@ -22,6 +22,21 @@ const snapshot = await loadIntelligenceSurface(async (url) => {
         },
         storedAt: "2026-07-05T12:00:05.000Z",
       },
+      analysisEngine: {
+        schema: "ipbl.analysis-engine.v1",
+        status: "materialized",
+        skills: [{ name: "graphify-intent" }, { name: "graphify-temporal" }],
+      },
+      operatorIntelligence: {
+        schema: "ipbl.operator-intelligence.v1",
+        phase: 12,
+        status: "seeded",
+        evidence: {
+          recorder: { coverage: "14/14 divisions" },
+          h2h: { coverage: "complete" },
+          odds: { coverage: "partial" },
+        },
+      },
     }));
   }
   if (url.endsWith("/api/predictions/live")) {
@@ -121,25 +136,6 @@ const snapshot = await loadIntelligenceSurface(async (url) => {
           dedupeFingerprintFields: ["status", "source"],
         },
         evidenceLevel: 4,
-      },
-    }));
-  }
-  if (url.endsWith("/api/analysis-engine")) {
-    return new Response(JSON.stringify({
-      schema: "ipbl.analysis-engine.v1",
-      status: "materialized",
-      skills: [{ name: "graphify-intent" }, { name: "graphify-temporal" }],
-    }));
-  }
-  if (url.endsWith("/api/operator-intelligence")) {
-    return new Response(JSON.stringify({
-      schema: "ipbl.operator-intelligence.v1",
-      phase: 12,
-      status: "seeded",
-      evidence: {
-        recorder: { coverage: "14/14 divisions" },
-        h2h: { coverage: "complete" },
-        odds: { coverage: "partial" },
       },
     }));
   }

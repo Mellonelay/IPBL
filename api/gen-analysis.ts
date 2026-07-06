@@ -1,7 +1,10 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { readFile } from "node:fs/promises";
 
 import { buildBettingRecordSummary } from "../lib/server/betting-record-summary.js";
+import { buildAnalysisEngineFromRepository } from "../lib/server/analysis-engine.js";
 import type { BetHistoryRow } from "../lib/server/betting-intelligence.js";
+import { buildOperatorIntelligenceReport } from "../lib/server/operator-intelligence.js";
 import { requestGraphifyIntelligence, type GraphifyIntelligenceRequest } from "../lib/server/graphify-intelligence-client.js";
 
 async function loadBettingHistory(req: VercelRequest) {
@@ -10,11 +13,16 @@ async function loadBettingHistory(req: VercelRequest) {
     ? req.headers["x-forwarded-proto"].trim()
     : "https";
   const url = new URL("/bet_history_clean.json", `${proto}://${host}`);
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Failed to load betting history (${response.status})`);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to load betting history (${response.status})`);
+    }
+    return response.json() as Promise<BetHistoryRow[]>;
+  } catch (_error) {
+    const fallback = new URL("../public/bet_history_clean.json", import.meta.url);
+    return JSON.parse(await readFile(fallback, "utf8")) as BetHistoryRow[];
   }
-  return response.json() as Promise<BetHistoryRow[]>;
 }
 
 function parseSignals(body: unknown): GraphifyIntelligenceRequest["signals"] {
@@ -53,6 +61,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       generatedAt,
       bettingRecord,
       worker: workerSnapshot,
+      analysisEngine: buildAnalysisEngineFromRepository(),
+      operatorIntelligence: buildOperatorIntelligenceReport(),
     });
   } catch (error) {
     console.error("gen-analysis failed", error);
