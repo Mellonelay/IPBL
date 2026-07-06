@@ -13,8 +13,8 @@ Source of truth:
 
 - Total phases: 15
 - Open phases: 0
-- Complete phases: 0, 1, 4, 8, 9, 10, 12, 13, 14
-- Support-ready phases: 2, 3, 5, 6, 7, 11
+- Complete phases: 0, 1, 4, 8, 9, 10, 11, 12, 13, 14
+- Support-ready phases: 2, 3, 5, 6, 7
 
 This repository is in closure / upgrade mode, not phase-building mode.
 The remaining work is packaging, reconciliation, evidence normalization, and upgrade planning around already-completed phases.
@@ -35,7 +35,7 @@ The support-ready phases are not open implementation phases; they are closure pa
 | 8 | complete | Quarter-state recorder is fully complete. |
 | 9 | complete | Runtime agent graph is complete. |
 | 10 | complete | IPBL workload graph is complete. |
-| 11 | support-ready | C9 intelligence is proof-foundation partial and remains gated. |
+| 11 | complete | C9 intelligence reconciliation is complete; odds deployment remains policy-gated. |
 | 12 | complete | GEN / operator intelligence is complete as a read-only seeded report. |
 | 13 | complete | Visualization catalog is complete as a read-only surface. |
 | 14 | complete | Backend analysis engine is materialized as a read-only boundary for Graphify community skills and backend evidence analysis; canonical artifact at `artifacts/analysis-engine/ipbl-analysis-engine.json`. |
@@ -55,6 +55,7 @@ The relevant incident was production gameId `1073505` for Bryansk vs Izhevsk wit
 - Backend owns source truth, reconciliation, validation, graph generation, evidence lineage, and intelligence outputs.
 - Frontend owns presentation, navigation, drill-downs, and visualization only.
 - Frontend must not own source truth.
+- The live surface is decision-first; the Intelligence tab is the read-only synthesis path for Graphify, recorder health, operator intelligence, and phase coverage.
 
 ## Closure rules
 
@@ -71,12 +72,12 @@ June 20, 2026:
 - The final Vercel CLI read-only step hit a transient DNS error to `sentry.io` in the local shell environment, so the production deployment was verified separately with `vercel inspect`.
 - `vercel inspect https://ipbl-minimal-viewer.vercel.app --format=json` reported production deployment `dpl_GVr8imfrpd2mmWqgxEDzkvCijYzH` as `READY`, with alias `ipbl-minimal-viewer.vercel.app`.
 - The live runtime contract remains synced: frontend calls `/api/results/live`, the production live API is healthy, and recorder endpoints remain available.
-- Phase 11 remains support-ready / proof-foundation partial because `activeMatchedEventsstatProven=false` and the repo still blocks odds deployment by policy.
+- Phase 11 now has `activeMatchedEventsstatProven=true` and `reconciliation.classification=RECONCILED`; odds deployment is still blocked by policy, but the proof boundary itself is closed.
 
 ## Closure Status
 
-- Complete: 0, 1, 4, 8, 9, 10, 12, 13, 14
-- Support-ready: 2, 3, 5, 6, 7, 11
+- Complete: 0, 1, 4, 8, 9, 10, 11, 12, 13, 14
+- Support-ready: 2, 3, 5, 6, 7
 - Open: 0
 
 ## PR Mirror

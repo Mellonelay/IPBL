@@ -30,7 +30,7 @@ This index is the repo-wide navigation layer for the phases that are complete, m
   - [graphify-out/.graphify_analysis.json](/root/repos/IPBL/graphify-out/.graphify_analysis.json)
   - [graphify-out/.graphify_ast.json](/root/repos/IPBL/graphify-out/.graphify_ast.json)
 
-## Phase 2-3, 5, 6-7, 11: Support-Ready Surfaces
+## Phase 2-3, 5, 6-7: Support-Ready Surfaces
 
 These phases are backed by durable evidence and validation coverage, but they remain separate from the open roadmap phases.
 They are closure packaging surfaces, not open implementation targets.
@@ -45,8 +45,13 @@ They are closure packaging surfaces, not open implementation targets.
   - [docs/PHASE_6_7_EVIDENCE_MANIFEST.md](/root/repos/IPBL/docs/PHASE_6_7_EVIDENCE_MANIFEST.md)
 - Phase 7 - agnix Integration:
   - [docs/PHASE_6_7_EVIDENCE_MANIFEST.md](/root/repos/IPBL/docs/PHASE_6_7_EVIDENCE_MANIFEST.md)
+
+## Phase 11: Fully Complete
+
 - Phase 11 - C9 Intelligence:
   - [docs/PHASE_10_11_EVIDENCE_MANIFEST.md](/root/repos/IPBL/docs/PHASE_10_11_EVIDENCE_MANIFEST.md)
+  - [artifacts/phase-c9/pr23/reconciliation-summary.json](/root/repos/IPBL/artifacts/phase-c9/pr23/reconciliation-summary.json)
+  - [artifacts/phase-c9/pr23/row-reconciliation-latest.json](/root/repos/IPBL/artifacts/phase-c9/pr23/row-reconciliation-latest.json)
 
 ## Phase 8: Fully Complete
 
@@ -88,6 +93,7 @@ They are closure packaging surfaces, not open implementation targets.
   - Dedicated contract test at [tests/operator-intelligence.test.ts](/root/repos/IPBL/tests/operator-intelligence.test.ts)
   - Implementation module at [lib/server/operator-intelligence.ts](/root/repos/IPBL/lib/server/operator-intelligence.ts)
   - Phase validator hook in [scripts/validate-phase-master.sh](/root/repos/IPBL/scripts/validate-phase-master.sh)
+  - Frontend Intelligence tab surfaces this report as a read-only summary without exposing backend internals.
 
 ## Phase 13: Fully Complete
 
@@ -106,6 +112,7 @@ They are closure packaging surfaces, not open implementation targets.
   - Dedicated contract test at [tests/analysis-engine.test.ts](/root/repos/IPBL/tests/analysis-engine.test.ts)
   - Docs contract test at [tests/analysis-engine-docs.test.ts](/root/repos/IPBL/tests/analysis-engine-docs.test.ts)
   - Implementation module at [lib/server/analysis-engine.ts](/root/repos/IPBL/lib/server/analysis-engine.ts)
+  - Read-only summary routes at [api/analysis-engine.ts](/root/repos/IPBL/api/analysis-engine.ts) and [api/operator-intelligence.ts](/root/repos/IPBL/api/operator-intelligence.ts)
 
 ## Live Betting Intelligence Orchestration
 

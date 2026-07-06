@@ -1,6 +1,6 @@
 # IPBL minimal score viewer
 
-Static **Vite + React + TypeScript** app: Pro Men A/B/C/D/G and Pro Women A/B/C schedules, live strip, match detail, `/box-score` polling (20s) for live games, and H2H from `/team/games`.
+Static **Vite + React + TypeScript** app for the 14 approved live divisions: Pro Men A/B/C/D/L/U/X/Z and Pro Women A/B/C/D/G/K. The live surface stays decision-first, while the dedicated Intelligence surface carries Graphify synthesis, recorder/history health, phase coverage, and deeper evidence review.
 
 ## API routing
 
@@ -50,3 +50,9 @@ Link the Vercel project to this directory; the rewrite enables API calls from th
 | Team history | `GET /team/games?teamId&calendarType=1&tag&season` |
 
 `divisions/tree` is not called at runtime (fixed tag whitelist in `src/config/divisions.ts`).
+
+## Surface split
+
+- Live: score, quarter flow, short decision block, and a handoff into Intelligence.
+- Intelligence: Graphify-backed synthesis, analysis-engine status, operator intelligence, recorder health, and phase coverage.
+- Backend-only: raw Graphify internals, agnix config details, and full replay/H2H dumps.
