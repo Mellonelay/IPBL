@@ -2,10 +2,12 @@
 .env*.local
 
 node_modules/
+dist/
 
 # Python runtime cache
 __pycache__/
 *.py[cod]
+*.tsbuildinfo
 
 # wrangler files
 .wrangler

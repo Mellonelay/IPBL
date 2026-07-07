@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { buildLiveFeedEnvelope } from "../lib/server/live-feed.js";
+import { buildLiveFeedEnvelope } from "./live-feed.js";
 
 export type LiveCompatDependencies = {
   buildLiveFeedEnvelope?: typeof buildLiveFeedEnvelope;
@@ -27,5 +27,3 @@ export function createLiveCompatHandler(deps: LiveCompatDependencies = {}) {
     }
   };
 }
-
-export default createLiveCompatHandler();

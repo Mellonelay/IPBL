@@ -4,11 +4,11 @@
   "rewrites": [
     {
       "source": "/api/live",
-      "destination": "/api/results/live.ts?compat=1"
+      "destination": "/api/results.ts?mode=live&compat=1"
     },
     {
       "source": "/api/results/live",
-      "destination": "/api/results/live.ts"
+      "destination": "/api/results.ts?mode=live"
     },
     {
       "source": "/api/results",
@@ -24,7 +24,7 @@
     },
     {
       "source": "/api/admin/backfill-results",
-      "destination": "/api/admin/backfill-results.ts"
+      "destination": "/api/cron/cron-sync-results.ts?mode=backfill"
     },
     {
       "source": "/api/cron/sync-results",

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
-const liveRoute = readFileSync("api/results/live.ts", "utf8");
+const liveRoute = readFileSync("lib/server/live-feed-status.ts", "utf8");
 const sourceHealth = readFileSync("lib/server/source-health.ts", "utf8");
 
 assert.match(liveRoute, /fallback\.sourceFailures\.length > 0 \? "PARTIAL" : "IDLE"/);

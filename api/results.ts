@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { ResultsMonthMetadata } from "../lib/server/results-types.js";
 import * as redis from "../lib/server/results-redis.js";
+import { buildLiveFeedEnvelope } from "../lib/server/live-feed.js";
 import {
     legacyResultsMetadata,
     parseResultsMetadata,
@@ -24,6 +25,23 @@ function queryFromSearchParams(search: URLSearchParams): VercelRequest["query"] 
         if (!(key in query)) query[key] = value;
     }
     return query;
+}
+
+async function handleLiveMode(query: VercelRequest["query"], res: VercelResponse) {
+    const payload = await buildLiveFeedEnvelope();
+    const compat = firstQueryValue(query.compat);
+    const compatEnabled = compat === "1" || compat === "true";
+    return res
+        .status(200)
+        .json(
+            compatEnabled
+                ? {
+                      ...payload,
+                      compatibilityEndpoint: "/api/live",
+                      source: "api/results/live",
+                  }
+                : payload,
+        );
 }
 
 export function defaultResultsYearMonth(now = new Date()): { year: number; month: number } {
@@ -94,7 +112,9 @@ function coldResultsMetadata(year: number, month: number, divisionTag: string): 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     const host = Array.isArray(req.headers.host) ? req.headers.host[0] : req.headers.host;
     const base = `https://${host || "ipbl-minimal-viewer.vercel.app"}`;
-    const resolved = resolveResultsQuery(queryFromSearchParams(new URL(req.url || "/api/results", base).searchParams));
+    const query = queryFromSearchParams(new URL(req.url || "/api/results", base).searchParams);
+    if (firstQueryValue(query.mode) === "live") return handleLiveMode(query, res);
+    const resolved = resolveResultsQuery(query);
     if (!resolved.ok) return res.status(resolved.status).json({ error: resolved.error });
     const { year: parsedYear, month: parsedMonth, divisionTag, wantsMetadata, defaultedYearMonth, usedTagAlias } = resolved;
 
