@@ -136,9 +136,7 @@ export async function writePreparedResultsMonthToKv(
   const now = dependencies.now ?? (() => new Date());
   const key = resultsKvKey(year, month, divisionTag);
   const metadataKey = resultsMetadataKey(year, month, divisionTag);
-  const existing = params.existing === undefined
-    ? await client.get<unknown>(key).then(parseStoredResultsMonth)
-    : params.existing;
+  const existing = params.existing ?? await client.get<unknown>(key).then(parseStoredResultsMonth) ?? null;
   const built = buildStoredMonthMapWithStats(params.games, year, month - 1, divisionTag, label);
   const merged = mergeStoredResultsMonths(existing, built.map);
   const completedAt = now();

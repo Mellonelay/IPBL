@@ -12,7 +12,7 @@ This manifest is read-only. It maps the repo’s existing skill packaging and ag
 
 ### Status
 
-- Direction established / packaging open.
+- Fully complete / packaged.
 
 ### Existing evidence
 
@@ -30,9 +30,8 @@ This manifest is read-only. It maps the repo’s existing skill packaging and ag
 
 ### Remaining gap
 
-- The repository still treats IPBL as a single broad skill baseline.
-- The roadmap calls for narrower skill packaging, especially for Graphify source archaeology, live-source repair, Vercel verification, evidence finalization, and GEN planning.
-- The phase is therefore supported, but the packaging can still be split further if future work needs narrower skill boundaries.
+- No remaining gap for the phase checkpoint.
+- The repository now exposes the narrower skill packaging for Graphify source archaeology, live-source repair, Vercel verification, evidence finalization, and GEN planning.
 
 ### Canonical workflow names
 
@@ -46,7 +45,7 @@ This manifest is read-only. It maps the repo’s existing skill packaging and ag
 
 ### Status
 
-- Usable via `npx agnix@0.32.0`; local/CI gate open.
+- Fully complete / validated.
 
 ### Existing evidence
 
@@ -60,8 +59,8 @@ This manifest is read-only. It maps the repo’s existing skill packaging and ag
 
 ### Remaining gap
 
-- agnix is verified and usable, but it remains a repo-local validation gate rather than a globally standardized preflight for every agent/config path.
-- The active CLI must continue to be invoked with paths rather than unsupported include flags.
+- No remaining gap for the phase checkpoint.
+- The active CLI continues to be invoked with paths rather than unsupported include flags.
 
 ## Recommended validation
 

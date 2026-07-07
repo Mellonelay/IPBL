@@ -54,4 +54,5 @@ const computed = computeH2H(parsedA, parsedB, team1.teamId, team2.teamId, 15);
 assert.equal(computed.length, 1);
 assert.equal(computed[0]?.gameId, game.gameId);
 assert.equal(computed[0]?.fullScore, game.fullScore);
+assert.equal(computed[0]?.quarterTotals, "Q1 48 · Q2 39 · Q3 46 · Q4 41");
 console.log("IPBL compatibility fallback tests passed");

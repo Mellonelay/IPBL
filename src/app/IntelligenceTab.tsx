@@ -1,4 +1,5 @@
 import type { IntelligenceSurfaceSnapshot } from "./intelligence-client";
+import type { IntelligenceFocus } from "./app-types";
 import { Metric } from "./shared";
 
 function pct(value: number | undefined): string {
@@ -21,9 +22,10 @@ export type IntelligenceTabProps = {
   snapshot: IntelligenceSurfaceSnapshot | null;
   loading: boolean;
   error: string | null;
+  focus?: IntelligenceFocus | null;
 };
 
-export default function IntelligenceTab({ snapshot, loading, error }: IntelligenceTabProps) {
+export default function IntelligenceTab({ snapshot, loading, error, focus }: IntelligenceTabProps) {
   if (error) {
     return (
       <section className="tab-panel">
@@ -56,6 +58,37 @@ export default function IntelligenceTab({ snapshot, loading, error }: Intelligen
   return (
     <section className="tab-panel">
       {loading && <p className="muted">Refreshing intelligence surface...</p>}
+
+      {focus && (
+        <article className="operator-card">
+          <div className="card-head">
+            <div>
+              <div className="card-title">H2H evidence</div>
+              <div className="card-subtitle">
+                {focus.game.team1.shortName} vs {focus.game.team2.shortName} with quarter splits carried inline.
+              </div>
+            </div>
+            <span className="status-badge">{focus.h2h.length > 0 ? `${focus.h2h.length} rows` : "No rows"}</span>
+          </div>
+
+          {focus.h2h.length > 0 ? (
+            <div className="h2h-list">
+              {focus.h2h.map((entry) => (
+                <article className="h2h-item" key={entry.gameId}>
+                  <div className="replay-item-head">
+                    <strong>{entry.date} {entry.time}</strong>
+                    <span className="calendar-division-badge">{entry.status}</span>
+                  </div>
+                  <div className="drawer-h2h-score">{entry.scoreText}</div>
+                  {entry.quarterTotals && <div className="calendar-quarter-line">{entry.quarterTotals}</div>}
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="muted">No verified H2H rows are loaded yet for this focus game.</p>
+          )}
+        </article>
+      )}
 
       <div className="live-card-grid">
         <article className="operator-card">

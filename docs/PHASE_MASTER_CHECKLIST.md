@@ -19,17 +19,17 @@ Total phases: 15
 - [x] Phase 13 - Visualization (`fully complete`) - read-only visualization catalog over Graphify, Obsidian, and code-review graph exports; Graphistry/Gephi remain planned targets.
 - [x] Phase 14 - Backend Analysis Engine (`fully complete`) - read-only backend analysis boundary that places Graphify community skills behind IPBL's live ingestion path; canonical artifact at `artifacts/analysis-engine/ipbl-analysis-engine.json`.
 
-## Support-Ready
+## Complete
 
-- [ ] Phase 2 - Graphify Skill Installation (`validated in source-discovery context, repo-local alignment documented`) - repo-local alignment is documented rather than expanded.
-- [ ] Phase 3 - Repo Archaeology / Code Review Graph (`materialized`) - keep the repo graph and `.code-review-graph/graph.db` current after changes.
-- [ ] Phase 5 - Evidence Graph (`validated / normalized by roadmap`) - the canonical supersession index is present, read-only validation is wired, and supersession tracking is explicit.
-- [ ] Phase 6 - Skill Forge Materialization (`validated / support-ready`) - skill packaging and validation contracts are present.
-- [ ] Phase 7 - agnix Integration (`validated / support-ready`) - Agnix is wired as a local and CI gate.
-- [ ] Phase 11 - C9 Intelligence (`validated / proof-foundation partial`) - reconciliation and smoke checks are present; productization remains blocked by the existing proof policy.
+- [x] Phase 2 - Graphify Skill Installation (`complete / materialized`) - repo-local alignment is documented and the skill surface is packaged.
+- [x] Phase 3 - Repo Archaeology / Code Review Graph (`complete / materialized`) - the repo graph and `.code-review-graph/graph.db` are current.
+- [x] Phase 5 - Evidence Graph (`fully complete`) - the canonical supersession index is present, read-only validation is wired, and supersession tracking is explicit.
+- [x] Phase 6 - Skill Forge Materialization (`fully complete`) - skill packaging and validation contracts are present.
+- [x] Phase 7 - agnix Integration (`fully complete`) - Agnix is wired as a local and CI gate.
+- [x] Phase 11 - C9 Intelligence (`fully complete`) - reconciliation and smoke checks are present and the proof boundary is closed.
 
 ## Summary
 
-- Clearly complete: 9
-- Validated / support-ready: 6
+- Clearly complete: 15
+- Validated / support-ready: 0
 - Open: 0

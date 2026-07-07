@@ -221,6 +221,53 @@ try {
     loading: false,
     error: null,
   }));
+  markup = renderToStaticMarkup(React.createElement(IntelligenceTab, {
+    snapshot,
+    loading: false,
+    error: null,
+    focus: {
+      game: {
+        gameId: 1073420,
+        tag: "ipbl-66-w-pro-a",
+        status: "ResultConfirmed",
+        statusDisplay: "Finished",
+        upstreamStatusId: "ResultConfirmed",
+        score1: 39,
+        score2: 40,
+        scoreText: "39 : 40",
+        fullScore: "41:38",
+        localDate: "06.07.2026",
+        localTime: "16:25",
+        divisionLabel: "Pro Women A",
+        period: 2,
+        timeToGo: null,
+        timeIsGo: null,
+        isLive: false,
+        updatedAt: 1,
+        scheduledTime: "2026-07-06T16:25:00+06:30",
+        sourceLocalDate: "06.07.2026",
+        sourceLocalTime: "16:25",
+        sourceTimeZone: "UTC+06:30",
+        displayTimeZone: "Asia/Yangon",
+        team1: { teamId: 76020, shortName: "Magnitogorsk", name: "Magnitogorsk" },
+        team2: { teamId: 76023, shortName: "Izhevsk", name: "Izhevsk" },
+      },
+      h2h: [
+        {
+          gameId: 1,
+          date: "05.07.2026",
+          time: "16:00",
+          scoreText: "88 : 86",
+          fullScore: "22:20,21:22,23:18,22:26",
+          quarterTotals: "Q1 42 · Q2 43 · Q3 41 · Q4 48",
+          status: "ResultConfirmed",
+          winner: 1,
+          homeTeamId: 76020,
+          awayTeamId: 76023,
+        },
+      ],
+    },
+  } as never));
 } finally {
   await fs.rm(tempDir, { recursive: true, force: true });
 }
@@ -250,3 +297,6 @@ assertMetric(phaseCard, "Analysis status", "materialized");
 assertMetric(phaseCard, "Skills", "2");
 assertMetric(phaseCard, "Recorder coverage", "14/14 divisions");
 assertMetric(phaseCard, "H2H / odds", "complete / partial");
+assert.match(markup, /H2H evidence/);
+assert.match(markup, /Magnitogorsk vs Izhevsk/);
+assert.match(markup, /Q1 42 · Q2 43 · Q3 41 · Q4 48/);

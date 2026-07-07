@@ -57,7 +57,7 @@ function LiveCard({
   insight?: LiveInsight;
   onOpen: (game: ScheduleGame, insight?: LiveInsight) => void;
   onOpenH2H: (game: ScheduleGame, insight?: LiveInsight) => void;
-  onOpenIntelligence: () => void;
+  onOpenIntelligence: (game?: ScheduleGame) => void;
 }) {
   const currentQuarter = insight?.board.currentQuarter ?? (game.period ? `Q${game.period}` : "Live");
   const currentQuarterTotal = insight?.board.currentQuarterTotal ?? "—";
@@ -106,7 +106,7 @@ function LiveCard({
         <button type="button" className="mini-btn" data-testid="live-card-h2h-button" onClick={() => onOpenH2H(game, insight)}>
           H2H
         </button>
-        <button type="button" className="mini-btn" onClick={onOpenIntelligence}>
+        <button type="button" className="mini-btn" onClick={() => onOpenIntelligence(game)}>
           Intelligence
         </button>
       </div>
@@ -124,7 +124,7 @@ export type LiveTabProps = {
   onSelectDivisionTag: (tag: string) => void;
   onOpenGame: (game: ScheduleGame, insight?: LiveInsight) => void;
   onOpenH2H: (game: ScheduleGame, insight?: LiveInsight) => void;
-  onOpenIntelligence: () => void;
+  onOpenIntelligence: (game?: ScheduleGame) => void;
 };
 
 export default function LiveTab({
@@ -182,7 +182,7 @@ export default function LiveTab({
         </label>
         <div className="live-intelligence-handoff">
           <span className="muted">Need replay, H2H, and deeper risk detail?</span>
-          <button type="button" className="mini-btn" onClick={onOpenIntelligence}>
+          <button type="button" className="mini-btn" onClick={() => onOpenIntelligence(displayLiveInsights[0]?.game ?? liveGames[0])}>
             Open Intelligence
           </button>
         </div>

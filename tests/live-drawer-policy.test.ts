@@ -13,13 +13,13 @@ assert.equal(
 );
 assert.equal(
   appSource.includes("fetchTeamGames"),
-  false,
-  "live drawer should not fetch team history for H2H in App.tsx"
+  true,
+  "live drawer should fetch team history for the compact H2H card"
 );
 assert.equal(
   appSource.includes("computeH2H"),
-  false,
-  "live drawer should not compute H2H in App.tsx"
+  true,
+  "live drawer should compute the compact H2H summary in App.tsx"
 );
 assert.equal(
   appTypesSource.includes("replay:"),
@@ -28,8 +28,8 @@ assert.equal(
 );
 assert.equal(
   appTypesSource.includes("h2h:"),
-  false,
-  "DrawerState should not store H2H data"
+  true,
+  "DrawerState should store compact H2H data"
 );
 assert.equal(
   appTypesSource.includes("replayErr:"),
@@ -43,8 +43,8 @@ assert.equal(
 );
 assert.equal(
   gameDrawerSource.includes("<h3>H2H block</h3>"),
-  false,
-  "live drawer should not render the long H2H dump by default"
+  true,
+  "live drawer should render the compact H2H card by default"
 );
 assert.equal(
   gameDrawerSource.includes("<h3>Team risk block</h3>"),
@@ -60,6 +60,11 @@ assert.match(
   gameDrawerSource,
   /Intelligence handoff/,
   "live drawer should route the operator into Intelligence for deeper detail"
+);
+assert.doesNotMatch(
+  gameDrawerSource,
+  /Detailed replay, H2H, team-risk, and matchup-risk review now lives in the Intelligence tab\./,
+  "live drawer handoff copy should no longer claim H2H lives only in Intelligence"
 );
 assert.match(
   liveTabSource,

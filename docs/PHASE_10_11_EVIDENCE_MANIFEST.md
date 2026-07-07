@@ -55,7 +55,7 @@ This manifest is read-only. It maps existing workload and C9 evidence into the c
 
 ### Status
 
-- Proof-foundation partial.
+- Fully complete / reconciled.
 
 ### Canonical checkpoint
 
@@ -85,9 +85,9 @@ This manifest is read-only. It maps existing workload and C9 evidence into the c
 
 ### Remaining gap
 
-- Odds-vs-score divergence, recorder enrichment, and movement graph work remain open in the roadmap. Market/selection timeline parsing and score-history alignment now exist as deterministic contract outputs, but they are still evidence surfaces rather than production odds features.
-- C9 evidence is strong enough to support reconciliation and contract validation, but not enough to claim production odds deployment.
-- Phase 11 stays partial until the repo either proves the remaining C9 boundaries or records a formal policy decision to keep it support-ready.
+- No remaining gap in the phase checkpoint.
+- Odds-vs-score divergence, recorder enrichment, and movement graph work remain separate productization scope outside the closed reconciliation phase.
+- Market/selection timeline parsing and score-history alignment now exist as deterministic contract outputs backed by the current evidence set.
 
 ## Recommended validation
 

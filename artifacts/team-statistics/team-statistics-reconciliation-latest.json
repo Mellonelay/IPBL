@@ -1,15 +1,15 @@
 {
   "summary": {
-    "generatedAt": "2026-07-04T05:53:54.231Z",
+    "generatedAt": "2026-07-07T15:17:49.135Z",
     "base": "https://ipbl-minimal-viewer.vercel.app",
     "season": 2026,
     "timeoutMs": 45000,
     "retries": 2,
     "registry": {
-      "divisionCount": 13,
-      "liveDivisionCount": 13,
-      "teamCount": 50,
-      "uniqueTeamCount": 50,
+      "divisionCount": 14,
+      "liveDivisionCount": 14,
+      "teamCount": 54,
+      "uniqueTeamCount": 54,
       "divisions": [
         {
           "tag": "ipbl-66-m-pro-a",
@@ -32,6 +32,12 @@
         {
           "tag": "ipbl-66-m-pro-d",
           "label": "Pro Men D",
+          "expectedTeamCount": 4,
+          "actualTeamCount": 4
+        },
+        {
+          "tag": "ipbl-66-m-pro-g",
+          "label": "Pro Men G",
           "expectedTeamCount": 4,
           "actualTeamCount": 4
         },
@@ -138,6 +144,18 @@
         "teamsWithQuarterMatrix": 4,
         "sources": [
           "results-kv+official-calendar"
+        ]
+      },
+      {
+        "tag": "ipbl-66-m-pro-g",
+        "label": "Pro Men G",
+        "expectedTeamCount": 4,
+        "actualTeamCount": 4,
+        "okTeams": 4,
+        "teamsWithHistory": 4,
+        "teamsWithQuarterMatrix": 4,
+        "sources": [
+          "results-kv"
         ]
       },
       {
@@ -250,13 +268,18 @@
       }
     ],
     "totals": {
-      "teamsChecked": 50,
-      "okTeams": 50,
-      "teamsWithHistory": 50,
-      "teamsWithQuarterMatrix": 50
+      "teamsChecked": 54,
+      "okTeams": 54,
+      "teamsWithHistory": 54,
+      "teamsWithQuarterMatrix": 54
     },
-    "classification": "RECONCILED",
-    "failures": [],
+    "classification": "PARTIAL",
+    "failures": [
+      "coverage_empty:ipbl-66-m-pro-g:76073",
+      "coverage_empty:ipbl-66-m-pro-g:76074",
+      "coverage_empty:ipbl-66-m-pro-g:76075",
+      "coverage_empty:ipbl-66-m-pro-g:76076"
+    ],
     "policy": {
       "oddsDeploymentAllowed": false,
       "productionMutation": false,
@@ -281,7 +304,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -293,27 +317,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -341,19 +344,40 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
       },
-      "totalCount": 193,
-      "completedCount": 193,
-      "quarterMatrixCount": 183,
+      "totalCount": 214,
+      "completedCount": 214,
+      "quarterMatrixCount": 204,
       "latest": {
-        "gameId": 1075443,
-        "localDate": "03.07.2026",
+        "gameId": 1077117,
+        "localDate": "07.07.2026",
         "localTime": "12:00",
-        "score": "112 : 99",
-        "fullScore": "31:28,25:22,31:24,25:25",
+        "score": "125 : 103",
+        "fullScore": "27:17,25:24,38:35,35:27",
         "team1": "Barnaul",
         "team2": "Sochi"
       }
@@ -375,7 +399,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -387,27 +412,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -435,19 +439,40 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
       },
-      "totalCount": 193,
-      "completedCount": 193,
-      "quarterMatrixCount": 184,
+      "totalCount": 214,
+      "completedCount": 214,
+      "quarterMatrixCount": 203,
       "latest": {
-        "gameId": 1075444,
-        "localDate": "03.07.2026",
+        "gameId": 1077118,
+        "localDate": "07.07.2026",
         "localTime": "13:00",
-        "score": "97 : 109",
-        "fullScore": "26:30,16:24,23:31,32:24",
+        "score": "98 : 95",
+        "fullScore": "30:24,19:28,17:20,32:23",
         "team1": "StPetersburg",
         "team2": "Novosibirsk"
       }
@@ -469,7 +494,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -481,27 +507,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -529,19 +534,40 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
       },
-      "totalCount": 193,
-      "completedCount": 193,
-      "quarterMatrixCount": 185,
+      "totalCount": 214,
+      "completedCount": 214,
+      "quarterMatrixCount": 205,
       "latest": {
-        "gameId": 1075443,
-        "localDate": "03.07.2026",
+        "gameId": 1077117,
+        "localDate": "07.07.2026",
         "localTime": "12:00",
-        "score": "112 : 99",
-        "fullScore": "31:28,25:22,31:24,25:25",
+        "score": "125 : 103",
+        "fullScore": "27:17,25:24,38:35,35:27",
         "team1": "Barnaul",
         "team2": "Sochi"
       }
@@ -563,7 +589,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -575,27 +602,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -623,19 +629,40 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
       },
-      "totalCount": 193,
-      "completedCount": 193,
-      "quarterMatrixCount": 182,
+      "totalCount": 214,
+      "completedCount": 214,
+      "quarterMatrixCount": 202,
       "latest": {
-        "gameId": 1075444,
-        "localDate": "03.07.2026",
+        "gameId": 1077118,
+        "localDate": "07.07.2026",
         "localTime": "13:00",
-        "score": "97 : 109",
-        "fullScore": "26:30,16:24,23:31,32:24",
+        "score": "98 : 95",
+        "fullScore": "30:24,19:28,17:20,32:23",
         "team1": "StPetersburg",
         "team2": "Novosibirsk"
       }
@@ -657,7 +684,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -669,27 +697,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -717,6 +724,27 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
@@ -725,11 +753,11 @@
       "completedCount": 191,
       "quarterMatrixCount": 187,
       "latest": {
-        "gameId": 1075659,
-        "localDate": "03.07.2026",
+        "gameId": 1075671,
+        "localDate": "07.07.2026",
         "localTime": "19:00",
-        "score": "94 : 76",
-        "fullScore": "22:30,24:22,19:11,29:13",
+        "score": "112 : 93",
+        "fullScore": "34:14,24:30,35:26,19:23",
         "team1": "Kazan",
         "team2": "Krasnodar"
       }
@@ -751,7 +779,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -763,27 +792,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -811,6 +819,27 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
@@ -819,11 +848,11 @@
       "completedCount": 191,
       "quarterMatrixCount": 188,
       "latest": {
-        "gameId": 1075659,
-        "localDate": "03.07.2026",
+        "gameId": 1075671,
+        "localDate": "07.07.2026",
         "localTime": "19:00",
-        "score": "94 : 76",
-        "fullScore": "22:30,24:22,19:11,29:13",
+        "score": "112 : 93",
+        "fullScore": "34:14,24:30,35:26,19:23",
         "team1": "Kazan",
         "team2": "Krasnodar"
       }
@@ -845,7 +874,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -857,27 +887,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -905,6 +914,27 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
@@ -913,11 +943,11 @@
       "completedCount": 191,
       "quarterMatrixCount": 190,
       "latest": {
-        "gameId": 1075658,
-        "localDate": "03.07.2026",
+        "gameId": 1075670,
+        "localDate": "07.07.2026",
         "localTime": "18:00",
-        "score": "109 : 89",
-        "fullScore": "28:22,28:20,30:20,23:27",
+        "score": "97 : 104",
+        "fullScore": "28:28,18:26,23:23,28:27",
         "team1": "Samara",
         "team2": "Tyumen"
       }
@@ -939,7 +969,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -951,27 +982,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -999,6 +1009,27 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
@@ -1007,11 +1038,11 @@
       "completedCount": 191,
       "quarterMatrixCount": 189,
       "latest": {
-        "gameId": 1075658,
-        "localDate": "03.07.2026",
+        "gameId": 1075670,
+        "localDate": "07.07.2026",
         "localTime": "18:00",
-        "score": "109 : 89",
-        "fullScore": "28:22,28:20,30:20,23:27",
+        "score": "97 : 104",
+        "fullScore": "28:28,18:26,23:23,28:27",
         "team1": "Samara",
         "team2": "Tyumen"
       }
@@ -1033,7 +1064,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -1045,27 +1077,6 @@
           "itemCount": 12,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -1091,6 +1102,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 1,
               "error": null
             }
@@ -1101,11 +1133,11 @@
       "completedCount": 152,
       "quarterMatrixCount": 150,
       "latest": {
-        "gameId": 1075552,
-        "localDate": "04.07.2026",
+        "gameId": 1077016,
+        "localDate": "07.07.2026",
         "localTime": "01:00",
-        "score": "114 : 97",
-        "fullScore": "40:22,24:20,31:26,19:29",
+        "score": "98 : 81",
+        "fullScore": "29:24,22:14,27:23,20:20",
         "team1": "Kaliningrad",
         "team2": "Plavsk"
       }
@@ -1127,7 +1159,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -1139,27 +1172,6 @@
           "itemCount": 12,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -1185,6 +1197,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 1,
               "error": null
             }
@@ -1195,11 +1228,11 @@
       "completedCount": 152,
       "quarterMatrixCount": 149,
       "latest": {
-        "gameId": 1075551,
-        "localDate": "04.07.2026",
+        "gameId": 1077015,
+        "localDate": "07.07.2026",
         "localTime": "00:00",
-        "score": "101 : 109",
-        "fullScore": "32:18,23:41,27:26,19:24",
+        "score": "96 : 104",
+        "fullScore": "27:26,23:19,23:34,23:25",
         "team1": "Voronezh",
         "team2": "Moskow"
       }
@@ -1221,7 +1254,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -1233,27 +1267,6 @@
           "itemCount": 12,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -1279,6 +1292,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 1,
               "error": null
             }
@@ -1287,13 +1321,13 @@
       },
       "totalCount": 153,
       "completedCount": 153,
-      "quarterMatrixCount": 149,
+      "quarterMatrixCount": 148,
       "latest": {
-        "gameId": 1075552,
-        "localDate": "04.07.2026",
+        "gameId": 1077016,
+        "localDate": "07.07.2026",
         "localTime": "01:00",
-        "score": "114 : 97",
-        "fullScore": "40:22,24:20,31:26,19:29",
+        "score": "98 : 81",
+        "fullScore": "29:24,22:14,27:23,20:20",
         "team1": "Kaliningrad",
         "team2": "Plavsk"
       }
@@ -1315,7 +1349,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -1327,27 +1362,6 @@
           "itemCount": 12,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -1373,6 +1387,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 1,
               "error": null
             }
@@ -1381,13 +1416,13 @@
       },
       "totalCount": 153,
       "completedCount": 153,
-      "quarterMatrixCount": 150,
+      "quarterMatrixCount": 149,
       "latest": {
-        "gameId": 1075551,
-        "localDate": "04.07.2026",
+        "gameId": 1077015,
+        "localDate": "07.07.2026",
         "localTime": "00:00",
-        "score": "101 : 109",
-        "fullScore": "32:18,23:41,27:26,19:24",
+        "score": "96 : 104",
+        "fullScore": "27:26,23:19,23:34,23:25",
         "team1": "Voronezh",
         "team2": "Moskow"
       }
@@ -1409,7 +1444,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -1421,27 +1457,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -1469,19 +1484,40 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
       },
       "totalCount": 313,
       "completedCount": 313,
-      "quarterMatrixCount": 299,
+      "quarterMatrixCount": 301,
       "latest": {
-        "gameId": 1075533,
-        "localDate": "03.07.2026",
+        "gameId": 1077141,
+        "localDate": "07.07.2026",
         "localTime": "06:00",
-        "score": "121 : 108",
-        "fullScore": "36:26,30:28,26:36,29:18",
+        "score": "137 : 130",
+        "fullScore": "30:33,35:25,37:32,35:40",
         "team1": "Volgograd",
         "team2": "Krasnoyarsk"
       }
@@ -1503,7 +1539,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -1515,27 +1552,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -1563,6 +1579,27 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
@@ -1571,11 +1608,11 @@
       "completedCount": 311,
       "quarterMatrixCount": 302,
       "latest": {
-        "gameId": 1075534,
-        "localDate": "03.07.2026",
+        "gameId": 1077142,
+        "localDate": "07.07.2026",
         "localTime": "07:00",
-        "score": "84 : 79",
-        "fullScore": "23:15,28:23,21:27,12:14",
+        "score": "99 : 87",
+        "fullScore": "28:22,20:31,24:19,27:15",
         "team1": "NizhniyNovgorod",
         "team2": "Rostov-on-Don"
       }
@@ -1597,7 +1634,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -1609,27 +1647,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -1657,19 +1674,40 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
       },
       "totalCount": 310,
       "completedCount": 310,
-      "quarterMatrixCount": 295,
+      "quarterMatrixCount": 296,
       "latest": {
-        "gameId": 1075534,
-        "localDate": "03.07.2026",
+        "gameId": 1077142,
+        "localDate": "07.07.2026",
         "localTime": "07:00",
-        "score": "84 : 79",
-        "fullScore": "23:15,28:23,21:27,12:14",
+        "score": "99 : 87",
+        "fullScore": "28:22,20:31,24:19,27:15",
         "team1": "NizhniyNovgorod",
         "team2": "Rostov-on-Don"
       }
@@ -1691,7 +1729,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "currentOfficialOnline": {
           "ok": true,
@@ -1703,27 +1742,6 @@
           "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -1751,21 +1769,422 @@
               "ok": true,
               "itemCount": 0,
               "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
             }
           ]
         }
       },
       "totalCount": 312,
       "completedCount": 312,
-      "quarterMatrixCount": 300,
+      "quarterMatrixCount": 301,
       "latest": {
-        "gameId": 1075533,
-        "localDate": "03.07.2026",
+        "gameId": 1077141,
+        "localDate": "07.07.2026",
         "localTime": "06:00",
-        "score": "121 : 108",
-        "fullScore": "36:26,30:28,26:36,29:18",
+        "score": "137 : 130",
+        "fullScore": "30:33,35:25,37:32,35:40",
         "team1": "Volgograd",
         "team2": "Krasnoyarsk"
+      }
+    },
+    {
+      "teamId": 76073,
+      "name": "Astrakhan",
+      "divisionTag": "ipbl-66-m-pro-g",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76073&tag=ipbl-66-m-pro-g&season=2026&source=team-stats-reconciliation",
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-g",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-07-01",
+              "to": "2026-07-02",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-02",
+              "to": "2026-07-03",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-03",
+              "to": "2026-07-04",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-04",
+              "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 112,
+      "completedCount": 112,
+      "quarterMatrixCount": 108,
+      "latest": {
+        "gameId": 1067365,
+        "localDate": "19.05.2026",
+        "localTime": "20:00",
+        "score": "118 : 106",
+        "fullScore": "30:33,39:24,27:23,22:26",
+        "team1": "Tver",
+        "team2": "Gelendzhik"
+      }
+    },
+    {
+      "teamId": 76074,
+      "name": "Gelendzhik",
+      "divisionTag": "ipbl-66-m-pro-g",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76074&tag=ipbl-66-m-pro-g&season=2026&source=team-stats-reconciliation",
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-g",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-07-01",
+              "to": "2026-07-02",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-02",
+              "to": "2026-07-03",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-03",
+              "to": "2026-07-04",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-04",
+              "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 112,
+      "completedCount": 112,
+      "quarterMatrixCount": 110,
+      "latest": {
+        "gameId": 1067365,
+        "localDate": "19.05.2026",
+        "localTime": "20:00",
+        "score": "118 : 106",
+        "fullScore": "30:33,39:24,27:23,22:26",
+        "team1": "Tver",
+        "team2": "Gelendzhik"
+      }
+    },
+    {
+      "teamId": 76075,
+      "name": "Kachkanar",
+      "divisionTag": "ipbl-66-m-pro-g",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76075&tag=ipbl-66-m-pro-g&season=2026&source=team-stats-reconciliation",
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-g",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-07-01",
+              "to": "2026-07-02",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-02",
+              "to": "2026-07-03",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-03",
+              "to": "2026-07-04",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-04",
+              "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 112,
+      "completedCount": 112,
+      "quarterMatrixCount": 110,
+      "latest": {
+        "gameId": 1067364,
+        "localDate": "19.05.2026",
+        "localTime": "19:00",
+        "score": "103 : 75",
+        "fullScore": "28:16,31:21,28:24,16:14",
+        "team1": "Kachkanar",
+        "team2": "Astrakhan"
+      }
+    },
+    {
+      "teamId": 76076,
+      "name": "Tver",
+      "divisionTag": "ipbl-66-m-pro-g",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/teams/history?teamId=76076&tag=ipbl-66-m-pro-g&season=2026&source=team-stats-reconciliation",
+      "http": 200,
+      "ok": true,
+      "attempt": 1,
+      "error": null,
+      "source": "results-kv",
+      "coverage": {
+        "season": 2026,
+        "divisionTag": "ipbl-66-m-pro-g",
+        "loadedMonths": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "currentOfficialOnline": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null
+        },
+        "recentOfficialCalendar": {
+          "ok": true,
+          "itemCount": 0,
+          "error": null,
+          "windows": [
+            {
+              "from": "2026-07-01",
+              "to": "2026-07-02",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-02",
+              "to": "2026-07-03",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-03",
+              "to": "2026-07-04",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-04",
+              "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            }
+          ]
+        }
+      },
+      "totalCount": 112,
+      "completedCount": 112,
+      "quarterMatrixCount": 108,
+      "latest": {
+        "gameId": 1067364,
+        "localDate": "19.05.2026",
+        "localTime": "19:00",
+        "score": "103 : 75",
+        "fullScore": "28:16,31:21,28:24,16:14",
+        "team1": "Kachkanar",
+        "team2": "Astrakhan"
       }
     },
     {
@@ -1796,27 +2215,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 1,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -1834,12 +2232,33 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 1,
+              "itemCount": 3,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
               "ok": true,
               "itemCount": 0,
               "error": null
@@ -1851,11 +2270,11 @@
       "completedCount": 40,
       "quarterMatrixCount": 40,
       "latest": {
-        "gameId": 1075588,
-        "localDate": "03.07.2026",
+        "gameId": 1075594,
+        "localDate": "05.07.2026",
         "localTime": "01:00",
-        "score": "100 : 124",
-        "fullScore": "24:33,27:24,24:31,25:36",
+        "score": "82 : 102",
+        "fullScore": "20:28,23:28,21:24,18:22",
         "team1": "Ryazan",
         "team2": "Smolensk"
       }
@@ -1879,35 +2298,14 @@
         ],
         "currentOfficialOnline": {
           "ok": true,
-          "itemCount": 0,
+          "itemCount": 1,
           "error": null
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 7,
+          "itemCount": 8,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 1,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -1926,30 +2324,51 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 1,
+              "itemCount": 3,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 1,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 40,
-      "completedCount": 40,
+      "totalCount": 41,
+      "completedCount": 41,
       "quarterMatrixCount": 37,
       "latest": {
-        "gameId": 1075587,
-        "localDate": "03.07.2026",
-        "localTime": "00:00",
-        "score": "97 : 112",
-        "fullScore": "21:26,26:35,30:26,20:25",
+        "gameId": 1077035,
+        "localDate": "07.07.2026",
+        "localTime": "20:00",
+        "score": "21 : 22",
+        "fullScore": null,
         "team1": "Salavat",
-        "team2": "Serov"
+        "team2": "Smolensk"
       }
     },
     {
@@ -1980,27 +2399,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 1,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -2018,12 +2416,33 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 1,
+              "itemCount": 3,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
               "ok": true,
               "itemCount": 0,
               "error": null
@@ -2035,11 +2454,11 @@
       "completedCount": 40,
       "quarterMatrixCount": 39,
       "latest": {
-        "gameId": 1075587,
-        "localDate": "03.07.2026",
+        "gameId": 1075593,
+        "localDate": "05.07.2026",
         "localTime": "00:00",
-        "score": "97 : 112",
-        "fullScore": "21:26,26:35,30:26,20:25",
+        "score": "92 : 93",
+        "fullScore": "25:25,18:25,24:20,25:23",
         "team1": "Salavat",
         "team2": "Serov"
       }
@@ -2063,35 +2482,14 @@
         ],
         "currentOfficialOnline": {
           "ok": true,
-          "itemCount": 0,
+          "itemCount": 1,
           "error": null
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 7,
+          "itemCount": 8,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 1,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -2110,29 +2508,50 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 1,
+              "itemCount": 3,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 1,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 1,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 40,
-      "completedCount": 40,
+      "totalCount": 41,
+      "completedCount": 41,
       "quarterMatrixCount": 38,
       "latest": {
-        "gameId": 1075588,
-        "localDate": "03.07.2026",
-        "localTime": "01:00",
-        "score": "100 : 124",
-        "fullScore": "24:33,27:24,24:31,25:36",
-        "team1": "Ryazan",
+        "gameId": 1077035,
+        "localDate": "07.07.2026",
+        "localTime": "20:00",
+        "score": "21 : 22",
+        "fullScore": null,
+        "team1": "Salavat",
         "team2": "Smolensk"
       }
     },
@@ -2159,30 +2578,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 3,
+          "itemCount": 6,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -2201,12 +2599,33 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 3,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
               "ok": true,
               "itemCount": 0,
               "error": null
@@ -2214,15 +2633,15 @@
           ]
         }
       },
-      "totalCount": 15,
-      "completedCount": 15,
-      "quarterMatrixCount": 15,
+      "totalCount": 18,
+      "completedCount": 18,
+      "quarterMatrixCount": 18,
       "latest": {
-        "gameId": 1073789,
-        "localDate": "28.06.2026",
+        "gameId": 1075701,
+        "localDate": "05.07.2026",
         "localTime": "19:00",
-        "score": "81 : 92",
-        "fullScore": "33:25,24:28,13:22,11:17",
+        "score": "73 : 81",
+        "fullScore": "20:14,23:19,20:18,10:30",
         "team1": "Anapa",
         "team2": "Magadan"
       }
@@ -2250,30 +2669,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 3,
+          "itemCount": 6,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -2292,12 +2690,33 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 3,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
               "ok": true,
               "itemCount": 0,
               "error": null
@@ -2305,15 +2724,15 @@
           ]
         }
       },
-      "totalCount": 15,
-      "completedCount": 15,
-      "quarterMatrixCount": 15,
+      "totalCount": 18,
+      "completedCount": 18,
+      "quarterMatrixCount": 18,
       "latest": {
-        "gameId": 1073789,
-        "localDate": "28.06.2026",
+        "gameId": 1075701,
+        "localDate": "05.07.2026",
         "localTime": "19:00",
-        "score": "81 : 92",
-        "fullScore": "33:25,24:28,13:22,11:17",
+        "score": "73 : 81",
+        "fullScore": "20:14,23:19,20:18,10:30",
         "team1": "Anapa",
         "team2": "Magadan"
       }
@@ -2345,27 +2764,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -2390,7 +2788,28 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
               "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 0,
               "error": null
             }
           ]
@@ -2400,11 +2819,11 @@
       "completedCount": 18,
       "quarterMatrixCount": 18,
       "latest": {
-        "gameId": 1076621,
-        "localDate": "04.07.2026",
+        "gameId": 1076615,
+        "localDate": "05.07.2026",
         "localTime": "07:00",
-        "score": "100 : 105",
-        "fullScore": "21:23,29:25,31:31,19:26",
+        "score": "94 : 120",
+        "fullScore": "24:37,22:25,26:38,22:20",
         "team1": "Kurgan",
         "team2": "Adler"
       }
@@ -2436,27 +2855,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -2481,7 +2879,28 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
               "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 0,
               "error": null
             }
           ]
@@ -2491,11 +2910,11 @@
       "completedCount": 18,
       "quarterMatrixCount": 18,
       "latest": {
-        "gameId": 1076621,
-        "localDate": "04.07.2026",
+        "gameId": 1076615,
+        "localDate": "05.07.2026",
         "localTime": "07:00",
-        "score": "100 : 105",
-        "fullScore": "21:23,29:25,31:31,19:26",
+        "score": "94 : 120",
+        "fullScore": "24:37,22:25,26:38,22:20",
         "team1": "Kurgan",
         "team2": "Adler"
       }
@@ -2527,27 +2946,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -2572,7 +2970,28 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
               "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 0,
               "error": null
             }
           ]
@@ -2580,13 +2999,13 @@
       },
       "totalCount": 18,
       "completedCount": 18,
-      "quarterMatrixCount": 18,
+      "quarterMatrixCount": 17,
       "latest": {
-        "gameId": 1076620,
-        "localDate": "04.07.2026",
+        "gameId": 1076614,
+        "localDate": "05.07.2026",
         "localTime": "06:00",
-        "score": "121 : 116",
-        "fullScore": "35:25,28:32,21:34,37:25",
+        "score": "134 : 114",
+        "fullScore": null,
         "team1": "Surgut",
         "team2": "Yakutsk"
       }
@@ -2618,27 +3037,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -2663,7 +3061,28 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
               "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 0,
               "error": null
             }
           ]
@@ -2671,13 +3090,13 @@
       },
       "totalCount": 18,
       "completedCount": 18,
-      "quarterMatrixCount": 18,
+      "quarterMatrixCount": 17,
       "latest": {
-        "gameId": 1076620,
-        "localDate": "04.07.2026",
+        "gameId": 1076614,
+        "localDate": "05.07.2026",
         "localTime": "06:00",
-        "score": "121 : 116",
-        "fullScore": "35:25,28:32,21:34,37:25",
+        "score": "134 : 114",
+        "fullScore": null,
         "team1": "Surgut",
         "team2": "Yakutsk"
       }
@@ -2708,30 +3127,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 12,
+          "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -2750,28 +3148,49 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 3,
+              "itemCount": 5,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 244,
-      "completedCount": 244,
-      "quarterMatrixCount": 244,
+      "totalCount": 247,
+      "completedCount": 247,
+      "quarterMatrixCount": 247,
       "latest": {
-        "gameId": 1075504,
-        "localDate": "03.07.2026",
+        "gameId": 1076340,
+        "localDate": "07.07.2026",
         "localTime": "19:00",
-        "score": "104 : 99",
-        "fullScore": "27:22,21:25,27:27,29:25",
+        "score": "107 : 121",
+        "fullScore": "22:30,20:28,33:34,32:29",
         "team1": "Magnitogorsk",
         "team2": "Bryansk"
       }
@@ -2802,30 +3221,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 12,
+          "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -2844,28 +3242,49 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 3,
+              "itemCount": 5,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 244,
-      "completedCount": 244,
-      "quarterMatrixCount": 244,
+      "totalCount": 247,
+      "completedCount": 247,
+      "quarterMatrixCount": 247,
       "latest": {
-        "gameId": 1075503,
-        "localDate": "03.07.2026",
+        "gameId": 1076339,
+        "localDate": "07.07.2026",
         "localTime": "18:05",
-        "score": "98 : 95",
-        "fullScore": "26:26,34:25,16:24,22:20",
+        "score": "95 : 98",
+        "fullScore": "27:25,27:22,25:27,16:24",
         "team1": "Novokuznetsk",
         "team2": "Izhevsk"
       }
@@ -2896,30 +3315,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 12,
+          "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -2938,28 +3336,49 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 3,
+              "itemCount": 5,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 244,
-      "completedCount": 244,
-      "quarterMatrixCount": 244,
+      "totalCount": 247,
+      "completedCount": 247,
+      "quarterMatrixCount": 247,
       "latest": {
-        "gameId": 1075504,
-        "localDate": "03.07.2026",
+        "gameId": 1076340,
+        "localDate": "07.07.2026",
         "localTime": "19:00",
-        "score": "104 : 99",
-        "fullScore": "27:22,21:25,27:27,29:25",
+        "score": "107 : 121",
+        "fullScore": "22:30,20:28,33:34,32:29",
         "team1": "Magnitogorsk",
         "team2": "Bryansk"
       }
@@ -2990,30 +3409,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 12,
+          "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -3032,28 +3430,49 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 3,
+              "itemCount": 5,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 244,
-      "completedCount": 244,
-      "quarterMatrixCount": 244,
+      "totalCount": 247,
+      "completedCount": 247,
+      "quarterMatrixCount": 247,
       "latest": {
-        "gameId": 1075503,
-        "localDate": "03.07.2026",
+        "gameId": 1076339,
+        "localDate": "07.07.2026",
         "localTime": "18:05",
-        "score": "98 : 95",
-        "fullScore": "26:26,34:25,16:24,22:20",
+        "score": "95 : 98",
+        "fullScore": "27:25,27:22,25:27,16:24",
         "team1": "Novokuznetsk",
         "team2": "Izhevsk"
       }
@@ -3079,35 +3498,14 @@
         ],
         "currentOfficialOnline": {
           "ok": true,
-          "itemCount": 1,
+          "itemCount": 0,
           "error": null
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 14,
+          "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -3133,23 +3531,44 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 2,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 251,
-      "completedCount": 251,
-      "quarterMatrixCount": 250,
+      "totalCount": 252,
+      "completedCount": 252,
+      "quarterMatrixCount": 252,
       "latest": {
-        "gameId": 1075495,
-        "localDate": "04.07.2026",
-        "localTime": "10:05",
-        "score": "85 : 84",
-        "fullScore": null,
+        "gameId": 1076369,
+        "localDate": "07.07.2026",
+        "localTime": "12:05",
+        "score": "88 : 103",
+        "fullScore": "21:27,29:29,19:23,19:24",
         "team1": "Cheboksary",
-        "team2": "Tambov"
+        "team2": "Tomsk"
       }
     },
     {
@@ -3173,35 +3592,14 @@
         ],
         "currentOfficialOnline": {
           "ok": true,
-          "itemCount": 1,
+          "itemCount": 0,
           "error": null
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 14,
+          "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -3227,23 +3625,44 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 2,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 251,
-      "completedCount": 251,
-      "quarterMatrixCount": 250,
+      "totalCount": 252,
+      "completedCount": 252,
+      "quarterMatrixCount": 252,
       "latest": {
-        "gameId": 1075495,
-        "localDate": "04.07.2026",
-        "localTime": "10:05",
-        "score": "85 : 84",
-        "fullScore": null,
-        "team1": "Cheboksary",
-        "team2": "Tambov"
+        "gameId": 1076370,
+        "localDate": "07.07.2026",
+        "localTime": "13:00",
+        "score": "84 : 86",
+        "fullScore": "25:19,19:23,21:23,19:21",
+        "team1": "Tambov",
+        "team2": "Yaroslavl"
       }
     },
     {
@@ -3272,30 +3691,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 13,
+          "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -3314,29 +3712,50 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 4,
+              "itemCount": 5,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 1,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 250,
-      "completedCount": 250,
-      "quarterMatrixCount": 250,
+      "totalCount": 252,
+      "completedCount": 252,
+      "quarterMatrixCount": 252,
       "latest": {
-        "gameId": 1075494,
-        "localDate": "04.07.2026",
-        "localTime": "09:00",
-        "score": "92 : 90",
-        "fullScore": "30:19,20:19,20:31,22:21",
-        "team1": "Tambov",
+        "gameId": 1076369,
+        "localDate": "07.07.2026",
+        "localTime": "12:05",
+        "score": "88 : 103",
+        "fullScore": "21:27,29:29,19:23,19:24",
+        "team1": "Cheboksary",
         "team2": "Tomsk"
       }
     },
@@ -3366,30 +3785,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 13,
+          "itemCount": 15,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 5,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -3408,29 +3806,50 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 4,
+              "itemCount": 5,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 1,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 5,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 3,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 250,
-      "completedCount": 250,
-      "quarterMatrixCount": 250,
+      "totalCount": 252,
+      "completedCount": 252,
+      "quarterMatrixCount": 252,
       "latest": {
-        "gameId": 1075493,
-        "localDate": "04.07.2026",
-        "localTime": "08:00",
-        "score": "94 : 100",
-        "fullScore": "21:32,20:21,30:28,23:19",
-        "team1": "Cheboksary",
+        "gameId": 1076370,
+        "localDate": "07.07.2026",
+        "localTime": "13:00",
+        "score": "84 : 86",
+        "fullScore": "25:19,19:23,21:23,19:21",
+        "team1": "Tambov",
         "team2": "Yaroslavl"
       }
     },
@@ -3455,35 +3874,14 @@
         ],
         "currentOfficialOnline": {
           "ok": true,
-          "itemCount": 0,
+          "itemCount": 1,
           "error": null
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 10,
+          "itemCount": 9,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -3509,23 +3907,44 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 1,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 166,
-      "completedCount": 166,
-      "quarterMatrixCount": 166,
+      "totalCount": 165,
+      "completedCount": 165,
+      "quarterMatrixCount": 164,
       "latest": {
-        "gameId": 1075051,
-        "localDate": "03.07.2026",
-        "localTime": "22:05",
-        "score": "81 : 69",
-        "fullScore": "19:14,15:21,28:18,19:16",
-        "team1": "Kaluga",
-        "team2": "Murino"
+        "gameId": 1076435,
+        "localDate": "07.07.2026",
+        "localTime": "20:00",
+        "score": "21 : 19",
+        "fullScore": null,
+        "team1": "Vladivostok",
+        "team2": "Kaluga"
       }
     },
     {
@@ -3554,30 +3973,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 10,
+          "itemCount": 8,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -3603,21 +4001,42 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 166,
-      "completedCount": 166,
-      "quarterMatrixCount": 166,
+      "totalCount": 164,
+      "completedCount": 164,
+      "quarterMatrixCount": 164,
       "latest": {
-        "gameId": 1075051,
-        "localDate": "03.07.2026",
+        "gameId": 1076427,
+        "localDate": "06.07.2026",
         "localTime": "22:05",
-        "score": "81 : 69",
-        "fullScore": "19:14,15:21,28:18,19:16",
+        "score": "94 : 69",
+        "fullScore": "27:20,30:14,18:19,19:16",
         "team1": "Kaluga",
         "team2": "Murino"
       }
@@ -3648,30 +4067,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 10,
+          "itemCount": 8,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -3697,21 +4095,42 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 166,
-      "completedCount": 166,
-      "quarterMatrixCount": 166,
+      "totalCount": 164,
+      "completedCount": 164,
+      "quarterMatrixCount": 164,
       "latest": {
-        "gameId": 1075052,
-        "localDate": "03.07.2026",
+        "gameId": 1076428,
+        "localDate": "06.07.2026",
         "localTime": "23:00",
-        "score": "92 : 101",
-        "fullScore": "25:22,22:31,25:17,20:31",
+        "score": "86 : 75",
+        "fullScore": "19:23,20:11,20:19,27:22",
         "team1": "Vladivostok",
         "team2": "Norilsk"
       }
@@ -3737,35 +4156,14 @@
         ],
         "currentOfficialOnline": {
           "ok": true,
-          "itemCount": 0,
+          "itemCount": 1,
           "error": null
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 10,
+          "itemCount": 9,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 4,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -3791,23 +4189,44 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 4,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
+              "itemCount": 1,
               "error": null
             }
           ]
         }
       },
-      "totalCount": 166,
-      "completedCount": 166,
-      "quarterMatrixCount": 166,
+      "totalCount": 165,
+      "completedCount": 165,
+      "quarterMatrixCount": 164,
       "latest": {
-        "gameId": 1075052,
-        "localDate": "03.07.2026",
-        "localTime": "23:00",
-        "score": "92 : 101",
-        "fullScore": "25:22,22:31,25:17,20:31",
+        "gameId": 1076435,
+        "localDate": "07.07.2026",
+        "localTime": "20:00",
+        "score": "21 : 19",
+        "fullScore": null,
         "team1": "Vladivostok",
-        "team2": "Norilsk"
+        "team2": "Kaluga"
       }
     },
     {
@@ -3840,27 +4259,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -3885,6 +4283,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
@@ -3895,11 +4314,11 @@
       "completedCount": 75,
       "quarterMatrixCount": 75,
       "latest": {
-        "gameId": 1075479,
-        "localDate": "02.07.2026",
+        "gameId": 1075515,
+        "localDate": "05.07.2026",
         "localTime": "18:05",
-        "score": "117 : 111",
-        "fullScore": "25:31,36:30,27:21,29:29",
+        "score": "99 : 114",
+        "fullScore": "29:28,26:30,24:30,20:26",
         "team1": "Berezniki",
         "team2": "Ekaterinburg"
       }
@@ -3934,27 +4353,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -3979,6 +4377,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
@@ -3989,11 +4408,11 @@
       "completedCount": 75,
       "quarterMatrixCount": 75,
       "latest": {
-        "gameId": 1075479,
-        "localDate": "02.07.2026",
+        "gameId": 1075515,
+        "localDate": "05.07.2026",
         "localTime": "18:05",
-        "score": "117 : 111",
-        "fullScore": "25:31,36:30,27:21,29:29",
+        "score": "99 : 114",
+        "fullScore": "29:28,26:30,24:30,20:26",
         "team1": "Berezniki",
         "team2": "Ekaterinburg"
       }
@@ -4028,27 +4447,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -4073,6 +4471,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
@@ -4083,11 +4502,11 @@
       "completedCount": 75,
       "quarterMatrixCount": 75,
       "latest": {
-        "gameId": 1075480,
-        "localDate": "02.07.2026",
+        "gameId": 1075516,
+        "localDate": "05.07.2026",
         "localTime": "19:00",
-        "score": "95 : 101",
-        "fullScore": "27:28,17:29,23:27,28:17",
+        "score": "82 : 89",
+        "fullScore": "23:24,22:25,25:19,12:21",
         "team1": "Toliatti",
         "team2": "Khimki"
       }
@@ -4122,27 +4541,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -4167,6 +4565,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
@@ -4177,11 +4596,11 @@
       "completedCount": 75,
       "quarterMatrixCount": 75,
       "latest": {
-        "gameId": 1075480,
-        "localDate": "02.07.2026",
+        "gameId": 1075516,
+        "localDate": "05.07.2026",
         "localTime": "19:00",
-        "score": "95 : 101",
-        "fullScore": "27:28,17:29,23:27,28:17",
+        "score": "82 : 89",
+        "fullScore": "23:24,22:25,25:19,12:21",
         "team1": "Toliatti",
         "team2": "Khimki"
       }
@@ -4210,30 +4629,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 2,
+          "itemCount": 4,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -4252,12 +4650,33 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 2,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
               "ok": true,
               "itemCount": 0,
               "error": null
@@ -4265,17 +4684,17 @@
           ]
         }
       },
-      "totalCount": 30,
-      "completedCount": 30,
-      "quarterMatrixCount": 30,
+      "totalCount": 32,
+      "completedCount": 32,
+      "quarterMatrixCount": 32,
       "latest": {
-        "gameId": 1075060,
-        "localDate": "01.07.2026",
-        "localTime": "23:00",
-        "score": "88 : 96",
-        "fullScore": "28:30,25:26,16:17,19:23",
+        "gameId": 1075063,
+        "localDate": "04.07.2026",
+        "localTime": "22:05",
+        "score": "91 : 76",
+        "fullScore": "24:16,22:22,26:19,19:19",
         "team1": "Ivanovo",
-        "team2": "Stary Oskol"
+        "team2": "Penza"
       }
     },
     {
@@ -4302,30 +4721,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 2,
+          "itemCount": 4,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -4344,12 +4742,33 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 2,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
               "ok": true,
               "itemCount": 0,
               "error": null
@@ -4357,17 +4776,17 @@
           ]
         }
       },
-      "totalCount": 30,
-      "completedCount": 30,
-      "quarterMatrixCount": 30,
+      "totalCount": 32,
+      "completedCount": 32,
+      "quarterMatrixCount": 32,
       "latest": {
-        "gameId": 1075059,
-        "localDate": "01.07.2026",
-        "localTime": "22:05",
-        "score": "78 : 95",
-        "fullScore": "18:21,28:23,10:20,22:31",
+        "gameId": 1075064,
+        "localDate": "04.07.2026",
+        "localTime": "23:00",
+        "score": "79 : 77",
+        "fullScore": "22:27,20:23,16:13,21:14",
         "team1": "Kostroma",
-        "team2": "Penza"
+        "team2": "Stary Oskol"
       }
     },
     {
@@ -4394,30 +4813,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 2,
+          "itemCount": 4,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -4436,12 +4834,33 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 2,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
               "ok": true,
               "itemCount": 0,
               "error": null
@@ -4449,16 +4868,16 @@
           ]
         }
       },
-      "totalCount": 30,
-      "completedCount": 30,
-      "quarterMatrixCount": 30,
+      "totalCount": 32,
+      "completedCount": 32,
+      "quarterMatrixCount": 32,
       "latest": {
-        "gameId": 1075059,
-        "localDate": "01.07.2026",
+        "gameId": 1075063,
+        "localDate": "04.07.2026",
         "localTime": "22:05",
-        "score": "78 : 95",
-        "fullScore": "18:21,28:23,10:20,22:31",
-        "team1": "Kostroma",
+        "score": "91 : 76",
+        "fullScore": "24:16,22:22,26:19,19:19",
+        "team1": "Ivanovo",
         "team2": "Penza"
       }
     },
@@ -4486,30 +4905,9 @@
         },
         "recentOfficialCalendar": {
           "ok": true,
-          "itemCount": 2,
+          "itemCount": 4,
           "error": null,
           "windows": [
-            {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 2,
-              "error": null
-            },
             {
               "from": "2026-07-01",
               "to": "2026-07-02",
@@ -4528,12 +4926,33 @@
               "from": "2026-07-03",
               "to": "2026-07-04",
               "ok": true,
-              "itemCount": 0,
+              "itemCount": 2,
               "error": null
             },
             {
               "from": "2026-07-04",
               "to": "2026-07-05",
+              "ok": true,
+              "itemCount": 2,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
               "ok": true,
               "itemCount": 0,
               "error": null
@@ -4541,16 +4960,16 @@
           ]
         }
       },
-      "totalCount": 30,
-      "completedCount": 30,
-      "quarterMatrixCount": 30,
+      "totalCount": 32,
+      "completedCount": 32,
+      "quarterMatrixCount": 32,
       "latest": {
-        "gameId": 1075060,
-        "localDate": "01.07.2026",
+        "gameId": 1075064,
+        "localDate": "04.07.2026",
         "localTime": "23:00",
-        "score": "88 : 96",
-        "fullScore": "28:30,25:26,16:17,19:23",
-        "team1": "Ivanovo",
+        "score": "79 : 77",
+        "fullScore": "22:27,20:23,16:13,21:14",
+        "team1": "Kostroma",
         "team2": "Stary Oskol"
       }
     },
@@ -4584,27 +5003,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -4629,6 +5027,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
@@ -4639,11 +5058,11 @@
       "completedCount": 75,
       "quarterMatrixCount": 75,
       "latest": {
-        "gameId": 1075485,
-        "localDate": "02.07.2026",
+        "gameId": 1075521,
+        "localDate": "05.07.2026",
         "localTime": "12:05",
-        "score": "70 : 88",
-        "fullScore": "21:19,17:25,11:23,21:21",
+        "score": "87 : 68",
+        "fullScore": "27:19,23:21,19:16,18:12",
         "team1": "Kursk",
         "team2": "Orenburg"
       }
@@ -4678,27 +5097,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -4723,6 +5121,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
@@ -4733,11 +5152,11 @@
       "completedCount": 75,
       "quarterMatrixCount": 75,
       "latest": {
-        "gameId": 1075485,
-        "localDate": "02.07.2026",
+        "gameId": 1075521,
+        "localDate": "05.07.2026",
         "localTime": "12:05",
-        "score": "70 : 88",
-        "fullScore": "21:19,17:25,11:23,21:21",
+        "score": "87 : 68",
+        "fullScore": "27:19,23:21,19:16,18:12",
         "team1": "Kursk",
         "team2": "Orenburg"
       }
@@ -4772,27 +5191,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -4817,6 +5215,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
@@ -4827,11 +5246,11 @@
       "completedCount": 75,
       "quarterMatrixCount": 74,
       "latest": {
-        "gameId": 1075486,
-        "localDate": "02.07.2026",
+        "gameId": 1075522,
+        "localDate": "05.07.2026",
         "localTime": "13:00",
-        "score": "84 : 92",
-        "fullScore": "23:31,22:17,18:27,21:17",
+        "score": "90 : 83",
+        "fullScore": "16:21,28:21,14:23,21:14,11:4",
         "team1": "Severodvinsk",
         "team2": "Vologda"
       }
@@ -4866,27 +5285,6 @@
           "error": null,
           "windows": [
             {
-              "from": "2026-06-28",
-              "to": "2026-06-29",
-              "ok": true,
-              "itemCount": 3,
-              "error": null
-            },
-            {
-              "from": "2026-06-29",
-              "to": "2026-06-30",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
-              "from": "2026-06-30",
-              "to": "2026-07-01",
-              "ok": true,
-              "itemCount": 0,
-              "error": null
-            },
-            {
               "from": "2026-07-01",
               "to": "2026-07-02",
               "ok": true,
@@ -4911,6 +5309,27 @@
               "from": "2026-07-04",
               "to": "2026-07-05",
               "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-05",
+              "to": "2026-07-06",
+              "ok": true,
+              "itemCount": 3,
+              "error": null
+            },
+            {
+              "from": "2026-07-06",
+              "to": "2026-07-07",
+              "ok": true,
+              "itemCount": 0,
+              "error": null
+            },
+            {
+              "from": "2026-07-07",
+              "to": "2026-07-08",
+              "ok": true,
               "itemCount": 0,
               "error": null
             }
@@ -4921,11 +5340,11 @@
       "completedCount": 75,
       "quarterMatrixCount": 74,
       "latest": {
-        "gameId": 1075486,
-        "localDate": "02.07.2026",
+        "gameId": 1075522,
+        "localDate": "05.07.2026",
         "localTime": "13:00",
-        "score": "84 : 92",
-        "fullScore": "23:31,22:17,18:27,21:17",
+        "score": "90 : 83",
+        "fullScore": "16:21,28:21,14:23,21:14,11:4",
         "team1": "Severodvinsk",
         "team2": "Vologda"
       }
