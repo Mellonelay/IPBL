@@ -5,9 +5,11 @@ import {
   clearFetchCaches,
   fetchBoxScore,
   fetchGame,
+  fetchTeamGames,
   // fetchOnline,
 } from "./api/client";
 import type { ScheduleGame } from "./api/types";
+import { computeH2H } from "./api/normalize";
 import { buildLiveDisplayInsights } from "./live/display";
 import { summarizeBookmakerFailures } from "./live/source-status";
 import { LIVE_DIVISION_TAGS } from "./config/divisions";
@@ -32,8 +34,9 @@ import IntelligenceTab from "./app/IntelligenceTab";
 import LiveTab from "./app/LiveTab";
 import ResultsTab from "./app/ResultsTab";
 import TeamsTab from "./app/TeamsTab";
-import type { DrawerState, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
+import type { DrawerState, IntelligenceFocus, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
 import { loadIntelligenceSurface, type IntelligenceSurfaceSnapshot } from "./app/intelligence-client";
+import { selectIntelligenceFocusGame } from "./app/intelligence-focus";
 import { currentOrNextQuarter, gameDivision, liveKey } from "./app/shared";
 import { currentMyanmarResultsSelection } from "./results/month-default";
 
@@ -85,6 +88,7 @@ function App() {
   const [intelligenceSnapshot, setIntelligenceSnapshot] = useState<IntelligenceSurfaceSnapshot | null>(null);
   const [intelligenceLoading, setIntelligenceLoading] = useState(false);
   const [intelligenceErr, setIntelligenceErr] = useState<string | null>(null);
+  const [intelligenceFocus, setIntelligenceFocus] = useState<IntelligenceFocus | null>(null);
 
   const [drawer, setDrawer] = useState<DrawerState | null>(null);
   const [teamRefreshToken, setTeamRefreshToken] = useState(0);
@@ -427,6 +431,27 @@ function App() {
     }
   }, []);
 
+  const syncIntelligenceFocus = useCallback((game: ScheduleGame, h2h: IntelligenceFocus["h2h"]) => {
+    setIntelligenceFocus({ game, h2h });
+    setDrawer((current) => (current && current.game.gameId === game.gameId ? { ...current, h2h } : current));
+  }, []);
+
+  const primeIntelligenceFocus = useCallback(async (game: ScheduleGame) => {
+    syncIntelligenceFocus(game, []);
+
+    try {
+      const season = Number.parseInt(String(game.localDate).slice(-4), 10) || new Date().getFullYear();
+      const [team1History, team2History] = await Promise.all([
+        fetchTeamGames(game.team1.teamId, game.tag, season, "all").catch(() => []),
+        fetchTeamGames(game.team2.teamId, game.tag, season, "all").catch(() => []),
+      ]);
+      const h2h = computeH2H(team1History, team2History, game.team1.teamId, game.team2.teamId, 8);
+      syncIntelligenceFocus(game, h2h);
+    } catch {
+      // Preserve the placeholder focus so the Intelligence tab can still show the selected game context.
+    }
+  }, [syncIntelligenceFocus]);
+
   useEffect(() => {
     if (activeTab !== "intelligence") return;
     void loadIntelligence();
@@ -434,18 +459,34 @@ function App() {
     return () => window.clearInterval(id);
   }, [activeTab, loadIntelligence]);
 
+  useEffect(() => {
+    if (activeTab !== "intelligence") return;
+    if (intelligenceFocus) return;
+
+    const candidate = selectIntelligenceFocusGame({
+      drawerGame: drawer?.game ?? null,
+      liveGames,
+      calendarMap,
+      selectedDivisionTag: selectedResultsDivisionTag,
+    });
+    if (!candidate) return;
+
+    void primeIntelligenceFocus(candidate);
+  }, [activeTab, calendarMap, drawer?.game, intelligenceFocus, liveGames, primeIntelligenceFocus, selectedResultsDivisionTag]);
+
   const openResultsTab = useCallback(() => {
     const current = currentMyanmarResultsSelection();
     setSelectedResultsYear(current.year);
     setSelectedResultsMonthIndex(current.monthIndex);
     setJumpDate(`${current.year}-${String(current.monthIndex + 1).padStart(2, "0")}-01`);
     setActiveTab("results");
-  }, []);
+  }, [primeIntelligenceFocus]);
 
-  const openIntelligenceTab = useCallback(() => {
+  const openIntelligenceTab = useCallback((game?: ScheduleGame) => {
     setDrawer(null);
     setActiveTab("intelligence");
-  }, []);
+    if (game) void primeIntelligenceFocus(game);
+  }, [primeIntelligenceFocus]);
 
   useEffect(() => {
     const valid = resultsDivisionsForMonth(selectedResultsYear, selectedResultsMonthIndex);
@@ -474,8 +515,8 @@ function App() {
         hour: new Date().getHours(),
         team1: game.team1.shortName,
         team2: game.team2.shortName,
-        flow: presetFlow,
-      });
+      flow: presetFlow,
+    });
 
     setDrawer({
       game,
@@ -484,7 +525,9 @@ function App() {
       board: presetBoard,
       flow: presetFlow,
       decision: presetDecision,
+      h2h: [],
     });
+    void primeIntelligenceFocus(game);
 
     try {
       const [gameMeta, boxState] = await Promise.all([
@@ -504,14 +547,18 @@ function App() {
         flow,
       });
 
-      setDrawer({
-        game,
-        gameMeta: gameMeta.raw,
-        boxState,
-        board,
-        flow,
-        decision,
-      });
+      setDrawer((current) =>
+        current && current.game.gameId === game.gameId
+          ? {
+              ...current,
+              gameMeta: gameMeta.raw,
+              boxState,
+              board,
+              flow,
+              decision,
+            }
+          : current
+      );
     } catch {
       // Preserve the lightweight preset drawer state if detail fetches fail.
     }
@@ -622,7 +669,12 @@ function App() {
         )}
 
         {activeTab === "intelligence" && (
-          <IntelligenceTab snapshot={intelligenceSnapshot} loading={intelligenceLoading} error={intelligenceErr} />
+          <IntelligenceTab
+            snapshot={intelligenceSnapshot}
+            loading={intelligenceLoading}
+            error={intelligenceErr}
+            focus={intelligenceFocus}
+          />
         )}
 
         {activeTab === "teams" && (

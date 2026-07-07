@@ -79,6 +79,7 @@ assert.equal(live.length, 1);
 assert.equal(live[0].game.id, 1072122);
 assert.equal(live[0].game.localDate, "13.06.2026");
 assert.equal(live[0].game.score, "74 : 90");
+assert.equal(live[0].game.quarterTotals, null);
 const merged = mergeTeamHistoryItems(stored, live);
 assert.deepEqual(merged.map((item) => item.game.id), [1072122, 1]);
 console.log("Team history current official online freshness merge tests passed");

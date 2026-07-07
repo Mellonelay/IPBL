@@ -14,6 +14,8 @@ export type GenAnalysisSnapshot = {
     };
     storedAt?: string;
   };
+  analysisEngine?: AnalysisEngineSnapshot;
+  operatorIntelligence?: OperatorIntelligenceSnapshot;
 };
 
 export type PredictionRuntimeSnapshot = {
@@ -149,19 +151,17 @@ async function fetchJson<T>(url: string, fetchImpl: FetchLike): Promise<T> {
 }
 
 export async function loadIntelligenceSurface(fetchImpl: FetchLike = fetch): Promise<IntelligenceSurfaceSnapshot> {
-  const [genAnalysis, predictionRuntime, recorderHealth, analysisEngine, operatorIntelligence] = await Promise.all([
+  const [genAnalysis, predictionRuntime, recorderHealth] = await Promise.all([
     fetchJson<GenAnalysisSnapshot>("/api/gen-analysis", fetchImpl),
     fetchJson<PredictionRuntimeSnapshot>("/api/predictions/live", fetchImpl),
     fetchJson<RecorderHealthSnapshot>("/api/recorder?mode=health", fetchImpl),
-    fetchJson<AnalysisEngineSnapshot>("/api/analysis-engine", fetchImpl),
-    fetchJson<OperatorIntelligenceSnapshot>("/api/operator-intelligence", fetchImpl),
   ]);
 
   return {
     genAnalysis,
     predictionRuntime,
     recorderHealth,
-    analysisEngine,
-    operatorIntelligence,
+    analysisEngine: genAnalysis.analysisEngine ?? {},
+    operatorIntelligence: genAnalysis.operatorIntelligence ?? {},
   };
 }

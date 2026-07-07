@@ -1,280 +1,331 @@
 {
-  "capturedAt": "2026-06-13T11:00:41.989611+00:00",
-  "official": [
-    {
+  "capturedAt": "2026-07-07T14:45:13.774Z",
+  "endpoints": {
+    "officialLivePage": {
       "url": "https://ipbl.pro/live",
-      "capturedAt": "2026-06-13T11:00:16.548871+00:00",
       "http": 200,
-      "bytes": 81374,
+      "ok": true,
+      "bytes": 79931,
+      "error": null,
       "contentType": "text/html; charset=UTF-8"
     },
-    {
-      "url": "https://api1.ipbl.pro/widget.js",
-      "capturedAt": "2026-06-13T11:00:18.347920+00:00",
-      "http": 404,
-      "error": "HTTPError"
-    },
-    {
-      "url": "https://api1.ipbl.pro/widget.css",
-      "capturedAt": "2026-06-13T11:00:28.523370+00:00",
-      "http": 404,
-      "error": "HTTPError"
-    },
-    {
-      "url": "https://api1.ipbl.pro/api/Calendar/GetOnline?lng=en",
-      "capturedAt": "2026-06-13T11:00:30.080586+00:00",
-      "http": 404,
-      "error": "HTTPError"
-    },
-    {
-      "url": "https://api1.ipbl.pro/api/Divisions/GetTree?lng=en",
-      "capturedAt": "2026-06-13T11:00:32.075811+00:00",
-      "http": 404,
-      "error": "HTTPError"
-    },
-    {
-      "url": "https://api1.ipbl.pro/api/Standings/Get?lng=en",
-      "capturedAt": "2026-06-13T11:00:32.797210+00:00",
-      "http": 404,
-      "error": "HTTPError"
-    }
-  ],
-  "production": [
-    {
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live",
-      "capturedAt": "2026-06-13T11:00:34.158977+00:00",
+    "officialCalendar": {
+      "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
       "http": 200,
-      "bytes": 968,
+      "ok": true,
+      "bytes": null,
+      "error": null,
+      "contentType": null,
+      "components": [
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-a",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-b",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 1995,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-c",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 2027,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-d",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 2071,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-u",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-z",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-z&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-m-pro-l",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-l&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-a",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 2007,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-b",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-c",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-d",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-g",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "error": null
+        },
+        {
+          "label": "officialCalendar-ipbl-66-w-pro-k",
+          "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
+          "http": 200,
+          "ok": true,
+          "bytes": 238,
+          "error": null
+        }
+      ]
+    },
+    "productionLive": {
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1783435498279",
+      "http": 200,
+      "ok": true,
+      "bytes": 2507,
+      "error": null,
       "contentType": "application/json; charset=utf-8"
     },
-    {
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/health",
-      "capturedAt": "2026-06-13T11:00:35.678246+00:00",
-      "http": 200,
-      "bytes": 1907,
-      "contentType": "application/json; charset=utf-8"
-    },
-    {
+    "recorderStatus": {
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
-      "capturedAt": "2026-06-13T11:00:36.193491+00:00",
       "http": 200,
-      "bytes": 1281,
+      "ok": true,
+      "bytes": 1598,
+      "error": null,
       "contentType": "application/json; charset=utf-8"
     },
+    "recorderHistory": {
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
+      "http": 200,
+      "ok": true,
+      "bytes": null,
+      "error": null,
+      "contentType": null,
+      "components": [
+        {
+          "label": "recorderHistory-ipbl-66-m-pro-b-734686244",
+          "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-m-pro-b&gameId=734686244&limit=5",
+          "http": 200,
+          "ok": true,
+          "bytes": 6576,
+          "error": null
+        },
+        {
+          "label": "recorderHistory-ipbl-66-w-pro-a-734685439",
+          "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-w-pro-a&gameId=734685439&limit=5",
+          "http": 200,
+          "ok": true,
+          "bytes": 6649,
+          "error": null
+        }
+      ]
+    },
+    "melbetLiveDiscovery": {
+      "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
+      "http": 200,
+      "ok": true,
+      "bytes": null,
+      "error": null,
+      "contentType": null,
+      "components": [
+        {
+          "label": "melbetLive-2496666",
+          "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+          "http": 200,
+          "ok": true,
+          "bytes": 4857,
+          "error": null
+        },
+        {
+          "label": "melbetLive-2496667",
+          "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
+          "http": 200,
+          "ok": true,
+          "bytes": 5597,
+          "error": null
+        }
+      ]
+    }
+  },
+  "rowCounts": {
+    "officialCalendar": 4,
+    "productionLive": 2,
+    "recorderHistory": 10
+  },
+  "activeProductionGameIds": [
+    "734686244",
+    "734685439"
+  ],
+  "melbetLiveCandidateCount": 4,
+  "melbetCandidateIds": [
+    "734686244",
+    "734687152",
+    "734685439",
+    "734688362"
+  ],
+  "melbetMatchedActiveProduction": [
     {
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?limit=5",
-      "capturedAt": "2026-06-13T11:00:36.693316+00:00",
-      "http": 400,
-      "error": "HTTPError"
+      "productionGameId": "734686244",
+      "productionDivisionTag": "ipbl-66-m-pro-b",
+      "melbetGameId": "734686244",
+      "productionTeams": [
+        "Kazan",
+        "Krasnodar"
+      ],
+      "melbetTeams": [
+        "Kazan",
+        "Krasnodar"
+      ],
+      "matchMode": "direct-team-pair"
+    },
+    {
+      "productionGameId": "734685439",
+      "productionDivisionTag": "ipbl-66-w-pro-a",
+      "melbetGameId": "734685439",
+      "productionTeams": [
+        "Magnitogorsk",
+        "Bryansk"
+      ],
+      "melbetTeams": [
+        "Magnitogorsk (Women)",
+        "Bryansk (Women)"
+      ],
+      "matchMode": "direct-team-pair"
     }
   ],
-  "productionLiveGameCount": 0,
-  "productionLiveGameIds": [
-    728820121,
-    728819144,
-    728819200
-  ],
-  "eventsstat": [
+  "deterministicTeamPairEvidence": [
     {
-      "gameId": 728820121,
-      "partner": 8,
-      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728820121&coefView=3&lng=en&partner=8",
-      "http": 200,
-      "bytes": 18978,
-      "error": null,
-      "success": true,
-      "rootKeys": [
-        "Id",
-        "Success",
-        "Error",
-        "ErrorCode",
-        "Guid",
-        "Value"
+      "productionGameId": "734686244",
+      "productionDivisionTag": "ipbl-66-m-pro-b",
+      "melbetGameId": "734686244",
+      "productionTeams": [
+        "Kazan",
+        "Krasnodar"
       ],
-      "valueKeys": [
-        "EG"
+      "melbetTeams": [
+        "Kazan",
+        "Krasnodar"
       ],
-      "egCount": 5,
-      "shCount": null,
-      "dsType": "NoneType",
-      "hasEG": true,
-      "hasSH": false,
-      "hasDS": false,
-      "firstEGKeys": [
-        "E",
-        "C",
-        "CWV",
-        "S"
-      ],
-      "marketSample": []
+      "matchMode": "direct-team-pair",
+      "eventsstatProven": true,
+      "requiredForOddsGate": true
     },
     {
-      "gameId": 728820121,
-      "partner": 25,
-      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728820121&coefView=3&lng=en&partner=25",
-      "http": 200,
-      "bytes": 18978,
-      "error": null,
-      "success": true,
-      "rootKeys": [
-        "Id",
-        "Success",
-        "Error",
-        "ErrorCode",
-        "Guid",
-        "Value"
+      "productionGameId": "734685439",
+      "productionDivisionTag": "ipbl-66-w-pro-a",
+      "melbetGameId": "734685439",
+      "productionTeams": [
+        "Magnitogorsk",
+        "Bryansk"
       ],
-      "valueKeys": [
-        "EG"
+      "melbetTeams": [
+        "Magnitogorsk (Women)",
+        "Bryansk (Women)"
       ],
-      "egCount": 5,
-      "shCount": null,
-      "dsType": "NoneType",
-      "hasEG": true,
-      "hasSH": false,
-      "hasDS": false,
-      "firstEGKeys": [
-        "E",
-        "C",
-        "CWV",
-        "S"
-      ],
-      "marketSample": []
-    },
-    {
-      "gameId": 728819144,
-      "partner": 8,
-      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819144&coefView=3&lng=en&partner=8",
-      "http": 200,
-      "bytes": 21656,
-      "error": null,
-      "success": true,
-      "rootKeys": [
-        "Id",
-        "Success",
-        "Error",
-        "ErrorCode",
-        "Guid",
-        "Value"
-      ],
-      "valueKeys": [
-        "EG"
-      ],
-      "egCount": 5,
-      "shCount": null,
-      "dsType": "NoneType",
-      "hasEG": true,
-      "hasSH": false,
-      "hasDS": false,
-      "firstEGKeys": [
-        "E",
-        "C",
-        "CWV",
-        "S"
-      ],
-      "marketSample": []
-    },
-    {
-      "gameId": 728819144,
-      "partner": 25,
-      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819144&coefView=3&lng=en&partner=25",
-      "http": 200,
-      "bytes": 21656,
-      "error": null,
-      "success": true,
-      "rootKeys": [
-        "Id",
-        "Success",
-        "Error",
-        "ErrorCode",
-        "Guid",
-        "Value"
-      ],
-      "valueKeys": [
-        "EG"
-      ],
-      "egCount": 5,
-      "shCount": null,
-      "dsType": "NoneType",
-      "hasEG": true,
-      "hasSH": false,
-      "hasDS": false,
-      "firstEGKeys": [
-        "E",
-        "C",
-        "CWV",
-        "S"
-      ],
-      "marketSample": []
-    },
-    {
-      "gameId": 728819200,
-      "partner": 8,
-      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819200&coefView=3&lng=en&partner=8",
-      "http": 200,
-      "bytes": 21460,
-      "error": null,
-      "success": true,
-      "rootKeys": [
-        "Id",
-        "Success",
-        "Error",
-        "ErrorCode",
-        "Guid",
-        "Value"
-      ],
-      "valueKeys": [
-        "EG"
-      ],
-      "egCount": 5,
-      "shCount": null,
-      "dsType": "NoneType",
-      "hasEG": true,
-      "hasSH": false,
-      "hasDS": false,
-      "firstEGKeys": [
-        "E",
-        "C",
-        "CWV",
-        "S"
-      ],
-      "marketSample": []
-    },
-    {
-      "gameId": 728819200,
-      "partner": 25,
-      "url": "https://melbet.com/service-api/LiveFeed/GetHistoryGraphExt?gameId=728819200&coefView=3&lng=en&partner=25",
-      "http": 200,
-      "bytes": 21460,
-      "error": null,
-      "success": true,
-      "rootKeys": [
-        "Id",
-        "Success",
-        "Error",
-        "ErrorCode",
-        "Guid",
-        "Value"
-      ],
-      "valueKeys": [
-        "EG"
-      ],
-      "egCount": 5,
-      "shCount": null,
-      "dsType": "NoneType",
-      "hasEG": true,
-      "hasSH": false,
-      "hasDS": false,
-      "firstEGKeys": [
-        "E",
-        "C",
-        "CWV",
-        "S"
-      ],
-      "marketSample": []
+      "matchMode": "direct-team-pair",
+      "eventsstatProven": true,
+      "requiredForOddsGate": true
     }
   ],
-  "eventsstatProven": false,
-  "partner8Proven": false,
-  "partner25Proven": false
+  "eventsstatProbeMode": "active-production-games-with-melbet-live-discovery",
+  "eventsstatProbeIds": [
+    "734686244",
+    "734685439",
+    "734687152",
+    "734688362"
+  ],
+  "eventsstatProven": true,
+  "activeMatchedEventsstatProven": true,
+  "activeMatchedEventsstatProofs": [
+    {
+      "productionGameId": "734686244",
+      "productionDivisionTag": "ipbl-66-m-pro-b",
+      "melbetGameId": "734686244",
+      "productionTeams": [
+        "Kazan",
+        "Krasnodar"
+      ],
+      "melbetTeams": [
+        "Kazan",
+        "Krasnodar"
+      ],
+      "matchMode": "direct-team-pair"
+    },
+    {
+      "productionGameId": "734685439",
+      "productionDivisionTag": "ipbl-66-w-pro-a",
+      "melbetGameId": "734685439",
+      "productionTeams": [
+        "Magnitogorsk",
+        "Bryansk"
+      ],
+      "melbetTeams": [
+        "Magnitogorsk (Women)",
+        "Bryansk (Women)"
+      ],
+      "matchMode": "direct-team-pair"
+    }
+  ],
+  "partner8Proven": true,
+  "partner25Proven": true,
+  "oddsImplementationGate": {
+    "requiresActiveMatchedEventsstatProven": true,
+    "activeMatchedEventsstatProven": true,
+    "passed": true,
+    "blocksOddsImplementation": false
+  },
+  "reconciliation": {
+    "primarySource": "productionLive",
+    "matchCount": 2,
+    "missingCount": 0,
+    "mismatchCount": 4,
+    "classification": "PARTIAL"
+  },
+  "oddsDeploymentAllowed": false,
+  "oddsDeploymentBlockReason": "PR23 proves active matched EG/SH/DS but remains reconciliation/proof only; odds implementation still requires separate approved scope, parser policy, tests, and review."
 }

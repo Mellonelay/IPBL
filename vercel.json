@@ -28,7 +28,7 @@
     },
     {
       "source": "/api/cron/sync-results",
-      "destination": "/api/cron/cron-sync-results.ts"
+      "destination": "/api/cron/record-live.ts?mode=sync-results"
     },
     {
       "source": "/api/cron/record-live",

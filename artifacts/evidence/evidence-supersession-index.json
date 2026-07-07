@@ -59,7 +59,7 @@
     {
       "family": "phase_5_evidence_graph",
       "canonicalArtifact": "artifacts/evidence/evidence-supersession-index.json",
-      "status": "support_ready",
+      "status": "complete_verified",
       "supersedes": [
         "docs/PHASE_4_5_EVIDENCE_MANIFEST.md"
       ],
@@ -227,9 +227,7 @@
       ]
     }
   },
-  "unresolvedGaps": [
-    "Graphify freshness reports are packaged here, but graph regeneration still depends on future repo changes."
-  ],
+  "unresolvedGaps": [],
   "validationCommands": [
     "python -m json.tool artifacts/evidence/evidence-supersession-index.json",
     "node scripts/validate-evidence-supersession-index.mjs",

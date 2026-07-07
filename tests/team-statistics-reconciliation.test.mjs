@@ -33,6 +33,27 @@ assert.equal(liveRegistry.liveDivisionCount, 14);
 assert.equal(liveRegistry.teamCount, 54);
 assert.equal(liveRegistry.uniqueTeamCount, 54);
 
+const reusableCoverage = {
+  season: 2026,
+  divisionTag: "ipbl-66-m-pro-a",
+  loadedMonths: [1, 2, 3],
+  currentOfficialOnline: { ok: true, itemCount: 1, error: null },
+  recentOfficialCalendar: {
+    ok: true,
+    itemCount: 1,
+    error: null,
+    windows: [
+      {
+        from: "2026-06-01",
+        to: "2026-06-02",
+        ok: true,
+        itemCount: 1,
+        error: null,
+      },
+    ],
+  },
+};
+
 const syntheticTeams = liveRegistry.divisions.flatMap((division, divisionIndex) =>
   Array.from({ length: division.expectedTeamCount }, (_, teamIndex) => {
     const teamId = divisionIndex * 10 + teamIndex + 1;
@@ -46,7 +67,7 @@ const syntheticTeams = liveRegistry.divisions.flatMap((division, divisionIndex) 
       attempt: 1,
       error: null,
       source: 'official',
-      coverage: { rows: 1 },
+      coverage: { ...reusableCoverage, divisionTag: division.tag },
       totalCount: 1,
       completedCount: 1,
       quarterMatrixCount: 1,
@@ -75,5 +96,47 @@ const syntheticReconciliation = buildTeamStatisticsReconciliation(syntheticTeams
 assert.equal(syntheticReconciliation.summary.classification, 'RECONCILED');
 assert.equal(syntheticReconciliation.summary.failures.length, 0);
 assert.equal(syntheticReconciliation.summary.divisionSummary[0].okTeams, 4);
+
+const malformedCoverageReconciliation = buildTeamStatisticsReconciliation([
+  { ...syntheticTeams[0], coverage: null },
+  ...syntheticTeams.slice(1),
+], {
+  base: 'https://example.com',
+  season: 2026,
+  timeoutMs: 1234,
+  retries: 1,
+  generatedAt: '2026-07-03T00:00:00.000Z',
+  registry: liveRegistry,
+});
+
+assert.equal(malformedCoverageReconciliation.summary.classification, 'PARTIAL');
+assert.ok(malformedCoverageReconciliation.summary.failures.some((failure) => failure.startsWith('coverage_missing:')));
+
+const unavailableCoverageReconciliation = buildTeamStatisticsReconciliation([
+  {
+    ...syntheticTeams[0],
+    coverage: {
+      ...reusableCoverage,
+      currentOfficialOnline: { ok: false, itemCount: 0, error: 'HTTP 503' },
+      recentOfficialCalendar: {
+        ok: false,
+        itemCount: 0,
+        error: 'HTTP 503',
+        windows: reusableCoverage.recentOfficialCalendar.windows,
+      },
+    },
+  },
+  ...syntheticTeams.slice(1),
+], {
+  base: 'https://example.com',
+  season: 2026,
+  timeoutMs: 1234,
+  retries: 1,
+  generatedAt: '2026-07-03T00:00:00.000Z',
+  registry: liveRegistry,
+});
+
+assert.equal(unavailableCoverageReconciliation.summary.classification, 'PARTIAL');
+assert.ok(unavailableCoverageReconciliation.summary.failures.some((failure) => failure.startsWith('coverage_unavailable:')));
 
 console.log('Team Statistics reconciliation tests passed');

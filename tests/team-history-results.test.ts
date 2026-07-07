@@ -50,5 +50,6 @@ assert.deepEqual(rows.map((row) => row.game.id), [2, 1]);
 assert.equal(rows.length, 2, "duplicate months must dedupe by gameId");
 assert.equal(rows[0].game.localTime, "08:30");
 assert.equal(rows[0].game.score, "90 : 80");
+assert.equal(rows[0].game.quarterTotals, "Q1 40 · Q2 45 · Q3 40 · Q4 45");
 assert.equal(teamHistoryItemsFromMonths([month], 999, "ipbl-66-m-pro-a").length, 0);
 console.log("Results-backed team history tests passed");

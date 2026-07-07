@@ -38,7 +38,7 @@ export function resultsMetadataKey(year: number, month1to12: number, divisionTag
   return `${resultsKvKey(year, month1to12, divisionTag)}:meta`;
 }
 
-export function resultsSyncTagsForMonth(year: number, month1to12: number): readonly string[] {
+export function resultsSyncTagsForMonth(_year: number, _month1to12: number): readonly string[] {
   return RESULTS_SYNC_TAGS;
 }
 

@@ -839,7 +839,7 @@ button {
 }
 
 .drawer {
-    width: min(480px, 100%);
+    width: min(860px, 100%);
     height: 100%;
     overflow-y: auto;
     background: linear-gradient(180deg, rgba(14, 21, 36, 0.98), rgba(10, 16, 28, 0.98));
@@ -856,6 +856,21 @@ button {
 .drawer-section {
     padding: 1rem;
     background: rgba(255, 255, 255, 0.03);
+}
+
+.drawer-lead-grid {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) minmax(260px, 1.1fr);
+    gap: 1rem;
+}
+
+.drawer-h2h-panel {
+    min-width: 0;
+}
+
+.drawer-h2h-score {
+    font-size: 1.05rem;
+    font-weight: 800;
 }
 
 .drawer-section h3 {
@@ -876,6 +891,16 @@ button {
 
 .drawer-handoff .mini-btn {
     margin-top: 0.35rem;
+}
+
+@media (max-width: 920px) {
+    .drawer {
+        width: min(480px, 100%);
+    }
+
+    .drawer-lead-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .strong-line {

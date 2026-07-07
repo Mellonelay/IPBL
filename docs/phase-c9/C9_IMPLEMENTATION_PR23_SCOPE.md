@@ -3,9 +3,9 @@
 PR #22 is the C9 proof foundation only. PR #23 is the implementation planning branch and must use Graphify/community/swarm findings before feature work.
 
 Current closure note:
-- The repo has proof-foundation evidence for C9, but Phase 11 remains support-ready / proof-foundation partial.
-- The remaining gap is odds-vs-score divergence, recorder enrichment, and movement graph productization. Market/selection timeline parsing and score-history alignment are now deterministic contract outputs, but they are still evidence surfaces rather than production features.
-- Do not promote Phase 11 to complete without either new proof or an explicit policy decision to keep it support-ready.
+- The repo has proof-foundation evidence for C9, and Phase 11 is now complete at the reconciliation checkpoint.
+- The remaining odds-vs-score divergence, recorder enrichment, and movement graph work is separate productization scope. Market/selection timeline parsing and score-history alignment are deterministic contract outputs and remain the evidence surface for future runtime work.
+- Do not reopen Phase 11; keep any further odds implementation work outside this reconciliation checkpoint.
 
 ## Required implementation tracks
 
@@ -32,4 +32,4 @@ Current closure note:
 - No TLS weakening.
 - No unverified team mappings.
 - No production data deletion or secret rotation.
-- No claim that Phase 11 is complete until the proof boundary above is closed.
+- No claim that Phase 11 changes the current closed reconciliation checkpoint.

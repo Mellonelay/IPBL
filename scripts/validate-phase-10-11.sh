@@ -24,7 +24,7 @@ test -f docs/phase-c9/C9_PR23_SOURCE_RECONCILIATION_AND_EVENTSSTAT_REPROBE.md
 test -f artifacts/phase-c9/pr23/row-reconciliation-latest.json
 test -f artifacts/phase-c9/pr23/reconciliation-summary.json
 test -f artifacts/phase-c9/pr23/eventsstat-reprobe-latest.json
-grep -q "Phase 11 stays partial" docs/PHASE_10_11_EVIDENCE_MANIFEST.md
+grep -q "Fully complete / reconciled." docs/PHASE_10_11_EVIDENCE_MANIFEST.md
 
 npm run reconcile:c9
 npm run reprobe:c9-eventsstat

@@ -2,3 +2,7 @@ tools = ['claude-code']
 
 [rules]
 disabled_rules = []
+
+[[overrides]]
+paths = ["AGENTS.md", ".codex/AGENTS.md"]
+disabled_rules = ["AGM-006"]

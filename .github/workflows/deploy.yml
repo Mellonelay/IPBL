@@ -66,7 +66,12 @@ jobs:
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: npx vercel deploy --prod --yes --token "$VERCEL_TOKEN"
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "VERCEL_TOKEN is not set; skipping Vercel deploy."
+            exit 0
+          fi
+          npx vercel deploy --prod --yes --token "$VERCEL_TOKEN"
 
   deploy-cloudflare-worker:
     name: Deploy Cloudflare worker
@@ -89,4 +94,9 @@ jobs:
       - name: Deploy Graphify intelligence worker
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npx wrangler deploy --config workers/graphify-intelligence/wrangler.jsonc
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "CLOUDFLARE_API_TOKEN is not set; skipping Cloudflare worker deploy."
+            exit 0
+          fi
+          npx wrangler deploy --config workers/graphify-intelligence/wrangler.jsonc

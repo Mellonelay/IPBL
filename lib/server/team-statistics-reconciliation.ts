@@ -11,6 +11,31 @@ export type TeamStatisticsLatestHistoryRow = {
   team2: string | null;
 };
 
+export type TeamStatisticsCoverageWindow = {
+  from: string;
+  to: string;
+  ok: boolean;
+  itemCount: number;
+  error: string | null;
+};
+
+export type TeamStatisticsCoverage = {
+  season: number;
+  divisionTag: string;
+  loadedMonths: number[];
+  currentOfficialOnline: {
+    ok: boolean;
+    itemCount: number;
+    error: string | null;
+  };
+  recentOfficialCalendar: {
+    ok: boolean;
+    itemCount: number;
+    error: string | null;
+    windows: TeamStatisticsCoverageWindow[];
+  };
+};
+
 export type TeamStatisticsTeamResult = {
   teamId: number;
   name: string;
@@ -21,7 +46,7 @@ export type TeamStatisticsTeamResult = {
   attempt: number | null;
   error: string | null;
   source: string | null;
-  coverage: unknown;
+  coverage: TeamStatisticsCoverage | null;
   totalCount: number | null;
   completedCount: number;
   quarterMatrixCount: number;
@@ -75,6 +100,29 @@ export type TeamStatisticsReconciliationOutput = {
   summary: TeamStatisticsReconciliationSummary;
   teams: TeamStatisticsTeamResult[];
 };
+
+function isTeamStatisticsCoverage(value: unknown): value is TeamStatisticsCoverage {
+  if (!value || typeof value !== "object") return false;
+  const coverage = value as Partial<TeamStatisticsCoverage>;
+  if (!Number.isFinite(coverage.season) || typeof coverage.divisionTag !== "string") return false;
+  if (!Array.isArray(coverage.loadedMonths) || coverage.loadedMonths.some((month) => !Number.isInteger(month))) return false;
+
+  const online = coverage.currentOfficialOnline;
+  if (!online || typeof online !== "object") return false;
+  if (typeof online.ok !== "boolean" || !Number.isFinite(online.itemCount) || (typeof online.error !== "string" && online.error !== null)) return false;
+
+  const calendar = coverage.recentOfficialCalendar;
+  if (!calendar || typeof calendar !== "object") return false;
+  if (typeof calendar.ok !== "boolean" || !Number.isFinite(calendar.itemCount) || (typeof calendar.error !== "string" && calendar.error !== null)) return false;
+  if (!Array.isArray(calendar.windows)) return false;
+  for (const window of calendar.windows) {
+    if (!window || typeof window !== "object") return false;
+    const entry = window as Partial<TeamStatisticsCoverageWindow>;
+    if (typeof entry.from !== "string" || typeof entry.to !== "string") return false;
+    if (typeof entry.ok !== "boolean" || !Number.isFinite(entry.itemCount) || (typeof entry.error !== "string" && entry.error !== null)) return false;
+  }
+  return true;
+}
 
 export function buildTeamStatisticsRegistry(): TeamStatisticsRegistry {
   return {
@@ -133,6 +181,24 @@ export function buildTeamStatisticsReconciliation(
     if (division.actualTeamCount !== division.expectedTeamCount) failures.push(`team_count_mismatch:${division.tag}`);
     if (division.okTeams !== division.actualTeamCount) failures.push(`history_fetch_failure:${division.tag}`);
     if (division.teamsWithHistory === 0) failures.push(`no_history:${division.tag}`);
+  }
+  for (const team of teamResults) {
+    if (!isTeamStatisticsCoverage(team.coverage)) {
+      failures.push(`coverage_missing:${team.divisionTag}:${team.teamId}`);
+      continue;
+    }
+    if (team.coverage.season !== input.season) {
+      failures.push(`coverage_season_mismatch:${team.divisionTag}:${team.teamId}`);
+    }
+    if (team.coverage.divisionTag !== team.divisionTag) {
+      failures.push(`coverage_division_mismatch:${team.divisionTag}:${team.teamId}`);
+    }
+    if (!team.coverage.currentOfficialOnline.ok && !team.coverage.recentOfficialCalendar.ok) {
+      failures.push(`coverage_unavailable:${team.divisionTag}:${team.teamId}`);
+    }
+    if (team.coverage.currentOfficialOnline.itemCount <= 0 && team.coverage.recentOfficialCalendar.itemCount <= 0) {
+      failures.push(`coverage_empty:${team.divisionTag}:${team.teamId}`);
+    }
   }
 
   return {
