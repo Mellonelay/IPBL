@@ -69,8 +69,8 @@ This manifest is read-only. It maps existing repo evidence to the canonical Phas
 
 ### Status
 
-- Partial.
-- Evidence already exists, but it is not yet normalized into a durable supersession-aware `evidence-supersession-index.json` checkpoint.
+- Fully complete / verified.
+- Evidence is normalized into the durable supersession-aware `evidence-supersession-index.json` checkpoint.
 
 ### Canonical checkpoint
 
@@ -116,8 +116,8 @@ This manifest is read-only. It maps existing repo evidence to the canonical Phas
 
 ### Remaining gap
 
-- `artifacts/evidence/evidence-supersession-index.json` still needs coverage updates when new proof is added.
-- Keep `evidenceFamilies[*].canonicalArtifact`, `evidenceFamilies[*].supersedes`, `evidenceFamilies[*].evidence`, `evidenceFamilies[*].supersessionReason`, `evidenceFamilies[*].proofGateTests`, and `evidenceFamilies[*].evidenceLineage` aligned with the current repository evidence.
+- No remaining gap in the phase checkpoint.
+- Keep `evidenceFamilies[*].canonicalArtifact`, `evidenceFamilies[*].supersedes`, `evidenceFamilies[*].evidence`, `evidenceFamilies[*].supersessionReason`, `evidenceFamilies[*].proofGateTests`, and `evidenceFamilies[*].evidenceLineage` aligned with the current repository evidence when new proof is added.
 - Future closure claims should rely on the explicit lineage and proof-gate fields in the index rather than narrative-only packaging.
 
 ## Recommended follow-up

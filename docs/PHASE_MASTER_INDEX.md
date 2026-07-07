@@ -30,20 +30,25 @@ This index is the repo-wide navigation layer for the phases that are complete, m
   - [graphify-out/.graphify_analysis.json](/root/repos/IPBL/graphify-out/.graphify_analysis.json)
   - [graphify-out/.graphify_ast.json](/root/repos/IPBL/graphify-out/.graphify_ast.json)
 
-## Phase 2-3, 5, 6-7: Support-Ready Surfaces
-
-These phases are backed by durable evidence and validation coverage, but they remain separate from the open roadmap phases.
-They are closure packaging surfaces, not open implementation targets.
+## Phase 2-7: Fully Complete / Materialized
 
 - Phase 2 - Graphify Skill Installation:
   - [docs/PHASE_MASTER_CHECKLIST.md](/root/repos/IPBL/docs/PHASE_MASTER_CHECKLIST.md)
+  - [.agents/skills/ipbl/SKILL.md](/root/repos/IPBL/.agents/skills/ipbl/SKILL.md)
+  - [.claude/skills/ipbl/SKILL.md](/root/repos/IPBL/.claude/skills/ipbl/SKILL.md)
+  - [.codex/AGENTS.md](/root/repos/IPBL/.codex/AGENTS.md)
 - Phase 3 - Repo Archaeology / Code Review Graph:
   - [docs/PHASE_MASTER_CHECKLIST.md](/root/repos/IPBL/docs/PHASE_MASTER_CHECKLIST.md)
+  - [.code-review-graph/graph.db](/root/repos/IPBL/.code-review-graph/graph.db)
 - Phase 5 - Evidence Graph:
   - [docs/PHASE_4_5_EVIDENCE_MANIFEST.md](/root/repos/IPBL/docs/PHASE_4_5_EVIDENCE_MANIFEST.md)
+  - [artifacts/evidence/evidence-supersession-index.json](/root/repos/IPBL/artifacts/evidence/evidence-supersession-index.json)
 - Phase 6 - Skill Forge Materialization:
   - [docs/PHASE_6_7_EVIDENCE_MANIFEST.md](/root/repos/IPBL/docs/PHASE_6_7_EVIDENCE_MANIFEST.md)
+  - [AGENTS.md](/root/repos/IPBL/AGENTS.md)
 - Phase 7 - agnix Integration:
+  - [.agnix.toml](/root/repos/IPBL/.agnix.toml)
+  - [scripts/validate-phase-6-7.sh](/root/repos/IPBL/scripts/validate-phase-6-7.sh)
   - [docs/PHASE_6_7_EVIDENCE_MANIFEST.md](/root/repos/IPBL/docs/PHASE_6_7_EVIDENCE_MANIFEST.md)
 
 ## Phase 11: Fully Complete
@@ -149,6 +154,5 @@ npm run test:team-statistics-reconciliation
 
 ## Scope Boundaries
 
-- This index does not reclassify Phase 5 as complete.
 - This index does not add runtime behavior.
 - This index only points to evidence that already exists in the repo.

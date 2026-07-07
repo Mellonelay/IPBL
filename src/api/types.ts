@@ -43,6 +43,7 @@ export type H2HEntry = {
     time: string;
     scoreText: string;
     fullScore: string | null;
+    quarterTotals?: string | null;
     status: GameStatusKind;
     winner: 0 | 1 | 2;
     homeTeamId: number;
@@ -57,6 +58,7 @@ export type TeamHistoryGame = {
     status: GameStatusKind;
     scoreText: string;
     fullScore: string | null;
+    quarterTotals?: string | null;
     team1: TeamRef;
     team2: TeamRef;
     tag: string;

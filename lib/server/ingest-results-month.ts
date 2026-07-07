@@ -9,17 +9,6 @@ export type {
 import type { StoredCalendarGridGame, StoredResultsMonthMap } from "./results-types.js";
 import { dedupeFinishedGames } from "./results-hardening.js";
 
-function formatApiDate(d: Date): string {
-  const dd = String(d.getDate()).padStart(2, "0");
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
-  const yyyy = d.getFullYear();
-  return `${dd}.${mm}.${yyyy}`;
-}
-
-function startOfLocalDay(d: Date): Date {
-  return new Date(d.getFullYear(), d.getMonth(), d.getDate());
-}
-
 function monthDayKeys(year: number, monthIndex: number): string[] {
   const count = new Date(year, monthIndex + 1, 0).getDate();
   const out: string[] = [];

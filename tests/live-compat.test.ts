@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import type { VercelResponse } from "@vercel/node";
-import { createLiveCompatHandler } from "../api/live.ts";
+import { createLiveCompatHandler } from "../lib/server/live-compat.ts";
 import type { LiveFeedEnvelope } from "../lib/server/live-feed.ts";
 
 const envelope: LiveFeedEnvelope = {

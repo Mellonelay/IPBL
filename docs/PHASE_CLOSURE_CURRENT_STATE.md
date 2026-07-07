@@ -13,12 +13,10 @@ Source of truth:
 
 - Total phases: 15
 - Open phases: 0
-- Complete phases: 0, 1, 4, 8, 9, 10, 11, 12, 13, 14
-- Support-ready phases: 2, 3, 5, 6, 7
+- Complete phases: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
+- Support-ready phases: none
 
-This repository is in closure / upgrade mode, not phase-building mode.
-The remaining work is packaging, reconciliation, evidence normalization, and upgrade planning around already-completed phases.
-The support-ready phases are not open implementation phases; they are closure packaging and proof-boundary work.
+This repository is in closed / verified mode. The remaining work is documentation alignment and artifact refresh around already-completed phases.
 
 ## Closure table
 
@@ -26,12 +24,12 @@ The support-ready phases are not open implementation phases; they are closure pa
 |---|---|---|
 | 0 | complete | Execution Fabric baseline is materialized and stable. |
 | 1 | complete | Graphify bootstrap exists and remains the reasoning substrate. |
-| 2 | support-ready | Graphify skill installation is documented and aligned, not reopened. |
-| 3 | support-ready | Repo archaeology and code-review graph surfaces are materialized. |
+| 2 | complete | Graphify skill installation is documented, aligned, and closed. |
+| 3 | complete | Repo archaeology and code-review graph surfaces are materialized. |
 | 4 | complete | Source archaeology graph and proof bundle are complete. |
-| 5 | support-ready | Evidence exists; supersession normalization is the closure packaging step. |
-| 6 | support-ready | Skill Forge materialization is present as support infrastructure. |
-| 7 | support-ready | agnix is usable as a local/CI gate. |
+| 5 | complete | Evidence exists and the supersession index is now the canonical checkpoint. |
+| 6 | complete | Skill Forge materialization is present as a closed support surface. |
+| 7 | complete | agnix is usable as a local/CI gate and the gate is wired. |
 | 8 | complete | Quarter-state recorder is fully complete. |
 | 9 | complete | Runtime agent graph is complete. |
 | 10 | complete | IPBL workload graph is complete. |
@@ -60,7 +58,6 @@ The relevant incident was production gameId `1073505` for Bryansk vs Izhevsk wit
 ## Closure rules
 
 - Do not reopen completed phases.
-- Do not treat support-ready phases as open implementation phases.
 - Prefer new packaging docs and evidence indexes over new runtime behavior.
 - Keep validation read-only unless a separate deployment gate is explicitly provided.
 
@@ -76,8 +73,8 @@ June 20, 2026:
 
 ## Closure Status
 
-- Complete: 0, 1, 4, 8, 9, 10, 11, 12, 13, 14
-- Support-ready: 2, 3, 5, 6, 7
+- Complete: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
+- Support-ready: 0
 - Open: 0
 
 ## PR Mirror

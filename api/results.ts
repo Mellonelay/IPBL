@@ -1,10 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { ResultsMonthMetadata } from "../lib/server/results-types.js";
 import * as redis from "../lib/server/results-redis.js";
+import { buildLiveFeedEnvelope } from "../lib/server/live-feed.js";
+import { createLiveCompatHandler } from "../lib/server/live-compat.js";
+import { writeResultsMonthToKv } from "../lib/server/write-results-month-kv.js";
 import {
     legacyResultsMetadata,
     parseResultsMetadata,
     parseStoredResultsMonth,
+    verifiedThroughDateForMonth,
 } from "../lib/server/results-hardening.js";
 import * as syncConstants from "../lib/server/results-sync-constants.js";
 
@@ -25,6 +29,134 @@ function queryFromSearchParams(search: URLSearchParams): VercelRequest["query"] 
     }
     return query;
 }
+
+const liveCompatHandler = createLiveCompatHandler({ buildLiveFeedEnvelope });
+export type ResultsRouteDependencies = {
+    getResultsRedis?: typeof redis.getResultsRedis;
+    writeResultsMonthToKv?: typeof writeResultsMonthToKv;
+    buildLiveFeedEnvelope?: typeof buildLiveFeedEnvelope;
+};
+
+function setNoStoreHeaders(res: VercelResponse) {
+    res.setHeader("Cache-Control", "no-store, max-age=0");
+    res.setHeader("CDN-Cache-Control", "no-store");
+    res.setHeader("Vercel-CDN-Cache-Control", "no-store");
+}
+
+function keyForResultsMonth(year: number, month: number, divisionTag: string) {
+    return {
+        key: syncConstants.resultsKvKey(year, month, divisionTag),
+        metadataKey: syncConstants.resultsMetadataKey(year, month, divisionTag),
+    };
+}
+
+async function attemptResultsMonthBackfill(
+    client: NonNullable<ReturnType<typeof redis.getResultsRedis>>,
+    year: number,
+    month: number,
+    divisionTag: string,
+    writer: typeof writeResultsMonthToKv
+): Promise<void> {
+    await writer(
+        { year, month, divisionTag, timeoutMs: 115000 },
+        { redis: client as never }
+    );
+}
+
+function shouldAttemptResultsRepair(
+    metadata: ResultsMonthMetadata | null,
+    year: number,
+    month: number
+): boolean {
+    const targetVerifiedThrough = verifiedThroughDateForMonth(year, month);
+    if (!targetVerifiedThrough) return false;
+    if (!metadata) return true;
+    if (metadata.status !== "ok") return true;
+    if (!metadata.verifiedThroughDate) return true;
+    return metadata.verifiedThroughDate < targetVerifiedThrough;
+}
+
+export function createResultsHandler(deps: ResultsRouteDependencies = {}) {
+    const getResultsRedis = deps.getResultsRedis ?? redis.getResultsRedis;
+    const backfillMonth = deps.writeResultsMonthToKv ?? writeResultsMonthToKv;
+    const liveEnvelope = deps.buildLiveFeedEnvelope ?? buildLiveFeedEnvelope;
+
+    return async function handler(req: VercelRequest, res: VercelResponse) {
+        const host = Array.isArray(req.headers.host) ? req.headers.host[0] : req.headers.host;
+        const base = `https://${host || "ipbl-minimal-viewer.vercel.app"}`;
+        const query = queryFromSearchParams(new URL(req.url || "/api/results", base).searchParams);
+        if (firstQueryValue(query.mode) === "live") {
+            const compat = firstQueryValue(query.compat);
+            if (compat === "1" || compat === "true") return liveCompatHandler(req, res);
+            setNoStoreHeaders(res);
+            const payload = await liveEnvelope();
+            return res.status(200).json(payload);
+        }
+
+        const resolved = resolveResultsQuery(query);
+        if (!resolved.ok) return res.status(resolved.status).json({ error: resolved.error });
+        const { year: parsedYear, month: parsedMonth, divisionTag, wantsMetadata, defaultedYearMonth, usedTagAlias } = resolved;
+
+        const client = getResultsRedis();
+        if (!client) return res.status(503).json({ error: "KV not configured" });
+
+        const { key, metadataKey } = keyForResultsMonth(parsedYear, parsedMonth, divisionTag);
+        try {
+            let [data, metadataRaw] = await Promise.all([
+                client.get<unknown>(key),
+                client.get<unknown>(metadataKey),
+            ]);
+            let storedMetadata = parseResultsMetadata(metadataRaw);
+            const shouldRepair = !data || shouldAttemptResultsRepair(storedMetadata, parsedYear, parsedMonth);
+            if (shouldRepair) {
+                try {
+                    await attemptResultsMonthBackfill(client, parsedYear, parsedMonth, divisionTag, backfillMonth);
+                    [data, metadataRaw] = await Promise.all([
+                        client.get<unknown>(key),
+                        client.get<unknown>(metadataKey),
+                    ]);
+                    storedMetadata = parseResultsMetadata(metadataRaw);
+                } catch {
+                    // Preserve the existing cold-data response if official backfill fails.
+                }
+            }
+            if (!data) {
+                const metadataOnly = metadataOnlyResultsEnvelope(metadataRaw, wantsMetadata);
+                if (metadataOnly || wantsMetadata || defaultedYearMonth || usedTagAlias) {
+                    const metadata = metadataOnly?.meta ?? storedMetadata ?? coldResultsMetadata(parsedYear, parsedMonth, divisionTag);
+                    setNoStoreHeaders(res);
+                    res.setHeader("X-IPBL-Results-Status", metadata.status);
+                    res.setHeader("X-IPBL-Results-Source", metadata.source);
+                    if (metadata.updatedAt) res.setHeader("X-IPBL-Results-Updated-At", metadata.updatedAt);
+                    if (metadata.verifiedThroughDate) res.setHeader("X-IPBL-Results-Verified-Through", metadata.verifiedThroughDate);
+                    return res.status(200).json({ calendar: {}, meta: metadata });
+                }
+                return res.status(404).json({ error: "Cold data", key, cold: true });
+            }
+
+            const calendar = parseStoredResultsMonth(data);
+            if (!calendar) return res.status(500).json({ error: "Stored Results payload is invalid", key });
+            const metadata = storedMetadata
+                ?? legacyResultsMetadata({ map: calendar, year: parsedYear, month: parsedMonth, divisionTag });
+
+            setNoStoreHeaders(res);
+            res.setHeader("X-IPBL-Results-Status", metadata.status);
+            res.setHeader("X-IPBL-Results-Source", metadata.source);
+            if (metadata.updatedAt) res.setHeader("X-IPBL-Results-Updated-At", metadata.updatedAt);
+            if (metadata.verifiedThroughDate) res.setHeader("X-IPBL-Results-Verified-Through", metadata.verifiedThroughDate);
+
+            if (wantsMetadata) {
+                return res.status(200).json({ calendar, meta: metadata });
+            }
+            return res.status(200).json(calendar);
+        } catch (e: unknown) {
+            const message = e instanceof Error ? e.message : String(e);
+            return res.status(500).json({ error: message });
+        }
+    };
+}
+
+export default createResultsHandler();
 
 export function defaultResultsYearMonth(now = new Date()): { year: number; month: number } {
     const parts = Object.fromEntries(
@@ -89,57 +221,4 @@ function coldResultsMetadata(year: number, month: number, divisionTag: string): 
         divisionTag,
         error: "Cold data",
     };
-}
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-    const host = Array.isArray(req.headers.host) ? req.headers.host[0] : req.headers.host;
-    const base = `https://${host || "ipbl-minimal-viewer.vercel.app"}`;
-    const resolved = resolveResultsQuery(queryFromSearchParams(new URL(req.url || "/api/results", base).searchParams));
-    if (!resolved.ok) return res.status(resolved.status).json({ error: resolved.error });
-    const { year: parsedYear, month: parsedMonth, divisionTag, wantsMetadata, defaultedYearMonth, usedTagAlias } = resolved;
-
-    const key = syncConstants.resultsKvKey(parsedYear, parsedMonth, divisionTag);
-    const metadataKey = syncConstants.resultsMetadataKey(parsedYear, parsedMonth, divisionTag);
-    try {
-        const client = redis.getResultsRedis();
-        if (!client) return res.status(503).json({ error: "KV not configured" });
-
-        const [data, metadataRaw] = await Promise.all([
-            client.get<unknown>(key),
-            client.get<unknown>(metadataKey),
-        ]);
-        const storedMetadata = parseResultsMetadata(metadataRaw);
-        if (!data) {
-            const metadataOnly = metadataOnlyResultsEnvelope(metadataRaw, wantsMetadata);
-            if (metadataOnly || wantsMetadata || defaultedYearMonth || usedTagAlias) {
-                const metadata = metadataOnly?.meta ?? storedMetadata ?? coldResultsMetadata(parsedYear, parsedMonth, divisionTag);
-                res.setHeader("Cache-Control", "no-store, max-age=0");
-                res.setHeader("X-IPBL-Results-Status", metadata.status);
-                res.setHeader("X-IPBL-Results-Source", metadata.source);
-                if (metadata.updatedAt) res.setHeader("X-IPBL-Results-Updated-At", metadata.updatedAt);
-                if (metadata.verifiedThroughDate) res.setHeader("X-IPBL-Results-Verified-Through", metadata.verifiedThroughDate);
-                return res.status(200).json({ calendar: {}, meta: metadata });
-            }
-            return res.status(404).json({ error: "Cold data", key, cold: true });
-        }
-
-        const calendar = parseStoredResultsMonth(data);
-        if (!calendar) return res.status(500).json({ error: "Stored Results payload is invalid", key });
-        const metadata = storedMetadata
-            ?? legacyResultsMetadata({ map: calendar, year: parsedYear, month: parsedMonth, divisionTag });
-
-        res.setHeader("Cache-Control", "no-store, max-age=0");
-        res.setHeader("X-IPBL-Results-Status", metadata.status);
-        res.setHeader("X-IPBL-Results-Source", metadata.source);
-        if (metadata.updatedAt) res.setHeader("X-IPBL-Results-Updated-At", metadata.updatedAt);
-        if (metadata.verifiedThroughDate) res.setHeader("X-IPBL-Results-Verified-Through", metadata.verifiedThroughDate);
-
-        if (wantsMetadata) {
-            return res.status(200).json({ calendar, meta: metadata });
-        }
-        return res.status(200).json(calendar);
-    } catch (e: unknown) {
-        const message = e instanceof Error ? e.message : String(e);
-        return res.status(500).json({ error: message });
-    }
 }
