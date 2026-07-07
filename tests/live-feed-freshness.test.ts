@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
-import { buildLiveFeedEnvelope, mergeLiveGamesByFreshness, officialGameDetailIsTerminal, reconcileLiveGamesWithOfficialDetail } from "../api/results/live.ts";
-import type { LiveFeedEnvelope } from "../api/results/live.ts";
+import { buildLiveFeedEnvelope, mergeLiveGamesByFreshness, officialGameDetailIsTerminal, reconcileLiveGamesWithOfficialDetail, type LiveFeedEnvelope } from "../lib/server/live-feed.ts";
 import type { ScheduleGame } from "../lib/server/calendar-normalize.ts";
 
 void (async () => {

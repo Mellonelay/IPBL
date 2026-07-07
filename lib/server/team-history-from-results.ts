@@ -9,6 +9,7 @@ export type StoredTeamHistoryItem = {
     gameStatus: string;
     score: string;
     fullScore: string | null;
+    quarterTotals: string | null;
   };
   team1: { teamId: number; shortName: string; name: string };
   team2: { teamId: number; shortName: string; name: string };
@@ -52,6 +53,7 @@ export function teamHistoryItemsFromMonths(
               gameStatus: String(game.status ?? "ResultConfirmed"),
               score: String(game.scoreText ?? ""),
               fullScore: game.fullScore ?? null,
+              quarterTotals: row.quarterTotals ?? null,
             },
             team1: game.team1,
             team2: game.team2,
@@ -144,6 +146,7 @@ export function officialOnlineTeamHistoryItems(
         gameStatus: String(game.gameStatus ?? row.status?.id ?? row.status?.displayName ?? 'Online'),
         score: officialScoreText(game),
         fullScore: game.fullScore ?? null,
+        quarterTotals: null,
       },
       team1: officialTeamRef(row.team1),
       team2: officialTeamRef(row.team2),

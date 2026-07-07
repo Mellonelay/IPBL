@@ -24,7 +24,7 @@ export default function GameDrawer({ drawer, onClose, onOpenIntelligence }: Game
           Close
         </button>
 
-        <section className="drawer-section">
+        <section className="drawer-section drawer-hero">
           <div className="drawer-head">
             <div>
               <h2>
@@ -40,18 +40,46 @@ export default function GameDrawer({ drawer, onClose, onOpenIntelligence }: Game
           </div>
         </section>
 
-        <section className="drawer-section">
-          <h3>Score block</h3>
-          <div className="score-hero">{drawer.game.scoreText}</div>
-          <div className="quarter-grid">
-            <Metric label="Q1" value={drawer.board.quarterTotals.Q1 ?? "—"} />
-            <Metric label="Q2" value={drawer.board.quarterTotals.Q2 ?? "—"} />
-            <Metric label="Q3" value={drawer.board.quarterTotals.Q3 ?? "—"} />
-            <Metric label="Q4" value={drawer.board.quarterTotals.Q4 ?? "—"} />
-            <Metric label="1H" value={drawer.board.firstHalfTotal ?? "—"} />
-            <Metric label="2H" value={drawer.board.secondHalfTotal ?? "—"} />
-          </div>
-        </section>
+        <div className="drawer-lead-grid">
+          <section className="drawer-section drawer-h2h-panel">
+            <div className="drawer-section-head">
+              <h3>H2H block</h3>
+              <span className="status-badge">Recent</span>
+            </div>
+            <p className="muted">
+              {drawer.game.team1.shortName} vs {drawer.game.team2.shortName}
+            </p>
+            {drawer.h2h.length > 0 ? (
+              <div className="h2h-list">
+                {drawer.h2h.map((entry) => (
+                  <article className="h2h-item" key={entry.gameId}>
+                    <div className="replay-item-head">
+                      <strong>{entry.date} {entry.time}</strong>
+                      <span className="calendar-division-badge">{entry.status}</span>
+                    </div>
+                    <div className="drawer-h2h-score">{entry.scoreText}</div>
+                    {entry.quarterTotals && <div className="calendar-quarter-line">{entry.quarterTotals}</div>}
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <p className="muted">No verified H2H rows loaded for this matchup yet.</p>
+            )}
+          </section>
+
+          <section className="drawer-section">
+            <h3>Score block</h3>
+            <div className="score-hero">{drawer.game.scoreText}</div>
+            <div className="quarter-grid">
+              <Metric label="Q1" value={drawer.board.quarterTotals.Q1 ?? "—"} />
+              <Metric label="Q2" value={drawer.board.quarterTotals.Q2 ?? "—"} />
+              <Metric label="Q3" value={drawer.board.quarterTotals.Q3 ?? "—"} />
+              <Metric label="Q4" value={drawer.board.quarterTotals.Q4 ?? "—"} />
+              <Metric label="1H" value={drawer.board.firstHalfTotal ?? "—"} />
+              <Metric label="2H" value={drawer.board.secondHalfTotal ?? "—"} />
+            </div>
+          </section>
+        </div>
 
         <section className="drawer-section" data-testid="player-stats-availability">
           <h3>Player statistics</h3>
@@ -120,7 +148,7 @@ export default function GameDrawer({ drawer, onClose, onOpenIntelligence }: Game
             <span className="status-badge">Detail</span>
           </div>
           <p className="muted">
-            Detailed replay, H2H, team-risk, and matchup-risk review now lives in the Intelligence tab.
+            Detailed replay, team-risk, and matchup-risk review now lives in the Intelligence tab.
           </p>
           <button type="button" className="mini-btn" onClick={onOpenIntelligence}>
             Open Intelligence

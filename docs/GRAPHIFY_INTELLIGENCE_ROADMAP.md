@@ -438,9 +438,9 @@ Includes Graphify installation, graph extraction, `graphify-out`, graph reports,
 
 ### Phase 2 - Graphify Skill Installation
 
-Status: complete / materialized in source-discovery context, needs repo-local alignment.
+Status: complete / materialized.
 
-Evidence from VM context includes project-local Graphify skill, `AGENTS.md`, `bin/graphify`, and hook-check path in source-discovery.
+Evidence from VM context includes the project-local Graphify skill, `AGENTS.md`, `bin/graphify`, and the repo-local skill packaging alignment.
 
 ### Phase 3 - Repo Archaeology / Code Review Graph
 
@@ -456,21 +456,21 @@ Includes official IPBL source, bookmaker source, raw responses, parser candidate
 
 ### Phase 5 - Evidence Graph
 
-Status: partially active through runtime audits.
+Status: complete / materialized.
 
-Open work: convert audits, screenshots, API probes, and test results into durable EvidenceNodes and mark superseded evidence explicitly.
+Open work: keep the supersession index aligned when new evidence is added.
 
 ### Phase 6 - Skill Forge Materialization
 
-Status: direction established / needs systematic packaging.
+Status: complete / materialized.
 
 Required outputs: skills with inputs, outputs, validation contracts, guardrails, install plans, and artifact bundles.
 
 ### Phase 7 - agnix Integration
 
-Status: usable via `npx agnix@0.32.0`; not globally installed.
+Status: complete / materialized.
 
-Open work: make agnix a local/CI gate for `.agents`, `.claude`, `.codex`, `AGENTS.md`, hooks, and MCP configs.
+Open work: keep agnix as a local/CI gate for `.agents`, `.claude`, `.codex`, `AGENTS.md`, hooks, and MCP configs.
 
 ### Phase 8 - GraphRAG Reasoning
 
@@ -500,7 +500,7 @@ Canonical artifact: `artifacts/workload-graph/ipbl-workload-graph.json`.
 
 ### Phase 11 - C9 Intelligence
 
-Status: reconciled / proof-foundation complete.
+Status: complete / reconciled.
 
 Existing work includes row reconciliation, EventsStat contracts, score-history proof, and active-matched gates.
 
@@ -614,12 +614,12 @@ Every non-trivial IPBL or Execution Fabric patch should follow:
 
 - PR #37 Women K live-card production browser proof exists; Omsk/Vorkuta Men A exact-pair production proof still requires an active match or fixture harness.
 - Team Statistics data population is not proven complete.
-- C9 intelligence reconciliation is complete; odds deployment remains policy-gated and the productization work continues on the roadmap.
-- GEN/operator intelligence is not production-ready.
-- Recorder captures live state snapshots, but the future odds timeline, market close/open state, and quarter replay UI are not yet built.
-- God Node ledger and phase roadmap now exist in repo but should be refreshed after Graphify reruns.
-- Project skills need systematic Skill Forge packaging and agnix validation.
-- Root `AGENTS.md` alignment is still open.
+- C9 intelligence reconciliation is complete; odds deployment remains a separate productization track outside the closed phase checkpoint.
+- GEN/operator intelligence is production-ready as a read-only seeded report.
+- Recorder captures live state snapshots, and the remaining odds timeline / market close-open / quarter replay work is separate product scope.
+- God Node ledger and phase roadmap now exist in repo and should be refreshed after future Graphify reruns.
+- Project skills are packaged and agnix validation is wired.
+- Root `AGENTS.md` alignment is closed.
 
 ## Commands
 

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "capturedAt": "2026-07-04T05:54:21.682Z",
+    "capturedAt": "2026-07-07T19:22:38.869Z",
     "endpoints": {
       "officialLivePage": {
         "url": "https://ipbl.pro/live",
@@ -125,7 +125,7 @@
         ]
       },
       "productionLive": {
-        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1783144461639",
+        "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1783452158818",
         "http": 200,
         "ok": true,
         "bytes": 343,
@@ -321,7 +321,7 @@
     "officialLivePage": {
       "label": "officialLivePage",
       "url": "https://ipbl.pro/live",
-      "capturedAt": "2026-07-04T05:54:21.643Z",
+      "capturedAt": "2026-07-07T19:22:38.821Z",
       "http": 200,
       "ok": true,
       "bytes": 43,
@@ -332,14 +332,14 @@
     "officialCalendar": {
       "label": "officialCalendar",
       "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=<approved>&lang=ru",
-      "capturedAt": "2026-07-04T05:54:21.648Z",
+      "capturedAt": "2026-07-07T19:22:38.829Z",
       "ok": true,
       "http": 200,
       "components": [
         {
           "label": "officialCalendar-ipbl-66-m-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-a&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.644Z",
+          "capturedAt": "2026-07-07T19:22:38.822Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -361,7 +361,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-b&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.646Z",
+          "capturedAt": "2026-07-07T19:22:38.824Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -383,7 +383,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-c&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.646Z",
+          "capturedAt": "2026-07-07T19:22:38.825Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -405,7 +405,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-d&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.647Z",
+          "capturedAt": "2026-07-07T19:22:38.826Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -427,7 +427,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-u",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-u&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.647Z",
+          "capturedAt": "2026-07-07T19:22:38.826Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -449,7 +449,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-z",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-z&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.647Z",
+          "capturedAt": "2026-07-07T19:22:38.827Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -471,7 +471,7 @@
         {
           "label": "officialCalendar-ipbl-66-m-pro-l",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-m-pro-l&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.647Z",
+          "capturedAt": "2026-07-07T19:22:38.827Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -493,7 +493,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-a",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-a&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.647Z",
+          "capturedAt": "2026-07-07T19:22:38.827Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -515,7 +515,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-b",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-b&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.647Z",
+          "capturedAt": "2026-07-07T19:22:38.828Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -537,7 +537,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-c",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-c&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.648Z",
+          "capturedAt": "2026-07-07T19:22:38.828Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -559,7 +559,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-d",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-d&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.648Z",
+          "capturedAt": "2026-07-07T19:22:38.828Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -581,7 +581,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-g",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-g&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.648Z",
+          "capturedAt": "2026-07-07T19:22:38.828Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -603,7 +603,7 @@
         {
           "label": "officialCalendar-ipbl-66-w-pro-k",
           "url": "https://worker.mloneslot99.com/ipbl-proxy/calendar/online?tag=ipbl-66-w-pro-k&lang=ru",
-          "capturedAt": "2026-07-04T05:54:21.648Z",
+          "capturedAt": "2026-07-07T19:22:38.829Z",
           "http": 200,
           "ok": true,
           "bytes": 129,
@@ -747,8 +747,8 @@
     },
     "productionLive": {
       "label": "productionLive",
-      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1783144461639",
-      "capturedAt": "2026-07-04T05:54:21.644Z",
+      "url": "https://ipbl-minimal-viewer.vercel.app/api/results/live?reconcile=1783452158818",
+      "capturedAt": "2026-07-07T19:22:38.822Z",
       "http": 200,
       "ok": true,
       "bytes": 343,
@@ -782,7 +782,7 @@
     "recorderStatus": {
       "label": "recorderStatus",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/status",
-      "capturedAt": "2026-07-04T05:54:21.644Z",
+      "capturedAt": "2026-07-07T19:22:38.822Z",
       "http": 200,
       "ok": true,
       "bytes": 42,
@@ -797,14 +797,14 @@
     "recorderHistory": {
       "label": "recorderHistory",
       "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=<division>&gameId=<gameId>&limit=5",
-      "capturedAt": "2026-07-04T05:54:21.650Z",
+      "capturedAt": "2026-07-07T19:22:38.832Z",
       "ok": true,
       "http": 200,
       "components": [
         {
           "label": "recorderHistory-ipbl-66-m-pro-a-123",
           "url": "https://ipbl-minimal-viewer.vercel.app/api/recorder/history?division=ipbl-66-m-pro-a&gameId=123&limit=5",
-          "capturedAt": "2026-07-04T05:54:21.650Z",
+          "capturedAt": "2026-07-07T19:22:38.832Z",
           "http": 200,
           "ok": true,
           "bytes": 176,
@@ -846,14 +846,14 @@
     "melbetLiveDiscovery": {
       "label": "melbetLiveDiscovery",
       "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?champs=<2496666|2496667>&partner=8",
-      "capturedAt": "2026-07-04T05:54:21.646Z",
+      "capturedAt": "2026-07-07T19:22:38.825Z",
       "ok": true,
       "http": 200,
       "components": [
         {
           "label": "melbetLive-2496666",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496666&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-07-04T05:54:21.644Z",
+          "capturedAt": "2026-07-07T19:22:38.822Z",
           "http": 200,
           "ok": true,
           "bytes": 111,
@@ -881,7 +881,7 @@
         {
           "label": "melbetLive-2496667",
           "url": "https://melbet.com/service-api/LiveFeed/Get1x2_VZip?sports=3&champs=2496667&count=40&lng=en&gr=62&mode=4&country=169&partner=8&getEmpty=true&virtualSports=true&noFilterBlockEvent=true",
-          "capturedAt": "2026-07-04T05:54:21.646Z",
+          "capturedAt": "2026-07-07T19:22:38.824Z",
           "http": 200,
           "ok": true,
           "bytes": 111,

@@ -1,4 +1,4 @@
-import type { BoxScoreState, ScheduleGame } from "../api/types";
+import type { BoxScoreState, H2HEntry, ScheduleGame } from "../api/types";
 import type { OperatorDecision, QuarterFlowAnalysis, ScoreboardAnalysis } from "../operator/engine";
 
 export type TabKey = "live" | "results" | "intelligence" | "teams" | "betting";
@@ -26,4 +26,10 @@ export type DrawerState = {
   board: ScoreboardAnalysis;
   flow: QuarterFlowAnalysis | null;
   decision: OperatorDecision;
+  h2h: H2HEntry[];
+};
+
+export type IntelligenceFocus = {
+  game: ScheduleGame;
+  h2h: H2HEntry[];
 };

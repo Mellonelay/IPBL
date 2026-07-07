@@ -39,6 +39,20 @@ function numberOrNull(value: unknown): number | null {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
+function formatQuarterTotals(fullScore: string | null | undefined): string | null {
+  const source = String(fullScore ?? "").trim();
+  if (!source) return null;
+
+  const totals = source
+    .split(/[,;|]/)
+    .map((part) => part.match(/(\d+)\s*:\s*(\d+)/))
+    .filter((pair): pair is RegExpMatchArray => pair !== null)
+    .slice(0, 4)
+    .map((pair, index) => `Q${index + 1} ${Number(pair[1]) + Number(pair[2])}`);
+
+  return totals.length ? totals.join(" · ") : null;
+}
+
 export function isTrulyLiveRow(item: Record<string, unknown>): boolean {
   const g = item.game as RawGame | undefined;
   const st = item.status as { id?: string; displayName?: string } | undefined;
@@ -323,6 +337,7 @@ export function computeH2H(
       return {
         gameId: game.gameId, date: game.localDate, time: game.localTime,
         scoreText: game.scoreText, fullScore: game.fullScore, status: game.status,
+        quarterTotals: game.quarterTotals ?? formatQuarterTotals(game.fullScore),
         winner: home === away ? 0 : home > away ? 1 : 2,
         homeTeamId: game.team1.teamId, awayTeamId: game.team2.teamId,
       } as H2HEntry;
