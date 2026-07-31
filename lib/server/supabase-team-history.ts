@@ -1,5 +1,6 @@
 import type { StoredTeamHistoryItem } from "./team-history-from-results.js";
 import { getSupabaseAdminClient } from "./supabase-admin.js";
+import { getWorkerTeamHistory, isIpblBackfillConfigured } from "./ipbl-supabase-worker.js";
 
 export type SupabaseTeamHistoryResult = {
   configured: boolean;
@@ -62,6 +63,23 @@ export async function fetchSupabaseTeamHistoryRows(
   divisionTag: string,
   limit = 1000
 ): Promise<SupabaseTeamHistoryResult> {
+  if (isIpblBackfillConfigured()) {
+    try {
+      const rows = await getWorkerTeamHistory({ teamId, divisionTag, limit }) as TeamHistoryViewRow[];
+      const items = (Array.isArray(rows) ? rows : [])
+        .map(toStoredItem)
+        .filter((row) => row.game.id > 0 && Boolean(row.game.score));
+      return { configured: true, ok: true, items, error: null };
+    } catch (error) {
+      return {
+        configured: true,
+        ok: false,
+        items: [],
+        error: error instanceof Error ? error.message : "worker rpc failed",
+      };
+    }
+  }
+
   const client = getSupabaseAdminClient();
   if (!client) return { configured: false, ok: false, items: [], error: "not configured" };
 

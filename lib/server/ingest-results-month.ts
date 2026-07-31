@@ -1,4 +1,4 @@
-import { parseCalendarItems, type ScheduleGame } from "./calendar-normalize.js";
+import { normalizeCalendarRow, type ScheduleGame } from "./calendar-normalize.js";
 import { canonicalDivisionLabel, IPBL_API_BASE, RESULTS_LANG } from "./results-sync-constants.js";
 
 export type {
@@ -92,36 +92,69 @@ function formatApiDateFromIso(isoDate: string): string {
   return `${dd}.${mm}.${yyyy}`;
 }
 
-async function fetchCalendarDay(tag: string, isoDate: string, signal: AbortSignal): Promise<ScheduleGame[]> {
+export type OfficialCalendarEvidenceRow = {
+  raw: Record<string, unknown>;
+  game: ScheduleGame | null;
+};
+
+export type OfficialCalendarDayEvidence = {
+  divisionTag: string;
+  isoDate: string;
+  fetchedAt: string;
+  sourcePath: string;
+  rows: OfficialCalendarEvidenceRow[];
+};
+
+function rawCalendarItems(raw: unknown): Record<string, unknown>[] {
+  const items = (raw as { data?: { items?: unknown } })?.data?.items;
+  return Array.isArray(items)
+    ? items.filter((item): item is Record<string, unknown> => Boolean(item) && typeof item === "object" && !Array.isArray(item))
+    : [];
+}
+
+async function fetchCalendarDayEvidence(
+  tag: string,
+  isoDate: string,
+  signal: AbortSignal
+): Promise<OfficialCalendarDayEvidence> {
   const dayStr = formatApiDateFromIso(isoDate);
-  const params = new URLSearchParams({
-    tag,
-    from: dayStr,
-    to: dayStr,
-    lang: RESULTS_LANG,
-  });
-  const url = `${IPBL_API_BASE}/calendar?${params.toString()}`;
+  const params = new URLSearchParams({ tag, from: dayStr, to: dayStr, lang: RESULTS_LANG });
+  const sourcePath = `${IPBL_API_BASE}/calendar?${params.toString()}`;
 
   for (let attempt = 0; attempt < 3; attempt += 1) {
-    const response = await fetch(url, {
-      headers: { Accept: "application/json" },
-      signal,
-    });
+    const response = await fetch(sourcePath, { headers: { Accept: "application/json" }, signal });
     if (response.ok) {
       const raw = (await response.json()) as unknown;
-      return parseCalendarItems(raw, tag);
+      const items = rawCalendarItems(raw);
+      return {
+        divisionTag: tag,
+        isoDate,
+        fetchedAt: new Date().toISOString(),
+        sourcePath,
+        rows: items.map((item) => ({ raw: item, game: normalizeCalendarRow(item, tag) })),
+      };
     }
-    const retriable =
-      response.status === 502 ||
-      response.status === 503 ||
-      response.status === 504 ||
-      response.status === 508;
+    const retriable = [502, 503, 504, 508].includes(response.status);
     if (!retriable || attempt === 2) {
       throw new Error(`calendar ${response.status} for ${dayStr} tag=${tag}`);
     }
-    await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+    await new Promise((resolve) => setTimeout(resolve, 400 * (attempt + 1)));
   }
   throw new Error(`calendar failed ${dayStr}`);
+}
+
+export async function fetchOfficialCalendarEvidenceForDay(
+  divisionTag: string,
+  isoDate: string,
+  opts: { timeoutMs?: number } = {}
+): Promise<OfficialCalendarDayEvidence> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), opts.timeoutMs ?? 120_000);
+  try {
+    return await fetchCalendarDayEvidence(divisionTag, isoDate, controller.signal);
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 export async function fetchScheduleGamesForDay(
@@ -129,14 +162,8 @@ export async function fetchScheduleGamesForDay(
   isoDate: string,
   opts: { timeoutMs?: number } = {}
 ): Promise<ScheduleGame[]> {
-  const timeoutMs = opts.timeoutMs ?? 120_000;
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    return await fetchCalendarDay(divisionTag, isoDate, controller.signal);
-  } finally {
-    clearTimeout(timer);
-  }
+  const evidence = await fetchOfficialCalendarEvidenceForDay(divisionTag, isoDate, opts);
+  return evidence.rows.flatMap((row) => row.game ? [row.game] : []);
 }
 
 /**

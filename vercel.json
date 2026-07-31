@@ -27,6 +27,10 @@
       "destination": "/api/cron/cron-sync-results.ts?mode=backfill"
     },
     {
+      "source": "/api/admin/supabase-backfill",
+      "destination": "/api/cron/cron-sync-results.ts?mode=supabase-backfill"
+    },
+    {
       "source": "/api/cron/sync-results",
       "destination": "/api/cron/record-live.ts?mode=sync-results"
     },
