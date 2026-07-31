@@ -1,5 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getResultsRedis } from "../../lib/server/results-redis.js";
+import { fetchSupabaseTeamHistoryRows } from "../../lib/server/supabase-team-history.js";
+import { planTeamHistoryResponse, type TeamHistoryRange } from "../../lib/server/team-history-response.js";
 import { IPBL_API_BASE, RESULTS_LANG, normalizeResultsDivisionTag, resultsKvKey } from "../../lib/server/results-sync-constants.js";
 import { teamsForDivision } from "../../src/config/teams.js";
 import {
@@ -83,7 +85,6 @@ async function fetchOfficialRecentCalendarHistoryRows(teamId: number, tag: strin
 }
 
 
-export type TeamHistoryRange = 5 | 10 | 30 | "all";
 
 function currentSeason(now = new Date()): number {
   const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Yangon", year: "numeric" }).formatToParts(now);
@@ -120,10 +121,47 @@ export function resolveTeamHistoryQuery(search: URLSearchParams, now = new Date(
   return { ok: true, teamId, tag, season, range, defaultedSeason: !seasonRaw };
 }
 
-function limitTeamHistoryItems<T>(items: T[], range: TeamHistoryRange): T[] {
-  return range === "all" ? items : items.slice(0, range);
+type LegacyStoredHistoryResult = {
+  configured: boolean;
+  ok: boolean;
+  items: ReturnType<typeof teamHistoryItemsFromMonths>;
+  loadedMonths: number[];
+  error: string | null;
+};
+
+function safeSourceError(error: unknown): string {
+  const message = error instanceof Error ? error.message : String(error);
+  if (message.includes("ERR max requests limit exceeded")) return "quota_exceeded";
+  if (/relation .*team_history_games.* does not exist/i.test(message)) return "schema_not_ready";
+  if (/postgres(?:ql)?:\/\//i.test(message) || /password/i.test(message)) return "source_error";
+  return message.slice(0, 240);
 }
 
+async function fetchLegacyStoredHistoryRows(
+  teamId: number,
+  tag: string,
+  season: number
+): Promise<LegacyStoredHistoryResult> {
+  const redis = getResultsRedis();
+  if (!redis) return { configured: false, ok: false, items: [], loadedMonths: [], error: "not configured" };
+
+  try {
+    const keys = Array.from({ length: 12 }, (_, index) => resultsKvKey(season, index + 1, tag));
+    const values = await redis.mget(...keys) as unknown[];
+    const months = values.map(parseStoredResultsMonth);
+    return {
+      configured: true,
+      ok: true,
+      items: teamHistoryItemsFromMonths(months, teamId, tag),
+      loadedMonths: months
+        .map((month, index) => month ? index + 1 : null)
+        .filter((month): month is number => month !== null),
+      error: null,
+    };
+  } catch (error) {
+    return { configured: true, ok: false, items: [], loadedMonths: [], error: safeSourceError(error) };
+  }
+}
 function requestSearchParams(req: VercelRequest): URLSearchParams {
   const host = Array.isArray(req.headers.host) ? req.headers.host[0] : req.headers.host;
   const base = `https://${host || "ipbl-minimal-viewer.vercel.app"}`;
@@ -138,46 +176,82 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (!resolved.ok) return res.status(resolved.status).json({ error: resolved.error });
   const { teamId, tag, season, range } = resolved;
 
-  const redis = getResultsRedis();
-  if (!redis) return res.status(503).json({ error: "KV not configured" });
+  const [supabaseHistory, officialOnline, officialRecentCalendar, legacyHistory] = await Promise.all([
+    fetchSupabaseTeamHistoryRows(teamId, tag),
+    fetchOfficialOnlineHistoryRows(teamId, tag),
+    fetchOfficialRecentCalendarHistoryRows(teamId, tag),
+    fetchLegacyStoredHistoryRows(teamId, tag, season),
+  ]);
 
-  try {
-    const keys = Array.from({ length: 12 }, (_, index) => resultsKvKey(season, index + 1, tag));
-    const values = await Promise.all(keys.map((key) => redis.get<unknown>(key)));
-    const months = values.map(parseStoredResultsMonth);
-    const storedItems = teamHistoryItemsFromMonths(months, teamId, tag);
-    const [officialOnline, officialRecentCalendar] = await Promise.all([
-      fetchOfficialOnlineHistoryRows(teamId, tag),
-      fetchOfficialRecentCalendarHistoryRows(teamId, tag),
-    ]);
-    const mergedItems = mergeTeamHistoryItems(storedItems, [
-      ...officialRecentCalendar.items,
-      ...officialOnline.items,
-    ]);
-    const items = limitTeamHistoryItems(mergedItems, range);
-    const loadedMonths = months
-      .map((month, index) => month ? index + 1 : null)
-      .filter((month): month is number => month !== null);
+  const officialItems = [
+    ...officialRecentCalendar.items,
+    ...officialOnline.items,
+  ];
+  const legacyAndOfficial = mergeTeamHistoryItems(legacyHistory.items, officialItems);
+  const mergedItems = mergeTeamHistoryItems(legacyAndOfficial, supabaseHistory.items);
 
-    res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate=300");
-    return res.status(200).json({
-      data: { items, totalCount: items.length, totalAvailable: mergedItems.length, range },
-      coverage: {
-        season,
-        divisionTag: tag,
-        loadedMonths,
-        currentOfficialOnline: { ok: officialOnline.ok, itemCount: officialOnline.items.length, error: officialOnline.error },
-        recentOfficialCalendar: {
-          ok: officialRecentCalendar.ok,
-          itemCount: officialRecentCalendar.items.length,
-          error: officialRecentCalendar.error,
-          windows: officialRecentCalendar.windows,
-        },
-      },
-      source: officialOnline.items.length || officialRecentCalendar.items.length ? "results-kv+official-calendar" : "results-kv",
-    });
-  } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    return res.status(500).json({ error: message });
-  }
+  const successfulSources = [
+    supabaseHistory.ok ? "supabase" : null,
+    officialOnline.ok ? "official-online" : null,
+    officialRecentCalendar.ok ? "official-calendar" : null,
+    legacyHistory.ok ? "results-kv" : null,
+  ].filter((value): value is string => Boolean(value));
+  const failedSources = [
+    !supabaseHistory.ok ? "supabase" : null,
+    !officialOnline.ok ? "official-online" : null,
+    !officialRecentCalendar.ok ? "official-calendar" : null,
+    !legacyHistory.ok ? "results-kv" : null,
+  ].filter((value): value is string => Boolean(value));
+
+  const coverage = {
+    season,
+    divisionTag: tag,
+    checkedAt: new Date().toISOString(),
+    supabase: {
+      configured: supabaseHistory.configured,
+      ok: supabaseHistory.ok,
+      itemCount: supabaseHistory.items.length,
+      error: supabaseHistory.error ? safeSourceError(supabaseHistory.error) : null,
+    },
+    currentOfficialOnline: {
+      ok: officialOnline.ok,
+      itemCount: officialOnline.items.length,
+      error: officialOnline.error,
+    },
+    recentOfficialCalendar: {
+      ok: officialRecentCalendar.ok,
+      itemCount: officialRecentCalendar.items.length,
+      error: officialRecentCalendar.error,
+      windows: officialRecentCalendar.windows,
+    },
+    legacyResults: {
+      configured: legacyHistory.configured,
+      ok: legacyHistory.ok,
+      itemCount: legacyHistory.items.length,
+      loadedMonths: legacyHistory.loadedMonths,
+      error: legacyHistory.error,
+    },
+  };
+
+  const sourceParts = [
+    supabaseHistory.items.length ? "supabase" : null,
+    officialItems.length ? "official-calendar" : null,
+    legacyHistory.items.length ? "results-kv" : null,
+  ].filter((value): value is string => Boolean(value));
+  const plan = planTeamHistoryResponse({
+    mergedItems,
+    range,
+    successfulSources,
+    failedSources,
+    sourceParts,
+    coverage,
+  });
+
+  res.setHeader(
+    "Cache-Control",
+    plan.status === 503 ? "no-store, max-age=0" : "s-maxage=60, stale-while-revalidate=300",
+  );
+  res.setHeader("X-IPBL-History-Availability", plan.availability);
+  res.setHeader("X-IPBL-History-Source", plan.source);
+  return res.status(plan.status).json(plan.body);
 }

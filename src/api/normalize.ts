@@ -327,10 +327,11 @@ export function computeH2H(
   teamAGames: TeamHistoryGame[], teamBGames: TeamHistoryGame[],
   teamAId: number, teamBId: number, limit = 15
 ): H2HEntry[] {
-  const bIds = new Set(teamBGames.map((game) => game.gameId));
+  const byGameId = new Map<number, TeamHistoryGame>();
+  for (const game of [...teamAGames, ...teamBGames]) byGameId.set(game.gameId, game);
   const pair = new Set([teamAId, teamBId]);
-  return teamAGames
-    .filter((game) => bIds.has(game.gameId) && pair.has(game.team1.teamId) && pair.has(game.team2.teamId))
+  return [...byGameId.values()]
+    .filter((game) => pair.has(game.team1.teamId) && pair.has(game.team2.teamId))
     .map((game) => {
       const score = game.scoreText.match(/(\d+)\s*:\s*(\d+)/);
       const home = score ? Number(score[1]) : 0; const away = score ? Number(score[2]) : 0;

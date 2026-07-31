@@ -25,5 +25,9 @@ const games = [
 ];
 const result = computeH2H(games, games, 1, 2, 15);
 assert.deepEqual(result.map((entry) => entry.gameId), [3, 4, 2, 1]);
+const oneSided = computeH2H(games, [], 1, 2, 15);
+assert.deepEqual(oneSided.map((entry) => entry.gameId), [3, 4, 2, 1], "one verified team history is sufficient");
+const deduped = computeH2H(games, games, 1, 2, 15);
+assert.equal(new Set(deduped.map((entry) => entry.gameId)).size, deduped.length);
 assert.ok(h2hDateTimeKey("29.05.2026", "12:30") > h2hDateTimeKey("30.04.2026", "17:30"));
 console.log("H2H newest-first ordering tests passed");

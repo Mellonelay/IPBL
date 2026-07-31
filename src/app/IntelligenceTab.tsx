@@ -68,24 +68,48 @@ export default function IntelligenceTab({ snapshot, loading, error, focus }: Int
                 {focus.game.team1.shortName} vs {focus.game.team2.shortName} with quarter splits carried inline.
               </div>
             </div>
-            <span className="status-badge">{focus.h2h.length > 0 ? `${focus.h2h.length} rows` : "No rows"}</span>
+            <span className="status-badge">
+              {focus.h2hStatus.state === "loading"
+                ? "Loading"
+                : focus.h2hStatus.state === "unavailable"
+                  ? "Unavailable"
+                  : focus.h2hStatus.state === "partial"
+                    ? "Partial"
+                    : `${focus.h2h.length} verified row${focus.h2h.length === 1 ? "" : "s"}`}
+            </span>
           </div>
 
-          {focus.h2h.length > 0 ? (
-            <div className="h2h-list">
-              {focus.h2h.map((entry) => (
-                <article className="h2h-item" key={entry.gameId}>
-                  <div className="replay-item-head">
-                    <strong>{entry.date} {entry.time}</strong>
-                    <span className="calendar-division-badge">{entry.status}</span>
-                  </div>
-                  <div className="drawer-h2h-score">{entry.scoreText}</div>
-                  {entry.quarterTotals && <div className="calendar-quarter-line">{entry.quarterTotals}</div>}
-                </article>
-              ))}
-            </div>
+          {focus.h2hStatus.source && <p className="muted">Evidence source: {focus.h2hStatus.source}</p>}
+          {focus.h2hStatus.state === "loading" ? (
+            <p className="muted">Loading verified matchup history…</p>
+          ) : focus.h2hStatus.state === "unavailable" ? (
+            <p className="err">
+              {focus.h2hStatus.error ?? "H2H history is temporarily unavailable."} No zero-meeting conclusion was inferred.
+            </p>
+          ) : focus.h2hStatus.state === "partial" && focus.h2h.length === 0 ? (
+            <p className="muted">
+              No matchup rows were returned by the responding sources. Coverage is partial, so no zero-meeting conclusion was inferred.
+            </p>
+          ) : focus.h2h.length > 0 ? (
+            <>
+              {focus.h2hStatus.state === "partial" && (
+                <p className="muted">Coverage is partial; only verified responding sources are shown.</p>
+              )}
+              <div className="h2h-list">
+                {focus.h2h.map((entry) => (
+                  <article className="h2h-item" key={entry.gameId}>
+                    <div className="replay-item-head">
+                      <strong>{entry.date} {entry.time}</strong>
+                      <span className="calendar-division-badge">{entry.status}</span>
+                    </div>
+                    <div className="drawer-h2h-score">{entry.scoreText}</div>
+                    {entry.quarterTotals && <div className="calendar-quarter-line">{entry.quarterTotals}</div>}
+                  </article>
+                ))}
+              </div>
+            </>
           ) : (
-            <p className="muted">No verified H2H rows are loaded yet for this focus game.</p>
+            <p className="muted">No verified prior meetings were found in the available sources.</p>
           )}
         </article>
       )}

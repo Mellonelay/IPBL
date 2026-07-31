@@ -3,7 +3,16 @@ import { dedupeLiveGames, parseCalendarItems, parseTeamHistory } from "./normali
 import type { BoxScoreState, GameDetail, GameReplay, ScheduleGame, TeamHistoryGame } from "./types";
 
 const calCache = new Map<string, { at: number; rows: ScheduleGame[] }>();
-const teamCache = new Map<string, { at: number; rows: TeamHistoryGame[] }>();
+export type TeamHistoryAvailability = "available" | "partial";
+
+export type TeamHistoryFetchResult = {
+    rows: TeamHistoryGame[];
+    availability: TeamHistoryAvailability;
+    source: string;
+    checkedAt: string | null;
+};
+
+const teamCache = new Map<string, { at: number; result: TeamHistoryFetchResult }>();
 const CAL_TTL_MS = 90_000;
 const TEAM_TTL_MS = 300_000;
 const REQUEST_TIMEOUT_MS = 20_000;
@@ -111,30 +120,62 @@ export async function fetchGameReplay(gameId: number): Promise<GameReplay | null
     }
 }
 
+export async function fetchTeamHistory(
+    teamId: number,
+    tag: string,
+    season: number,
+    range?: 5 | 10 | 30 | "all"
+): Promise<TeamHistoryFetchResult> {
+    const key = `${teamId}|${tag}|${season}|${range ?? "all"}`;
+    const hit = teamCache.get(key);
+    const now = Date.now();
+    if (hit && now - hit.at < TEAM_TTL_MS) return structuredClone(hit.result);
+
+    const storedResponse = await fetch(`/api/teams/history?${q({ teamId, tag, season, range: range ?? "all" })}`, {
+        headers: { Accept: "application/json" },
+    });
+    if (storedResponse.ok) {
+        const raw = await storedResponse.json() as {
+            availability?: unknown;
+            source?: unknown;
+            coverage?: { checkedAt?: unknown };
+        };
+        const result: TeamHistoryFetchResult = {
+            rows: parseTeamHistory(raw, tag),
+            availability: raw.availability === "partial" ? "partial" : "available",
+            source: typeof raw.source === "string" && raw.source ? raw.source : "team-history-api",
+            checkedAt: typeof raw.coverage?.checkedAt === "string" ? raw.coverage.checkedAt : null,
+        };
+        teamCache.set(key, { at: now, result });
+        return structuredClone(result);
+    }
+
+    if (storedResponse.status === 404 || storedResponse.status === 503) {
+        try {
+            const raw = await getJson("/team/games", q({ teamId, calendarType: 1, tag, season }));
+            const result: TeamHistoryFetchResult = {
+                rows: parseTeamHistory(raw, tag),
+                availability: "partial",
+                source: "official-team-games",
+                checkedAt: new Date().toISOString(),
+            };
+            teamCache.set(key, { at: now, result });
+            return structuredClone(result);
+        } catch {
+            throw new Error("Team history is temporarily unavailable.");
+        }
+    }
+
+    throw new Error(`Team history API error: ${storedResponse.status}`);
+}
+
 export async function fetchTeamGames(
     teamId: number,
     tag: string,
     season: number,
     range?: 5 | 10 | 30 | "all"
 ): Promise<TeamHistoryGame[]> {
-    const key = `${teamId}|${tag}|${season}|${range ?? "all"}`;
-    const hit = teamCache.get(key);
-    const now = Date.now();
-    if (hit && now - hit.at < TEAM_TTL_MS) return hit.rows;
-    let raw: unknown;
-    const storedResponse = await fetch(`/api/teams/history?${q({ teamId, tag, season, range: range ?? "all" })}`, {
-        headers: { Accept: "application/json" },
-    });
-    if (storedResponse.ok) {
-        raw = await storedResponse.json();
-    } else if (storedResponse.status === 404 || storedResponse.status === 503) {
-        raw = await getJson("/team/games", q({ teamId, calendarType: 1, tag, season }));
-    } else {
-        throw new Error(`Team history API error: ${storedResponse.status}`);
-    }
-    const rows = parseTeamHistory(raw, tag);
-    teamCache.set(key, { at: now, rows });
-    return rows;
+    return (await fetchTeamHistory(teamId, tag, season, range)).rows;
 }
 
 export function clearFetchCaches(): void {

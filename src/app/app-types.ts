@@ -3,6 +3,14 @@ import type { OperatorDecision, QuarterFlowAnalysis, ScoreboardAnalysis } from "
 
 export type TabKey = "live" | "results" | "intelligence" | "teams" | "betting";
 
+export type H2HLoadState = "loading" | "loaded" | "partial" | "unavailable";
+
+export type H2HStatus = {
+  state: H2HLoadState;
+  source: string | null;
+  error: string | null;
+};
+
 export type LiveSourceFailure = {
   kind?: string;
   source?: string;
@@ -27,9 +35,11 @@ export type DrawerState = {
   flow: QuarterFlowAnalysis | null;
   decision: OperatorDecision;
   h2h: H2HEntry[];
+  h2hStatus: H2HStatus;
 };
 
 export type IntelligenceFocus = {
   game: ScheduleGame;
   h2h: H2HEntry[];
+  h2hStatus: H2HStatus;
 };
