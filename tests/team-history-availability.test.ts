@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { planTeamHistoryResponse } from "../lib/server/team-history-response.ts";
+import { planTeamHistoryResponse, sanitizeTeamHistorySourceError } from "../lib/server/team-history-response.ts";
 import type { StoredTeamHistoryItem } from "../lib/server/team-history-from-results.ts";
 
 const emptyCoverage = { checkedAt: "2026-07-31T00:00:00.000Z" };
@@ -15,6 +15,12 @@ const unavailable = planTeamHistoryResponse({
 assert.equal(unavailable.status, 503);
 assert.equal(unavailable.availability, "unavailable");
 assert.equal(unavailable.body.error, "team_history_unavailable");
+assert.equal(sanitizeTeamHistorySourceError(new Error("ERR max requests limit exceeded")), "quota_exceeded");
+assert.equal(
+  sanitizeTeamHistorySourceError(new Error("Could not find the table 'public.team_history_games' in the schema cache")),
+  "schema_not_ready",
+);
+assert.equal(sanitizeTeamHistorySourceError(new Error("postgres://user:secret@example.test/db")), "source_error");
 
 const verifiedEmpty = planTeamHistoryResponse({
   mergedItems: [],

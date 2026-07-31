@@ -1,7 +1,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getResultsRedis } from "../../lib/server/results-redis.js";
 import { fetchSupabaseTeamHistoryRows } from "../../lib/server/supabase-team-history.js";
-import { planTeamHistoryResponse, type TeamHistoryRange } from "../../lib/server/team-history-response.js";
+import {
+  planTeamHistoryResponse,
+  sanitizeTeamHistorySourceError,
+  type TeamHistoryRange,
+} from "../../lib/server/team-history-response.js";
 import { IPBL_API_BASE, RESULTS_LANG, normalizeResultsDivisionTag, resultsKvKey } from "../../lib/server/results-sync-constants.js";
 import { teamsForDivision } from "../../src/config/teams.js";
 import {
@@ -129,13 +133,6 @@ type LegacyStoredHistoryResult = {
   error: string | null;
 };
 
-function safeSourceError(error: unknown): string {
-  const message = error instanceof Error ? error.message : String(error);
-  if (message.includes("ERR max requests limit exceeded")) return "quota_exceeded";
-  if (/relation .*team_history_games.* does not exist/i.test(message)) return "schema_not_ready";
-  if (/postgres(?:ql)?:\/\//i.test(message) || /password/i.test(message)) return "source_error";
-  return message.slice(0, 240);
-}
 
 async function fetchLegacyStoredHistoryRows(
   teamId: number,
@@ -159,7 +156,7 @@ async function fetchLegacyStoredHistoryRows(
       error: null,
     };
   } catch (error) {
-    return { configured: true, ok: false, items: [], loadedMonths: [], error: safeSourceError(error) };
+    return { configured: true, ok: false, items: [], loadedMonths: [], error: sanitizeTeamHistorySourceError(error) };
   }
 }
 function requestSearchParams(req: VercelRequest): URLSearchParams {
@@ -211,7 +208,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       configured: supabaseHistory.configured,
       ok: supabaseHistory.ok,
       itemCount: supabaseHistory.items.length,
-      error: supabaseHistory.error ? safeSourceError(supabaseHistory.error) : null,
+      error: supabaseHistory.error ? sanitizeTeamHistorySourceError(supabaseHistory.error) : null,
     },
     currentOfficialOnline: {
       ok: officialOnline.ok,

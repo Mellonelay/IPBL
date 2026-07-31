@@ -56,3 +56,17 @@ export function planTeamHistoryResponse(input: {
     },
   };
 }
+
+export function sanitizeTeamHistorySourceError(error: unknown): string {
+  const message = error instanceof Error ? error.message : String(error);
+  if (/max requests limit exceeded/i.test(message)) return "quota_exceeded";
+  if (
+    /relation .*team_history_games.* does not exist/i.test(message)
+    || /could not find .*team_history_games.*schema cache/i.test(message)
+  ) return "schema_not_ready";
+  if (/not configured/i.test(message)) return "not_configured";
+  if (/timeout|aborted/i.test(message)) return "timeout";
+  const http = message.match(/HTTP\s+(\d{3})/i);
+  if (http) return `http_${http[1]}`;
+  return "source_error";
+}
