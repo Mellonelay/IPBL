@@ -74,6 +74,14 @@ export function isCalendarMapCompleteForMonth(map:CalendarGridMap,year:number,mo
 }
 export function clearResultsCalendarCache(){sessionCache.clear();inflight.clear();}
 
+export function resultsApiErrorMessage(error: unknown, fallback: string): string {
+    const code = String(error ?? fallback);
+    if (code === "results_storage_quota_exceeded") {
+        return "Results storage is temporarily unavailable. Retry after the storage quota resets.";
+    }
+    return code;
+}
+
 function latestPopulatedDate(map: CalendarGridMap): string | null {
     const days = Object.entries(map)
         .filter(([, groups]) => groups.some((group) => group.games.length > 0))
@@ -108,7 +116,7 @@ async function fetchRaw(
     if(!res.ok){
         if(optional&&res.status===404)return{calendar:{},meta:null};
         let msg=`HTTP ${res.status}`;
-        try{msg=String((JSON.parse(text) as {error?:unknown}).error??msg);}catch{}
+        try{msg=resultsApiErrorMessage((JSON.parse(text) as {error?:unknown}).error,msg);}catch{}
         throw new Error(msg);
     }
     const body=JSON.parse(text) as unknown;
