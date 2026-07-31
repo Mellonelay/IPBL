@@ -37,6 +37,7 @@ import TeamsTab from "./app/TeamsTab";
 import type { DrawerState, H2HStatus, IntelligenceFocus, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
 import { loadIntelligenceSurface, type IntelligenceSurfaceSnapshot } from "./app/intelligence-client";
 import { selectIntelligenceFocusGame } from "./app/intelligence-focus";
+import { resolveInitialRouteState } from "./app/initial-route";
 import { currentOrNextQuarter, gameDivision, liveKey } from "./app/shared";
 import { currentMyanmarResultsSelection } from "./results/month-default";
 
@@ -58,7 +59,13 @@ function devAssert(condition: unknown, message: string, detail?: unknown): void 
 
 function App() {
   const initialResultsSelection = useMemo(() => currentMyanmarResultsSelection(), []);
-  const [activeTab, setActiveTab] = useState<TabKey>("results");
+  const initialRoute = useMemo(() => resolveInitialRouteState({
+    search: window.location.search,
+    fallbackResults: initialResultsSelection,
+    defaultDivisionTag: DEFAULT_RESULTS_DIVISION_TAG,
+    allowedDivisionTags: RESULTS_DIVISION_TAGS,
+  }), [initialResultsSelection]);
+  const [activeTab, setActiveTab] = useState<TabKey>(initialRoute.activeTab);
   const [liveGames, setLiveGames] = useState<ScheduleGame[]>([]);
   const [liveLoading, setLiveLoading] = useState(false);
   const [liveErr, setLiveErr] = useState<string | null>(null);
@@ -66,18 +73,14 @@ function App() {
   const [liveSourceFailures, setLiveSourceFailures] = useState<LiveSourceFailure[]>([]);
   const [selectedLiveDivisionTag, setSelectedLiveDivisionTag] = useState("");
 
-  const [selectedResultsYear, setSelectedResultsYear] = useState<number>(initialResultsSelection.year);
-  const [selectedResultsMonthIndex, setSelectedResultsMonthIndex] = useState<number>(initialResultsSelection.monthIndex);
-  const [selectedResultsDivisionTag, setSelectedResultsDivisionTag] = useState(
-    DEFAULT_RESULTS_DIVISION_TAG
-  );
-  const [jumpDate, setJumpDate] = useState<string>(
-    () => `${initialResultsSelection.year}-${String(initialResultsSelection.monthIndex + 1).padStart(2, "0")}-01`
-  );
+  const [selectedResultsYear, setSelectedResultsYear] = useState<number>(initialRoute.resultsYear);
+  const [selectedResultsMonthIndex, setSelectedResultsMonthIndex] = useState<number>(initialRoute.resultsMonthIndex);
+  const [selectedResultsDivisionTag, setSelectedResultsDivisionTag] = useState(initialRoute.resultsDivisionTag);
+  const [jumpDate, setJumpDate] = useState<string>(initialRoute.jumpDate);
 
   const [calendarMap, setCalendarMap] = useState<CalendarGridMap>(() =>
-    createSkeletonResultsCalendarMap(initialResultsSelection.year, initialResultsSelection.monthIndex, [
-      DEFAULT_RESULTS_DIVISION_TAG,
+    createSkeletonResultsCalendarMap(initialRoute.resultsYear, initialRoute.resultsMonthIndex, [
+      initialRoute.resultsDivisionTag,
     ])
   );
   const [resultsLoading, setResultsLoading] = useState(false);
@@ -256,27 +259,6 @@ function App() {
       }
     }
   }, [calendarMap, loadedResultsKey, resultsLoading, selectedResultsDivisionTag, selectedResultsKey]);
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const tab = params.get("tab");
-    const date = params.get("date");
-    const division = params.get("division");
-    if (tab === "results" || tab === "live" || tab === "intelligence" || tab === "teams" || tab === "betting") {
-      setActiveTab(tab);
-    }
-    if (date) {
-      setJumpDate(date);
-      const parts = safeSplit(date, "-").map((p) => Number.parseInt(p, 10));
-      if (parts.length === 3 && Number.isFinite(parts[0]) && Number.isFinite(parts[1])) {
-        setSelectedResultsYear(parts[0]);
-        setSelectedResultsMonthIndex(parts[1] - 1);
-      }
-    }
-    if (division && (RESULTS_DIVISION_TAGS as readonly string[]).includes(division)) {
-      setSelectedResultsDivisionTag(division);
-    }
-  }, []);
 
   const loadLive = useCallback(async () => {
     setLiveLoading(true);
