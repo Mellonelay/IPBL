@@ -1,6 +1,6 @@
-import { randomUUID, timingSafeEqual } from "node:crypto";
+import { randomUUID } from "node:crypto";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { buildBackfillSegmentCommit } from "../../lib/server/ipbl-backfill-normalize.js";
+import { buildBackfillSegmentCommit } from "./ipbl-backfill-normalize.js";
 import {
   claimBackfillSegments,
   commitBackfillSegment,
@@ -9,11 +9,9 @@ import {
   isIpblBackfillConfigured,
   startBackfillRun,
   type BackfillSegmentLease,
-} from "../../lib/server/ipbl-supabase-worker.js";
-import { fetchOfficialCalendarEvidenceForDay } from "../../lib/server/ingest-results-month.js";
-import { isApprovedResultsTag } from "../../lib/server/results-sync-constants.js";
-
-export const config = { maxDuration: 120 };
+} from "./ipbl-supabase-worker.js";
+import { fetchOfficialCalendarEvidenceForDay } from "./ingest-results-month.js";
+import { isApprovedResultsTag } from "./results-sync-constants.js";
 
 function queryValue(value: string | string[] | undefined): string | undefined {
   return Array.isArray(value) ? value[0] : value;
@@ -23,15 +21,6 @@ function bodyRecord(req: VercelRequest): Record<string, unknown> {
   return req.body && typeof req.body === "object" && !Array.isArray(req.body)
     ? req.body as Record<string, unknown>
     : {};
-}
-
-function authorized(req: VercelRequest): boolean {
-  const expected = process.env.CRON_SECRET?.trim();
-  const supplied = String(req.headers.authorization ?? "").replace(/^Bearer\s+/i, "").trim();
-  if (!expected || !supplied) return false;
-  const left = Buffer.from(expected);
-  const right = Buffer.from(supplied);
-  return left.length === right.length && timingSafeEqual(left, right);
 }
 
 function isIsoDate(value: unknown): value is string {
@@ -111,12 +100,11 @@ function positiveLimit(value: unknown, fallback = 6): number {
   return Number.isFinite(parsed) ? Math.max(1, Math.min(Math.floor(parsed), 6)) : fallback;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
+export async function handleSupabaseBackfillRequest(
+  req: VercelRequest,
+  res: VercelResponse
+): Promise<void> {
   res.setHeader("Cache-Control", "no-store, max-age=0");
-  if (!authorized(req)) {
-    res.status(401).json({ ok: false, error: "unauthorized" });
-    return;
-  }
   if (!isIpblBackfillConfigured()) {
     res.status(503).json({ ok: false, error: "backfill_not_configured" });
     return;

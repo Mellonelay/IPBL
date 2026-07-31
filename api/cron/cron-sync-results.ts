@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { runOfficialBackfillRange } from "../../lib/server/results-official-backfill.js";
+import { handleSupabaseBackfillRequest } from "../../lib/server/supabase-backfill-handler.js";
 
 export const config = { maxDuration: 120 };
 
@@ -17,24 +18,32 @@ function toOptionalNumber(value: unknown): number | undefined {
 }
 
 async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
+    if (req.headers.authorization !== `Bearer ${process.env.CRON_SECRET}`) {
+        res.status(401).json({ error: "Unauthorized" });
+        return;
+    }
+
+    const body = req.body && typeof req.body === "object" && !Array.isArray(req.body)
+        ? req.body as Record<string, unknown>
+        : {};
+    const mode = queryValue(req.query.mode);
+
+    if (mode === "supabase-backfill") {
+        await handleSupabaseBackfillRequest(req, res);
+        return;
+    }
+
     const kv = await import("../../lib/server/kv-rest-env-aliases.js");
     const redis = await import("../../lib/server/results-redis.js");
     const sync = await import("../../lib/server/results-sync-constants.js");
     const writer = await import("../../lib/server/write-results-month-kv.js");
 
-        if (req.headers.authorization !== `Bearer ${process.env.CRON_SECRET}`) {
-            res.status(401).json({ error: "Unauthorized" });
-            return;
-        }
-
-        if (!kv.isKvRestConfigured()) {
-            res.status(503).json({ ok: false, error: "KV not configured" });
-            return;
-        }
+    if (!kv.isKvRestConfigured()) {
+        res.status(503).json({ ok: false, error: "KV not configured" });
+        return;
+    }
 
     try {
-        const body = req.body && typeof req.body === "object" && !Array.isArray(req.body) ? req.body as Record<string, unknown> : {};
-        const mode = queryValue(req.query.mode);
         const wantsBackfill = req.method === "POST" && (
             mode === "backfill"
             || body.from !== undefined
