@@ -9,10 +9,22 @@ import {
 } from "../lib/server/results-hardening.js";
 import * as syncConstants from "../lib/server/results-sync-constants.js";
 
+const RESULTS_BROWSER_CACHE_SECONDS = 60;
+const RESULTS_CDN_CACHE_SECONDS = 15 * 60;
+const RESULTS_STALE_WINDOW_SECONDS = 24 * 60 * 60;
+
 export function metadataOnlyResultsEnvelope(metadataRaw: unknown, wantsMetadata: boolean) {
     if (!wantsMetadata) return null;
     const metadata = parseResultsMetadata(metadataRaw);
     return metadata?.status === "source_unavailable" ? { calendar: {}, meta: metadata } : null;
+}
+
+export function setResultsCacheHeaders(res: VercelResponse): void {
+    res.setHeader("Cache-Control", `public, max-age=${RESULTS_BROWSER_CACHE_SECONDS}`);
+    res.setHeader(
+        "Vercel-CDN-Cache-Control",
+        `public, s-maxage=${RESULTS_CDN_CACHE_SECONDS}, stale-while-revalidate=${RESULTS_STALE_WINDOW_SECONDS}, stale-if-error=${RESULTS_STALE_WINDOW_SECONDS}`,
+    );
 }
 
 function firstQueryValue(value: string | string[] | undefined): string | undefined {
@@ -124,16 +136,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         const client = redis.getResultsRedis();
         if (!client) return res.status(503).json({ error: "KV not configured" });
 
-        const [data, metadataRaw] = await Promise.all([
-            client.get<unknown>(key),
-            client.get<unknown>(metadataKey),
-        ]);
+        const [data, metadataRaw] = await client.mget<unknown>(key, metadataKey);
         const storedMetadata = parseResultsMetadata(metadataRaw);
         if (!data) {
             const metadataOnly = metadataOnlyResultsEnvelope(metadataRaw, wantsMetadata);
             if (metadataOnly || wantsMetadata || defaultedYearMonth || usedTagAlias) {
                 const metadata = metadataOnly?.meta ?? storedMetadata ?? coldResultsMetadata(parsedYear, parsedMonth, divisionTag);
-                res.setHeader("Cache-Control", "no-store, max-age=0");
+                setResultsCacheHeaders(res);
                 res.setHeader("X-IPBL-Results-Status", metadata.status);
                 res.setHeader("X-IPBL-Results-Source", metadata.source);
                 if (metadata.updatedAt) res.setHeader("X-IPBL-Results-Updated-At", metadata.updatedAt);
@@ -148,7 +157,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         const metadata = storedMetadata
             ?? legacyResultsMetadata({ map: calendar, year: parsedYear, month: parsedMonth, divisionTag });
 
-        res.setHeader("Cache-Control", "no-store, max-age=0");
+        setResultsCacheHeaders(res);
         res.setHeader("X-IPBL-Results-Status", metadata.status);
         res.setHeader("X-IPBL-Results-Source", metadata.source);
         if (metadata.updatedAt) res.setHeader("X-IPBL-Results-Updated-At", metadata.updatedAt);
@@ -160,6 +169,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(200).json(calendar);
     } catch (e: unknown) {
         const message = e instanceof Error ? e.message : String(e);
-        return res.status(500).json({ error: message });
+        res.setHeader("Cache-Control", "no-store, max-age=0");
+
+        if (message.includes("ERR max requests limit exceeded")) {
+            res.setHeader("Retry-After", "3600");
+            return res.status(503).json({
+                error: "results_storage_quota_exceeded",
+                retryable: true,
+            });
+        }
+
+        return res.status(500).json({ error: "results_storage_failure" });
     }
 }
