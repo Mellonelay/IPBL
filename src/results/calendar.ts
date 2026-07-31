@@ -51,8 +51,9 @@ export function resultsDivisionsForMonth(year: number, monthIndex: number): Divi
     return divisionsForResultsMonth(year, monthIndex).filter((d) => (RESULTS_SYNC_TAGS as readonly string[]).includes(d.tag));
 }
 
-export const RESULTS_SESSION_CACHE_TTL_MS = 60_000;
-export const RESULTS_REFRESH_INTERVAL_MS = 60_000;
+const RESULTS_CACHE_WINDOW_MS = 15 * 60_000;
+export const RESULTS_SESSION_CACHE_TTL_MS = RESULTS_CACHE_WINDOW_MS;
+export const RESULTS_REFRESH_INTERVAL_MS = RESULTS_CACHE_WINDOW_MS;
 const sessionCache = new Map<string, { at: number; payload: ResultsMonthPayload }>();
 const inflight = new Map<string, Promise<ResultsMonthPayload>>();
 const iso = (y: number, m: number, d: number) => `${y}-${String(m + 1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
