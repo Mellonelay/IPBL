@@ -4,11 +4,17 @@ import {
   RESULTS_SESSION_CACHE_TTL_MS,
   clearResultsCalendarCache,
   fetchResultsMonthPayloadFromApi,
+  resultsApiErrorMessage,
   shouldFetchPreviousResultsMonth,
 } from "../src/results/calendar.ts";
 
 assert.equal(RESULTS_REFRESH_INTERVAL_MS, 15 * 60_000);
 assert.equal(RESULTS_SESSION_CACHE_TTL_MS, 15 * 60_000);
+assert.equal(
+  resultsApiErrorMessage("results_storage_quota_exceeded", "HTTP 503"),
+  "Results storage is temporarily unavailable. Retry after the storage quota resets.",
+);
+assert.equal(resultsApiErrorMessage("other_error", "HTTP 500"), "other_error");
 assert.equal(shouldFetchPreviousResultsMonth(2026, 2, "ipbl-66-w-pro-d"), false);
 assert.equal(shouldFetchPreviousResultsMonth(2026, 5, "ipbl-66-m-pro-a"), true);
 
@@ -49,4 +55,4 @@ try {
   clearResultsCalendarCache();
 }
 
-console.log("Phase A Results refresh policy tests passed");
+console.log("Phase A Results refresh and quota message policy tests passed");
