@@ -58,7 +58,8 @@
     "deploy": "npm run build && wrangler deploy",
     "test:h2h-availability": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-availability.test.ts",
     "test:initial-route": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/initial-route.test.ts",
-    "test:supabase-migration": "node tests/supabase-migration-contract.test.mjs"
+    "test:supabase-migration": "node tests/supabase-migration-contract.test.mjs",
+    "test:supabase-alias-seed": "node tests/supabase-alias-seed-contract.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.111.0",
