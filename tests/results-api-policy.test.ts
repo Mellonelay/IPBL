@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { metadataOnlyResultsEnvelope } from "../api/results.ts";
+import { metadataOnlyResultsEnvelope, setResultsCacheHeaders } from "../api/results.ts";
 
 const unavailable = {
   schemaVersion: 1 as const,
@@ -19,4 +19,18 @@ assert.equal(metadataOnlyResultsEnvelope(unavailable, false), null, "legacy dire
 assert.equal(metadataOnlyResultsEnvelope({ schemaVersion: 1, status: "source_unavailable" }, true), null, "malformed metadata must not create a degraded envelope");
 assert.equal(metadataOnlyResultsEnvelope({ ...unavailable, status: "ok" }, true), null, "metadata-only success without a calendar remains cold data");
 
-console.log("Phase A Results API metadata-only policy tests passed");
+const headers = new Map<string, string>();
+const response = {
+  setHeader(name: string, value: string | number | readonly string[]) {
+    headers.set(name, String(value));
+    return response;
+  },
+};
+setResultsCacheHeaders(response as never);
+assert.equal(headers.get("Cache-Control"), "public, max-age=60");
+assert.equal(
+  headers.get("Vercel-CDN-Cache-Control"),
+  "public, s-maxage=900, stale-while-revalidate=86400, stale-if-error=86400",
+);
+
+console.log("Phase A Results API metadata and cache policy tests passed");
