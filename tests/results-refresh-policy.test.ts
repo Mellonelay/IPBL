@@ -7,8 +7,8 @@ import {
   shouldFetchPreviousResultsMonth,
 } from "../src/results/calendar.ts";
 
-assert.equal(RESULTS_REFRESH_INTERVAL_MS, 60_000);
-assert.equal(RESULTS_SESSION_CACHE_TTL_MS, 60_000);
+assert.equal(RESULTS_REFRESH_INTERVAL_MS, 15 * 60_000);
+assert.equal(RESULTS_SESSION_CACHE_TTL_MS, 15 * 60_000);
 assert.equal(shouldFetchPreviousResultsMonth(2026, 2, "ipbl-66-w-pro-d"), false);
 assert.equal(shouldFetchPreviousResultsMonth(2026, 5, "ipbl-66-m-pro-a"), true);
 
