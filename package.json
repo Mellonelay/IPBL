@@ -59,7 +59,9 @@
     "test:h2h-availability": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-availability.test.ts",
     "test:initial-route": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/initial-route.test.ts",
     "test:supabase-migration": "node tests/supabase-migration-contract.test.mjs",
-    "test:supabase-alias-seed": "node tests/supabase-alias-seed-contract.test.mjs"
+    "test:supabase-alias-seed": "node tests/supabase-alias-seed-contract.test.mjs",
+    "test:supabase-backfill": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-backfill-normalize.test.ts",
+    "backfill:supabase": "node scripts/run-supabase-backfill.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.111.0",
