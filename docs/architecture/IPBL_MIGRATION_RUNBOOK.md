@@ -2,7 +2,7 @@
 
 ## Safety boundary
 
-Canonical target: Vercel Marketplace Supabase project `rxpjpwqqpdrnlvuhchyg` in Singapore. Upstash remains untouched until reconciliation and cutover gates pass.
+Canonical target: direct Supabase project `Ipbl-data` (`hdrkrtfpcuzsbegytrei`) in Seoul. The Vercel Marketplace duplicate `rxpjpwqqpdrnlvuhchyg` is not a migration target. Upstash remains untouched until reconciliation and cutover gates pass.
 
 Never print database passwords, secret keys, service-role keys, JWT secrets, or full connection strings. Use environment injection and masked validation output.
 
