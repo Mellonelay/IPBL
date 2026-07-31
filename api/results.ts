@@ -136,7 +136,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         const client = redis.getResultsRedis();
         if (!client) return res.status(503).json({ error: "KV not configured" });
 
-        const [data, metadataRaw] = await client.mget<unknown>(key, metadataKey);
+        const [data, metadataRaw] = await client.mget<[unknown, unknown]>(key, metadataKey);
         const storedMetadata = parseResultsMetadata(metadataRaw);
         if (!data) {
             const metadataOnly = metadataOnlyResultsEnvelope(metadataRaw, wantsMetadata);
