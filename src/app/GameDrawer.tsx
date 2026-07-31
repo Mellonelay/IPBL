@@ -44,26 +44,50 @@ export default function GameDrawer({ drawer, onClose, onOpenIntelligence }: Game
           <section className="drawer-section drawer-h2h-panel">
             <div className="drawer-section-head">
               <h3>H2H block</h3>
-              <span className="status-badge">Recent</span>
+              <span className="status-badge">
+                {drawer.h2hStatus.state === "loading"
+                  ? "Loading"
+                  : drawer.h2hStatus.state === "unavailable"
+                    ? "Unavailable"
+                    : drawer.h2hStatus.state === "partial"
+                      ? "Partial"
+                      : "Verified"}
+              </span>
             </div>
             <p className="muted">
               {drawer.game.team1.shortName} vs {drawer.game.team2.shortName}
+              {drawer.h2hStatus.source ? ` · ${drawer.h2hStatus.source}` : ""}
             </p>
-            {drawer.h2h.length > 0 ? (
-              <div className="h2h-list">
-                {drawer.h2h.map((entry) => (
-                  <article className="h2h-item" key={entry.gameId}>
-                    <div className="replay-item-head">
-                      <strong>{entry.date} {entry.time}</strong>
-                      <span className="calendar-division-badge">{entry.status}</span>
-                    </div>
-                    <div className="drawer-h2h-score">{entry.scoreText}</div>
-                    {entry.quarterTotals && <div className="calendar-quarter-line">{entry.quarterTotals}</div>}
-                  </article>
-                ))}
-              </div>
+            {drawer.h2hStatus.state === "loading" ? (
+              <p className="muted">Loading verified matchup history…</p>
+            ) : drawer.h2hStatus.state === "unavailable" ? (
+              <p className="err">
+                {drawer.h2hStatus.error ?? "H2H history is temporarily unavailable."} No zero-meeting conclusion was inferred.
+              </p>
+            ) : drawer.h2hStatus.state === "partial" && drawer.h2h.length === 0 ? (
+              <p className="muted">
+                No matchup rows were returned by the responding sources. Coverage is partial, so no zero-meeting conclusion was inferred.
+              </p>
+            ) : drawer.h2h.length > 0 ? (
+              <>
+                {drawer.h2hStatus.state === "partial" && (
+                  <p className="muted">Showing verified rows from the sources that responded. Coverage is partial.</p>
+                )}
+                <div className="h2h-list">
+                  {drawer.h2h.map((entry) => (
+                    <article className="h2h-item" key={entry.gameId}>
+                      <div className="replay-item-head">
+                        <strong>{entry.date} {entry.time}</strong>
+                        <span className="calendar-division-badge">{entry.status}</span>
+                      </div>
+                      <div className="drawer-h2h-score">{entry.scoreText}</div>
+                      {entry.quarterTotals && <div className="calendar-quarter-line">{entry.quarterTotals}</div>}
+                    </article>
+                  ))}
+                </div>
+              </>
             ) : (
-              <p className="muted">No verified H2H rows loaded for this matchup yet.</p>
+              <p className="muted">No verified prior meetings were found in the available sources.</p>
             )}
           </section>
 

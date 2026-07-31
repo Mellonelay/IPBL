@@ -5,7 +5,7 @@ import {
   clearFetchCaches,
   fetchBoxScore,
   fetchGame,
-  fetchTeamGames,
+  fetchTeamHistory,
   // fetchOnline,
 } from "./api/client";
 import type { ScheduleGame } from "./api/types";
@@ -34,9 +34,10 @@ import IntelligenceTab from "./app/IntelligenceTab";
 import LiveTab from "./app/LiveTab";
 import ResultsTab from "./app/ResultsTab";
 import TeamsTab from "./app/TeamsTab";
-import type { DrawerState, IntelligenceFocus, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
+import type { DrawerState, H2HStatus, IntelligenceFocus, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
 import { loadIntelligenceSurface, type IntelligenceSurfaceSnapshot } from "./app/intelligence-client";
 import { selectIntelligenceFocusGame } from "./app/intelligence-focus";
+import { resolveInitialRouteState } from "./app/initial-route";
 import { currentOrNextQuarter, gameDivision, liveKey } from "./app/shared";
 import { currentMyanmarResultsSelection } from "./results/month-default";
 
@@ -58,7 +59,13 @@ function devAssert(condition: unknown, message: string, detail?: unknown): void 
 
 function App() {
   const initialResultsSelection = useMemo(() => currentMyanmarResultsSelection(), []);
-  const [activeTab, setActiveTab] = useState<TabKey>("results");
+  const initialRoute = useMemo(() => resolveInitialRouteState({
+    search: window.location.search,
+    fallbackResults: initialResultsSelection,
+    defaultDivisionTag: DEFAULT_RESULTS_DIVISION_TAG,
+    allowedDivisionTags: RESULTS_DIVISION_TAGS,
+  }), [initialResultsSelection]);
+  const [activeTab, setActiveTab] = useState<TabKey>(initialRoute.activeTab);
   const [liveGames, setLiveGames] = useState<ScheduleGame[]>([]);
   const [liveLoading, setLiveLoading] = useState(false);
   const [liveErr, setLiveErr] = useState<string | null>(null);
@@ -66,18 +73,14 @@ function App() {
   const [liveSourceFailures, setLiveSourceFailures] = useState<LiveSourceFailure[]>([]);
   const [selectedLiveDivisionTag, setSelectedLiveDivisionTag] = useState("");
 
-  const [selectedResultsYear, setSelectedResultsYear] = useState<number>(initialResultsSelection.year);
-  const [selectedResultsMonthIndex, setSelectedResultsMonthIndex] = useState<number>(initialResultsSelection.monthIndex);
-  const [selectedResultsDivisionTag, setSelectedResultsDivisionTag] = useState(
-    DEFAULT_RESULTS_DIVISION_TAG
-  );
-  const [jumpDate, setJumpDate] = useState<string>(
-    () => `${initialResultsSelection.year}-${String(initialResultsSelection.monthIndex + 1).padStart(2, "0")}-01`
-  );
+  const [selectedResultsYear, setSelectedResultsYear] = useState<number>(initialRoute.resultsYear);
+  const [selectedResultsMonthIndex, setSelectedResultsMonthIndex] = useState<number>(initialRoute.resultsMonthIndex);
+  const [selectedResultsDivisionTag, setSelectedResultsDivisionTag] = useState(initialRoute.resultsDivisionTag);
+  const [jumpDate, setJumpDate] = useState<string>(initialRoute.jumpDate);
 
   const [calendarMap, setCalendarMap] = useState<CalendarGridMap>(() =>
-    createSkeletonResultsCalendarMap(initialResultsSelection.year, initialResultsSelection.monthIndex, [
-      DEFAULT_RESULTS_DIVISION_TAG,
+    createSkeletonResultsCalendarMap(initialRoute.resultsYear, initialRoute.resultsMonthIndex, [
+      initialRoute.resultsDivisionTag,
     ])
   );
   const [resultsLoading, setResultsLoading] = useState(false);
@@ -257,27 +260,6 @@ function App() {
     }
   }, [calendarMap, loadedResultsKey, resultsLoading, selectedResultsDivisionTag, selectedResultsKey]);
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const tab = params.get("tab");
-    const date = params.get("date");
-    const division = params.get("division");
-    if (tab === "results" || tab === "live" || tab === "intelligence" || tab === "teams" || tab === "betting") {
-      setActiveTab(tab);
-    }
-    if (date) {
-      setJumpDate(date);
-      const parts = safeSplit(date, "-").map((p) => Number.parseInt(p, 10));
-      if (parts.length === 3 && Number.isFinite(parts[0]) && Number.isFinite(parts[1])) {
-        setSelectedResultsYear(parts[0]);
-        setSelectedResultsMonthIndex(parts[1] - 1);
-      }
-    }
-    if (division && (RESULTS_DIVISION_TAGS as readonly string[]).includes(division)) {
-      setSelectedResultsDivisionTag(division);
-    }
-  }, []);
-
   const loadLive = useCallback(async () => {
     setLiveLoading(true);
     setLiveErr(null);
@@ -431,24 +413,47 @@ function App() {
     }
   }, []);
 
-  const syncIntelligenceFocus = useCallback((game: ScheduleGame, h2h: IntelligenceFocus["h2h"]) => {
-    setIntelligenceFocus({ game, h2h });
-    setDrawer((current) => (current && current.game.gameId === game.gameId ? { ...current, h2h } : current));
+  const syncIntelligenceFocus = useCallback((
+    game: ScheduleGame,
+    h2h: IntelligenceFocus["h2h"],
+    h2hStatus: H2HStatus
+  ) => {
+    setIntelligenceFocus({ game, h2h, h2hStatus });
+    setDrawer((current) => (
+      current && current.game.gameId === game.gameId ? { ...current, h2h, h2hStatus } : current
+    ));
   }, []);
 
   const primeIntelligenceFocus = useCallback(async (game: ScheduleGame) => {
-    syncIntelligenceFocus(game, []);
+    syncIntelligenceFocus(game, [], { state: "loading", source: null, error: null });
 
     try {
       const season = Number.parseInt(String(game.localDate).slice(-4), 10) || new Date().getFullYear();
-      const [team1History, team2History] = await Promise.all([
-        fetchTeamGames(game.team1.teamId, game.tag, season, "all").catch(() => []),
-        fetchTeamGames(game.team2.teamId, game.tag, season, "all").catch(() => []),
+      const historyResults = await Promise.allSettled([
+        fetchTeamHistory(game.team1.teamId, game.tag, season, "all"),
+        fetchTeamHistory(game.team2.teamId, game.tag, season, "all"),
       ]);
-      const h2h = computeH2H(team1History, team2History, game.team1.teamId, game.team2.teamId, 8);
-      syncIntelligenceFocus(game, h2h);
-    } catch {
-      // Preserve the placeholder focus so the Intelligence tab can still show the selected game context.
+      const fulfilled = historyResults
+        .filter((result) => result.status === "fulfilled")
+        .map((result) => result.value);
+      if (fulfilled.length === 0) throw new Error("Team history is temporarily unavailable.");
+
+      const team1Rows = historyResults[0].status === "fulfilled" ? historyResults[0].value.rows : [];
+      const team2Rows = historyResults[1].status === "fulfilled" ? historyResults[1].value.rows : [];
+      const h2h = computeH2H(team1Rows, team2Rows, game.team1.teamId, game.team2.teamId, 8);
+      const partial = fulfilled.length < 2 || fulfilled.some((result) => result.availability === "partial");
+      const source = [...new Set(fulfilled.map((result) => result.source))].join(" + ");
+      syncIntelligenceFocus(game, h2h, {
+        state: partial ? "partial" : "loaded",
+        source,
+        error: null,
+      });
+    } catch (error) {
+      syncIntelligenceFocus(game, [], {
+        state: "unavailable",
+        source: null,
+        error: error instanceof Error ? error.message : "Team history is temporarily unavailable.",
+      });
     }
   }, [syncIntelligenceFocus]);
 
@@ -526,6 +531,7 @@ function App() {
       flow: presetFlow,
       decision: presetDecision,
       h2h: [],
+      h2hStatus: { state: "loading", source: null, error: null },
     });
     void primeIntelligenceFocus(game);
 

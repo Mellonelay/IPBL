@@ -25,13 +25,13 @@ Rules:
 - `evidence-finalization`: use when phase manifests, supersession indexes, or durable proof bundles need to be normalized.
 - `gen-planning`: use when the task is about operator intelligence, roadmap closure, or phase packaging rather than runtime behavior.
 
-## Mellonelay Fabric A-Team
+## Deterministic Production Boundary
 
-- `.agenteam/config.yaml` defines the repository roles.
-- `.agenteam/execution-contract.yaml` defines Fabric routing and protected actions.
-- Mellonelay Fabric GPT is the orchestrator; `createAgent` creates logical role records only.
-- Runtime work must execute through `vmRouter` and the VM job ledger.
-- Use `scripts/mellonelay-agenteam <task.json>` for bounded sequential role execution.
-- Results under `/root/runtime-audits/agenteam` are the execution evidence.
-- QA and Reviewer must pass before release actions.
+- IPBL production is a deterministic Vercel application. Do not introduce, require, or emphasize agent runtimes in the production request path, source path, storage path, or operator workflow.
+- `.agenteam/`, `.agents/`, and related orchestration assets are development and maintenance aids only.
+- Agents may be used for bounded recovery, migration, investigation, testing, review, and maintenance work.
+- Routine local development does not require `vmRouter`, the Fabric job ledger, or agent-role creation.
+- Preserve the complete roadmap: Results, H2H, Live accuracy, statistics, Graphify, Cloudflare AI, prediction, betting memory, Replay Lab, and evidence lineage.
+- Graphify informs architecture and evidence relationships; it is not a production routing authority and cannot create official facts.
+- QA and review must pass before release actions.
 - Merge, production promotion, force push, secrets, production-data mutation, and destructive deletion require explicit authorization.
