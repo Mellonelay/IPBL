@@ -1,3 +1,4 @@
+import { safeCompare } from "../../lib/server/auth.js";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { runOfficialBackfillRange } from "../../lib/server/results-official-backfill.js";
 import { handleSupabaseBackfillRequest } from "../../lib/server/supabase-backfill-handler.js";
@@ -18,7 +19,7 @@ function toOptionalNumber(value: unknown): number | undefined {
 }
 
 async function run(req: VercelRequest, res: VercelResponse): Promise<void> {
-    if (req.headers.authorization !== `Bearer ${process.env.CRON_SECRET}`) {
+    if (!safeCompare(req.headers.authorization as string || "", `Bearer ${process.env.CRON_SECRET || ""}`)) {
         res.status(401).json({ error: "Unauthorized" });
         return;
     }
