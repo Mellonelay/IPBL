@@ -1,3 +1,4 @@
+import { safeCompare } from "./auth.js";
 import type { ScheduleGame } from "./calendar-normalize.js";
 
 export const RECORDER_SCHEMA_VERSION = 1 as const;
@@ -385,7 +386,8 @@ export async function readRecordedLiveFeed(redis: RecorderRedis): Promise<LiveFe
   };
 }
 
+
 export function isAuthorizedCronRequest(authorization: string | undefined, secret: string | undefined): boolean {
   if (!secret || !authorization) return false;
-  return authorization === `Bearer ${secret}`;
+  return safeCompare(authorization, `Bearer ${secret}`);
 }

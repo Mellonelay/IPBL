@@ -1,3 +1,4 @@
+import { safeCompare } from "../../lib/server/auth.js";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { requireResultsRedis } from "../../lib/server/results-redis.js";
 import { buildLiveFeedEnvelope } from "../../lib/server/live-feed.js";
@@ -22,7 +23,7 @@ async function runSyncResultsCron(req: VercelRequest, res: VercelResponse): Prom
     res.status(503).json({ error: "recorder_not_configured" });
     return;
   }
-  if (req.headers.authorization !== `Bearer ${secret}`) {
+  if (!safeCompare(req.headers.authorization as string || "", `Bearer ${secret}`)) {
     res.status(401).json({ error: "Unauthorized" });
     return;
   }
