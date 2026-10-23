@@ -83,10 +83,5 @@
       "destination": "/index.html"
     }
   ],
-  "crons": [
-    {
-      "path": "/api/cron/record-live",
-      "schedule": "0 0 * * *"
-    }
-  ]
+  "crons": []
 }
