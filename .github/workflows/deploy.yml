@@ -73,30 +73,3 @@ jobs:
           fi
           npx vercel deploy --prod --yes --token "$VERCEL_TOKEN"
 
-  deploy-cloudflare-worker:
-    name: Deploy Cloudflare worker
-    needs: verify
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
-
-      - name: Set up Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
-        with:
-          node-version: "22"
-          cache: npm
-
-      - name: Install locked dependencies
-        run: npm ci
-
-      - name: Deploy Graphify intelligence worker
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "CLOUDFLARE_API_TOKEN is not set; skipping Cloudflare worker deploy."
-            exit 0
-          fi
-          npx wrangler deploy --config workers/graphify-intelligence/wrangler.jsonc
