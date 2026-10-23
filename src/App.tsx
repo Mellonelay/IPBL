@@ -38,6 +38,7 @@ import type { DrawerState, H2HStatus, IntelligenceFocus, LiveInsight, LiveSource
 import { loadIntelligenceSurface, type IntelligenceSurfaceSnapshot } from "./app/intelligence-client";
 import { selectIntelligenceFocusGame } from "./app/intelligence-focus";
 import { seasonForIpblGame } from "./app/ipbl-season";
+import { createHistoryRequestGuard } from "./app/history-request-guard";
 import { resolveInitialRouteState } from "./app/initial-route";
 import { currentOrNextQuarter, gameDivision, liveKey } from "./app/shared";
 import { currentMyanmarResultsSelection } from "./results/month-default";
@@ -93,6 +94,7 @@ function App() {
   const [intelligenceLoading, setIntelligenceLoading] = useState(false);
   const [intelligenceErr, setIntelligenceErr] = useState<string | null>(null);
   const [intelligenceFocus, setIntelligenceFocus] = useState<IntelligenceFocus | null>(null);
+  const h2hRequestGuardRef = useRef(createHistoryRequestGuard());
 
   const [drawer, setDrawer] = useState<DrawerState | null>(null);
   const [teamRefreshToken, setTeamRefreshToken] = useState(0);
@@ -426,6 +428,7 @@ function App() {
   }, []);
 
   const primeIntelligenceFocus = useCallback(async (game: ScheduleGame) => {
+    const requestId = h2hRequestGuardRef.current.next();
     syncIntelligenceFocus(game, [], { state: "loading", source: null, error: null });
 
     try {
@@ -434,6 +437,7 @@ function App() {
         fetchTeamHistory(game.team1.teamId, game.tag, season, "all"),
         fetchTeamHistory(game.team2.teamId, game.tag, season, "all"),
       ]);
+      if (!h2hRequestGuardRef.current.isCurrent(requestId)) return;
       const fulfilled = historyResults
         .filter((result) => result.status === "fulfilled")
         .map((result) => result.value);
@@ -450,6 +454,7 @@ function App() {
         error: null,
       });
     } catch (error) {
+      if (!h2hRequestGuardRef.current.isCurrent(requestId)) return;
       syncIntelligenceFocus(game, [], {
         state: "unavailable",
         source: null,

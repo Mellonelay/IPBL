@@ -75,5 +75,8 @@ jobs:
       - name: Verify IPBL selected-match season and H2H
         run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-game-season.test.ts
 
+      - name: Verify H2H selection isolation
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/h2h-request-guard.test.ts
+
       - name: Build production bundle
         run: npm run build
