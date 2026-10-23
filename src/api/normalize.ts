@@ -325,13 +325,20 @@ export function h2hDateTimeKey(date: string, time: string): number {
 
 export function computeH2H(
   teamAGames: TeamHistoryGame[], teamBGames: TeamHistoryGame[],
-  teamAId: number, teamBId: number, limit = 15
+  teamAId: number, teamBId: number, limit = 15, selectedGameId?: number
 ): H2HEntry[] {
   const byGameId = new Map<number, TeamHistoryGame>();
   for (const game of [...teamAGames, ...teamBGames]) byGameId.set(game.gameId, game);
   const pair = new Set([teamAId, teamBId]);
   return [...byGameId.values()]
-    .filter((game) => pair.has(game.team1.teamId) && pair.has(game.team2.teamId))
+    .filter((game) =>
+      game.gameId !== selectedGameId
+      && teamAId !== teamBId
+      && pair.has(game.team1.teamId) && pair.has(game.team2.teamId)
+      && game.team1.teamId !== game.team2.teamId
+      && /result|finish|complete/i.test(String(game.status))
+      && /\d+\s*:\s*\d+/.test(game.scoreText)
+    )
     .map((game) => {
       const score = game.scoreText.match(/(\d+)\s*:\s*(\d+)/);
       const home = score ? Number(score[1]) : 0; const away = score ? Number(score[2]) : 0;

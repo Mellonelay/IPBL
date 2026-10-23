@@ -31,3 +31,9 @@ const deduped = computeH2H(games, games, 1, 2, 15);
 assert.equal(new Set(deduped.map((entry) => entry.gameId)).size, deduped.length);
 assert.ok(h2hDateTimeKey("29.05.2026", "12:30") > h2hDateTimeKey("30.04.2026", "17:30"));
 console.log("H2H newest-first ordering tests passed");
+
+const liveGame = { ...game(50,"02.06.2026","08:00"),status:"Online" };
+const scheduledGame = { ...game(51,"03.06.2026","08:00"),status:"Scheduled" };
+const otherTeam = { ...game(52,"04.06.2026","08:00"),team2:{teamId:3,shortName:"C",name:"C"} };
+const mixed = computeH2H([...games, liveGame, scheduledGame, otherTeam], [], 1, 2, 15, 3);
+assert.deepEqual(mixed.map(row=>row.gameId),[4,2,1], "the selected game, live rows and unrelated opponents are not prior H2H");

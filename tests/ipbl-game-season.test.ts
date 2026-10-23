@@ -1,0 +1,10 @@
+import assert from "node:assert/strict";
+import { seasonForIpblGame } from "../src/app/ipbl-season.ts";
+const fallback = new Date("2026-10-24T00:00:00.000Z");
+assert.equal(seasonForIpblGame({sourceLocalDate:"23.10.2026",localDate:"24.10.2026"},fallback),2027);
+assert.equal(seasonForIpblGame({sourceLocalDate:"31.08.2026",localDate:"01.09.2026"},fallback),2026);
+assert.equal(seasonForIpblGame({sourceLocalDate:"2026-09-01"},fallback),2027);
+assert.equal(seasonForIpblGame({localDate:"01.05.2026"},fallback),2026);
+assert.equal(seasonForIpblGame({sourceLocalDate:"31.02.2026"},fallback),2027);
+assert.equal(seasonForIpblGame({},new Date("2026-08-30T00:00:00.000Z")),2026);
+console.log("IPBL game and team season rollover tests passed");

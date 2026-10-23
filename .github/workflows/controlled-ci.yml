@@ -72,5 +72,8 @@ jobs:
       - name: Verify canonical Supabase Results projection
         run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/supabase-results-calendar.test.ts
 
+      - name: Verify IPBL selected-match season and H2H
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-game-season.test.ts
+
       - name: Build production bundle
         run: npm run build

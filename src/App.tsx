@@ -37,6 +37,7 @@ import TeamsTab from "./app/TeamsTab";
 import type { DrawerState, H2HStatus, IntelligenceFocus, LiveInsight, LiveSourceFailure, TabKey } from "./app/app-types";
 import { loadIntelligenceSurface, type IntelligenceSurfaceSnapshot } from "./app/intelligence-client";
 import { selectIntelligenceFocusGame } from "./app/intelligence-focus";
+import { seasonForIpblGame } from "./app/ipbl-season";
 import { resolveInitialRouteState } from "./app/initial-route";
 import { currentOrNextQuarter, gameDivision, liveKey } from "./app/shared";
 import { currentMyanmarResultsSelection } from "./results/month-default";
@@ -428,7 +429,7 @@ function App() {
     syncIntelligenceFocus(game, [], { state: "loading", source: null, error: null });
 
     try {
-      const season = Number.parseInt(String(game.localDate).slice(-4), 10) || new Date().getFullYear();
+      const season = seasonForIpblGame(game);
       const historyResults = await Promise.allSettled([
         fetchTeamHistory(game.team1.teamId, game.tag, season, "all"),
         fetchTeamHistory(game.team2.teamId, game.tag, season, "all"),
@@ -440,7 +441,7 @@ function App() {
 
       const team1Rows = historyResults[0].status === "fulfilled" ? historyResults[0].value.rows : [];
       const team2Rows = historyResults[1].status === "fulfilled" ? historyResults[1].value.rows : [];
-      const h2h = computeH2H(team1Rows, team2Rows, game.team1.teamId, game.team2.teamId, 8);
+      const h2h = computeH2H(team1Rows, team2Rows, game.team1.teamId, game.team2.teamId, 8, game.gameId);
       const partial = fulfilled.length < 2 || fulfilled.some((result) => result.availability === "partial");
       const source = [...new Set(fulfilled.map((result) => result.source))].join(" + ");
       syncIntelligenceFocus(game, h2h, {
@@ -684,7 +685,7 @@ function App() {
         )}
 
         {activeTab === "teams" && (
-          <TeamsTab season={RESULTS_SEASON} refreshToken={teamRefreshToken} onOpenGame={(game) => void openDrawer(game)} />
+          <TeamsTab season={seasonForIpblGame({})} refreshToken={teamRefreshToken} onOpenGame={(game) => void openDrawer(game)} />
         )}
 
         {activeTab === "betting" && <BettingTab />}
