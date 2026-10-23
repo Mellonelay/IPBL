@@ -58,7 +58,10 @@ export function officialGameDetailIsTerminal(raw: unknown): boolean {
 
 function scoreText(score1: number, score2: number, explicit?: string): string {
   const text = typeof explicit === "string" ? explicit.trim() : "";
-  return text ? text.replace(":", " : ") : `${score1} : ${score2}`;
+  const match = /^(\d+)\s*:\s*(\d+)$/.exec(text);
+  return match && Number(match[1]) === score1 && Number(match[2]) === score2
+    ? text.replace(":", " : ")
+    : `${score1} : ${score2}`;
 }
 
 function applyOfficialGameDetail(game: ScheduleGame, raw: unknown): ScheduleGame | null {
@@ -68,6 +71,10 @@ function applyOfficialGameDetail(game: ScheduleGame, raw: unknown): ScheduleGame
   if (!official) return game;
   const score1 = typeof official.score1 === "number" && Number.isFinite(official.score1) ? official.score1 : game.score1;
   const score2 = typeof official.score2 === "number" && Number.isFinite(official.score2) ? official.score2 : game.score2;
+  // Official live detail can lag behind the merged live observation; never regress
+  // a live scoreboard or quarter without terminal/correction evidence.
+  if (score1 < game.score1 || score2 < game.score2
+      || (typeof official.period === "number" && typeof game.period === "number" && official.period < game.period)) return game;
   return normalizeLiveGame({
     ...game,
     status: official.gameStatus ?? game.status,

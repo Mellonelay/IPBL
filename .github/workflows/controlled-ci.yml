@@ -78,5 +78,8 @@ jobs:
       - name: Verify H2H selection isolation
         run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/h2h-request-guard.test.ts
 
+      - name: Verify Live official reconciliation monotonicity
+        run: npm run test:live-reconciliation
+
       - name: Build production bundle
         run: npm run build
