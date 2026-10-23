@@ -22,7 +22,7 @@ export type CanonicalResultsRow = {
 };
 
 function isoSourceDay(value: string): string | null {
-  const match = /^(\\d{2})\\.(\\d{2})\\.(\\d{4})$/.exec(value);
+  const match = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(value);
   if (!match) return null;
   const iso = `${match[3]}-${match[2]}-${match[1]}`;
   const check = new Date(`${iso}T00:00:00.000Z`);
