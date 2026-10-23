@@ -1,12 +1,12 @@
 import type { LiveSourceStatus, RecorderRun } from "./live-recorder.js";
 
 export const SOURCE_HEALTH_POLICY = {
-  schedulerCadenceSeconds: 60,
-  freshWithinSeconds: 90,
-  staleAfterSeconds: 150,
-  failedAfterSeconds: 300,
+  schedulerCadenceSeconds: 300,
+  freshWithinSeconds: 600,
+  staleAfterSeconds: 900,
+  failedAfterSeconds: 1200,
   recentRunWindow: 30,
-  maxHealthyGapSeconds: 150,
+  maxHealthyGapSeconds: 900,
   warningAfterConsecutivePartialRuns: 5,
   criticalAfterConsecutiveFailedRuns: 3,
   recoveryAfterConsecutiveNonFailedRuns: 2,
