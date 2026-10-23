@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
   root: "./",
@@ -14,14 +13,14 @@ export default defineConfig({
       }
     },
   },
-  plugins: [react(), cloudflare()],
+  plugins: [react()],
   server: {
     port: 4873,
     proxy: {
       "/api/ipbl": {
-        target: "https://worker.mloneslot99.com",
+        target: "https://api1.ipbl.pro",
         changeOrigin: true,
-        rewrite: (p) => p.replace(/^\/api\/ipbl/, "/ipbl-proxy"),
+        rewrite: (p) => p.replace(/^\/api\/ipbl/, ""),
       },
     },
   },

@@ -63,5 +63,8 @@ jobs:
       - name: Verify canonical H2H source isolation
         run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/supabase-team-history-fallback.test.ts
 
+      - name: Verify Cloudflare-free official source configuration
+        run: node tests/official-source-routing.test.mjs
+
       - name: Build production bundle
         run: npm run build

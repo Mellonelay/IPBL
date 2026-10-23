@@ -76,7 +76,7 @@
     },
     {
       "source": "/api/ipbl/(.*)",
-      "destination": "https://worker.mloneslot99.com/ipbl-proxy/$1"
+      "destination": "https://api1.ipbl.pro/$1"
     },
     {
       "source": "/(.*)",

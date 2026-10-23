@@ -16,7 +16,7 @@ export const RESULTS_SYNC_TAGS = [
 ] as const;
 
 export const RESULTS_LANG = "ru";
-export const IPBL_API_BASE = "https://worker.mloneslot99.com/ipbl-proxy";
+export const IPBL_API_BASE = "https://api1.ipbl.pro";
 
 export function isApprovedResultsTag(tag: string): tag is (typeof RESULTS_SYNC_TAGS)[number] {
     return (RESULTS_SYNC_TAGS as readonly string[]).includes(tag);
