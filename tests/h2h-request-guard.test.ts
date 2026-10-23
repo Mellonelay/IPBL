@@ -1,0 +1,10 @@
+import assert from "node:assert/strict";
+import { createHistoryRequestGuard } from "../src/app/history-request-guard.ts";
+const guard=createHistoryRequestGuard();
+const first=guard.next();
+assert.equal(guard.isCurrent(first),true);
+const second=guard.next();
+assert.equal(guard.isCurrent(first),false,"late result for first match cannot replace newly selected match");
+assert.equal(guard.isCurrent(second),true);
+assert.equal(guard.isCurrent(0),false);
+console.log("H2H request cancellation and selection isolation passed");

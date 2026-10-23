@@ -233,7 +233,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const failedSources = [
     !supabaseHistory.ok ? "supabase" : null,
     !officialOnline.ok ? "official-online" : null,
-    officialTeamGames.seasons.some((row) => !row.ok) ? "official-team-games" : null,
+    officialTeamGames.seasons.some((row) => !row.ok || row.capped) ? "official-team-games" : null,
     !officialRecentCalendar.ok ? "official-calendar" : null,
     !legacyHistory.ok ? "results-kv" : null,
   ].filter((value): value is string => Boolean(value));
@@ -252,6 +252,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       ok: officialTeamGames.ok,
       itemCount: officialTeamGames.items.length,
       seasons: officialTeamGames.seasons,
+      capped: officialTeamGames.seasons.some((row) => row.capped),
       error: officialTeamGames.error,
     },
     currentOfficialOnline: {
