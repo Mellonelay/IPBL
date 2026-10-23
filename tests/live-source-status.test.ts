@@ -15,4 +15,37 @@ assert.equal(
   "Bookmaker live pages could not be fetched in the current runtime."
 );
 
+// Fallback error (unknown kind)
+assert.equal(
+  summarizeBookmakerFailures([{ kind: "unknown_error", source: "melbet", leagueId: 2496666 }]),
+  "Bookmaker source failures were reported."
+);
+
+// Missing/null kind
+assert.equal(
+  summarizeBookmakerFailures([{ kind: null, error: "timeout" }]),
+  "Bookmaker source failures were reported."
+);
+assert.equal(
+  summarizeBookmakerFailures([{}]),
+  "Bookmaker source failures were reported."
+);
+
+// Multiple failures with precedence testing
+assert.equal(
+  summarizeBookmakerFailures([
+    { kind: "unknown_error" },
+    { kind: "zero_approved_games" }
+  ]),
+  "Bookmaker live rows were found, but none matched the approved team registry."
+);
+
+assert.equal(
+  summarizeBookmakerFailures([
+    { kind: "fetch_failed" },
+    { kind: "parse_failed" }
+  ]),
+  "Bookmaker live pages changed shape before any games could be parsed."
+);
+
 console.log("Live source status label tests passed");
