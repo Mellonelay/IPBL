@@ -50,7 +50,8 @@ export function sortTeamGamesNewest(games: TeamHistoryGame[]): TeamHistoryGame[]
 }
 
 export function isCompletedTeamGame(game: TeamHistoryGame): boolean {
-  return parseScorePair(game.scoreText) !== null;
+  return /result|finish|complete/i.test(String(game.status))
+    && parseScorePair(game.scoreText) !== null;
 }
 
 function limitGames(games: TeamHistoryGame[], range: TeamRange): TeamHistoryGame[] {
@@ -60,7 +61,7 @@ function limitGames(games: TeamHistoryGame[], range: TeamRange): TeamHistoryGame
 function transition(games: TeamHistoryGame[], from: number, to: number): QuarterTransition {
   const deltas = games
     .map((game) => parseQuarterTotals(game.fullScore))
-    .filter((quarters) => quarters.length > Math.max(from, to))
+    .filter((quarters) => quarters.length === 4)
     .map((quarters) => quarters[to] - quarters[from]);
   const samples = deltas.length;
   const increases = deltas.filter((delta) => delta > 0).length;
@@ -79,7 +80,12 @@ export function buildTeamProfile(
   teamId: number,
   range: TeamRange
 ): TeamProfile {
-  const completed = sortTeamGamesNewest(allGames.filter(isCompletedTeamGame));
+  const byId = new Map<number, TeamHistoryGame>();
+  for (const game of allGames) {
+    if (!isCompletedTeamGame(game) || (game.team1.teamId !== teamId && game.team2.teamId !== teamId)) continue;
+    byId.set(game.gameId, game);
+  }
+  const completed = sortTeamGamesNewest([...byId.values()]);
   const games = limitGames(completed, range);
   let wins = 0;
   let losses = 0;
@@ -96,7 +102,8 @@ export function buildTeamProfile(
       if (own > opponent) wins += 1;
       else if (own < opponent) losses += 1;
     }
-    parseQuarterTotals(game.fullScore).forEach((value, index) => quarterValues[index]?.push(value));
+    const completeQuarters = parseQuarterTotals(game.fullScore);
+    if (completeQuarters.length === 4) completeQuarters.forEach((value, index) => quarterValues[index]?.push(value));
   }
 
   const average = (values: number[]): number | null =>
