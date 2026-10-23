@@ -9,8 +9,12 @@ assert.equal(degraded.level,"DEGRADED"); assert.ok(degraded.reasons.includes("fa
 
 const idle=evaluateRecorderHealth({...run("2026-06-12T18:49:30.000Z","IDLE"),source:"bookmaker:melbet.com",sourceStatus:"IDLE",sourceDetails:{fallbackFrom:"official:api1.ipbl.pro",requestedDivisions:12,successfulDivisions:0,receivedBookmakerEvents:27,unmatchedBookmakerEvents:[{reason:"unverified-team"}]}},[run("2026-06-12T18:48:30.000Z","FAIL"),run("2026-06-12T18:49:30.000Z","IDLE")],now);
 assert.notEqual(idle.level,"FAILED"); assert.equal(idle.source.reportedStatus,"IDLE"); assert.equal(idle.scheduler.consecutiveNonFailedRuns,1); assert.equal(idle.alert.code,"source_degraded");
-const stale=evaluateRecorderHealth(run("2026-06-12T18:47:20.000Z"),[run("2026-06-12T18:47:20.000Z")],now);
+const stale=evaluateRecorderHealth(run("2026-06-12T18:33:20.000Z"),[run("2026-06-12T18:33:20.000Z")],now);
 assert.equal(stale.level,"STALE"); assert.ok(stale.freshness.ageSeconds! > SOURCE_HEALTH_POLICY.staleAfterSeconds); assert.equal(stale.recovery.state,"INCIDENT");
+const expired=evaluateRecorderHealth(run("2026-06-12T18:29:00.000Z"),[run("2026-06-12T18:29:00.000Z")],now);
+assert.equal(expired.level,"FAILED"); assert.equal(expired.alert.code,"recorder_heartbeat_expired");
+const slightlyLate=evaluateRecorderHealth(run("2026-06-12T18:44:00.000Z"),[run("2026-06-12T18:44:00.000Z")],now);
+assert.equal(slightlyLate.level,"HEALTHY"); assert.equal(slightlyLate.scheduler.cadenceSeconds,300);
 const failedRuns=[run("2026-06-12T18:47:30.000Z","FAIL"),run("2026-06-12T18:48:30.000Z","FAIL"),run("2026-06-12T18:49:30.000Z","FAIL")];
 const failed=evaluateRecorderHealth(run("2026-06-12T18:49:30.000Z","FAIL"),failedRuns,now,["old:1","old:1"]);
 assert.equal(failed.level,"FAILED"); assert.equal(failed.alert.severity,"CRITICAL"); assert.equal(failed.alert.code,"sustained_source_failure"); assert.equal(failed.scheduler.consecutiveFailedRuns,3); assert.equal(failed.recovery.state,"INCIDENT"); assert.deepEqual(failed.continuity.preservedActiveGameKeys,["old:1"]);
