@@ -41,6 +41,19 @@ assert.equal(profile.transitions[0].samples, 3);
 assert.equal(profile.transitions[0].increases, 2);
 assert.equal(Number(profile.transitions[0].rate?.toFixed(4)), 0.6667);
 
+const mixed = [
+  ...games,
+  games[2], // Duplicate official match from merged source
+  { ...games[2], gameId: 77, status: "Online" },
+  { ...games[2], gameId: 78, status: "Scheduled", scoreText: "0:0" },
+  { ...games[2], gameId: 79, team1: { teamId: 8, shortName: "X", name: "X" }, team2: { teamId: 9, shortName: "Y", name: "Y" } },
+  { ...games[2], gameId: 80, fullScore: "20:20,25:22" },
+] as TeamHistoryGame[];
+const bounded = buildTeamProfile(mixed, 1, "all");
+assert.deepEqual(bounded.games.map(x => x.gameId), [80, 3, 2, 1], "only selected team's unique finished games count");
+assert.equal(bounded.wins, 3);
+assert.equal(bounded.transitions[0].samples, 3, "incomplete quarter matrix excluded from transition statistics");
+assert.equal(bounded.quarterAverages[0], profile.quarterAverages[0]);
 const schedule = teamHistoryToScheduleGame(games[2]);
 assert.equal(schedule.gameId, 3);
 assert.equal(schedule.score1, 100);

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { fetchTeamGames } from "../api/client";
+import { fetchTeamHistory, type TeamHistoryFetchResult } from "../api/client";
 import type { ScheduleGame, TeamHistoryGame } from "../api/types";
 import { TEAM_STATISTICS_DIVISIONS, teamsForDivision } from "../config/teams";
 import { resolveTeamSelectionFromParams } from "./team-selection";
@@ -38,6 +38,7 @@ export default function TeamStatistics({
   const [teamId, setTeamId] = useState<number>(initial.teamId);
   const [range, setRange] = useState<TeamRange>(initial.range);
   const [games, setGames] = useState<TeamHistoryGame[]>([]);
+  const [historyCoverage, setHistoryCoverage] = useState<Pick<TeamHistoryFetchResult, "availability" | "source" | "checkedAt"> | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -61,9 +62,14 @@ export default function TeamStatistics({
     let cancelled = false;
     setLoading(true);
     setError(null);
-    void fetchTeamGames(teamId, divisionTag, season, range)
-      .then((rows) => {
-        if (!cancelled) setGames(rows);
+    setHistoryCoverage(null);
+    setGames([]);
+    void fetchTeamHistory(teamId, divisionTag, season, range)
+      .then((result) => {
+        if (!cancelled) {
+          setGames(result.rows);
+          setHistoryCoverage({ availability: result.availability, source: result.source, checkedAt: result.checkedAt });
+        }
       })
       .catch((reason) => {
         if (!cancelled) setError(reason instanceof Error ? reason.message : "Team history failed");
@@ -131,6 +137,15 @@ export default function TeamStatistics({
 
       {loading && <p className="muted" data-testid="team-loading">Loading official team history…</p>}
       {error && <p className="err" data-testid="team-error">{error}</p>}
+      {!loading && !error && historyCoverage && (
+        <p className={historyCoverage.availability === "partial" ? "muted caution" : "muted"} data-testid="team-history-coverage">
+          {historyCoverage.availability === "partial"
+            ? "Partial history: showing verified rows from responding sources; statistics do not imply complete coverage."
+            : "Verified history from responding sources."}
+          {" Source: "}{historyCoverage.source}
+          {historyCoverage.checkedAt ? ` · Checked ${historyCoverage.checkedAt}` : ""}
+        </p>
+      )}
 
       {!loading && !error && (
         <>
@@ -170,7 +185,7 @@ export default function TeamStatistics({
 
           <section className="team-section-card">
             <h3>Match history</h3>
-            {profile.games.length === 0 && <p className="muted">No completed games in the selected history.</p>}
+            {profile.games.length === 0 && <p className="muted">{historyCoverage?.availability === "partial" ? "No verified completed games were returned by the responding sources; coverage is incomplete." : "No verified completed games in the selected history."}</p>}
             <div className="team-history-list" data-testid="team-history-list">
               {profile.games.map((game) => {
                 const quarters = parseQuarterTotals(game.fullScore);
