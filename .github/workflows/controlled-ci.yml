@@ -87,5 +87,11 @@ jobs:
       - name: Verify imported betting settlement semantics
         run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/betting-intelligence.test.ts
 
+      - name: Verify recorder health
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/source-health.test.ts
+
+      - name: Verify recorder schedule
+        run: node tests/recorder-cron-config.test.mjs
+
       - name: Build production bundle
         run: npm run build
