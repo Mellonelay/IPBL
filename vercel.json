@@ -2,7 +2,6 @@
   "version": 2,
   "framework": "vite",
   "rewrites": [
-    { "source": "/__official-source-probe", "destination": "https://ipbl.pro/schedule" },
     {
       "source": "/api/live",
       "destination": "/api/results.ts?mode=live&compat=1"
