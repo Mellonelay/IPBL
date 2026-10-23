@@ -66,5 +66,8 @@ jobs:
       - name: Verify current official IPBL routing
         run: node tests/official-source-routing.test.mjs
 
+      - name: Verify official H2H season and history source
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-season.test.ts
+
       - name: Build production bundle
         run: npm run build

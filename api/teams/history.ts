@@ -44,6 +44,31 @@ async function fetchOfficialOnlineHistoryRows(teamId: number, tag: string): Prom
   return { items: officialOnlineTeamHistoryItems(result.data, teamId, tag), ok: true, error: null };
 }
 
+type OfficialTeamGamesHistoryResult = {
+  items: ReturnType<typeof officialOnlineTeamHistoryItems>;
+  ok: boolean;
+  error: string | null;
+  seasons: Array<{ season: number; ok: boolean; items: number; totalCount: number; capped: boolean; error: string | null }>;
+};
+
+async function fetchOfficialTeamGamesHistoryRows(teamId: number, tag: string, season: number): Promise<OfficialTeamGamesHistoryResult> {
+  const results = await Promise.all(officialHistorySeasons(season).map(async (candidate) => {
+    const params = new URLSearchParams({ teamId: String(teamId), calendarType: "1", tag, season: String(candidate) });
+    const response = await fetchJsonWithTimeout(`${IPBL_API_BASE}/team/games?${params}`);
+    if (!response.ok) return { season: candidate, ok: false, items: [] as ReturnType<typeof officialOnlineTeamHistoryItems>, totalCount: 0, capped: false, error: response.error };
+    const raw = response.data as { data?: { totalCount?: number } };
+    const items = officialOnlineTeamHistoryItems(response.data, teamId, tag);
+    const totalCount = Number(raw?.data?.totalCount ?? items.length);
+    return { season: candidate, ok: true, items, totalCount, capped: totalCount > items.length, error: null };
+  }));
+  return {
+    items: mergeTeamHistoryItems([], results.flatMap((result) => result.items)),
+    ok: results.some((result) => result.ok),
+    error: results.every((result) => !result.ok) ? results.map((result) => result.error).filter(Boolean).join("; ") : null,
+    seasons: results.map(({ season, ok, items, totalCount, capped, error }) => ({ season, ok, items: items.length, totalCount, capped, error })),
+  };
+}
+
 function isoDay(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
@@ -91,8 +116,17 @@ async function fetchOfficialRecentCalendarHistoryRows(teamId: number, tag: strin
 
 
 function currentSeason(now = new Date()): number {
-  const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Yangon", year: "numeric" }).formatToParts(now);
-  return Number(parts.find((part) => part.type === "year")?.value ?? now.getUTCFullYear());
+  const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Yangon", year: "numeric", month: "numeric" }).formatToParts(now);
+  const year = Number(parts.find((part) => part.type === "year")?.value ?? now.getUTCFullYear());
+  const month = Number(parts.find((part) => part.type === "month")?.value ?? now.getUTCMonth() + 1);
+  return month >= 9 ? year + 1 : year;
+}
+
+export function officialHistorySeasons(requestedSeason: number, now = new Date()): number[] {
+  const active = currentSeason(now);
+  return requestedSeason === active || requestedSeason === active - 1
+    ? [active, active - 1]
+    : [requestedSeason];
 }
 
 export type ResolvedTeamHistoryQuery = {
@@ -173,14 +207,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (!resolved.ok) return res.status(resolved.status).json({ error: resolved.error });
   const { teamId, tag, season, range } = resolved;
 
-  const [supabaseHistory, officialOnline, officialRecentCalendar, legacyHistory] = await Promise.all([
+  const [supabaseHistory, officialOnline, officialRecentCalendar, officialTeamGames, legacyHistory] = await Promise.all([
     fetchSupabaseTeamHistoryRows(teamId, tag),
     fetchOfficialOnlineHistoryRows(teamId, tag),
     fetchOfficialRecentCalendarHistoryRows(teamId, tag),
+    fetchOfficialTeamGamesHistoryRows(teamId, tag, season),
     fetchLegacyStoredHistoryRows(teamId, tag, season),
   ]);
 
   const officialItems = [
+    ...officialTeamGames.items,
     ...officialRecentCalendar.items,
     ...officialOnline.items,
   ];
@@ -190,12 +226,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const successfulSources = [
     supabaseHistory.ok ? "supabase" : null,
     officialOnline.ok ? "official-online" : null,
+    officialTeamGames.ok ? "official-team-games" : null,
     officialRecentCalendar.ok ? "official-calendar" : null,
     legacyHistory.ok ? "results-kv" : null,
   ].filter((value): value is string => Boolean(value));
   const failedSources = [
     !supabaseHistory.ok ? "supabase" : null,
     !officialOnline.ok ? "official-online" : null,
+    officialTeamGames.seasons.some((row) => !row.ok) ? "official-team-games" : null,
     !officialRecentCalendar.ok ? "official-calendar" : null,
     !legacyHistory.ok ? "results-kv" : null,
   ].filter((value): value is string => Boolean(value));
@@ -209,6 +247,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       ok: supabaseHistory.ok,
       itemCount: supabaseHistory.items.length,
       error: supabaseHistory.error ? sanitizeTeamHistorySourceError(supabaseHistory.error) : null,
+    },
+    officialTeamGames: {
+      ok: officialTeamGames.ok,
+      itemCount: officialTeamGames.items.length,
+      seasons: officialTeamGames.seasons,
+      error: officialTeamGames.error,
     },
     currentOfficialOnline: {
       ok: officialOnline.ok,
@@ -232,7 +276,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const sourceParts = [
     supabaseHistory.items.length ? "supabase" : null,
-    officialItems.length ? "official-calendar" : null,
+    officialTeamGames.items.length ? "official-team-games" : null,
+    officialRecentCalendar.items.length || officialOnline.items.length ? "official-calendar" : null,
     legacyHistory.items.length ? "results-kv" : null,
   ].filter((value): value is string => Boolean(value));
   const plan = planTeamHistoryResponse({
