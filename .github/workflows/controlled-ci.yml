@@ -51,5 +51,8 @@ jobs:
       - name: Verify IPBL source contracts
         run: npm run test:ipbl-source
 
+      - name: Verify live source status labels
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-source-status.test.ts
+
       - name: Build production bundle
         run: npm run build
