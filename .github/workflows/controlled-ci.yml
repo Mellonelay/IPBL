@@ -51,5 +51,8 @@ jobs:
       - name: Verify IPBL source contracts
         run: npm run test:ipbl-source
 
+      - name: Verify cron recorder authorization
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-recorder.test.ts
+
       - name: Build production bundle
         run: npm run build
