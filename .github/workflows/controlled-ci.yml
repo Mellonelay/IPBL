@@ -60,5 +60,8 @@ jobs:
       - name: Verify cron recorder authorization
         run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-recorder.test.ts
 
+      - name: Verify canonical H2H source isolation
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/supabase-team-history-fallback.test.ts
+
       - name: Build production bundle
         run: npm run build
