@@ -1,7 +1,6 @@
-import { useEffect, useMemo, useRef } from "react";
-import { resultsDivisionsForMonth, type ResultsCalendarMap, type ResultsGame, type ResultsMonthMetadata } from "../results/calendar";
+import { memo, useCallback, useEffect, useMemo, useRef } from "react";
+import { resultsDivisionsForMonth, type ResultsCalendarDay, type ResultsCalendarMap, type ResultsGame, type ResultsMonthMetadata } from "../results/calendar";
 import { describeResultState, resultStateForStoredDay } from "../results/result-states";
-
 
 type Props = {
   calendarMap: ResultsCalendarMap;
@@ -30,6 +29,98 @@ function formatHeader(iso: string): string {
   });
 }
 
+/**
+ * Memoized single day block component.
+ * Prevents re-filtering, flatMapping, result state computations, and DOM reconciliations
+ * for all 30-31 day blocks when unrelated state changes (e.g. jumpDate input updates).
+ */
+const ResultsDayBlock = memo(function ResultsDayBlock({
+  date,
+  rawDayData,
+  selectedDivisionTag,
+  loading,
+  metadata,
+  onOpenMatch,
+  onOpenH2H,
+  setRef,
+}: {
+  date: string;
+  rawDayData?: ResultsCalendarDay[];
+  selectedDivisionTag: string;
+  loading: boolean;
+  metadata: ResultsMonthMetadata | null;
+  onOpenMatch: (game: ResultsGame) => void;
+  onOpenH2H: (game: ResultsGame) => void;
+  setRef: (date: string, node: HTMLDivElement | null) => void;
+}) {
+  const dayData = Array.isArray(rawDayData) ? rawDayData : [];
+  const divisions = useMemo(
+    () => dayData.filter((division) => division.divisionTag === selectedDivisionTag),
+    [dayData, selectedDivisionTag]
+  );
+  const visibleDivisions = useMemo(
+    () => divisions.filter((division) => Array.isArray(division.games) && division.games.length > 0),
+    [divisions]
+  );
+  const matches = useMemo(
+    () => divisions.flatMap((division) => division.games ?? []),
+    [divisions]
+  );
+  const dayState = useMemo(
+    () =>
+      resultStateForStoredDay({
+        divisionId: selectedDivisionTag,
+        date,
+        matches,
+        metadata,
+      }),
+    [selectedDivisionTag, date, matches, metadata]
+  );
+
+  return (
+    <div
+      id={`day-${date}`}
+      className="day-block"
+      ref={(node) => setRef(date, node)}
+    >
+      <h3>{formatHeader(date)}</h3>
+      {visibleDivisions.length === 0 && !loading && <div className="no-matches">{describeResultState(dayState)}</div>}
+      {visibleDivisions.length === 0 && loading && <div className="no-matches">Loading...</div>}
+
+      {visibleDivisions.map((division) => {
+        const matchesList = division.games;
+        return (
+          <section key={`${date}-${division.divisionTag}`} className="calendar-division-group">
+            <div className="calendar-division-title">{division.division}</div>
+            <div className="calendar-match-list">
+              {matchesList.map((match) => (
+                <div key={`${date}-${division.divisionTag}-${match.game.gameId}`} className="calendar-match-row">
+                  <button type="button" className="calendar-match-open" onClick={() => onOpenMatch(match.game)}>
+                    <div className="calendar-match-main">
+                      <span className="calendar-time">{match.time}</span>
+                      <span className="calendar-teams">{match.teams}</span>
+                    </div>
+                    <div className="calendar-match-side">
+                      <strong>{match.score}</strong>
+                      <span className="calendar-division-badge">{match.division.replace("Pro ", "")}</span>
+                    </div>
+                    {match.quarterTotals && <div className="calendar-quarter-line">{match.quarterTotals}</div>}
+                  </button>
+                  <div className="calendar-match-actions">
+                    <button type="button" className="mini-btn" data-testid="results-calendar-h2h-button" onClick={() => onOpenH2H(match.game)}>
+                      H2H
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  );
+});
+
 export function ResultsCalendarGrid({
   calendarMap,
   selectedDivisionTag,
@@ -49,6 +140,11 @@ export function ResultsCalendarGrid({
   const visibleDays = useMemo(() => Object.keys(calendarMap || {}).sort(), [calendarMap]);
   const [selectedYear, selectedMonth] = selectedMonthKey.split("-").map(Number);
   const divisionOptions = resultsDivisionsForMonth(selectedYear, selectedMonth - 1);
+
+  const setRef = useCallback((date: string, node: HTMLDivElement | null) => {
+    if (node) dayRefs.current[date] = node;
+    else delete dayRefs.current[date];
+  }, []);
 
   useEffect(() => {
     if (!jumpDate) return;
@@ -92,66 +188,19 @@ export function ResultsCalendarGrid({
       {loading && <p className="muted">Loading results from cache (KV)...</p>}
 
       <div className="results-grid">
-        {visibleDays.map((date) => {
-          const rawDayData = calendarMap?.[date];
-          const dayData = Array.isArray(rawDayData) ? rawDayData : [];
-          const divisions = dayData.filter((division) => division.divisionTag === selectedDivisionTag);
-          const visibleDivisions = divisions.filter((division) => Array.isArray(division.games) && division.games.length > 0);
-          const matches = divisions.flatMap((division) => division.games ?? []);
-          const dayState = resultStateForStoredDay({
-            divisionId: selectedDivisionTag,
-            date,
-            matches,
-            metadata,
-          });
-
-          return (
-            <div
-              key={date}
-              id={`day-${date}`}
-              className="day-block"
-              ref={(node) => {
-                if (node) dayRefs.current[date] = node;
-                else delete dayRefs.current[date];
-              }}
-            >
-              <h3>{formatHeader(date)}</h3>
-              {visibleDivisions.length === 0 && !loading && <div className="no-matches">{describeResultState(dayState)}</div>}
-              {visibleDivisions.length === 0 && loading && <div className="no-matches">Loading...</div>}
-
-              {visibleDivisions.map((division) => {
-                const matches = division.games;
-                return (
-                  <section key={`${date}-${division.divisionTag}`} className="calendar-division-group">
-                    <div className="calendar-division-title">{division.division}</div>
-                    <div className="calendar-match-list">
-                      {matches.map((match) => (
-                        <div key={`${date}-${division.divisionTag}-${match.game.gameId}`} className="calendar-match-row">
-                          <button type="button" className="calendar-match-open" onClick={() => onOpenMatch(match.game)}>
-                            <div className="calendar-match-main">
-                              <span className="calendar-time">{match.time}</span>
-                              <span className="calendar-teams">{match.teams}</span>
-                            </div>
-                            <div className="calendar-match-side">
-                              <strong>{match.score}</strong>
-                              <span className="calendar-division-badge">{match.division.replace("Pro ", "")}</span>
-                            </div>
-                            {match.quarterTotals && <div className="calendar-quarter-line">{match.quarterTotals}</div>}
-                          </button>
-                          <div className="calendar-match-actions">
-                            <button type="button" className="mini-btn" data-testid="results-calendar-h2h-button" onClick={() => onOpenH2H(match.game)}>
-                              H2H
-                            </button>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </section>
-                );
-              })}
-            </div>
-          );
-        })}
+        {visibleDays.map((date) => (
+          <ResultsDayBlock
+            key={date}
+            date={date}
+            rawDayData={calendarMap?.[date]}
+            selectedDivisionTag={selectedDivisionTag}
+            loading={loading}
+            metadata={metadata}
+            onOpenMatch={onOpenMatch}
+            onOpenH2H={onOpenH2H}
+            setRef={setRef}
+          />
+        ))}
       </div>
     </section>
   );
