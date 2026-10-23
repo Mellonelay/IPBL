@@ -51,5 +51,8 @@ jobs:
       - name: Verify IPBL source contracts
         run: npm run test:ipbl-source
 
+      - name: Verify Myanmar time conversion
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs src/time/__tests__/myanmar.test.ts
+
       - name: Build production bundle
         run: npm run build
