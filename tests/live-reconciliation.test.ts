@@ -69,4 +69,24 @@ try {
   globalThis.fetch = originalFetch;
 }
 
+
+const staleDetail = {
+  data: {
+    status: "Ok",
+    result: { game: { gameStatus: "Online", score1: 35, score2: 22, period: 1, score: "35:22" },
+      status: { id: "Online", displayName: "Live" } },
+  },
+};
+const newer = game({ score1: 60, score2: 42, scoreText: "60 : 42", period: 2 });
+globalThis.fetch = async () => new Response(JSON.stringify(staleDetail), { status: 200, headers: { "content-type": "application/json" } });
+try {
+  const recovered = await reconcileLiveGamesWithOfficialDetail([newer]);
+  assert.equal(recovered.games.length, 1);
+  assert.equal(recovered.games[0].score1, 60, "older official score cannot roll back live score");
+  assert.equal(recovered.games[0].score2, 42);
+  assert.equal(recovered.games[0].period, 2);
+  assert.equal(recovered.updated, 0);
+} finally {
+  globalThis.fetch = originalFetch;
+}
 console.log("Live reconciliation module tests passed");
