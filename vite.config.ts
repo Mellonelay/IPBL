@@ -18,9 +18,9 @@ export default defineConfig({
     port: 4873,
     proxy: {
       "/api/ipbl": {
-        target: "https://worker.mloneslot99.com",
+        target: "https://api1.ipbl.pro",
         changeOrigin: true,
-        rewrite: (p) => p.replace(/^\/api\/ipbl/, "/ipbl-proxy"),
+        rewrite: (p) => p.replace(/^\/api\/ipbl/, ""),
       },
     },
   },

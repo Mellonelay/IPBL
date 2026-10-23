@@ -1,0 +1,1 @@
+import assert from "node:assert/strict";import{readFileSync}from"node:fs";for(const p of ["vercel.json","lib/server/results-sync-constants.ts","lib/results-constants.ts","lib/server/live-feed.ts","vite.config.ts"]){const s=readFileSync(p,"utf8");assert.ok(!s.includes("worker.mloneslot99.com"),p);assert.ok(s.includes("api1.ipbl.pro"),p)}console.log("Official API routes verified");

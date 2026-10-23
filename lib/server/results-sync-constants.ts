@@ -3,7 +3,7 @@ import { DIVISIONS, DIVISION_LABEL_BY_TAG as APPROVED_DIVISION_LABEL_BY_TAG, LIV
 export const RESULTS_SYNC_TAGS = LIVE_DIVISION_TAGS;
 
 export const RESULTS_LANG = "ru";
-export const IPBL_API_BASE = "https://worker.mloneslot99.com/ipbl-proxy";
+export const IPBL_API_BASE = "https://api1.ipbl.pro";
 
 export function isApprovedResultsTag(tag: string): tag is (typeof RESULTS_SYNC_TAGS)[number] {
   return (RESULTS_SYNC_TAGS as readonly string[]).includes(tag);
