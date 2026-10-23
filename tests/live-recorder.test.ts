@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { safeCompare } from "../lib/server/auth.js";
 import {
   RECORDER_RETENTION, buildSnapshot, isAuthorizedCronRequest, parseQuarterScores,
   recordLiveEnvelope, recorderKeys, snapshotFingerprint, type RecorderRedis, type RecordedLiveSnapshot,
