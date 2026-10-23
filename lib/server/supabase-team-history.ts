@@ -58,11 +58,24 @@ function toStoredItem(row: TeamHistoryViewRow): StoredTeamHistoryItem {
   };
 }
 
+export function canUseCanonicalDirectHistoryFallback(workerUrl: string | undefined, directUrl: string | undefined): boolean {
+  if (!workerUrl?.trim() || !directUrl?.trim()) return false;
+  try {
+    const worker = new URL(workerUrl.trim());
+    const direct = new URL(directUrl.trim());
+    return worker.protocol === "https:" && direct.protocol === "https:"
+      && worker.origin === direct.origin && worker.pathname.replace(/\/$/, "") === direct.pathname.replace(/\/$/, "");
+  } catch {
+    return false;
+  }
+}
+
 export async function fetchSupabaseTeamHistoryRows(
   teamId: number,
   divisionTag: string,
   limit = 1000
 ): Promise<SupabaseTeamHistoryResult> {
+  let workerFailure: string | null = null;
   if (isIpblBackfillConfigured()) {
     try {
       const rows = await getWorkerTeamHistory({ teamId, divisionTag, limit }) as TeamHistoryViewRow[];
@@ -71,17 +84,16 @@ export async function fetchSupabaseTeamHistoryRows(
         .filter((row) => row.game.id > 0 && Boolean(row.game.score));
       return { configured: true, ok: true, items, error: null };
     } catch (error) {
-      return {
-        configured: true,
-        ok: false,
-        items: [],
-        error: error instanceof Error ? error.message : "worker rpc failed",
-      };
+      workerFailure = error instanceof Error ? error.message : "worker rpc failed";
+    }
+    // Never route IPBL history into a different Marketplace Supabase project.
+    if (!canUseCanonicalDirectHistoryFallback(process.env.IPBL_SUPABASE_URL, process.env.SUPABASE_URL)) {
+      return { configured: true, ok: false, items: [], error: workerFailure ?? "canonical direct fallback unavailable" };
     }
   }
 
   const client = getSupabaseAdminClient();
-  if (!client) return { configured: false, ok: false, items: [], error: "not configured" };
+  if (!client) return { configured: Boolean(workerFailure), ok: false, items: [], error: workerFailure ?? "not configured" };
 
   const { data, error } = await client
     .from("team_history_games")
@@ -109,7 +121,7 @@ export async function fetchSupabaseTeamHistoryRows(
     .overrideTypes<TeamHistoryViewRow[], { merge: false }>();
 
   if (error) {
-    return { configured: true, ok: false, items: [], error: error.message };
+    return { configured: true, ok: false, items: [], error: workerFailure ?? error.message };
   }
 
   const items = (Array.isArray(data) ? data : [])
