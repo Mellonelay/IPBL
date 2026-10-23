@@ -37,9 +37,14 @@ function time(value: string): number {
 }
 
 function resultPayout(row: BetHistoryRow): number {
-  const payout = typeof row.actual_payout === "number" ? row.actual_payout : Number(row.actual_payout || 0);
   const stake = Number(row.stake || 0);
-  return row.bet_status === "Win" ? payout - stake : -stake;
+  const result = row.bet_status.trim().toLowerCase();
+  if (result === "loss") return -stake;
+  // Pending, void and other unverified settlements cannot be counted as losses.
+  if (result !== "win") return 0;
+  const raw = typeof row.actual_payout === "number" ? row.actual_payout : Number(row.actual_payout);
+  const returned = Number.isFinite(raw) && raw > 0 ? raw : stake * Number(row.odds || 0);
+  return Number.isFinite(returned) ? returned - stake : 0;
 }
 
 function replayRank(kind: ReplayEvent["kind"]): number {
