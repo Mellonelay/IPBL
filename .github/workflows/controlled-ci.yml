@@ -81,5 +81,8 @@ jobs:
       - name: Verify Live official reconciliation monotonicity
         run: npm run test:live-reconciliation
 
+      - name: Verify Betting Record row/date integrity
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/betting-history.test.ts
+
       - name: Build production bundle
         run: npm run build

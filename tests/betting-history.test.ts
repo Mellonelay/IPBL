@@ -1,0 +1,10 @@
+import assert from "node:assert/strict";
+import { availableBetDays,betMatchKey,validBetRows } from "../src/components/betting-history.ts";
+const row={slip_id:1,placed_at:"2026-03-30T17:27:03.000Z",division:"a",raw_main_game_id:100,team_1:"A",team_2:"B",quarter:"Q1",market_raw:"over",odds:1.65,stake:100,bet_status:"Win"};
+assert.deepEqual(availableBetDays(validBetRows([row,{...row,slip_id:2,placed_at:"2026-04-01T00:00:00.000Z"}])),["2026-04-01","2026-03-30"]);
+assert.equal(validBetRows([row,{...row}]).length,1);
+assert.equal(validBetRows([row,{...row,slip_id:5,odds:0}]).length,1);
+assert.equal(validBetRows([row,{...row,slip_id:3,placed_at:"broken"}]).length,1);
+assert.notEqual(betMatchKey(row),betMatchKey({...row,division:"b"}));
+assert.throws(()=>validBetRows({rows:[]}),/must be an array/);
+console.log("Betting-record row validation and available-date tests passed");
