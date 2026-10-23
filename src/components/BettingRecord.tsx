@@ -1,19 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
+import { availableBetDays, betMatchKey, validBetRows, type BettingHistoryRow } from "./betting-history";
 
-type BetRow = {
-    slip_id: number;
-    placed_at: string;
-    division: string;
-    game_name: string;
-    team_1: string;
-    team_2: string;
-    quarter: "Q1" | "Q2" | "Q3" | "Q4" | string;
-    market_raw: string;
-    odds: number;
-    stake: number;
-    bet_status: "Win" | "Loss" | string;
-    raw_main_game_id: number;
-};
+type BetRow = BettingHistoryRow;
 
 type LoadedState = {
     loading: boolean;
@@ -36,7 +24,7 @@ function formatCurrencyMMK(value: number): string {
 }
 
 export default function BettingRecord() {
-    const [selectedDate, setSelectedDate] = useState("2026-03-30");
+    const [selectedDate, setSelectedDate] = useState("");
     const [state, setState] = useState<LoadedState>({ loading: true, error: null, rows: [] });
 
     useEffect(() => {
@@ -45,9 +33,10 @@ export default function BettingRecord() {
             try {
                 const res = await fetch("/bet_history_clean.json");
                 if (!res.ok) throw new Error(`Failed to load betting dataset (${res.status})`);
-                const json = (await res.json()) as BetRow[];
+                const rows = validBetRows(await res.json());
                 if (cancelled) return;
-                setState({ loading: false, error: null, rows: Array.isArray(json) ? json : [] });
+                setSelectedDate(availableBetDays(rows)[0] ?? "");
+                setState({ loading: false, error: null, rows });
             } catch (e) {
                 if (cancelled) return;
                 setState({
@@ -62,6 +51,7 @@ export default function BettingRecord() {
         };
     }, []);
 
+    const availableDays = useMemo(() => availableBetDays(state.rows), [state.rows]);
     const betsForDay = useMemo(() => {
         if (!state.rows.length) return [];
         return state.rows
@@ -70,15 +60,15 @@ export default function BettingRecord() {
     }, [state.rows, selectedDate]);
 
     const groups = useMemo(() => {
-        const byMatch = new Map<number, BetRow[]>();
+        const byMatch = new Map<string, BetRow[]>();
         for (const bet of betsForDay) {
-            const key = bet.raw_main_game_id;
+            const key = betMatchKey(bet);
             const arr = byMatch.get(key);
             if (!arr) byMatch.set(key, [bet]);
             else arr.push(bet);
         }
 
-        const out: Array<{ matchId: number; matchTitle: string; matchDivision: string; bets: BetRow[] }> = [];
+        const out: Array<{ matchId: string; matchTitle: string; matchDivision: string; bets: BetRow[] }> = [];
         for (const [matchId, bets] of byMatch.entries()) {
             const head = bets[0];
             out.push({
@@ -99,15 +89,19 @@ export default function BettingRecord() {
             <div className="betting-controls">
                 <label>
                     Date
-                    <input type="date" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} />
+                    <select value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} disabled={state.loading || availableDays.length === 0} aria-label="Available betting record dates">
+                      {availableDays.length === 0 && <option value="">No available days</option>}
+                      {availableDays.map(day => <option key={day} value={day}>{day}</option>)}
+                    </select>
                 </label>
             </div>
 
+            <p className="muted">Historical imported betting records only; not a live account ledger. Times shown in UTC.</p>
             {state.loading && <p className="muted">Loading betting record…</p>}
             {state.error && <p className="err">{state.error}</p>}
 
             {!state.loading && !state.error && betsForDay.length === 0 && (
-                <p className="muted">No betting records found for this date.</p>
+                <p className="muted">{availableDays.length === 0 ? "No valid imported betting records are available." : "No imported records for this date."}</p>
             )}
 
             {!state.loading &&
