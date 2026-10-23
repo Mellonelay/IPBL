@@ -1,4 +1,5 @@
-import { describe, it, expect } from "vitest";
+import { describe, it } from "node:test";
+import assert from "node:assert/strict";
 import { toMyanmarDateTime } from "../myanmar";
 
 describe("toMyanmarDateTime", () => {
@@ -8,10 +9,10 @@ describe("toMyanmarDateTime", () => {
         const result = toMyanmarDateTime(input);
 
         // 10:00 UTC + 06:30 (Myanmar) = 16:30 Myanmar time
-        expect(result.isoDate).toBe("2023-10-27");
-        expect(result.displayDate).toBe("27.10.2023");
-        expect(result.time).toBe("16:30");
-        expect(result.instant).toBe("2023-10-27T10:00:00.000Z");
+        assert.equal(result.isoDate, "2023-10-27");
+        assert.equal(result.displayDate, "27.10.2023");
+        assert.equal(result.time, "16:30");
+        assert.equal(result.instant, "2023-10-27T10:00:00.000Z");
     });
 
     it("should process valid localDate and localTime into correct Myanmar time", () => {
@@ -21,10 +22,10 @@ describe("toMyanmarDateTime", () => {
         const input = { localDate: "27.10.2023", localTime: "10:00" };
         const result = toMyanmarDateTime(input);
 
-        expect(result.isoDate).toBe("2023-10-27");
-        expect(result.displayDate).toBe("27.10.2023");
-        expect(result.time).toBe("11:30");
-        expect(typeof result.instant).toBe("string");
+        assert.equal(result.isoDate, "2023-10-27");
+        assert.equal(result.displayDate, "27.10.2023");
+        assert.equal(result.time, "11:30");
+        assert.equal(typeof result.instant, "string");
     });
 
     it("should process ISO format localDate", () => {
@@ -32,27 +33,27 @@ describe("toMyanmarDateTime", () => {
         const result = toMyanmarDateTime(input);
 
         // 14:30 + 01:30 = 16:00
-        expect(result.isoDate).toBe("2023-12-05");
-        expect(result.displayDate).toBe("05.12.2023");
-        expect(result.time).toBe("16:00");
+        assert.equal(result.isoDate, "2023-12-05");
+        assert.equal(result.displayDate, "05.12.2023");
+        assert.equal(result.time, "16:00");
     });
 
     it("should handle missing or invalid input gracefully", () => {
         const input = { localDate: "invalid", localTime: "invalid" };
         const result = toMyanmarDateTime(input);
-        expect(result.isoDate).toBe("invalid");
-        expect(result.displayDate).toBe("invalid");
-        expect(result.time).toBe("invalid");
-        expect(result.instant).toBeNull();
+        assert.equal(result.isoDate, "invalid");
+        assert.equal(result.displayDate, "invalid");
+        assert.equal(result.time, "invalid");
+        assert.equal(result.instant, null);
     });
 
     it("should handle entirely empty input gracefully", () => {
         const input = {};
         const result = toMyanmarDateTime(input);
-        expect(result.isoDate).toBe("");
-        expect(result.displayDate).toBe("");
-        expect(result.time).toBe("TBD");
-        expect(result.instant).toBeNull();
+        assert.equal(result.isoDate, "");
+        assert.equal(result.displayDate, "");
+        assert.equal(result.time, "TBD");
+        assert.equal(result.instant, null);
     });
 
     it("should prefer scheduledTime over localDate/localTime", () => {
@@ -64,7 +65,7 @@ describe("toMyanmarDateTime", () => {
         const result = toMyanmarDateTime(input);
 
         // Should ignore the localDate/localTime and use scheduledTime
-        expect(result.isoDate).toBe("2023-10-27");
-        expect(result.time).toBe("16:30"); // 10:00 UTC = 16:30 MMT
+        assert.equal(result.isoDate, "2023-10-27");
+        assert.equal(result.time, "16:30"); // 10:00 UTC = 16:30 MMT
     });
 });
