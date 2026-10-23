@@ -68,7 +68,7 @@ export function formatApiDate(d: Date): string {
 }
 
 export function seasonFromDate(d: Date): number {
-    return d.getFullYear();
+    return d.getFullYear() + (d.getMonth() >= 8 ? 1 : 0);
 }
 
 export async function fetchSchedule(tag: string, day: Date): Promise<ScheduleGame[]> {
