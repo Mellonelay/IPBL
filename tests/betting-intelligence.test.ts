@@ -31,4 +31,18 @@ assert.equal(entries[0]?.profitLoss, 110500);
 assert.equal(entries[0]?.contextSnapshot.kind, "quarter");
 assert.equal(entries[0]?.contextSnapshot.capturedAt, "2026-03-30T17:07:00.000Z");
 
+const statusCases = [
+  { bet_status: "Loss", expected: -1000 },
+  { bet_status: "Pending", expected: 0 },
+  { bet_status: "Void", expected: 0 },
+  { bet_status: "Unknown", expected: 0 },
+  { bet_status: "Win", expected: 650 },
+];
+for (const [index, row] of statusCases.entries()) {
+  const entry = buildBettingIntelligenceEntries(
+    [{ ...bet, slip_id: index+1, bet_status: row.bet_status, stake: 1000, odds: 1.65, actual_payout: row.bet_status === "Win" ? "" : 0 }],
+    new Map([[gameId, replay]]),
+  )[0];
+  assert.equal(entry.profitLoss, row.expected, "settlement handling for " + row.bet_status);
+}
 console.log("Betting intelligence tests passed");

@@ -84,5 +84,8 @@ jobs:
       - name: Verify Betting Record row/date integrity
         run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/betting-history.test.ts
 
+      - name: Verify imported betting settlement semantics
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/betting-intelligence.test.ts
+
       - name: Build production bundle
         run: npm run build
