@@ -337,7 +337,7 @@ export function computeH2H(
       && pair.has(game.team1.teamId) && pair.has(game.team2.teamId)
       && game.team1.teamId !== game.team2.teamId
       && /result|finish|complete/i.test(String(game.status))
-      && /\\d+\\s*:\\s*\\d+/.test(game.scoreText)
+      && /\d+\s*:\s*\d+/.test(game.scoreText)
     )
     .map((game) => {
       const score = game.scoreText.match(/(\d+)\s*:\s*(\d+)/);
