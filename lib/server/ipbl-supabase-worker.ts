@@ -175,3 +175,16 @@ export async function getWorkerTeamHistory(input: {
     p_limit: input.limit ?? 1000,
   });
 }
+
+export async function getWorkerResultsMonth(input: {
+  divisionTag: string;
+  year: number;
+  month: number;
+}): Promise<unknown[]> {
+  return rpc<unknown[]>("ipbl_results_month_worker", {
+    p_secret: workerSecret(),
+    p_division_tag: input.divisionTag,
+    p_year: input.year,
+    p_month: input.month,
+  });
+}

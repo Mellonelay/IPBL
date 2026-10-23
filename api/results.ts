@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { ResultsMonthMetadata } from "../lib/server/results-types.js";
 import * as redis from "../lib/server/results-redis.js";
+import { loadCanonicalResultsMonth } from "../lib/server/supabase-results.js";
 import { buildLiveFeedEnvelope } from "../lib/server/live-feed.js";
 import {
     legacyResultsMetadata,
@@ -129,6 +130,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const resolved = resolveResultsQuery(query);
     if (!resolved.ok) return res.status(resolved.status).json({ error: resolved.error });
     const { year: parsedYear, month: parsedMonth, divisionTag, wantsMetadata, defaultedYearMonth, usedTagAlias } = resolved;
+
+    try {
+        const canonical = await loadCanonicalResultsMonth(parsedYear, parsedMonth, divisionTag);
+        if (canonical) {
+            setResultsCacheHeaders(res);
+            res.setHeader("X-IPBL-Results-Status", canonical.meta.status);
+            res.setHeader("X-IPBL-Results-Source", canonical.meta.source);
+            return res.status(200).json(wantsMetadata ? canonical : canonical.calendar);
+        }
+    } catch (error) {
+        // Keep existing Results/legacy continuity during canonical source outages.
+        res.setHeader("X-IPBL-Canonical-Fallback", "1");
+    }
 
     const key = syncConstants.resultsKvKey(parsedYear, parsedMonth, divisionTag);
     const metadataKey = syncConstants.resultsMetadataKey(parsedYear, parsedMonth, divisionTag);

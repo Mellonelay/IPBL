@@ -69,5 +69,8 @@ jobs:
       - name: Verify official H2H season and history source
         run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/team-history-official-season.test.ts
 
+      - name: Verify canonical Supabase Results projection
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/supabase-results-calendar.test.ts
+
       - name: Build production bundle
         run: npm run build
