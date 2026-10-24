@@ -76,7 +76,7 @@ export function mergeLiveGamesByFreshness(
   for (const game of bookmakerGames) {
     const key = matchupKey(game);
     const existing = byMatchup.get(key);
-    if (!existing || timestamp(game) >= timestamp(existing)) byMatchup.set(key, game);
+    if (!existing || timestamp(game) > timestamp(existing)) byMatchup.set(key, game);
   }
   return [...byMatchup.values()].sort((a, b) => a.localTime.localeCompare(b.localTime));
 }

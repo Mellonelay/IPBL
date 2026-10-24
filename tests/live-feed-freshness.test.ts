@@ -50,6 +50,25 @@ assert.equal(merged[0].gameId, bookmaker.gameId);
 assert.equal(merged[0].scoreText, "23 : 18");
 assert.equal(merged[0].timeToGo, "04:02");
 
+const equalTimeBookmaker = game({
+  gameId: 729342101, score1: 5, score2: 2, scoreText: "5 : 2",
+  updatedAt: official.updatedAt,
+  upstreamStatusId: "melbet-live", sourceTimeZone: "bookmaker-epoch",
+});
+const equalTimeMerged = mergeLiveGamesByFreshness([official], [equalTimeBookmaker]);
+assert.equal(equalTimeMerged.length, 1);
+assert.equal(equalTimeMerged[0].gameId, official.gameId, "official game identity wins timestamp ties");
+assert.equal(equalTimeMerged[0].scoreText, official.scoreText, "unproven bookmaker score cannot overwrite equally fresh official evidence");
+
+const invalidTimeBookmaker = game({
+  gameId: 729342102, score1: 2, score2: 0, scoreText: "2 : 0",
+  updatedAt: Number.NaN,
+  upstreamStatusId: "melbet-live", sourceTimeZone: "bookmaker-epoch",
+});
+assert.equal(mergeLiveGamesByFreshness([official], [invalidTimeBookmaker])[0].gameId, official.gameId,
+  "missing bookmaker timestamp must not displace timed official evidence");
+
+
 console.log("Live feed freshness merge tests passed");
 
 
