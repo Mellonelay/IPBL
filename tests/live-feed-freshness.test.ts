@@ -118,6 +118,10 @@ const fallbackEnvelope = await buildLiveFeedEnvelope({
 
 assert.equal(fallbackEnvelope.games.length, 1, "empty recorder state must not suppress fresh live fetches");
 assert.equal(fallbackEnvelope.games[0].gameId, liveFallbackGame.gameId);
+assert.equal(fallbackEnvelope.status.successfulDivisions, 14, "empty but successful official division requests count as available");
+assert.equal(fallbackEnvelope.status.activeDivisions, 1, "active divisions are counted separately");
+assert.equal(fallbackEnvelope.status.status, "OK");
+
 
 console.log("Live envelope empty-recorder fallback test passed");
 
@@ -223,6 +227,10 @@ const bookmakerFallbackEnvelope = await buildLiveFeedEnvelope({
 assert.equal(bookmakerFallbackEnvelope.games.length, 1);
 assert.equal(bookmakerFallbackEnvelope.games[0].gameId, bookmakerPreferredGame.gameId);
 assert.equal(fallbackBookmakerCalls, 1, "bookmaker fetch must run when official live rows are empty");
+assert.equal(bookmakerFallbackEnvelope.status.successfulDivisions, 14);
+assert.equal(bookmakerFallbackEnvelope.status.activeDivisions, 1);
+assert.equal(bookmakerFallbackEnvelope.status.fallbackFrom, null, "empty official schedule is not necessarily source failure");
+
 
 console.log("Live envelope bookmaker fallback test passed");
 
@@ -243,6 +251,8 @@ assert.equal(classifiedFailureEnvelope.status.bookmakerSourceFailures[0].kind, "
 assert.equal(classifiedFailureEnvelope.status.bookmakerSourceFailures[0].source, "melbet");
 assert.equal(classifiedFailureEnvelope.status.bookmakerSourceFailures[0].leagueId, 2496666);
 
+assert.equal(classifiedFailureEnvelope.status.status, "PARTIAL", "working official queries with bookmaker errors must not report total failure");
+assert.equal(classifiedFailureEnvelope.status.successfulDivisions, 14);
 console.log("Live envelope bookmaker failure classification test passed");
 })().catch((error) => {
   console.error(error);

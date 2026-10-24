@@ -38,6 +38,9 @@ export function buildLiveFeedStatus(input: LiveFeedStatusInput): Record<string, 
   const bookmakerFallbackFailures = classifyBookmakerFallbackFailures(input.bookmakerSettled);
   const bookmakerHealthy =
     !input.bookmakerSettled || (input.bookmakerSettled.ok && (fallback?.sourceFailures.length ?? 0) === 0);
+  const failedTags = new Set(input.failures.map(failure => failure.tag));
+  const successfulDivisions = Math.max(0, input.requestedDivisions - failedTags.size);
+  const activeDivisions = new Set(input.mergedGames.map(game => game.tag)).size;
   const officialHealthy = input.failures.length === 0;
   const source =
     bookmakerGames.length > 0
@@ -45,26 +48,22 @@ export function buildLiveFeedStatus(input: LiveFeedStatusInput): Record<string, 
       : input.officialGames.length > 0
         ? "official:api1.ipbl.pro"
         : "bookmaker:melbet.com+1xbet.com";
-  const status =
-    input.mergedGames.length > 0
-      ? bookmakerGames.length > 0
-        ? bookmakerHealthy
-          ? "OK"
-          : "PARTIAL"
-        : officialHealthy && bookmakerHealthy
-          ? "OK"
-          : "PARTIAL"
-      : input.bookmakerSettled && input.bookmakerSettled.ok && input.bookmakerSettled.fallback.sourceFailures.length === 0
-        ? "IDLE"
-        : "FAIL";
+  // No scheduled live games is an idle state, not a failure of each division's API.
+  // Active-game coverage and successful API query coverage are distinct metrics.
+  const status = input.mergedGames.length > 0
+    ? officialHealthy && bookmakerHealthy ? "OK" : "PARTIAL"
+    : officialHealthy && bookmakerHealthy ? "IDLE"
+    : officialHealthy || bookmakerHealthy ? "PARTIAL" : "FAIL";
 
   return {
     lastSyncAt: new Date().toISOString(),
     status,
     source: input.mergedGames.length > 0 ? source : "none",
-    fallbackFrom: input.officialGames.length > 0 ? null : "official:api1.ipbl.pro",
+    fallbackFrom: input.failures.length > 0 && input.officialGames.length === 0 && bookmakerGames.length > 0
+      ? "official:api1.ipbl.pro" : null,
     requestedDivisions: input.requestedDivisions,
-    successfulDivisions: input.mergedGames.length > 0 ? new Set(input.mergedGames.map((game) => game.tag)).size : 0,
+    successfulDivisions,
+    activeDivisions,
     failures: input.mergedGames.length > 0 ? input.failures : [...input.failures, ...bookmakerFallbackFailures],
     bookmakerSourceLeagues: fallback?.sourceLeagues ?? [],
     bookmakerSourceFailures: bookmakerFallbackFailures,
