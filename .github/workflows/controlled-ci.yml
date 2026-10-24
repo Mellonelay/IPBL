@@ -93,5 +93,8 @@ jobs:
       - name: Verify recorder schedule
         run: node tests/recorder-cron-config.test.mjs
 
+      - name: Verify live feed source and active division distinction
+        run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-feed-freshness.test.ts
+
       - name: Build production bundle
         run: npm run build
