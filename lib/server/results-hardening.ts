@@ -45,7 +45,7 @@ export function classifyResultEvidence(game: ScheduleGame): StoredResultEvidence
   // Do not allow parsePeriodPairs to silently discard malformed official tokens.
   // A malformed or negative period must never become a complete four-quarter matrix.
   const rawScore = String(game.fullScore ?? "").trim();
-  if (rawScore && rawScore.split(",").some(part => !/^\\d+\\s*:\\s*\\d+$/.test(part.trim()))) {
+  if (rawScore && rawScore.split(",").some(part => !/^\d+\s*:\s*\d+$/.test(part.trim()))) {
     return {
       periodCount: 0,
       periodState: "conflict",
