@@ -32,4 +32,16 @@ assert.throws(
   /division_mismatch/,
   "mixed official response must never silently stamp the requested competition on mismatched records",
 );
+for (const bad of [
+  { data: { status: "Error", totalCount: 0, items: [] } },
+  { data: { status: "Ok", totalCount: 6, items: [] } },
+  { data: { status: "Ok", totalCount: -1, items: [] } },
+  { data: { status: "Ok", totalCount: "6", items: [] } },
+]) {
+  assert.throws(
+    () => verifiedOfficialCalendarRows(bad,"ipbl-66-m-pro-a"),
+    /invalid_calendar_response|incomplete_calendar_response/,
+    "a nominal HTTP-200 response cannot establish empty archive when source status/count contradicts items"
+  );
+}
 console.log("Shared official calendar identity contract passed");
