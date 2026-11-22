@@ -60,7 +60,7 @@
     "test:initial-route": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/initial-route.test.ts",
     "test:supabase-migration": "node tests/supabase-migration-contract.test.mjs",
     "test:supabase-alias-seed": "node tests/supabase-alias-seed-contract.test.mjs",
-    "test:supabase-backfill": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-backfill-normalize.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-calendar-response-shape.test.ts",
+    "test:supabase-backfill": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-backfill-normalize.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-calendar-response-shape.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-backfill-failure-classification.test.ts",
     "test:supabase-backfill-migration": "node tests/supabase-backfill-migration-contract.test.mjs",
     "backfill:supabase": "node scripts/run-supabase-backfill.mjs"
   },
