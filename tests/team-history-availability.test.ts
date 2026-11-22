@@ -31,9 +31,21 @@ const verifiedEmpty = planTeamHistoryResponse({
   coverage: emptyCoverage,
 });
 assert.equal(verifiedEmpty.status, 200);
-assert.equal(verifiedEmpty.availability, "available");
-assert.equal(verifiedEmpty.source, "verified-empty");
-assert.equal(verifiedEmpty.body.emptyReason, "no_verified_history");
+assert.equal(verifiedEmpty.availability, "partial");
+assert.equal(verifiedEmpty.source, "unverified-empty");
+assert.equal(verifiedEmpty.body.emptyReason, "incomplete_archive");
+assert.equal(verifiedEmpty.body.historyVerified, false);
+
+const incompleteOfficial = planTeamHistoryResponse({
+  mergedItems: [], range: "all", successfulSources: ["official-calendar"], failedSources: ["official-team-games"], sourceParts: [], coverage: { archiveComplete: true, officialVerified: true, identityResolved: true, cutoffVerified: true },
+});
+assert.equal(incompleteOfficial.body.emptyReason, "incomplete_archive");
+
+const authoritativeEmpty = planTeamHistoryResponse({
+  mergedItems: [], range: "all", successfulSources: ["official-calendar"], failedSources: [], sourceParts: [], coverage: { archiveComplete: true, officialVerified: true, identityResolved: true, cutoffVerified: true },
+});
+assert.equal(authoritativeEmpty.body.emptyReason, "no_verified_history");
+assert.equal(authoritativeEmpty.body.historyVerified, true);
 const sample: StoredTeamHistoryItem = {
   game: {
     id: 1,
