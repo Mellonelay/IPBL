@@ -325,14 +325,17 @@ export function h2hDateTimeKey(date: string, time: string): number {
 
 export function computeH2H(
   teamAGames: TeamHistoryGame[], teamBGames: TeamHistoryGame[],
-  teamAId: number, teamBId: number, limit = 15, selectedGameId?: number
+  teamAId: number, teamBId: number, limit = 15, selectedGameId?: number,
+  selectedGameAt?: { localDate: string; localTime: string }
 ): H2HEntry[] {
+  const cutoff = selectedGameAt ? h2hDateTimeKey(selectedGameAt.localDate, selectedGameAt.localTime) : null;
   const byGameId = new Map<number, TeamHistoryGame>();
   for (const game of [...teamAGames, ...teamBGames]) byGameId.set(game.gameId, game);
   const pair = new Set([teamAId, teamBId]);
   return [...byGameId.values()]
     .filter((game) =>
       game.gameId !== selectedGameId
+      && (cutoff === null || (cutoff > 0 && h2hDateTimeKey(game.localDate, game.localTime) > 0 && h2hDateTimeKey(game.localDate, game.localTime) < cutoff))
       && teamAId !== teamBId
       && pair.has(game.team1.teamId) && pair.has(game.team2.teamId)
       && game.team1.teamId !== game.team2.teamId
