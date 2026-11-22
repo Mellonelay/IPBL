@@ -108,5 +108,8 @@ jobs:
       - name: Verify reverse chronological recovery contract
         run: node tests/recovery-order-contract.test.mjs
 
+      - name: Verify consolidated historical campaign and stale-write protection
+        run: npm run test:historical-recovery
+
       - name: Build production bundle
         run: npm run build
