@@ -23,6 +23,30 @@ try {
     "source Men X games must never be stamped into requested Men A",
   );
 
+
+  for (const league of [undefined, {}, { tag: "" }, { tag: null }]) {
+    globalThis.fetch = async () => new Response(JSON.stringify({ data: { items: [{
+      ...(league === undefined ? {} : { league }),
+      game: { id: 992, gameStatus: "ResultConfirmed", score1: 80, score2: 78, localDate: "21.11.2026", localTime: "09:55" },
+      team1: { teamId: 76042, name: "Omsk" }, team2: { teamId: 76045, name: "Vorkuta" },
+    }] } }), { status: 200, headers: { "Content-Type": "application/json" } });
+    await assert.rejects(
+      fetchOfficialCalendarEvidenceForDay("ipbl-66-m-pro-a", "2026-11-21", { timeoutMs: 1000 }),
+      /division_identity_unresolved/,
+      "untagged official games must never inherit the requested division",
+    );
+  }
+
+
+  globalThis.fetch = async () => new Response(JSON.stringify({ data: { items: [{
+    league: { id: 1413060, tag: "ipbl-66-m-pro-a" },
+    game: { id: 993, gameStatus: "ResultConfirmed", score1: 80, score2: 78, localDate: "21.11.2026", localTime: "09:55" },
+    team1: { teamId: 76042, name: "Omsk" }, team2: { teamId: 76045, name: "Vorkuta" },
+  }] } }), { status: 200, headers: { "Content-Type": "application/json" } });
+  const matched = await fetchOfficialCalendarEvidenceForDay("ipbl-66-m-pro-a", "2026-11-21", { timeoutMs: 1000 });
+  assert.equal(matched.rows.length, 1, "correctly identified division rows remain ingestible");
+  assert.equal(matched.rows[0].game?.tag, "ipbl-66-m-pro-a");
+
   globalThis.fetch = async () => new Response(JSON.stringify({ data: { items: [] } }), {
     status: 200, headers: { "Content-Type": "application/json" },
   });

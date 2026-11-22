@@ -132,16 +132,18 @@ async function fetchCalendarDayEvidence(
     if (response.ok) {
       const raw = (await response.json()) as unknown;
       const items = rawCalendarItems(raw);
-      // A filtered endpoint may still return unexpected competition data.
-      // Never stamp the requested tag onto a game whose source identifies
-      // a different division. Preserve the segment as unresolved instead.
+      // A filtered endpoint is not evidence of division membership.
+      // Require the official row's own competition identity before allowing
+      // the normalizer to use the requested tag.
       if (items.some((item) => {
         const league = item.league;
-        return league && typeof league === "object"
-          && !Array.isArray(league)
-          && typeof (league as { tag?: unknown }).tag === "string"
-          && (league as { tag: string }).tag !== tag;
+        if (!league || typeof league !== "object" || Array.isArray(league)) return true;
+        const sourceTag = (league as { tag?: unknown }).tag;
+        return typeof sourceTag !== "string" || sourceTag.trim().length === 0;
       })) {
+        throw new Error("division_identity_unresolved");
+      }
+      if (items.some((item) => (item.league as { tag: string }).tag !== tag)) {
         throw new Error("division_mismatch");
       }
       return {

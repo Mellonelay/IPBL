@@ -35,10 +35,13 @@ function stringArray(value: unknown): string[] | undefined {
   return tags;
 }
 
-function safeFailure(error: unknown): { code: string; message: string; retryable: boolean } {
+export function classifyBackfillSourceFailure(error: unknown): { code: string; message: string; retryable: boolean } {
   const name = error instanceof Error ? error.name : "Error";
   const message = error instanceof Error ? error.message : String(error);
   if (name === "AbortError") return { code: "source_timeout", message: "Official source request timed out.", retryable: true };
+  if (message === "division_identity_unresolved" || message === "division_mismatch") {
+    return { code: message, message: "Official competition identity could not be verified.", retryable: false };
+  }
   const status = message.match(/calendar\s+(\d{3})/i)?.[1];
   if (status && ["400", "401", "403", "404"].includes(status)) {
     return { code: `source_http_${status}`, message: "Official source rejected the segment request.", retryable: false };
@@ -63,7 +66,7 @@ async function processSegment(
       payload,
     });
   } catch (error) {
-    const failure = safeFailure(error);
+    const failure = classifyBackfillSourceFailure(error);
     const result = await failBackfillSegment({
       segmentId: segment.segment_id,
       workerId,
