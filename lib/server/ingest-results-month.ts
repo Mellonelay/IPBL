@@ -120,12 +120,19 @@ async function fetchCalendarDayEvidence(
     if (response.ok) {
       const raw = (await response.json()) as unknown;
       const items = verifiedOfficialCalendarRows(raw, tag);
+      const rows = items.map((item) => ({ raw: item, game: normalizeCalendarRow(item, tag) }));
+      if (rows.some(({ game }) => game && normalizeCalendarDate(
+        game.sourceLocalDate ?? game.localDate
+      ) !== isoDate)) {
+        // API day filters cannot certify observations from a different source-local date.
+        throw new Error("source_day_mismatch");
+      }
       return {
         divisionTag: tag,
         isoDate,
         fetchedAt: new Date().toISOString(),
         sourcePath,
-        rows: items.map((item) => ({ raw: item, game: normalizeCalendarRow(item, tag) })),
+        rows,
       };
     }
     const retriable = [502, 503, 504, 508].includes(response.status);
