@@ -134,14 +134,11 @@ assert.equal(womenB.period, 4);
 
 const currentCombined = parseBookmakerLivePayloads([currentMenRaw, currentWomenRaw]);
 assert.equal(currentCombined.receivedEvents, 2);
-assert.equal(currentCombined.unmatched.length, 0);
-const omskLive = currentCombined.games.find((game) => game.team1.shortName === "Omsk" && game.team2.shortName === "Ukhta")!;
-assert.ok(omskLive, "current IPBL Pro Division Omsk vs Ukhta must render as a live card");
-assert.equal(omskLive.tag, "ipbl-66-m-pro-a");
-assert.equal(omskLive.divisionLabel, "Pro Men A");
-assert.equal(omskLive.team1.teamId, 134);
-assert.equal(omskLive.team2.teamId, 159);
-assert.equal(omskLive.scoreText, "5 : 4");
+assert.equal(currentCombined.unmatched.length, 1, "bookmaker Omsk vs Ukhta has no verified active division");
+assert.equal(currentCombined.unmatched[0].reason, "unverified-team");
+assert.equal(currentCombined.games.length, 1, "verified Women K remains live");
+assert.equal(currentCombined.games.some((game) => game.tag === "ipbl-66-m-pro-a"), false);
+const approvedMenLive = samara;
 const kurskLive = currentCombined.games.find((game) => game.team1.shortName === "Kursk" && game.team2.shortName === "Orenburg")!;
 assert.ok(kurskLive, "current IPBL Pro Division Women Kursk vs Orenburg must render as a live card");
 assert.equal(kurskLive.tag, "ipbl-66-w-pro-k");
@@ -152,18 +149,18 @@ assert.equal(kurskLive.scoreText, "0 : 0");
 
 const currentWithSyktyvkar = parseBookmakerLivePayloads([currentMenRaw, currentWomenRaw, currentSyktyvkarRaw]);
 assert.equal(currentWithSyktyvkar.receivedEvents, 3);
-assert.equal(currentWithSyktyvkar.unmatched.length, 0);
-assert.equal(currentWithSyktyvkar.games.some((game) => game.team1.shortName === "Syktyvkar" && game.team2.shortName === "Vorkuta"), true);
+assert.equal(currentWithSyktyvkar.unmatched.length, 2);
+assert.equal(currentWithSyktyvkar.games.some((game) => game.team1.shortName === "Syktyvkar" && game.team2.shortName === "Vorkuta"), false);
 
 const melbetMirror = {
-  games: [{ ...omskLive, updatedAt: 1_000 }],
+  games: [{ ...approvedMenLive, updatedAt: 1_000 }],
   unmatched: [],
   receivedEvents: 1,
   sourceLeagues: [2496666],
   sourceFailures: [],
 };
 const oneXBetMirror = {
-  games: [{ ...omskLive, score1: 6, score2: 5, scoreText: "6 : 5", updatedAt: 2_000 }],
+  games: [{ ...approvedMenLive, score1: 6, score2: 5, scoreText: "6 : 5", updatedAt: 2_000 }],
   unmatched: [],
   receivedEvents: 1,
   sourceLeagues: [2496666],
@@ -276,11 +273,11 @@ const currentMenBookmakerPageFixture = `
 </li>
 `;
 const currentMenBookmakerPageParsed = parseBookmakerLivePageHtml(currentMenBookmakerPageFixture, 2496666, "https://melbet.com");
-assert.equal(currentMenBookmakerPageParsed.games.length, 1);
-assert.equal(currentMenBookmakerPageParsed.unmatched.length, 0);
-assert.equal(currentMenBookmakerPageParsed.games[0].team1.shortName, "Omsk");
-assert.equal(currentMenBookmakerPageParsed.games[0].team2.shortName, "Ukhta");
-assert.equal(currentMenBookmakerPageParsed.games[0].scoreText, "11 : 9");
+assert.equal(currentMenBookmakerPageParsed.games.length, 0);
+assert.equal(currentMenBookmakerPageParsed.unmatched.length, 1);
+assert.equal(currentMenBookmakerPageParsed.unmatched[0].team1, "Omsk");
+assert.equal(currentMenBookmakerPageParsed.unmatched[0].team2, "Ukhta");
+assert.equal(currentMenBookmakerPageParsed.unmatched[0].reason, "unverified-team");
 
 const bookmakerSource = { name: "melbet", baseUrl: "https://melbet.com", partner: 8 };
 const rejectedHtml = `
