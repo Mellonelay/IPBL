@@ -139,8 +139,13 @@ export type ResolvedTeamHistoryQuery = {
 } | { ok: false; status: number; error: string };
 
 export function resolveTeamHistoryQuery(search: URLSearchParams, now = new Date()): ResolvedTeamHistoryQuery {
-  const requestedTag = search.get("tag") ?? search.get("division") ?? "";
-  const tag = normalizeResultsDivisionTag(requestedTag) ?? "ipbl-66-m-pro-a";
+  const requestedTag = search.get("tag") ?? search.get("division");
+  // Only omitted or blank legacy parameters may use the default. An explicit
+  // unapproved division must never be silently relabeled as Pro Men A.
+  const tag = requestedTag?.trim()
+    ? normalizeResultsDivisionTag(requestedTag)
+    : "ipbl-66-m-pro-a";
+  if (!tag) return { ok: false, status: 400, error: "Unsupported division" };
   const seasonRaw = search.get("season");
   const season = seasonRaw ? Number(seasonRaw) : currentSeason(now);
   const requestedTeamId = Number(search.get("teamId") ?? search.get("team") ?? "");
