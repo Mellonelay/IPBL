@@ -33,6 +33,9 @@ jobs:
       - name: Verify Team Statistics
         run: npm run test:teams
 
+      - name: Verify Results per-day absence contract
+        run: npm run test:results-hardening
+
       - name: Verify H2H ordering
         run: npm run test:h2h-order
 
