@@ -132,6 +132,18 @@ async function fetchCalendarDayEvidence(
     if (response.ok) {
       const raw = (await response.json()) as unknown;
       const items = rawCalendarItems(raw);
+      // A filtered endpoint may still return unexpected competition data.
+      // Never stamp the requested tag onto a game whose source identifies
+      // a different division. Preserve the segment as unresolved instead.
+      if (items.some((item) => {
+        const league = item.league;
+        return league && typeof league === "object"
+          && !Array.isArray(league)
+          && typeof (league as { tag?: unknown }).tag === "string"
+          && (league as { tag: string }).tag !== tag;
+      })) {
+        throw new Error("division_mismatch");
+      }
       return {
         divisionTag: tag,
         isoDate,
