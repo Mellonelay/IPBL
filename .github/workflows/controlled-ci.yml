@@ -102,6 +102,9 @@ jobs:
       - name: Verify H2H archive absence semantics
         run: npm run test:h2h-availability
 
+      - name: Verify H2H excludes unfinished official games
+        run: npm run test:h2h-freshness
+
       - name: Verify Supabase backfill evidence
         run: npm run test:supabase-backfill
 

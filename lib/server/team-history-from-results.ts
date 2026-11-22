@@ -119,8 +119,12 @@ function isCurrentOfficialHistoryRow(row: OfficialOnlineCalendarItem, divisionTa
   const team1 = Number(row.team1?.teamId ?? 0);
   const team2 = Number(row.team2?.teamId ?? 0);
   if (team1 !== teamId && team2 !== teamId) return false;
-  const status = `${game.gameStatus ?? ''} ${row.status?.id ?? ''} ${row.status?.displayName ?? ''}`.toLowerCase();
-  if (!/(online|live|result|confirmed|finish|finished)/i.test(status)) return false;
+  // The online endpoint includes live fixtures with interim scores. Only a
+  // terminal official status may participate in historical H2H comparisons.
+  // Prefer the game status itself: a contradictory display label cannot turn
+  // an Online or Scheduled game into a completed historical meeting.
+  const status = String(game.gameStatus ?? row.status?.id ?? "").trim();
+  if (!/^(ResultConfirmed|Result|Finished|Finish)$/i.test(status)) return false;
   if (!officialScoreText(game)) return false;
   return true;
 }
