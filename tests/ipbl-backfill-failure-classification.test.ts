@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { classifyBackfillSourceFailure } from "../lib/server/supabase-backfill-handler.ts";
 
-for (const code of ["division_identity_unresolved", "division_mismatch"]) {
+for (const code of ["division_identity_unresolved", "division_mismatch", "source_day_mismatch"]) {
   const failure = classifyBackfillSourceFailure(new Error(code));
   assert.equal(failure.code, code);
   assert.equal(failure.retryable, false, "identity conflicts must be quarantined, not silently retried");
