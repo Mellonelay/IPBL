@@ -17,6 +17,7 @@ declare
   v_home_team_id uuid;
   v_away_team_id uuid;
   v_game_id uuid;
+  v_existing public.games%rowtype;
   v_observed integer := 0;
   v_accepted integer := 0;
   v_quarantined integer := 0;
@@ -74,6 +75,35 @@ begin
       continue;
     end if;
 
+    -- One official game ID cannot silently move to another competition/team.
+    -- Preserve its raw source observation and quarantine the disagreement.
+    select * into v_existing from public.games
+    where official_game_id = (v_game->>'official_game_id')::bigint
+    for update;
+    if v_existing.id is not null and (
+      v_existing.division_id <> v_segment.division_id
+      or v_existing.home_team_id <> v_home_team_id
+      or v_existing.away_team_id <> v_away_team_id
+    ) then
+      v_quarantined := v_quarantined + 1;
+      insert into public.backfill_failures (
+        segment_id, source, source_record_id, official_game_id,
+        failure_code, safe_message, evidence, retryable
+      ) values (
+        p_segment_id, 'official_ipbl', v_game->>'official_game_id',
+        (v_game->>'official_game_id')::bigint,
+        'canonical_identity_conflict',
+        'Existing canonical division or team identities disagree with the incoming official observation.',
+        jsonb_build_object('existing_division_id', v_existing.division_id,
+          'incoming_division_id', v_segment.division_id,
+          'existing_home_team_id', v_existing.home_team_id,
+          'incoming_home_team_id', v_home_team_id,
+          'existing_away_team_id', v_existing.away_team_id,
+          'incoming_away_team_id', v_away_team_id), false
+      );
+      continue;
+    end if;
+
     insert into public.games as current_game (
       official_game_id, division_id, home_team_id, away_team_id,
       scheduled_at, source_local_date, source_local_time, status,
@@ -96,13 +126,17 @@ begin
       scheduled_at = excluded.scheduled_at, source_local_date = excluded.source_local_date,
       source_local_time = excluded.source_local_time, status = excluded.status,
       verification_state = excluded.verification_state, home_score = excluded.home_score,
-      away_score = excluded.away_score, full_score = excluded.full_score,
+      away_score = excluded.away_score,
+      full_score = coalesce(excluded.full_score,current_game.full_score),
       canonical_source = excluded.canonical_source, source_event_at = excluded.source_event_at,
       source_updated_at = excluded.source_updated_at, received_at = excluded.received_at,
       canonicalized_at = excluded.canonicalized_at,
       evidence_version = greatest(current_game.evidence_version, excluded.evidence_version),
       normalizer_version = excluded.normalizer_version
-    where coalesce(excluded.source_updated_at, excluded.source_event_at, excluded.received_at)
+    where current_game.division_id = excluded.division_id
+      and current_game.home_team_id = excluded.home_team_id
+      and current_game.away_team_id = excluded.away_team_id
+      and coalesce(excluded.source_updated_at, excluded.source_event_at, excluded.received_at)
        >= coalesce(current_game.source_updated_at, current_game.source_event_at, current_game.received_at)
     returning id into v_game_id;
     -- If the conditional upsert did not return a row, the source update was
@@ -134,7 +168,8 @@ begin
         away_score = excluded.away_score, evidence_complete = excluded.evidence_complete,
         canonical_source = excluded.canonical_source, source_event_at = excluded.source_event_at,
         received_at = excluded.received_at, updated_at = now()
-      where excluded.received_at >= current_period.received_at;
+      where excluded.received_at >= current_period.received_at
+        and (current_period.evidence_complete = false OR excluded.evidence_complete = true);
     end if;
   end loop;
 

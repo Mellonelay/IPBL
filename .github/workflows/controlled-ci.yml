@@ -111,5 +111,8 @@ jobs:
       - name: Verify consolidated historical campaign and stale-write protection
         run: npm run test:historical-recovery
 
+      - name: Verify historical coverage report accuracy
+        run: npm run test:historical-coverage-report
+
       - name: Build production bundle
         run: npm run build

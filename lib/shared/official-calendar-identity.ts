@@ -11,10 +11,25 @@ export function verifiedOfficialCalendarRows(raw: unknown, requestedTag: string)
   if (!data || typeof data !== "object" || Array.isArray(data)) {
     throw new Error("invalid_calendar_response");
   }
-  const items = (data as { items?: unknown }).items;
+  const envelope = data as { items?: unknown; totalCount?: unknown; status?: unknown };
+  const items = envelope.items;
   if (!Array.isArray(items) ||
       items.some(item => !item || typeof item !== "object" || Array.isArray(item))) {
     throw new Error("invalid_calendar_response");
+  }
+  // A 200 with a non-OK upstream envelope or incomplete/paginated row set
+  // cannot certify a division/day as empty or complete.
+  if (envelope.status !== undefined && envelope.status !== "Ok") {
+    throw new Error("invalid_calendar_response");
+  }
+  if (envelope.totalCount !== undefined) {
+    if (typeof envelope.totalCount !== "number" ||
+        !Number.isSafeInteger(envelope.totalCount) || envelope.totalCount < 0) {
+      throw new Error("invalid_calendar_response");
+    }
+    if (envelope.totalCount !== items.length) {
+      throw new Error("incomplete_calendar_response");
+    }
   }
   for (const row of items as Record<string, unknown>[]) {
     const league = row.league;
