@@ -27,13 +27,13 @@ canonical AS (
 ),
 official AS (
   SELECT division_id,
-   CASE WHEN payload->>'isoDate' ~ '^\\d{4}-\\d{2}-\\d{2}$'
+   CASE WHEN payload->>'isoDate' ~ '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
         THEN (payload->>'isoDate')::date ELSE NULL END AS source_local_date,
    count(DISTINCT official_game_id) FILTER (WHERE acceptance_state='accepted') AS accepted_source_game_ids,
    count(*) FILTER (WHERE acceptance_state='quarantined') AS quarantined_observations
   FROM public.source_observations
   WHERE source='official_ipbl'
-  GROUP BY division_id, CASE WHEN payload->>'isoDate' ~ '^\\d{4}-\\d{2}-\\d{2}$'
+  GROUP BY division_id, CASE WHEN payload->>'isoDate' ~ '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
         THEN (payload->>'isoDate')::date ELSE NULL END
 ),
 periods AS (
@@ -52,7 +52,8 @@ periods AS (
  GROUP BY g.division_id,g.source_local_date
 )
 SELECT dd.tag,dd.source_local_date,
- coalesce(ls.status,'not_checked') AS latest_segment_status,
+ case when ls.status='confirmed_empty' then 'legacy_empty_unverified'
+      else coalesce(ls.status,'not_checked') end AS latest_segment_status,
  coalesce(ls.observed_game_count,0) AS segment_observations,
  coalesce(ls.accepted_game_count,0) AS segment_accepted,
  coalesce(o.accepted_source_game_ids,0) AS observed_official_game_ids,
