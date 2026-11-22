@@ -42,6 +42,17 @@ function finalScorePair(game: ScheduleGame): [number, number] | null {
 }
 
 export function classifyResultEvidence(game: ScheduleGame): StoredResultEvidence {
+  // Do not allow parsePeriodPairs to silently discard malformed official tokens.
+  // A malformed or negative period must never become a complete four-quarter matrix.
+  const rawScore = String(game.fullScore ?? "").trim();
+  if (rawScore && rawScore.split(",").some(part => !/^\d+\s*:\s*\d+$/.test(part.trim()))) {
+    return {
+      periodCount: 0,
+      periodState: "conflict",
+      scoreIntegrity: "conflict",
+      quarterEvidenceQuarantined: true,
+    };
+  }
   const pairs = parsePeriodPairs(game.fullScore);
   if (pairs.length === 0) {
     return {

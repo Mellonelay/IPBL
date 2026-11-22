@@ -37,3 +37,12 @@ const scheduledGame = { ...game(51,"03.06.2026","08:00"),status:"Scheduled" };
 const otherTeam = { ...game(52,"04.06.2026","08:00"),team2:{teamId:3,shortName:"C",name:"C"} };
 const mixed = computeH2H([...games, liveGame, scheduledGame, otherTeam], [], 1, 2, 15, 3);
 assert.deepEqual(mixed.map(row=>row.gameId),[4,2,1], "the selected game, live rows and unrelated opponents are not prior H2H");
+
+const historicalSelection = computeH2H(
+  [...games, game(5, "04.06.2026", "12:30")], [], 1, 2, 15, 2,
+  { localDate: "29.05.2026", localTime: "12:30" },
+);
+assert.deepEqual(historicalSelection.map(x => x.gameId), [1],
+  "historical H2H must exclude every completed match at/after the selected point-in-time");
+const invalidCutoff = computeH2H(games, [], 1, 2, 15, 2, { localDate: "invalid", localTime: "" });
+assert.deepEqual(invalidCutoff, [], "unparseable selected time must fail closed");

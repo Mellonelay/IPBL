@@ -20,6 +20,9 @@ export type ResultsEvidenceMetadata = {
   source: string;
   checkedAt: string;
   verifiedThroughDate: string | null;
+  divisionTag?: string;
+  /** Explicit source-local dates with separately verified absence; watermark alone is insufficient. */
+  verifiedEmptyDates?: string[];
 };
 
 export function loadedResultState<TMatch>(args: { divisionId: string; date: string; matches: TMatch[]; source: string }): DivisionDayResultState<TMatch> {
@@ -56,8 +59,12 @@ export function resultStateForStoredDay<TMatch>(args: {
       source: args.metadata?.source ?? "results-kv",
     });
   }
-  const verified = Boolean(args.metadata?.verifiedThroughDate && args.date <= args.metadata.verifiedThroughDate);
-  if (verified && (args.metadata?.status === "ok" || args.metadata?.status === "source_unavailable")) {
+  // A populated-date watermark cannot prove that a different empty day was checked.
+  // The display date may also differ from the official source-local date.
+  const verified = args.metadata?.status === "ok"
+    && args.metadata.divisionTag === args.divisionId
+    && args.metadata.verifiedEmptyDates?.includes(args.date) === true;
+  if (verified) {
     return confirmedEmptyResultState({
       divisionId: args.divisionId,
       date: args.date,

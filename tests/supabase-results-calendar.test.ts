@@ -18,6 +18,8 @@ assert.equal(game.scoreText,"101 : 85");
 assert.equal(game.fullScore,row.full_score);
 assert.equal(game.team1.teamId,76049);
 assert.equal(canonicalResultsMetadata(2026,10,tag,map).acceptedRows,1);
+assert.equal(canonicalResultsMetadata(2026,10,tag,map).verifiedThroughDate, null,
+  'latest populated date is not a verified completeness watermark');
 assert.equal(isCanonicalResultsMonth(2026,8),false);
 assert.equal(isCanonicalResultsMonth(2026,9),true);
 assert.equal(isCanonicalResultsMonth(2027,1),true);

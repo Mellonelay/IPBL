@@ -46,6 +46,12 @@ const conflict = game({ gameId: 4, score1: 22, score2: 18, scoreText: "22 : 18",
 
 assert.equal(classifyResultEvidence(partial).periodState, "partial");
 assert.equal(classifyResultEvidence(conflict).scoreIntegrity, "conflict");
+const malformedPeriods = game({ fullScore: "20:20,broken,20:15,20:20,20:15" });
+assert.equal(classifyResultEvidence(malformedPeriods).quarterEvidenceQuarantined, true,
+  "malformed period tokens must not disappear while preserving a false complete score");
+const negativePeriod = game({ fullScore: "-1:20,41:15,20:20,20:15" });
+assert.equal(classifyResultEvidence(negativePeriod).quarterEvidenceQuarantined, true,
+  "negative quarter points cannot be accepted as official scores");
 
 const built = buildStoredMonthMapWithStats(
   [game(), duplicate, live, partial, conflict],
