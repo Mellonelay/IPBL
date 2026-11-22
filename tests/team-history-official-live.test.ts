@@ -75,11 +75,17 @@ const officialOnline = {
 
 const stored = teamHistoryItemsFromMonths([historicalMonth], 76055, "ipbl-66-m-pro-z");
 const live = officialOnlineTeamHistoryItems(officialOnline, 76055, "ipbl-66-m-pro-z");
-assert.equal(live.length, 1);
-assert.equal(live[0].game.id, 1072122);
-assert.equal(live[0].game.localDate, "13.06.2026");
-assert.equal(live[0].game.score, "74 : 90");
-assert.equal(live[0].game.quarterTotals, null);
+assert.equal(live.length, 0, "Online games with visible interim scores must not enter completed H2H history");
 const merged = mergeTeamHistoryItems(stored, live);
-assert.deepEqual(merged.map((item) => item.game.id), [1072122, 1]);
+assert.deepEqual(merged.map((item) => item.game.id), [1]);
+const completed = {
+  data: {
+    status: "Ok", totalCount: 2,
+    items: [
+      { ...officialOnline.data.items[0], game: { ...officialOnline.data.items[0].game, gameStatus: "Result" }, status: { id: "Result", displayName: "Завершена" } },
+      { ...officialOnline.data.items[0], game: { ...officialOnline.data.items[0].game, id: 1072123, gameStatus: "Scheduled" }, status: { id: "Scheduled", displayName: "Scheduled" } },
+    ],
+  },
+};
+assert.deepEqual(officialOnlineTeamHistoryItems(completed, 76055, "ipbl-66-m-pro-z").map(item => item.game.id), [1072122], "Finished Result is eligible; scheduled is not");
 console.log("Team history current official online freshness merge tests passed");
