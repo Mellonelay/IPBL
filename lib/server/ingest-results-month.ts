@@ -107,9 +107,15 @@ export type OfficialCalendarDayEvidence = {
 
 function rawCalendarItems(raw: unknown): Record<string, unknown>[] {
   const items = (raw as { data?: { items?: unknown } })?.data?.items;
-  return Array.isArray(items)
-    ? items.filter((item): item is Record<string, unknown> => Boolean(item) && typeof item === "object" && !Array.isArray(item))
-    : [];
+  if (!Array.isArray(items)) {
+    // HTTP 200 is not evidence of an empty schedule. Preserve the segment as
+    // failed/retryable when the upstream contract is missing or malformed.
+    throw new Error("invalid_calendar_response");
+  }
+  if (items.some((item) => !item || typeof item !== "object" || Array.isArray(item))) {
+    throw new Error("invalid_calendar_response");
+  }
+  return items as Record<string, unknown>[];
 }
 
 async function fetchCalendarDayEvidence(

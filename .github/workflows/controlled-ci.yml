@@ -96,5 +96,14 @@ jobs:
       - name: Verify live feed source and active division distinction
         run: node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/live-feed-freshness.test.ts
 
+      - name: Verify H2H archive absence semantics
+        run: npm run test:h2h-availability
+
+      - name: Verify Supabase backfill evidence
+        run: npm run test:supabase-backfill
+
+      - name: Verify reverse chronological recovery contract
+        run: node tests/recovery-order-contract.test.mjs
+
       - name: Build production bundle
         run: npm run build
