@@ -63,7 +63,8 @@
     "test:supabase-backfill": "node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-backfill-normalize.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-calendar-response-shape.test.ts && node --loader ./tests/ipbl-source/ts-extension-loader.mjs tests/ipbl-backfill-failure-classification.test.ts && node tests/recovery-classification-contract.test.mjs",
     "test:supabase-backfill-migration": "node tests/supabase-backfill-migration-contract.test.mjs",
     "backfill:supabase": "node scripts/run-supabase-backfill.mjs",
-    "test:historical-recovery": "node tests/historical-recovery-dispatch-contract.test.mjs && node tests/recovery-period-safety-contract.test.mjs"
+    "test:historical-recovery": "node tests/historical-recovery-dispatch-contract.test.mjs && node tests/recovery-period-safety-contract.test.mjs",
+    "test:historical-coverage-report": "node tests/historical-coverage-report-contract.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.111.0",
