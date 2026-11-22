@@ -47,6 +47,17 @@ try {
   assert.equal(matched.rows.length, 1, "correctly identified division rows remain ingestible");
   assert.equal(matched.rows[0].game?.tag, "ipbl-66-m-pro-a");
 
+  globalThis.fetch = async () => new Response(JSON.stringify({ data: { items: [{
+    league: { tag: "ipbl-66-m-pro-a" },
+    game: { id: 995, gameStatus: "ResultConfirmed", score1: 80, score2: 78, localDate: "20.11.2026", localTime: "22:00" },
+    team1: { teamId: 76038, name: "Barnaul" }, team2: { teamId: 76040, name: "Novosibirsk" },
+  }] } }), { status: 200, headers: { "Content-Type": "application/json" } });
+  await assert.rejects(
+    fetchOfficialCalendarEvidenceForDay("ipbl-66-m-pro-a", "2026-11-21", { timeoutMs: 1000 }),
+    /source_day_mismatch/,
+    "a source-local game from another date must never be certified as the requested date",
+  );
+
   globalThis.fetch = async () => new Response(JSON.stringify({ data: { items: [] } }), {
     status: 200, headers: { "Content-Type": "application/json" },
   });
