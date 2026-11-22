@@ -64,11 +64,12 @@ export function canonicalResultsMonthMap(rows: CanonicalResultsRow[], year: numb
 }
 
 export function canonicalResultsMetadata(year: number, month: number, tag: string, map: StoredResultsMonthMap): ResultsMonthMetadata {
-  const days = Object.keys(map).sort();
   return {
     schemaVersion: 1, status: "ok", source: "supabase-canonical",
     checkedAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
-    verifiedThroughDate: days.at(-1) ?? null,
+    // Canonical games prove their own existence, not completeness of other days.
+    // A verified-through watermark requires explicit division/day source coverage.
+    verifiedThroughDate: null,
     year, month, divisionTag: tag,
     acceptedRows: Object.values(map).reduce((n, groups) => n + groups.reduce((sum, group) => sum + group.games.length, 0), 0),
   };
