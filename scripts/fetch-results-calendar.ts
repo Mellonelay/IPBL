@@ -1,4 +1,5 @@
 import { parseCalendarItems } from "../src/api/normalize";
+import { verifiedOfficialCalendarRows } from "../lib/shared/official-calendar-identity";
 import { DIVISIONS } from "../src/config/divisions";
 
 type CalendarScriptGame = {
@@ -67,7 +68,9 @@ export async function fetchResultsCalendar(baseUrl = "/api/ipbl"): Promise<Resul
                 const response = await fetch(
                     `${baseUrl}/calendar?tag=${division.tag}&from=${from}&to=${from}&lang=ru`
                 );
+                if (!response.ok) throw new Error(`calendar_http_${response.status}`);
                 const raw = await response.json();
+                verifiedOfficialCalendarRows(raw, division.tag);
                 const games = parseCalendarItems(raw, division.tag).map((game) => ({
                     time: game.localTime,
                     teams: `${game.team1.shortName} vs ${game.team2.shortName}`,
