@@ -64,7 +64,7 @@
     "test:supabase-backfill-migration": "node tests/supabase-backfill-migration-contract.test.mjs",
     "backfill:supabase": "node scripts/run-supabase-backfill.mjs",
     "test:historical-recovery": "node tests/historical-recovery-dispatch-contract.test.mjs && node tests/recovery-period-safety-contract.test.mjs",
-    "test:historical-coverage-report": "node tests/historical-coverage-report-contract.test.mjs"
+    "test:historical-coverage-report": "node tests/historical-coverage-report-contract.test.mjs && node tests/october-official-recovery-proof-contract.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.111.0",
