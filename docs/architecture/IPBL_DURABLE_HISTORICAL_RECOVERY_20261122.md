@@ -14,6 +14,37 @@
 4. Review the new migrations before applying. Check function owner, grants, cron schedule, Vault secret availability *without displaying the secret*, Vercel authorization, rate limits, and available database/API quotas.
 5. Run migration tests, full CI and a bounded production source readback. Applying a migration and enqueueing recovery are separate actions.
 
+## Free-plan backup execution prerequisite (verified 2026-11-22)
+The active Supabase organization is on the **Free** plan. The connected Supabase MCP
+tools do not expose a remote backup artifact, PITR restore point or an independent
+restore-verification operation. An SQL function rollback is not a data backup.
+Do not activate the historical reconciliation campaign until the steps below
+have been executed on an authorized host with remote PostgreSQL connectivity.
+
+1. Obtain the project's direct or session-pooler **database connection string**
+   from Supabase Dashboard > Connect. Keep the password in a local secret store;
+   never commit, paste or transmit it in issue, PR, chat or CI output.
+2. Use the [official Supabase CLI backup-and-restore procedure](https://supabase.com/docs/guides/platform/migrating-within-supabase/backup-restore)
+   to dump roles, schema and data, including `public.games`, `public.game_periods`,
+   `public.source_observations`, `public.divisions`, `public.teams`,
+   `public.team_aliases`, `public.backfill_runs`, `public.backfill_segments`,
+   `public.backfill_failures` and the relevant `private` functions and Cron metadata.
+   Preserve Vault encryption-root-key requirements for any full-project restore.
+3. Store the archive outside the production database. Verify nonzero archive
+   sizes and SHA-256 hashes. Restore to a disposable **isolated test database**
+   with the required roles/extensions, then compare row counts, primary-key
+   uniqueness and sampled official IDs/periods across source and restore.
+4. Record backup timestamp, archive checksums, restore target, restore result,
+   table counts and affected function fingerprints in a private evidence
+   record. Do not publish credentials or sensitive dump bytes.
+5. Only after restore proof exists: review and apply both staged migrations,
+   verify function owners and grants, and enqueue the bounded first campaign.
+
+The owner need only provide **access to a host capable of authenticated
+`supabase db dump`/`pg_dump` plus an independent restore target**, or a
+completed backup/restore evidence receipt. A local SQL table copy inside the
+same Supabase project does **not** satisfy this independent-recovery gate.
+
 ## Initiate one bounded campaign
 After passing those gates, invoke from authorized Supabase SQL (not from an anonymous/public API):
 ```sql
