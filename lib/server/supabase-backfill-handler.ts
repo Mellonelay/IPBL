@@ -39,7 +39,7 @@ export function classifyBackfillSourceFailure(error: unknown): { code: string; m
   const name = error instanceof Error ? error.name : "Error";
   const message = error instanceof Error ? error.message : String(error);
   if (name === "AbortError") return { code: "source_timeout", message: "Official source request timed out.", retryable: true };
-  if (message === "division_identity_unresolved" || message === "division_mismatch") {
+  if (message === "division_identity_unresolved" || message === "division_mismatch" || message === "source_day_mismatch") {
     return { code: message, message: "Official competition identity could not be verified.", retryable: false };
   }
   const status = message.match(/calendar\s+(\d{3})/i)?.[1];
