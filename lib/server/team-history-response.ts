@@ -33,8 +33,23 @@ export function planTeamHistoryResponse(input: {
   const items = input.range === "all"
     ? input.mergedItems
     : input.mergedItems.slice(0, input.range);
-  const availability = input.failedSources.length > 0 ? "partial" : "available";
-  const source = input.sourceParts.join("+") || "verified-empty";
+  // Empty query results are not proof of historical absence. An upstream caller
+  // must provide explicit, scoped archive verification before asserting absence.
+  const proof = input.coverage && typeof input.coverage === "object"
+    ? input.coverage as Record<string, unknown>
+    : {};
+  const historyVerified = input.mergedItems.length === 0
+    && input.failedSources.length === 0
+    && input.successfulSources.includes("official-calendar")
+    && proof.archiveComplete === true
+    && proof.officialVerified === true
+    && proof.identityResolved === true
+    && proof.cutoffVerified === true;
+  const availability = input.failedSources.length > 0
+    || (input.mergedItems.length === 0 && !historyVerified)
+    ? "partial" : "available";
+  const source = input.sourceParts.join("+")
+    || (historyVerified ? "verified-empty" : "unverified-empty");
 
   return {
     status: 200,
@@ -48,7 +63,10 @@ export function planTeamHistoryResponse(input: {
         range: input.range,
       },
       availability,
-      emptyReason: input.mergedItems.length === 0 ? "no_verified_history" : null,
+      emptyReason: input.mergedItems.length === 0
+        ? historyVerified ? "no_verified_history" : "incomplete_archive"
+        : null,
+      historyVerified,
       source,
       successfulSources: input.successfulSources,
       failedSources: input.failedSources,
