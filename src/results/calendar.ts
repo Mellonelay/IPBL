@@ -10,6 +10,8 @@ export type ResultsMonthMetadata = {
     checkedAt: string;
     updatedAt: string | null;
     verifiedThroughDate: string | null;
+    /** Exact official source-local days verified to contain no completed games. */
+    verifiedEmptyDates?: string[];
     year: number;
     month: number;
     divisionTag: string;
