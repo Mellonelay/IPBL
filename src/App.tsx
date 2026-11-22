@@ -445,7 +445,7 @@ function App() {
 
       const team1Rows = historyResults[0].status === "fulfilled" ? historyResults[0].value.rows : [];
       const team2Rows = historyResults[1].status === "fulfilled" ? historyResults[1].value.rows : [];
-      const h2h = computeH2H(team1Rows, team2Rows, game.team1.teamId, game.team2.teamId, 8, game.gameId);
+      const h2h = computeH2H(team1Rows, team2Rows, game.team1.teamId, game.team2.teamId, 8, game.gameId, { localDate: game.localDate, localTime: game.localTime });
       const partial = fulfilled.length < 2 || fulfilled.some((result) => result.availability === "partial");
       const source = [...new Set(fulfilled.map((result) => result.source))].join(" + ");
       syncIntelligenceFocus(game, h2h, {
