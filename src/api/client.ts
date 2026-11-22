@@ -1,5 +1,6 @@
 import { LANG } from "../config/divisions";
 import { dedupeLiveGames, parseCalendarItems, parseTeamHistory } from "./normalize";
+import { verifiedOfficialCalendarRows } from "../../lib/shared/official-calendar-identity";
 import type { BoxScoreState, GameDetail, GameReplay, ScheduleGame, TeamHistoryGame } from "./types";
 
 const calCache = new Map<string, { at: number; rows: ScheduleGame[] }>();
@@ -78,6 +79,7 @@ export async function fetchSchedule(tag: string, day: Date): Promise<ScheduleGam
     if (hit && now - hit.at < CAL_TTL_MS) return hit.rows;
     const from = formatApiDate(day);
     const raw = await getJson("/calendar/online", q({ tag, from, to: from, lang: LANG }));
+    verifiedOfficialCalendarRows(raw, tag);
     const rows = parseCalendarItems(raw, tag);
     calCache.set(key, { at: now, rows });
     return rows;
@@ -85,6 +87,7 @@ export async function fetchSchedule(tag: string, day: Date): Promise<ScheduleGam
 
 export async function fetchOnline(tag: string): Promise<ScheduleGame[]> {
     const raw = await getJson("/calendar/online", q({ tag, lang: LANG }));
+    verifiedOfficialCalendarRows(raw, tag);
     const rows = dedupeLiveGames(parseCalendarItems(raw, tag).filter((row) => row.isLive));
     return rows;
 }

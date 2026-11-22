@@ -1,4 +1,5 @@
 import { parseCalendarItems, type ScheduleGame } from "../../lib/server/calendar-normalize.js";
+import { verifiedOfficialCalendarRows } from "../shared/official-calendar-identity.js";
 import { getResultsRedis } from "../../lib/server/results-redis.js";
 import { readRecordedLiveFeed } from "../../lib/server/live-recorder.js";
 import { fetchBookmakerLive, normalizeTeamName, type BookmakerLiveResult } from "../../lib/server/bookmaker-live.js";
@@ -36,6 +37,7 @@ export async function fetchLiveTag(tag: string): Promise<{ tag: string; games: S
     const response = await fetch(url, { headers: { Accept: "application/json" } });
     if (!response.ok) return { tag, games: [], error: `HTTP ${response.status}` };
     const raw = await response.json();
+    verifiedOfficialCalendarRows(raw, tag);
     return { tag, games: parseCalendarItems(raw, tag).filter((game) => game.isLive).map(normalizeLiveGame) };
   } catch (error) {
     return { tag, games: [], error: error instanceof Error ? error.message : String(error) };

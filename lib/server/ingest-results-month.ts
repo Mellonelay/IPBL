@@ -8,6 +8,7 @@ export type {
 } from "./results-types.js";
 import type { StoredCalendarGridGame, StoredResultsMonthMap } from "./results-types.js";
 import { dedupeFinishedGames } from "./results-hardening.js";
+import { verifiedOfficialCalendarRows } from "../shared/official-calendar-identity.js";
 
 function monthDayKeys(year: number, monthIndex: number): string[] {
   const count = new Date(year, monthIndex + 1, 0).getDate();
@@ -105,19 +106,6 @@ export type OfficialCalendarDayEvidence = {
   rows: OfficialCalendarEvidenceRow[];
 };
 
-function rawCalendarItems(raw: unknown): Record<string, unknown>[] {
-  const items = (raw as { data?: { items?: unknown } })?.data?.items;
-  if (!Array.isArray(items)) {
-    // HTTP 200 is not evidence of an empty schedule. Preserve the segment as
-    // failed/retryable when the upstream contract is missing or malformed.
-    throw new Error("invalid_calendar_response");
-  }
-  if (items.some((item) => !item || typeof item !== "object" || Array.isArray(item))) {
-    throw new Error("invalid_calendar_response");
-  }
-  return items as Record<string, unknown>[];
-}
-
 async function fetchCalendarDayEvidence(
   tag: string,
   isoDate: string,
@@ -131,21 +119,7 @@ async function fetchCalendarDayEvidence(
     const response = await fetch(sourcePath, { headers: { Accept: "application/json" }, signal });
     if (response.ok) {
       const raw = (await response.json()) as unknown;
-      const items = rawCalendarItems(raw);
-      // A filtered endpoint is not evidence of division membership.
-      // Require the official row's own competition identity before allowing
-      // the normalizer to use the requested tag.
-      if (items.some((item) => {
-        const league = item.league;
-        if (!league || typeof league !== "object" || Array.isArray(league)) return true;
-        const sourceTag = (league as { tag?: unknown }).tag;
-        return typeof sourceTag !== "string" || sourceTag.trim().length === 0;
-      })) {
-        throw new Error("division_identity_unresolved");
-      }
-      if (items.some((item) => (item.league as { tag: string }).tag !== tag)) {
-        throw new Error("division_mismatch");
-      }
+      const items = verifiedOfficialCalendarRows(raw, tag);
       return {
         divisionTag: tag,
         isoDate,
